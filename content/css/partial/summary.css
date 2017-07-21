@@ -1,0 +1,40 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.summary {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+  .summary ul, .summary li, .summary ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .summary a.current {
+    border: none;
+    color: #00BDFF; }
+  .summary a:hover {
+    color: #00BDFF; }
+  .summary h2.part-title {
+    color: #00BDFF;
+    font-size: 1.2em;
+    font-weight: 600; }
+  .summary h3.chapter-title {
+    font-size: 1.1em; }
+  .summary ul.chapter {
+    margin-left: 15px; }
+    .summary ul.chapter li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-bottom: 15px; }
+
+.lang-en .summary h3.chapter-title {
+  font-weight: 600; }
+
+.hostbyaliyun {
+  width: 180px;
+  z-index: 99;
+  display: none; }

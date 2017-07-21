@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;text&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;text&amp;gt;&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。&amp;lt;text&amp;gt; 只能包含文本值，你可以使用 {{}} 标记插入变量值作为文本内容。 子组件此组件不支持子组件。 特性 value {string}: 组件的值，与 &amp;lt;text&amp;gt; 标签中的文本内容相同。  样式 lines {number}: 指定文本行数。默认值是 0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<text>">
+<meta property="og:url" content="https://weex.apache.org/cn/references/components/text.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;text&amp;gt;&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。&amp;lt;text&amp;gt; 只能包含文本值，你可以使用 {{}} 标记插入变量值作为文本内容。 子组件此组件不支持子组件。 特性 value {string}: 组件的值，与 &amp;lt;text&amp;gt; 标签中的文本内容相同。  样式 lines {number}: 指定文本行数。默认值是 0">
+<meta property="og:updated_time" content="2017-06-23T03:14:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<text>">
+<meta name="twitter:description" content="&amp;lt;text&amp;gt;&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。&amp;lt;text&amp;gt; 只能包含文本值，你可以使用 {{}} 标记插入变量值作为文本内容。 子组件此组件不支持子组件。 特性 value {string}: 组件的值，与 &amp;lt;text&amp;gt; 标签中的文本内容相同。  样式 lines {number}: 指定文本行数。默认值是 0">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/text.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/text.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/index.html" class="sidebar-link  ">通用特性</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/downgrade.html" class="sidebar-link  ">降级方案</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/path.html" class="sidebar-link  ">Path (英)</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/components/index.html" class="sidebar-link  ">内建组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/text.html" class="sidebar-link current ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/unit.html" class="sidebar-link  ">CSS 单位</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/common-event.html" class="sidebar-link  ">通用事件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/web-standards.html" class="sidebar-link  ">Web 标准</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/vue/difference-with-web.html" class="sidebar-link  ">Vue 2.x 在 Weex 和 Web 中的差异</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/vue/difference-of-vuex.html" class="sidebar-link  ">使用 Vuex 和 vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/advanced/index.html" class="sidebar-link  ">高阶知识</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/extend-to-html5.html" class="sidebar-link  ">HTML5 扩展</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/extend-jsfm.html" class="sidebar-link  ">拓展 JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/migration/difference.html" class="sidebar-link  ">Weex 和 Vue 2.x 的语法差异</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/index.html" class="sidebar-link  ">通用特性</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/downgrade.html" class="sidebar-link  ">降级方案</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/path.html" class="sidebar-link  ">Path (英)</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/components/index.html" class="sidebar-link  ">内建组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/text.html" class="sidebar-link current ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/unit.html" class="sidebar-link  ">CSS 单位</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/common-event.html" class="sidebar-link  ">通用事件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/web-standards.html" class="sidebar-link  ">Web 标准</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/vue/difference-with-web.html" class="sidebar-link  ">Vue 2.x 在 Weex 和 Web 中的差异</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/vue/difference-of-vuex.html" class="sidebar-link  ">使用 Vuex 和 vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/advanced/index.html" class="sidebar-link  ">高阶知识</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/extend-to-html5.html" class="sidebar-link  ">HTML5 扩展</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/extend-jsfm.html" class="sidebar-link  ">拓展 JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
+              </li>
+            
+              <li>
+                <a href="/cn/references/migration/difference.html" class="sidebar-link  ">Weex 和 Vue 2.x 的语法差异</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;text&gt;
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-23T03:14:54.000Z">Updated time: 23/06/2017</time>
+</header>
+    <h1 id="lt-text-gt" class="article-heading"><a href="#lt-text-gt" class="headerlink" title="&lt;text&gt;"></a>&lt;text&gt;<a class="article-anchor" href="#lt-text-gt" aria-hidden="true"></a></h1><p><code>&lt;text&gt;</code> 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。<code>&lt;text&gt;</code> 只能包含文本值，你可以使用 <code>{{}}</code> 标记插入变量值作为文本内容。</p>
+<h2 id="子组件" class="article-heading"><a href="#子组件" class="headerlink" title="子组件"></a>子组件<a class="article-anchor" href="#子组件" aria-hidden="true"></a></h2><p>此组件不支持子组件。</p>
+<h2 id="特性" class="article-heading"><a href="#特性" class="headerlink" title="特性"></a>特性<a class="article-anchor" href="#特性" aria-hidden="true"></a></h2><ul>
+<li><code>value {string}</code>: 组件的值，与 <code>&lt;text&gt;</code> 标签中的文本内容相同。</li>
+</ul>
+<h2 id="样式" class="article-heading"><a href="#样式" class="headerlink" title="样式"></a>样式<a class="article-anchor" href="#样式" aria-hidden="true"></a></h2><ul>
+<li><code>lines {number}</code>: 指定文本行数。默认值是 <code>0</code> 代表不限制行数。</li>
+<li><p>text styles: 查看 <a href="../text-style.html">文本样式</a></p>
+<ul>
+<li>支持 <code>color</code> 样式.</li>
+<li>支持 <code>font-size</code> 样式. iOS默认值：<code>32</code>，Android：不同设备不同，H5 默认值：<code>32</code>.</li>
+<li>支持 <code>font-style</code> 样式.</li>
+<li>支持 <code>font-weight</code> 样式.</li>
+<li>支持 <code>text-align</code> 样式.</li>
+<li>支持 <code>text-decoration</code> 样式.</li>
+<li>支持 <code>text-overflow</code> 样式.</li>
+<li>支持 <code>line-height</code>样式<sup class="wx-v">0.6.1+</sup> 。<code>line-height</code> 在 iOS 中与 H5 和 Android 中不同， 文本值将放置在框的底部。</li>
+<li>不支持 <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> 这些为子节点设置的属性，并且<code>&lt;text&gt;</code>没有子节点。</li>
+</ul>
+</li>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
+</li>
+</ul>
+<h2 id="事件" class="article-heading"><a href="#事件" class="headerlink" title="事件"></a>事件<a class="article-anchor" href="#事件" aria-hidden="true"></a></h2><ul>
+<li><p>通用事件<br>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
+</li>
+</ul>
+<h2 id="约束" class="article-heading"><a href="#约束" class="headerlink" title="约束"></a>约束<a class="article-anchor" href="#约束" aria-hidden="true"></a></h2><ol>
+<li><code>&lt;text&gt;</code> 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。</li>
+</ol>
+<h2 id="iconfont" class="article-heading"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont<a class="article-anchor" href="#iconfont" aria-hidden="true"></a></h2><p><code>支持版本:v0.12.0</code></p>
+<p>支持ttf和woff字体格式的自定义字体, 可以通过调用 <code>dom</code> module 里面的 <a href="../modules/dom.html#addRule">addRule</a>方法, 构建自定义的<code>font-family</code>使用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">'flex-direction:row;margin-top:50px'</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:50;color:green'</span>&gt;</span>&amp;#xe614;&amp;#xe612;&amp;#xe613;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:50;'</span>&gt;</span>&amp;#xe614;&amp;#xe612;&amp;#xe613;&amp;#xe61d;&amp;#xe714;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:60;color:blue'</span>&gt;</span>&amp;#xe711;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:60;color:green'</span>&gt;</span>&amp;#xe71c;&amp;#xe60b;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">module</span>.exports = &#123;</div><div class="line">        <span class="attr">mounted</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> domModule = weex.requireModule(<span class="string">'dom'</span>);</div><div class="line">        <span class="comment">//目前支持ttf、woff文件，不支持svg、eot类型,moreItem at http://www.iconfont.cn/</span></div><div class="line"></div><div class="line">        domModule.addRule(<span class="string">'fontFace'</span>, &#123;</div><div class="line">            <span class="string">'fontFamily'</span>: <span class="string">"iconfont2"</span>,</div><div class="line">            <span class="string">'src'</span>: <span class="string">"url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/6ece072d0abd9a9e5718eb26bd5719f8" target="_blank" rel="external">try it</a></p>
+<h2 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">lines</span>=<span class="string">"3"</span>&gt;</span>Weex 是一套简单易用的跨平台开发方案，能以 Web 的开发体验构建高性能、可扩展的原生应用。Vue 是一个轻量并且功能强大的渐进式前端框架。<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">lines</span>=<span class="string">"3"</span>&gt;</span>Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. <span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.wrapper</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.panel</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">75px</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#BBB</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">padding-left</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">lines</span>: <span class="number">3</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#666666</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">32px</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/154e20171d350a081fba7878c53cf7d2" target="_blank" rel="external">try it</a></p>
+
+  </div>
+  
+</article>
+</div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/components/text.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/components/text.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+</div>
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

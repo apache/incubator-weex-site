@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;a&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;a&amp;gt;a defines a hyperlink to a page in the web. Its purpose and syntax is very similar to  in HTML5. Child ComponentsThis type of component supports all kinds of weex component as it’s child comp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<a>">
+<meta property="og:url" content="https://weex.apache.org/references/components/a.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;a&amp;gt;a defines a hyperlink to a page in the web. Its purpose and syntax is very similar to  in HTML5. Child ComponentsThis type of component supports all kinds of weex component as it’s child comp">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<a>">
+<meta name="twitter:description" content="&amp;lt;a&amp;gt;a defines a hyperlink to a page in the web. Its purpose and syntax is very similar to  in HTML5. Child ComponentsThis type of component supports all kinds of weex component as it’s child comp">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Invovled</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/a.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/a.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link current ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/migration/index.html" class="sidebar-link  ">Migration</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link current ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/migration/index.html" class="sidebar-link  ">Migration</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;a&gt;
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="lt-a-gt" class="article-heading"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;<a class="article-anchor" href="#lt-a-gt" aria-hidden="true"></a></h1><p><code>a</code> defines a hyperlink to a page in the web. Its purpose and syntax is very similar to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="external"><a></a> in HTML5.</a></p>
+<h2 id="Child-Components" class="article-heading"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components<a class="article-anchor" href="#Child-Components" aria-hidden="true"></a></h2><p>This type of component supports all kinds of weex component as it’s child components except for its own kind.</p>
+<h2 id="Attributes" class="article-heading"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes<a class="article-anchor" href="#Attributes" aria-hidden="true"></a></h2><ul>
+<li>href: href attributes defines the URL of the hyperlink.</li>
+</ul>
+<h2 id="Styles" class="article-heading"><a href="#Styles" class="headerlink" title="Styles:"></a>Styles:<a class="article-anchor" href="#Styles" aria-hidden="true"></a></h2><h3 id="common-styles" class="article-heading"><a href="#common-styles" class="headerlink" title="common styles"></a>common styles<a class="article-anchor" href="#common-styles" aria-hidden="true"></a></h3><p>Check out the <a href="../common-style.html">common styles</a></p>
+<h2 id="Events" class="article-heading"><a href="#Events" class="headerlink" title="Events"></a>Events<a class="article-anchor" href="#Events" aria-hidden="true"></a></h2><h3 id="common-events" class="article-heading"><a href="#common-events" class="headerlink" title="common events"></a>common events<a class="article-anchor" href="#common-events" aria-hidden="true"></a></h3><p>Check out the <a href="../common-event.html">common events</a></p>
+<h3 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h3><p>We can’t guarantee the order of execution between onclick function and href. we recommend that do not use the click event in <code>a</code>.</p>
+<h2 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">href</span>=<span class="string">"http://dotwe.org/raw/dist/3e0e40f9ddad79f98cd236753965ffd8.js"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>Jump<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.wrapper</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.button</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">150px</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#DDDDDD</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span></div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#666666</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/025db54e37123ab5336a4b848397660f" target="_blank" rel="external">try it</a></p>
+
+  </div>
+  
+</article>
+</div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/components/a.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/components/a.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+</div>
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

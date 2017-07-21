@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Component Definition | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Component DefinitionA component definition is a set of options to describe a component. It’s always assigned to module.exports in &amp;lt;script&amp;gt;. module.exports = &amp;#123;  // a set of options here&amp;#125">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Component Definition">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/references/component-defs.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Component DefinitionA component definition is a set of options to describe a component. It’s always assigned to module.exports in &amp;lt;script&amp;gt;. module.exports = &amp;#123;  // a set of options here&amp;#125">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Component Definition">
+<meta name="twitter:description" content="Component DefinitionA component definition is a set of options to describe a component. It’s always assigned to module.exports in &amp;lt;script&amp;gt;. module.exports = &amp;#123;  // a set of options here&amp;#125">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Invovled</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/component-defs.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/special-element.html" class="sidebar-link  ">Special Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/component-defs.html" class="sidebar-link current ">Component Definition</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/api.html" class="sidebar-link  ">Component APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-event.html" class="sidebar-link  ">Common Events</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/special-element.html" class="sidebar-link  ">Special Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/component-defs.html" class="sidebar-link current ">Component Definition</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/api.html" class="sidebar-link  ">Component APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-event.html" class="sidebar-link  ">Common Events</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Component Definition
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Component-Definition" class="article-heading"><a href="#Component-Definition" class="headerlink" title="Component Definition"></a>Component Definition<a class="article-anchor" href="#Component-Definition" aria-hidden="true"></a></h1><p>A component definition is a set of options to describe a component. It’s always assigned to <code>module.exports</code> in <code>&lt;script&gt;</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="comment">// a set of options here</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Data-amp-Methods-options" class="article-heading"><a href="#Data-amp-Methods-options" class="headerlink" title="Data &amp; Methods options"></a>Data &amp; Methods options<a class="article-anchor" href="#Data-amp-Methods-options" aria-hidden="true"></a></h2><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">doThis</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;...&#125;,</div><div class="line">    <span class="attr">doThat</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;...&#125;</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The <code>data</code> option is a function that return a observable data object for this ViewModel.<br>The <code>methods</code> option is a map which contains all ViewModel methods.</p>
+<p>Each <code>data</code> or <code>methods</code> property will be proxied to the ViewModel instance. So you can read and write data with <code>this.x</code>, also you can call methods with <code>this.doThis(...)</code>.</p>
+<p>A whole example:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: &#123;&#123;w&#125;&#125;; height: &#123;&#123;h&#125;&#125;; background-color: red;"</span> <span class="attr">onclick</span>=<span class="string">"update"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;<span class="attr">w</span>: <span class="number">750</span>, <span class="attr">h</span>: <span class="number">200</span>&#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.h += <span class="number">200</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Events-options" class="article-heading"><a href="#Events-options" class="headerlink" title="Events options"></a>Events options<a class="article-anchor" href="#Events-options" aria-hidden="true"></a></h2><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: ...,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      ...</div><div class="line">      this.$emit(<span class="string">'customtype1'</span>, data)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">events</span>: &#123;</div><div class="line">    <span class="attr">customtype1</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(e.type, e.detail)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The <code>events</code> options could allow you to add custom event listeners when ViewModel created. Then it will listen these type of events and handle them by the function-type value.</p>
+<p>The first argument is a event object which contains event data in <code>e.detail</code>.</p>
+<h2 id="Lifecycle-options" class="article-heading"><a href="#Lifecycle-options" class="headerlink" title="Lifecycle options"></a>Lifecycle options<a class="article-anchor" href="#Lifecycle-options" aria-hidden="true"></a></h2><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: ...,</div><div class="line">  <span class="attr">methods</span>: ...,</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'ViewModel constructor begins'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Data observation finished'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Virtual DOM finished'</span>)</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Weex ViewModel now supports these lifecycle hook functions which could be write as component options:</p>
+<ul>
+<li><code>init</code>: fired at the beginning of a ViewModel constructor call.</li>
+<li><code>created</code>: fired when ViewModel observes default data but not compile the template.</li>
+<li><code>ready</code>: fired when ViewModel observes default data and compiles the template to generate virtual DOM finally.</li>
+</ul>
+<p><strong>Note: If you want to use the function in <code>methods</code>, <code>events</code> or lifecycle options as a parameter, please make sure the context is correct as expect. For example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// `undefined`</span></div><div class="line">    <span class="comment">// because the context changed</span></div><div class="line">    <span class="keyword">this</span>.foo(<span class="keyword">this</span>.bar)</div><div class="line">    <span class="comment">// `1`</span></div><div class="line">    <span class="comment">// because the context bound correct</span></div><div class="line">    <span class="keyword">this</span>.foo(<span class="keyword">this</span>.bar.bind(<span class="keyword">this</span>))</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> fn()</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">bar</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.x</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+  </div>
+  
+</article>
+</div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/component-defs.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/component-defs.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+</div>
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

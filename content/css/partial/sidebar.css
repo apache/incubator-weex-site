@@ -1,0 +1,60 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+#sidebar {
+  display: none;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 90px 20px 10px;
+  background: #fff;
+  box-shadow: -3px 0 20px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+  #sidebar .sidebar-menu {
+    z-index: 999;
+    overflow-y: auto; }
+    #sidebar .sidebar-menu .btn-close-sidebar {
+      cursor: pointer;
+      display: block;
+      font-size: 1.5em;
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: transparent;
+      border: none; }
+      #sidebar .sidebar-menu .btn-close-sidebar:hover {
+        border: none;
+        color: #777; }
+  #sidebar .main-nav {
+    font-size: 1.3em;
+    border-bottom: 1px solid #DDDDDD;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #sidebar .main-nav li {
+      margin-bottom: 25px;
+      color: #333; }
+    #sidebar .main-nav a {
+      color: #333; }
+      #sidebar .main-nav a:hover {
+        border-bottom: 0.2em solid #00BDFF; }
+    #sidebar .main-nav .subnav {
+      font-size: .8em;
+      list-style: none;
+      padding-left: 20px; }
+  #sidebar .summary {
+    display: block;
+    margin-top: 20px; }
+  #sidebar .results-panel {
+    width: 300px;
+    left: -20px;
+    right: 0; }

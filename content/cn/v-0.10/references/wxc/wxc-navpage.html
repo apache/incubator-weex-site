@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;wxc-navpage&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;wxc-navpage&amp;gt; (v0.5+)&amp;lt;wxc-navpage&amp;gt; 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 navigator 模块控制页面的跳转，具体参考 navigator module。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Andr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<wxc-navpage>">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/wxc/wxc-navpage.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;wxc-navpage&amp;gt; (v0.5+)&amp;lt;wxc-navpage&amp;gt; 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 navigator 模块控制页面的跳转，具体参考 navigator module。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Andr">
+<meta property="og:image" content="https://weex.apache.org/cn/v-0.10/references/images/nav.jpg">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<wxc-navpage>">
+<meta name="twitter:description" content="&amp;lt;wxc-navpage&amp;gt; (v0.5+)&amp;lt;wxc-navpage&amp;gt; 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 navigator 模块控制页面的跳转，具体参考 navigator module。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Andr">
+<meta name="twitter:image" content="https://weex.apache.org/cn/v-0.10/references/images/nav.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/wxc/wxc-navpage.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link current ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link current ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;wxc-navpage&gt;
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="lt-wxc-navpage-gt-v0-5" class="article-heading"><a href="#lt-wxc-navpage-gt-v0-5" class="headerlink" title="&lt;wxc-navpage&gt; (v0.5+)"></a>&lt;wxc-navpage&gt; <sup>(v0.5+)</sup><a class="article-anchor" href="#lt-wxc-navpage-gt-v0-5" aria-hidden="true"></a></h1><p><code>&lt;wxc-navpage&gt;</code> 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 <code>navigator</code> 模块控制页面的跳转，具体参考 <a href="../modules/navigator.html"><code>navigator module</code></a>。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Android 的相关组件。在 H5 上，其实是相当于导航栏。</p>
+<p>用法：在 <code>script</code> 标签中通过一个 <code>require</code> 语句引入，即：<code>require(&#39;weex-components&#39;);</code></p>
+<p><strong>示例</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">wxc-navpage</span> <span class="attr">tab-items</span> = <span class="string">&#123;&#123;tabItems&#125;&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">wxc-navpage</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="comment">// more</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在 <code>require(&#39;weex-components&#39;);</code> 之前 ，需要在工程目录下执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install weex-components</div></pre></td></tr></table></figure>
+<h2 id="子组件" class="article-heading"><a href="#子组件" class="headerlink" title="子组件"></a>子组件<a class="article-anchor" href="#子组件" aria-hidden="true"></a></h2><p><code>&lt;wxc-navpage&gt;</code> 组件支持任意 Weex 组件。</p>
+<h2 id="特性" class="article-heading"><a href="#特性" class="headerlink" title="特性"></a>特性<a class="article-anchor" href="#特性" aria-hidden="true"></a></h2><p><code>&lt;wxc-navpage&gt;</code> 组件的特性其实是对 navbar 进行功能设置，如下图所示，是 navbar 的一个简单示意。</p>
+<p><img src="../images/nav.jpg" alt="mobile_preview"></p>
+<ul>
+<li><p><code>height {number}</code>：navbar 的高度，默认是 88。</p>
+</li>
+<li><p><code>background-color {color}</code>：navbar 的背景颜色，默认是白色。</p>
+</li>
+<li><p><code>title {string}</code>：navbar 的标题。</p>
+</li>
+<li><p><code>title-color {color}</code>：navbar 标题的颜色，默认黑色。</p>
+</li>
+<li><p><code>left-item-title {string}</code>：navbar 左侧按钮的标题。</p>
+</li>
+<li><p><code>left-item-color {color}</code>：navbar 左侧按钮标题颜色，默认黑色。</p>
+</li>
+<li><p><code>right-item-title {string}</code>：navbar 右侧按钮标题。</p>
+</li>
+<li><p><code>right-item-color {color}</code>：navbar 右侧按钮标题颜色，默认黑色。</p>
+</li>
+<li><p><code>left-item-src {string}</code>：navbar 左侧按钮的图标。</p>
+</li>
+<li><p><code>right-item-src {string}</code>：navbar 右侧按钮的图标。</p>
+</li>
+</ul>
+<h3 id="样式" class="article-heading"><a href="#样式" class="headerlink" title="样式"></a>样式<a class="article-anchor" href="#样式" aria-hidden="true"></a></h3><ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
+</li>
+</ul>
+<h2 id="事件" class="article-heading"><a href="#事件" class="headerlink" title="事件"></a>事件<a class="article-anchor" href="#事件" aria-hidden="true"></a></h2><p><code>&lt;wxc-navpage&gt;</code> 组件支持左右两项点击事件。</p>
+<ul>
+<li><code>naviBar.leftItem.click</code>: 当 navbar 的左侧按钮被点击时触发事件，需要在 <code>created</code> 时期注册事件。</li>
+<li><code>naviBar.rightItem.click</code>: 当 navbar 的右侧按钮被点击时触发事件，需要在 <code>created</code> 时期注册事件。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">wxc-navpage</span> <span class="attr">height</span>=<span class="string">&#123;&#123;...&#125;&#125;</span> <span class="attr">background-color</span>=<span class="string">"..."</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">title-color</span>=<span class="string">"..."</span> <span class="attr">left-item-title</span>=<span class="string">"..."</span> <span class="attr">left-item-color</span>=<span class="string">"..."</span> <span class="attr">right-item-src</span>=<span class="string">"..."</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">content</span>&gt;</span> ...<span class="tag">&lt;/<span class="name">content</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">wxc-navpage</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.$on(<span class="string">'naviBar.rightItem.click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="comment">//handle your click event here.</span></div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.$on(<span class="string">'naviBar.leftItem.click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="comment">//handle your click event here. </span></div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
+</li>
+</ul>
+<h2 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h2><p><strong>注意：</strong></p>
+<p><a href="http://dotwe.org" target="_blank" rel="external">dotwe</a> 平台暂不支持 <code>wxc-xxx</code> 类型的组件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">wxc-navpage</span> <span class="attr">data-role</span>=<span class="string">"none"</span> <span class="attr">height</span>=<span class="string">&#123;&#123;navBarHeight&#125;&#125;</span> <span class="attr">background-color</span>=<span class="string">"#ff5898"</span> <span class="attr">title</span>=<span class="string">&#123;&#123;title&#125;&#125;</span> <span class="attr">title-color</span>=<span class="string">"white"</span> <span class="attr">left-item-title</span>=<span class="string">"More"</span> <span class="attr">left-item-color</span>=<span class="string">"white"</span> <span class="attr">right-item-src</span>=<span class="string">"http://gtms02.alicdn.com/tps/i2/TB1ED7iMpXXXXXEXXXXWA_BHXXX-48-48.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">wxc-panel</span> <span class="attr">title</span>=<span class="string">"push a new page"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">wxc-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">value</span>=<span class="string">"push"</span> <span class="attr">onclick</span>=<span class="string">"push"</span>&gt;</span><span class="tag">&lt;/<span class="name">wxc-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">wxc-panel</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">wxc-panel</span> <span class="attr">title</span>=<span class="string">"pop to the last page"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">wxc-button</span> <span class="attr">type</span>=<span class="string">"success"</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">value</span>=<span class="string">"pop"</span> <span class="attr">onclick</span>=<span class="string">"pop"</span>&gt;</span><span class="tag">&lt;/<span class="name">wxc-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">wxc-panel</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">wxc-navpage</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">navBarHeight</span>: <span class="number">88</span>,</div><div class="line">      <span class="attr">title</span>: <span class="string">'Navigator'</span>,</div><div class="line">      <span class="attr">dir</span>: <span class="string">'examples'</span>,</div><div class="line">      <span class="attr">baseURL</span>: <span class="string">''</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.$getConfig(<span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> env = config.env;</div><div class="line">        <span class="keyword">if</span>(env.platform == <span class="string">'iOS'</span>)&#123;</div><div class="line">          <span class="keyword">var</span> scale = env.scale;</div><div class="line">          <span class="keyword">var</span> deviceWidth = env.deviceWidth / scale;</div><div class="line">          <span class="keyword">this</span>.navBarHeight = <span class="number">64.0</span> * <span class="number">750.0</span> / deviceWidth;</div><div class="line">        &#125;</div><div class="line">      &#125;.bind(<span class="keyword">this</span>));</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.$on(<span class="string">'naviBar.rightItem.click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        duration = <span class="number">2</span>;</div><div class="line">        <span class="keyword">this</span>.$call(<span class="string">'modal'</span>, <span class="string">'toast'</span>, &#123;</div><div class="line">          <span class="string">'message'</span>: <span class="string">'naviBar.rightItem.click'</span>,</div><div class="line">          <span class="string">'duration'</span>: duration</div><div class="line">          &#125;);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.$on(<span class="string">'naviBar.leftItem.click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        duration = <span class="number">2</span>;</div><div class="line">        <span class="keyword">this</span>.$call(<span class="string">'modal'</span>, <span class="string">'toast'</span>, &#123;</div><div class="line">          <span class="string">'message'</span>: <span class="string">'naviBar.leftItem.click'</span>,</div><div class="line">          <span class="string">'duration'</span>: duration</div><div class="line">          &#125;);</div><div class="line">      &#125;);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">push</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">var</span> params = &#123;</div><div class="line">          <span class="string">'url'</span>:  <span class="string">'http://dotwe.org/raw/dist/33dfcbe81979c60ba5de72c235d7d0f8.js'</span>,</div><div class="line">          <span class="string">'animated'</span> : <span class="string">'true'</span>,</div><div class="line">        &#125;</div><div class="line">        vm.$call(<span class="string">'navigator'</span>,<span class="string">'push'</span>,params, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</div><div class="line">      &#125;,</div><div class="line"></div><div class="line">      <span class="attr">pop</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">var</span> params = &#123;</div><div class="line">          <span class="string">'animated'</span> : <span class="string">'true'</span>,</div><div class="line">        &#125;</div><div class="line">        vm.$call(<span class="string">'navigator'</span>,<span class="string">'pop'</span>,params, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
+  </div>
+  
+</article>
+</div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/wxc/wxc-navpage.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+</div>
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

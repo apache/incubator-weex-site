@@ -1,0 +1,60 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+#footer {
+  width: 100%;
+  padding: 20px 65px;
+  margin: 0;
+  background: #fff;
+  border-top: 1px solid #DDDDDD; }
+  #footer a {
+    text-decoration: underline; }
+  #footer .ali-logo {
+    width: 83px;
+    height: 41px;
+    float: left; }
+    #footer .ali-logo img {
+      width: 100%; }
+  #footer .select-lang {
+    display: none;
+    width: 105px;
+    height: 25px;
+    line-height: 25px;
+    float: right; }
+  #footer .select-lang .dropdown-toggle {
+    color: #00293D;
+    border: 1px solid #999ba4; }
+  #footer .select-lang .dropdown-menu {
+    width: 105px;
+    border: 1px solid #999ba4; }
+  #footer .row {
+    font-size: 12px;
+    margin: 8px 0; }
+  #footer .row .icon-baichuan {
+    font-size: 14px;
+    color: #333; }
+  #footer .row .cell {
+    float: left;
+    color: #999;
+    margin: 0 20px 10px 0; }
+  #footer .caret {
+    display: inline-block;
+    margin-left: 2px;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #999ba4; }
+  #footer .disclaimer {
+    max-width: 800px;
+    line-height: 150%; }
+  #footer hr {
+    border: 0;
+    border-top: 1px solid #e6e6e6; }
+  #footer .disclaimer .title {
+    font-weight: bold;
+    margin-bottom: 10px; }

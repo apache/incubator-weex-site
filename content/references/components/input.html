@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;input&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<input>">
+<meta property="og:url" content="https://weex.apache.org/references/components/input.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+<meta property="og:updated_time" content="2017-07-19T07:24:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<input>">
+<meta name="twitter:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Invovled</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/input.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/input.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/migration/index.html" class="sidebar-link  ">Migration</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/migration/index.html" class="sidebar-link  ">Migration</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;input&gt;
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-07-19T07:24:53.000Z">Updated time: 19/07/2017</time>
+</header>
+    <h1 id="input" class="article-heading"><a href="#input" class="headerlink" title="input"></a>input<a class="article-anchor" href="#input" aria-hidden="true"></a></h1><p>The weex builtin component <code>input</code> is used to create input controls to receive the user’s input characters. How a <code>input</code> component works varies considerably depending on the value of its <code>type</code> attribute, such as <code>text</code>, <code>password</code>, <code>url</code>, <code>email</code>, <code>tel</code> etc.</p>
+<p><strong>Notes:</strong> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
+<h2 id="Child-Components" class="article-heading"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components<a class="article-anchor" href="#Child-Components" aria-hidden="true"></a></h2><p>This component supports no child components.</p>
+<h2 id="Attributes" class="article-heading"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes<a class="article-anchor" href="#Attributes" aria-hidden="true"></a></h2><ul>
+<li><p><code>type</code>: the type of controls to display. The default value is <code>text</code>, if this attribute is not specified. Possible values are <code>text</code>, <code>password</code>, <code>tel</code>, <code>email</code>, <code>url</code> , <code>number</code> etc. each of which has the same meaning with W3C standard.</p>
+</li>
+<li><p><code>value</code>: the value(text) of the control.</p>
+</li>
+<li><p><code>placeholder</code>: a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.</p>
+</li>
+<li><p><code>disabled</code>: a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.</p>
+</li>
+<li><p><code>autofocus</code>: a boolean attribute lets you specify that a form control should have input focus when the page loads.</p>
+</li>
+<li><p><code>maxlength</code>: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.</p>
+</li>
+<li><p><code>return-key-type {string}</code>：<sup class="wx-v">v0.11</sup>the keybord returen key type support defalut;go;next;search;send,done.</p>
+</li>
+</ul>
+<h2 id="Styles" class="article-heading"><a href="#Styles" class="headerlink" title="Styles"></a>Styles<a class="article-anchor" href="#Styles" aria-hidden="true"></a></h2><ul>
+<li><p>placeholder-color: the color of placeholder. Default value is ‘#999999’.</p>
+</li>
+<li><p>Pseudo-class<span class="api-version">v0.9.5+</span>: <code>input</code> component support the following pseudo-classes:</p>
+<ul>
+<li><code>active</code></li>
+<li><code>focus</code></li>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+</ul>
+</li>
+<li><p>text styles: checkout <a href="../text-style.html">text styles</a></p>
+<ul>
+<li>support ‘color’ style.</li>
+<li>support ‘font-size’ style.</li>
+<li>support ‘font-style’ style.</li>
+<li>support ‘font-weight’ style.</li>
+<li>support ‘text-align’ style.</li>
+</ul>
+</li>
+</ul>
+<h3 id="common-styles" class="article-heading"><a href="#common-styles" class="headerlink" title="common styles"></a>common styles<a class="article-anchor" href="#common-styles" aria-hidden="true"></a></h3><p>check out <a href="../common-style.html">common styles for components</a></p>
+<ul>
+<li>support flexbox related styles.</li>
+<li>support box model related styles.</li>
+<li>support ‘position’ related styles.</li>
+<li>support ‘opacity’, ‘background-color’ etc.</li>
+</ul>
+<h2 id="Events" class="article-heading"><a href="#Events" class="headerlink" title="Events"></a>Events<a class="article-anchor" href="#Events" aria-hidden="true"></a></h2><ul>
+<li>input: the value of an input character changes.</li>
+<li>change: the change event is fired when a change to the component’s value is commited by the user. It always come after a ‘blur’ event.</li>
+<li>focus: a component has received focus.</li>
+<li>blur: a component has lost focus.</li>
+<li><p><code>return</code>:the return key click.</p>
+<p>   the object property of event:</p>
+<ul>
+<li><code>returnKeyType</code>: return key Type  of component</li>
+<li><code>value</code>: component text value</li>
+</ul>
+</li>
+</ul>
+<h3 id="common-events" class="article-heading"><a href="#common-events" class="headerlink" title="common events"></a>common events<a class="article-anchor" href="#common-events" aria-hidden="true"></a></h3><p>check out <a href="../common-event.html">common events</a></p>
+<ul>
+<li>support ‘appear’ / ‘disappear’ event.</li>
+</ul>
+<h3 id="Methoads" class="article-heading"><a href="#Methoads" class="headerlink" title="Methoads"></a>Methoads<a class="article-anchor" href="#Methoads" aria-hidden="true"></a></h3><ul>
+<li><p><code>focus()</code> <span class="api-version">v0.9+</span></p>
+<p>The <code>focus()</code> method is used to give focus to an input component and tigger soft keybord(if it can be focused).</p>
+</li>
+<li><p><code>blur()</code><span class="api-version">v0.9+</span></p>
+<p>The <code>blur()</code> method is used to remove focus from an input component and close soft keybord(if it has focus).</p>
+</li>
+</ul>
+<ul>
+<li><p><code>setSelectionRange(selectionStart,selectionEnd)</code>  <span class="api-version">v0.11+</span>set text selection range of input or textarea</p>
+<ul>
+<li><code>selectionStart {number}</code>:set starting location text selection range</li>
+<li><code>selectionEnd {number}</code>:set end location text selection range</li>
+</ul>
+</li>
+<li><p><code>getEditSelectionRange(callback[selectionStart,selectionEnd])</code>  <span class="api-version">v0.11+</span>get text selection range of input or textarea</p>
+<ul>
+<li><code>selectionStart {number}</code>:get starting location text selection range</li>
+<li><code>selectionEnd {number}</code>: get end location text selection range</li>
+</ul>
+</li>
+</ul>
+<h3 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h3><p>does not support the common-event ‘click’. Please listen to the ‘input’ or ‘change’ event instead.</p>
+<h3 id="Parameters-of-events’-object" class="article-heading"><a href="#Parameters-of-events’-object" class="headerlink" title="Parameters of events’ object"></a>Parameters of events’ object<a class="article-anchor" href="#Parameters-of-events’-object" aria-hidden="true"></a></h3><ul>
+<li>for ‘input’ and ‘change’ events:’value’: the value of the component who dispatched this event.’timestamp’: the time stamp of the event.</li>
+<li>for ‘focus’ and ‘blur’ events:’timestamp’: the time stamp of the event.</li>
+</ul>
+<h2 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>onreturntype: &#123;&#123;txtReturnType&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>selection: &#123;&#123;txtSelection&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">scroller</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = text<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"Input Text"</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">:autofocus</span>=<span class="string">true</span> <span class="attr">value</span>=<span class="string">""</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = password<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"Input Password"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = url<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">placeholder</span>=<span class="string">"Input URL"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = email<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"Input Email"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = tel<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">placeholder</span>=<span class="string">"Input Tel"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = time<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">placeholder</span>=<span class="string">"Input Time"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = number<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">placeholder</span>=<span class="string">"Input number"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = date<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">placeholder</span>=<span class="string">"Input Date"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> <span class="attr">max</span>=<span class="string">"2017-12-12"</span> <span class="attr">min</span>=<span class="string">"2015-01-01"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = default<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"default"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = go<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"go"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = next<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"next"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = search<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"search"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = send<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"send"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = done<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"done"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>function focus() &amp; blur()<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;margin-bottom: 16px;justify-content: space-between"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Focus"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"focus"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Blur"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"blur"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"Input1"</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">ref</span>=<span class="string">"input1"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input selection<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;margin-bottom: 16px;justify-content: space-between"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"setRange"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"setRange"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"getSelectionRange"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"getSelectionRange"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>  <span class="attr">ref</span>=<span class="string">"inputselection"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">value</span>=<span class="string">"123456789"</span>  <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">750px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.button</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">36</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#41B883</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">10</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">10</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">margin-right</span>: <span class="number">20</span>;</div><div class="line">    <span class="attribute">border-color</span>: <span class="built_in">rgb</span>(162, 217, 192);</div><div class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(162, 217, 192, 0.2);</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">txtChange</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">txtReturnType</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">txtSelection</span>:<span class="string">''</span>,</div><div class="line">        <span class="attr">autofocus</span>: <span class="literal">false</span></div><div class="line">      &#125;;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          self.autofocus = <span class="literal">true</span>;</div><div class="line">        &#125;, <span class="number">1000</span>);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onreturn</span>: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtReturnType = event.returnKeyType;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onreturn'</span>, event.type);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">focus</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.$refs[<span class="string">'input1'</span>].focus();</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">blur</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.$refs[<span class="string">'input1'</span>].blur();</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">setRange</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs[<span class="string">"inputselection"</span>]);</div><div class="line">        <span class="keyword">this</span>.$refs[<span class="string">"inputselection"</span>].setSelectionRange(<span class="number">2</span>, <span class="number">6</span>);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">getSelectionRange</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs[<span class="string">"inputselection"</span>]);</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">this</span>.$refs[<span class="string">"inputselection"</span>].getSelectionRange(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">          self.txtSelection = e.selectionStart +<span class="string">'-'</span> + e.selectionEnd;</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/3470e4d0194f3879a72d38e2ab02cc9f" target="_blank" rel="external">try it</a></p>
+
+  </div>
+  
+</article>
+</div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/components/input.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/components/input.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+</div>
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

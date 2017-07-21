@@ -1,0 +1,71 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.article-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 120px 0 0;
+  min-height: 80%;
+  min-height: calc(100% - 160px); }
+  .article-wrapper.post-layout {
+    max-width: 900px; }
+  .article-wrapper.page-layout {
+    max-width: 1200px; }
+  .article-wrapper .article-entry {
+    padding: 0 1.45em; }
+    .article-wrapper .article-entry > h1 {
+      display: none; }
+  .article-wrapper .article-heading {
+    margin-top: -85px;
+    border-top: 85px solid transparent; }
+  .article-wrapper .article-anchor {
+    margin-left: 10px;
+    display: none; }
+  .article-wrapper .article-anchor:before {
+    content: "#";
+    color: #00BDFF; }
+  @media print {
+    .article-wrapper .article-anchor {
+      display: none !important; } }
+  .article-wrapper .article-heading:hover .article-anchor {
+    display: inline-block;
+    color: #00BDFF; }
+  .article-wrapper .doc-nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    bottom: 0;
+    background: #fafafa;
+    width: 300px;
+    z-index: 999;
+    padding: 43px 15px 15px;
+    overflow-x: hidden;
+    overflow-y: auto; }
+  .article-wrapper .doc-nav-version {
+    margin: 20px 0; }
+  .article-wrapper .article-nav {
+    margin: 30px 0 100px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .article-wrapper .article-nav .article-nav-link {
+      display: block;
+      padding: .2em 1em;
+      border-radius: 5px; }
+      .article-wrapper .article-nav .article-nav-link + .article-nav-link {
+        margin-left: 40px; }
+      .article-wrapper .article-nav .article-nav-link.enable {
+        background: #00BDFF;
+        color: #fff; }
+      .article-wrapper .article-nav .article-nav-link.disable {
+        background: #ddd;
+        color: #ccc; }

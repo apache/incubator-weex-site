@@ -1,0 +1,95 @@
+.example-wrapper {
+  width: 1120px;
+  margin: 100px auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .example-wrapper .horizontal {
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 20px;
+    position: relative;
+    max-width: 620px;
+    height: 600px; }
+  .example-wrapper .highlight {
+    height: 580px;
+    overflow-y: auto; }
+  .example-wrapper .phone {
+    -webkit-flex: 0 0 300px;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px; }
+  .example-wrapper .mock-phone {
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    z-index: 25;
+    width: 297px;
+    height: 590px;
+    border: 2px solid #0088fb;
+    border-radius: 30px; }
+  .example-wrapper .camera {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    background: #afddff;
+    border: 1px solid #0088fb;
+    top: 23px;
+    left: 94px; }
+  .example-wrapper .earpiece {
+    position: absolute;
+    width: 70px;
+    height: 8px;
+    border-radius: 8px;
+    background: #afddff;
+    border: 1px solid #0088fb;
+    top: 26px;
+    left: 124px; }
+  .example-wrapper .home-btn {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 56px;
+    background: #afddff;
+    border: 1px solid #0088fb;
+    bottom: 14px;
+    left: 50%;
+    margin-left: -28px; }
+  .example-wrapper .inner {
+    position: absolute;
+    top: 60px;
+    z-index: 26;
+    left: 12px;
+    width: 267px;
+    height: 441px;
+    overflow: hidden;
+    border: 1px solid #0088fb; }
+  .example-wrapper iframe {
+    margin: 0;
+    width: 750px;
+    height: 1248px;
+    background: #fff;
+    -webkit-transform: scaleY(0.35333);
+        -ms-transform: scaleY(0.35333);
+            transform: scaleY(0.35333);
+    -webkit-transform: scale(0.35333, 0.35333);
+        -ms-transform: scale(0.35333, 0.35333);
+            transform: scale(0.35333, 0.35333);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left; }
+  .example-wrapper .qrcode {
+    -webkit-flex: 0 0 150px;
+        -ms-flex: 0 0 150px;
+            flex: 0 0 150px; }
+    .example-wrapper .qrcode p {
+      text-align: center;
+      margin: 1em 0; }
+  .example-wrapper #qrcode-img {
+    padding: 0;
+    width: 150px;
+    height: 150px; }

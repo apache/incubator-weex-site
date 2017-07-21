@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Common Style | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Common StyleAll of weex tags share some common style rules Box Model Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Common Style">
+<meta property="og:url" content="https://weex.apache.org/references/common-style.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Common StyleAll of weex tags share some common style rules Box Model Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
+<meta property="og:image" content="https://weex.apache.org/references/images/css-boxmodel.png">
+<meta property="og:image" content="https://weex.apache.org/references/images/css-flexbox-justify.svg">
+<meta property="og:image" content="https://weex.apache.org/references/images/css-flexbox-align.jpg">
+<meta property="og:image" content="https://weex.apache.org/references/images/css-flexbox-sample.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Common Style">
+<meta name="twitter:description" content="Common StyleAll of weex tags share some common style rules Box Model Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
+<meta name="twitter:image" content="https://weex.apache.org/references/images/css-boxmodel.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Invovled</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/common-style.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/common-style.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link current ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/migration/index.html" class="sidebar-link  ">Migration</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link current ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/migration/index.html" class="sidebar-link  ">Migration</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Common Style
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Common-Style" class="article-heading"><a href="#Common-Style" class="headerlink" title="Common Style"></a>Common Style<a class="article-anchor" href="#Common-Style" aria-hidden="true"></a></h1><p>All of weex tags share some common style rules</p>
+<h2 id="Box-Model" class="article-heading"><a href="#Box-Model" class="headerlink" title="Box Model"></a>Box Model<a class="article-anchor" href="#Box-Model" aria-hidden="true"></a></h2><p><img src="./images/css-boxmodel.png" alt="box model"></p>
+<p>Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.</p>
+<p>you can use the definition below in weex box model.</p>
+<ul>
+<li><code>width</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>height</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding</code>: <code>length</code> type, default value <code>0</code>, (space around content, between element content and the element border)<ul>
+<li><code>padding-left</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-right</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-top</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-bottom</code>: <code>length</code> type, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>margin</code>: <code>length</code> type, default value <code>0</code>, (space around elements, outside the border)<ul>
+<li><code>margin-left</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-right</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-top</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-bottom</code>: <code>length</code> type, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>border</code><ul>
+<li><code>border-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code><ul>
+<li><code>border-left-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-top-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-right-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-bottom-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+</ul>
+</li>
+<li><code>border-width</code>: <code>length</code> type, non-negative, default value <code>0</code><ul>
+<li><code>border-left-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-right-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-bottom-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>border-color</code>: <code>color</code> type, default value <code>#000000</code><ul>
+<li><code>border-left-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-top-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-right-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-bottom-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+</ul>
+</li>
+<li><code>border-radius</code>: <code>length</code> type, default value <code>0</code>, (rounded borders to elements , default value is 0 meaning right angle )<ul>
+<li><code>border-bottom-left-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-bottom-right-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-left-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-right-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h3><p>Weex box model uses <code>border-box</code> as the default value of <code>box-sizing</code>, meaning the width and height properties includes content, padding and border, but not the margin.</p>
+<p>The rule of border-radius for a specific corner such as <code>border-top-left-radius</code> is not currently supported for component <code>&lt;image&gt;</code>in iOS. This only happens to iOS, it works fine on Android.</p>
+<p>Although <code>overflow:hidden</code> is default on android, a view <strong>will not</strong> clip its children according to <code>border-radius</code> unless all the following condtions met. This only happens on Android, it works fine on iOS.</p>
+<ul>
+<li>The view type is <code>div</code>, <code>a</code>, <code>cell</code>, <code>refresh</code> or <code>loading</code>.</li>
+<li>OS version is Android 4.3 or higher.</li>
+<li>OS version is <strong>not</strong> Andorid 7.0</li>
+<li>A view <strong>does not</strong> have <code>background-image</code> property nor OS version is Android 5.0 or higher.</li>
+</ul>
+<h3 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"width: 400; height: 200; margin-left: 20;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Flexbox" class="article-heading"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox<a class="article-anchor" href="#Flexbox" aria-hidden="true"></a></h2><p>Weex box style model based on the CSS flexbox, ensures that elements behave predictably and the page layout can accommodates to different screen sizes and different display devices.</p>
+<p>Flexbox consists of flex containers and flex items. If a weex element can containing other elements, it is a flex container.</p>
+<p>Notice that the old version of flexbox specification has differences with the new ones, such as whether or not to support wrapping. This is described at w3c’s working drafts, and you should notice the differences among them. Also notice that the old version is only supported below the 4.4 version of android.</p>
+<h3 id="Flex-container" class="article-heading"><a href="#Flex-container" class="headerlink" title="Flex container"></a>Flex container<a class="article-anchor" href="#Flex-container" aria-hidden="true"></a></h3><p>Flexbox is the default and only style model in Weex, so you don’t have to add <code>display: flex;</code> in a container.</p>
+<ul>
+<li><code>flex-direction</code>: values <code>row</code> | <code>column</code>, default value <code>column</code></li>
+</ul>
+<p>The flex-direction property specifies the direction of the flexible items inside the flex container. Default value is <code>column</code> (top-to-bottom).</p>
+<ul>
+<li><code>justify-content</code>: values <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code>, default value <code>flex-start</code></li>
+</ul>
+<p>The justify-content property horizontally aligns the flexible container’s items when the items do not use all available space on the main-axis. Default value is <code>flex-start</code> meaning the flex items are positioned at the beginning of the container. <code>flex-end</code> means the items are positioned at the end of the container. <code>center</code> means the items are positioned at the center of the container. <code>space-between</code> means the items are positioned with space between the lines.</p>
+<p><img src="./images/css-flexbox-justify.svg" alt="justify-content"></p>
+<ul>
+<li><code>align-items</code>: values <code>stretch</code> | <code>flex-start</code> | <code>center</code> | <code>flex-end</code>, default value <code>stretch</code></li>
+</ul>
+<p>The align-items property vertically aligns the flexible container’s items when the items do not use all available space on the cross-axis. Default value is <code>stretch</code> meaning the items are stretched to fit the container. <code>flex-start</code> means the items are positioned at the top of the container; <code>flex-end</code> means the items are positioned at the bottom of the container; <code>center</code> means items are positioned at the center of the container (vertically).</p>
+<p><img src="./images/css-flexbox-align.jpg" alt="align-items"></p>
+<h3 id="Flex-item" class="article-heading"><a href="#Flex-item" class="headerlink" title="Flex item"></a>Flex item<a class="article-anchor" href="#Flex-item" aria-hidden="true"></a></h3><ul>
+<li><code>flex</code>: <code>number</code> type, default value <code>0</code></li>
+</ul>
+<p>the flex property specifies the length of the flex item, relative to the rest of the flex items inside the same container.  If all of the flex items set <code>flex: 1</code>, they will have equal width or height on direction of flex container’s <code>flex-direction</code>. If there are two flex items, with one setting <code>flex: 1</code>, and the other setting <code>flex: 2</code>, the first one will take 1/3 container space, and the second one will take 2/3 container space. If all of flex items don’t set <code>flex</code>, they will be aligned depending on the container’s <code>justify-content</code> property.</p>
+<h2 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h2><p>a list of images with equal scales align at the vertical axis:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 300; height: 100;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>a image with fixed width aligns with a stretched text:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 300; height: 100;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"width: 100; height: 100;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>mixed direction alignment:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"width: 100; height: 100;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"flex: 2; font-size: 32;"</span>&gt;</span>title<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"flex: 1; font-size: 16;"</span>&gt;</span>$100<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>one text align left , the other float right:</p>
+<p><img src="./images/css-flexbox-sample.png" alt="one text align left , the other float right"></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row; justify-content: space-between;"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">text</span>&gt;</span>WEEX<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">text</span>&gt;</span>2016-05-08<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Position" class="article-heading"><a href="#Position" class="headerlink" title="Position"></a>Position<a class="article-anchor" href="#Position" aria-hidden="true"></a></h2><p>we can use properties below to control placement of weex tag</p>
+<ul>
+<li><code>position</code>: values <code>relative</code> | <code>absolute</code> | <code>fixed</code> | <code>sticky</code>, default value <code>relative</code></li>
+</ul>
+<p><code>relative</code> means the item is positioned relative to its normal position. <code>absolute</code> means the item is positioned relative to its container. <code>fixed</code> keeps the elements position fixed when the page is scrolling. <code>sticky</code> keeps elements positioned inside the viewport as “stuck” at the top or “relative” at its original place depending on whether does it about to scroll out of the view.</p>
+<ul>
+<li><code>top</code>: <code>number</code> type, default value <code>0</code>, upward offset value</li>
+<li><code>bottom</code>: <code>number</code> type, default value <code>0</code>, downward offset value</li>
+<li><code>left</code>: <code>number</code> type, default value <code>0</code>, leftward offset value</li>
+<li><code>right</code>: <code>number</code> type, default value <code>0</code>, rightward offset value</li>
+</ul>
+<h3 id="Examples-1" class="article-heading"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples-1" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 3000;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"top: 50px; left: 50px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 3000;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"position: sticky;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 3000;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 50px; left: 50px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="transform" class="article-heading"><a href="#transform" class="headerlink" title="transform"></a>transform<a class="article-anchor" href="#transform" aria-hidden="true"></a></h2><p>The CSS <strong>transform</strong> property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated and scaled.</p>
+<p>Currently supported format:</p>
+<ul>
+<li>translate( <number percentage=""> [, <number percentage="">]?)</number></number></li>
+<li>translateX( <number percentage=""> )</number></li>
+<li>translateY( <number percentage=""> )</number></li>
+<li>scale( <number>)</number></li>
+<li>scaleX( <number> )</number></li>
+<li>scaleY( <number> )</number></li>
+<li>rotate( <angle degree=""> )</angle></li>
+<li>transform-origin: number/percentage/keyword(top/left/right/bottom)</li>
+</ul>
+<h3 id="Example-1" class="article-heading"><a href="#Example-1" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example-1" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"transform"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Transformed element<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.transform</span> &#123;</div><div class="line">    <span class="attribute">align-items</span>: center; </div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(150px,200px) <span class="built_in">rotate</span>(20deg);</div><div class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> -<span class="number">250px</span>;</div><div class="line">    <span class="attribute">border-color</span>:red;</div><div class="line">    <span class="attribute">border-width</span>:<span class="number">2px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123;<span class="attribute">font-size</span>: <span class="number">48px</span>;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Pseudo-class-v0-9-5" class="article-heading"><a href="#Pseudo-class-v0-9-5" class="headerlink" title="Pseudo class v0.9.5+"></a>Pseudo class <span class="api-version">v0.9.5+</span><a class="article-anchor" href="#Pseudo-class-v0-9-5" aria-hidden="true"></a></h2><p>Weex support four pseudo-classes: <code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled</code></p>
+<p>All components support <code>active</code>, but only the input component and the textarea component support <code>focus</code>, <code>enabled</code>, <code>diabled</code>.</p>
+<h3 id="Rule" class="article-heading"><a href="#Rule" class="headerlink" title="Rule"></a>Rule<a class="article-anchor" href="#Rule" aria-hidden="true"></a></h3><ul>
+<li><p>the high priority override low priority when rules take effect at the same time</p>
+<ul>
+<li>such as: “input:active:enabled” will override “input:active”</li>
+</ul>
+</li>
+<li><p>the interconnection rule as follow</p>
+<p><img src="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png" alt="rule"></p>
+</li>
+</ul>
+<h3 id="Example-2" class="article-heading"><a href="#Example-2" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example-2" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">:src</span>=<span class="string">"logoUrl"</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.wrapper</span> &#123;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">120px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">48px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.logo</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">360px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">82px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.logo</span><span class="selector-pseudo">:active</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">180px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">82px</span>;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    <span class="attr">props</span>: &#123;</div><div class="line">      <span class="attr">logoUrl</span>: &#123;</div><div class="line">        <span class="attr">default</span>: <span class="string">'https://alibaba.github.io/weex/img/weex_logo_blue@3x.png'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">target</span>: &#123;</div><div class="line">        <span class="attr">default</span>: <span class="string">'World'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      update (e) &#123;</div><div class="line">        <span class="keyword">this</span>.target = <span class="string">'Weex'</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/df2c8f254620d6d30d0906ee75fe5b99" target="_blank" rel="external">Try it</a></p>
+<h2 id="linear-gradient-v0-10" class="article-heading"><a href="#linear-gradient-v0-10" class="headerlink" title="linear-gradient v0.10+"></a>linear-gradient <span class="api-version">v0.10+</span><a class="article-anchor" href="#linear-gradient-v0-10" aria-hidden="true"></a></h2><p>Weex support linear-gradient background, You can see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients" target="_blank" rel="external">W3C description of the gradient</a>.</p>
+<h3 id="Supported-components" class="article-heading"><a href="#Supported-components" class="headerlink" title="Supported components"></a>Supported components<a class="article-anchor" href="#Supported-components" aria-hidden="true"></a></h3><p>All components in Weex support gradients</p>
+<h3 id="Usage" class="article-heading"><a href="#Usage" class="headerlink" title="Usage"></a>Usage<a class="article-anchor" href="#Usage" aria-hidden="true"></a></h3><p>You can use linear gradient by <code>background-image</code> property.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>,<span class="selector-id">#a80077</span>,<span class="selector-id">#66ff00</span>);</div></pre></td></tr></table></figure>
+<p><code>radial-gradient</code> is not currently supported, do not use it.</p>
+<p>Weex currently supports two color gradients. The direction of the gradient is as follows:</p>
+<ul>
+<li>to right<br>From left to right</li>
+<li>to left<br>From right to left</li>
+<li>to bottom<br>From top to bottom</li>
+<li>to top<br>From bottom to top</li>
+<li>to bottom right<br>From the upper left corner to the lower right corner</li>
+<li>to top left<br>From the lower right corner to the upper left corner</li>
+</ul>
+<h3 id="Note" class="article-heading"><a href="#Note" class="headerlink" title="Note"></a>Note<a class="article-anchor" href="#Note" aria-hidden="true"></a></h3><ul>
+<li><code>background-image</code> and <code>background-color</code> are set at the same time, <code>background-image</code> precedes <code>background-color</code>.</li>
+<li>Do not use shorthand property such as <code>background</code>.</li>
+</ul>
+<h3 id="Example-3" class="article-heading"><a href="#Example-3" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example-3" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">style</span>=<span class="string">"background-color: #3a3a3a"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to right,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to left,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to bottom,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to bottom<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to top,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;align-items: center;justify-content: center"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container2"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to bottom right,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to bottom right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container2"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to top left,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to top left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.container1</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">730px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border</span>: solid;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="selector-class">.container2</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border</span>: solid;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="selector-class">.direction</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="box-shadow-v0-11" class="article-heading"><a href="#box-shadow-v0-11" class="headerlink" title="box-shadow v0.11+"></a>box-shadow <span class="api-version">v0.11+</span><a class="article-anchor" href="#box-shadow-v0-11" aria-hidden="true"></a></h2><p>Weex supports box-shadow in iOS： <code>inset</code>,<code>offset-x</code>,<code>offset-y</code>, <code>blur-radius</code>,<code>color</code></p>
+<h3 id="Note-1" class="article-heading"><a href="#Note-1" class="headerlink" title="Note"></a>Note<a class="article-anchor" href="#Note-1" aria-hidden="true"></a></h3><ul>
+<li>box-shadow takes effect in iOS</li>
+</ul>
+<h3 id="Example-4" class="article-heading"><a href="#Example-4" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example-4" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px rgb(255, 69, 0);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello &#123;&#123;target&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow: 20px  10px 5px rgba(255, 69, 0, 0.8);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello &#123;&#123;target&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgba(255, 69, 0, 0.8);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello &#123;&#123;target&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgb(255, 69, 0);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello &#123;&#123;target&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px black;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello &#123;&#123;target&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px #008B00;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello &#123;&#123;target&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.wrapper</span> &#123;<span class="attribute">align-items</span>: center; <span class="attribute">margin-top</span>: <span class="number">120px</span>;&#125;</div><div class="line">  <span class="selector-class">.title</span> &#123;<span class="attribute">font-size</span>: <span class="number">48px</span>;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">logoUrl</span>: <span class="string">'https://alibaba.github.io/weex/img/weex_logo_blue@3x.png'</span>,</div><div class="line">        <span class="attr">target</span>: <span class="string">'World'</span></div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Other-Common-Style" class="article-heading"><a href="#Other-Common-Style" class="headerlink" title="Other Common Style"></a>Other Common Style<a class="article-anchor" href="#Other-Common-Style" aria-hidden="true"></a></h2><ul>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<h2 id="Type-of-Style-Value" class="article-heading"><a href="#Type-of-Style-Value" class="headerlink" title="Type of Style Value"></a>Type of Style Value<a class="article-anchor" href="#Type-of-Style-Value" aria-hidden="true"></a></h2><ul>
+<li><code>length</code> type</li>
+<li><code>number</code> type</li>
+<li><code>color</code> type (<em><a href="./color-names.html">The list of color keywords.</a></em>)</li>
+<li>enumerated type</li>
+</ul>
+<h2 id="Simple-Step" class="article-heading"><a href="#Simple-Step" class="headerlink" title="Simple Step"></a>Simple Step<a class="article-anchor" href="#Simple-Step" aria-hidden="true"></a></h2><p>These up-to-down steps may help you to plan the whole style of weex pages.</p>
+<ol>
+<li>overall style: divide the whole page to different parts</li>
+<li>flex alignment: align boxes in every part of page</li>
+<li>position box: place box, set offset</li>
+<li>element specific style: set styles for certain element if needed</li>
+</ol>
+
+  </div>
+  
+</article>
+</div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/common-style.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/common-style.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+</div>
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>
