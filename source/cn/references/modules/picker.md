@@ -1,7 +1,8 @@
 ---
 title: picker
 type: references
-order: 3.11
+group: 内置模块
+order: 9.10
 version: 2.1
 ---
 

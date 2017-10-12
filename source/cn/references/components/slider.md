@@ -1,7 +1,8 @@
 ---
 title: <slider>
 type: references
-order: 2.11
+group: 内置组件
+order: 8.13
 version: 2.1
 ---
 
@@ -43,9 +44,9 @@ version: 2.1
 
   事件中 event 对象属性：
   - `index`：展示的图片索引
-  - `scroll` <sup class="wx-v">0.11+</sup>: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性`offset-accuracy`设置抽样率。    
+  - `scroll` <sup class="wx-v">0.11+</sup>: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性`offset-accuracy`设置抽样率。
   [体验一下](http://dotwe.org/vue/832e8f50cc325975b9d3aba93a9f6c39)
-  事件中 event 对象属性：  
+  事件中 event 对象属性：
   - `offsetXRatio {number}`：表示当前页面的偏移比例，取值范围为[-1, 1]，负值表示向左侧滚动，正值向右。例如，`-0.2`表示当前item有20%的区域被滚动到slider左侧边界以外，`0.3`表示当前item有30%的区域被滚动到slider右侧边界以外。
 
 

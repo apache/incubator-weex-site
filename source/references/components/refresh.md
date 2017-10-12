@@ -1,7 +1,8 @@
 ---
 title: <refresh> & <loading>
 type: references
-order: 2.7
+group: Build-in Components
+order: 8.08
 version: 2.1
 ---
 
@@ -138,7 +139,7 @@ common styles: check out [common styles for components](../common-style.html)
  ```
   dy: the differencen between two scroll actions
   pullingDistance: the distance of pulling
-  viewHeight: the height of refreshView 
+  viewHeight: the height of refreshView
   type: "pullingdown" constant string type for this event
  ```
 

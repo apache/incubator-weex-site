@@ -1,7 +1,8 @@
 ---
 title: globalEvent
 type: references
-order: 3.9
+group: 内置模块
+order: 9.13
 version: 2.1
 ---
 
@@ -21,7 +22,7 @@ API 开发完成后，当需要发送事件时，需要通过以下方法：
 
 ```javascript
 /**
-  * 
+  *
   * @param eventName eventName
   * @param params event params
   */
@@ -48,7 +49,7 @@ mWXSDKInstance.fireGlobalEventCallback("geolocation",params);
 
 ### iOS
 
-```object-c 
+```object-c
 [weexInstance fireGlobalEvent:@"geolocation" params:@{@"key":@"value"}];
 ```
 

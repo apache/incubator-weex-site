@@ -1,7 +1,8 @@
 ---
 title: <text>
 type: references
-order: 2.13
+group: 内置组件
+order: 8.02
 version: 2.1
 ---
 
@@ -58,7 +59,7 @@ version: 2.1
 
 1. `<text>` 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。
 
-## iconfont 
+## iconfont
 
 `支持版本:v0.12.0`
 

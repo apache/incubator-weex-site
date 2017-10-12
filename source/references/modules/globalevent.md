@@ -1,7 +1,8 @@
 ---
 title: globalEvent
 type: references
-order: 3.10
+group: Build-in Modules
+order: 9.13
 version: 2.1
 ---
 
@@ -14,15 +15,15 @@ version: 2.1
 
 You can register events via `addEventListener`, which can be removed by `removeEventListener` when you do not need to listen for `globalEvent`.
 
-*AUCTION* 
-- Only instance level is not application level . 
+*AUCTION*
+- Only instance level is not application level .
 
 ## How to make your Module support global events
 API development is complete, when the event needs to be sent, the need through the following methods:
 
 ```javascript
 /**
-  * 
+  *
   * @param eventName eventName
   * @param params event params
   */
@@ -60,8 +61,8 @@ register global event.
 
 #### Arguments
 
-* `eventName`*(string)*: The name of the event you want to listen to.  
-* `callback`*(function)*: the callback function after executing this action.  
+* `eventName`*(string)*: The name of the event you want to listen to.
+* `callback`*(function)*: the callback function after executing this action.
 
 #### Example
 
@@ -74,7 +75,7 @@ globalEvent.addEventListener("geolocation", function (e) {
 
 ### removeEventListener(String eventName)
 
-remove global event 
+remove global event
 
 #### Arguments
 

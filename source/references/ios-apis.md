@@ -1,7 +1,8 @@
 ---
-title: iOS APIs  
+title: iOS APIs
 type: references
-order: 1.1
+group: API
+order: 2.3
 version: 2.1
 ---
 
@@ -28,7 +29,7 @@ version: 2.1
     *              finished : a Boolean value indicating whether download action has finished.
     */
   - (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;
-  @end 
+  @end
   ```
 
 ## Native interacts with JavaScript
@@ -39,7 +40,7 @@ version: 2.1
 
   ```object-c
   /**
-    * @abstract Fire an event to the component and tell Javascript which value has been changed. 
+    * @abstract Fire an event to the component and tell Javascript which value has been changed.
     * @param eventName
     * @param params
     * @param domChanges

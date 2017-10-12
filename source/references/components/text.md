@@ -1,7 +1,8 @@
 ---
 title: <text>
 type: references
-order: 2.12
+group: Build-in Components
+order: 8.02
 version: 2.1
 ---
 
@@ -15,7 +16,7 @@ This component supports no child components.
 
 ## Attributes
 
-* value(string): text value of this component. This is equal to the content of 'text'. 
+* value(string): text value of this component. This is equal to the content of 'text'.
 
 ### example
 
@@ -53,7 +54,7 @@ check out [common styles for components](../common-style.html)
 check out [common events](../common-event.html)
 
 * support 'click' event.
-* support 'appear' / 'disappear' event. 
+* support 'appear' / 'disappear' event.
 
 ## iconfont
 

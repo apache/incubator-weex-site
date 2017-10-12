@@ -1,7 +1,8 @@
 ---
-title: 搭建开发环境 
+title: 搭建开发环境
 type: guide
-order: 1.1
+group: 开发
+order: 5.1
 version: 2.1
 has_chapter_content: true
 ---
@@ -91,7 +92,7 @@ $ weex create awesome-project
 
 我们先通过 `npm install` 安装项目依赖。之后运行根目录下的 `npm run dev & npm run serve` 开启  watch 模式和静态服务器。
 
-然后我们打开浏览器，进入 `http://localhost:8080/index.html` 即可看到 weex h5 页面。 
+然后我们打开浏览器，进入 `http://localhost:8080/index.html` 即可看到 weex h5 页面。
 
 初始化时已经为我们创建了基本的示例，我们可以在 `src/index.vue` 中查看。
 

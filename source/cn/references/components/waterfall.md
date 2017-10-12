@@ -1,7 +1,8 @@
 ---
 title: <waterfall>
 type: references
-order: 2.5
+group: 内置组件
+order: 8.17
 version: 2.1
 ---
 

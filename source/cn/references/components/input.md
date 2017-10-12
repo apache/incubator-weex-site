@@ -1,7 +1,8 @@
 ---
 title: <input>
 type: references
-order: 2.5
+group: 内置组件
+order: 8.10
 version: 2.1
 ---
 

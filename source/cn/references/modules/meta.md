@@ -1,7 +1,8 @@
 ---
 title: meta
 type: references
-order: 3.12
+group: 内置模块
+order: 9.06
 version: 2.1
 ---
 
@@ -41,11 +42,11 @@ import App from './app.vue'
 const meta = weex.requireModule('meta')
 
 // 配置 viewport 的宽度为 640px
-meta.setViewport({  
+meta.setViewport({
   width: 640
 })
 
-App.el = '#root'  
+App.el = '#root'
 new Vue(App)
 ```
 

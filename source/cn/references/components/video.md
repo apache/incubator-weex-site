@@ -1,7 +1,8 @@
 ---
 title: <video>
 type: references
-order: 2.15
+group: 内置组件
+order: 8.15
 version: 2.1
 ---
 

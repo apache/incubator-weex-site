@@ -1,7 +1,8 @@
 ---
 title: navigator
 type: references
-order: 3.5
+group: 内置模块
+order: 9.05
 version: 2.1
 ---
 

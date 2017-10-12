@@ -1,7 +1,8 @@
 ---
 title: <video>
 type: references
-order: 2.14
+group: Build-in Components
+order: 8.15
 version: 2.1
 ---
 

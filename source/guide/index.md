@@ -1,7 +1,8 @@
 ---
-title: Get Started  
+title: Get Started
 type: guide
-order: 1
+group: Overview
+order: 1.1
 version: 2.1
 has_chapter_content: true
 ---
@@ -20,14 +21,14 @@ Weex now fully supports VueJS 2.x officailly. Weex put Vue 2.x as its built-in J
 
 ## Hello world Example
 
-The easiest way to try Weex is to use the [Playground App](../playground.html) to write a [Hello World](http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1) example at [dotWe](http://dotwe.org). No installation is required and you do not even have to write native code. 
+The easiest way to try Weex is to use the [Playground App](../playground.html) to write a [Hello World](http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1) example at [dotWe](http://dotwe.org). No installation is required and you do not even have to write native code.
 
 To test Weex online using our Playground App:
 
 - Install the [Playground App](../playground.html) on your phone.
 - Open [the Hello World example](http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1) in a new tab, click run, and then use the Playground App to scan the QR code.
 
-Nailed it! 
+Nailed it!
 
 If you took the procedure above, you can see simple HTML semantic tags, CSS styles and Javascript code. This is one of the simplest Weex examples. The demo applications renders a "Hello World" in the page. Please note that this is not a Web page. You are running native!.
 

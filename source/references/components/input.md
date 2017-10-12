@@ -1,7 +1,8 @@
 ---
 title: <input>
 type: references
-order: 2.4
+group: Build-in Components
+order: 8.10
 version: 2.1
 ---
 

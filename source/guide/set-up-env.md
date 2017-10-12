@@ -1,14 +1,14 @@
 ---
-title: Setup Development Environment
+title: Setup Develop Environment
 type: guide
-order: 1.1
+group: Develop
+order: 5.1
 version: 2.1
-has_chapter_content: true
 ---
 
-# Setup Development Environment
+# Setup Develop Environment
 
-Using [dotWe](http://dotwe.org/vue) is a good choice, but if you want to develop locally on your own machine, you will need to set up your development environment.
+Using [dotWe](http://dotwe.org/vue) is a good choice, but if you want to develop locally on your own machine, you will need to set up your develop environment.
 
 You will need Node.js and the [Weex CLI](https://github.com/weexteam/weex-toolkit).
 

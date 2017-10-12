@@ -1,7 +1,8 @@
 ---
-title: Android APIs   
+title: Android APIs
 type: references
-order: 1.2
+group: API
+order: 2.2
 version: 2.1
 ---
 
@@ -151,7 +152,7 @@ public class WXLocation extends WXModule {
     callback.invoke(data);
     //Continuous connection
     callback.invokeAndKeepAlive(data);
-    
+
     //Invoke method and invokeAndKeepAlive two methods of choice  }
 }
 ```

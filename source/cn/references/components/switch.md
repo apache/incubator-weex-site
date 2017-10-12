@@ -1,7 +1,8 @@
 ---
 title: <switch>
 type: references
-order: 2.12
+group: 内置组件
+order: 8.12
 version: 2.1
 ---
 

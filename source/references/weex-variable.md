@@ -1,17 +1,18 @@
 ---
-title: Weex Variable  
+title: Weex Variable
 type: references
-order: 7
+group: API
+order: 2.5
 version: 2.1
 ---
 
 # Weex instance variable
 
-Each Weex page has a separate weex variable, which exists in the JS context. They hold a single instance or method of the current Weex page.   
+Each Weex page has a separate weex variable, which exists in the JS context. They hold a single instance or method of the current Weex page.
 
 ## `weex.config`
 
-This variable contains all the environment information for the current Weex page, including not only:       
+This variable contains all the environment information for the current Weex page, including not only:
 
 + `BundleUrl`: string: The URL of the JS bundle.
 + `Env: Object`: environment object.
@@ -25,9 +26,9 @@ This variable contains all the environment information for the current Weex page
 + `DeviceWidth: number`: device width
 + `DeviceHeight: number`: device height.  In Weex, the default width of viewport is 750px, thus you can obtain the height of screen by `height = 750/deviceWidth*deviceHeight` if the width of viewport remains its default value.
 
-`weex.requireModule(module: string): Object`     
+`weex.requireModule(module: string): Object`
 
-Get all the methods of a native module, such as:    
+Get all the methods of a native module, such as:
 
 ```html
 <template>
@@ -40,7 +41,7 @@ Get all the methods of a native module, such as:
     duration: 3
   })
 </script>
-```   
+```
 
 
 ## `weex.document: Document`

@@ -1,7 +1,8 @@
 ---
 title: <textarea>
 type: references
-order: 2.13
+group: Build-in Components
+order: 8.11
 version: 2.1
 ---
 

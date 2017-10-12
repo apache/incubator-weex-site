@@ -1,7 +1,8 @@
 ---
 title: dom
 type: references
-order: 3.3
+group: 内置模块
+order: 9.01
 version: 2.1
 ---
 
@@ -154,15 +155,15 @@ version: 2.1
       <text class="info">Left: {{size.left}}</text>
       <text class="info">Right: {{size.right}}</text>
     </div>
-    
+
     <text class="info btn"  @click='click()'>{{this.tip}}</text>
-      
+
   </div>
-</template> 
+</template>
 
 <script>
   const dom = weex.requireModule('dom')
-  
+
  function round(size) {
       var roundSize = {
         'width': Math.round(size.width),
@@ -196,7 +197,7 @@ version: 2.1
         this.size = round.call(this,option.size);
       })
     },
-    
+
     methods:{
       click:function() {
         if (this.ref === 'viewport') {
@@ -206,14 +207,14 @@ version: 2.1
           this.ref = 'viewport'
           this.tip = "get box rect"
         }
-          
+
          const result = dom.getComponentRect(this.ref, option => {
           console.log('getComponentRect:', option)
           this.size = round.call(this,option.size);
         })
       }
     }
-    
+
   }
 </script>
 
@@ -227,13 +228,13 @@ version: 2.1
     margin-left:170px;
     padding-left:35px;
     border-color: rgb(162, 217, 192);
-    
+
   }
   .btn:active {
     background-color: #8fbc8f;
 		border-color: gray;
   }
-  
+
   .box {
     align-items:center;
     margin-left: 150px;

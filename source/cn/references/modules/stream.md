@@ -1,7 +1,8 @@
 ---
 title: stream
 type: references
-order: 3.7
+group: 内置模块
+order: 9.07
 version: 2.1
 ---
 

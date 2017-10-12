@@ -1,7 +1,8 @@
 ---
 title: 快速上手
 type: guide
-order: 1
+group: Overview
+order: 1.1
 version: 2.1
 has_chapter_content: true
 ---
@@ -10,7 +11,7 @@ has_chapter_content: true
 
 Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
 
-## VueJS简介
+## Vue.js 简介
 
 > [VueJS](https://vuejs.org/) 是 Evan You 开发的渐进式 JavaScript 框架。开发者能够通过撰写 `*.vue` 文件，基于 `<template>`, `<style>`, `<script>` 快速构建组件化的 web 应用。
 

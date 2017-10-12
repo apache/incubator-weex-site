@@ -1,7 +1,8 @@
 ---
 title: Weex 实例变量
 type: references
-order: 7
+group: API
+order: 2.5
 version: 2.1
 has_chapter_content: true
 ---

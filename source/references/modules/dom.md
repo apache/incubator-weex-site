@@ -1,7 +1,8 @@
 ---
 title: dom
 type: references
-order: 3.3
+group: Build-in Modules
+order: 9.01
 version: 2.1
 ---
 
@@ -152,15 +153,15 @@ Example Useage:
       <text class="info">Left: {{size.left}}</text>
       <text class="info">Right: {{size.right}}</text>
     </div>
-    
+
     <text class="info btn"  @click='click()'>{{this.tip}}</text>
-      
+
   </div>
-</template> 
+</template>
 
 <script>
   const dom = weex.requireModule('dom')
-  
+
  function round(size) {
       var roundSize = {
         'width': Math.round(size.width),
@@ -194,7 +195,7 @@ Example Useage:
         this.size = round.call(this,option.size);
       })
     },
-    
+
     methods:{
       click:function() {
         if (this.ref === 'viewport') {
@@ -204,14 +205,14 @@ Example Useage:
           this.ref = 'viewport'
           this.tip = "get box rect"
         }
-          
+
          const result = dom.getComponentRect(this.ref, option => {
           console.log('getComponentRect:', option)
           this.size = round.call(this,option.size);
         })
       }
     }
-    
+
   }
 </script>
 
@@ -225,13 +226,13 @@ Example Useage:
     margin-left:170px;
     padding-left:35px;
     border-color: rgb(162, 217, 192);
-    
+
   }
   .btn:active {
     background-color: #8fbc8f;
 		border-color: gray;
   }
-  
+
   .box {
     align-items:center;
     margin-left: 150px;

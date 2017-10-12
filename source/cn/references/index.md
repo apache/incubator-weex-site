@@ -1,19 +1,7 @@
 ---
-title: 通用特性
+title: References
 type: references
-order: 1
+order: 0
 version: 2.1
+has_chapter_content: true
 ---
-
-# 通用特性
-
-- [iOS APIs](./ios-apis.html)
-- [Android APIs](./android-apis.html)
-- [HTML5 APIs](./html5-apis.html)
-- [通用样式](./common-style.html)
-- [文本样式](./text-style.html)
-- [颜色名称](./color-names.html)
-- [手势](./gesture.html)
-- [路径](./path.html)
-- [事件冒泡](./bubble.html)
-- [降级方案](./downgrade.html)

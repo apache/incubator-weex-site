@@ -1,7 +1,8 @@
 ---
 title: <list>
 type: references
-order: 2.5
+group: 内置组件
+order: 8.06
 version: 2.1
 ---
 
@@ -62,7 +63,7 @@ version: 2.1
 ## 事件
 
 - `loadmore` <sup class="wx-v">0.5+</sup>：如果列表滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。
-- `scroll` <sup class="wx-v">0.11+</sup>: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性`offset-accuracy`设置抽样率。    
+- `scroll` <sup class="wx-v">0.11+</sup>: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性`offset-accuracy`设置抽样率。
 
   事件中 event 对象属性：
   - `contentSize {Object}`：列表的内容尺寸

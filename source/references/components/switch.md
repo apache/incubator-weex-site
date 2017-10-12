@@ -1,7 +1,8 @@
 ---
 title: <switch>
 type: references
-order: 2.11
+group: Build-in Components
+order: 8.12
 version: 2.1
 ---
 
@@ -32,7 +33,7 @@ Notes: There are several style properties that you mustn't use on this component
 * padding and padding-xxs
 * border and border-xxs
 
-Notes: If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched. 
+Notes: If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched.
 
 common styles: check out [common styles for components](../common-style.html)
 

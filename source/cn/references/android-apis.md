@@ -1,7 +1,8 @@
 ---
 title: Android APIs
 type: references
-order: 1.2
+group: API
+order: 2.2
 version: 2.1
 ---
 
@@ -100,7 +101,7 @@ Weex 为了重用 Native 通用库提供了对应的接口进行设置。
 
   多用于某个自定义控件进行事件通知，例如自定义点击事件，响应下拉事件等。
 
-  WXSDKInstance.java 
+  WXSDKInstance.java
 
   ```java
     public void fireEvent(String elementRef,final String type, final Map<String, Object> data,final Map<String, Object> domChanges){  }
@@ -122,7 +123,7 @@ Weex 为了重用 Native 通用库提供了对应的接口进行设置。
 
   `domChanges`：更新 ref 对应控件的 Attribute 和 Style。
 
-2. 事件回调 
+2. 事件回调
 
   多用于 Module 回调，例如定位 Module 完成后需要通知 JS。使用方法如下：
 
@@ -139,7 +140,7 @@ Weex 为了重用 Native 通用库提供了对应的接口进行设置。
       callback.invoke(data);
       //持续通知
       callback.invokeAndKeepAlive(data);
-      
+
       //invoke方法和invokeAndKeepAlive两个方法二选一
     }
   }
@@ -205,7 +206,7 @@ WXSDKEngine.setActivityNavBarSetter(new IActivityNavBarSetter(){
 
 ```java
 /**
-   * 
+   *
    * @param width 容器宽度
    * @param height 容器高度
    */

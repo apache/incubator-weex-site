@@ -1,7 +1,8 @@
 ---
 title: <image>
 type: references
-order: 2.3
+group: Build-in Components
+order: 8.02
 version: 2.1
 ---
 
@@ -41,8 +42,8 @@ This component supports no child components.
 **common events**: check out the [common events](../common-event.html)
 
 - support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)    
-- `load`<sup class="api-version">v0.8+</sup> event. The `load` event fires on an image has been loaded. Only Android and iOS are supported currently. [example](http://dotwe.org/vue/e291159ac60b35dcd4994638a78d54ad)    
+- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- `load`<sup class="api-version">v0.8+</sup> event. The `load` event fires on an image has been loaded. Only Android and iOS are supported currently. [example](http://dotwe.org/vue/e291159ac60b35dcd4994638a78d54ad)
   - event object
     - `success` : `true` if the image was loaded successfully, otherwise `false`
     - `size` : the original size of image, contains two parameters: `naturalWidth` representing the original width of image in pixels, `naturalHeight` representing the original height of image in pixels. default value. The default value for both parameters is `0`.
@@ -50,12 +51,12 @@ This component supports no child components.
 **component method**
 
 - support save <sup class="api-version">v0.16.0+</sup> image to local device or photo album.
-  - you should specify a callback function to receive the saving result. 
+  - you should specify a callback function to receive the saving result.
 	  ```
 	 	var image = this.$refs.imageRef; // image 是之前已经定义过的ref
 	  		image.save(function(result) {
 	  			console.log(JSON.stringify(result))
-		}); 
+		});
 		```
     	and the result can be the following format
      ```

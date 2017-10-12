@@ -1,7 +1,8 @@
 ---
 title: <slider>
 type: references
-order: 2.9
+group: Build-in Components
+order: 8.13
 version: 2.1
 ---
 

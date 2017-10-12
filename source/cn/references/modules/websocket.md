@@ -1,7 +1,8 @@
 ---
 title: WebSocket
 type: references
-order: 3.11
+group: 内置模块
+order: 9.12
 version: 2.1
 ---
 
@@ -13,7 +14,7 @@ version: 2.1
 WebSockets 是一种先进的技术, 这使得在用户的 H5/iOS/Android 和一个服务器之间打开一个的交互式通信会话成为可能, 有了这个 API，你可以向服务器发送消息, 并接收事件驱动的响应, 无需轮询服务器的响应
 
 ## **注意：**
-- iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter 实现，source:  
+- iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter 实现，source:
   - [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
   - [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
   - 集成例子参考weex [playground](https://github.com/apache/incubator-weex/tree/dev/android/playground)

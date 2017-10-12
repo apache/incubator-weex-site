@@ -1,7 +1,8 @@
 ---
 title: animation
 type: references
-order: 3.1
+group: Build-in Modules
+order: 9.04
 version: 2.1
 ---
 
@@ -21,13 +22,13 @@ Smooth and meaningful animation is very effective for enhancing the user experie
 
 ##### options
 
-**type:** object   
+**type:** object
 
-**position:** Transition options.    
-- `duration` (number): Specifies the number of milliseconds of animation execution, the default value is `0`, means that no animation will occur.    
-- `delay` (number): Specifies the amount of milliseconds to wait between a change being requested to a property that is to be transitioned and the start of the transition effect. The default value is `0`.   
+**position:** Transition options.
+- `duration` (number): Specifies the number of milliseconds of animation execution, the default value is `0`, means that no animation will occur.
+- `delay` (number): Specifies the amount of milliseconds to wait between a change being requested to a property that is to be transitioned and the start of the transition effect. The default value is `0`.
 -  `needLayout`(boolean)：Whether or not the layout animation occurs when animation is executed，default value is `false`
-- `timingFunction` (string): Used to describe how the intermediate values of the styles being affected by a transition effect are calculated, default value is `linear`, the allowed attributes are listed in the following table:    
+- `timingFunction` (string): Used to describe how the intermediate values of the styles being affected by a transition effect are calculated, default value is `linear`, the allowed attributes are listed in the following table:
 
 | name                           | description                              |
 | :----------------------------- | :--------------------------------------- |
@@ -37,7 +38,7 @@ Smooth and meaningful animation is very effective for enhancing the user experie
 | `ease-in-out`                  | Specifies a transition effect with a slow start and end |
 | `cubic-bezier(x1, y1, x2, y2)` | Define your own values in the cubic-bezier function. Possible values are parameter values from 0 to 1. More information about cubic-bezier please visit [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
 
-- `styles` (object): Specify the names and values of styles to which a transition effect should be applied. The allowed attributes are listed in the following table:        
+- `styles` (object): Specify the names and values of styles to which a transition effect should be applied. The allowed attributes are listed in the following table:
 
 | name            | description                              | value type            | default value   |
 | :-------------- | :--------------------------------------- | :-------------------- | :-------------- |
@@ -48,7 +49,7 @@ Smooth and meaningful animation is very effective for enhancing the user experie
 | transformOrigin | The povit of transition. The possible values for `x-aris` are `left`/`center`/`right`/length or percent, and possible values of `y-axis` are `top`/`center`/`bottom`/ length or percent | `x-axis y-axis`       | `center center` |
 | transform       | Transform function to be applied to the element. The properties in the following table are supported | object                | none            |
 
-properties of `transform`:    
+properties of `transform`:
 
 | name                            | description                              | value type       | default value |
 | :------------------------------ | :--------------------------------------- | :--------------- | :------------ |

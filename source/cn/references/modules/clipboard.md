@@ -1,7 +1,8 @@
 ---
 title: clipboard
 type: references
-order: 3.2
+group: 内置模块
+order: 9.08
 version: 2.1
 ---
 

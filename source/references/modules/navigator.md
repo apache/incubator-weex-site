@@ -1,11 +1,12 @@
 ---
 title: navigator
 type: references
-order: 3.5
+group: Build-in Modules
+order: 9.05
 version: 2.1
 ---
 
-# Navigator 
+# Navigator
 
 <span class="weex-version">v0.6.1+</span>
 

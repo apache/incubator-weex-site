@@ -1,8 +1,9 @@
 ---
-title: Common Options
+title: References
 type: references
-order: 1
+order: 0
 version: 2.1
+has_chapter_content: true
 ---
 
 # Common Options

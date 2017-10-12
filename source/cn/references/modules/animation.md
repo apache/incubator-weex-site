@@ -1,7 +1,8 @@
 ---
 title: animation
 type: references
-order: 3.1
+group: 内置模块
+order: 9.04
 version: 2.1
 ---
 

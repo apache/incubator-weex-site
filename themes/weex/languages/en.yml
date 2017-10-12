@@ -55,11 +55,11 @@ index:
       content: Tao Tickets Pro is an intelligent data application which offers film industry practitioners with valuable data and information. Base on the huge data from Alibaba group, it provides services of realtime box office statistic and prediction，film schedule , cinema management information and user profile etc.
     fliggy:
       title: Fliggy
-      content: Fliggy is Alibaba Group's travel brand, designed to provide users with convenient, more cost-effective travel services. 
+      content: Fliggy is Alibaba Group's travel brand, designed to provide users with convenient, more cost-effective travel services.
     juhuasuan:
       title: Juhuasuan
       content: Juhuasuan is Alibaba Group's platform for Taobao, Lynx business from 800 million commodities in the carefully selected high-quality goods, independent network to carry out activities to sell, with higher service standards to provide you with cost-effective goods.
-    qianniu: 
+    qianniu:
       title: Qianniu
       content:  Alibaba produced for the seller stop working units, for the seller the integration of the shop management tools, business information and news, business partnerships, in order to enhance the operational efficiency of the sellers, in order to promote cooperation between the two win, so that the seller can...
   feedback:
@@ -80,6 +80,8 @@ index:
 menu:
   guide: Guide
   references: References
+  wiki: WiKi
+  community: Community
   doc: Docs
   faq: FAQ
   note: Note
@@ -94,6 +96,9 @@ menu:
   advanced: Advanced
   github: GitHub
   legacy: Old Syntax Doc
+  examples: Examples
+  contribute: How to Contribute
+  usingWeex: Who is using Weex?
 playground:
   content: Weex Native Runtime showcase & Weex we file preview.
 categories: Categories

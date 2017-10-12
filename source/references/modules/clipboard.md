@@ -1,7 +1,8 @@
 ---
 title: clipboard
 type: references
-order: 3.2
+group: Build-in Modules
+order: 9.08
 version: 2.1
 ---
 

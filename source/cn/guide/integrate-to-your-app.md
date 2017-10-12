@@ -1,6 +1,7 @@
 ---
 title: 集成 Weex 到已有应用
 type: guide
+group: Overview
 order: 1.2
 version: 2.1
 has_chapter_content: true
@@ -15,7 +16,7 @@ has_chapter_content: true
 ### Android 集成有两种方式
 
 1. 源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。
-2. SDK依赖：WEEX 会在jcenter 定期发布稳定版本。[jcenter](https://bintray.com/alibabaweex/maven/weex_sdk/view)  
+2. SDK依赖：WEEX 会在jcenter 定期发布稳定版本。[jcenter](https://bintray.com/alibabaweex/maven/weex_sdk/view)
    注:国内可能需要翻墙
 
 ### 前期准备
@@ -28,10 +29,10 @@ has_chapter_content: true
 
 ### 快速接入
 
-如果你是尝鲜或者对稳定性要求比较高可以使用依赖SDK的方式。  
-步骤如下：  
+如果你是尝鲜或者对稳定性要求比较高可以使用依赖SDK的方式。
+步骤如下：
 1. 创建Android工程，没有什么要特别说明的，按照你的习惯来。
-2. 修改build.gradle 加入如下基础依赖  
+2. 修改build.gradle 加入如下基础依赖
 
    ```gradle
    compile 'com.android.support:recyclerview-v7:23.1.1'
@@ -41,7 +42,7 @@ has_chapter_content: true
    compile 'com.taobao.android:weex_sdk:0.5.1@aar'
    ```
 
-   注:版本可以高不可以低。  
+   注:版本可以高不可以低。
 
 #### 代码实现
 
@@ -194,8 +195,8 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
 1. 下载源码 `git clone https://github.com/alibaba/weex`
 2. 创建 Android 工程。
-3. 通过以下路径引入 SDK Module  
-   File->New-Import Module-> 选择 WEEX SDK Module(weex/android/sdk) -> Finish  
+3. 通过以下路径引入 SDK Module
+   File->New-Import Module-> 选择 WEEX SDK Module(weex/android/sdk) -> Finish
 4. app 的 build.gradle 中添加如下依赖:`compile project(':weex_sdk')`
 5. 其他设置请参考上面快速接入
 
@@ -216,17 +217,17 @@ WXSample地址
 导入 Weex iOS SDK 到你已有的项目, 如果没有，可以[参考](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html)新建项目
 在继续下面内容之前，确保你已有的项目目录有名称为 `Podfile` 文件，如果没有，创建一个，用文本编辑器打开
 
-- 集成 framework  
+- 集成 framework
 
-  WeexSDK  在 cocoaPods 上最新版本 可以在[这](https://cocoapods.org/pods/WeexSDK)获取   
+  WeexSDK  在 cocoaPods 上最新版本 可以在[这](https://cocoapods.org/pods/WeexSDK)获取
 
   在 `Podfile` 文件中添加如下内容
 
   ```
-  source 'git@github.com:CocoaPods/Specs.git' 
+  source 'git@github.com:CocoaPods/Specs.git'
   target 'YourTarget' do
-      platform :ios, '7.0' 
-      pod 'WeexSDK', '0.9.5'   ## 建议使用WeexSDK新版本 
+      platform :ios, '7.0'
+      pod 'WeexSDK', '0.9.5'   ## 建议使用WeexSDK新版本
   end
   ```
 
@@ -235,10 +236,10 @@ WXSample地址
   首先 拷贝 `ios/sdk` 目录到你已有项目目录 (此处以拷贝到你已有项目的根目录为例子)，然后在 `Podfile` 文件中添加
 
   ````object-c
-  source 'git@github.com:CocoaPods/Specs.git' 
+  source 'git@github.com:CocoaPods/Specs.git'
   target 'YourTarget' do
-      platform :ios, '7.0' 
-      pod 'WeexSDK', :path=>'./sdk/' 
+      platform :ios, '7.0'
+      pod 'WeexSDK', :path=>'./sdk/'
   end
   ````
 
@@ -246,7 +247,7 @@ WXSample地址
 
 打开命令行，切换到你已有项目 `Podfile` 这个文件存在的目录，执行 `pod install`，没有出现任何错误表示已经完成环境配置。
 
-#### 第三步：初始化 Weex 环境  
+#### 第三步：初始化 Weex 环境
 
 在 `AppDelegate.m` 文件中做初始化操作，一般会在 `didFinishLaunchingWithOptions` 方法中如下添加。
 
@@ -256,7 +257,7 @@ WXSample地址
 [WXAppConfiguration setAppName:@"WeexDemo"];
 [WXAppConfiguration setAppVersion:@"1.0.0"];
 
-//init sdk environment   
+//init sdk environment
 [WXSDKEngine initSDKEnvironment];
 
 //register custom module and component，optional
@@ -266,7 +267,7 @@ WXSample地址
 //register the implementation of protocol, optional
 [WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];
 
-//set the log level    
+//set the log level
 [WXLog setLogLevel: WXLogLevelAll];
 ```
 
@@ -276,13 +277,13 @@ Weex 支持整体页面渲染和部分渲染两种模式，你需要做的事情
 
 ```objective-c
 #import <WeexSDK/WXSDKInstance.h>
-- (void)viewDidLoad 
+- (void)viewDidLoad
 {
     [super viewDidLoad];
 
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;
-    _instance.frame = self.view.frame; 
+    _instance.frame = self.view.frame;
 
     __weak typeof(self) weakSelf = self;
     _instance.onCreate = ^(UIView *view) {

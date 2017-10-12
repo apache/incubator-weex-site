@@ -16,10 +16,12 @@
 
     <% pages.forEach(function (item, index) { %>
       <li>
-        <h3 class="chapter-title"><a href="<%= url_for(item[0].path) %>" class="sidebar-link <%- is_current(item[0].path, 'strict') ? 'current' : '' %> <%- item[0].is_new ? 'new' : '' %>"><%- item[0].title %></a></h3>
-        <% if (item.length > 1) { %>
+        <h3 class="chapter-title">
+          <span class="sidebar-link"><%- item[0].group %></span>
+        </h3>
+        <% if (item.length > 0) { %>
           <ul class="chapter">
-            <% for (var i = 1; i < item.length; i++) { %>
+            <% for (var i = 0; i < item.length; i++) { %>
               <li>
                 <a href="<%= url_for(item[i].path) %>" class="sidebar-link <%- is_current(item[i].path, 'strict') ? 'current' : '' %> <%- item[i].is_new ? 'new' : '' %>"><%= item[i].title %></a>
               </li>

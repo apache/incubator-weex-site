@@ -1,7 +1,8 @@
 ---
 title: storage
 type: references
-order: 3.6
+group: Build-in Modules
+order: 9.09
 version: 2.1
 ---
 
@@ -23,7 +24,7 @@ or update that key's value if it already exists.
 
 * `key`*(string)*: the name of the key you want to store. "" or null is not allowed.
 * `value`*(string)*: the name of the value you want to store."" or null is not allowed.
-* `callback`*(object)*: the callback function after executing this action.  
+* `callback`*(object)*: the callback function after executing this action.
 
 ### getItem(key, callback)
 
@@ -32,7 +33,7 @@ When passed a key name, will return that key's value.
 #### Arguments
 
 * `key`*(string)*:  the name of the key you want to retrieve the value of."" or null is not allowed.
-* `callback`*(object)*: the callback function after executing this action.  
+* `callback`*(object)*: the callback function after executing this action.
 
 ### removeItem(key, callback)
 
@@ -41,7 +42,7 @@ When passed a key name, will remove that key from the storage.
 #### Arguments
 
 * `key`*(string)*:  the name of the key you want to remove."" or null is not allowed.
-* `callback`*(object)*: the callback function after executing this action.  
+* `callback`*(object)*: the callback function after executing this action.
 
 ##### Example
 
@@ -60,7 +61,7 @@ Returns an integer representing the number of data items stored in the Storage o
 
 #### Arguments
 
-* `callback`*(object)*: the callback function after executing this action.  
+* `callback`*(object)*: the callback function after executing this action.
 
 ### getAllKeys(callback)
 
@@ -68,7 +69,7 @@ Returns an array that contains all keys stored in Storage object.
 
 #### Arguments
 
-* `callback`*(object)*: the callback function after executing this action.  
+* `callback`*(object)*: the callback function after executing this action.
 
 ## Example
 

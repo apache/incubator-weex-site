@@ -1,7 +1,8 @@
 ---
 title: <textarea>
 type: references
-order: 2.14
+group: 内置组件
+order: 8.11
 version: 2.1
 ---
 

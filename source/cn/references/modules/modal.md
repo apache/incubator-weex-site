@@ -1,7 +1,8 @@
 ---
 title: modal
 type: references
-order: 3.4
+group: 内置模块
+order: 9.02
 version: 2.1
 ---
 

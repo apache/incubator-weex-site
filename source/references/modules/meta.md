@@ -1,7 +1,8 @@
 ---
 title: meta
 type: references
-order: 3.12
+group: Build-in Modules
+order: 9.06
 version: 2.1
 ---
 
@@ -42,11 +43,11 @@ import App from './app.vue'
 const meta = weex.requireModule('meta')
 
 // The width of the viewport is set to 640px
-meta.setViewport({  
+meta.setViewport({
   width: 640
 })
 
-App.el = '#root'  
+App.el = '#root'
 new Vue(App)
 ```
 
