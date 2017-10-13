@@ -1,6 +1,5 @@
 @import "../variable.scss";
 
-$header-height: 50px;
 $header-bg: #F2F2F2;
 $menu-active-bg: #EEE;
 
@@ -8,9 +7,9 @@ $menu-active-bg: #EEE;
   width: 100%;
   height: $header-height;
   padding: 0 40px;
-  position: fixed;
+  position: absolute;
   background-color: $header-bg;
-  box-shadow: 0 0 1px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
   top: 0;
   left: 0;
   right: 0;
@@ -87,7 +86,7 @@ $menu-active-bg: #EEE;
     }
 
     > li {
-      margin: 0 3px;
+      margin: 0 1px;
     }
   }
 

@@ -1,18 +1,16 @@
 @import "../variable.scss";
 
-$footer-bg: #F2F2F2;
-$footer-text-color: #888;
+$footer-bg: #F0F0F0;
+$footer-text-color: #A0A0A0;
 
 #footer {
   width: 100%;
-  padding: 10px 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px 40px 15px;
   background: $footer-bg;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 200;
   color: $footer-text-color;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
 
   a { text-decoration: underline; }
   p { margin: 0; }
@@ -28,8 +26,8 @@ $footer-text-color: #888;
 
   .copyright {
     margin-top: 15px;
-    a, a:focus { color: #666; }
-    a:active { color: #555; }
+    a, a:focus { color: #999; }
+    a:active { color: #888; }
   }
 }
 

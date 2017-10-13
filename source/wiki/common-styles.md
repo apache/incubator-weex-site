@@ -1,7 +1,7 @@
 ---
 title: Common Style
 type: wiki
-group: 样式
+group: Style
 order: 3.1
 version: 2.1
 ---

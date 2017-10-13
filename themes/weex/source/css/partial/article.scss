@@ -7,7 +7,7 @@
   margin-bottom: 3.5em;
 
   h1 {
-    font-size: 2.1em;
+    font-size: 2em;
     color: $text-black;
     margin: 0;
 
@@ -28,9 +28,9 @@
 }
 
 .article {
-  max-width: 900px;
-  margin-left: 50px;
-  margin-top: 40px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   position: relative;
   line-height: 1.6;
   overflow-y: auto;
@@ -41,26 +41,30 @@
   }
 
   .article-entry {
-    margin-bottom: 90px;
+    flex: 1;
+    max-width: 800px;
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-bottom: 60px;
   }
 
   h2 {
-    font-size: 1.85em;
+    font-size: 1.65em;
     margin: 1em 0 .8em;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.35em;
     margin: .85em 0 .7em;
   }
 
   h4 {
-    font-size: 1.2em;
+    font-size: 1.15em;
     margin: .75em 0 .55em;
   }
 
   h5 {
-    font-size: 1.05em;
+    font-size: 1em;
     margin: .6em 0 .4em;
   }
 
@@ -93,6 +97,26 @@
     position: absolute;
     top: 15px;
     right: 20px;
+  }
+}
+
+.article-tips {
+  margin: 60px 0 0;
+  padding: 10px 0;
+  border-top: 1px solid #E6E6E6;
+}
+
+.tips-text {
+  margin: 0;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 13px;
+
+  a, a:link {
+    color: #80d0ff;
+  }
+  a:active, a:hover {
+    color: $logo-color;
   }
 }
 

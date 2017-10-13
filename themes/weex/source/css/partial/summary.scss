@@ -1,10 +1,9 @@
 @import "../variable.scss";
 
 .summary {
-  overflow-x: hidden;
-  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   font-size: 15px;
+  flex: 1;
 
   ul, li , ol {
     margin: 0;
@@ -49,13 +48,16 @@
 }
 
 .sponsor {
+  flex: 0;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .sponsor-poster {
   display: block;
-  width: 180px;
+  width: 140px;
 }
 .sponsor-title {
   color: #7f8c8d;
-  font-size:12px;
+  font-size: 10px;
+  text-align: center;
 }

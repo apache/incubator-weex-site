@@ -1,5 +1,33 @@
 @import "variable.scss";
 
+
+@media screen and (max-width: 1100px) {
+  #header {
+    padding: 0 30px;
+
+    .tools > li {
+      margin-left: 10px;
+    }
+    .tools .search-form {
+      width: 120px;
+    }
+
+    .main-nav {
+      li > a {
+        font-size: 1.16em;
+        padding: 0 12px;
+      }
+    }
+
+  }
+
+  .article-wrapper {
+    .doc-nav {
+      // padding:
+    }
+  }
+}
+
 @media screen and (max-width: $content-max-width) {
 
   /***********************************************
@@ -21,7 +49,7 @@
   }
 
   #sidebar {
-    display: block !important;
+    display: flex !important;
     transform: translateX(-320px);
     transition: all .3s ease;
     &.open {
@@ -30,7 +58,7 @@
   }
 
   #footer {
-    padding: 20px;
+    padding: 10px 20px;
     .disclaimer {
       display: none;
     }
@@ -39,9 +67,8 @@
     }
   }
   .article {
-    margin-top: 20px;
     .article-entry {
-      margin-bottom: 40px;
+      margin: 20px;
     }
   }
 
@@ -99,7 +126,7 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   /***********************************************
    * Index
    **********************************************/
@@ -111,6 +138,13 @@
     .sketch-content {
       flex-direction: column;
       align-items: center;
+    }
+  }
+
+  .article {
+    .article-entry {
+      margin: 10px;
+      padding: 5px;
     }
   }
 

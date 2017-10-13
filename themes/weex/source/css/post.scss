@@ -1,10 +1,26 @@
 @import "variable.scss";
 
+body {
+  position: relative;
+}
+
+.main-content {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: row;
+}
+
 .article-wrapper {
   display: flex;
   width: 100%;
   margin: 0 auto;
-  margin-top: 60px;
   flex-direction: row;
   min-height: 80%;
   min-height: calc(100% - 160px);
@@ -13,9 +29,9 @@
     max-width: 850px;
   }
 
-  &.page-layout {
-    max-width: 1400px;
-  }
+  // &.page-layout {
+  //   max-width: 1400px;
+  // }
 
   .article-entry {
     padding: 0 1.2em;
@@ -50,11 +66,17 @@
   }
 
   .doc-nav {
-    padding: 50px 20px;
+    padding-top: 50px;
     background: $bg-white;
-    width: 300px;
+    width: 22%;
+    max-width: 450px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
+    border-right: 1px solid #E8E8E8;
   }
 
   .doc-nav-version{
