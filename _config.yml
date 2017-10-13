@@ -111,6 +111,24 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: weex
 
+# Markdown Syntax
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+  modifyAnchors: ''
+  autolink: true
+
+# Code Highlight
+highlight:
+  enable: true
+  line_number: false
+  tab_replace:
+
 # css autoprefixer
 autoprefixer:
   exclude:

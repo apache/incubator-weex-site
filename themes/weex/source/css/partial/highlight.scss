@@ -27,10 +27,19 @@ pre code {
 .highlight {
   margin: 5px 0 15px 0;
   overflow-x: auto;
-  pre {
+
+  .gutter pre {
     background: #F3F5F7;
     margin: 0;
-    padding: 10 20px;
+    padding: 10px 5px;
+    width: 50px;
+    color: #585d65;
+  }
+
+  .code pre {
+    background: #F3F5F7;
+    margin: 0;
+    padding: 10px 20px;
     color: #585d65;
     overflow-x: auto;
     border-radius: 5px;

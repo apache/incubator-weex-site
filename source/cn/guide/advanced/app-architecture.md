@@ -1,5 +1,5 @@
 ---
-title: 用 Weex 构建完整移动应用
+title: 构建完整移动应用
 type: guide
 group: 高阶特性
 order: 8.5

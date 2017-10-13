@@ -15,7 +15,7 @@ hexo.extend.helper.register('url_for_lang', function(path){
 })
 
 hexo.extend.helper.register('page_anchor', function(str){
-  var $ = cheerio.load(str, {decodeEntities: false});
+  var $ = cheerio.load(str, {decodeEntities: true});
   var headings = $('h1, h2, h3, h4, h5, h6');
 
   if (!headings.length) return str;

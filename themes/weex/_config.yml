@@ -7,6 +7,12 @@ rss: /atom.xml
 # Content
 excerpt_link: Read More
 
+# Code Highlight
+highlight:
+  enable: true
+  line_number: false
+  tab_replace:
+
 # Sidebar
 sidebar: right
 widgets:

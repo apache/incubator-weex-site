@@ -6,7 +6,8 @@
     "version": "3.3.9"
   },
   "scripts": {
-    "server": "hexo server"
+    "server": "hexo server",
+    "build": "hexo g -d -w"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
