@@ -1,5 +1,5 @@
 ---
-title: Design Principle
+title: Design Principles
 type: wiki
 group: Design
 order: 1.4

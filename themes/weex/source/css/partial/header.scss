@@ -9,7 +9,7 @@ $menu-active-bg: #EEE;
   padding: 0 40px;
   position: absolute;
   background-color: $header-bg;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.05);
   top: 0;
   left: 0;
   right: 0;
@@ -68,7 +68,7 @@ $menu-active-bg: #EEE;
     li > a {
       display: block;
       height: 100%;
-      font-size: 1.2em;
+      font-size: 1.16em;
       color: $text-light-black;
       padding: 0 16px;
     }

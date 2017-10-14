@@ -1,6 +1,18 @@
-<div class="article-wrapper page-layout">
-  <div class="doc-nav">
-    <%- partial('_partial/post/summary', {post: page, index: false, type: page.type ? page.type : ''}) %>
+<% var layout_type = page.has_chapter_content === false ? 'no-chapter' : 'with-chapter' %>
+
+<div class="main-content">
+  <div class="article-wrapper page-layout <%= layout_type %>">
+    <% if (page.has_chapter_content !== false) { %>
+      <div class="doc-nav">
+        <%- partial('_partial/post/summary', {post: page, index: false, type: page.type ? page.type : ''}) %>
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    <% } %>
+    <%- partial('_partial/article', {post: page, index: false}) %>
   </div>
-  <%- partial('_partial/article', {post: page, index: false}) %>
 </div>

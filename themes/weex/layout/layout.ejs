@@ -42,10 +42,7 @@
   </script>
   <%- partial('_partial/header') %>
   <%- partial('_partial/sidebar', {post: page, page_type: page_type}) %>
-  <div class="main-content">
-    <%- body %>
-    <%- partial('_partial/after-footer') %>
-  </div>
+  <%- body %>
 
   <%- js('js/reqwest.js') %>
   <%- js('js/common.js') %>

@@ -1,7 +1,7 @@
 @import "variable.scss";
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1080px) {
   #header {
     padding: 0 30px;
 
@@ -14,16 +14,16 @@
 
     .main-nav {
       li > a {
-        font-size: 1.16em;
+        font-size: 1.1em;
         padding: 0 12px;
       }
     }
 
   }
 
-  .article-wrapper {
-    .doc-nav {
-      // padding:
+  .article {
+    .article-entry {
+      margin: 40px 0 20px 20px;
     }
   }
 }
@@ -145,6 +145,9 @@
     .article-entry {
       margin: 10px;
       padding: 5px;
+      img {
+        max-width: 100%;
+      }
     }
   }
 

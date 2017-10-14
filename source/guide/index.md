@@ -4,64 +4,101 @@ type: guide
 group: Overview
 order: 1.1
 version: 2.1
-has_chapter_content: true
 ---
 
-# Get Started
+## What is Weex?
 
-Weex is a framework for building Mobile cross-platform high performance UI applications. Developers can leverage their existing knowledge of VueJS (a powerful JavaScript view library), by writing `*.vue` files to build native applications or pages. This page will help you to write a **Weex** application in 2 minutes.
+> Weex is A framework for building Mobile cross-platform UIs.
 
-## Introduction to VueJS
+Weex enables developers to use web development experience to build both Android, iOS and web apps with a single codebase.
 
->[VueJS](https://vuejs.org/) (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is very easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
+## Overview
 
-**VueJS is developed by [Evan You](https://twitter.com/youyuxi).**
+Here is an example writing in Weex and Vue.js:
 
-Weex now fully supports VueJS 2.x officailly. Weex put Vue 2.x as its built-in JS Framework, making it powerful for building native apps!.
+![Weex Example](./images/weex-example-yo.png)
 
-## Hello world Example
+This example is written in Vue.js [single file component](https://vuejs.org/v2/guide/single-file-components.html) syntax. Vue.js 2.0
 
-The easiest way to try Weex is to use the [Playground App](../playground.html) to write a [Hello World](http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1) example at [dotWe](http://dotwe.org). No installation is required and you do not even have to write native code.
+You can see and edit this example at [Weex online playground](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380). Use the [Weex playground app]() to scan the QR code on the right you will see the result rendered on your own phone.
 
-To test Weex online using our Playground App:
+### Native Component
 
-- Install the [Playground App](../playground.html) on your phone.
-- Open [the Hello World example](http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1) in a new tab, click run, and then use the Playground App to scan the QR code.
+![Native Component](./images/native-component.png)
 
-Nailed it!
+In this example, the `<div>` and the `<text>` is rendered into corresponding native components.
 
-If you took the procedure above, you can see simple HTML semantic tags, CSS styles and Javascript code. This is one of the simplest Weex examples. The demo applications renders a "Hello World" in the page. Please note that this is not a Web page. You are running native!.
+### Write Once, Run Everywhere
 
-![mobile_preview](https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg)
+You can read *[How it works](../wiki/index.html)* and *[Design Principles](../wiki/design-principles.html)* to know more about the technologies and ideas behind Weex.
 
-### What happened?
+### More Examples
 
-As shown in the following code：
+## Support Multiple Front-End Frameworks
 
-```html
-<template>
-  <div>
-    <text class="text">{{text}}</text>
-  </div>
-</template>
+Vue.js 2.0 and Rax
 
-<style>
-  .text {
-    font-size: 50;
-  }
-</style>
+![Vue and Rax](./images/vue-rax.png)
 
-<script>
-  export default {
-    data () {
-      return {
-        text: 'Hello World.'
-      }
-    }
-  }
-</script>
+~~You can call it *"Weex VR"*, but it has nothing with the *Virtual Reality*.~~
+
+Those frameworks are packaged into Weex SDK, you don't need to require them manually. upgrade.
+
+Weex isn't binding with any specific front-end frameworks, the DOM operations will convert into render directives send to native render engine. Weex can give the ability of rendering native components to them.
+
+## Create Your Own App
+
+Weex offered a command line tool, [weex-toolkit](), to help developers to get start easily.
+
+### Setup
+
+Make sure you have already installed the [Node.js](https://nodejs.org/), and then install the `weex-toolkit` globally.
+
+```bash
+npm install weex-toolkit -g
 ```
 
-It's too easy，right? Take a look at the syntax, that is vue.
+It will add a `weex` command to your global path, run `weex --help` can see the manual of all its sub commands. The most useful command is `weex create [project-name]`:
 
-You can try to modify the Hello World example if you have previous knowledge of building VueJS examples, then generate a new QR code to scan. If you don't have previous knowledge of VueJS, don't worry, this guide will teach you just that. Moreover, you can always learn from the [VueJS Guide](https://vuejs.org/v2/guide).
+```bash
+weex create awesome-app
+```
+
+After doing that, you'll get a standard **Weex + Vue.js** project under the `awesome-app` folder.
+
+> Currently, the `weex-toolkit` only supports to create Vue.js project. If you want to use Rax, the `rax-cli` maybe helpful, please go to [Rax's official website](https://alibaba.github.io/rax/) for more details.
+
+### Develop
+
+
+```bash
+cd awesome-app
+npm install
+npm run start
+```
+
+It will start a web server on the `8080` port. You can open `http://localhost:8080/index.html` to see the result rendered on the web. Besides, You can also open the `http://localhost:8080/preview.html` to preview the web render result in iframe and with a QR code generated on the right, which you can use the [Weex plaground app]() to scan it to see the render result on the mobile.
+
+![Preview]()
+
+### Build and Run
+
+```bash
+weex platform add ios
+weex platform add android
+```
+
+```bash
+weex run ios
+weex run android
+```
+
+### Debug
+
+```bash
+weex debug
+```
+
+## Next Steps
+
+(read other documents)

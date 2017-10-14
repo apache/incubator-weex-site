@@ -29,17 +29,6 @@ body {
     max-width: 850px;
   }
 
-  // &.page-layout {
-  //   max-width: 1400px;
-  // }
-
-  .article-entry {
-    padding: 0 1.2em;
-
-    > h1 {
-      display: none;
-    }
-  }
   .article-heading {
     color: $text-black;
   }
@@ -67,10 +56,10 @@ body {
 
   .doc-nav {
     padding-top: 50px;
-    background: $bg-white;
-    width: 22%;
+    background: $bg-super-light;
+    width: 23%;
     max-width: 450px;
-    min-width: 260px;
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;

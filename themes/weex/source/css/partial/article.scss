@@ -4,7 +4,7 @@
   position: relative;
   padding-bottom: 10px;
   border-bottom: 1px solid $border-light;
-  margin-bottom: 3.5em;
+  margin-bottom: 30px;
 
   h1 {
     font-size: 2em;
@@ -27,12 +27,21 @@
   }
 }
 
+.no-chapter {
+  .article {
+    .article-entry {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 .article {
   display: flex;
   flex: 1;
   flex-direction: column;
   position: relative;
-  line-height: 1.6;
+  line-height: 1.45;
   overflow-y: auto;
   color: $text-dark;
 
@@ -42,10 +51,20 @@
 
   .article-entry {
     flex: 1;
-    max-width: 800px;
-    margin-top: 50px;
-    margin-left: 40px;
-    margin-bottom: 60px;
+    max-width: 720px;
+    margin: 40px 0 20px 40px;
+    padding: 0 1.4em;
+
+    > h1 {
+      display: none;
+    }
+
+    img {
+      display: block;
+      max-width: 95%;
+      margin: 20px auto;
+    }
+
   }
 
   h2 {

@@ -6,12 +6,14 @@
     <%- page_anchor(post.content) %>
     <div class="article-tips">
       <p class="tips-text">
+        <a class="xx" href="">Rank this page</a>
+        <span class="spliter"> | </span>
         <a class="xx" href="">Edit this page on GitHub.</a>
       </p>
     </div>
   </div>
   <% if (page_type === 'article') { %>
-     <%- partial('_partial/post/nav') %>
+    <%- partial('_partial/post/nav') %>
   <% } %>
   <%- partial('_partial/footer') %>
 </article>

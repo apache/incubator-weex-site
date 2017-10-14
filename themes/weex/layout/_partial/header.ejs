@@ -17,7 +17,7 @@
         <li class="<%= page.path.match(/\/?tools\/?/i) ? 'current': '' %>">
             <a  href="<%= url_for_lang('tools') %>"><%= _p('menu.tools') %></a>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%= page.path.match(/\/?community\/?/i) ? 'current': '' %>">
           <a href="javascript:;"><%= _p('menu.community') %></a>
           <ul class="dropdown-menu subnav">
             <li>
