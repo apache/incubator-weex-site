@@ -17,7 +17,7 @@ Weex is a framework for building Mobile cross-platform high performance UI appli
 
 **VueJS is developed by [Evan You](https://twitter.com/youyuxi).**
 
-Weex now fully supports VueJS 2.x officailly. Weex put Vue 2.x as its built-in JS Framework, making it powerful for building native apps!.
+Weex now fully supports VueJS 2.x officially. Weex put Vue 2.x as its built-in JS Framework, making it powerful for building native apps!.
 
 ## Hello world Example
 

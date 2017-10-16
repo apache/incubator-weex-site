@@ -4,7 +4,6 @@ type: wiki
 group: 事件
 order: 4.1
 version: 2.1
-has_chapter_content: true
 ---
 
 # 通用事件

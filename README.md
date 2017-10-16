@@ -10,6 +10,7 @@ This is the source code of Weex official website.
 First you should install the [Node.js](https://nodejs.org/), then run:
 
 ```bash
+npm install
 npm run server
 ```
 

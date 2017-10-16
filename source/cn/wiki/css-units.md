@@ -4,7 +4,6 @@ type: wiki
 group: 样式
 order: 3.3
 version: 2.1
-has_chapter_content: true
 ---
 
 # CSS 单位

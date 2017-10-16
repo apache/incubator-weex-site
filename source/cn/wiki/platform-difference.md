@@ -4,7 +4,6 @@ type: wiki
 group: Design
 order: 1.5
 version: 2.1
-has_chapter_content: true
 ---
 
 # Weex 和 Web 平台的差异

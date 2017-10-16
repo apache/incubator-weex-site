@@ -3,7 +3,6 @@ title: 工作原理
 type: wiki
 group: Design
 order: 1.1
-has_chapter_content: false
 chapter_title: 优势介绍
 version: 2.1
 ---
