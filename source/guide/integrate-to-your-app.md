@@ -8,102 +8,49 @@ version: 2.1
 
 # Integrate to Your App
 
-## Integrate to Android
-Tip：The following documents assume that you already have a certain Android development experience.
+## Integrate on Android Platform
+The following documents assume that you already have a certain Android development experience.
 
-### Android has two ways to integrate weex
-1.using source code: Can quickly use the latest features of WEEX, according to your own characteristics of the project. So, you can do some related improvements.
 
-2.using SDK: WEEX will regularly release a stable version at jcenter.[jcenter](https://bintray.com/alibabaweex/maven/weex_sdk/view)
+### Quick Start
+The keys to intergrating Weex into your Android application are the following five step:
 
-### Prerequisites
-Make sure the following configuration is complete:
+1.Configure gralde dependency in build.gradle
+```javascript
+dependencies {
+    ...
+    // weex sdk and fastjson
+    compile 'com.taobao.android:weex_sdk:0.5.1@aar'   
+    compile 'com.alibaba:fastjson:1.1.46.android'
 
-+ [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) version >= 1.7 , and configure the environment variable
-+ Android SDK installed and configure the environment variable
-+ Android SDK version 23 (compileSdkVersion in build.gradle)
-+ SDK build tools version 23.0.1 (buildToolsVersion in build.gradle)
-+ Android Support Repository >= 17 (for Android Support Library)
-
-### Quick to use
-If you are the first time to try or have a higher demand for stability, you can use the way to dependence on the SDK.
-The steps are as follows:
-
-1. Create an Android project. There is nothing to be specified, according to your habits to.
-2. Update build.gradle by adding the following dependencies:
-
-```java
-compile 'com.android.support:recyclerview-v7:23.1.1'
-compile 'com.android.support:support-v4:23.1.1'
-compile 'com.android.support:appcompat-v7:23.1.1'
-compile 'com.alibaba:fastjson:1.1.46.android'
-compile 'com.taobao.android:weex_sdk:0.5.1@aar'
-```
-
-Note: the version can be high can not be low.
-
-#### Start writing code
-
-Note: There is a complete code address in the appendix
-
-+ Implement the picture download interface, set the initialization.
-
-```java
-package com.weex.sample;
-import android.widget.ImageView;
-import com.taobao.weex.adapter.IWXImgLoaderAdapter;
-import com.taobao.weex.common.WXImageStrategy;
-import com.taobao.weex.dom.WXImageQuality;
-/**
-* Created by lixinke on 16/6/1.
-*/
-public class ImageAdapter implements IWXImgLoaderAdapter {
-  @Override
-  public void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy) {
-    //To implement picture download interface, otherwise the picture can not be displayed.
-  }
+    //support library dependencies
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
+2.Add required permissions in your AndroidManifest.xml
 
-+ initialization
-
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+```
+3.Init Week SDK When Application Create
 ```java
-package com.weex.sample;
-import android.app.Application;
-import com.taobao.weex.InitConfig;
-import com.taobao.weex.WXSDKEngine;
-
-/**
-* Note: add android:name=".WXApplication"  into Manifest file
-* To implement ImageAdapter, otherwise the picture can not be downloaded
-* Gradle must add some dependencies, otherwise the initialization will fail.
-* compile 'com.android.support:recyclerview-v7:23.1.1'
-* compile 'com.android.support:support-v4:23.1.1'
-* compile 'com.android.support:appcompat-v7:23.1.1'
-* compile 'com.alibaba:fastjson:1.1.45'
-*/
-
 public class WXApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    InitConfig config=new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();
+    InitConfig config = new InitConfig.Builder().setImgAdapter(new FrescoImageAdapter()).build();
     WXSDKEngine.initialize(this,config);
   }
 }
-```
+```[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)  
 
-+ Start rendering
-
+4. Create an WXSDKInstance,  add IWXRenderListener and activity lifecycle on it. load weex bundle url. when  page load success; target view will be send for you on  onViewCreated callback, set target view to activity contentView.
 ```java
-package com.weex.sample;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import com.taobao.weex.IWXRenderListener;
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.common.WXRenderStrategy;
-import com.taobao.weex.utils.WXFileUtils;
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
   WXSDKInstance mWXSDKInstance;
   @Override
@@ -113,14 +60,11 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     mWXSDKInstance = new WXSDKInstance(this);
     mWXSDKInstance.registerRenderListener(this);
     /**
-    * WXSample can be replaced by any string
-    * Template is  js file that .we converted
-    * Option can be empty, or through the option passed js required parameters. Such as the address of the bundle js.
-    * JsonInitData can be empty.
-    * width is -1 , default full screen, you can customize it.
-    * height is -1 , default full screen, you can customize it.
+    * bundleUrl source http://dotwe.org/vue/38e202c16bdfefbdb88a8754f975454c
     */
-    mWXSDKInstance.render("WXSample", WXFileUtils.loadFileContent("hello.js", this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
+    String pageName = "WXSample";
+    String bundleUrl = "http://dotwe.org/raw/dist/38e202c16bdfefbdb88a8754f975454c.bundle.wx";
+    mWXSDKInstance.renderByUrl(pageName, bundleUrl, null, null,WXRenderStrategy.APPEND_ASYNC);
   }
   @Override
   public void onViewCreated(WXSDKInstance instance, View view) {
@@ -146,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
   protected void onPause() {
     super.onPause();
     if(mWXSDKInstance!=null){
-      mWXSDKInstance.onActivityPause();
+       mWXSDKInstance.onActivityPause();
     }
   }
   @Override
@@ -165,16 +109,11 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
   }
 }
 ```
+5. Run app, start activity, then you will see hello world demo. well done.
 
-### Dependence on source code (IDE Android Studio)
-1.Download source code. git clone https://github.com/alibaba/weex.
-2.Create an android project.
-3.Import the SDK Module through the following path:
-` File->New-Import Module-> chose WEEX SDK Module(weex/android/sdk) -> Finish`
-4.Add the following dependencies: compile project (': weex_sdk') to build.gradle file.
-5.Other settings please refer to the above "Quick to use".
+[Hello World Demo Source](http://dotwe.org/vue/38e202c16bdfefbdb88a8754f975454c)
 
-Appendix: [WXSample address](https://github.com/xkli/WXSample.git) `https://github.com/xkli/WXSample.git`
+Tip: Click QRCode Image in Demo Source Page, your will see compiled bundle js.
 
 
 ## Integrated to iOS
