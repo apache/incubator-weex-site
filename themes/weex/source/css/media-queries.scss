@@ -1,5 +1,23 @@
 @import "variable.scss";
 
+@media screen and (max-width: 1380px) {
+  .article {
+    .article-toc {
+      > ul {
+        width: 32%;
+        margin-left: 4%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .article {
+    .article-toc {
+      display: none;
+    }
+  }
+}
 
 @media screen and (max-width: 1080px) {
   #header {
@@ -22,6 +40,9 @@
   }
 
   .article {
+    .article-toc {
+      display: none;
+    }
     .article-entry {
       margin: 40px 0 20px 20px;
     }

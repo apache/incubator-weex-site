@@ -78,6 +78,16 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
+toc:
+  maxdepth: 3
+  class: article-toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: '#'
+    style: header-anchor
+
 # Writing
 default_layout: post
 # auto_spacing: false # Add spaces between asian characters and western characters
