@@ -6,146 +6,122 @@ order: 8.02
 version: 2.1
 ---
 
-`<image>` is used to display a single image in your interface.
+# &lt;image&gt;
 
-> **Note:**  `<img>` element which is usually used in HTML is not supported in Weex, you should use `<image>` instead.
+### Summary
 
-> **Note:**  Weex doesn't have built-in image downloader, as relevant download, cache, decompression mechanisms are very complicated and some open sourced tools such as [SDWebImage](https://github.com/rs/SDWebImage) have handled well, so please add native image adapter/handler before using `<image>`.
->
-> See also:  [Android adapter](../android-apis.html#Adapter) and [iOS handler](../ios-apis.html#Handler-like-Android-Adapter).
+`image` tag is used to render a specified picture, and it shouldn't contain any child component. `<img>` is not supported currently.
 
-## Basic Usage
+**Notes:** the styles of `width` and `height` should be specified, otherwise it won't work.
 
-> **Note:** the styles of `width` and `height` must be specified, otherwise it won't work.
 
-```html
-<image style="width:500px;height:500px" src="https://vuejs.org/images/logo.png"></image>
-```
+### Child Components
 
-See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
+This component supports no child components.
 
-  ## Attributes
+### Attributes
 
-| Attribute     | Type   | Value                      | Default Value |
-| ------------- | ------ | -------------------------- | ------------- |
-| `placeholder` | String | {URL / Base64}             | -             |
-| `resize`      | String | conver / contain / stretch | stretch       |
-| `src`         | String | {URL / Base64 }            | -             |
+- `src`: &lt;string&gt; image source url
+- `resize`: <span class="api-version">v0.5+</span> &lt;string&gt; the 'ScaleType' of the component. The default value is ``stretch``, if this attribute is not specified. Possible values are ``cover``, ``contain``, each of which has the same meaning with w3c standard.
+- `placeholder`: <span class="api-version">v0.9+</span> &lt;string&gt; image to display while the network image src is loading.
 
-  > **Note:** you can specify a URL which is relative to bundle URL for `src` and `placeholder`, rel	ative URL will be rewritten to the real resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
+### Styles
 
-  ### `placeholder`
+- `width`: &lt;length&gt; the width of the component. This style should be specified.
+- `height`: &lt;length&gt; the height of the component. This style should be specifed.
 
-  A URL value for image placeholder. It will be displayed when the image view is empty and will be removed when the image represented by `src` is loaded. [(Example)](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c)
+**common styles**: check out the [common styles](../common-style.html)
 
-  ### `resize`
+- support flexbox related styles
+- support box model related styles
+- support ``position`` related styles
+- support ``opacity``, ``background-color`` etc.
 
-![image resize property](../images/image-resize-property.png)
+### Events
 
--   `contain`: Scales the image as large as possible without cropping or stretching the image. Any remaining area of bounds is transparent ([Example](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
-- `cover`: Scales the image as large as possible without stretching the image. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains.  ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
-- `stretch`: `Default value`. Scales the content to fit the size of itself by changing the aspect ratio of the image content if necessary. ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
+**common events**: check out the [common events](../common-event.html)
 
-  See also: [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
+- support `click` event. Check out [common events](../common-event.html)
+- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- `load`<sup class="api-version">v0.8+</sup> event. The `load` event fires on an image has been loaded. Only Android and iOS are supported currently. [example](http://dotwe.org/vue/e291159ac60b35dcd4994638a78d54ad)
+  - event object
+    - `success` : `true` if the image was loaded successfully, otherwise `false`
+    - `size` : the original size of image, contains two parameters: `naturalWidth` representing the original width of image in pixels, `naturalHeight` representing the original height of image in pixels. default value. The default value for both parameters is `0`.
 
-### `src`
+**component method**
 
-The URL of the image to display. This attribute is mandatory for the `<image>` component.
+- support save <sup class="api-version">v0.16.0+</sup> image to local device or photo album.
+  - you should specify a callback function to receive the saving result.
+	  ```
+	 	var image = this.$refs.imageRef; // image 是之前已经定义过的ref
+	  		image.save(function(result) {
+	  			console.log(JSON.stringify(result))
+		});
+		```
+    	and the result can be the following format
+     ```
+      	{
+    		"success" : true/false, // 保存成功或失败
+    		"errorDesc": "errordesc" // 在success 为false的情况会返回
+     	}
+     ```
+  - note
+   you must add `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryAddUsageDescription `(iOS 11) privacy to access photo album for iOS, [see more privacy](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
+ 
+ [try it for saving image](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df414)
 
-#### Supported Image Formats
-
-Weex doesn't give a list of image formats that must be supported,  it mainly rely on the image adapter/handler you are using.  For example, if you are using [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) as the image adapter on iOS, you can use image formats like JPEG, PNG, GIF, WebP and so on.
-
-## Component Methods
-
-### `save` <span class="api-version">v0.16.0+</span>
-
-Save `<image>` content to local device or photo album, this operation may require device permission.
-
-**Parameters**:
-
-* `callback`: {Function}  A function which is called after the image has been written to the local device or photo album.
-  * `success`: {Boolean}  A flag indicating whether the image has been written completed.
-  * `errorDesc`: {String} A string containing the description of the error if image is not written successfully.
-
-**Return value**: null
-
-> **Note**: You must add `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryAddUsageDescription` (iOS 11) privacy to access photo album for iOS. See also: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
-
-#### Use `save` Method
-
-Add `ref` attribute (Vue.js *[Child Component Refs](https://vuejs.org/v2/guide/components.html#Child-Component-Refs)*) on `<image>`:
+### Examples
 
 ```html
-<image ref="poster" src="path/to/image.png"></image>
-```
+<template>
+  <scroller class="wrapper" >
+    <div class="page-head" >
+      <image class="title-bg" resize="cover" src="https://img.alicdn.com/tps/TB1dX5NOFXXXXc6XFXXXXXXXXXX-750-202.png"></image>
+      <div class="title-box">
+        <text class="title">Alan Mathison Turing</text>
+      </div>
+    </div>
+    <div class="article">
+      <text class="paragraph">Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.</text>
+      <text class="paragraph">During the Second World War, Turing worked for the Government Code and Cypher School (GC&CS) at Bletchley Park, Britain's codebreaking centre. For a time he led Hut 8, the section responsible for German naval cryptanalysis. He devised a number of techniques for speeding the breaking of German ciphers, including improvements to the pre-war Polish bombe method, an electromechanical machine that could find settings for the Enigma machine. Turing played a pivotal role in cracking intercepted coded messages that enabled the Allies to defeat the Nazis in many crucial engagements, including the Battle of the Atlantic; it has been estimated that this work shortened the war in Europe by more than two years and saved over fourteen million lives.</text>
+      <text class="paragraph">After the war, he worked at the National Physical Laboratory, where he designed the ACE, among the first designs for a stored-program computer. In 1948 Turing joined Max Newman's Computing Machine Laboratory at the Victoria University of Manchester, where he helped develop the Manchester computers and became interested in mathematical biology. He wrote a paper on the chemical basis of morphogenesis, and predicted oscillating chemical reactions such as the Belousov–Zhabotinsky reaction, first observed in the 1960s.</text>
+      <text class="paragraph">Turing was prosecuted in 1952 for homosexual acts, when by the Labouchere Amendment, "gross indecency" was still criminal in the UK. He accepted chemical castration treatment, with DES, as an alternative to prison. Turing died in 1954, 16 days before his 42nd birthday, from cyanide poisoning. An inquest determined his death as suicide, but it has been noted that the known evidence is also consistent with accidental poisoning. In 2009, following an Internet campaign, British Prime Minister Gordon Brown made an official public apology on behalf of the British government for "the appalling way he was treated." Queen Elizabeth II granted him a posthumous pardon in 2013.</text>
+    </div>
+  </scroller>
+</template>
 
-Get the component reference and use the `save` method:
-
-```js
-const $image = this.$refs.poster
-$image.save(result => {
-  if (result.success) {
-    // TODO
-  } else {
-    console.log(result.errorDesc)
+<style>
+  .page-head {
+    width: 750px;
+    height: 200px;
   }
-})
-```
-
-See the [complete example](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df414).
-
-## Events
-
-Support **[common events](../../wiki/common-events.html)**.
-
-### `load`
-
-`load` event handler will be called when the image specified by `src` is loaded. 
-
-**Event object**:
-
-- `success`: {Boolean} It shows that whether the image is loaded successfully.
-- `size`: {Object} The loaded image size
-  - `naturalWidth`: {Number} The intrinsic width of image displayed on device,  it will be zero if the specified image cannot be loaded correctly.
-  - `naturalHeight`: {Number} the intrinsic height of image displayed on device, it will be zero if the specified image cannot be loaded correctly.
-
-#### Handle `load` Event
-
-Bind `load` event on `<image>`:
-
-```html
-<image @load="onImageLoad" src="path/to/image.png"></image>
-```
-
-Add event handler:
-
-```js
-export default {
-  methods: {
-    onImageLoad (event) {
-      if (event.success) {
-        // TODO
-      }
-    }
+  .title-bg {
+    width: 750px;
+    height: 200px;
   }
-}
+  .title-box {
+    width: 750px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .title {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .article {
+    padding: 20px;
+  }
+  .paragraph{
+    margin-bottom: 15px;
+  }
+</style>
 ```
 
-See the [complete example](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0).
-
-## Styles
-
-Support **[common styles](../../wiki/common-styles.html)**.
-
-## Usage Notes
-
-- Add image adapter/handler before using `<image>`
-- The `width` and `height` in the styles of `<image>` must be specified.
-- `<image>` can not have any nested child component.
-
-## Examples
-
-- [Base64 example](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
-- [Multi-layer images example](http://dotwe.org/vue/c44359c0f200abc1f66504b88587e4f6)
-- [Lazy load image example](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
+[try it](http://dotwe.org/vue/e2122bc245beafb0348d79bfd1274904)
