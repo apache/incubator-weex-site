@@ -7,12 +7,12 @@ version: 2.1
 
 # Bug Report Guidelines
 
-This document describes how to write a good Weex bug report. Good bug reports help developers decide an appropriate priority and severity for a bug, and increase the chance that a bug will be fixed quickly. The more specific information you can provide, the better.
+This document describes how to write a good Weex bug report. Good bug reports help developers classify the priority and severity of a bug properly, which helps the bug get fixed as soon as possible. The more specific information you provide, the better your bug gets understood.
 
 ## Bug Report General Principles
 
-- Avoid duplicates: Search before you file!
-- Always test the latest available version.
+- Avoid duplicates: Search before you file a new one!
+- Always test the latest available version before submitting a bug.
 - One bug per report.
 - State useful facts, not opinions or complaints.
 
@@ -30,13 +30,13 @@ A good Example: `List Crashes when deleting a header`
 
 ### Environment
 
-**Weex Version**: Please tell the version of WeexSDK or Weex Playground or weex-toolkit you were using when the bug occurred
+**Weex Version**: Please identify the version of WeexSDK or Weex Playground or weex-toolkit you were using when the bug occurred
 
-**Device environment**: Please tell the device model, platform and OS version that your bug occurred on. e.g. , iPhone 6, iOS 10.3.
+**Device environment**: Please identify the device model, platform and OS version. e.g. , iPhone 6, iOS 10.3.
 
 ### Overview/Description
 
-The overview or description of a bug report is to explain the bug to the developer, including:
+The overview or description of a bug report is to explain the bug in detail, including:
 
 - Justifications of why this is a bug
 - [dotwe](http://dotwe.org/vue/) demo that can reproduce the bug
@@ -46,7 +46,7 @@ The overview or description of a bug report is to explain the bug to the develop
 
 ### Steps to Reproduce
 
-The goal of reproducible steps is to teach developer to recreate the bug on his own system, such as:
+The aim to provide the reproducible steps is to enable developers to reproduce the bug in their own environment. Here's an example:
 
 *Step 1: Load the demo using Weex Playground*
 
@@ -56,7 +56,7 @@ The goal of reproducible steps is to teach developer to recreate the bug on his 
 
 ### Test Results
 
-The test results, including *Expected Result* and *Actual Result*, will show the developer what's wrong. *Expected Result* describes what should have happened, and *Actual Result* describes what actually happened.
+The test results, including *Expected Result* and *Actual Result*, will tell developers what's wrong. *Expected Result* describes what should have happened, and *Actual Result* describes what actually happened.
 
 ## Reference
 
