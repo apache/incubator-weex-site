@@ -20,9 +20,9 @@ This document describes how to write a good Weex bug report. Good bug reports he
 
 A good bug report should include the following information:
 
-### Summary
+### Title 
 
-The goal of summary is to make the report searchable and uniquely identifiable.
+The goal of title is to make the report searchable and uniquely identifiable.
 
 A bad example: `List Crash`
 
