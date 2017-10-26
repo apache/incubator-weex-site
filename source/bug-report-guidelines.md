@@ -7,7 +7,7 @@ version: 2.1
 
 # Bug Report Guidelines
 
-This document describes how to write a good Weex bug report. Good bug reports help developers classify the priority and severity of a bug properly, which helps the bug get fixed as soon as possible. The more specific information you provide, the better your bug gets understood.
+This document describes how to write a good Weex bug report. Good bug reports help developers to classify the priority and severity of a bug properly, which helps the bug get fixed as soon as possible. The more specific information you provide, the better your bug gets understood.
 
 ## Bug Report General Principles
 
@@ -56,7 +56,7 @@ The aim to provide the reproducible steps is to enable developers to reproduce t
 
 ### Test Results
 
-The test results, including *Expected Result* and *Actual Result*, will tell developers what's wrong. *Expected Result* describes what should have happened, and *Actual Result* describes what actually happened.
+The test results, including *Expected Result* and *Actual Result*, will tell developers what's wrong. *Expected Result* describes what should happen, and *Actual Result* describes what actually happens.
 
 ## Reference
 
