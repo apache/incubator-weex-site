@@ -42,13 +42,11 @@ version: 2.1
 
 ![image resize property](../../../references/images/image-resize-property.png)
 
-- `contain`: 缩放图片以完全装入`<image>`区域，可能背景区部分空白。 ([示例](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
+- `contain`：缩放图片以完全装入`<image>`区域，可能背景区部分空白。 ([示例](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
+- `cover`：缩放图片以完全覆盖`<image>`区域，可能图片部分看不见。 ([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
+- `stretch`：`默认值`. 按照`<image>`区域的宽高比例缩放图片。([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
 
-- `cover`: 缩放图片以完全覆盖`<image>`区域，可能图片部分看不见。 ([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
-
-- `stretch`: `默认值`. 按照`<image>`区域的宽高比例缩放图片。([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
-
-  参见: [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
+参见: [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
 
 ### `src`
 
@@ -66,9 +64,10 @@ Weex没有提供必须支持的图片格式列表，主要依赖于你正在使�
 
 **参数**:
 
-- `callback`: {Function} 在图片被写入到本地文件或相册后调用的函数。
-  - `success`: {Boolean} 标记图片是否已写入完成。
-  - `errorDesc`: {String} 如果图像没有成功写入，该字符串包含了详细的错误描述。
+* `callback`：{Function} 在图片被写入到本地文件或相册后的回调，回调参数：
+  * `result`：{Object} 回调结果对象，属性列表：
+    * `success`：{Boolean} 标记图片是否已写入完成。
+    * `errorDesc`：{String} 如果图像没有成功写入，该字符串包含了详细的错误描述。
 
 **返回值**: null
 
@@ -88,9 +87,10 @@ Weex没有提供必须支持的图片格式列表，主要依赖于你正在使�
 const $image = this.$refs.poster
 $image.save(result => {
   if (result.success) {
-    // TODO
+    // Do something to hanlde success
   } else {
     console.log(result.errorDesc)
+    // Do something to hanlde failure
   }
 })
 ```
@@ -108,8 +108,10 @@ $image.save(result => {
 **事件对象**:
 
 - `success`: {Boolean} 标记图片是否成功加载。
-- `size`: {Object} 加载的图片大小。
-  - `naturalWidth`: {Number}  图片宽度，如果图片加载失败则为0。
+
+
+- `size`: {Object} 加载的图片大小对象，属性列表：
+  - `naturalWidth`: {Number} 图片宽度，如果图片加载失败则为0。
   - `naturalHeight`: {Number} 图片高度，如果图片加载失败则为0。
 
 #### 处理 `load` 事件
@@ -127,7 +129,7 @@ export default {
   methods: {
     onImageLoad (event) {
       if (event.success) {
-        // TODO
+        // Do something to hanlde success
       }
     }
   }
