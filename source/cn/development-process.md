@@ -57,7 +57,7 @@ version: 2.1
 [创建一个 pull request](https://help.github.com/articles/using-pull-requests/) 并提交到 `apache/incubator-weex` 的 `master` 分支，确保它符合这些准则:
 
 1. 一个 Pull Request 只解决一个问题
-2. PR标题应该是 `[WEEX-xxxx][模块]标题`，其中 `xxxx` 是相关的 JIRA 问题号，模块是 PR 的类别（android、ios、jsfm、web、component、doc、website、test、other），标题可以是 JIRA 的标题，也可以是描述 PR 本身的更具体的标题。
+2. PR标题应该是 `[WEEX-xxxx][模块]标题`，其中 `xxxx` 是相关的 JIRA 问题号，模块是 PR 的类别（android、iOS、jsfm、web、component、doc、website、test、other），标题可以是 JIRA 的标题，也可以是描述 PR 本身的更具体的标题。
 3. 如果该 PR 相关的工作还在进行中，还没有准备好被合并，但需要被推到 Github 上以方便查看，可以在模块后添加 `[WIP]` 标示。
 
 ## 代码风格指南 
@@ -83,7 +83,7 @@ version: 2.1
 使用下面的形式来写 commit 描述:
 
 ```markdown
-Summary of change
+Summary of change, same as PR title: `[WEEX-xxxx][COMPONENT] Summary`
 
 Longer description of change addressing as appropriate: why the change
 is made,context if it is part of many changes, description of previous 

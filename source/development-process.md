@@ -57,7 +57,7 @@ Be sure to search the issues before creating new ones to avoid duplication. If y
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) against the `master` branch of `apache/incubator-weex`. Make sure it meets these guidelines:
 
 1. One pull request for one issue
-2. The PR title should be of the form `[WEEX-xxxx][COMPONENT] Title`, where `xxxx` is the relevant JIRA number, `COMPONENT `is one of the PR categories(android, ios, jsfm, web, component, doc, website, example, test, other) and Title may be the JIRA’s title or a more specific title describing the PR itself.
+2. The PR title should be of the form `[WEEX-xxxx][COMPONENT] Summary`, where `xxxx` is the relevant JIRA number, `COMPONENT` is one of the PR categories(android, iOS, jsfm, web, doc, website, example, test, other) and Title may be the JIRA’s title or a more specific title describing the PR itself.
 3. If the pull request is still a work in progress, and so is not ready to be merged, but needs to be pushed to Github to facilitate review, then add `[WIP]` after the component.
 
 ## Code Style Guidelines 
@@ -81,7 +81,7 @@ Be sure to search the issues before creating new ones to avoid duplication. If y
 Use the following form to write commit descriptions:
 
 ```markdown
-Summary of change
+Summary of change, same as PR title: `[WEEX-xxxx][COMPONENT] Summary`
 
 Longer description of change addressing as appropriate: why the change
 is made,context if it is part of many changes, description of previous 
