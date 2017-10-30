@@ -86,7 +86,8 @@ For example , specify the `el` attribute for the element you want to animated as
 | `ease-in-out`                  | Specifies a transition effect with a slow start and end |
 | `cubic-bezier(x1, y1, x2, y2)` | Define your own values in the cubic-bezier function. Possible values are parameter values from 0 to 1. More information about cubic-bezier please visit [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
 
--  `callback`(function): Callback which is called after the completion of transition.
+### ``callback``
+Callback which is a function called after the completion of animation. In iOS platform, you can use function to get animation processing's information.
 
 >**Note: after WeexSDK0.16.0, in iOS platform can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.**
 

@@ -38,15 +38,16 @@ animation.transition(ref1, {
 
 ## 属性
 
-#### `el `：
+### `el `：
 
 将要执行动画的元素。
 
 例如指定动画的元素 ``el`` 属性为 ``test`` , 可以通过调用 `this.refs.test` 来获取元素的引用。
 
-#### `options`：
+### `options`：
 
 - `styles`(object):设置不同样式过渡效果的键值对，下表列出了所有合法的参数：
+
 | 参数名             | 描述                                       | 值类型             | 默认值             |
 | --------------- | ---------------------------------------- | --------------- | --------------- |
 | width           | 动画执行后应用到组件上的宽度值                          | length          | 无               |
@@ -80,9 +81,10 @@ animation.transition(ref1, {
 | `cubic-bezier(x1, y1, x2, y2)` | 在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 [cubic-bezier](http://cubic-bezier.com/) 和 [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
 
 
-* `callback ` (function)：动画执行完毕之后的回调函数。
+### `callback ` 
+`callback`是动画执行完毕之后的回调函数。在iOS平台上，你可以获取动画执行是否成功的信息。
 
-  > **注意: 在0.16.0+版本后，iOS上可以获取animation是否执行成功的信息，callback中的`result`参数会有两种，分别是是`Success`与`Fail`，Android暂不支持。**
+  > **注意: 在0.16.0+版本后，iOS上可以获取animation是否执行成功的信息，callback中的`result`参数会有两种，分别是是`Success`与`Fail`，Android目前暂不支持。**
 
 ## 示例
 [animation demo](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
