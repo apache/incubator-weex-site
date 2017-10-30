@@ -17,7 +17,6 @@ For example, if you have a `image` component, you can move, rotate, grow, or shr
 
 > **Note:** Now,Weex only support use animation in Javascript. CSS Animation is different from this,we will soon support CSS Animation.
 
-
 ## Basic Usage
 
 ### animation.transition(el, options, callback)
@@ -38,6 +37,7 @@ animation.transition(ref1, {
 ```
 
 ## Attributes
+
 ### ``el``
 
 An element that will be animated.
@@ -59,18 +59,12 @@ For example , specify the `el` attribute for the element you want to animated as
 
 ``transform`` also have many parameters,please see the table below.
 
-
-
-
-
 | name                                     | description                              | value type       | default value     |
 | :--------------------------------------- | :--------------------------------------- | :--------------- | :---------------- |
 | translate/translateX/translateY          | Specifies the location of which the element will be translated to. | pixel or percent | none              |
 | rotate/rotateX <span class="api-version">v0.14+</span> /rotateY <span class="api-version">v0.14+</span> | Specifies the angle of which the element will be rotated, the unit is degree. | number           | none              |
 | perspective <span class="api-version">v0.16+</span> | The distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective. Supported for Android 4.1 and above. | number           | positive infinity |
 | scale/scaleX/scaleY                      | Stretch or shrink the element.           | number           | none              |
-
-
 
 - `duration` (number): Specifies the number of milliseconds of animation execution, the default value is `0`, means that no animation will occur.    
 - `delay` (number): Specifies the amount of milliseconds to wait between a change being requested to a property that is to be transitioned and the start of the transition effect. The default value is `0`.   
@@ -87,6 +81,7 @@ For example , specify the `el` attribute for the element you want to animated as
 | `cubic-bezier(x1, y1, x2, y2)` | Define your own values in the cubic-bezier function. Possible values are parameter values from 0 to 1. More information about cubic-bezier please visit [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
 
 ### ``callback``
+
 Callback which is a function called after the completion of animation. In iOS platform, you can use function to get animation processing's information.
 
 >**Note: after WeexSDK0.16.0, in iOS platform can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.**

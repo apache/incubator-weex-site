@@ -58,6 +58,7 @@ animation.transition(ref1, {
 | transform       | 定义应用在元素上的变换类型，支持下表列出的属性                  | object          | 无               |
 
 `transform`同时也有很多对应的属性，可以参见下表：
+
 | 名称                                       | 描述                              | 值类型     | 默认值  |
 | ---------------------------------------- | ------------------------------- | ------- | ---- |
 | `translate`/`translateX`/`translateY`    | 指定元素要移动到的位置                     | 像素值或百分比 | 无    |
@@ -79,7 +80,6 @@ animation.transition(ref1, {
 | `ease-out`                     | 动画速度由快到慢                                 |
 | `ease-in-out`                  | 动画先加速到达中间点后减速到达终点                        |
 | `cubic-bezier(x1, y1, x2, y2)` | 在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 [cubic-bezier](http://cubic-bezier.com/) 和 [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
-
 
 ### `callback ` 
 `callback`是动画执行完毕之后的回调函数。在iOS平台上，你可以获取动画执行是否成功的信息。
