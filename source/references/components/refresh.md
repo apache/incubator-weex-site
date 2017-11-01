@@ -56,7 +56,7 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
  - `hide`：Collapse the refresh view. If a `<loading-indicator>` Component is included in the `<refresh>` Component, it will hide and stop the animation.
 
-> **Note：** The display and hide of `<refresh>` Components can only be controlled by an attribute named `display` which has the value of show and hide.
+> **Note：** The display and hide of `<refresh>` Components can only be controlled by an attribute named `display` which has the value of show and hide. A `display="show"` statement is always paired with a `display="hide"` statement.
 
  - Simple example :
 
