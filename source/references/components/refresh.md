@@ -10,7 +10,7 @@ version: 2.1
 
 ### <span class="weex-version">v0.6.1+</span>
 
-The `<refresh>` Component for some special containers to provide a pulldown-refresh function, its usage and attributes are similar to the `<loading>` Component.
+The `<refresh>` Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the `<loading>` Component.
 > **Note：** To be rendered properly, the `<refresh>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
 
  - Simple example :
@@ -54,9 +54,9 @@ The `<refresh>` Component for some special containers to provide a pulldown-refr
 
  - `show`：If a `<loading-indicator>` Component is included in the `<refresh>` Component, it will display and start the animation.
 
- - `hide`：Collapse the refresh view, if a `<loading-indicator>` Component is included in the `<refresh>` Component, it will hide and stop the animation.
+ - `hide`：Collapse the refresh view. If a `<loading-indicator>` Component is included in the `<refresh>` Component, it will hide and stop the animation.
 
-> **Note：** `<refresh>` Component can only be hidden or displayed with an attribute `display` with value of `show` or `hide`. And there should be a statement of `display='hide'` when `display='show'` shows up in an event function, or your scroller may not response to user inputs.
+> **Note：** The display and hide of `<refresh>` Components can only be controlled by an attribute named `display` which has the value of show and hide.
 
  - Simple example :
 
@@ -98,7 +98,7 @@ The `<refresh>` Component for some special containers to provide a pulldown-refr
 
  - Triggered when the scroller or list has been pulled down. you can get `dy`, `pullingDistance`, `viewHeight` and `type` from onpullingdown `event` object :
 
-  - `dy` : The differencen between two scroll actions
+  - `dy` : The offset between two scroll actions
   - `pullingDistance` : The distance of pulling
   - `viewHeight` : The height of refreshView
   - `type` : "pullingdown" constant string type for this event
@@ -134,7 +134,7 @@ The `<refresh>` Component for some special containers to provide a pulldown-refr
 
 ## Usage Notes
 
- - On the Android platform, the refresh view is not allowed to be pushed back when the pull-down process or the onrefresh event is triggered, but is supported on iOS and Html5.
+ - On the Android platform, it is not allowed for the refresh view to be pushed back when it is been pulling down or its onrefresh event is tiggered, while it is allow as for iOS platform and HTML5.
 
 ## Examples
 
