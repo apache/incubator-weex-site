@@ -31,8 +31,6 @@ This will create a project structure similar to this:
      │    ├── browser
      │    └── ios
      ├── WeexMyPlugin.podspec   (iOS .podspec)
-     ├── start   (builds the native plugin and watches for changes)
-     ├── start-web   (builds the web plugin and watches for changes)
      ├── package.json
      ├── README.md
   ```
@@ -44,7 +42,7 @@ The `examples` directory contains a weex app that you can use to test your plugi
 ### Developing and testing with the playground app
 1. Build the example weex app in `examples/index.vue`:
   ```
-  ./start-web
+  npm run start:web
   ```
   Webpack will be listening for changes in `examples/index.vue` and re-build the example app for you. The app will be served in the port 12580 (e.g. http://localhost:12580).
 
@@ -58,7 +56,7 @@ See [Extend Web Render](./extend-web-render.html).
 ### Developing and testing with the playground app
 1. Build the example weex app in `examples/index.vue`:
   ```
-  ./start
+  npm run start:native
   ```
   Webpack will be listening for changes in `examples/index.vue` and re-build the example app for you.
 
@@ -74,7 +72,7 @@ See [Extend Android](./extend-android.html).
 ### Developing and testing with the playground app
 1. Build the example weex app in `examples/index.vue`:
   ```
-  ./start
+  npm run start:native
   ```
   Webpack will be listening for changes in `examples/index.vue` and re-build the example app for you.
 
@@ -107,14 +105,27 @@ You can publish to the [Weex Market](../tools/market.html) with the simple comma
 weex plugin publish
 ```
 
-## How to use this plugin in another project
+## How to use the plugin in another project
+
 ### Using `weexpack`:
 ```
-weex plugin add
+weex plugin add weex-kdp
 ```
 
 ### Manual integration:
-- iOS:
+#### iOS:
 ```
 pod 'WeexMyPlugin'
+```
+
+#### Android:
+Add the following line to the dependencies list in the build.gradle file for the corresponding project.
+```
+ compile '${groupId}:weexkdp:{$version}'
+```
+> Note: You need to specify the groupId and $version of the project.
+
+#### Web integration
+```
+ npm install weexkdp
 ```
