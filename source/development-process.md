@@ -85,7 +85,7 @@ Summary of change, same as PR title: `[WEEX-xxxx][COMPONENT] Summary`
 
 Longer description of change addressing as appropriate: why the change
 is made,context if it is part of many changes, description of previous 
-behavior andnewly introduced differences, etc.
+behavior and newly introduced differences, etc.
 
 Long lines should be wrapped to 80 columns for easier log message 
 viewing interminals.
