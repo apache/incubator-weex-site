@@ -14,9 +14,9 @@ version: 2.1
 
 Weex dedicates to enable developers to use modern web development experience to build both Android, iOS and web applications with a single codebase. In practice, you can use javascript and modern front-end frameworks to develop mobile apps after integrating the WeexSDK.
 
-The structure of Weex is decoupled, the render engines are separate from the syntax layer. Weex doesn't rely on any specific front-end frameworks, instead, both [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/rax/) can be performed on Weex.
+The structure of Weex is decoupled, the render engines are separate from the syntax layer. Weex doesn't rely on any specific front-end frameworks, but mainly Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/rax/).
 
-Another primary goal of Weex is to keep up with modern development technologies and platform capabilities both on web and native. Productivity and performance can coexist in Weex. When writing Weex pages, you feel the same with writing web pages. When rendering Weex pages, you feel the same with rendering native pages.
+Another primary goal of Weex is to keep up with modern development technologies and platform capabilities both on web and native. Productivity and performance can coexist in Weex. Writing Weex pages feels the same like writing web pages. Rendering Weex pages is just same with rendering native pages.
 
 ## Overview
 
@@ -142,7 +142,7 @@ weex platform add android
 
 Depends on your network environment, it may take a while, please be patient.
 
-In order to develop the app on your local machine, you need to set up mobile development environments. For iQS, you should install [Xcode](https://developer.apple.com/xcode/). And for Android, you should install [Android Studio](https://developer.android.com/studio/index.html). If the development environments are ready, run the commands below could launch your app on the simulator or real device.
+In order to develop the app on your local machine, you need to set up mobile development environments. For iOS, you should install [Xcode](https://developer.apple.com/xcode/). And for Android, you should install [Android Studio](https://developer.android.com/studio/index.html). If the development environments are ready, run the commands below could launch your app on the simulator or real device.
 
 ```bash
 weex run ios
