@@ -32,9 +32,7 @@ Within the `<template>` of the source code, You must be familiar with the `<div>
 
 > The raw text node can only be placed in the `<text>` component, otherwise, it will be ignored.
 
-Within the `<style>` tag, you can write CSS to describe the styles of a component, and those styles are [**scoped**](https://vue-loader.vuejs.org/en/features/scoped-css.html) forcibly in Weex
-
-~~[Here are more examples written in Weex and Vue.js](https://hanks10100.github.io/weex-vue-examples/)~~.
+Within the `<style>` tag, you can write CSS to describe the styles of a component, and those styles are [**scoped**](https://vue-loader.vuejs.org/en/features/scoped-css.html) forcibly in Weex.
 
 ### Native Components
 
@@ -46,7 +44,7 @@ Weex implements render engines both on iOS and Android and provides a group of [
 
 Although the components in Weex look like HTML tags, you are not able to use all of them, instead, you can only use the built-in components and your custom components.
 
-Under the scene, Weex uses the native widgets. Although Weex emphasize the consistency on each mobile platform, we still embrace the platform's own behavior and UI differences. For example, [this `<switch>` component](http://dotwe.org/vue/d96943452b6708422197c47920903823) may look different on Android and iOS (the appearance on the web simulates iOS).
+Under the scene, Weex uses the native widgets. Although Weex emphasize the consistency on each mobile platform, we still embrace the platform's own behavior and UI differences. For example, [the `<switch>` component](http://dotwe.org/vue/d96943452b6708422197c47920903823) may look different on Android and iOS (the appearance on the web simulates iOS).
 
 ![Different switch](./images/different-switch.png)
 
@@ -68,7 +66,11 @@ Here are some documents about how to extend native components and native modules
 
 Yes, Weex can build for Android, iOS and Web from a single codebase.
 
-You can read *[How it works](../wiki/index.html)* and *[Design Principles](../wiki/design-principles.html)* to know more about the technologies and ideas behind Weex.
+Using the same source code across different platforms can dramatically increase development productivity and simplify the testing, building, and publishing processes. On this basis, Weex can combine the front-end's packaging and testing process with the mobile's publishing and monitoring system to improve development efficiency.
+
+> You can read *[How it works](../wiki/index.html)* and *[Design Principles](../wiki/design-principles.html)* to know more about the technologies and ideas behind Weex.
+
+Although Weex uses a single codebase, you can still write platform specific codes. Weex provides `weex.config.env` and `WXEnvironment` (they are strictly equal) to get the current runtime environment. You can use `WXEnvironment.platform` to determine which platform the code is running on. Except for the *platform*, `WXEnvironment` also contains other environmental informations, such as *osVersion* and *deviceModel*, refer to *[Weex variable](../references/weex-variable.html)* for the complete list.
 
 ## Support Multiple Front-End Frameworks
 
@@ -83,7 +85,7 @@ Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/r
 
 > Vue.js and Rax are already integrated into Weex SDK, you don't need to require them manually.
 
-However, Vue and Rax are not the only options, it's possible to integrate your favorite front-end framework into Weex. There is a document *[Extend JS Framework](./advanced/extend-js-framework.html)* that describes how to implement it, but the process is still very complicated and tricky. To achieve it, you need to understand many underlying details about the js-native bridge and native render engines.
+However, Vue and Rax are not the only options, it's possible to integrate other your favorite front-end framework into Weex. There is a document *[Extend JS Framework](./advanced/extend-js-framework.html)* that describes how to implement it, but the process is still very complicated and tricky. To achieve it, you need to understand many underlying details about the js-native bridge and native render engines.
 
 You can read *[Front-End Frameworks](./front-end-frameworks.html)* to learn more details.
 
@@ -121,13 +123,11 @@ npm install
 npm start
 ```
 
-It will start a web server on the `8081` port.
+It will start a web server on the `8081` port. You can open `http://localhost:8081` to see the render result on the web. The source code is located in `src/` folder. You can develop it as normal Vue.js project.
 
-You can open `http://localhost:8081` to see the render result on the web. Besides, You can also open `http://localhost:8081/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](http://weex-project.io/playground.html) then you'll see the rendered result on the mobile device.
+![Preview](./images/toolkit-preview.png)
 
-![Preview]()
-
-The source code is located in `src/` folder. You can develop it as normal Vue.js project.
+Besides, You can also open `http://localhost:8081/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](http://weex-project.io/playground.html) then you'll see the rendered result on the mobile device.
 
 ### Build and Run
 
@@ -157,3 +157,26 @@ weex debug
 ```
 
 It'll start debug server and open a web page in Chrome (only support V8 engine). For more technical details of `weex-toolkit`, please refer to the [toolkit document](../tools/toolkit.html).
+
+## Next Steps
+
+I believe you've learned the basics of Weex when you reach here. The next step is to learn more advanced features of Weex and try it right away.
+
+If you want to use weex right now:
+
++ [Integrate Weex to Your Existing App](./integrate-to-your-app.html)
++ [Set up Development Environment](./set-up-env.html)
++ [References](../references/)
+
+If you want to know the technologies and ideas behind Weex:
+
++ [How it Works](../wiki/index.html)
++ [Design Principles](../wiki/design-principles.html)
++ [Platform Differences between Weex and Web](../wiki/platform-difference.html)
+
+After getting acquainted with Weex, if you want to contribute to make it even better:
+
++ [Development Process](../development-process.html)
++ [How to Contribute](../contributing.html)
+
+In addition, Weex is a cross-stack technology, developers are also diverse, learn some fundamental knowledge of front-end development, Vue.js, iOS and Android would be especially helpful.
