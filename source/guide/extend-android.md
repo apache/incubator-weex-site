@@ -5,47 +5,60 @@ group: Extend
 order: 6.3
 version: 2.1
 ---
+# Android extend
+  Weex provides an easy way to extend, as module-extend、component-extend and adapter-extend.
 
-# Module extend
-## Step to customize a module
+## Module extend
 
-- Customize module class must extends WXModule 
-- `@JSMethod (uiThread = false or true)` annotation must be added, and set the callback mode as synchronous or asynchronous.
-- The access levels of mehtod must be `public`
-- The module class also can not be an inner class
-- Do not be obfuscated by tools like ProGuard
-- Weex params can be int, double, float, String, Map, List
-- Register the module by `WXSDKEngine.registerModule`
+1. Customize module class must extends WXModule. 
+2. Extended method must add `@JSMethod (uiThread = false or true)` annotation, and you can set the method whether it is running on UI thread or not.
+3. The access levels of mehtod must be `public`.
+4. Do not be obfuscated by tools like ProGuard.
+5. Extended method suppport the data type of int, double, float, String, Map, List as its param.
+7. Register the module: `WXSDKEngine.registerModule("myModule", MyModule.class);`or else may report an error: `ReportException :undefined:9: TypeError: Object #<Object> has no method 'xxx'` .
 
 Refer to the following example:
 
 ```java
-public class WXEventModule extends WXModule{
+public class MyModule extends WXModule{
 
-  // as sync-callback mode
+  //run ui thread 
+  @JSMethod (uiThread = true)
+  public void printLog(String msg) {
+    Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();
+  }
+
+  //run JS thread 
   @JSMethod (uiThread = false)
   public void fireEventSyncCall(){
    //implement your module logic here
-  }
-  // as async-callback mode   
-  @JSMethod (uiThread = true)
-  public void fireEventAsyncCall(){
-  //implement your module logic here
   }
 }
 ```
 Register the module
 
 ```java
-WXSDKEngine.registerModule("event", WXEventModule.class);
+WXSDKEngine.registerModule("MyModule", WXEventModule.class);
 ```
-
-## Use this module in weex DSL
+Use this module in weex DSL
 Now `event` moudle is avaiable in weex, use the module like this:
 
-```javascript
-var event = weex.requireModule('event');
-event.openURL("http://www.github.com");
+```html
+<template>
+  <div>
+    <text onclick="click">testMyModule</text>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    methods: {
+      click: function() {
+        weex.requireModule('myModule').printLog("I am a weex Module!");
+      }
+    }
+  }
+</script>
 ```
 
 ## Javascript callback
@@ -68,51 +81,66 @@ At the javascript side, call the module with javascript function to receive call
 event.openURL("http://www.github.com",function(resp){ console.log(resp.result); });
 ```
 
-# Component extend
-
-## Step to customize a component
+## Component extend
 
 1. Customize components must extend WXComponent or WXContainer
 2. With the `@WXComponentProp(name = value(value is attr or style))`annotation to automatically update the attribute or style for it be recognized by weex SDK.
 3. The access levels of mehtod must be **public**
-4. The component class can not be an inner class
-5. Customize can not be obfuscated by tools like ProGuard
-6. Component method with the annotation of `@JSMethod` can 
+4. Customize can not be obfuscated by tools like ProGuard
+5. Component method with the annotation of `@JSMethod` can 
 7. Weex params can be int, double, float, String, Map, List, Array
 8. Register your Component by `WXSDKEngine.registerComponent`
 
 Refer to the following example
 
 ```java
-public class MyViewComponent extends WXComponent{
-   public MyViewComponent(WXSDKInstance instance, WXDomObject dom,WXVContainer parent, String instanceId, boolean isLazy) {
-    super(instance, dom, parent, instanceId, isLazy);
-   }
-   @Override
-   protected void initView() {
-      mHost = new TextView(mContext);
-   }
-   @WXComponentProp(name = WXDomPropConstant.WX_ATTR_VALUE)
-   public void setMyViewValue(String value) {
-      ((TextView)mHost).setText(value);
-   }
-   @JSMethod
-   public void focus(){
-   //method implementation
-   }
+public class RichText extends WXComponent {
+
+  public RichText(WXSDKInstance instance, WXDomObject dom, WXVContainer parent, boolean isLazy) {
+    super(instance, dom, parent, isLazy);
+  }
+
+  @Override
+  protected void initView() {
+    mHost=new TextView(mContext);
+    ((TextView)mHost).setMovementMethod(LinkMovementMethod.getInstance());
+  }
+
+  @WXComponentProp(name = "tel")
+  public void setTelLink(String tel){
+    SpannableString spannable=new SpannableString(tel);
+    spannable.setSpan(new URLSpan("tel:"+tel),0,tel.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    ((TextView)mHost).setText(spannable);
+  }
 }
 ```
-Register your Component
+Register your Component：
 
 ```java
 WXSDKEngine.registerComponent("MyView",MyViewComponent.class);
 ```
 
+Use this component in weex DSL：
+
+```html
+<template>
+  <div>
+    <richText tel="12305" style="width:200;height:100">12305</text>
+  </div>
+</template>
+```
+
+
 ### Extend Component Method
  WeexSDK `(0.9.5+)` support the component method that can be invoked  
- for example
-
-
+ for example：
+ 
+ ```java
+ @JSMethod
+ public void focus(){
+  //method implementation
+ }
+ ```
  after your registration for your own custom component, now you can call it in your js file.
 
 ```html
@@ -135,6 +163,43 @@ WXSDKEngine.registerComponent("MyView",MyViewComponent.class);
 
 Weex SDK has no image download capability, you need to implement `IWXImgLoaderAdapter`. 
 
+Refer to the following example
+```java
+public class ImageAdapter implements IWXImgLoaderAdapter {
+
+  public ImageAdapter() {
+  }
+
+  @Override
+  public void setImage(final String url, final ImageView view,
+                       WXImageQuality quality, WXImageStrategy strategy) {
+
+    WXSDKManager.getInstance().postOnUiThread(new Runnable() {
+
+      @Override
+      public void run() {
+        if(view==null||view.getLayoutParams()==null){
+          return;
+        }
+        if (TextUtils.isEmpty(url)) {
+          view.setImageBitmap(null);
+          return;
+        }
+        String temp = url;
+        if (url.startsWith("//")) {
+          temp = "http:" + url;
+        }
+        if (view.getLayoutParams().width <= 0 || view.getLayoutParams().height <= 0) {
+          return;
+        }
+        Picasso.with(WXEnvironment.getApplication())
+            .load(temp)
+            .into(view);
+      }
+    },0);
+  }
+}
+```
 ## Proguard Rules
 
 If you want to using proguard to protect your source code, please add the following rules to your profile:

@@ -18,7 +18,7 @@ Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功
 ## Module 扩展
 
 1. Module 扩展必须继承 WXModule 类。
-2. 扩展方法必须加上 @WXModuleAnno 注解。Weex 会根据注解来判断当前方法是否要运行在 UI 线程，和当前方法是否是扩展方法。
+2. 扩展方法必须加上`@JSMethod (uiThread = false or true)` 注解。Weex 会根据注解来判断当前方法是否要运行在 UI 线程，和当前方法是否是扩展方法。
 3. Weex是根据反射来进行调用 Module 扩展方法，所以Module中的扩展方法必须是 public 类型。
 4. 同样因为是通过反射调用，Module 不能被混淆。请在混淆文件中添加代码：`-keep public class * extends com.taobao.weex.common.WXModule{*;}`
 5. Module 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数
@@ -27,21 +27,32 @@ Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功
 示例如下：
 
 ```java
-public class MyModule extends WXModule {
+public class MyModule extends WXModule{
 
-  @WXModuleAnno(runOnUIThread = true)
+  //run ui thread 
+  @JSMethod (uiThread = true)
   public void printLog(String msg) {
     Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();
   }
+
+  //run JS thread 
+  @JSMethod (uiThread = false)
+  public void fireEventSyncCall(){
+   //implement your module logic here
+  }
 }
 ```
+Register the module
 
+```java
+WXSDKEngine.registerModule("MyModule", WXEventModule.class);
+```
 JS 调用如下：
 
 ```html
 <template>
   <div>
-    <text onclick="click">点击我测试</text>
+    <text onclick="click">testMyModule</text>
   </div>
 </template>
 
@@ -49,31 +60,12 @@ JS 调用如下：
   module.exports = {
     methods: {
       click: function() {
-        weex.requireModule('myModule').printLog("我是一个测试!");
+        weex.requireModule('myModule').printLog("I am a weex Module");
       }
     }
   }
 </script>
 ```
-
-#### 支持 synchronous/asynchronous 回调
-
-你可以添加 `@JSMethod(uiThread = false或true)` 注释来选择 moudle 的回调模式。请参见以下示例：
-
-```java
-  // as sync-callback mode
-@JSMethod (uiThread = false)
-public void testSyncCall(){
-    WXLogUtils.d("WXComponentSyncTest : Thread.currentThread().getName());
-}
-
-// as async-callback mode
-@JSMethod (uiThread = true)
-public void testAsyncCall(){
-    WXLogUtils.e("WXComponentASynTest : Thread.currentThread().getName() );
-}
-```
-
 ## Component 扩展
 
 1. Component 扩展类必须集成 WXComponent.
@@ -105,6 +97,11 @@ public class RichText extends WXComponent {
   }
 }
 ```
+注册你的组件：
+
+```java
+WXSDKEngine.registerComponent("MyView",MyViewComponent.class);
+```
 
 JS 调用如下：
 
@@ -115,6 +112,35 @@ JS 调用如下：
   </div>
 </template>
 ```
+#### 组件方法支持
+从WeexSDK 0.9.5开始，你可以定义组件方法
+
+- 在组件中如下声明一个组件方法
+
+ ```java
+ @JSMethod
+ public void focus(){
+  //method implementation
+ }
+ ```
+
+- 注册组之后，你可以在weex 文件中调用
+
+  ```html
+	<template>
+    <mycomponent id='mycomponent'></mycomponent>
+	</template>
+	<script>
+    module.exports = {
+      created: function() {
+        this.$el('mycomponent').focus();
+      }
+    }
+	</script>
+	```
+
+注:工程要添加依赖 `compile 'com.squareup.picasso:picasso:2.5.2'`
+
 ## Adapter扩展
 
 图片下载：
@@ -159,35 +185,6 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
   }
 }
 ```
-#### 组件方法支持
-从WeexSDK 0.9.5开始，你可以定义组件方法
-
-- 在组件中如下声明一个组件方法
-
- ```java
- @JSMethod
- public void focus(){
-  //method implementation
- }
- ```
-
-- 注册组之后，你可以在weex 文件中调用
-
-  ```html
-	<template>
-    <mycomponent id='mycomponent'></mycomponent>
-	</template>
-	<script>
-    module.exports = {
-      created: function() {
-        this.$el('mycomponent').focus();
-      }
-    }
-	</script>
-	```
-
-注:工程要添加依赖 `compile 'com.squareup.picasso:picasso:2.5.2'`
-
 #### SDK混淆规则
 若要在APP中使用混淆，请在相应的配置文件中添加如下规则：
 
@@ -212,8 +209,5 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
 -keep class com.taobao.weex.module.**{*;}
 -keep public class * extends com.taobao.weex.common.WXModule{*;}
 -keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}
--keep public class com.taobao.taolive.ui.weex.**{*;}
 -keep class * implements com.taobao.weex.ui.IExternalComponentGetter{*;}
--keep class com.alibaba.aliweex.hc.HCConfig{*;}
--keep class com.alibaba.dynamic.**{*;}
 ```
