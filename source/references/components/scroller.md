@@ -55,7 +55,9 @@ common styles: check out [common styles for components](../common-style.html)
 
 - support `loadmore` event. The `loadmore` event should be used in concert with loadmoreoffset. If the view has less than loadmoreoffset to scroll down, the event will be triggered.See details in [example](http://dotwe.org/vue/26e980d5ccd9538941ea6d17761219ff).
 
-- support `scroll` event <sup class="wx-v">0.12+</sup> .The `loadmore` should be used in concert with offset-accuracy. This event is fired when the list scrolls. The current contentOffset value is given in this event callback.  See details in [example](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
+- support `scroll` event <sup class="wx-v">0.12+</sup> .The `scroll` should be used in concert with offset-accuracy. This event is fired when the list scrolls. The current contentOffset value is given in this event callback.  See details in [example](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
+
+- support `scrollstart` and `scrollend` event <sup class="wx-v">0.17+</sup> .These events are fired when the list begins or ends scrolling.The current contentSize and contentOffset value are given in this event callback.  See details in [example](http://dotwe.org/vue/ba8045f24bf6e1265bb51e94b5ef418c).
 
 
 ## Restrictions
