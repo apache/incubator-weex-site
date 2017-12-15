@@ -10,9 +10,9 @@ version: 2.1
 
 ## What is Weex?
 
-> **Weex is a framework for building high-performance mobile apps with modern web development experience.**
+> **Weex is a framework for building high-performance mobile applications with modern web development experience.**
 
-Weex dedicates to enable developers to use modern web development experience to build both Android, iOS and web applications with a single codebase. In practice, you can use javascript and modern front-end frameworks to develop mobile apps after integrating the WeexSDK.
+Weex dedicates to enable developers to use modern web development experience to build both Android, iOS and web apps with a single codebase. In practice, you can use javascript and modern front-end frameworks to develop mobile apps after integrating the WeexSDK.
 
 The structure of Weex is decoupled, the render engines are separated from the syntax layer. Weex doesn't rely on any specific front-end framework, it mainly supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/rax/).
 
@@ -62,7 +62,7 @@ Here are some documents about how to extend native components and native modules
 + [Extend Android](./extend-android.html)
 + [Extend iOS](./extend-ios.html)
 
-### Write Once, Run Everywhere
+### Write Once, Run Anywhere
 
 Yes, Weex can build for Android, iOS and Web from a single codebase.
 
