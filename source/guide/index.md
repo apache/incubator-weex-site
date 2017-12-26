@@ -20,7 +20,7 @@ Another primary goal of Weex is to keep up with modern development technologies 
 
 ## Overview
 
-If you just want to try Weex, You don't need to install anything. There is an [online playground](http://dotwe.org/vue/) of Weex, you can write single page examples on it without any configurations. The source code should be written in Vue.js [single file component](https://vuejs.org/v2/guide/single-file-components.html) syntax, and the render result of the web platform will be displayed in a mocked phone shell.
+If you just want to try Weex, You don't need to install anything. There is an [online playground](http://dotwe.org/vue/) of Weex, you can write single page examples on it without any configurations. The source code should be written in Vue.js [single file component](https://vuejs.org/v2/guide/single-file-components.html) syntax (as known as the `*.vue` files), and the render result of the web platform will be displayed in a mocked phone shell.
 
 Here is an [example](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380) written in Weex and Vue.js:
 
@@ -62,7 +62,7 @@ Here are some documents about how to extend native components and native modules
 + [Extend Android](./extend-android.html)
 + [Extend iOS](./extend-ios.html)
 
-### Write Once, Run Anywhere
+### Write Once, Run Everywhere
 
 Yes, Weex can build for Android, iOS and Web from a single codebase.
 
