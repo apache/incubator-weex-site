@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Customize native APIs | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="How to customize native APIs ?Weex SDK provides only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you nee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Customize native APIs">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/how-to/cuszomize-native-apis.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="How to customize native APIs ?Weex SDK provides only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you nee">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Customize native APIs">
+<meta name="twitter:description" content="How to customize native APIs ?Weex SDK provides only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you nee">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/cuszomize-native-apis.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link current ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link current ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Customize native APIs
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="How-to-customize-native-APIs" class="article-heading"><a href="#How-to-customize-native-APIs" class="headerlink" title="How to customize native APIs ?"></a>How to customize native APIs ?<a class="article-anchor" href="#How-to-customize-native-APIs" aria-hidden="true"></a></h1><p>Weex SDK provides only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement them yourselves.<br>The example below will describe how to extend weex with native logic or ‘bridge’ your existed native code.</p>
+<h2 id="A-URLHelper-Example" class="article-heading"><a href="#A-URLHelper-Example" class="headerlink" title="A URLHelper Example"></a>A URLHelper Example<a class="article-anchor" href="#A-URLHelper-Example" aria-hidden="true"></a></h2><h3 id="Create-your-own-WXModule-in-native" class="article-heading"><a href="#Create-your-own-WXModule-in-native" class="headerlink" title="Create your own WXModule in native:"></a>Create your own <code>WXModule</code> in native:<a class="article-anchor" href="#Create-your-own-WXModule-in-native" aria-hidden="true"></a></h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLHelperModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span></span>&#123;</div><div class="line">2<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String WEEX_CATEGORY=<span class="string">"com.taobao.android.intent.category.WEEX"</span>;</div><div class="line">2<span class="meta">@WXModuleAnno</span></div><div class="line">2<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openURL</span><span class="params">(String url)</span></span>&#123;</div><div class="line">22<span class="keyword">if</span> (TextUtils.isEmpty(url)) &#123;</div><div class="line">222<span class="keyword">return</span>;</div><div class="line">22&#125;</div><div class="line">22StringBuilder builder=<span class="keyword">new</span> StringBuilder(<span class="string">"http:"</span>);</div><div class="line">22builder.append(url);</div><div class="line">22Uri uri = Uri.parse(builder.toString());</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">22intent.addCategory(WEEX_CATEGORY);</div><div class="line">        mWXSDKInstance.getContext().startActivity(intent);</div><div class="line">2&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Notice the <code>@WXModuleAnno</code>, use this annotation to mark the methods you wanna expose to javascript.<br>If your also want to callback to javascript, you should define a <code>callbackId</code> parameter to received ‘JS callback function id’:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLHelperModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span></span>&#123;</div><div class="line">2</div><div class="line">2<span class="meta">@WXModuleAnno</span></div><div class="line">2<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openURL</span><span class="params">(String url,String callbackId)</span></span>&#123;</div><div class="line">22<span class="comment">//...</span></div><div class="line">22<span class="comment">//callback to javascript </span></div><div class="line">22Map&lt;String, Object&gt; result = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</div><div class="line">22result.put(<span class="string">"ts"</span>, System.currentTimeMillis());</div><div class="line">22WXBridgeManager.getInstance().callback(mWXSDKInstance.getInstanceId(), callbackId, result);</div><div class="line">2&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Register-your-module-to-engine" class="article-heading"><a href="#Register-your-module-to-engine" class="headerlink" title="Register your module to engine:"></a>Register your module to engine:<a class="article-anchor" href="#Register-your-module-to-engine" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">try &#123;</div><div class="line">2 WXSDKEngine.registerModule(&quot;myURL&quot;, URLHelperModule.class);//&apos;myURL&apos; is the name you&apos;ll use in javascript</div><div class="line">2&#125; catch (WXException e) &#123;</div><div class="line">2   WXLogUtils.e(e.getMessage());</div><div class="line">2&#125;</div></pre></td></tr></table></figure>
+<h3 id="Now-you-can-use-eventModule-in-javascript-like-this" class="article-heading"><a href="#Now-you-can-use-eventModule-in-javascript-like-this" class="headerlink" title="Now, you can use eventModule in javascript like this:"></a>Now, you can use eventModule in javascript like this:<a class="article-anchor" href="#Now-you-can-use-eventModule-in-javascript-like-this" aria-hidden="true"></a></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> URLHelper = <span class="built_in">require</span>(<span class="string">'@weex-module/myURL'</span>);<span class="comment">//same as you registered</span></div><div class="line">URLHelper.openURL(<span class="string">"http://www.taobao.com"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ts</span>)</span>&#123;</div><div class="line">2<span class="built_in">console</span>.log(<span class="string">"url is open at "</span>+ts);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Things-you-need-to-note" class="article-heading"><a href="#Things-you-need-to-note" class="headerlink" title="Things you need to note:"></a>Things you need to note:<a class="article-anchor" href="#Things-you-need-to-note" aria-hidden="true"></a></h2><ol>
+<li>Customized components must inherit from <code>WXModule</code>;</li>
+<li>@WXModuleAnno annotation must be added, as it is the only way to be recognized by Weex;</li>
+<li>The access levels of method must be <strong>public</strong>;</li>
+<li>The module class also can not be an inner class;</li>
+<li>Customized components should not be obfuscated by tools like ProGuard;</li>
+<li>Module methods will be invoked on the UI thread, so do not put time-consuming operations there;</li>
+<li>Weex parameter’s type can be int, double, float, String, Map, List, self-defined class that implements WXObject interface;</li>
+</ol>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/how-to/cuszomize-native-apis.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Extend to web | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Extend Weex HTML5IntroWeex is a extendable cross-platform solution for dynamic programming and publishing projects. You can build your own components on web platform or native platform by extending th">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Extend to web">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/extend-to-html5.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Extend Weex HTML5IntroWeex is a extendable cross-platform solution for dynamic programming and publishing projects. You can build your own components on web platform or native platform by extending th">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extend to web">
+<meta name="twitter:description" content="Extend Weex HTML5IntroWeex is a extendable cross-platform solution for dynamic programming and publishing projects. You can build your own components on web platform or native platform by extending th">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Advanced
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/index.html" class="sidebar-link  ">How it works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-html5.html" class="sidebar-link current ">Extend to web</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Extend to web
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Extend-Weex-HTML5" class="article-heading"><a href="#Extend-Weex-HTML5" class="headerlink" title="Extend Weex HTML5"></a>Extend Weex HTML5<a class="article-anchor" href="#Extend-Weex-HTML5" aria-hidden="true"></a></h1><h3 id="Intro" class="article-heading"><a href="#Intro" class="headerlink" title="Intro"></a>Intro<a class="article-anchor" href="#Intro" aria-hidden="true"></a></h3><p>Weex is a extendable cross-platform solution for dynamic programming and publishing projects. You can build your own components on web platform or native platform by extending the components system. Also you can extend weex by adding new methods for one module, new moudles or new bundle loaders. Follow the steps bellow you can dive into the journy of creating multiple builtin components, APIs and loaders.</p>
+<p>First of all, components, APIs and loaders are extensions to weex, so you can create your extensions without requiring the weex package, that means your extensions can be totally standalone. </p>
+<p>Second, you should always implement a extension for all the three platforms (android, ios and web), except that you only use it on one specific platform. After all weex is a cross platform framework and the equality of user expierence in all platforms is very important. Although you can create components separately on one platform by another, or welcome other developers on other platforms to join your work (You can always find coders who want the same feature with you in the commity). Here are docs about how to create native extensions on <a href="./extend-to-ios.html">ios</a> and <a href="./extend-to-android.html">android</a>. </p>
+<p>You should publish your extensions somewhere weex developers can easily find, somewhere popular, independent and easy to search and use, such as, npm. Npm is what we strongly recommended.</p>
+<p>The most important thing is, you’d better name your extension appropriately: it should begin with a <code>weex-</code> if it is a weex extension, and it should end up with a <code>-&lt;platform&gt;</code> as a platform mark. If your package is wrapped up with all the three platforms you can ignore it through. Here is a demonstrating component <a href="https://github.com/MrRaindrop/weex-hello-web" target="_blank" rel="external"><code>&lt;weex-hello-web&gt;</code></a> to show how to define your own component.</p>
+<h3 id="Create-a-new-component" class="article-heading"><a href="#Create-a-new-component" class="headerlink" title="Create a new component"></a>Create a new component<a class="article-anchor" href="#Create-a-new-component" aria-hidden="true"></a></h3><p>Steps:</p>
+<ol>
+<li>Extend <code>Weex.Component</code>, override methods of component class.</li>
+<li>Use <code>Weex.registerComponent</code> to register your customized component in the <code>init</code> method of the installation module.</li>
+<li>export the <code>init</code> method for the installation (Every weex-html5 extension has to have a <code>init</code> method in the export object, which is for another weex project to install.)</li>
+</ol>
+<p>Here’s a example to create a weex component for web platform (weex-html5):</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> attr = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> style = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> event = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// every extension file should have a init method.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span> (<span class="params">Weex</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> Component = Weex.Component</div><div class="line">  <span class="keyword">const</span> extend = Weex.utils.extend</div><div class="line"></div><div class="line">  <span class="comment">// the component's constructor</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Hello</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    Component.call(<span class="keyword">this</span>, data)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// extend the prototype</span></div><div class="line">  Hello.prototype = <span class="built_in">Object</span>.create(Component.prototype)</div><div class="line">  extend(Hello.prototype, proto)</div><div class="line"></div><div class="line">  <span class="comment">// config the attributes, styles and events.</span></div><div class="line">  extend(Hello.prototype, &#123; attr &#125;)</div><div class="line">  extend(Hello.prototype, &#123;</div><div class="line">    <span class="attr">style</span>: extend(<span class="built_in">Object</span>.create(Component.prototype.style), style)</div><div class="line">  &#125;)</div><div class="line">  extend(Hello.prototype, &#123; event &#125;)</div><div class="line"></div><div class="line">  Weex.registerComponent(<span class="string">'weex-hello'</span>, Hello)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// export the init method.</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123; init &#125;</div></pre></td></tr></table></figure>
+<p>The code above is extracted from <a href="https://github.com/MrRaindrop/weex-hello-web/blob/master/src/index.js#L46-L65" target="_blank" rel="external">weex-hello-web/src/index.js</a>.</p>
+<p>This demo has overrided the <code>create</code> method of the base class <code>Component</code>. You can also override other methods to customize your component’s behavior. The typical methods of class <code>Component</code> you may override are:</p>
+<ul>
+<li><code>create</code>: to create the node of the component, and return it.</li>
+<li><code>createChildren</code> to create the children’s nodes.</li>
+<li><code>insertBefore</code> to insert a child before another child.</li>
+<li><code>appendChild</code> to append a child in the children list.</li>
+<li><code>removeChild</code> to remove a child in the children list.</li>
+</ul>
+<p><strong>Advanced</strong>: Need more code demonstrations about overriding the component’s methods ? Just take a look at the <a href="https://github.com/apache/incubator-weex/tree/dev/html5/" target="_blank" rel="external">weex repo’s code</a>. Basically the most of the built-in components are defined this way.</p>
+<p>Important! To register your component in the <code>init</code> method, use <code>Weex.registerComponent</code>. Here’s the demo code:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">Weex.registerComponent(<span class="string">'weex-hello'</span>, Hello)</div></pre></td></tr></table></figure>
+<p>The code above is from <a href="https://github.com/MrRaindrop/weex-hello-web/blob/master/src/index.js#L62" target="_blank" rel="external">weex-hello-web/src/index.js</a></p>
+<p>Install the component using <code>Weex.install</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// import the original weex-html5.</span></div><div class="line"><span class="keyword">import</span> weex <span class="keyword">from</span> <span class="string">'weex-html5'</span></div><div class="line"><span class="keyword">import</span> hello <span class="keyword">from</span> <span class="string">'weex-hello-web'</span></div><div class="line"><span class="comment">// install the component.</span></div><div class="line">weex.install(hello)</div></pre></td></tr></table></figure>
+<p>The code above is from <a href="https://github.com/MrRaindrop/weex_extend_demo/blob/master/src/main.js#L1-L5" target="_blank" rel="external">weex_extend_demo/src/main.js</a></p>
+<p>use the component in your <code>.we</code> file:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">weex-hello</span> <span class="attr">class</span>=<span class="string">"hello"</span> <span class="attr">style</span>=<span class="string">"txt-color:#fff;bg-color:green"</span></span></div><div class="line">      <span class="attr">value</span>=<span class="string">"WEEX"</span> <span class="attr">onclick</span>=<span class="string">"handleClick"</span>&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">weex-hello</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The code above is from <a href="https://github.com/MrRaindrop/weex_extend_demo/blob/master/demo/index.we#L10-L15" target="_blank" rel="external">weex_extend_demo/demo/index.we</a></p>
+<h3 id="Add-a-new-API" class="article-heading"><a href="#Add-a-new-API" class="headerlink" title="Add a new API"></a>Add a new API<a class="article-anchor" href="#Add-a-new-API" aria-hidden="true"></a></h3><p>You can add new API modules, or just add a new API for any existing API modules. For example, you can add a new module <code>user</code> with APIs like ‘login’, ‘logout’ etc. The developer can invoke the API by using <code>require(&#39;@weex-module/moduleName)[methodName](arg1, arg2, ...)</code> (<a href="../references/api.html">Module APIs</a>).</p>
+<p>Steps:</p>
+<ol>
+<li>Implement your API modules.</li>
+<li>Use <code>Weex.registerAPIModules</code> to register your API modules in the init method of your installation module.</li>
+</ol>
+<p><strong>Here is a example for register a new API module</strong></p>
+<p>First create a file named <code>user.js</code> for a new module, then define <code>login/logout</code> methods.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> user = &#123;</div><div class="line">  <span class="comment">// for user to login.</span></div><div class="line">  login (callbackId) &#123;</div><div class="line">    login.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, res)</div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, err)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  <span class="comment">// for user to logout.</span></div><div class="line">  logout (callbackId) &#123;</div><div class="line">    logout.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, res)</div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, err)</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// add meta info to user module.</span></div><div class="line"><span class="keyword">const</span> meta = &#123;</div><div class="line">  <span class="attr">user</span>: [&#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'login'</span>,</div><div class="line">    <span class="attr">args</span>: [<span class="string">'function'</span>]</div><div class="line">  &#125;, &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'logout'</span>,</div><div class="line">    <span class="attr">args</span>: [<span class="string">'function'</span>]</div><div class="line">  &#125;]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  init (Weex) &#123;</div><div class="line">    <span class="comment">// Register your new module. The last parameter is your</span></div><div class="line">    <span class="comment">// new API module's meta info.</span></div><div class="line">    Weex.registerApiModule(<span class="string">'user'</span>, user, meta)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>After above coding work, you can publish this user helper API to npm now, for example, with the name of <code>weex-user-helper</code>.</p>
+<p>Install the component using <code>Weex.install</code> in your new weex project.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Weex <span class="keyword">from</span> <span class="string">'weex-html5'</span></div><div class="line"><span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'weex-user-helper'</span></div><div class="line"></div><div class="line">Weex.install(user)</div></pre></td></tr></table></figure>
+<p>Use the user helper API in your dsl code (xxx.we):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">onclick</span>=<span class="string">"handleClick"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>LOGIN<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> userHelper = <span class="built_in">require</span>(<span class="string">'@weex-module/user'</span>)</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">handleClick</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        userHelper.login(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="comment">// ... do sth. in callback.</span></div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Add-a-new-loader" class="article-heading"><a href="#Add-a-new-loader" class="headerlink" title="Add a new loader"></a>Add a new loader<a class="article-anchor" href="#Add-a-new-loader" aria-hidden="true"></a></h3><p><strong>Loader is only a type of extension for weex-html5 (web platform), native platform is not needing this.</strong></p>
+<p>Weex’s builtin loaders to load a weex bundle are <code>xhr</code>, <code>jsonp</code> and <code>source</code>. The default loader is <code>xhr</code>. You can register your own loader by using <code>weex.registerLoader</code>. For example, you got a service method named <code>myServe.getWeexBundle</code>, which can load a weex bundle file through some magical tunnel:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadByMyServe</span>(<span class="params">pageId, callback</span>) </span>&#123;</div><div class="line">  myServe.getWeexBundle(pageId).then(<span class="function"><span class="keyword">function</span> (<span class="params">bundle</span>) </span>&#123;</div><div class="line">    callback(bundle)</div><div class="line">  &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    callback(err)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// export the init method to enable weex install this loader.</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  init (Weex) &#123;</div><div class="line">    Weex.registerLoader(<span class="string">'myserve'</span>, loadByMyServe)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>install and use your loader in your project’s entry file:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Weex <span class="keyword">from</span> <span class="string">'weex-html5'</span></div><div class="line"></div><div class="line"><span class="comment">// or import from './myserve.js', no matter where you can import your loader file.</span></div><div class="line"><span class="keyword">import</span> loader <span class="keyword">from</span> <span class="string">'myLoader'</span></div><div class="line"></div><div class="line">Weex.install(loader)</div><div class="line"></div><div class="line"><span class="comment">// use your loader in the init function:</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getUrlParam</span> (<span class="params">key</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?|&amp;]'</span> + key + <span class="string">'=([^&amp;]+)'</span>)</div><div class="line">    <span class="keyword">const</span> match = location.search.match(reg)</div><div class="line">    <span class="keyword">return</span> match &amp;&amp; match[<span class="number">1</span>]</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">const</span> page = getUrlParam(<span class="string">'page'</span>) || <span class="string">'examples/build/index.js'</span></div><div class="line">  Weex.init(&#123;</div><div class="line">    <span class="attr">appId</span>: location.href,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'myserve'</span>,  <span class="comment">// use the loader type you defined.</span></div><div class="line">    source: page,</div><div class="line">    <span class="attr">rootId</span>: <span class="string">'weex'</span></div><div class="line">  &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>That’s the major extension feature weex brought to you. The deep details can be found in the <a href="https://github.com/alibaba/weex" target="_blank" rel="external">weex’s repo</a> and the weex’s community.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tutorial | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TutorialWe will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites. Getting StartedLet’s">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tutorial">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="TutorialWe will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites. Getting StartedLet’s">
+<meta property="og:image" content="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/guide/images/tut-cli-qrcode.png">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/guide/images/tut-second.png">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/guide/images/tut4.gif">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tutorial">
+<meta name="twitter:description" content="TutorialWe will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites. Getting StartedLet’s">
+<meta name="twitter:image" content="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link current ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link current ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Tutorial
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Tutorial" class="article-heading"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial<a class="article-anchor" href="#Tutorial" aria-hidden="true"></a></h1><p>We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.</p>
+<h2 id="Getting-Started" class="article-heading"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started<a class="article-anchor" href="#Getting-Started" aria-hidden="true"></a></h2><p>Let’s get started with the list item, which contains one <code>image</code> element and one <code>text</code> right behind.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3AJt"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.cell</span> &#123; <span class="attribute">margin-top</span>: <span class="number">10</span>; <span class="attribute">margin-left</span>: <span class="number">10</span>; <span class="attribute">flex-direction</span>: row; &#125;</div><div class="line">  <span class="selector-class">.thumb</span> &#123; <span class="attribute">width</span>: <span class="number">200</span>; <span class="attribute">height</span>: <span class="number">200</span>; &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123; <span class="attribute">text-align</span>: center; <span class="attribute">flex</span>: <span class="number">1</span>; <span class="attribute">color</span>: grey; <span class="attribute">font-size</span>: <span class="number">50</span>; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>You can directly copy and paste the above code into a Weex file named <code>tech_list.we</code> (<code>.we</code> is our recommended filename extension).</p>
+<h2 id="Preview" class="article-heading"><a href="#Preview" class="headerlink" title="Preview"></a>Preview<a class="article-anchor" href="#Preview" aria-hidden="true"></a></h2><p>Once created, we want to see the running result of the <code>.we</code> file. But before that, we must make sure the dependencies are installed.</p>
+<p>We should install <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node</a> first, which our Weex CLI program <a href="https://www.npmjs.com/package/weex-toolkit" target="_blank" rel="external">Weex Toolkit</a> depends on. Then install <code>weex-toolkit</code> by running the command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<p>When installation completed, you can check if Weex CLI is installed properly by running <code>weex</code> command in the command line. The following text is expected:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Usage: weex foo/bar/your_next_best_weex_script_file.we  [options]</div><div class="line"></div><div class="line">Options:</div><div class="line">  --qr     display QR code for native runtime, </div><div class="line">  -o,--output  transform weex we file to JS Bundle, output path (single JS bundle file or dir)</div><div class="line">  -s,--server  start a http file server, weex .we file will be transforme to JS bundle on the server , specify local root path using the option  </div><div class="line">  ......</div><div class="line">  --help  Show help         </div><div class="line">  -h, --host [default: &quot;127.0.0.1&quot;]</div></pre></td></tr></table></figure>
+<p>If all work well, navigate to the directory where you saved <code>tech_list.we</code>, then type:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex tech_list.we</div></pre></td></tr></table></figure>
+<p>A browser window will be opened automatically to display the running result like below     (weex-toolkit version should be greater than 0.1.0, use <code>weex --version</code> to check it):</p>
+<p><img src="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg" alt="mobile_preview"></p>
+<h2 id="Introduce-to-Weex-Syntax" class="article-heading"><a href="#Introduce-to-Weex-Syntax" class="headerlink" title="Introduce to Weex Syntax"></a>Introduce to Weex Syntax<a class="article-anchor" href="#Introduce-to-Weex-Syntax" aria-hidden="true"></a></h2><p>So it’s time for introducing the syntax. </p>
+<p>Given the content of <code>tech_list.we</code>, Weex source code is composed of three parts – <em>template</em>, <em>style</em>, and <em>script</em>, just like html, css, and javascript for the Web.</p>
+<p>Template is the skeleton that gives Weex structure. It is composed of tags which surround content and apply meaning to it. Tags have <em>attributes</em>, different attribute means different feature, for example, <code>class</code> attribute makes it possible to define the same styles for multiple tags, <code>onclick</code> attribute makes the tag respond to click event.</p>
+<p>Style describes how Weex tags are to be displayed. We prefer CSS very much. So we try to keep consistent with CSS standard as possible. Weex Style supports a lot of CSS features, like margin, padding, fixed and so on. Better yet, flexbox layout (flex) is well supported in Weex Style.</p>
+<p>Script adds <em>data</em> &amp; <em>logic</em> to Weex tags, helping you easily access local or remote data and update tags. You can also define some methods for your tag to respond to different events. Weex Script organization learns a lot from CommonJS module style.</p>
+<p>More information about Weex syntax can be found in our <a href="./syntax/index.html">Syntax chapter</a>.</p>
+<h2 id="Add-More-Items" class="article-heading"><a href="#Add-More-Items" class="headerlink" title="Add More Items"></a>Add More Items<a class="article-anchor" href="#Add-More-Items" aria-hidden="true"></a></h2><p>We can’t call one item a list, so we need to add more items to our tech list. Open <code>tech_list.we</code> in your favorite editor and update it’s content like below:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3AJt"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3uo9"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE31hq"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Objective C<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.cell</span>&#123; <span class="attribute">margin-top</span>:<span class="number">10</span> ; <span class="attribute">margin-left</span>:<span class="number">10</span> ; <span class="attribute">flex-direction</span>: row; &#125;</div><div class="line">  <span class="selector-class">.thumb</span> &#123; <span class="attribute">width</span>: <span class="number">200</span>; <span class="attribute">height</span>: <span class="number">200</span>; &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123; <span class="attribute">text-align</span>: center ; <span class="attribute">flex</span>: <span class="number">1</span>; <span class="attribute">color</span>: grey; <span class="attribute">font-size</span>: <span class="number">50</span>; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Now we will try to  render our  <code>tech_list.we</code>  with Weex native renderer.  Open your terminal and  navigate to the directory where you save the <code>tech_list.we</code> again, then type:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex tech_list.we --qr -h &#123;ip or hostname&#125;</div></pre></td></tr></table></figure>
+<p>It’s <strong><em>RECOMMENDED</em></strong> to use <code>-h</code> option to specify your local ip address or hostname.</p>
+<p>A QR code will be displayed in the terminal window like below:</p>
+<p><img src="images/tut-cli-qrcode.png" alt="Weex CLI"></p>
+<p>The QR code can work together with <a href="http://alibaba.github.io/weex/download.html" target="_blank" rel="external">Weex Playground App</a>. Open it and tap the scan icon at the top-right corner, then scan the QR code displayed in your terminal. If all work well, a beautiful list will be displayed in your phone.</p>
+<p><img src="images/tut-second.png" alt="Second Example"></p>
+<p>Here, I must stress that the list is rendered by a native view, instead of Webkit, so your app gets faster loading and less memory overhead than common Webview renderer.</p>
+<p>Now open <code>tech_list.we</code> again and try to change some text, after changes saved the Weex playground App will immediately display these changes. We call that <strong>Hot-Reload</strong>, which is intended to help you use Weex better.</p>
+<h2 id="Add-Built-in-Components" class="article-heading"><a href="#Add-Built-in-Components" class="headerlink" title="Add Built-in Components"></a>Add Built-in Components<a class="article-anchor" href="#Add-Built-in-Components" aria-hidden="true"></a></h2><p>Instead of writing basic tags by yourself, Weex provides a lot of built-in components. For example, Slider is common to many apps and mobile websites, so Weex includes a built-in Slider so that you can easily use it in your script. Let’s open <code>tech_list.we</code> and update it’s content like below.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">"slider"</span> <span class="attr">interval</span>=<span class="string">"&#123;&#123;intervalValue&#125;&#125;"</span> <span class="attr">auto-play</span>=<span class="string">"&#123;&#123;isAutoPlay&#125;&#125;"</span> &gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slider-pages"</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;itemList&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"goWeexSite"</span> &gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;pictureUrl&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span> <span class="attr">onclick</span>=<span class="string">"goWeexSite"</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3AJt"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3uo9"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE31hq"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Objective C<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.cell</span> &#123; <span class="attribute">margin-top</span>:<span class="number">10</span> ; <span class="attribute">margin-left</span>:<span class="number">10</span> ; <span class="attribute">flex-direction</span>: row; &#125;</div><div class="line">  <span class="selector-class">.thumb</span> &#123; <span class="attribute">width</span>: <span class="number">200</span>; <span class="attribute">height</span>: <span class="number">200</span>; &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123; <span class="attribute">text-align</span>: center ; <span class="attribute">flex</span>: <span class="number">1</span>; <span class="attribute">color</span>: grey; <span class="attribute">font-size</span>: <span class="number">50</span>; &#125;</div><div class="line">  <span class="selector-class">.slider</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">18</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">714</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">230</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.slider-pages</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">width</span>: <span class="number">714</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">intervalValue</span>:<span class="string">"1000"</span>,</div><div class="line">    <span class="attr">isShowIndicators</span>:<span class="string">"true"</span>,</div><div class="line">    <span class="attr">isAutoPlay</span>:<span class="string">"true"</span>,</div><div class="line">    <span class="attr">itemList</span>: [</div><div class="line">      &#123;<span class="attr">title</span>: <span class="string">'Java'</span>, <span class="attr">pictureUrl</span>: <span class="string">'http://t.cn/RGE3uo9'</span>&#125;,</div><div class="line">      &#123;<span class="attr">title</span>: <span class="string">'Objective C'</span>, <span class="attr">pictureUrl</span>: <span class="string">'http://t.cn/RGE31hq'</span>&#125;,</div><div class="line">      &#123;<span class="attr">title</span>: <span class="string">'JavaScript'</span>, <span class="attr">pictureUrl</span>: <span class="string">'http://t.cn/RGE3AJt'</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">goWeexSite</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.$openURL(<span class="string">'http://alibaba.github.io/weex/'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Open terminal and run the command again:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex tech_list.we</div></pre></td></tr></table></figure>
+<p>You should see a slider prepend to our list.</p>
+<p><img src="images/tut4.gif" alt="Third Example"></p>
+<p>More information about Slider component can be found <a href="../references/components/slider.html">here</a>.</p>
+<p>Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer <a href="./advanced/integrate-to-android.html">the document</a> for integrating Weex into your App.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/index.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/index.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用 Devtools 调试 Weex 页面 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何使用 Devtools 调试 Weex 页面Weex Devtools 是为 Weex 开发者服务的一款调试工具，能够审查 Weex app 运行时属性，可对 .we 代码及 JavaScript 代码断点调试，支持 iOS 和 Android 两个平台。 Weex Devtools 基于 Chrome devtools 实现了 Chrome Debugging Protocol，能够使用 C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="使用 Devtools 调试 Weex 页面">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/how-to/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="如何使用 Devtools 调试 Weex 页面Weex Devtools 是为 Weex 开发者服务的一款调试工具，能够审查 Weex app 运行时属性，可对 .we 代码及 JavaScript 代码断点调试，支持 iOS 和 Android 两个平台。 Weex Devtools 基于 Chrome devtools 实现了 Chrome Debugging Protocol，能够使用 C">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1aPTEKFXXXXXaXXXXXXXXXXXX-1436-813.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1_trbKFXXXXc0XVXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1_.20OpXXXXX4XVXXXXXXXXXX-1314-787.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB16L3ENXXXXXcsXVXXXXXXXXXX-2878-1798.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1TsMuNXXXXXcsaXXXXXXXXXXX-2450-1460.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1NjO_KFXXXXcaaXXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1ck6lKFXXXXbZXFXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1a7HqKFXXXXXMXFXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1oY6cKFXXXXXQaXXXXXXXXXXX-2880-1800.png">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Devtools 调试 Weex 页面">
+<meta name="twitter:description" content="如何使用 Devtools 调试 Weex 页面Weex Devtools 是为 Weex 开发者服务的一款调试工具，能够审查 Weex app 运行时属性，可对 .we 代码及 JavaScript 代码断点调试，支持 iOS 和 Android 两个平台。 Weex Devtools 基于 Chrome devtools 实现了 Chrome Debugging Protocol，能够使用 C">
+<meta name="twitter:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/how-to/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link current ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link current ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        使用 Devtools 调试 Weex 页面
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="如何使用-Devtools-调试-Weex-页面" class="article-heading"><a href="#如何使用-Devtools-调试-Weex-页面" class="headerlink" title="如何使用 Devtools 调试 Weex 页面"></a>如何使用 Devtools 调试 Weex 页面<a class="article-anchor" href="#如何使用-Devtools-调试-Weex-页面" aria-hidden="true"></a></h1><p>Weex Devtools 是为 Weex 开发者服务的一款调试工具，能够审查 Weex app 运行时属性，可对 <code>.we</code> 代码及 JavaScript 代码断点调试，支持 iOS 和 Android 两个平台。</p>
+<p>Weex Devtools 基于 Chrome devtools 实现了 <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external">Chrome Debugging Protocol</a>，能够使用 Chrome devtools 调试 Weex 项目，其主要功能分为两大部分—— Debugger 和 Inspector。</p>
+<h2 id="Devtools-主要功能一览" class="article-heading"><a href="#Devtools-主要功能一览" class="headerlink" title="Devtools 主要功能一览"></a>Devtools 主要功能一览<a class="article-anchor" href="#Devtools-主要功能一览" aria-hidden="true"></a></h2><h3 id="连接设备" class="article-heading"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备<a class="article-anchor" href="#连接设备" aria-hidden="true"></a></h3><p>devtools 可以动态检测客户端的连接绑定请求，同时连接／调试多个 device（或者模拟器）是很容易的事情，连接到 Devtools 的客户端显示在 “Device List” 界面。如下图所示。</p>
+<p><img src="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png" alt="devtools-main"></p>
+<p>点击对应设备的 Debugger 按钮即开始调试流程，并弹出JS断点调试的页面；随后点击 Inspector 按钮可弹出调试 DOM 的页面。</p>
+<h3 id="Debugger" class="article-heading"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger<a class="article-anchor" href="#Debugger" aria-hidden="true"></a></h3><p>这个是用来调试 Weex 的 JSBundle 代码的页面，“Sources” tab 能够显示所有 JS 源码，包括 Weex JSFramework 和 JSBundle 代码。可以设置断点、查看调用栈，与 Chrome 浏览器调试类似。“Console” 控制台显示前端的 Log 信息，并能根据级别（info/warn/error等）和关键字过滤。</p>
+<p><img src="https://img.alicdn.com/tps/TB1aPTEKFXXXXXaXXXXXXXXXXXX-1436-813.png" alt="devtools-debugger"></p>
+<h3 id="断点调试" class="article-heading"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试<a class="article-anchor" href="#断点调试" aria-hidden="true"></a></h3><p><img src="https://img.alicdn.com/tps/TB1_trbKFXXXXc0XVXXXXXXXXXX-2880-1800.png" alt="debugger-breakpoint"></p>
+<h3 id="Inspector" class="article-heading"><a href="#Inspector" class="headerlink" title="Inspector"></a>Inspector<a class="article-anchor" href="#Inspector" aria-hidden="true"></a></h3><p>Inspector 功能丰富，能够用来查看 <code>Element</code> \ <code>Network</code> \ <code>Console log</code> \ <code>Screencast</code> \ <code>BoxModel</code> \ <code>Native View</code> 等。</p>
+<p><img src="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png" alt="devtools-inspector"></p>
+<h3 id="Device-Screencast-amp-View-Inspect" class="article-heading"><a href="#Device-Screencast-amp-View-Inspect" class="headerlink" title="Device Screencast &amp; View Inspect"></a>Device Screencast &amp; View Inspect<a class="article-anchor" href="#Device-Screencast-amp-View-Inspect" aria-hidden="true"></a></h3><p>如下图所示，通过 Inspector 页面的两个开关，点击右侧 Icon 可以打开设备投屏，然后点击左侧 Icon 再在投屏上点选元素则可以自动在 DOM tree 中定位并审查该元素。</p>
+<p><img src="https://img.alicdn.com/tps/TB1_.20OpXXXXX4XVXXXXXXXXXX-1314-787.png" alt="screencast-inspect"></p>
+<h3 id="Elements" class="article-heading"><a href="#Elements" class="headerlink" title="Elements"></a>Elements<a class="article-anchor" href="#Elements" aria-hidden="true"></a></h3><p>这里展示的是在 Android／iOS 上的 native DOM 树，及其 style 属性和 layout 图。鼠标在 DOM 树移动时，在 device（或模拟器）上对应节点会高亮显示，有助于 native 开发者定位和发现节点。</p>
+<p><strong>注意：</strong><br>screencast 只是对屏幕图像拷贝，在远程调试时能看到远程设备界面，数据网络下 screencast 也将有较大流量花销，如果设备就在手头儿则建议关掉。</p>
+<p>Elements 审查有两种模式分别是：native 和 vdom。其中，native 模式下展示的是 Weex 所映射的 native view 的结构，它更接近实现本质；vdom 模式则对应 <code>.we</code> 文件中定义的 dom 结构，主要用来审查 <code>.we</code> 文件编译为 JSBundle 之后对应的 dom tree 的逻辑构成。</p>
+<h4 id="native-view-element" class="article-heading"><a href="#native-view-element" class="headerlink" title="native view element"></a>native view element<a class="article-anchor" href="#native-view-element" aria-hidden="true"></a></h4><p><img src="https://img.alicdn.com/tps/TB16L3ENXXXXXcsXVXXXXXXXXXX-2878-1798.png" alt="native-element"></p>
+<h4 id="weex-dom-element" class="article-heading"><a href="#weex-dom-element" class="headerlink" title="weex dom element"></a>weex dom element<a class="article-anchor" href="#weex-dom-element" aria-hidden="true"></a></h4><p><img src="https://img.alicdn.com/tps/TB1TsMuNXXXXXcsaXXXXXXXXXXX-2450-1460.png" alt="dom-element"></p>
+<h3 id="Network" class="article-heading"><a href="#Network" class="headerlink" title="Network"></a>Network<a class="article-anchor" href="#Network" aria-hidden="true"></a></h3><p>这里展示的是 JSBundle 资源加载网络访问的性能。所以如果 JSBundle 资源在设备本地，Network 是没有数据的。</p>
+<h4 id="查看网络请求的总耗时和延时" class="article-heading"><a href="#查看网络请求的总耗时和延时" class="headerlink" title="查看网络请求的总耗时和延时"></a>查看网络请求的总耗时和延时<a class="article-anchor" href="#查看网络请求的总耗时和延时" aria-hidden="true"></a></h4><p><img src="https://img.alicdn.com/tps/TB1NjO_KFXXXXcaaXXXXXXXXXXX-2880-1800.png" alt="inspector-network"></p>
+<h4 id="查看网络请求的header和response" class="article-heading"><a href="#查看网络请求的header和response" class="headerlink" title="查看网络请求的header和response"></a>查看网络请求的header和response<a class="article-anchor" href="#查看网络请求的header和response" aria-hidden="true"></a></h4><p><img src="https://img.alicdn.com/tps/TB1ck6lKFXXXXbZXFXXXXXXXXXX-2880-1800.png" alt="inspector-network"></p>
+<h3 id="控制台" class="article-heading"><a href="#控制台" class="headerlink" title="控制台"></a>控制台<a class="article-anchor" href="#控制台" aria-hidden="true"></a></h3><p>这里显示的是 Android／iOS 上的 native log，并不是 JS log（JS log 显示在 Debugger 页面）。同样 native log 也有对应级别–warn/error 等和关键字过滤，native 开发查询很方便。</p>
+<p><img src="https://img.alicdn.com/tps/TB1a7HqKFXXXXXMXFXXXXXXXXXX-2880-1800.png" alt="inspector-console"></p>
+<h3 id="资源（Android-Only）" class="article-heading"><a href="#资源（Android-Only）" class="headerlink" title="资源（Android Only）"></a>资源（Android Only）<a class="article-anchor" href="#资源（Android-Only）" aria-hidden="true"></a></h3><p>远端访问的资源文件会显示在这里，这里不是查看源码的最佳方式。在 Debugger 页面，“Sources” 里已经有源码并可以断点调试。如果你的应用里有 SQLITE 数据库文件，在这里无需 root 便可以查看和更新，对于 mock 数据来说比较便利。</p>
+<p><img src="https://img.alicdn.com/tps/TB1oY6cKFXXXXXQaXXXXXXXXXXX-2880-1800.png" alt="inspector-resource"></p>
+<h3 id="远程控制-Android-Only" class="article-heading"><a href="#远程控制-Android-Only" class="headerlink" title="远程控制 (Android Only)"></a>远程控制 (Android Only)<a class="article-anchor" href="#远程控制-Android-Only" aria-hidden="true"></a></h3><p>Android 版本支持在 screencast 上进行远程控制，能够通过鼠标模拟在手机的输入事件，方便手机不在本地的用户进行远程调试。</p>
+<h2 id="如何安装和启动devtools" class="article-heading"><a href="#如何安装和启动devtools" class="headerlink" title="如何安装和启动devtools"></a>如何安装和启动devtools<a class="article-anchor" href="#如何安装和启动devtools" aria-hidden="true"></a></h2><p>无论是跑在 iOS 或者 Android 端，<a href="https://github.com/weexteam/weex-devtool" target="_blank" rel="external">weex-devtool</a> 都是必需的，用来启动服务器和 Chrome 页面。</p>
+<h3 id="安装" class="article-heading"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="article-anchor" href="#安装" aria-hidden="true"></a></h3><p>如果你已经在前面的教程中安装过 weex-toolkit，就无需再次安装了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install  -g  weex-toolkit</div></pre></td></tr></table></figure>
+<h4 id="用法" class="article-heading"><a href="#用法" class="headerlink" title="用法"></a>用法<a class="article-anchor" href="#用法" aria-hidden="true"></a></h4><p> weex debug [options] [we_file|bundles_dir]</p>
+<p>  选项:</p>
+<pre><code>-h, --help           显示帮助
+-V, --verbose        显示debug服务器运行时的各种log
+-v, --version        显示版本
+-p, --port [port]    设置debug服务器端口号 默认为8088
+-e, --entry [entry]  debug一个目录时,这个参数指定整个目录的入口bundle文件,这个bundle文件的地址会显示在debug主页上(作为二维码)
+-m, --mode [mode]    设置构建we文件的方式,transformer 最基础的风格适合单文件,loader:wepack风格 适合模块化的多文件.默认为transformer
+</code></pre><h2 id="如何在设备或者模拟器上调试" class="article-heading"><a href="#如何在设备或者模拟器上调试" class="headerlink" title="如何在设备或者模拟器上调试"></a>如何在设备或者模拟器上调试<a class="article-anchor" href="#如何在设备或者模拟器上调试" aria-hidden="true"></a></h2><h3 id="weex调试初体验之playground" class="article-heading"><a href="#weex调试初体验之playground" class="headerlink" title="weex调试初体验之playground"></a>weex调试初体验之playground<a class="article-anchor" href="#weex调试初体验之playground" aria-hidden="true"></a></h3><p>如果你是一名 Weex 调试的新手，那么推荐你先下载 <a href="http://alibaba.github.io/weex/download.html" target="_blank" rel="external">Playground</a> 体验一下 Devtools 调试 JSBundle 的基础流程.</p>
+<ul>
+<li><p>前提: </p>
+<ul>
+<li>安装 <code>weex-toolkit</code>，内含调试命令 <code>weex debug</code></li>
+<li>android／iOS 设备与 PC 在同一局域网，若位于不同网段请确保防火墙可访问性</li>
+</ul>
+</li>
+<li><p>Inspector 功能演示</p>
+</li>
+</ul>
+<embed src="//cloud.video.taobao.com/play/u/1955166971/p/2/e/1/t/1/45803002.swf" quality="high" width="100%" height="500px" align="middle" allowscriptaccess="never" allowfullscreen="true" type="application/x-shockwave-flash">
+
+<ul>
+<li>Debugger功能演示</li>
+</ul>
+<embed src="//cloud.video.taobao.com/play/u/1955166971/p/2/e/1/t/1/45803641.swf" quality="high" width="100%" height="500px" align="middle" allowscriptaccess="never" allowfullscreen="true" type="application/x-shockwave-flash">
+
+<ul>
+<li><p>调试步骤:</p>
+<ul>
+<li><strong>启动 debug server</strong></li>
+</ul>
+<p>执行命令 <code>weex debug</code> 将启动 debug server。如果启动成功将会在 Chrome 打开一个 welcome 页面，在网页下方有一个二维码。</p>
+<ul>
+<li><strong>启动 Playground 并扫码</strong></li>
+</ul>
+<p>点击启首页左上角的扫码按钮扫码上一步中网页下方的二维码。此时 welcome 页面将会出现你的设备信息。Playground 进入 loading 页面，等待你的下一步操作。</p>
+<ul>
+<li><strong>点击网页上的 Debugger 按钮</strong></li>
+</ul>
+<p>app 结束 loading 进入 debugging 状态。同时 Chrome 将会打开 Debugger 页面。按照页面提示打开该页的 JavaScript 控制台并进入 source tab。</p>
+<ul>
+<li><strong>设置断点刷新当前页</strong></li>
+</ul>
+<p>点击 Playground 首页 list 中的任意项将打开一个 Weex 页面，此时在 Sources 里会出现相应的 JSBundle 文件，设置断点并刷新  Playground  即可调试。</p>
+<ul>
+<li><strong>点击网页上的 Inspector 按钮</strong></li>
+</ul>
+<p>Chrome 会打开 inspector页面，可以查看Element， Console， Network状态。</p>
+</li>
+</ul>
+<h3 id="Weex调试初体验之应用" class="article-heading"><a href="#Weex调试初体验之应用" class="headerlink" title="Weex调试初体验之应用"></a>Weex调试初体验之应用<a class="article-anchor" href="#Weex调试初体验之应用" aria-hidden="true"></a></h3><p>如果是接入 Weex 的应用想调试自己的 Weex 代码，有以下几个方式：</p>
+<ol>
+<li><p>借助 Playground 扫码调试</p>
+<ul>
+<li>先确定 Playground 已经是可调试状态</li>
+<li>使用命令行工具打开调试功能 <code>weex debug</code>，用 Playground 扫浏览器打开的页面中的二维码 </li>
+<li>用 Playground 扫描 JSBundle 二维码</li>
+<li>手机上即显示 Weex 页面的结果。相应在 “Debugger” 和 “Inspector” 页面调试。</li>
+</ul>
+</li>
+<li><p>为应用接入 Devtools 接口</p>
+<ul>
+<li><a href="https://github.com/weexteam/weex_devtools_android/blob/master/README-zh.html" target="_blank" rel="external">Android sdk接入指南</a></li>
+<li><a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/README-zh.html" target="_blank" rel="external">iOS sdk接入指南</a></li>
+</ul>
+</li>
+</ol>
+<p>有任何问题或者建议，请提交<a href="https://github.com/weexteam/weex-devtool/issues" target="_blank" rel="external">这里</a>，会很快得到解答。</p>
+<h2 id="更详细的视频讲解" class="article-heading"><a href="#更详细的视频讲解" class="headerlink" title="更详细的视频讲解"></a>更详细的视频讲解<a class="article-anchor" href="#更详细的视频讲解" aria-hidden="true"></a></h2><ul>
+<li>第一集 devtools简介<br><a href="http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45796387.swf" target="_blank" rel="external">http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45796387.swf</a></li>
+<li>第二集 inspector功能演示<br><a href="http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45803002.swf" target="_blank" rel="external">http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45803002.swf</a></li>
+<li>第三集 debugger功能演示<br><a href="http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45803641.swf" target="_blank" rel="external">http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45803641.swf</a></li>
+<li>第四集 native 与 weex 联调<br><a href="http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45804472.swf" target="_blank" rel="external">http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45804472.swf</a></li>
+<li>第五集 第三方App接入指南<br><a href="http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45805276.swf" target="_blank" rel="external">http://cloud.video.taobao.com/play/u/1955166971/p/1/e/1/t/1/45805276.swf</a></li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/how-to/index.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/how-to/index.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

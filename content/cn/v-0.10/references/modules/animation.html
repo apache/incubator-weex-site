@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>animation | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="animation 动画流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，animation 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 &amp;lt;image&amp;gt; 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。 示例&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;l">
+<meta property="og:type" content="website">
+<meta property="og:title" content="animation">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/modules/animation.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="animation 动画流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，animation 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 &amp;lt;image&amp;gt; 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。 示例&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;l">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="animation">
+<meta name="twitter:description" content="animation 动画流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，animation 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 &amp;lt;image&amp;gt; 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。 示例&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;l">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/modules/animation.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/modules/animation.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link current ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link current ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        animation
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="animation-动画" class="article-heading"><a href="#animation-动画" class="headerlink" title="animation 动画"></a><code>animation</code> 动画<a class="article-anchor" href="#animation-动画" aria-hidden="true"></a></h1><p>流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，<code>animation</code> 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 <code>&lt;image&gt;</code> 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。</p>
+<h2 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">class</span>=<span class="string">"test"</span> <span class="attr">onclick</span>=<span class="string">"run"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.test</span> &#123; <span class="attribute">background-color</span>: <span class="number">#6666ff</span>; <span class="attribute">width</span>: <span class="number">200</span>; <span class="attribute">height</span>: <span class="number">200</span>; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> animation = <span class="built_in">require</span>(<span class="string">'@weex-module/animation'</span>)</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">run</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> testEl = <span class="keyword">this</span>.$el(<span class="string">'test'</span>)</div><div class="line">        animation.transition(testEl, &#123;</div><div class="line">          <span class="attr">styles</span>: &#123;</div><div class="line">            <span class="attr">backgroundColor</span>: <span class="string">'#FF0000'</span>,</div><div class="line">            <span class="attr">transform</span>: <span class="string">'translate(100px, 100px)'</span></div><div class="line">          &#125;,</div><div class="line">          <span class="attr">duration</span>: <span class="number">0</span>, <span class="comment">//ms</span></div><div class="line">          timingFunction: <span class="string">'ease'</span>,</div><div class="line">          <span class="string">'transform-origin'</span>: <span class="string">'center center'</span>,</div><div class="line">          <span class="attr">delay</span>: <span class="number">0</span> <span class="comment">//ms</span></div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'animation finished.'</span>)</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/2ae04d3a7017a2ec748cf40905fcd98c" target="_blank" rel="external">体验一下</a></p>
+<h2 id="API" class="article-heading"><a href="#API" class="headerlink" title="API"></a>API<a class="article-anchor" href="#API" aria-hidden="true"></a></h2><h3 id="transition-el-options-callback" class="article-heading"><a href="#transition-el-options-callback" class="headerlink" title="transition(el, options, callback)"></a><code>transition(el, options, callback)</code><a class="article-anchor" href="#transition-el-options-callback" aria-hidden="true"></a></h3><p><a href="http://dotwe.org/a034a49b5863da099843eb9a0eea9f93" target="_blank" rel="external">example</a></p>
+<h4 id="参数" class="article-heading"><a href="#参数" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数" aria-hidden="true"></a></h4><ul>
+<li><code>el {Element}</code>：将要执行动画的元素，通常可以通过调用 <a href="../api.html"><code>this.$el(id)</code></a> 来获取元素的引用。</li>
+<li><code>options {Object}</code>：描述动画过程的对象。<ul>
+<li><code>options.duration {number}</code>：指定动画的持续时间 (单位是毫秒)，默认值是 <code>0</code>，表示没有动画效果。</li>
+<li><code>options.delay {number}</code>：指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 <code>0</code>，表示没有延迟，在请求后立即执行动画。</li>
+<li><code>options.timingFunction {string}</code>：描述动画执行的速度曲线，用于使动画变化更为平滑。默认值是 <code>linear</code>，表示动画从开始到结束都拥有同样的速度。下表列出了所有合法的属性：</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>linear</code></td>
+<td>动画从头到尾的速度是相同的</td>
+<td><a href="http://dotwe.org/70e0c243ffde30abd8fd353f8c6d1d9a" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td><code>ease-in</code></td>
+<td>动画速度由慢到快</td>
+<td><a href="http://dotwe.org/23b104f833039f263957481f2e2c40c9" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td><code>ease-out</code></td>
+<td>动画速度由快到慢</td>
+<td><a href="http://dotwe.org/04dab95e073a2c3a808e6b01fc20e996" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td><code>ease-in-out</code></td>
+<td>动画先加速到达中间点后减速到达终点</td>
+<td><a href="http://dotwe.org/fc37ec17d215e786ce336a00457489e3" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td><code>cubic-bezier(x1, y1, x2, y2)</code></td>
+<td>在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 <a href="http://cubic-bezier.com/" target="_blank" rel="external">cubic-bezier</a> 和 <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank" rel="external">Bézier curve</a>.</td>
+<td><a href="http://weex.alibaba-inc.com/playground/95d8f15d0014c31d3a1d15728313f2a5" target="_blank" rel="external">example</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>options.styles {Object}</code>：设置不同样式过渡效果的键值对，下表列出了所有合法的参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>动画执行后应用到组件上的宽度值</td>
+<td>length</td>
+<td>无</td>
+<td><a href="http://dotwe.org/b599d273f996cfdcbeca7bd5c828ca90" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td>height</td>
+<td>动画执行后应用到组件上的高度值</td>
+<td>length</td>
+<td>无</td>
+<td><a href="http://dotwe.org/d0b1ccadf386ba00960d0c8340c682e5" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>动画执行后应用到组件上的背景颜色</td>
+<td>string</td>
+<td>none</td>
+<td><a href="http://dotwe.org/f4616ee18f6042b63a8fdcd2816b1712" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>动画执行后应用到组件上的不透明度值</td>
+<td>介于 0 到 1 间的数值</td>
+<td><code>1</code></td>
+<td><a href="http://dotwe.org/f94394173301db83ae6e66d1330a0d0b" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td>transformOrigin</td>
+<td>定义变化过程的中心点. 参数 <code>x-aris</code> 可能的值为 <code>left</code>、<code>center</code>、<code>right</code>、长度值或百分比值, 参数 <code>y-axis</code> 可能的值为 <code>top</code>、<code>center</code>、<code>bottom</code>、长度值或百分比值</td>
+<td><code>x-axis y-axis</code></td>
+<td><code>center center</code></td>
+<td><a href="http://dotwe.org/de43f5a47de230dd531797458bf7fd3c" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td>transform</td>
+<td>定义应用在元素上的变换类型，支持下表列出的属性</td>
+<td>object</td>
+<td>无</td>
+<td><a href="http://dotwe.org/6766dab0589f7831d4bb6030f4226996" target="_blank" rel="external">example</a></td>
+</tr>
+</tbody>
+</table>
+<p><code>transform</code>属性的合法值:</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>translate</code>/<code>translateX</code>/<code>translateY</code></td>
+<td>指定元素将已被移动到的新位置</td>
+<td>像素值或百分比</td>
+<td>无</td>
+<td><a href="http://dotwe.org/6638e66e296723bbef3e59c83b2b5003" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td><code>rotate</code></td>
+<td>指定元素将被旋转的角度，单位是度</td>
+<td>number</td>
+<td>无</td>
+<td><a href="http://dotwe.org/ba9e9920594d9388744b2bd0d1b7695d" target="_blank" rel="external">example</a></td>
+</tr>
+<tr>
+<td><code>scale</code>/<code>scaleX</code>/<code>scaleY</code></td>
+<td>按比例放大或缩小元素</td>
+<td>number</td>
+<td>无</td>
+<td><a href="http://dotwe.org/14b42dde6583ab222bd2b7ed08f241c8" target="_blank" rel="external">example</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>callback {Function}</code>：动画执行完毕之后的回调</li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/modules/animation.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/modules/animation.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Native DOM APIs | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Native DOM APIsWeex in the JS engine, for each page provides a set of Native DOM APIs. This interface is very close to the HTML DOM APIs. Using this interface we can control native rendering logic via">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Native DOM APIs">
+<meta property="og:url" content="https://weex.apache.org/references/native-dom-api.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Native DOM APIsWeex in the JS engine, for each page provides a set of Native DOM APIs. This interface is very close to the HTML DOM APIs. Using this interface we can control native rendering logic via">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Native DOM APIs">
+<meta name="twitter:description" content="Native DOM APIsWeex in the JS engine, for each page provides a set of Native DOM APIs. This interface is very close to the HTML DOM APIs. Using this interface we can control native rendering logic via">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/native-dom-api.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/native-dom-api.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link current ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link current ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Native DOM APIs
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Native-DOM-APIs" class="article-heading"><a href="#Native-DOM-APIs" class="headerlink" title="Native DOM APIs"></a>Native DOM APIs<a class="article-anchor" href="#Native-DOM-APIs" aria-hidden="true"></a></h1><p>Weex in the JS engine, for each page provides a set of Native DOM APIs. This interface is very close to the HTML DOM APIs. Using this interface we can control native rendering logic via JavaScript. And Weex upper layer of Vue 2.0 is based on this interface to adapt.   </p>
+<p>In most cases, the JS framework will encapsulate native DOM APIs. That way, the developer does not need to work directly on the Native DOM.   </p>
+<ul>
+<li><code>Document</code> class: full page document.</li>
+<li><code>Node</code> class: the base class of nodes.</li>
+<li><code>Element</code> class: element node, inherited from Node, single view unit.</li>
+<li><code>Comment</code> class: comment node, inherited from Node, no practical meaning, usually used as placeholders.       </li>
+</ul>
+<p>Each Weex page has a <code>weex.document</code> object, which is an instance of the Document class and is the starting point for all the following interface calls.</p>
+<p>Let’s take a look at their usage in detail:    </p>
+<h2 id="Document-class" class="article-heading"><a href="#Document-class" class="headerlink" title="Document class"></a><code>Document</code> class<a class="article-anchor" href="#Document-class" aria-hidden="true"></a></h2><p>Each <code>Document</code> instance will automatically have a <code>documentElement</code> property when it is created. This attribute represents the document node. The document node can have a body, which is the main node of the document.   </p>
+<p>Note: The document node body only accepts <code>&lt;div&gt;</code>, <code>&lt;list&gt;</code>, or <code>&lt;scroller&gt;</code> three types of element nodes.   </p>
+<h3 id="Constructor" class="article-heading"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor<a class="article-anchor" href="#Constructor" aria-hidden="true"></a></h3><p><code>new Document(id: string, url: string?)</code></p>
+<h3 id="Member-method" class="article-heading"><a href="#Member-method" class="headerlink" title="Member method"></a>Member method<a class="article-anchor" href="#Member-method" aria-hidden="true"></a></h3><p><code>createElement(tagName: string, props: Object?): Element</code>   </p>
+<ul>
+<li>Creates an <code>Element</code> instance of a specific type <code>tagName</code>, which is an element node. Props can contain attr objects and style objects. Such as <code>createBody (&#39;div&#39;, {style: {backgroundColor: &#39;#ffffff&#39;}})</code>.     </li>
+</ul>
+<p><code>createComment(text: string): Comment</code>  </p>
+<ul>
+<li>Create an instance of ·<code>Comment</code>, which is a comment node and set a text description.</li>
+</ul>
+<p><code>createBody(tagName: string, props: Object?): Element</code></p>
+<ul>
+<li>Create a document body node and automatically mount it under <code>documentElement</code>.   </li>
+</ul>
+<p><code>fireEvent(el: Element, type: string, e: Object?, domChanges: Object?)</code><br>Triggers a particular type of event. When the event modifies the DOM’s properties or styles during the generation process, the fourth argument is used to describe the changes, and the parameter format is the same as the format of the <code>createElement</code> method above.</p>
+<p><code>destroy()</code>   </p>
+<ul>
+<li>Destroy the current document. Once the document is destroyed, it will no longer work.   </li>
+</ul>
+<h3 id="Read-only-member-variables" class="article-heading"><a href="#Read-only-member-variables" class="headerlink" title="Read-only member variables"></a>Read-only member variables<a class="article-anchor" href="#Read-only-member-variables" aria-hidden="true"></a></h3><p><code>id: string</code></p>
+<ul>
+<li>Each <code>Document</code> instance has a unique id. This is also the only id that each Weex page has.</li>
+</ul>
+<p><code>URL: string?</code></p>
+<ul>
+<li>If the current Weex page has a JS bundle URL, the URL will be returned here.  </li>
+</ul>
+<p><code>body: Element</code>  </p>
+<ul>
+<li>The main body of the document, the concept similar to the HTML DOM document.body.  </li>
+</ul>
+<p><code>documentElement: Element</code> </p>
+<ul>
+<li>Document node, the concept similar to the HTML DOM document.documentElement.</li>
+<li>The relationship between body and documentElement is: documentElement is the parent of the body.   </li>
+</ul>
+<p><code>getRef(id): Node</code></p>
+<ul>
+<li>Get the node based on the node id.</li>
+</ul>
+<h2 id="Node-Class" class="article-heading"><a href="#Node-Class" class="headerlink" title="Node Class"></a><code>Node</code> Class<a class="article-anchor" href="#Node-Class" aria-hidden="true"></a></h2><h3 id="Constructor-1" class="article-heading"><a href="#Constructor-1" class="headerlink" title="Constructor"></a>Constructor<a class="article-anchor" href="#Constructor-1" aria-hidden="true"></a></h3><p><code>new Node()</code></p>
+<h3 id="Member-method-1" class="article-heading"><a href="#Member-method-1" class="headerlink" title="Member method"></a>Member method<a class="article-anchor" href="#Member-method-1" aria-hidden="true"></a></h3><p><code>destroy()</code></p>
+<h3 id="Read-only-member-variables-or-methods" class="article-heading"><a href="#Read-only-member-variables-or-methods" class="headerlink" title="Read-only member variables or methods"></a>Read-only member variables or methods<a class="article-anchor" href="#Read-only-member-variables-or-methods" aria-hidden="true"></a></h3><p><code>ref: string</code>  </p>
+<ul>
+<li>Each <code>Node</code> instance has its own unique ref value in the entire `Document instance.</li>
+</ul>
+<p><code>nextSibling: Node?</code></p>
+<p><code>previousSibling: Node?</code></p>
+<p><code>parentNode: Node?</code></p>
+<ul>
+<li>The three interfaces are consistent with the definition of HTML DOM.  </li>
+</ul>
+<p><code>children: Node[]</code></p>
+<ul>
+<li>The node has an array of all child nodes.</li>
+</ul>
+<p><code>pureChildren: Node[]</code>    </p>
+<p>The node has an array of all the child elements. The difference between it and <code>children</code> is that <code>pureChildren</code> contains only the <code>Element</code> instance and not the <code>Comment</code> instance.   </p>
+<h2 id="Element-class-inherited-from-Node" class="article-heading"><a href="#Element-class-inherited-from-Node" class="headerlink" title="Element class, inherited from Node"></a><code>Element</code> class, inherited from <code>Node</code><a class="article-anchor" href="#Element-class-inherited-from-Node" aria-hidden="true"></a></h2><h3 id="Constructor-2" class="article-heading"><a href="#Constructor-2" class="headerlink" title="Constructor"></a>Constructor<a class="article-anchor" href="#Constructor-2" aria-hidden="true"></a></h3><p><code>new Element(type: string, props: Object?)</code></p>
+<ul>
+<li>Creates an element node of a particular type <code>type</code>, and the <code>props</code> parameter can contain an <code>attr</code> object or a <code>style</code> object.   </li>
+</ul>
+<h3 id="DOM-tree-operation" class="article-heading"><a href="#DOM-tree-operation" class="headerlink" title="DOM tree operation"></a>DOM tree operation<a class="article-anchor" href="#DOM-tree-operation" aria-hidden="true"></a></h3><p><code>appendChild(node: Node)</code><br><code>insertBefore(node: Node, before: Node?)</code></p>
+<ul>
+<li>The two interfaces are similar to HTML DOM.  </li>
+</ul>
+<p><code>insertAfter(node: Node, after: Node?)</code>  </p>
+<ul>
+<li>Insert a new node before a child node.</li>
+</ul>
+<p><code>removeChild(node: Node, preserved: boolean?)</code></p>
+<ul>
+<li>Delete the child node node. Parameters <code>preserved</code> whether it is immediately removed from memory or temporarily retained.   </li>
+</ul>
+<p><code>clear()</code></p>
+<ul>
+<li>Clear all child nodes.  </li>
+</ul>
+<h3 id="The-DOM-property-itself-operates" class="article-heading"><a href="#The-DOM-property-itself-operates" class="headerlink" title="The DOM property itself operates"></a>The DOM property itself operates<a class="article-anchor" href="#The-DOM-property-itself-operates" aria-hidden="true"></a></h3><p><code>setAttr(key: string, value: string, silent: boolean?)</code></p>
+<p><code>setStyle(key: string, value: string, silent: boolean?)</code></p>
+<ul>
+<li>In the above two interfaces, when <code>silent</code> is true, the node only updates itself, does not pass the command to the client render layer. This parameter is used to handle user events that have changed the node-related properties at the time of occurrence, and will not send commands repeatedly to the client after the Native DOM has changed.     </li>
+</ul>
+<p><code>addEvent(type: string, handler: Function)</code></p>
+<p><code>removeEvent(type: string)</code></p>
+<p><code>fireEvent(type: string, e: any)</code></p>
+<ul>
+<li>Bind events, unbind events, trigger events.   </li>
+</ul>
+<h4 id="Component-method-for-a-specific-component-type" class="article-heading"><a href="#Component-method-for-a-specific-component-type" class="headerlink" title="Component method for a specific component type"></a>Component method for a specific component type<a class="article-anchor" href="#Component-method-for-a-specific-component-type" aria-hidden="true"></a></h4><p>Special: Different component types can have their own unique methods, such as <code>&lt;web&gt;</code> components support <code>refresh</code> method. You can see the description of each component. In this case, we will generate a specific component type of class, such as <code>WebElement</code>, which inherited from <code>Element</code>.      </p>
+<p>Such as:     </p>
+<blockquote>
+<p><code>WebElement</code> inherited from <code>Element</code><br>Indicates that a webview is embedded in the Wex page</p>
+<p><code>Refresh ()</code>: Refreshes the current webview    </p>
+</blockquote>
+<h3 id="Read-only-member-variables-or-methods-1" class="article-heading"><a href="#Read-only-member-variables-or-methods-1" class="headerlink" title="Read-only member variables or methods"></a>Read-only member variables or methods<a class="article-anchor" href="#Read-only-member-variables-or-methods-1" aria-hidden="true"></a></h3><p><code>ref</code>, <code>nextSibling</code>, <code>previousSibling</code>, <code>parentNode</code>  </p>
+<ul>
+<li>Inherited from <code>Node</code>.   </li>
+</ul>
+<p><code>nodeType: number</code></p>
+<ul>
+<li>The number is always  1.</li>
+</ul>
+<p><code>type: string</code></p>
+<ul>
+<li>Consistent with the <code>type</code> in the constructor.  </li>
+</ul>
+<p><code>attr: Object</code></p>
+<ul>
+<li>The key pair of all the characteristics of the current node. It is recommended to use the <code>setAttr ()</code> method to modify, rather than directly modify the object here.   </li>
+</ul>
+<p><code>style: Object</code></p>
+<ul>
+<li>The value of all the keys of the current node. It is recommended to modify the <code>setStyle ()</code> method, rather than directly modify the object here.   </li>
+</ul>
+<p><code>event: Object</code></p>
+<ul>
+<li>All events of the current node are bound. Each event type corresponds to an event handler method. It is recommended to use the <code>addEvent () / removeEvent ()</code> method to modify, rather than directly modify the object here.   </li>
+</ul>
+<p><code>toJSON(): Object</code></p>
+<ul>
+<li>Returns a JSON object that describes the element’s node, such as: <code>{ref: string, type: string, attr: Object, style: Object, event: Array (string), children: Array}</code>.</li>
+</ul>
+<h2 id="Comment-class-inherited-from-Node" class="article-heading"><a href="#Comment-class-inherited-from-Node" class="headerlink" title="Comment class, inherited from Node"></a><code>Comment</code> class, inherited from <code>Node</code><a class="article-anchor" href="#Comment-class-inherited-from-Node" aria-hidden="true"></a></h2><h3 id="Constructor-3" class="article-heading"><a href="#Constructor-3" class="headerlink" title="Constructor"></a>Constructor<a class="article-anchor" href="#Constructor-3" aria-hidden="true"></a></h3><p><code>new Comment(value: string)</code>  </p>
+<h3 id="Read-only-member-variables-or-methods-2" class="article-heading"><a href="#Read-only-member-variables-or-methods-2" class="headerlink" title="Read-only member variables or methods"></a>Read-only member variables or methods<a class="article-anchor" href="#Read-only-member-variables-or-methods-2" aria-hidden="true"></a></h3><p><code>ref</code>, <code>nextSibling</code>, <code>previousSibling</code>, <code>parentNode</code></p>
+<ul>
+<li>Inherited from <code>Node</code>.</li>
+</ul>
+<p><code>nodeType: number</code></p>
+<ul>
+<li>The number is always 8.  </li>
+</ul>
+<p><code>type: string</code>  </p>
+<ul>
+<li>The type  is always <code>&#39;comment&#39;</code> </li>
+</ul>
+<p><code>value: string</code></p>
+<ul>
+<li>Consistent with the value in the constructor.</li>
+</ul>
+<p><code>toJSON(): Object</code> </p>
+<ul>
+<li>Returns a JSON object describing the annotation node. For example: <code>&lt;! - value -&gt;</code>.</li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/native-dom-api.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/native-dom-api.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Events | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="EventsWeex allow &amp;lt;template&amp;gt; to bind event type and handler on an Element. The attribute name is the event type with prefix on... and the attribute value is handler method name. For instance: onc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Events">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/syntax/events.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="EventsWeex allow &amp;lt;template&amp;gt; to bind event type and handler on an Element. The attribute name is the event type with prefix on... and the attribute value is handler method name. For instance: onc">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Events">
+<meta name="twitter:description" content="EventsWeex allow &amp;lt;template&amp;gt; to bind event type and handler on an Element. The attribute name is the event type with prefix on... and the attribute value is handler method name. For instance: onc">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link current ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link current ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Events
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Events" class="article-heading"><a href="#Events" class="headerlink" title="Events"></a>Events<a class="article-anchor" href="#Events" aria-hidden="true"></a></h1><p>Weex allow <code>&lt;template&gt;</code> to bind event type and handler on an Element. The attribute name is the event type with prefix <code>on...</code> and the attribute value is handler method name. For instance: <code>onclick=&quot;handler&quot;</code>. e.g.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">image</span> <span class="attr">onclick</span>=<span class="string">"handler"</span> <span class="attr">...</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">// TODO</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>When user clicks the image , handler function which defined in <code>&lt;script&gt;</code> code will be executed.</p>
+<h2 id="Inline-Handler" class="article-heading"><a href="#Inline-Handler" class="headerlink" title="Inline Handler"></a>Inline Handler<a class="article-anchor" href="#Inline-Handler" aria-hidden="true"></a></h2><p>Beside a handler method name, you can also call a handler inline.</p>
+<p>e.g.<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">image</span> <span class="attr">onclick</span>=<span class="string">"handler('arg1', $event)"</span> <span class="attr">...</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">handler</span>: <span class="function"><span class="keyword">function</span> (<span class="params">arg1, e</span>) </span>&#123;</div><div class="line">        <span class="comment">// TODO</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Event-Object" class="article-heading"><a href="#Event-Object" class="headerlink" title="Event Object"></a>Event Object<a class="article-anchor" href="#Event-Object" aria-hidden="true"></a></h2><p>When an event handler called, it will receive an event object as the first argument. Every event object will contains following properties.</p>
+<ul>
+<li><code>type</code>: event name, eg: <code>click</code></li>
+<li><code>target</code>: target <code>Element</code> of the event</li>
+<li><code>timestamp</code>: time stamp that event triggered</li>
+</ul>
+<p>Next, let’s have a look at <a href="./display-logic.html">display logic control</a>.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/syntax/events.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/syntax/events.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Integrate to Your App | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Integrate to Your AppIntegrate to AndroidTip：The following documents assume that you already have a certain Android development experience.     Android has two ways to integrate weex1.using source cod">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Integrate to Your App">
+<meta property="og:url" content="https://weex.apache.org/guide/integrate-to-your-app.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Integrate to Your AppIntegrate to AndroidTip：The following documents assume that you already have a certain Android development experience.     Android has two ways to integrate weex1.using source cod">
+<meta property="og:updated_time" content="2017-08-24T15:05:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Integrate to Your App">
+<meta name="twitter:description" content="Integrate to Your AppIntegrate to AndroidTip：The following documents assume that you already have a certain Android development experience.     Android has two ways to integrate weex1.using source cod">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/integrate-to-your-app.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/index.html" class="sidebar-link  ">Get Started</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Development Environment</a>
+              </li>
+            
+              <li>
+                <a href="/guide/integrate-to-your-app.html" class="sidebar-link current ">Integrate to Your App</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/intro/index.html" class="sidebar-link  ">Intro</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/intro/how-it-works.html" class="sidebar-link  ">How it works</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web Dev Experience</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/using-vue.html" class="sidebar-link  ">Using Vue</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/write-once.html" class="sidebar-link  ">Write once, Run Everywhere</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/tools/toolkit.html" class="sidebar-link  ">use weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/guide/tools/plugin.html" class="sidebar-link  ">Weex Language Support Plugin</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/contributing.html" class="sidebar-link  ">How to Contribute</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/index.html" class="sidebar-link  ">Get Started</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Development Environment</a>
+              </li>
+            
+              <li>
+                <a href="/guide/integrate-to-your-app.html" class="sidebar-link current ">Integrate to Your App</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/intro/index.html" class="sidebar-link  ">Intro</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/intro/how-it-works.html" class="sidebar-link  ">How it works</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web Dev Experience</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/using-vue.html" class="sidebar-link  ">Using Vue</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/write-once.html" class="sidebar-link  ">Write once, Run Everywhere</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+              </li>
+            
+              <li>
+                <a href="/guide/intro/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/tools/toolkit.html" class="sidebar-link  ">use weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/guide/tools/plugin.html" class="sidebar-link  ">Weex Language Support Plugin</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/contributing.html" class="sidebar-link  ">How to Contribute</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Integrate to Your App
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-08-24T15:05:27.000Z">Updated time: 24/08/2017</time>
+</header>
+    <h1 id="Integrate-to-Your-App" class="article-heading"><a href="#Integrate-to-Your-App" class="headerlink" title="Integrate to Your App"></a>Integrate to Your App<a class="article-anchor" href="#Integrate-to-Your-App" aria-hidden="true"></a></h1><h2 id="Integrate-to-Android" class="article-heading"><a href="#Integrate-to-Android" class="headerlink" title="Integrate to Android"></a>Integrate to Android<a class="article-anchor" href="#Integrate-to-Android" aria-hidden="true"></a></h2><p>Tip：The following documents assume that you already have a certain Android development experience.    </p>
+<h3 id="Android-has-two-ways-to-integrate-weex" class="article-heading"><a href="#Android-has-two-ways-to-integrate-weex" class="headerlink" title="Android has two ways to integrate weex"></a>Android has two ways to integrate weex<a class="article-anchor" href="#Android-has-two-ways-to-integrate-weex" aria-hidden="true"></a></h3><p>1.using source code: Can quickly use the latest features of WEEX, according to your own characteristics of the project. So, you can do some related improvements.</p>
+<p>2.using SDK: WEEX will regularly release a stable version at jcenter.<a href="https://bintray.com/alibabaweex/maven/weex_sdk/view" target="_blank" rel="external">jcenter</a>       </p>
+<h3 id="Prerequisites" class="article-heading"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites<a class="article-anchor" href="#Prerequisites" aria-hidden="true"></a></h3><p>Make sure the following configuration is complete:   </p>
+<ul>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a> version &gt;= 1.7 , and configure the environment variable   </li>
+<li>Android SDK installed and configure the environment variable    </li>
+<li>Android SDK version 23 (compileSdkVersion in build.gradle)</li>
+<li>SDK build tools version 23.0.1 (buildToolsVersion in build.gradle)</li>
+<li>Android Support Repository &gt;= 17 (for Android Support Library)    </li>
+</ul>
+<h3 id="Quick-to-use" class="article-heading"><a href="#Quick-to-use" class="headerlink" title="Quick to use"></a>Quick to use<a class="article-anchor" href="#Quick-to-use" aria-hidden="true"></a></h3><p>If you are the first time to try or have a higher demand for stability, you can use the way to dependence on the SDK.<br>The steps are as follows:       </p>
+<ol>
+<li>Create an Android project. There is nothing to be specified, according to your habits to.</li>
+<li>Update build.gradle by adding the following dependencies:</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.1.1'</span></div><div class="line">compile <span class="string">'com.android.support:support-v4:23.1.1'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.1.1'</span></div><div class="line">compile <span class="string">'com.alibaba:fastjson:1.1.46.android'</span></div><div class="line">compile <span class="string">'com.taobao.android:weex_sdk:0.5.1@aar'</span></div></pre></td></tr></table></figure>
+<p>Note: the version can be high can not be low.    </p>
+<h4 id="Start-writing-code" class="article-heading"><a href="#Start-writing-code" class="headerlink" title="Start writing code"></a>Start writing code<a class="article-anchor" href="#Start-writing-code" aria-hidden="true"></a></h4><p>Note: There is a complete code address in the appendix    </p>
+<ul>
+<li>Implement the picture download interface, set the initialization.   </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.weex.sample;</div><div class="line"><span class="keyword">import</span> android.widget.ImageView;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.adapter.IWXImgLoaderAdapter;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.common.WXImageStrategy;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.dom.WXImageQuality;</div><div class="line"><span class="comment">/**</span></div><div class="line">* Created by lixinke on 16/6/1.</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageAdapter</span> <span class="keyword">implements</span> <span class="title">IWXImgLoaderAdapter</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy)</span> </span>&#123;</div><div class="line">    <span class="comment">//To implement picture download interface, otherwise the picture can not be displayed.</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>initialization</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.weex.sample;</div><div class="line"><span class="keyword">import</span> android.app.Application;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.InitConfig;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.WXSDKEngine;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* Note: add android:name=".WXApplication"  into Manifest file</div><div class="line">* To implement ImageAdapter, otherwise the picture can not be downloaded</div><div class="line">* Gradle must add some dependencies, otherwise the initialization will fail.</div><div class="line">* compile 'com.android.support:recyclerview-v7:23.1.1'</div><div class="line">* compile 'com.android.support:support-v4:23.1.1'</div><div class="line">* compile 'com.android.support:appcompat-v7:23.1.1'</div><div class="line">* compile 'com.alibaba:fastjson:1.1.45'</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate();</div><div class="line">    InitConfig config=<span class="keyword">new</span> InitConfig.Builder().setImgAdapter(<span class="keyword">new</span> ImageAdapter()).build();</div><div class="line">    WXSDKEngine.initialize(<span class="keyword">this</span>,config);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Start rendering  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.weex.sample;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.IWXRenderListener;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.WXSDKInstance;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.common.WXRenderStrategy;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.utils.WXFileUtils;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">IWXRenderListener</span> </span>&#123;</div><div class="line">  WXSDKInstance mWXSDKInstance;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_main);</div><div class="line">    mWXSDKInstance = <span class="keyword">new</span> WXSDKInstance(<span class="keyword">this</span>);</div><div class="line">    mWXSDKInstance.registerRenderListener(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">/**</span></div><div class="line">    * WXSample can be replaced by any string</div><div class="line">    * Template is  js file that .we converted </div><div class="line">    * Option can be empty, or through the option passed js required parameters. Such as the address of the bundle js.</div><div class="line">    * JsonInitData can be empty.</div><div class="line">    * width is -1 , default full screen, you can customize it.</div><div class="line">    * height is -1 , default full screen, you can customize it.</div><div class="line">    */</div><div class="line">    mWXSDKInstance.render(<span class="string">"WXSample"</span>, WXFileUtils.loadFileContent(<span class="string">"hello.js"</span>, <span class="keyword">this</span>), <span class="keyword">null</span>, <span class="keyword">null</span>, -<span class="number">1</span>, -<span class="number">1</span>, WXRenderStrategy.APPEND_ASYNC);</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewCreated</span><span class="params">(WXSDKInstance instance, View view)</span> </span>&#123;</div><div class="line">    setContentView(view);</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRenderSuccess</span><span class="params">(WXSDKInstance instance, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRefreshSuccess</span><span class="params">(WXSDKInstance instance, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onException</span><span class="params">(WXSDKInstance instance, String errCode, String msg)</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onResume();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityResume();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onPause();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityPause();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onStop();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityStop();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onDestroy();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityDestroy();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Dependence-on-source-code-IDE-Android-Studio" class="article-heading"><a href="#Dependence-on-source-code-IDE-Android-Studio" class="headerlink" title="Dependence on source code (IDE Android Studio)"></a>Dependence on source code (IDE Android Studio)<a class="article-anchor" href="#Dependence-on-source-code-IDE-Android-Studio" aria-hidden="true"></a></h3><p>1.Download source code. git clone <a href="https://github.com/alibaba/weex" target="_blank" rel="external">https://github.com/alibaba/weex</a>.<br>2.Create an android project.<br>3.Import the SDK Module through the following path:<br><code>File-&gt;New-Import Module-&gt; chose WEEX SDK Module(weex/android/sdk) -&gt; Finish</code><br>4.Add the following dependencies: compile project (‘: weex_sdk’) to build.gradle file.<br>5.Other settings please refer to the above “Quick to use”.</p>
+<p>Appendix: <a href="https://github.com/xkli/WXSample.git" target="_blank" rel="external">WXSample address</a> <code>https://github.com/xkli/WXSample.git</code>   </p>
+<h2 id="Integrated-to-iOS" class="article-heading"><a href="#Integrated-to-iOS" class="headerlink" title="Integrated to iOS"></a>Integrated to iOS<a class="article-anchor" href="#Integrated-to-iOS" aria-hidden="true"></a></h2><p>Through the cocoaPods integrated Weex iOS SDK to the project.<br>First assume that you have finished installing the <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS development environment</a> and <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a>.    </p>
+<h3 id="Step-1-Add-Dependencies" class="article-heading"><a href="#Step-1-Add-Dependencies" class="headerlink" title="Step 1: Add Dependencies"></a>Step 1: Add Dependencies<a class="article-anchor" href="#Step-1-Add-Dependencies" aria-hidden="true"></a></h3><p>Import Weex iOS SDK to your existing project, if not, you can create a new project.<br>Before proceeding, make sure that the Podfile file is under the project file. If not, create one and open with  text editor.      </p>
+<ul>
+<li>Integration framework</li>
+</ul>
+<p>WeexSDK The latest version on cocoaPods can be obtained <a href="https://cocoapods.org/pods/WeexSDK" target="_blank" rel="external">here</a> .<br>Add the following to the Podfile file:       </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source &apos;git@github.com:CocoaPods/Specs.git&apos; </div><div class="line">target &apos;YourTarget&apos; do</div><div class="line">    platform :ios, &apos;7.0&apos; </div><div class="line">    pod &apos;WeexSDK&apos;, &apos;0.9.5&apos;   ## Suggest using latest Weex SDK</div><div class="line">end</div></pre></td></tr></table></figure>
+<ul>
+<li>Integrate with source code</li>
+</ul>
+<p>First copy the ios / sdk directory to your existing project directory (here to copy the root directory of your existing project as an example), and then add the Podfile file. </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source &apos;git@github.com:CocoaPods/Specs.git&apos; </div><div class="line">target &apos;YourTarget&apos; do</div><div class="line">    platform :ios, &apos;7.0&apos; </div><div class="line">    pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos; </div><div class="line">end</div></pre></td></tr></table></figure>
+<h3 id="Step-2-Install-Dependencies" class="article-heading"><a href="#Step-2-Install-Dependencies" class="headerlink" title="Step 2: Install Dependencies"></a>Step 2: Install Dependencies<a class="article-anchor" href="#Step-2-Install-Dependencies" aria-hidden="true"></a></h3><p>Open the command line, switch to the directory of the Podfile file, and run the pod install command. If there are no errors, it means that the environment has been configured.   </p>
+<h3 id="Step-3-Initialize-the-Weex-environment" class="article-heading"><a href="#Step-3-Initialize-the-Weex-environment" class="headerlink" title="Step 3: Initialize the Weex environment"></a>Step 3: Initialize the Weex environment<a class="article-anchor" href="#Step-3-Initialize-the-Weex-environment" aria-hidden="true"></a></h3><p>In the AppDelegate.m file to do the initialization operation, usually in the didFinishLaunchingWithOptions method as follows to add.     </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//business configuration</div><div class="line">[WXAppConfiguration setAppGroup:@&quot;AliApp&quot;];</div><div class="line">[WXAppConfiguration setAppName:@&quot;WeexDemo&quot;];</div><div class="line">[WXAppConfiguration setAppVersion:@&quot;1.0.0&quot;];</div><div class="line">//init sdk environment   </div><div class="line">[WXSDKEngine initSDKEnvironment];</div><div class="line">//register custom module and component，optional</div><div class="line">[WXSDKEngine registerComponent:@&quot;MyView&quot; withClass:[MyViewComponent class]];</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div><div class="line">//register the implementation of protocol, optional</div><div class="line">[WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];</div><div class="line">//set the log level    </div><div class="line">[WXLog setLogLevel: WXLogLevelAll];</div></pre></td></tr></table></figure>
+<h3 id="Step-4-Render-weex-Instance" class="article-heading"><a href="#Step-4-Render-weex-Instance" class="headerlink" title="Step 4: Render weex Instance"></a>Step 4: Render weex Instance<a class="article-anchor" href="#Step-4-Render-weex-Instance" aria-hidden="true"></a></h3><p>Weex supports both full page rendering and partial rendering. What you need to do is render Weex’s view with the specified URL and add it to its parent container. The parent container is generally a viewController.   </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#import &lt;WeexSDK/WXSDKInstance.h&gt;</div><div class="line">- (void)viewDidLoad </div><div class="line">&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    _instance = [[WXSDKInstance alloc] init];</div><div class="line">    _instance.viewController = self;</div><div class="line">    _instance.frame = self.view.frame; </div><div class="line">    __weak typeof(self) weakSelf = self;</div><div class="line">    _instance.onCreate = ^(UIView *view) &#123;</div><div class="line">        [weakSelf.weexView removeFromSuperview];</div><div class="line">        weakSelf.weexView = view;</div><div class="line">        [weakSelf.view addSubview:weakSelf.weexView];</div><div class="line">    &#125;;</div><div class="line">    _instance.onFailed = ^(NSError *error) &#123;</div><div class="line">        //process failure</div><div class="line">    &#125;;</div><div class="line">    _instance.renderFinish = ^ (UIView *view) &#123;</div><div class="line">        //process renderFinish</div><div class="line">    &#125;;</div><div class="line">    NSURL *url = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;js&quot;];</div><div class="line">    [_instance renderWithURL:url options:@&#123;@&quot;bundleUrl&quot;:[self.url absoluteString]&#125; data:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>WXSDKInstance is a very important class that provides a basic method and some callbacks, such as renderWithURL, onCreate, onFailed, etc., can be found in WXSDKInstance.h.     </p>
+<h3 id="Step-5-Destroy-Weex-Instance" class="article-heading"><a href="#Step-5-Destroy-Weex-Instance" class="headerlink" title="Step 5: Destroy Weex Instance"></a>Step 5: Destroy Weex Instance<a class="article-anchor" href="#Step-5-Destroy-Weex-Instance" aria-hidden="true"></a></h3><p>In the dealloc phase of the viewController destroyed Weex instance, can play a role in avoiding memory leaks.   </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)dealloc</div><div class="line">&#123;</div><div class="line">    [_instance destroyInstance];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Import-the-Weex-SDK-framework-to-the-project" class="article-heading"><a href="#Import-the-Weex-SDK-framework-to-the-project" class="headerlink" title="Import the Weex SDK framework to the project."></a>Import the Weex SDK framework to the project.<a class="article-anchor" href="#Import-the-Weex-SDK-framework-to-the-project" aria-hidden="true"></a></h4><p>The Weex SDK can be compiled from the source code. You can try the latest feature in the new feature or bugfix branch.<br>Refer to <a href="https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.tFddsV&amp;&amp;docType=1&amp;articleId=104829" target="_blank" rel="external">here</a> for direct import of weexSDK.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/guide/integrate-to-your-app.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/guide/integrate-to-your-app.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

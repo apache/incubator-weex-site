@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>语法介绍 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="语法综述Weex 代码由 &amp;lt;template&amp;gt;、&amp;lt;style&amp;gt;、&amp;lt;script&amp;gt; 三个部分构成。  &amp;lt;template&amp;gt;：必须的，使用 HTML 语法描述页面结构，内容由多个标签组成，不同的标签代表不同的组件。 &amp;lt;style&amp;gt;：可选的，使用 CSS 语法描述页面的具体展现形式。 &amp;lt;script&amp;gt;：可选的，使用 JavaScri">
+<meta property="og:type" content="website">
+<meta property="og:title" content="语法介绍">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="语法综述Weex 代码由 &amp;lt;template&amp;gt;、&amp;lt;style&amp;gt;、&amp;lt;script&amp;gt; 三个部分构成。  &amp;lt;template&amp;gt;：必须的，使用 HTML 语法描述页面结构，内容由多个标签组成，不同的标签代表不同的组件。 &amp;lt;style&amp;gt;：可选的，使用 CSS 语法描述页面的具体展现形式。 &amp;lt;script&amp;gt;：可选的，使用 JavaScri">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="语法介绍">
+<meta name="twitter:description" content="语法综述Weex 代码由 &amp;lt;template&amp;gt;、&amp;lt;style&amp;gt;、&amp;lt;script&amp;gt; 三个部分构成。  &amp;lt;template&amp;gt;：必须的，使用 HTML 语法描述页面结构，内容由多个标签组成，不同的标签代表不同的组件。 &amp;lt;style&amp;gt;：可选的，使用 CSS 语法描述页面的具体展现形式。 &amp;lt;script&amp;gt;：可选的，使用 JavaScri">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link current ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link current ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        语法介绍
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="语法综述" class="article-heading"><a href="#语法综述" class="headerlink" title="语法综述"></a>语法综述<a class="article-anchor" href="#语法综述" aria-hidden="true"></a></h1><p>Weex 代码由 <code>&lt;template&gt;</code>、<code>&lt;style&gt;</code>、<code>&lt;script&gt;</code> 三个部分构成。</p>
+<ul>
+<li><code>&lt;template&gt;</code>：<em>必须的</em>，使用 HTML 语法描述页面结构，内容由多个标签组成，不同的标签代表不同的组件。</li>
+<li><code>&lt;style&gt;</code>：<em>可选的</em>，使用 CSS 语法描述页面的具体展现形式。</li>
+<li><code>&lt;script&gt;</code>：<em>可选的</em>，使用 JavaScript 描述页面中的数据和页面的行为，Weex 中的数据定义也在 <code>&lt;script&gt;</code> 中进行。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- (required) the structure of page --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="comment">/* (optional) stylesheet */</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (optional) the definition of data, methods and life-circle */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这是一个典型的 M-V-VM 架构：通过 ViewModel 把 Model 和 View 建立更直接有效的关系，ViewModel 的实现以 <code>&lt;script&gt;</code> 的内容为主。</p>
+<h2 id="lt-template-gt-模板" class="article-heading"><a href="#lt-template-gt-模板" class="headerlink" title="&lt;template&gt; 模板"></a><code>&lt;template&gt;</code> 模板<a class="article-anchor" href="#lt-template-gt-模板" aria-hidden="true"></a></h2><p><code>&lt;template&gt;</code> 中的标签组织类似如下代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"width: 200; height: 200;"</span> <span class="attr">src</span>=<span class="string">"https://gtms02.alicdn.com/tps/i2/TB1QHKjMXXXXXadXVXX20ySQVXX-512-512.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>Alibaba Weex Team<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/5256e6e610ded330369f2e8010f7f0e6" target="_blank" rel="external">体验一下</a></p>
+<p><code>&lt;div&gt;</code> 标签是一个根节点，里面包含描述图片的 <code>&lt;image&gt;</code> 标签和描述文字的 <code>&lt;text&gt;</code> 标签。</p>
+<p>和 HTML 类似，不同标签代表的组件有各自的特性 (attribute)，部分组件可以拥有自己的子组件。</p>
+<p>延伸阅读：<a href="../../references/components/index.html">内置组件列表</a></p>
+<p>根节点：每个 Weex 页面最顶层的节点，我们称为根节点。下面是目前我们支持的三种根节点：</p>
+<ul>
+<li><code>&lt;div&gt;</code>：普通根节点，有确定的尺寸，不可滚动。</li>
+<li><code>&lt;scroller&gt;</code>：可滚动根节点，适用于需要全页滚动的场景。</li>
+<li><code>&lt;list&gt;</code>：列表根节点，适用于其中包含重复的子元素的列表场景。</li>
+</ul>
+<p>目前 Weex 仅支持以上三种根节点。</p>
+<p><em>注意事项：<code>&lt;template&gt;</code> 只支持一个根节点，多个根节点将无法被 Weex 正常的识别和处理。</em></p>
+<h2 id="lt-style-gt-样式" class="article-heading"><a href="#lt-style-gt-样式" class="headerlink" title="&lt;style&gt; 样式"></a><code>&lt;style&gt;</code> 样式<a class="article-anchor" href="#lt-style-gt-样式" aria-hidden="true"></a></h2><p>我们可以把 Weex 中的样式语法理解为 CSS 的一个子集，两者有一些细微的区别</p>
+<p>第一种写法是，你能在标签上，直接通过内联 <code>style</code> 特性编写样式. 第二种写法，通过标签中的 <code>class</code> 特性与 <code>&lt;style&gt;</code> 标签中定义的样式建立对应关系，让 <code>&lt;style&gt;</code> 标签中定义的样式作用于特定标签之上。以下是例子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 64;"</span>&gt;</span>Alibaba<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"large"</span>&gt;</span>Weex Team<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.large</span> &#123;<span class="attribute">font-size</span>: <span class="number">64</span>;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/d8af9186bf045df74e7a538d91798db4" target="_blank" rel="external">体验一下</a></p>
+<p>上面的两个 <code>&lt;text&gt;</code> 组件都被设置了同样的字体大小，但分别用了两种不同的方式。</p>
+<p>延伸阅读：<a href="../references/common-style.html">Weex 通用样式</a></p>
+<p><strong>注意</strong>：Weex 遵循 <a href="https://en.wikipedia.org/wiki/HTML_attribute" target="_blank" rel="external">HTML 特性</a> 命名规范，所以特性命名时<strong>请不要使用陀峰格式 (CamelCase)</strong>，采用以“-”分割的 <strong>long-name</strong> 形式。</p>
+<h2 id="lt-script-gt-脚本" class="article-heading"><a href="#lt-script-gt-脚本" class="headerlink" title="&lt;script&gt; 脚本"></a><code>&lt;script&gt;</code> 脚本<a class="article-anchor" href="#lt-script-gt-脚本" aria-hidden="true"></a></h2><p><code>&lt;script&gt;</code> 描述页面中的数据和页面的行为，代码遵循 JavaScript (ES5) 语法 (目前 iOS 端和浏览器端取决于内置 JavaScript 引擎对 ES 版本的支持情况，安卓端能够完整支持 ES5，但不原生支持 ES6，需要用类似 <a href="http://babeljs.io" target="_blank" rel="external">babel</a> 的工具对源代码进行转换)。下面是一个例子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>The time is &#123;&#123;datetime&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;getTitle()&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">title</span>: <span class="string">'Alibaba'</span>,</div><div class="line">      <span class="attr">datetime</span>: <span class="literal">null</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">getTitle</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'Weex Team'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.datetime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/8095bed0d9db4299fb39975d4b35b13f" target="_blank" rel="external">体验一下</a></p>
+<p>上面 <code>&lt;script&gt;</code> 标签中定义了被赋值给 <code>module.exports</code> 的对象，这个对象其实就是一个 ViewModel 选项，让三个 <code>&lt;text&gt;</code> 标签显示当前时间、“Alibaba”字样和“Weex Team”字样。</p>
+<p>选项中的 <code>data</code> 用于存储数据，这些数据可以通过<a href="./data-binding.html">数据绑定</a>机制和 <code>&lt;template&gt;</code> 标签中的内容绑定起来。当这些数据变更时，被绑定的模板内容也会自动更新。这些数据在 <code>&lt;script&gt;</code> 中的各个方法中可以通过类似 <code>this.x</code> 的方式进行读写操作。</p>
+<p>而选项中的 <code>methods</code> 里则列出了当前上下文可执行的各种函数，比如 <code>getTitle()</code>。</p>
+<p>选项中最后的 <code>created</code> 是生命周期函数，会在数据初始化之后、界面被绑定数据并渲染之前执行。类似的生命周期函数还有 <code>init</code>、<code>ready</code> 等，在这个例子中，<code>datetime</code> 会在界面渲染之前被更新为当前的时间。</p>
+<p>延伸阅读：<a href="../../references/component-defs.html">ViewModel 选项</a></p>
+<p>接下来，我们来详细介绍<a href="./data-binding.html">数据绑定</a>的相关知识。</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/syntax/index.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/syntax/index.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

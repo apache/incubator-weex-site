@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何参与社区 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何参与社区加入 Weex 邮件列表 (Mailing List)在 Weex 官方社区所有的信息都会汇聚于邮件列表。订阅开发邮件列表的方式是发送邮件到 dev-subscribe@weex.incubator.apache.org 然后你的邮箱会收到一封来自 Apache 的回信 (英文)，把 Apache 的这封回信再次回复过去，即可完成订阅。 这里需要强调的是 Apache 是一个面向全球的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="如何参与社区">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/contributing.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="如何参与社区加入 Weex 邮件列表 (Mailing List)在 Weex 官方社区所有的信息都会汇聚于邮件列表。订阅开发邮件列表的方式是发送邮件到 dev-subscribe@weex.incubator.apache.org 然后你的邮箱会收到一封来自 Apache 的回信 (英文)，把 Apache 的这封回信再次回复过去，即可完成订阅。 这里需要强调的是 Apache 是一个面向全球的">
+<meta property="og:updated_time" content="2017-10-13T02:14:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何参与社区">
+<meta name="twitter:description" content="如何参与社区加入 Weex 邮件列表 (Mailing List)在 Weex 官方社区所有的信息都会汇聚于邮件列表。订阅开发邮件列表的方式是发送邮件到 dev-subscribe@weex.incubator.apache.org 然后你的邮箱会收到一封来自 Apache 的回信 (英文)，把 Apache 的这封回信再次回复过去，即可完成订阅。 这里需要强调的是 Apache 是一个面向全球的">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/contributing.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/contributing.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link  ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link  ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link current ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link  ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link  ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link current ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        如何参与社区
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-10-13T02:14:53.000Z">Updated time: 13/10/2017</time>
+</header>
+    <h1 id="如何参与社区" class="article-heading"><a href="#如何参与社区" class="headerlink" title="如何参与社区"></a>如何参与社区<a class="article-anchor" href="#如何参与社区" aria-hidden="true"></a></h1><h2 id="加入-Weex-邮件列表-Mailing-List" class="article-heading"><a href="#加入-Weex-邮件列表-Mailing-List" class="headerlink" title="加入 Weex 邮件列表 (Mailing List)"></a>加入 Weex 邮件列表 (Mailing List)<a class="article-anchor" href="#加入-Weex-邮件列表-Mailing-List" aria-hidden="true"></a></h2><p>在 Weex 官方社区所有的信息都会汇聚于邮件列表。订阅开发邮件列表的方式是发送邮件到 <code>dev-subscribe@weex.incubator.apache.org</code> 然后你的邮箱会收到一封来自 Apache 的回信 (英文)，把 Apache 的这封回信再次回复过去，即可完成订阅。</p>
+<p>这里需要强调的是 Apache 是一个面向全球的全英文的社区，所以我们希望您能够用英文在邮件列表中跟大家交流。</p>
+<p>如果您确实对使用英文存在很大的疑虑或困惑，我们也非常欢迎大家来中文问答平台 <a href="https://segmentfault.com/t/weex" target="_blank" rel="external">SegmentFault</a> 提问，这里有非常多热心的开发者一起讨论和解答 Weex 相关的问题。</p>
+<p>使用邮件列表的另外一个好处是它可以方便大家随时查阅之前的邮件记录: <a href="http://mail-archives.apache.org/mod_mbox/incubator-weex-dev/" target="_blank" rel="external">http://mail-archives.apache.org/mod_mbox/incubator-weex-dev/</a></p>
+<p><em>如果您对邮件列表中的内容已经不再感兴趣，这里也有退订邮件列表的方法: 发送邮件至 <code>dev-unsubscribe@weex.incubator.apache.org</code> 并根据回信的提示进行二次回复确认，完成退订。</em></p>
+<p>除了开发 (dev) 邮件列表，我们还有另外几个的邮件列表供大家查阅：<a href="http://mail-archives.apache.org/mod_mbox/#weex.incubator" target="_blank" rel="external">http://mail-archives.apache.org/mod_mbox/#weex.incubator</a></p>
+<h2 id="分支管理-英" class="article-heading"><a href="#分支管理-英" class="headerlink" title="分支管理 (英)"></a>分支管理 (英)<a class="article-anchor" href="#分支管理-英" aria-hidden="true"></a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">release</div><div class="line"> ↑</div><div class="line">&#123;version&#125;</div><div class="line"> ↑</div><div class="line">master         &lt;--- PR(feature/hotfix/typo)</div></pre></td></tr></table></figure>
+<ol>
+<li><code>master</code> branch<ol>
+<li><code>master</code> is the stable developing branch.</li>
+<li><strong><em>It’s RECOMMENDED to commit hotfix (like typo) or feature PR to <code>master</code></em></strong>.</li>
+</ol>
+</li>
+<li><code>{version}</code> branch<ol>
+<li><code>{version}</code> is used for every version which we consider for stable publish.</li>
+<li>e.g. <code>v0.16</code></li>
+</ol>
+</li>
+<li><code>release</code> branch<ol>
+<li><code>release</code> is the latest release branch,we will make tag and publish version on this branch.</li>
+</ol>
+</li>
+</ol>
+<h3 id="用于PR的分支命名" class="article-heading"><a href="#用于PR的分支命名" class="headerlink" title="用于PR的分支命名"></a>用于PR的分支命名<a class="article-anchor" href="#用于PR的分支命名" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;module&#125;-&#123;action&#125;-&#123;shortName&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>{module}</code>, see <a href="#commit-log">commit log module</a></li>
+<li><code>{action}</code><ul>
+<li><code>feature</code>: checkout from <code>{module}</code> and merge to <code>{module}</code> later. If <code>{module}</code> not exists, merge to <code>dev</code></li>
+<li><code>bugfix</code>: like <code>feature</code>, for bugfix only</li>
+<li><code>hotfix</code>: checkout from <code>master</code> or release <code>tag</code>, merge to <code>master</code> and <code>{module}</code> later. If <code>{module}</code> not exists, merge to <code>dev</code></li>
+</ul>
+</li>
+</ul>
+<p>for example:</p>
+<ul>
+<li><code>android-bugfix-memory</code></li>
+<li><code>jsfm-feature-communication</code></li>
+<li><code>android-hotfix-compute-layout</code></li>
+</ul>
+<h2 id="提交日志格式-英" class="article-heading"><a href="#提交日志格式-英" class="headerlink" title="提交日志格式 (英)"></a>提交日志格式 (英)<a class="article-anchor" href="#提交日志格式-英" aria-hidden="true"></a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;action&#125; [&#123;module&#125;] &#123;description&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>{action}</code><ul>
+<li><code>+</code> add</li>
+<li><code>*</code> update or bugfix</li>
+<li><code>-</code> remove</li>
+</ul>
+</li>
+<li><code>{module}</code><ul>
+<li>Including: android, ios, jsfm, html5, component, doc, website, example, test, all </li>
+</ul>
+</li>
+<li><code>{description}</code><ul>
+<li>Just make it as clear and simple as possible.</li>
+</ul>
+</li>
+</ul>
+<p>for example:</p>
+<ul>
+<li><code>+ [android] close #123, add refreshing for WebView</code></li>
+<li><code>* [doc] fix #123, update video auto-play property</code></li>
+<li><code>- [example] remove abc</code></li>
+</ul>
+<h2 id="发送-Pull-Request-英" class="article-heading"><a href="#发送-Pull-Request-英" class="headerlink" title="发送 Pull Request (英)"></a>发送 Pull Request (英)<a class="article-anchor" href="#发送-Pull-Request-英" aria-hidden="true"></a></h2><p>You can <a href="https://github.com/apache/incubator-weex/compare" target="_blank" rel="external">create pull requests</a> in GitHub.</p>
+<ol>
+<li>First we suggest you have some discussion with the community (commonly in our mailing list) before you code.</li>
+<li>Fork repo from <a href="https://github.com/apache/incubator-weex/" target="_blank" rel="external">https://github.com/apache/incubator-weex/</a></li>
+<li>Finish the job you want to do.</li>
+<li>Create a pull request.</li>
+</ol>
+<h2 id="编码规范-英" class="article-heading"><a href="#编码规范-英" class="headerlink" title="编码规范 (英)"></a>编码规范 (英)<a class="article-anchor" href="#编码规范-英" aria-hidden="true"></a></h2><h3 id="Objective-C" class="article-heading"><a href="#Objective-C" class="headerlink" title="Objective-C"></a>Objective-C<a class="article-anchor" href="#Objective-C" aria-hidden="true"></a></h3><ul>
+<li>Tabs for indentation(not spaces)</li>
+<li><code>*</code> operator goes with the variable name (e.g. Type *variable;)</li>
+<li>Function definitions: place each brace on its own line.</li>
+<li>Other braces: place the open brace on the line preceding the code block; place the close brace on its own line.</li>
+<li>Use <code>#pragma marks</code> to categorize methods into functional groupings and protocol implementations</li>
+<li>Follow other guidelines on <a href="https://github.com/github/objective-c-style-guide" target="_blank" rel="external">GitHub Objective-C Style Guide</a></li>
+</ul>
+<h3 id="Java-amp-Android" class="article-heading"><a href="#Java-amp-Android" class="headerlink" title="Java &amp; Android"></a>Java &amp; Android<a class="article-anchor" href="#Java-amp-Android" aria-hidden="true"></a></h3><ul>
+<li>Use <a href="https://google.github.io/styleguide/javaguide.html" target="_blank" rel="external">Google Java Style</a> as basic guidelines of java code.</li>
+<li>Follow <a href="https://source.android.com/source/code-style.html" target="_blank" rel="external">AOSP Code Style</a> for rest of android related code style.</li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/guide/contributing.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/guide/contributing.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

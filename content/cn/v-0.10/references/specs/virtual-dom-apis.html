@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Virtual DOM APIs | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Virtual DOM APIsDocument每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。 构造函数new Document(id: string, url: string?)成员createElement(tagName: string, props: Object?): Element创建一个特定类型 Element 对象。props">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Virtual DOM APIs">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/specs/virtual-dom-apis.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Virtual DOM APIsDocument每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。 构造函数new Document(id: string, url: string?)成员createElement(tagName: string, props: Object?): Element创建一个特定类型 Element 对象。props">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Virtual DOM APIs">
+<meta name="twitter:description" content="Virtual DOM APIsDocument每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。 构造函数new Document(id: string, url: string?)成员createElement(tagName: string, props: Object?): Element创建一个特定类型 Element 对象。props">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/specs/virtual-dom-apis.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link current ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link current ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Virtual DOM APIs
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Virtual-DOM-APIs" class="article-heading"><a href="#Virtual-DOM-APIs" class="headerlink" title="Virtual DOM APIs"></a>Virtual DOM APIs<a class="article-anchor" href="#Virtual-DOM-APIs" aria-hidden="true"></a></h1><h2 id="Document" class="article-heading"><a href="#Document" class="headerlink" title="Document"></a><code>Document</code><a class="article-anchor" href="#Document" aria-hidden="true"></a></h2><p>每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。</p>
+<h3 id="构造函数" class="article-heading"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数<a class="article-anchor" href="#构造函数" aria-hidden="true"></a></h3><h5 id="new-Document-id-string-url-string" class="article-heading"><a href="#new-Document-id-string-url-string" class="headerlink" title="new Document(id: string, url: string?)"></a><code>new Document(id: string, url: string?)</code><a class="article-anchor" href="#new-Document-id-string-url-string" aria-hidden="true"></a></h5><h3 id="成员" class="article-heading"><a href="#成员" class="headerlink" title="成员"></a>成员<a class="article-anchor" href="#成员" aria-hidden="true"></a></h3><h5 id="createElement-tagName-string-props-Object-Element" class="article-heading"><a href="#createElement-tagName-string-props-Object-Element" class="headerlink" title="createElement(tagName: string, props: Object?): Element"></a><code>createElement(tagName: string, props: Object?): Element</code><a class="article-anchor" href="#createElement-tagName-string-props-Object-Element" aria-hidden="true"></a></h5><p>创建一个特定类型 <code>Element</code> 对象。<code>props</code> 对象可能包含一个 <code>attr</code> 对象和一个 <code>style</code> 对象。例如 <code>createBody(&#39;div&#39;, {style: {backgroundColor: &#39;#ffffff&#39;}})</code></p>
+<h5 id="createComment-text-string-Comment" class="article-heading"><a href="#createComment-text-string-Comment" class="headerlink" title="createComment(text: string): Comment"></a><code>createComment(text: string): Comment</code><a class="article-anchor" href="#createComment-text-string-Comment" aria-hidden="true"></a></h5><p>创建一个具有一些注释文本的 <code>Comment</code> 对象。</p>
+<h5 id="open" class="article-heading"><a href="#open" class="headerlink" title="open()"></a><code>open()</code><a class="article-anchor" href="#open" aria-hidden="true"></a></h5><p>初始化渲染开始时设置一个标志，表示初始化渲染开始，每个 DOM 更新将被立即调用。</p>
+<h5 id="close" class="article-heading"><a href="#close" class="headerlink" title="close()"></a><code>close()</code><a class="article-anchor" href="#close" aria-hidden="true"></a></h5><p>初始化渲染完成时设置一个标志，标识初始化渲染完成，DOM 更新以后将在每个任务中批处理。</p>
+<h5 id="fireEvent-el-Element-type-string-e-Object-domChanges-Object" class="article-heading"><a href="#fireEvent-el-Element-type-string-e-Object-domChanges-Object" class="headerlink" title="fireEvent(el: Element, type: string, e: Object?, domChanges: Object?)"></a><code>fireEvent(el: Element, type: string, e: Object?, domChanges: Object?)</code><a class="article-anchor" href="#fireEvent-el-Element-type-string-e-Object-domChanges-Object" aria-hidden="true"></a></h5><p>在某个元素上触发一个带有特定类型的事件，这个事件带有一个事件对象。当事件导致一些 DOM 的变化，第四个参数将像 <code>createElement</code> 方法里的 <code>props</code> 参数一样描述这些 DOM 变化。</p>
+<h4 id="只读属性-amp-Getters" class="article-heading"><a href="#只读属性-amp-Getters" class="headerlink" title="只读属性 &amp; Getters"></a>只读属性 &amp; Getters<a class="article-anchor" href="#只读属性-amp-Getters" aria-hidden="true"></a></h4><h5 id="id-string" class="article-heading"><a href="#id-string" class="headerlink" title="id: string"></a><code>id: string</code><a class="article-anchor" href="#id-string" aria-hidden="true"></a></h5><h5 id="URL-string" class="article-heading"><a href="#URL-string" class="headerlink" title="URL: string?"></a><code>URL: string?</code><a class="article-anchor" href="#URL-string" aria-hidden="true"></a></h5><h5 id="body-Element" class="article-heading"><a href="#body-Element" class="headerlink" title="body: Element"></a><code>body: Element</code><a class="article-anchor" href="#body-Element" aria-hidden="true"></a></h5><p>body 元素</p>
+<h5 id="documentElement-Element" class="article-heading"><a href="#documentElement-Element" class="headerlink" title="documentElement: Element"></a><code>documentElement: Element</code><a class="article-anchor" href="#documentElement-Element" aria-hidden="true"></a></h5><p>document 元素</p>
+<h5 id="getRef-ref-string-Node" class="article-heading"><a href="#getRef-ref-string-Node" class="headerlink" title="getRef(ref: string): Node?"></a><code>getRef(ref: string): Node?</code><a class="article-anchor" href="#getRef-ref-string-Node" aria-hidden="true"></a></h5><p>通过内部 node map 的 <code>ref</code> 获取节点。 </p>
+<p><strong>注意：</strong></p>
+<p>在一个 document 被创建时会自动生成一个 <code>documentElement</code> ，并且 <code>body</code> 应该手动创建并添加到 <code>documentElement</code> 才能工作。<code>body</code> 的 <code>type</code> 必须是一个 <code>div</code>，<code>list</code> 或 <code>scroller</code>。</p>
+<h2 id="Node" class="article-heading"><a href="#Node" class="headerlink" title="Node"></a><code>Node</code><a class="article-anchor" href="#Node" aria-hidden="true"></a></h2><h3 id="构造函数-1" class="article-heading"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数<a class="article-anchor" href="#构造函数-1" aria-hidden="true"></a></h3><h5 id="new-Node" class="article-heading"><a href="#new-Node" class="headerlink" title="new Node()"></a><code>new Node()</code><a class="article-anchor" href="#new-Node" aria-hidden="true"></a></h5><h3 id="成员-1" class="article-heading"><a href="#成员-1" class="headerlink" title="成员"></a>成员<a class="article-anchor" href="#成员-1" aria-hidden="true"></a></h3><h5 id="destroy" class="article-heading"><a href="#destroy" class="headerlink" title="destroy()"></a><code>destroy()</code><a class="article-anchor" href="#destroy" aria-hidden="true"></a></h5><h4 id="只读属性-amp-Getters-1" class="article-heading"><a href="#只读属性-amp-Getters-1" class="headerlink" title="只读属性 &amp; Getters"></a>只读属性 &amp; Getters<a class="article-anchor" href="#只读属性-amp-Getters-1" aria-hidden="true"></a></h4><h5 id="ref-string" class="article-heading"><a href="#ref-string" class="headerlink" title="ref: string"></a><code>ref: string</code><a class="article-anchor" href="#ref-string" aria-hidden="true"></a></h5><h5 id="nextSibling-Node" class="article-heading"><a href="#nextSibling-Node" class="headerlink" title="nextSibling: Node?"></a><code>nextSibling: Node?</code><a class="article-anchor" href="#nextSibling-Node" aria-hidden="true"></a></h5><h5 id="previousSibling-Node" class="article-heading"><a href="#previousSibling-Node" class="headerlink" title="previousSibling: Node?"></a><code>previousSibling: Node?</code><a class="article-anchor" href="#previousSibling-Node" aria-hidden="true"></a></h5><h5 id="parentNode-Node" class="article-heading"><a href="#parentNode-Node" class="headerlink" title="parentNode: Node?"></a><code>parentNode: Node?</code><a class="article-anchor" href="#parentNode-Node" aria-hidden="true"></a></h5><h2 id="Element-extends-Node" class="article-heading"><a href="#Element-extends-Node" class="headerlink" title="Element extends Node"></a><code>Element</code> extends <code>Node</code><a class="article-anchor" href="#Element-extends-Node" aria-hidden="true"></a></h2><h3 id="构造函数-2" class="article-heading"><a href="#构造函数-2" class="headerlink" title="构造函数"></a>构造函数<a class="article-anchor" href="#构造函数-2" aria-hidden="true"></a></h3><h5 id="new-Element-type-string-props-Object-ownerDocument-Document" class="article-heading"><a href="#new-Element-type-string-props-Object-ownerDocument-Document" class="headerlink" title="new Element(type: string, props: Object?, ownerDocument: Document)"></a><code>new Element(type: string, props: Object?, ownerDocument: Document)</code><a class="article-anchor" href="#new-Element-type-string-props-Object-ownerDocument-Document" aria-hidden="true"></a></h5><p>创建一个元素，并且 <code>props</code> 对象可能包含一个 <code>attr</code> 对象和一个 <code>style</code> 对象。</p>
+<h3 id="成员-2" class="article-heading"><a href="#成员-2" class="headerlink" title="成员"></a>成员<a class="article-anchor" href="#成员-2" aria-hidden="true"></a></h3><h4 id="DOM-树" class="article-heading"><a href="#DOM-树" class="headerlink" title="DOM 树"></a>DOM 树<a class="article-anchor" href="#DOM-树" aria-hidden="true"></a></h4><h5 id="appendChild-node-Node" class="article-heading"><a href="#appendChild-node-Node" class="headerlink" title="appendChild(node: Node)"></a><code>appendChild(node: Node)</code><a class="article-anchor" href="#appendChild-node-Node" aria-hidden="true"></a></h5><h5 id="insertBefore-node-Node-before-Node" class="article-heading"><a href="#insertBefore-node-Node-before-Node" class="headerlink" title="insertBefore(node: Node, before: Node?)"></a><code>insertBefore(node: Node, before: Node?)</code><a class="article-anchor" href="#insertBefore-node-Node-before-Node" aria-hidden="true"></a></h5><h5 id="insertAfter-node-Node-after-Node" class="article-heading"><a href="#insertAfter-node-Node-after-Node" class="headerlink" title="insertAfter(node: Node, after: Node?)"></a><code>insertAfter(node: Node, after: Node?)</code><a class="article-anchor" href="#insertAfter-node-Node-after-Node" aria-hidden="true"></a></h5><h5 id="removeChild-node-Node-preserved-boolean" class="article-heading"><a href="#removeChild-node-Node-preserved-boolean" class="headerlink" title="removeChild(node: Node, preserved: boolean?)"></a><code>removeChild(node: Node, preserved: boolean?)</code><a class="article-anchor" href="#removeChild-node-Node-preserved-boolean" aria-hidden="true"></a></h5><p>移除一个子节点。<code>preserved</code> 参数表示是否立即销毁删除该节点或保存它。</p>
+<h5 id="clear" class="article-heading"><a href="#clear" class="headerlink" title="clear()"></a><code>clear()</code><a class="article-anchor" href="#clear" aria-hidden="true"></a></h5><h4 id="DOM-props" class="article-heading"><a href="#DOM-props" class="headerlink" title="DOM props"></a>DOM props<a class="article-anchor" href="#DOM-props" aria-hidden="true"></a></h4><h5 id="setAttr-key-string-value-string-silent-boolean" class="article-heading"><a href="#setAttr-key-string-value-string-silent-boolean" class="headerlink" title="setAttr(key: string, value: string, silent: boolean?)"></a><code>setAttr(key: string, value: string, silent: boolean?)</code><a class="article-anchor" href="#setAttr-key-string-value-string-silent-boolean" aria-hidden="true"></a></h5><p>如果 <code>silent</code> 为 <code>true</code>，也不会调用 native。用于有 virtual-DOM 变化的事件处理。</p>
+<h5 id="setStyle-key-string-value-string-silent-boolean" class="article-heading"><a href="#setStyle-key-string-value-string-silent-boolean" class="headerlink" title="setStyle(key: string, value: string, silent: boolean?)"></a><code>setStyle(key: string, value: string, silent: boolean?)</code><a class="article-anchor" href="#setStyle-key-string-value-string-silent-boolean" aria-hidden="true"></a></h5><p><code>silent</code> 参数作用与 <code>setAttr</code> 中的一样。</p>
+<h5 id="setClassStyle-classStyle-Object" class="article-heading"><a href="#setClassStyle-classStyle-Object" class="headerlink" title="setClassStyle(classStyle: Object)"></a><code>setClassStyle(classStyle: Object)</code><a class="article-anchor" href="#setClassStyle-classStyle-Object" aria-hidden="true"></a></h5><p>class 样式的 CSS 优先级低于内联样式，当两种样式风格出现时，内联样式的值会覆盖 class 样式的值。</p>
+<h5 id="addEvent-type-string-handler-Function" class="article-heading"><a href="#addEvent-type-string-handler-Function" class="headerlink" title="addEvent(type: string, handler: Function)"></a><code>addEvent(type: string, handler: Function)</code><a class="article-anchor" href="#addEvent-type-string-handler-Function" aria-hidden="true"></a></h5><h5 id="removeEvent-type-string" class="article-heading"><a href="#removeEvent-type-string" class="headerlink" title="removeEvent(type: string)"></a><code>removeEvent(type: string)</code><a class="article-anchor" href="#removeEvent-type-string" aria-hidden="true"></a></h5><h5 id="fireEvent-type-string-e-any" class="article-heading"><a href="#fireEvent-type-string-e-any" class="headerlink" title="fireEvent(type: string, e: any)"></a><code>fireEvent(type: string, e: any)</code><a class="article-anchor" href="#fireEvent-type-string-e-any" aria-hidden="true"></a></h5><h4 id="只读属性-amp-Getters-2" class="article-heading"><a href="#只读属性-amp-Getters-2" class="headerlink" title="只读属性 &amp; Getters"></a>只读属性 &amp; Getters<a class="article-anchor" href="#只读属性-amp-Getters-2" aria-hidden="true"></a></h4><h5 id="toJSON-Object" class="article-heading"><a href="#toJSON-Object" class="headerlink" title="toJSON(): Object"></a><code>toJSON(): Object</code><a class="article-anchor" href="#toJSON-Object" aria-hidden="true"></a></h5><p>格式化 <code>{ref: string, type: string, attr: Object, style: Object, event: Array(string), children: Array}</code></p>
+<h2 id="Comment-extends-Node" class="article-heading"><a href="#Comment-extends-Node" class="headerlink" title="Comment extends Node"></a><code>Comment</code> extends <code>Node</code><a class="article-anchor" href="#Comment-extends-Node" aria-hidden="true"></a></h2><p><code>Comment</code> 将不被传给渲染引擎。因此，可作为占位符使用。</p>
+<h3 id="构造函数-3" class="article-heading"><a href="#构造函数-3" class="headerlink" title="构造函数"></a>构造函数<a class="article-anchor" href="#构造函数-3" aria-hidden="true"></a></h3><h5 id="new-Comment-value-string" class="article-heading"><a href="#new-Comment-value-string" class="headerlink" title="new Comment(value: string)"></a><code>new Comment(value: string)</code><a class="article-anchor" href="#new-Comment-value-string" aria-hidden="true"></a></h5><h3 id="成员-3" class="article-heading"><a href="#成员-3" class="headerlink" title="成员"></a>成员<a class="article-anchor" href="#成员-3" aria-hidden="true"></a></h3><h4 id="只读属性-amp-Getters-3" class="article-heading"><a href="#只读属性-amp-Getters-3" class="headerlink" title="只读属性 &amp; Getters"></a>只读属性 &amp; Getters<a class="article-anchor" href="#只读属性-amp-Getters-3" aria-hidden="true"></a></h4><h5 id="type-string" class="article-heading"><a href="#type-string" class="headerlink" title="type: string"></a><code>type: string</code><a class="article-anchor" href="#type-string" aria-hidden="true"></a></h5><p>返回 <code>&#39;comment&#39;</code></p>
+<h5 id="value-string" class="article-heading"><a href="#value-string" class="headerlink" title="value: string"></a><code>value: string</code><a class="article-anchor" href="#value-string" aria-hidden="true"></a></h5>
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/specs/virtual-dom-apis.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

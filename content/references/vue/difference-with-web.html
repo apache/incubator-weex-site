@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Difference with Web | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Difference with Web">
+<meta property="og:url" content="https://weex.apache.org/references/vue/difference-with-web.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
+<meta property="og:updated_time" content="2017-10-11T12:04:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Difference with Web">
+<meta name="twitter:description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/vue/difference-with-web.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/vue/difference-with-web.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link current ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link current ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Difference with Web
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-10-11T12:04:58.000Z">Updated time: 11/10/2017</time>
+</header>
+    <h1 id="Differences-between-using-Vue-in-Web-and-Weex" class="article-heading"><a href="#Differences-between-using-Vue-in-Web-and-Weex" class="headerlink" title="Differences between using Vue in Web and Weex"></a>Differences between using Vue in Web and Weex<a class="article-anchor" href="#Differences-between-using-Vue-in-Web-and-Weex" aria-hidden="true"></a></h1><h2 id="Platform-Differences" class="article-heading"><a href="#Platform-Differences" class="headerlink" title="Platform Differences"></a>Platform Differences<a class="article-anchor" href="#Platform-Differences" aria-hidden="true"></a></h2><p>Vue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are still many differences between web and native. See <a href="../platform-difference.html">Platform Differences Between Weex and Web</a> for more details.</p>
+<p>Due to those differences, Weex doesn’t support those features in Vue.js (mostly are DOM-related):</p>
+<ul>
+<li>Event bubbling and capturing are not supported. Event modifiers, such as <code>.prevent</code>,<code>.capture</code>, <code>.stop</code>,<code>.self</code> are meaningless in the native environment.</li>
+<li>The keyboard event modifiers, like <code>.{KeyCode | keyAlias}</code> is also meaningless. (see <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers" target="_blank" rel="external">docs in Vue.js</a>)</li>
+<li>No need to call <code>vm.$mount</code> manually, the entry component will mount to the root view of the native container by default.</li>
+<li><code>v-html</code> and<code>v-text</code> directives are not supported.</li>
+</ul>
+<h2 id="Functional-differences" class="article-heading"><a href="#Functional-differences" class="headerlink" title="Functional differences"></a>Functional differences<a class="article-anchor" href="#Functional-differences" aria-hidden="true"></a></h2><h3 id="Vue-2-0-Runtime-only-build" class="article-heading"><a href="#Vue-2-0-Runtime-only-build" class="headerlink" title="Vue 2.0 Runtime-only build"></a>Vue 2.0 Runtime-only build<a class="article-anchor" href="#Vue-2-0-Runtime-only-build" aria-hidden="true"></a></h3><p>Vue 2.0 provides two available builds, the standalone build and the runtime-only build. see the <a href="https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build" target="_blank" rel="external">official document</a> for more information.</p>
+<p>Weex only required the runtime-only build of Vue 2.0 for better performance and less code size.</p>
+<p>The specific differences are:</p>
+<ul>
+<li>The <code>template</code> attribute is not supported when defining a component.</li>
+<li>Does not support using <code>x-templates</code>.</li>
+<li>Does not support using <code>Vue.compile</code>.</li>
+</ul>
+<h3 id="Isolate-the-context-of-multiple-pages" class="article-heading"><a href="#Isolate-the-context-of-multiple-pages" class="headerlink" title="Isolate the context of multiple pages"></a>Isolate the context of multiple pages<a class="article-anchor" href="#Isolate-the-context-of-multiple-pages" aria-hidden="true"></a></h3><p>Weex use the “multiple-pages” concept in native, different js bundle will be run in different native views, there context is isolated. Even the <code>Vue</code> variable is not the same instance between js bundles. (However, all the js bundle will share the same Weex runtime.)</p>
+<p>Based on this feature, the global configurations in <code>Vue</code> will only take effect on the current page:</p>
+<ul>
+<li><code>Vue.config</code></li>
+<li><code>Vue.component</code></li>
+<li><code>Vue.directive</code></li>
+<li><code>Vue.filter</code></li>
+<li><code>Vue.mixin</code></li>
+<li><code>Vue.use</code></li>
+</ul>
+<blockquote>
+<p>Note: Those methods are still work, but its effect will be limited to the current page.</p>
+</blockquote>
+<h2 id="Restrictions-in-style" class="article-heading"><a href="#Restrictions-in-style" class="headerlink" title="Restrictions in style"></a>Restrictions in style<a class="article-anchor" href="#Restrictions-in-style" aria-hidden="true"></a></h2><p>CSS is very flexible, has a lot of properties, support a variety of layout modes. This is the advantage of CSS, but also a bottleneck in browser performance optimization.</p>
+<p>The style in Weex is parsed by the native renderer, and for the sake of performance and complexity, Weex makes some trade-offs about CSS features to make it better suited to <em>“best practices”</em>.</p>
+<h3 id="Single-class-selector" class="article-heading"><a href="#Single-class-selector" class="headerlink" title="Single class selector"></a>Single class selector<a class="article-anchor" href="#Single-class-selector" aria-hidden="true"></a></h3><p>Weex only supports to use single class name in <code>&lt;style&gt;</code>, does not support <em>type selectors</em>, <em>ID selectors</em>, <em>attribute selectors</em>, <em>adjacent sibling selectors</em> and the <em>combinators</em>.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="comment">/* Support single class name selector */</span></div><div class="line"><span class="selector-class">.one-class</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">36px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* Does not support to use combinators between selector */</span></div><div class="line"><span class="selector-class">.parent</span> &gt; <span class="selector-class">.child</span> &#123;</div><div class="line">  <span class="attribute">padding-top</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.foo</span> + <span class="selector-class">.bar</span> &#123;</div><div class="line">  <span class="attribute">margin-left</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* Does not support attribute selectors. The `v-cloak` directive is not supported */</span></div><div class="line"><span class="selector-attr">[V-cloak]</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#FF6600</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The restriction is only for the style definition, does not affect the use of class names. You can still use multiple class names on a single tag, such as:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one two three"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Scoped-by-default" class="article-heading"><a href="#Scoped-by-default" class="headerlink" title="Scoped by default"></a>Scoped by default<a class="article-anchor" href="#Scoped-by-default" aria-hidden="true"></a></h3><p>In Weex, For single file components, the styles written in the <code>&lt;style&gt;</code> can only be used in the current component.</p>
+<p>In order to maintain consistency with Native, it is recommended that you write the style in the <code>.vue</code> file with the<code>scoped</code> attribute, that is, <code>&lt;style scoped&gt;</code>.</p>
+<h3 id="Supported-CSS-attributes" class="article-heading"><a href="#Supported-CSS-attributes" class="headerlink" title="Supported CSS attributes"></a>Supported CSS attributes<a class="article-anchor" href="#Supported-CSS-attributes" aria-hidden="true"></a></h3><p>Weex supports a subset of CSS, and will continue to expand.</p>
+<p>Weex supports <em>box-model</em> and <em>flexbox</em>, as well as other common styles. See <a href="../ common-style.html">Weex Common Style</a> and <a href="http://weex.apache.org/references/web-standards.html">Supported Web Standards</a> for more information.</p>
+<p>In addition, you should also pay attention to the following points:</p>
+<ul>
+<li>No need to write style prefix.</li>
+<li>Weex doesn’t support <code>display: none;</code> and therefore doesn’t support the <code>v-show</code> directive.</li>
+<li>In order to optimize the efficiency of CSS parser, Weex doesn’t support shorthand attributes, involving the following attributes:<ul>
+<li><code>flex</code></li>
+<li><code>border</code>, <code>border-(top|bottom|left|right)</code></li>
+<li><code>margin</code></li>
+<li><code>padding</code></li>
+<li><code>font</code></li>
+<li><code>background</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Differences-in-development" class="article-heading"><a href="#Differences-in-development" class="headerlink" title="Differences in development"></a>Differences in development<a class="article-anchor" href="#Differences-in-development" aria-hidden="true"></a></h2><p>Because of the platform difference, you have to compile your source file in two different ways:</p>
+<ul>
+<li>For the web, you can compile source files in any official way, such as Webpack + vue-loader or Browserify + vueify. and require the <a href="https://www.npmjs.com/package/weex-vue-render" target="_blank" rel="external">weex-vue-render</a>, which is a group of Weex build-in components.</li>
+<li>For Android and iOS, we’ve provided <a href="https://github.com/weexteam/weex-loader" target="_blank" rel="external">weex-loader</a> to compile the <code>.vue</code> files. That is, use Webpack + weex-loader to generate the js bundle that is available for the native.</li>
+</ul>
+<h3 id="Use-weex-loader" class="article-heading"><a href="#Use-weex-loader" class="headerlink" title="Use weex-loader"></a>Use weex-loader<a class="article-anchor" href="#Use-weex-loader" aria-hidden="true"></a></h3><p><a href="https://github.com/weexteam/weex-loader" target="_blank" rel="external">weex-loader</a> is a loader for Webpack, see the <a href="http://webpack.github.io/docs/using-loaders.html" target="_blank" rel="external">official document</a> to learn how to use it.</p>
+<p>One more thing should be reminded is that if the <em>entry file</em> of your webpack config is a <code>.vue</code> file, you also need to pass an additional <code>entry</code> parameter, usually set to <code>true</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="comment">// Add the entry parameter for the .vue file</span></div><div class="line">  entry: <span class="string">'./path/to/App.vue?entry=true'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// other configurations ...</span></div><div class="line"></div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    <span class="attr">loaders</span>: [&#123;</div><div class="line"></div><div class="line">      <span class="comment">// matches the .vue file path that contains the entry parameter</span></div><div class="line">      test: <span class="regexp">/\.vue(\?^^]+)?$/</span>,</div><div class="line">      <span class="attr">loaders</span>: [<span class="string">'weex-loader'</span>]</div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>You don’t need to write those additional parameters if you are using <code>.js</code> file as entry file.</strong> We recommend using javascript files as the entry file of webpack config.</p>
+<h3 id="Setup-native-development-environments" class="article-heading"><a href="#Setup-native-development-environments" class="headerlink" title="Setup native development environments"></a>Setup native development environments<a class="article-anchor" href="#Setup-native-development-environments" aria-hidden="true"></a></h3><p>Since your are using Weex to develop native apps, setup native development environments, both Android and iOS, would be very useful.</p>
+<p>See <a href="../../guide/integrate-to-your-app.html">Integrating Weex to the existing application</a> for more information.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/vue/difference-with-web.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/vue/difference-with-web.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

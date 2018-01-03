@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据绑定 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据绑定Weex使用 mustache 的语法 ({{...}}) 来对 &amp;lt;template&amp;gt; 中的模板和 &amp;lt;script&amp;gt; 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。 数据绑定路径&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text style=&quot;font-size: &amp;#123;&amp;#123;size&amp;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据绑定">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/data-binding.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="数据绑定Weex使用 mustache 的语法 ({{...}}) 来对 &amp;lt;template&amp;gt; 中的模板和 &amp;lt;script&amp;gt; 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。 数据绑定路径&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text style=&quot;font-size: &amp;#123;&amp;#123;size&amp;">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据绑定">
+<meta name="twitter:description" content="数据绑定Weex使用 mustache 的语法 ({{...}}) 来对 &amp;lt;template&amp;gt; 中的模板和 &amp;lt;script&amp;gt; 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。 数据绑定路径&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text style=&quot;font-size: &amp;#123;&amp;#123;size&amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link current ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link current ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        数据绑定
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="数据绑定" class="article-heading"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定<a class="article-anchor" href="#数据绑定" aria-hidden="true"></a></h1><p>Weex使用 <em>mustache</em> 的语法 (<code>{{...}}</code>) 来对 <code>&lt;template&gt;</code> 中的模板和 <code>&lt;script&gt;</code> 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。</p>
+<h2 id="数据绑定路径" class="article-heading"><a href="#数据绑定路径" class="headerlink" title="数据绑定路径"></a>数据绑定路径<a class="article-anchor" href="#数据绑定路径" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;size&#125;&#125;"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">size</span>: <span class="number">48</span>,</div><div class="line">      <span class="attr">title</span>: <span class="string">'Alibaba Weex Team'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/6d18c0e696d33705083e34ef387ac529" target="_blank" rel="external">体验一下</a></p>
+<p>上面的代码会把 <code>title</code> 和 <code>size</code> 的数值绑定到模板内容上。</p>
+<p>我们也可以通过 <code>.</code> 符号来绑定数据结构中的字段。看一下下面的代码片段：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;title.size&#125;&#125;"</span>&gt;</span>&#123;&#123;title.value&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">title</span>: &#123;</div><div class="line">        <span class="attr">size</span>: <span class="number">48</span>,</div><div class="line">        <span class="attr">value</span>: <span class="string">'Alibaba Weex Team'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/e291bbe2d5c34fe04db92bc827697a4b" target="_blank" rel="external">体验一下</a></p>
+<h2 id="数据绑定表达式" class="article-heading"><a href="#数据绑定表达式" class="headerlink" title="数据绑定表达式"></a>数据绑定表达式<a class="article-anchor" href="#数据绑定表达式" aria-hidden="true"></a></h2><p>进行数据绑定时，Weex 支持一些简单的 JavaScript 表达式，例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;firstName + ' ' + lastName&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">firstName</span>: <span class="string">'John'</span>,</div><div class="line">      <span class="attr">lastName</span>: <span class="string">'Smith'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/aeef6c2ca9bd9b7c5d039ed84572e1ee" target="_blank" rel="external">体验一下</a></p>
+<p>这些表达式会在当前的上下文中进行运算。</p>
+<h2 id="计算属性-v0-5" class="article-heading"><a href="#计算属性-v0-5" class="headerlink" title="计算属性 v0.5+"></a>计算属性 <sup>v0.5+</sup><a class="article-anchor" href="#计算属性-v0-5" aria-hidden="true"></a></h2><p>数据绑定表达式已经非常方便了，但如果希望在模板里实现更复杂的逻辑判断，你也可以使用计算属性。例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"changeName"</span> <span class="attr">style</span>=<span class="string">"margin-left: 10;"</span>&gt;</span>CHANGE NAME<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">firstName</span>: <span class="string">'John'</span>,</div><div class="line">      <span class="attr">lastName</span>: <span class="string">'Smith'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">computed</span>: &#123;</div><div class="line">      <span class="attr">fullName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">changeName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.firstName = <span class="string">'Terry'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/276e7c42a2d480d669868476e62b326e" target="_blank" rel="external">体验一下</a></p>
+<p>同样能够达到相同的效果。这里我们引入了一个叫做 <code>fullName</code> 的计算属性，由 <code>firstName</code> 和 <code>lastName</code> 计算而成，在数据绑定的时候，如果 <code>firstName</code> 或 <code>lastName</code> 发生改变，<code>fullName</code> 都会自动重新计算并触发改变。</p>
+<p>另外计算属性还支持另外一种写法，就是同时定义一个计算属性的 getter 和 setter，这样的话当下面例子中的 <code>fullName</code> 被赋值时，<code>data</code> 里的 <code>firstName</code> 和 <code>lastName</code> 会被自动改变：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"changeName"</span> <span class="attr">style</span>=<span class="string">"margin-left: 10;"</span>&gt;</span>CHANGE NAME<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">firstName</span>: <span class="string">'John'</span>,</div><div class="line">      <span class="attr">lastName</span>: <span class="string">'Smith'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">computed</span>: &#123;</div><div class="line">      <span class="attr">fullName</span>: &#123;</div><div class="line">        <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">set</span>: <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">          <span class="keyword">var</span> s = v.split(<span class="string">' '</span>)</div><div class="line">          <span class="keyword">this</span>.firstName = s[<span class="number">0</span>]</div><div class="line">          <span class="keyword">this</span>.lastName = s[<span class="number">1</span>]</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">changeName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.fullName = <span class="string">'Terry King'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/9f33809592391c566c886029c509c167" target="_blank" rel="external">体验一下</a></p>
+<p><strong>注意事项：<code>data</code>、<code>methods</code>、<code>computed</code> 中的字段是不能相互重复的，因为它们都会通过组件实例的 <code>this</code> 访问到。</strong></p>
+<h2 id="数据绑定在-lt-template-gt-中的特殊用法" class="article-heading"><a href="#数据绑定在-lt-template-gt-中的特殊用法" class="headerlink" title="数据绑定在 &lt;template&gt; 中的特殊用法"></a>数据绑定在 <code>&lt;template&gt;</code> 中的特殊用法<a class="article-anchor" href="#数据绑定在-lt-template-gt-中的特殊用法" aria-hidden="true"></a></h2><h3 id="样式-style-或-class" class="article-heading"><a href="#样式-style-或-class" class="headerlink" title="样式: style 或 class"></a>样式: <code>style</code> 或 <code>class</code><a class="article-anchor" href="#样式-style-或-class" aria-hidden="true"></a></h3><p>组件的样式能够通过 <code>style</code> 特性进行绑定：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;size&#125;&#125;; color: &#123;&#123;color&#125;&#125;;"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">size</span>: <span class="number">32</span>,</div><div class="line">      <span class="attr">color</span>: <span class="string">'#ff0000'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/f53674fa7910d266e0a2d8a5c285d2b1" target="_blank" rel="external">体验一下</a></p>
+<p>样式也能够通过 <code>class</code> 特性实现样式绑定，多个 class 名通过空格分隔：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"&#123;&#123;size&#125;&#125;"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title &#123;&#123;status&#125;&#125;"</span>&gt;</span>World<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.large</span> &#123; <span class="attribute">font-size</span>: <span class="number">64</span>; &#125;</div><div class="line">  <span class="selector-class">.small</span> &#123; <span class="attribute">font-size</span>: <span class="number">32</span>; &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</div><div class="line">  <span class="selector-class">.success</span> &#123; <span class="attribute">color</span>: <span class="number">#00ff00</span>; &#125;</div><div class="line">  <span class="selector-class">.error</span> &#123; <span class="attribute">color</span>: <span class="number">#ff0000</span>; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">size</span>: <span class="string">'large'</span>,</div><div class="line">      <span class="attr">status</span>: <span class="string">'success'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/4260897c1526a685672dca95af271493" target="_blank" rel="external">体验一下</a></p>
+<p>在上面的代码中如果 <code>{{size}}</code> 和 <code>{{status}}</code> 是空值, 就只有 <code>class=&quot;title&quot;</code> 会被解析。</p>
+<p>延伸阅读：<a href="./style-n-class.html">style 和 class</a></p>
+<h3 id="事件绑定：on" class="article-heading"><a href="#事件绑定：on" class="headerlink" title="事件绑定：on..."></a>事件绑定：<code>on...</code><a class="article-anchor" href="#事件绑定：on" aria-hidden="true"></a></h3><p>以 <code>on...</code> 开头的就是用于绑定事件的特性，特性名中 <code>on</code> 之后的部分就是事件的类型，特性的值就是处理该事件的函数名。<em>函数名外不需要添加 mustache 语法中的大括号</em>。例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"toggle"</span>&gt;</span>Toggle: &#123;&#123;result&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">result</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">toggle</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.result = !<span class="keyword">this</span>.result</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/2f9f910a60ffc1ed54c797390d6615e1" target="_blank" rel="external">体验一下</a></p>
+<p>除此之外 Weex 还支持更多的事件处理方式。</p>
+<p>延伸阅读：<a href="./events.html">事件处理</a></p>
+<h3 id="展示逻辑控制-if-amp-repeat" class="article-heading"><a href="#展示逻辑控制-if-amp-repeat" class="headerlink" title="展示逻辑控制 if &amp; repeat"></a>展示逻辑控制 <code>if</code> &amp; <code>repeat</code><a class="article-anchor" href="#展示逻辑控制-if-amp-repeat" aria-hidden="true"></a></h3><p><code>if</code> 特性能够通过特性值的真假来控制组建是否显示，<em>且 mustache 大括号可以省略</em>。例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"toggle"</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">if</span>=<span class="string">"&#123;&#123;shown&#125;&#125;"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.logo</span> &#123; <span class="attribute">width</span>: <span class="number">512</span>; <span class="attribute">height</span>: <span class="number">512</span>; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">shown</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">imageUrl</span>: <span class="string">'https://gtms02.alicdn.com/tps/i2/TB1QHKjMXXXXXadXVXX20ySQVXX-512-512.png'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">toggle</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.shown = !<span class="keyword">this</span>.shown</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/3ec9347e4810f503b641849d214d8c15" target="_blank" rel="external">体验一下</a></p>
+<p><code>repeat</code> 特性可以根据一组数组数据重复生成相同或相似的顺序排列的界面。例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">repeat</span>=<span class="string">"(k,v) in list"</span>&gt;</span>&#123;&#123;k&#125;&#125; - &#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">list</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/db40d2341fdbf16d3d806f502189843d" target="_blank" rel="external">体验一下</a></p>
+<p>延伸阅读：<a href="./display-logic.html">展示逻辑控制</a></p>
+<h3 id="静态模板优化-static-v0-9-2" class="article-heading"><a href="#静态模板优化-static-v0-9-2" class="headerlink" title="静态模板优化 static v0.9.2+"></a>静态模板优化 <code>static</code> <sup>v0.9.2+</sup><a class="article-anchor" href="#静态模板优化-static-v0-9-2" aria-hidden="true"></a></h3><p><code>static</code> 特性可以一次性把数据设置到模板相应的位置上，但是今后不会随着数据的变化而更新。这样可以减少无谓的数据绑定，有效控制和优化长列表、纯静态页面在运行时的开销。不过你也要小心使用不要导致原本需要更新的视图没有触发更新。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">static</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123; word &#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.word = <span class="string">'Data changes'</span> <span class="comment">// UI won't be updated</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">word</span>: <span class="string">'Hello static'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/dbadfd66463a2c03e3e06d391b0ad8ec" target="_blank" rel="external">体验一下</a></p>
+<p>如上所示，添加 <code>static</code> 关键字，渲染结果会是“Hello static”字样，相当于渲染一个静态的节点，<code>ready</code> 函数中对数据 <code>word</code> 的改变不会更新到视图。</p>
+<p>下一篇：<a href="./style-n-class.html">style 和 class</a></p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/syntax/data-binding.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/syntax/data-binding.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

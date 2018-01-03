@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Integrate to Android | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。 PrerequisitesAssuming you have the Android SDK installed, r">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Integrate to Android">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/integrate-to-android.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。 PrerequisitesAssuming you have the Android SDK installed, r">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Integrate to Android">
+<meta name="twitter:description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。 PrerequisitesAssuming you have the Android SDK installed, r">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/integrate-to-android.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/integrate-to-android.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Advanced
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/index.html" class="sidebar-link  ">How it works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-android.html" class="sidebar-link current ">Integrate to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Integrate to Android
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Integrate-to-Android" class="article-heading"><a href="#Integrate-to-Android" class="headerlink" title="Integrate to Android"></a>Integrate to Android<a class="article-anchor" href="#Integrate-to-Android" aria-hidden="true"></a></h1><p>When you need to use the new features or to customize specific features, you can rely on the Source SDK for development。</p>
+<h2 id="Prerequisites" class="article-heading"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites<a class="article-anchor" href="#Prerequisites" aria-hidden="true"></a></h2><p>Assuming you have the Android SDK installed, run <code>android</code> to open the Android SDK Manager.</p>
+<p>Make sure you have the following installed:</p>
+<ol>
+<li>Android SDK version 23 (compileSdkVersion in <a href="https://github.com/apache/incubator-weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
+<li>SDK build tools version 23.0.2 (buildToolsVersion in <a href="https://github.com/apache/incubator-weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
+<li>Android Support Repository &gt;= 17 (for Android Support Library)</li>
+<li>Android NDK (download &amp; extraction instructions <a href="http://developer.android.com/ndk/downloads/index.html" target="_blank" rel="external">here</a>)</li>
+</ol>
+<p>Point Gradle to your Android SDK: either have <code>$ANDROID_SDK</code> and <code>$ANDROID_NDK</code> defined, or create a local.properties file in the root of your weex checkout with the following contents:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sdk.dir=absolute_path_to_android_sdk</div><div class="line">ndk.dir=absolute_path_to_android_ndk</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sdk.dir=/Users/your_name/android-sdk-macosx</div><div class="line">ndk.dir=/Users/your_name/android-ndk-r10e</div></pre></td></tr></table></figure>
+<h2 id="Building-the-source" class="article-heading"><a href="#Building-the-source" class="headerlink" title="Building the source"></a>Building the source<a class="article-anchor" href="#Building-the-source" aria-hidden="true"></a></h2><h4 id="1-Clone-source-from-github" class="article-heading"><a href="#1-Clone-source-from-github" class="headerlink" title="1. Clone source from github"></a>1. Clone source from github<a class="article-anchor" href="#1-Clone-source-from-github" aria-hidden="true"></a></h4><p>First, you need to git clone <code>weex</code> from github:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><div class="line">git clone https://github.com/alibaba/weex.git</div></pre></td></tr></table></figure>
+<h5 id="2-Build-APK" class="article-heading"><a href="#2-Build-APK" class="headerlink" title="2. Build APK"></a>2. Build APK<a class="article-anchor" href="#2-Build-APK" aria-hidden="true"></a></h5><p>  <strong><em>   1) Android studio build APK </em></strong></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Step 1: run android studio </div><div class="line">Step 2: open the file of ~/weex/android/playground/build.gradle </div><div class="line">Step 3: Run the Project and the Apk will auto install in your android device</div></pre></td></tr></table></figure>
+<p> <strong><em>   2) Gradle build APK </em></strong></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Step 1: enter the direction of &quot;/weex/android/playground&quot;</div><div class="line">Step 2: run the build command: ./gradlew clean assemble</div><div class="line">Step 3: obtain the payground APK from the direction of weex/android/playground/app/build/outputs/apk/</div><div class="line">Step 3: then adb install -r weex/android/playground/app/build/outputs/apk/playgroud.apk</div></pre></td></tr></table></figure>
+<h4 id="3-Adding-the-weex-sdk-android-project" class="article-heading"><a href="#3-Adding-the-weex-sdk-android-project" class="headerlink" title="3. Adding the :weex_sdk_android project"></a>3. Adding the <code>:weex_sdk_android</code> project<a class="article-anchor" href="#3-Adding-the-weex-sdk-android-project" aria-hidden="true"></a></h4><p>Add the <code>:weex_sdk_android</code> project in <code>android/settings.gradle</code>:</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">include</span> <span class="string">':weex_sdk_android'</span></div><div class="line"></div><div class="line"><span class="keyword">project</span>(<span class="string">':weex_sdk_android'</span>).projectDir = <span class="keyword">new</span> <span class="keyword">File</span>(</div><div class="line">    rootProject.projectDir, <span class="string">'../weex_sdk_android'</span>)</div></pre></td></tr></table></figure>
+<p>Modify your <code>android/app/build.gradle</code> to use the <code>:weex_sdk_android</code> project instead of the pre-compiled library, e.g. - replace <code>compile &#39;com.taobao.android:weex_sdk:0.4.1</code> with <code>compile project(&#39;:weex_sdk_android&#39;)</code>:</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>])</div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:23.0.1'</span></div><div class="line"></div><div class="line">    <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':weex_sdk_android'</span>)</div><div class="line"></div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-Making-3rd-party-modules-use-your-project" class="article-heading"><a href="#3-Making-3rd-party-modules-use-your-project" class="headerlink" title="3. Making 3rd-party modules use your project"></a>3. Making 3rd-party modules use your project<a class="article-anchor" href="#3-Making-3rd-party-modules-use-your-project" aria-hidden="true"></a></h4><p>If you use 3rd-party weex modules, you need to override their dependencies so that they don’t build the pre-compiled library. Otherwise you’ll get an error while compiling - <code>Error: more than one library with package name &#39;com.taobao.weex&#39;</code>.</p>
+<p>Modify your <code>android/app/build.gradle</code> and replace <code>compile project(&#39;:weex-custom-module&#39;)</code> with:</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">compile</span>(<span class="keyword">project</span>(<span class="string">':weex-custom-module'</span>)) &#123;</div><div class="line">    <span class="keyword">exclude</span> <span class="keyword">group</span>: <span class="string">'com.taobao.weex'</span>, module: <span class="string">'weex_sdk_android'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4、How-to-load-local-Your-Js-bundle-in-the-directory-of-Android-assets" class="article-heading"><a href="#4、How-to-load-local-Your-Js-bundle-in-the-directory-of-Android-assets" class="headerlink" title="4、How to load local Your Js bundle in the directory of Android assets"></a>4、How to load local Your Js bundle in the directory of Android assets<a class="article-anchor" href="#4、How-to-load-local-Your-Js-bundle-in-the-directory-of-Android-assets" aria-hidden="true"></a></h4><p>Besides load a Js Bundle online, you also can load the js bundle from the directory of Android assets.</p>
+<p>For Example:</p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">String yourbundleStr =  WXFileUtils.loadFileContent(&quot;yourBundle.js&quot;, context);</div><div class="line">WXSDKInstance.render(TAG, yourbundleStr, options, null, width, Height, WXRenderStrategy.APPEND_ASYNC);</div></pre></td></tr></table></figure>
+<h2 id="Building-from-Android-Studio" class="article-heading"><a href="#Building-from-Android-Studio" class="headerlink" title="Building from Android Studio"></a>Building from Android Studio<a class="article-anchor" href="#Building-from-Android-Studio" aria-hidden="true"></a></h2><p>From the Welcome screen of Android Studio choose “Import project” and select the <code>playground</code> folder of your app.</p>
+<p>You should be able to use the <em>Run</em> button to run your app on a device. </p>
+<h2 id="Tip" class="article-heading"><a href="#Tip" class="headerlink" title="Tip"></a>Tip<a class="article-anchor" href="#Tip" aria-hidden="true"></a></h2><ol>
+<li><p>Since the packet size limit is currently only compiled arm , X86 does not support.</p>
+</li>
+<li><p>Gradle build fails in <code>ndk-build</code>. See the section about <code>local.properties</code> file above.</p>
+</li>
+</ol>
+<p>#Quick access</p>
+<h2 id="Requirements" class="article-heading"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements<a class="article-anchor" href="#Requirements" aria-hidden="true"></a></h2><ul>
+<li>an existing, gradle-based Android app</li>
+</ul>
+<h2 id="Prepare-your-app" class="article-heading"><a href="#Prepare-your-app" class="headerlink" title="Prepare your app"></a>Prepare your app<a class="article-anchor" href="#Prepare-your-app" aria-hidden="true"></a></h2><p>In your app’s <code>build.gradle</code> file add the WEEX dependency:</p>
+<pre><code>compile &apos;com.taobao.android:weex_sdk:0.4.1&apos;
+</code></pre><p>You can find the latest version of the WEEX library on <a href="https://bintray.com/search?query=weex_sdk&amp;forceAgnostic=true" target="_blank" rel="external">jcenter</a>. Next, make sure you have the Internet permission in your <code>AndroidManifest.xml</code>:</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+</code></pre><h2 id="Add-native-code" class="article-heading"><a href="#Add-native-code" class="headerlink" title="Add native code"></a>Add native code<a class="article-anchor" href="#Add-native-code" aria-hidden="true"></a></h2><p>You need to add some native code in order to start the Weex runtime and get it to render something. To do this, we’re going to create an <code>Application</code> to init weex, then we we’re going to create an <code>Activity</code> that creates a WeexContainerView, starts a Weex application inside it and sets it as the main content view.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate();</div><div class="line"></div><div class="line">        WXEnvironment.addCustomOptions(<span class="string">"appName"</span>,<span class="string">"TBSample"</span>);</div><div class="line">        WXSDKEngine.init(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line"></div><div class="line">            WXSDKEngine.registerComponent(<span class="string">"wtRichText"</span>, WTRichText.class);</div><div class="line">            ......</div><div class="line">            </div><div class="line">            WXSDKEngine.registerModule(<span class="string">"event"</span>, WXEventModule.class);</div><div class="line">        &#125; <span class="keyword">catch</span> (WXException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Next, </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Create or find RenderContainer view. </span></div><div class="line"><span class="comment">// Notice: If you create RenderContainer manually, don't forget add it to view tree.</span></div><div class="line">RenderContainer renderContainer = (RenderContainer)findViewById(R.id.container);</div><div class="line"></div><div class="line"><span class="comment">//crate Weex instance</span></div><div class="line">WXSDKInstance mInstance = <span class="keyword">new</span> WXSDKInstance(<span class="keyword">this</span>);</div><div class="line"><span class="comment">//set render container</span></div><div class="line">mInstance.setRenderContainer(renderContainer);</div><div class="line"><span class="comment">//set image Adapter</span></div><div class="line">mInstance.setImgLoaderAdapter(<span class="keyword">new</span> ImageAdapter(<span class="keyword">this</span>));</div><div class="line"><span class="comment">//register render listener</span></div><div class="line">mInstance.registerRenderListener(<span class="keyword">new</span> IWXRenderListener() &#123;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewCreated</span><span class="params">(WXSDKInstance instance, View resultView)</span> </span>&#123;</div><div class="line">       <span class="comment">// Notice: If you don't setRenderContainer before render, you need add the resultView to view tree here.</span></div><div class="line"></div><div class="line">   &#125; </div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRenderSuccess</span><span class="params">(WXSDKInstance instance)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRefreshSuccess</span><span class="params">(WXSDKInstance instance)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onException</span><span class="params">(WXSDKInstance instance, String errCode,String msg)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">&#125;); </div><div class="line"><span class="comment">//start render weex view   </span></div><div class="line">mInstance.render(pageName,template, <span class="keyword">null</span>, <span class="keyword">null</span>, -<span class="number">1</span>, -<span class="number">1</span>, WXRenderStrategy.APPEND_ASYNC);</div></pre></td></tr></table></figure>
+<p>That’s it, your activity is ready to run some JavaScript code.</p>
+<h2 id="Reference-Example" class="article-heading"><a href="#Reference-Example" class="headerlink" title="Reference Example"></a>Reference Example<a class="article-anchor" href="#Reference-Example" aria-hidden="true"></a></h2><p><a href="https://github.com/apache/incubator-weex/tree/master/examples" target="_blank" rel="external"><code>Weex Examples</code></a></p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/integrate-to-android.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/integrate-to-android.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

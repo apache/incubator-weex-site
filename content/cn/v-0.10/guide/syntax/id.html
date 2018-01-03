@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>找节点 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="找节点在 Weex 中，您可以通过在特定的子组件上设置 id 特性，以此在该 &amp;lt;template&amp;gt; 内唯一标识这个组件。 获取子组件您可以在父组件上下文中使用 this.$el(id) 来找到该组件，以运用 scrollToElement() 为例： &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text id=&quot;goto-top&quot;&amp;gt;Top&amp;lt;/t">
+<meta property="og:type" content="website">
+<meta property="og:title" content="找节点">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/id.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="找节点在 Weex 中，您可以通过在特定的子组件上设置 id 特性，以此在该 &amp;lt;template&amp;gt; 内唯一标识这个组件。 获取子组件您可以在父组件上下文中使用 this.$el(id) 来找到该组件，以运用 scrollToElement() 为例： &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text id=&quot;goto-top&quot;&amp;gt;Top&amp;lt;/t">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="找节点">
+<meta name="twitter:description" content="找节点在 Weex 中，您可以通过在特定的子组件上设置 id 特性，以此在该 &amp;lt;template&amp;gt; 内唯一标识这个组件。 获取子组件您可以在父组件上下文中使用 this.$el(id) 来找到该组件，以运用 scrollToElement() 为例： &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text id=&quot;goto-top&quot;&amp;gt;Top&amp;lt;/t">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link current ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link current ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        找节点
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="找节点" class="article-heading"><a href="#找节点" class="headerlink" title="找节点"></a>找节点<a class="article-anchor" href="#找节点" aria-hidden="true"></a></h1><p>在 Weex 中，您可以通过在特定的子组件上设置 <code>id</code> 特性，以此在该 <code>&lt;template&gt;</code> 内唯一标识这个组件。</p>
+<h2 id="获取子组件" class="article-heading"><a href="#获取子组件" class="headerlink" title="获取子组件"></a>获取子组件<a class="article-anchor" href="#获取子组件" aria-hidden="true"></a></h2><p>您可以在父组件上下文中使用 <code>this.$el(id)</code> 来找到该组件，以运用 <code>scrollToElement()</code> 为例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"goto-top"</span>&gt;</span>Top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 10000; background-color: #999999;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"back2Top"</span>&gt;</span>Back to Top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> dom = <span class="built_in">require</span>(<span class="string">'@weex-module/dom'</span>)</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">back2Top</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> el = <span class="keyword">this</span>.$el(<span class="string">'goto-top'</span>)</div><div class="line">        dom.scrollToElement(el, &#123; <span class="attr">offset</span>: <span class="number">10</span> &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/ed07068ef6f038d6c39af6c971ad08a0" target="_blank" rel="external">体验一下</a></p>
+<h3 id="id-和-repeat-特性配合使用" class="article-heading"><a href="#id-和-repeat-特性配合使用" class="headerlink" title="id 和 repeat 特性配合使用"></a><code>id</code> 和 <code>repeat</code> 特性配合使用<a class="article-anchor" href="#id-和-repeat-特性配合使用" aria-hidden="true"></a></h3><p><code>id</code> 也可以和 <code>repeat</code> 语法配合使用，关于 <code>repeat</code> 更多详见 <a href="./display-logic.html">展示逻辑控制</a>，但是要确保循环的节点需要用不同的 <code>id</code>，比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span></span></div><div class="line">      <span class="attr">repeat</span>=<span class="string">"image in images"</span></div><div class="line">      <span class="attr">id</span>=<span class="string">"img-&#123;&#123;image.id&#125;&#125;"</span></div><div class="line">      <span class="attr">src</span>=<span class="string">"&#123;&#123;image.url&#125;&#125;"</span></div><div class="line">      <span class="attr">onclick</span>=<span class="string">"getImageId"</span>&gt;<span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">images</span>: [</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">url</span>: <span class="string">'...'</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">url</span>: <span class="string">'...'</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">3</span>, <span class="attr">url</span>: <span class="string">'...'</span>&#125;,</div><div class="line">      ...</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">getImageId</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="comment">// get e.target.id</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="获取自定义子组件的上下文" class="article-heading"><a href="#获取自定义子组件的上下文" class="headerlink" title="获取自定义子组件的上下文"></a>获取自定义子组件的上下文<a class="article-anchor" href="#获取自定义子组件的上下文" aria-hidden="true"></a></h3><p>另外，我们还可以通过 <code>this.$vm(id)</code> 方法可以访问自定义子组件的上下文：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">module</span>.exports = &#123;</div><div class="line">      <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">title</span>: <span class="literal">null</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">methods</span>: &#123;</div><div class="line">        <span class="attr">setTitle</span>: <span class="function"><span class="keyword">function</span> (<span class="params">text</span>) </span>&#123;</div><div class="line">          <span class="keyword">this</span>.title = text</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">foo</span> <span class="attr">id</span>=<span class="string">"sub"</span> <span class="attr">title</span>=<span class="string">"Hello"</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"update"</span>&gt;</span>Click Me to Update<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.$vm(<span class="string">'sub'</span>).setTitle(<span class="string">'Updated'</span>)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/1d332e6c238462e841743035c6bc697e" target="_blank" rel="external">体验一下</a></p>
+<p>实际上，如上述的例子，我们找到子组件上下文之后，直接在这个上下文中调用子组件方法或修改子组件的数据并不是我们认为最好的方式，我们更倾向于通过一套确定的组件间通信机制来完成这一工作。</p>
+<h3 id="获取父级组件或其上下文" class="article-heading"><a href="#获取父级组件或其上下文" class="headerlink" title="获取父级组件或其上下文"></a>获取父级组件或其上下文<a class="article-anchor" href="#获取父级组件或其上下文" aria-hidden="true"></a></h3><p>除了可以自上而下寻找组件或其上下文，Weex 也支持自下而上做相同的事情。当前上下文中的 <code>this._parent</code> 可以获取其父级上下文。除了父级上下文，对于父级组件本身，相关处理也可以基于先获取父级上下文，然后在父级组件内部完成更多更细致的处理。更多内容可以深入了解组件间通信的部分。</p>
+<p>_注意事项：在未来的版本中 <code>this._parent</code> 将改为 <code>this.$parent</code>。_</p>
+<p>下一篇： <a href="./comm.html">组件间通信</a></p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/syntax/id.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/syntax/id.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

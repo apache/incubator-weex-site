@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Composed Component | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part. You can create a file named foo.we to define a composed component, the componen">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Composed Component">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/syntax/composed-component.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part. You can create a file named foo.we to define a composed component, the componen">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Composed Component">
+<meta name="twitter:description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part. You can create a file named foo.we to define a composed component, the componen">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link current ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" class="sidebar-link current ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Composed Component
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Composed-Component" class="article-heading"><a href="#Composed-Component" class="headerlink" title="Composed Component"></a>Composed Component<a class="article-anchor" href="#Composed-Component" aria-hidden="true"></a></h1><p>If some part of weex file is reused often, you could create a composed component represent these part.</p>
+<p>You can create a file named <code>foo.we</code> to define a composed component, the component name is just <code>&lt;foo&gt;</code>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- foo.we --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;image&#125;&#125;"</span> <span class="attr">style</span>=<span class="string">"width:100;height:100;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">title</span>: <span class="literal">null</span>,</div><div class="line">      <span class="attr">image</span>: <span class="literal">null</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The content of <code>foo.we</code> also consists of <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code>.</p>
+<p>Once composed component been defined, you can use <code>&lt;foo&gt;</code> in a file which is in the same folder with <code>foo.we</code>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Nesting-Components" class="article-heading"><a href="#Nesting-Components" class="headerlink" title="Nesting Components"></a>Nesting Components<a class="article-anchor" href="#Nesting-Components" aria-hidden="true"></a></h2><p>Composed component supports nesting. For example:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- somepath/foo.we --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;image&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="comment">// The key is required if you want this property observed</span></div><div class="line">      <span class="comment">// and could be updated from changing parent attribute</span></div><div class="line">      title: <span class="literal">null</span>,</div><div class="line">      <span class="attr">image</span>: <span class="literal">null</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- somepath/foo-list.we --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;description&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">foo</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;list&#125;&#125;"</span> <span class="attr">title</span>=<span class="string">"&#123;&#123;text&#125;&#125;"</span> <span class="attr">image</span>=<span class="string">"&#123;&#123;img&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">description</span>: <span class="string">''</span>,</div><div class="line">      <span class="comment">// If no keys written here. There will be no data binding effect</span></div><div class="line">      <span class="comment">// from parent attribute "list".</span></div><div class="line">      list: []</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- somepath/main.we --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo-list</span> <span class="attr">list</span>=<span class="string">"&#123;&#123;list&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">foo-list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">list</span>: [</div><div class="line">        &#123;<span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">img</span>: <span class="string">'...'</span>&#125;,</div><div class="line">        &#123;<span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">img</span>: <span class="string">'...'</span>&#125;,</div><div class="line">        &#123;<span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">img</span>: <span class="string">'...'</span>&#125;,</div><div class="line">        ...</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The <code>main.we</code> uses <code>&lt;foo-list&gt;</code> from <code>foo-list.we</code>. And <code>&lt;foo-list&gt;</code> uses <code>&lt;foo&gt;</code> from <code>foo.we</code>.</p>
+<h2 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h2><ul>
+<li>Every composed component have an independent <code>&lt;style&gt;</code> work scope.</li>
+<li>If child component have <code>id</code> attribute, you can access the context of the child component by <code>this.$vm(id)</code> and find an element by <code>this.$el(id)</code>. See more about <a href="./id.html">find an element</a>.</li>
+<li>Please refer to <a href="./comm.html">communicate between components</a> for more communication issues.</li>
+<li>The keys must be existed in <code>data</code> options <strong>explicitly</strong> if you want to make the data observation work both through inside data changes and outside attribute changes.</li>
+</ul>
+<p>Next is how to <a href="./id.html">find an element</a>.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/syntax/composed-component.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/syntax/composed-component.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

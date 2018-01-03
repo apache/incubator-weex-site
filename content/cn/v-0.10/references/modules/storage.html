@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>storage | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="storage 本地存储v0.7+ 备注：0.7及以上版本可用 storage 是一个在前端比较常用的模块，可以对本地数据进行存储、修改、删除，并且该数据是永久保存的，除非手动清除或者代码清除。但是，storage 模块有一个限制就是浏览器端（H5）只能存储小于5M的数据，因为在 H5/Web 端的实现是采用 HTML5 LocalStorage API。而 Android 和 iOS 这块是没什">
+<meta property="og:type" content="website">
+<meta property="og:title" content="storage">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/modules/storage.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="storage 本地存储v0.7+ 备注：0.7及以上版本可用 storage 是一个在前端比较常用的模块，可以对本地数据进行存储、修改、删除，并且该数据是永久保存的，除非手动清除或者代码清除。但是，storage 模块有一个限制就是浏览器端（H5）只能存储小于5M的数据，因为在 H5/Web 端的实现是采用 HTML5 LocalStorage API。而 Android 和 iOS 这块是没什">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="storage">
+<meta name="twitter:description" content="storage 本地存储v0.7+ 备注：0.7及以上版本可用 storage 是一个在前端比较常用的模块，可以对本地数据进行存储、修改、删除，并且该数据是永久保存的，除非手动清除或者代码清除。但是，storage 模块有一个限制就是浏览器端（H5）只能存储小于5M的数据，因为在 H5/Web 端的实现是采用 HTML5 LocalStorage API。而 Android 和 iOS 这块是没什">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/modules/storage.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link current ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link current ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        storage
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="storage-本地存储" class="article-heading"><a href="#storage-本地存储" class="headerlink" title="storage 本地存储"></a><code>storage</code> 本地存储<a class="article-anchor" href="#storage-本地存储" aria-hidden="true"></a></h1><p><span class="weex-version">v0.7+</span></p>
+<p><strong>备注</strong>：0.7及以上版本可用</p>
+<p><code>storage</code> 是一个在前端比较常用的模块，可以对本地数据进行存储、修改、删除，并且该数据是永久保存的，除非手动清除或者代码清除。但是，<code>storage</code> 模块有一个限制就是浏览器端（H5）只能存储小于5M的数据，因为在 H5/Web 端的实现是采用 <code>HTML5 LocalStorage API</code>。而 Android 和 iOS 这块是没什么限制的。<br> storage 常用在一些被用户经常查询，但是又不频繁更新的数据，比如搜索历史、用户的订单列表等。搜索历史一般情况都是作为本地数据存储的，因此使用 storage 比较合适。而用户订单列表是需要本地存储和服务端器检索配合的场景。当一个用户下单后，会经常查阅个人的订单列表。但是，订单的列表数据不是频繁更新的，往往只有在收到货品时，才更新“已签收”，其余平时的状态是“已发货”。因此，可以使用 storage 存储订单列表，可以减少服务器的压力，例如减少 SQL 查询或者缓存的压力。当用户查看订单详情的时候，再更新数据状态。</p>
+<p>这里，我们简单模拟“搜索”记录的场景。在搜索的时候写入，然后读取出来展示成列表。 </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color:#F6F6F6;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"search_view"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"search"</span> <span class="attr">placeholder</span>=<span class="string">"Please input"</span> <span class="attr">onchange</span>=<span class="string">"change"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">onclick</span>=<span class="string">"search"</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>History<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">cell</span> <span class="attr">repeat</span>=<span class="string">"(i, v) in items"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">cell</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">list</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.search_view</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">70</span>;</div><div class="line">    <span class="attribute">margin-top</span>:<span class="number">20</span>;</div><div class="line">    <span class="attribute">margin-left</span>:<span class="number">10</span>;</div><div class="line">    <span class="attribute">margin-right</span>:<span class="number">10</span>;</div><div class="line">    <span class="attribute">flex-direction</span>:row;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.search</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">70</span>;</div><div class="line">    <span class="attribute">border-width</span>:<span class="number">1</span>;</div><div class="line">    <span class="attribute">border-color</span>:<span class="number">#dddddd</span>;</div><div class="line">    <span class="attribute">padding-left</span>:<span class="number">10</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">28</span>;</div><div class="line">    <span class="attribute">flex</span>:<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.btn</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">80</span>;</div><div class="line">    <span class="attribute">text-align</span>:center;</div><div class="line">    <span class="attribute">justify-content</span>:center;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">28</span>;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#1A89EA</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#ffffff</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.item</span>&#123;</div><div class="line">    <span class="attribute">text-align</span>:center;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">25</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">50</span>;</div><div class="line">    <span class="attribute">margin-top</span>:<span class="number">10</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#5E5E5E</span>;</div><div class="line">    <span class="attribute">border-bottom-width</span>:<span class="number">1</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>:<span class="number">#dddddd</span>;</div><div class="line">    <span class="attribute">justify-content</span>:center;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">items</span>: [],</div><div class="line">      <span class="attr">keywords</span>:<span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">      storage.getAllKeys(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(e.result == <span class="string">'success'</span> &amp;&amp; e.data.length)&#123;</div><div class="line">          e.data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(item.indexOf(<span class="string">'search_'</span>) &gt; <span class="number">-1</span>)&#123;</div><div class="line">              that.items.push(item.split(<span class="string">'search_'</span>)[<span class="number">1</span>]);</div><div class="line">            &#125;</div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">      <span class="attr">search</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      	<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">      	<span class="keyword">if</span>(!<span class="keyword">this</span>.keywords) <span class="keyword">return</span>;</div><div class="line">        storage.setItem(<span class="string">'search_'</span> + <span class="keyword">this</span>.keywords, <span class="keyword">this</span>.keywords, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        	that.items.push(that.keywords);</div><div class="line">22 &#125;);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">change</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(!e.value) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">this</span>.keywords = e.value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/b0f9a8f5df916c91bfb39e54e03a9ba8" target="_blank" rel="external">体验一下</a></p>
+<p>这里，逐一解释下上面的代码。<code>input</code> 组件监听了 <code>change</code> 事件，可以保存用户输入的搜索关键字。如果用户点击了搜索按钮，则将关键字存储到 storage。这里，使用了 <code>search_</code> 作为 storage key 的前缀。因此，我们在页面加载时，在 <code>created</code> 生命周期中可以先使用 <code>storage.getAllKeys</code> 获取所有的 <code>key</code>。如果 <code>key</code> 包含了 <code>search_</code>，则说明是搜索记录。因此，将该记录压入数组 items 中，于是界面就会展示出搜索记录的列表。</p>
+<h2 id="API" class="article-heading"><a href="#API" class="headerlink" title="API"></a>API<a class="article-anchor" href="#API" aria-hidden="true"></a></h2><p><code>storage</code> 提供了一系列的 API 供我们调用。我们只需要引入该模块，然后调用对应的 API 即可。</p>
+<h3 id="setItem-key-value-callback" class="article-heading"><a href="#setItem-key-value-callback" class="headerlink" title="setItem(key, value, callback)"></a><code>setItem(key, value, callback)</code><a class="article-anchor" href="#setItem-key-value-callback" aria-hidden="true"></a></h3><p>该方法可以通过键值对的形式将数据存储到本地。同时可以通过该方法，更新已有的数据。</p>
+<h4 id="参数" class="article-heading"><a href="#参数" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数" aria-hidden="true"></a></h4><ul>
+<li><code>key {string}</code>：要存储的键，不允许是 <code>&quot;&quot;</code> 或 <code>null</code></li>
+<li><code>value {string}</code>：要存储的值，不允许是 <code>&quot;&quot;</code> 或 <code>null</code></li>
+<li><code>callback {function (e)}</code>：执行操作成功后的回调<ul>
+<li><code>e.result</code>：表示设置是否成功，如果成功返回 <code>&quot;success&quot;</code></li>
+<li><code>e.data</code>：<code>undefined</code> 表示设置成功，<code>invalid_param</code> 表示 key/value 为 <code>&quot;&quot;</code> 或者 <code>null</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>)</div><div class="line">storage.setItem(<span class="string">'bar'</span>, <span class="string">'bar-value'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e.result</div><div class="line">  e.data</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这里，对返回值做一个简单的介绍：</p>
+<p><code>e</code> 包含两个属性：<code>e.result</code> 和 <code>e.data</code>。如果 <code>e.result</code> 返回值是 “success”，则说明成功。<code>e.data</code> 返回 <code>undefined</code> 表示设置成功，返回 <code>invalid_param</code> 表示<code>key/value</code> 为 “” 或者 null。因此，你可以判断两个返回判断是否插入成功。</p>
+<h3 id="getItem-key-callback" class="article-heading"><a href="#getItem-key-callback" class="headerlink" title="getItem(key, callback)"></a><code>getItem(key, callback)</code><a class="article-anchor" href="#getItem-key-callback" aria-hidden="true"></a></h3><p>传入键名返回对应的键值</p>
+<h4 id="参数-1" class="article-heading"><a href="#参数-1" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数-1" aria-hidden="true"></a></h4><ul>
+<li><code>key {string}</code>：要获取的值的名称，不允许是 <code>&quot;&quot;</code> 或 <code>null</code></li>
+<li><code>callback {function (e)}</code>：执行操作成功后的回调<ul>
+<li><code>e.result</code>：表示设置是否成功，如果成功返回 <code>&quot;success&quot;</code></li>
+<li><code>e.data</code>：获取对应的键值字符串，如果没有找到则返回 <code>undefined</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="示例-1" class="article-heading"><a href="#示例-1" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例-1" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>)</div><div class="line">storage.getItem(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e.data</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="removeItem-key-callback" class="article-heading"><a href="#removeItem-key-callback" class="headerlink" title="removeItem(key, callback)"></a><code>removeItem(key, callback)</code><a class="article-anchor" href="#removeItem-key-callback" aria-hidden="true"></a></h3><p>传入一个键名将会删除本地存储中对应的键值</p>
+<h4 id="参数-2" class="article-heading"><a href="#参数-2" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数-2" aria-hidden="true"></a></h4><ul>
+<li><code>key {string}</code>：要删除的值的名称，不允许是 <code>&quot;&quot;</code> 或 <code>null</code></li>
+<li><code>callback {function (e)}</code>：执行操作成功后的回调.<ul>
+<li><code>e.result</code>：表示删除是否成功，如果成功返回 <code>&quot;success&quot;</code></li>
+<li><code>e.data</code>：<code>undefined</code> 表示删除成功</li>
+</ul>
+</li>
+</ul>
+<h4 id="示例-2" class="article-heading"><a href="#示例-2" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例-2" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>)</div><div class="line">storage.removeItem(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e.result</div><div class="line">  e.data</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="length-callback" class="article-heading"><a href="#length-callback" class="headerlink" title="length(callback)"></a><code>length(callback)</code><a class="article-anchor" href="#length-callback" aria-hidden="true"></a></h3><p>返回本地存储的数据中所有存储项数量的整数</p>
+<h4 id="参数-3" class="article-heading"><a href="#参数-3" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数-3" aria-hidden="true"></a></h4><ul>
+<li><code>callback {function (e)}</code>：执行操作成功后的回调<ul>
+<li><code>e.result</code>：表示设置是否成功，如果成功返回 <code>&quot;success&quot;</code></li>
+<li><code>e.data</code>：当前已存储项的数量</li>
+</ul>
+</li>
+</ul>
+<h4 id="示例-3" class="article-heading"><a href="#示例-3" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例-3" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>)</div><div class="line">storage.length(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e.result</div><div class="line">  e.data</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="getAllKeys-callback" class="article-heading"><a href="#getAllKeys-callback" class="headerlink" title="getAllKeys(callback)"></a><code>getAllKeys(callback)</code><a class="article-anchor" href="#getAllKeys-callback" aria-hidden="true"></a></h3><p>返回一个包含全部已存储项键名的数组</p>
+<h4 id="参数-4" class="article-heading"><a href="#参数-4" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数-4" aria-hidden="true"></a></h4><ul>
+<li><code>callback {function (e)}</code>：执行操作成功后的回调。<ul>
+<li><code>e.result</code>：表示设置是否成功，如果成功返回 <code>&quot;success&quot;</code></li>
+<li><code>e.data</code>：所有键名组成的数组</li>
+</ul>
+</li>
+</ul>
+<h4 id="示例-4" class="article-heading"><a href="#示例-4" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例-4" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>)</div><div class="line">storage.getAllKeys(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e.result</div><div class="line">  e.data</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="其它参考" class="article-heading"><a href="#其它参考" class="headerlink" title="其它参考"></a>其它参考<a class="article-anchor" href="#其它参考" aria-hidden="true"></a></h2><ul>
+<li><a href="http://www.w3school.com.cn/html5/html_5_webstorage.asp" target="_blank" rel="external">W3school: html5 localStorage</a></li>
+<li><a href="https://github.com/apache/incubator-weex/blob/dev/examples/module/storage-demo.we" target="_blank" rel="external">storage 模块完整的 Demo</a></li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/modules/storage.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/modules/storage.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

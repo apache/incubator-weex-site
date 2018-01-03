@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>渲染过程控制 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="渲染过程控制appendappend 特性定义了当前组件的子组件：  以一整棵树的方式一次性添加到视图中 (append=&amp;quot;tree&amp;quot;)，还是 每个子组件都产生一次单独的添加到视图的指令 (append=&amp;quot;node&amp;quot;)  &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;div&amp;gt;      &amp;lt;text&amp;gt;Hello&amp;l">
+<meta property="og:type" content="website">
+<meta property="og:title" content="渲染过程控制">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/render-logic.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="渲染过程控制appendappend 特性定义了当前组件的子组件：  以一整棵树的方式一次性添加到视图中 (append=&amp;quot;tree&amp;quot;)，还是 每个子组件都产生一次单独的添加到视图的指令 (append=&amp;quot;node&amp;quot;)  &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;div&amp;gt;      &amp;lt;text&amp;gt;Hello&amp;l">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="渲染过程控制">
+<meta name="twitter:description" content="渲染过程控制appendappend 特性定义了当前组件的子组件：  以一整棵树的方式一次性添加到视图中 (append=&amp;quot;tree&amp;quot;)，还是 每个子组件都产生一次单独的添加到视图的指令 (append=&amp;quot;node&amp;quot;)  &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;div&amp;gt;      &amp;lt;text&amp;gt;Hello&amp;l">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/render-logic.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link current ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link  ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/render-logic.html" class="sidebar-link current ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/how-to/index.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        渲染过程控制
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="渲染过程控制" class="article-heading"><a href="#渲染过程控制" class="headerlink" title="渲染过程控制"></a>渲染过程控制<a class="article-anchor" href="#渲染过程控制" aria-hidden="true"></a></h1><h2 id="append" class="article-heading"><a href="#append" class="headerlink" title="append"></a><code>append</code><a class="article-anchor" href="#append" aria-hidden="true"></a></h2><p><code>append</code> 特性定义了当前组件的子组件：</p>
+<ol>
+<li>以一整棵树的方式一次性添加到视图中 (<code>append=&quot;tree&quot;</code>)，还是</li>
+<li>每个子组件都产生一次单独的添加到视图的指令 (<code>append=&quot;node&quot;</code>)</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Weex<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">append</span>=<span class="string">"node"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Weex<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">append</span>=<span class="string">"tree"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Weex<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/417c75415efce66d8e22bf5942b380ee" target="_blank" rel="external">体验一下</a></p>
+<p>在上面的代码中，第一组和第二组 <code>&lt;div&gt;</code> 的渲染过程相同，即先添加空的父级 <code>&lt;div&gt;</code>，然后插入第一个 <code>&lt;text&gt;</code> Hello，然后插入第二个 <code>&lt;text&gt;</code> Weex；第三组 <code>&lt;div&gt;</code> 则是连带两个 <code>&lt;text&gt;</code> 子组件一齐传给渲染层进行渲染的。</p>
+<p>渲染结果显而易见，前两组渲染方式会使首次绘制的响应速度比后者快些，但是总渲染时间可能比第三组 <code>append=&quot;tree&quot;</code> 更长。开发者可以根据实际界面的情况自行选择合理的渲染过程。</p>
+<p>默认情况下，除了 <code>&lt;cell&gt;</code> 组件的默认渲染过程是 <code>tree</code> 模式，其它组件都默认按照 <code>node</code> 模式进行渲染。</p>
+<p>下一节：<a href="./composed-component.html">自定义组件</a></p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/guide/syntax/render-logic.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/guide/syntax/render-logic.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

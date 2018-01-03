@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex ❤️ iOS 11 系列之一：Core ML 初探 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现模">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weex ❤️ iOS 11 系列之一：Core ML 初探">
+<meta property="og:url" content="https://weex.apache.org/en/coreml/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="背景WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现模">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1AmqgRVXXXXcmXFXXXXXXXXXX-240-427.gif">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1nZ8_RVXXXXczXVXXXXXXXXXX-240-427.gif">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1lN0_RVXXXXa_XVXXXXXXXXXX-240-427.gif">
+<meta property="og:updated_time" content="2017-07-19T07:24:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex ❤️ iOS 11 系列之一：Core ML 初探">
+<meta name="twitter:description" content="背景WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现模">
+<meta name="twitter:image" content="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="blog" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "blog";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/coreml/" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/coreml/" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="wrapper article-wrapper post-layout">
+  
+
+<article class="article article-type-blog">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Weex ❤️ iOS 11 系列之一：Core ML 初探
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-21T07:46:44.000Z">Updated time: 21/06/2017</time>
+</header>
+    <h2 id="背景" class="article-heading"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="article-anchor" href="#背景" aria-hidden="true"></a></h2><p>WWDC 2017 有一个非常明确的信号：<strong>端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低</strong>。</p>
+<p>Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现模型和 app 数据的互通。</p>
+<p>WWDC 上展示了一张简单的架构图：</p>
+<p><img src="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png" alt="屏幕快照 2017-06-20 下午8.50.21"></p>
+<p>最底层的 Accelerate 和 MPS，其实是苹果去年推出的接口，前者可以直接调用 CPU，后者则直接调用 GPU。 Core ML 会自行决定到底使用 CPU 还是 GPU 来进行运算，可以最大程度地利用硬件资源来处理模型数据。</p>
+<p>而 Core ML 往上一层则是应用层。Vision 主要负责图像相关的人工智能处理，如人脸识别、面部追踪、文字识别等等；NLP 则提供语义分析相关 API。这部分内容在以前版本的 SDK 中也存在，这次被集成到了新框架当中。好处在于，开发者拥有了更大的自由度。在以前，开发者的 app 调用这些高级接口，对底层的实现细节的掌控力度非常小。现在，你可以通过自定义底层所使用的机器学习模型，从而实现更个性化的需求。</p>
+<h2 id="Weex-ML" class="article-heading"><a href="#Weex-ML" class="headerlink" title="Weex-ML"></a>Weex-ML<a class="article-anchor" href="#Weex-ML" aria-hidden="true"></a></h2><p>Weex 交互视觉能力小结中提到，<strong>Weex 最大的特别之处在于其 native 的能力， 我们要最大化利用 native 的特性， 而不是去模仿它</strong>。</p>
+<p>作为本次 iOS 11 的一个重要 native 能力，我也第一时间尝试将 Core ML 透传到了 Weex 上。所有代码和 Demo 都已开源到 <a href="https://github.com/cxfeng1/Weex-ML" target="_blank" rel="external">Github</a>，后续也会将机器学习相关的Weex 模块统一放到 Weex Market 上。</p>
+<p>得益于 Core ML API 的简洁，在 Weex 上使用 Core ML 相关能力变得非常简单:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> imageRecognition = weex.requireModule(<span class="string">'imageRecognition'</span>)</div><div class="line">imageRecognition.predictWithImage(<span class="keyword">this</span>.$refs.image.ref, (results)=&gt;&#123;</div><div class="line">  <span class="keyword">this</span>.results = results.slice(<span class="number">0</span>,<span class="number">5</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>通过调用透传的 module <code>imageRecognition</code> , 并传入 image 组件的 ref 作为参数，就可以实现图片识别的功能，最后提取出识别结果中 confidence 最高的 5 个结果。</p>
+<h2 id="Demo" class="article-heading"><a href="#Demo" class="headerlink" title="Demo"></a>Demo<a class="article-anchor" href="#Demo" aria-hidden="true"></a></h2><h3 id="imageRecognition" class="article-heading"><a href="#imageRecognition" class="headerlink" title="imageRecognition"></a>imageRecognition<a class="article-anchor" href="#imageRecognition" aria-hidden="true"></a></h3><p><img src="https://gw.alicdn.com/tfs/TB1AmqgRVXXXXcmXFXXXXXXXXXX-240-427.gif" alt=""></p>
+<p>使用 <a href="https://github.com/fchollet/keras/blob/0bb4e0fad5b4bb3743c8a7d03c260b62a35e7045/keras/applications/inception_v3.py" target="_blank" rel="external">Inceptionv3</a> 作为模型，能够高效识别， 该模型已经在 <a href="https://github.com/fchollet/keras" target="_blank" rel="external">keras</a> 中被训练好并通过苹果提供的工具转换成 <strong>mlmodel</strong> 文件， 只需拖拽的方式就可以集成到 iOS 开发环境中， 上述 demo 输出了对一张图片分类最大可能的5个预测结果， 对于 Weex 来说，几行代码就能搞定。</p>
+<h3 id="digitDetect" class="article-heading"><a href="#digitDetect" class="headerlink" title="digitDetect"></a>digitDetect<a class="article-anchor" href="#digitDetect" aria-hidden="true"></a></h3><p><img src="https://gw.alicdn.com/tfs/TB1nZ8_RVXXXXczXVXXXXXXXXXX-240-427.gif" alt=""></p>
+<p>上述 demo 首先使用 <a href="http://market.dotwe.org/ext/list.htm#6" target="_blank" rel="external">weex-gcanvas</a> 插件做了一个简单的绘制板，然后使用 MNIST model 完成了对手写数字的识别。</p>
+<h3 id="faceDetect" class="article-heading"><a href="#faceDetect" class="headerlink" title="faceDetect"></a>faceDetect<a class="article-anchor" href="#faceDetect" aria-hidden="true"></a></h3><p><img src="https://gw.alicdn.com/tfs/TB1lN0_RVXXXXa_XVXXXXXXXXXX-240-427.gif" alt=""></p>
+<p>这个 demo 没有加载任何 model，使用了 iOS 11 内置的 Vision Framework，顾名思义，Vision 可以让开发者运行计算机视觉相关的任务，它相当于 Core ML 的 High-Level Solution， 它可以做很多事情:</p>
+<ul>
+<li>脸部识别，会返回一个矩形数组来表示每一个脸部</li>
+<li>脸部更精细识别，比如眼睛和鼻子的具体位置、头部的形状等，上述 demo 就是拿到这些信息以后使用 gcanvas 绘制出了面部精细轮廓</li>
+<li>图片中的矩形探测</li>
+<li>图片中的文字探测</li>
+<li>二维码/条形码探测</li>
+<li>视频中跟踪移动的物体</li>
+</ul>
+<h2 id="总结" class="article-heading"><a href="#总结" class="headerlink" title="总结"></a>总结<a class="article-anchor" href="#总结" aria-hidden="true"></a></h2><p>这次 Core ML 的推出，同时得益于苹果对软硬件的全面掌控，使得从系统级到第三方开发者，都具备了在端上就可以进行机器学习模型处理的能力。所有代码和 Demo 都已上传到 <a href="https://github.com/cxfeng1/Weex-ML" target="_blank" rel="external">Github</a>，欢迎贡献和交流。</p>
+<p>当然在实际研究过程中，也发现了 Core ML 的一些限制：</p>
+<ul>
+<li>无法在端上进行模型的训练，所有模型必须提前训练好再转换成 Core ML 的格式</li>
+<li>无法动态下载和更新模型，对于需要经常重新训练的模型不太友好</li>
+<li>目前看只支持监督学习的模型，不支持非监督学习。</li>
+</ul>
+<p>Weex 未来在提供更多功能透传的同时，也会继续探索更深层次的结合。</p>
+<p>最后，本文是 Weex 和 iOS 11 结合系列的第一篇文章，后续将会有更多有意思的iOS 11 feature (如 ARKit、 drag &amp; drop 等) 和大家一起探讨。</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/coreml/" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/coreml/" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

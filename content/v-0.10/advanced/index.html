@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How it works | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="How it works0.4 OverviewWeex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with &amp;lt;template&amp;gt;, &amp;lt;st">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How it works">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="How it works0.4 OverviewWeex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with &amp;lt;template&amp;gt;, &amp;lt;st">
+<meta property="og:image" content="https://gtms02.alicdn.com/tps/i2/TB1ootBMpXXXXXrXXXXwi60UVXX-596-397.png">
+<meta property="og:image" content="https://gtms03.alicdn.com/tps/i3/TB1_SA4MXXXXXXGaXXXpZ8UVXXX-519-337.png">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How it works">
+<meta name="twitter:description" content="How it works0.4 OverviewWeex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with &amp;lt;template&amp;gt;, &amp;lt;st">
+<meta name="twitter:image" content="https://gtms02.alicdn.com/tps/i2/TB1ootBMpXXXXXrXXXXwi60UVXX-596-397.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Advanced
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/index.html" class="sidebar-link current ">How it works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        How it works
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="How-it-works" class="article-heading"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works<a class="article-anchor" href="#How-it-works" aria-hidden="true"></a></h1><p><span class="weex-version">0.4</span></p>
+<h2 id="Overview" class="article-heading"><a href="#Overview" class="headerlink" title="Overview"></a>Overview<a class="article-anchor" href="#Overview" aria-hidden="true"></a></h2><p>Weex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> tags, and then transform them into bundles for deploying. In server-side we can use these JS bundles for client request. When client get a bundle from server, it will be processed by client-side JavaScript engine and manages the native view rendering, the native API invoking and user interactions.</p>
+<h3 id="Whole-Workflow" class="article-heading"><a href="#Whole-Workflow" class="headerlink" title="Whole Workflow"></a>Whole Workflow<a class="article-anchor" href="#Whole-Workflow" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Weex file --------------frontend(source code)</div><div class="line">↓ (transform) --------- frontend(build tool)</div><div class="line">JS bundle ------------- frontend(bundle code)</div><div class="line">↓ (deploy) ------------ server</div><div class="line">JS bundle in server --- server</div><div class="line">↓ (compile) ----------- client(js-engine)</div><div class="line">Virtual DOM tree ------ client(weex-jsframework)</div><div class="line">↓ (render) ------------ client(render-engine)</div><div class="line">Native view ----------- client(render-engine)</div></pre></td></tr></table></figure>
+<p>According to the workflow above, you need:</p>
+<ul>
+<li>Transformer: A nodejs tool to transform the source code into the bundle code.</li>
+<li>JS Framework: A JavaScript framework runing in the client which manage Weex instance. The instance which created from a JS bundle builds virtual DOM tree. Also it sends/receives native calls for native view rendering, native APIs and user interactions.</li>
+<li>Native Engine: There are many different ports for different platforms: iOS/Android/HTML5. They have the same components design, module APIs design and rendering effect. So they can work with the one and the same JS Framework and JS bundles.</li>
+</ul>
+<h2 id="Transformer" class="article-heading"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer<a class="article-anchor" href="#Transformer" aria-hidden="true"></a></h2><p>The transformer transforms a source code into a bundle code. The whole work could be divided into three parts:</p>
+<ul>
+<li>Transform <code>&lt;template&gt;</code> into a JSON-like tree and transform data-binding attribute into a function prop which return the correct data value. For example: <code><foo a="{{x}}" b="1"></foo></code> will be transformed into <code>{type: &quot;foo&quot;, attr: {a: function () {return this.x}, b: 1}}</code>.</li>
+<li>Transform <code>&lt;style&gt;</code> into a JSON tree. For example: <code>.classname {name: value;}</code> will be transformed into <code>{classname: {name: value}}</code>.</li>
+<li>Join the two above with <code>&lt;script&gt;</code> content. The three parts will be joined together and wrapped into a JavaScript AMD module.</li>
+</ul>
+<p>A whole example (<code>main.we</code>):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">a</span>=<span class="string">"&#123;&#123;x&#125;&#125;"</span> <span class="attr">b</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.bar</span> &#123;<span class="attribute">width</span>: <span class="number">200</span>; <span class="attribute">height</span>: <span class="number">200</span>&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">100</span>&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>will transformed into:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">define(&apos;@weex-component/main&apos;, function () &#123;</div><div class="line">  module.exports = &#123;</div><div class="line">    data: function () &#123;</div><div class="line">      return &#123;x: 100&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  module.template = &#123;</div><div class="line">    type: &quot;foo&quot;,</div><div class="line">    attr: &#123;</div><div class="line">      a: function () &#123;return this.x&#125;,</div><div class="line">      b: 1,</div><div class="line">      classname: [&apos;bar&apos;]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  module.style = &#123;</div><div class="line">    bar: &#123;width: 200, height: 200&#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">bootstrap(&apos;@weex-component/main&apos;)</div></pre></td></tr></table></figure>
+<p>Additionally, the transformer could also do more things: combo the bundles, bootstrap with config and external data. For more information, please see the syntax specs.</p>
+<h2 id="NOTICE" class="article-heading"><a href="#NOTICE" class="headerlink" title="NOTICE"></a>NOTICE<a class="article-anchor" href="#NOTICE" aria-hidden="true"></a></h2><p>Most of Weex utility output JS Bundle after  <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a> re-bundle. So the eventual format of Weex JSBundle is webpack packed .</p>
+<h2 id="JS-Framework" class="article-heading"><a href="#JS-Framework" class="headerlink" title="JS Framework"></a>JS Framework<a class="article-anchor" href="#JS-Framework" aria-hidden="true"></a></h2><p>JS Framework will run in native JavaScript engine at the beginning preparation phase. It has <code>define()</code> and <code>bootstrap()</code> functions for each the bunlde code. Once a JS bundle requested from server, the code will be executed. <code>define()</code> will register all modules first, then <code>bootstrap()</code> will start compiling main component into virtual DOM and send rendering calls to native.</p>
+<p>There are two key methods for the bridge between JS and native:</p>
+<ul>
+<li><code>callNative</code> sends commands from JavaScript to native. So it’s called from JavaScript and implemented with native code. All commands are native APIs organized by modules, for example <code>rendering</code>, <code>networking</code>, <code>authorizing</code>, and other client-side features like <code>toast</code> etc.</li>
+<li><code>callJS</code> sends commands from native to JavaScript. So it’s called from native and implemented by JS Framework. All commands are user interactions or native callbacks.</li>
+</ul>
+<h2 id="Native-RenderEngine" class="article-heading"><a href="#Native-RenderEngine" class="headerlink" title="Native RenderEngine"></a>Native RenderEngine<a class="article-anchor" href="#Native-RenderEngine" aria-hidden="true"></a></h2><p>Native RenderEngine will supplies many native components and modules for call.</p>
+<p><strong>Component</strong> is an element in the screen which have a certain view and behavior. It could be configured with some attributes and style properties, and could response user interactions. There are some common components like <code>&lt;div&gt;</code>, <code>&lt;text&gt;</code>, <code>&lt;image&gt;</code> etc.</p>
+<p><strong>Module</strong> is a set of APIs which could be called from JS Framework. Some of them also have to make async callbacks to JS Framework, for example: send HTTP request.</p>
+<p>During a Weex instance works, Native RenderEngine receives all kinds of module API calls from JS Framework. These calls will create or update components for view and use client-side features like <code>toast</code>. When a user interaction or module API callback happens, It will call <code>callJS()</code> from JS Framework. These jobs could walk through the Weex instance lifecycle till the instance is destroyed. As is shown in the architecture figure, H5 RenderEngine is a special RenderEngine with almost the same functions as native RenderEngines. </p>
+<p><img src="https://gtms02.alicdn.com/tps/i2/TB1ootBMpXXXXXrXXXXwi60UVXX-596-397.png" alt="arch"><br>Weex Architecture </p>
+<h3 id="call-native-from-javascript" class="article-heading"><a href="#call-native-from-javascript" class="headerlink" title="call native from javascript"></a>call native from javascript<a class="article-anchor" href="#call-native-from-javascript" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[JS Framework]</div><div class="line">↓ callNative</div><div class="line">module APIs</div><div class="line">  rendering -&gt; components display</div><div class="line">  other features</div><div class="line">[Native RenderEngine]</div></pre></td></tr></table></figure>
+<h3 id="call-javascript-from-native" class="article-heading"><a href="#call-javascript-from-native" class="headerlink" title="call javascript from native"></a>call javascript from native<a class="article-anchor" href="#call-javascript-from-native" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Native RenderEngine]</div><div class="line">module APIs callbacks</div><div class="line">user interactions</div><div class="line">↓ callJS</div><div class="line">[JS Framework]</div></pre></td></tr></table></figure>
+<h3 id="Render-Flow" class="article-heading"><a href="#Render-Flow" class="headerlink" title="Render Flow"></a>Render Flow<a class="article-anchor" href="#Render-Flow" aria-hidden="true"></a></h3><p><img src="https://gtms03.alicdn.com/tps/i3/TB1_SA4MXXXXXXGaXXXpZ8UVXXX-519-337.png" alt="render flow"><br>Weex Render Flow </p>
+<ol>
+<li>Input is virtual dom.</li>
+<li><strong>Build Tree</strong>. Parse JSON data (virtual dom) to a Render Tree (RT).</li>
+<li><strong>Apply Style</strong>. Attach css style to RT nodes.</li>
+<li><strong>Create View</strong>. Create native views for each RT node.</li>
+<li><strong>Attach Event</strong>. Attach events for each view.</li>
+<li><strong>CSS Layout</strong>. Use <a href="https://github.com/facebook/css-layout" target="_blank" rel="external">css-layout</a> to calculate the layout of each view.</li>
+<li><strong>Update Frame</strong>. Update layout parameters of each view.</li>
+<li>Output is Native or H5 Views.</li>
+</ol>
+<p>In H5 Render Flow, <code>CSS Layout</code> and <code>Update Frame</code> are implemented by browser engine like webkit.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/index.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/index.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

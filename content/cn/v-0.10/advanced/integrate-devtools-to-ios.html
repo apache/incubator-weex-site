@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>集成 Devtools 到 iOS | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="集成 Devtools 到 iOSWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。 iOS 应用接入添加依赖方法一：cocoapods 依赖在工程目录的 podfile 添加如下代码 source https://github.com/C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="集成 Devtools 到 iOS">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/integrate-devtools-to-ios.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="集成 Devtools 到 iOSWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。 iOS 应用接入添加依赖方法一：cocoapods 依赖在工程目录的 podfile 添加如下代码 source https://github.com/C">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1MXjjNXXXXXXlXpXXXXXXXXXX-795-326.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1A518NXXXXXbZXFXXXXXXXXXX-642-154.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1xRHhNXXXXXakXpXXXXXXXXXX-1498-668.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1F8WONXXXXXa_apXXXXXXXXXX-1706-674.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB19Yq5NXXXXXXVXVXXXXXXXXXX-343-344.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1vomVNXXXXXcXaXXXXXXXXXXX-2072-1202.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB116y0NXXXXXXNaXXXXXXXXXXX-1448-668.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB16frmNXXXXXa7XXXXXXXXXXXX-2106-1254.png">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集成 Devtools 到 iOS">
+<meta name="twitter:description" content="集成 Devtools 到 iOSWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。 iOS 应用接入添加依赖方法一：cocoapods 依赖在工程目录的 podfile 添加如下代码 source https://github.com/C">
+<meta name="twitter:image" content="https://img.alicdn.com/tps/TB1MXjjNXXXXXXlXpXXXXXXXXXX-795-326.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/integrate-devtools-to-ios.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/customize-a-native-component.html" class="sidebar-link  ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" class="sidebar-link current ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        集成 Devtools 到 iOS
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="集成-Devtools-到-iOS" class="article-heading"><a href="#集成-Devtools-到-iOS" class="headerlink" title="集成 Devtools 到 iOS"></a>集成 Devtools 到 iOS<a class="article-anchor" href="#集成-Devtools-到-iOS" aria-hidden="true"></a></h1><p>Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。</p>
+<h2 id="iOS-应用接入" class="article-heading"><a href="#iOS-应用接入" class="headerlink" title="iOS 应用接入"></a>iOS 应用接入<a class="article-anchor" href="#iOS-应用接入" aria-hidden="true"></a></h2><h3 id="添加依赖" class="article-heading"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖<a class="article-anchor" href="#添加依赖" aria-hidden="true"></a></h3><h4 id="方法一：cocoapods-依赖" class="article-heading"><a href="#方法一：cocoapods-依赖" class="headerlink" title="方法一：cocoapods 依赖"></a>方法一：cocoapods 依赖<a class="article-anchor" href="#方法一：cocoapods-依赖" aria-hidden="true"></a></h4><p>在工程目录的 podfile 添加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source https://github.com/CocoaPods/Specs.git，</div><div class="line">pod  &apos;WXDevtool&apos;,   &apos;0.7.0&apos;, :configurations =&gt; [&apos;Debug&apos;]，</div></pre></td></tr></table></figure>
+<p>目前有如下几个版本：</p>
+<p>0.7.0, 0.6.1, 0.1.1, 0.1.0 [master repo]</p>
+<hr>
+<p>可以通过更新本地 podspec repo，pod search 来查询最新版本，在 podfile 文件添加依赖。</p>
+<p><strong><em> 推荐在DEBUG模式下依赖。 </em></strong></p>
+<h4 id="方法二：github-源码依赖" class="article-heading"><a href="#方法二：github-源码依赖" class="headerlink" title="方法二：github 源码依赖"></a>方法二：github 源码依赖<a class="article-anchor" href="#方法二：github-源码依赖" aria-hidden="true"></a></h4><ol>
+<li><p><a href="https://github.com/weexteam/weex-devtool-iOS" target="_blank" rel="external">拉取</a>最新的WXDevtool代码。</p>
+</li>
+<li><p>按照如下图示：直接拖动source目录源文件到目标工程中</p>
+<p><img src="https://img.alicdn.com/tps/TB1MXjjNXXXXXXlXpXXXXXXXXXX-795-326.png" alt="drag"></p>
+</li>
+<li><p>按照红框中配置勾选</p>
+<p><img src="https://img.alicdn.com/tps/TB1A518NXXXXXbZXFXXXXXXXXXX-642-154.png" alt="_"></p>
+</li>
+</ol>
+<p>  在相对较大的互联网App研发中, framework 静态库被广泛应用，所以推荐使用方法一接入。</p>
+<h3 id="集成功能" class="article-heading"><a href="#集成功能" class="headerlink" title="集成功能"></a>集成功能<a class="article-anchor" href="#集成功能" aria-hidden="true"></a></h3><p>如果按照方法一接入：podfile 的方式，添加头文件包含：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#import &lt;TBWXDevtool/WXDevtool.h&gt;</div></pre></td></tr></table></figure>
+<p>如果按照方法二接入：源码依赖的方式，添加头文件包含：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#import &quot;WXDevtool.h&quot;</div><div class="line">```     </div><div class="line"></div><div class="line">查看 WXDevtool 头文件如下：</div><div class="line">     </div><div class="line">```object-c</div><div class="line">#import &lt;Foundation/Foundation.h&gt;</div><div class="line"></div><div class="line">@interface WXDevTool : NSObject</div><div class="line">/**</div><div class="line">*  set debug status</div><div class="line">*  @param isDebug  : YES:open debug model and inspect model;</div><div class="line">*                    default is NO,if isDebug is NO, open inspect only;</div><div class="line">* */</div><div class="line">+ (void)setDebug:(BOOL)isDebug;</div><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line">*  get debug status</div><div class="line">* */  </div><div class="line">+ (BOOL)isDebug;</div><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line">*  launch weex debug</div><div class="line">*  @param url  : ws://ip:port/debugProxy/native, ip and port is your devtool server address</div><div class="line">* eg:@&quot;ws://30.30.29.242:8088/debugProxy/native&quot;</div><div class="line">* */</div><div class="line">+ (void)launchDevToolDebugWithUrl:(NSString *)url;</div><div class="line"></div><div class="line">@end</div><div class="line">``` </div><div class="line"></div><div class="line">`setDebug`：参数为 `YES` 时，直接开启 debug 模式，反之关闭，使用场景如下所述</div><div class="line"></div><div class="line">在你自己的程序中添加如下代码：</div><div class="line"></div><div class="line">```object-c    </div><div class="line">[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://30.30.31.7:8088/debugProxy/native&quot;];</div></pre></td></tr></table></figure>
+<p>其中的 ws 地址正是 Weex debug 控制台中出现的地址，直接 copy 到 <code>launchDevToolDebugWithUrl</code> 接口中。</p>
+<p>如果程序一启动就开启 Weex 调试，<strong>需要在 WeexSDK 引擎初始化之前</strong>添加代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[WXDevTool setDebug:YES];</div><div class="line">[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://30.30.31.7:8088/debugProxy/native&quot;];</div></pre></td></tr></table></figure>
+<h4 id="附加页面刷新功能" class="article-heading"><a href="#附加页面刷新功能" class="headerlink" title="附加页面刷新功能"></a>附加页面刷新功能<a class="article-anchor" href="#附加页面刷新功能" aria-hidden="true"></a></h4><ul>
+<li><p>为什么需要页面刷新功能？</p>
+<p>如下图所示，当点击 debug 按钮时，js 的运行环境会从手机端（JavaScriptCore）切换到 Chrome（V8），这时需要重新初始化 Weex 环境，重新渲染页面。页面渲染是需要接入方在自己的页面添加。</p>
+<p><img src="https://img.alicdn.com/tps/TB1xRHhNXXXXXakXpXXXXXXXXXX-1498-668.png" alt="_debug"></p>
+</li>
+<li><p>什么场景下需要添加页面刷新功能? </p>
+<ul>
+<li>点击 debug 按钮调试</li>
+<li>切换 RemoteDebug 开关</li>
+<li>刷新 Chrome 页面（command+R）</li>
+</ul>
+</li>
+<li><p>如何添加刷新  </p>
+<p>在 Weex 页面初始化或 <code>viewDidLoad</code> 方法时添加注册通知，举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[[NSNotificationCenter defaultCenter] addObserver:self selector:notificationRefreshInstance: name:@&quot;RefreshInstance&quot; object:nil];</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  最后<strong>千万记得</strong>在 <code>dealloc</code> 方法中取消通知，如下所示</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)dealloc</div><div class="line">&#123;</div><div class="line">    [[NSNotificationCenter defaultCenter] removeObserver:self];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  页面刷新实现，先销毁当前 instance，然后重新创建 instance，举例如下:</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"> - (void)render</div><div class="line">  &#123;</div><div class="line">    CGFloat width = self.view.frame.size.width;</div><div class="line">    [_instance destroyInstance];</div><div class="line">    _instance = [[WXSDKInstance alloc] init];</div><div class="line">    _instance.viewController = self;</div><div class="line">    _instance.frame = CGRectMake(self.view.frame.size.width-width, 0, width, _weexHeight);</div><div class="line">    </div><div class="line">    __weak typeof(self) weakSelf = self;</div><div class="line">    _instance.onCreate = ^(UIView *view) &#123;</div><div class="line">        [weakSelf.weexView removeFromSuperview];</div><div class="line">        weakSelf.weexView = view;</div><div class="line">        [weakSelf.view addSubview:weakSelf.weexView];</div><div class="line">        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification,  weakSelf.weexView);</div><div class="line">    &#125;;</div><div class="line">    _instance.onFailed = ^(NSError *error) &#123;</div><div class="line">        </div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _instance.renderFinish = ^(UIView *view) &#123;</div><div class="line">        [weakSelf updateInstanceState:WeexInstanceAppear];</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _instance.updateFinish = ^(UIView *view) &#123;</div><div class="line">    &#125;;</div><div class="line">    if (!self.url) &#123;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    NSURL *URL = [self testURL: [self.url absoluteString]];</div><div class="line">    NSString *randomURL = [NSString stringWithFormat:@&quot;%@?random=%d&quot;,URL.absoluteString,arc4random()];</div><div class="line">    [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@&#123;@&quot;bundleUrl&quot;:URL.absoluteString&#125; data:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>具体实现可参考 <a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/Devtools/playground/WeexDemo/WXDemoViewController.m" target="_blank" rel="external">playground</a>  <code>WXDemoViewController.m</code> 文件</p>
+<p><em>说明：目前版本需要注册的通知名称为固定的 “RefreshInstance”，下个版本会添加用户自定义 name 。</em></p>
+<h2 id="使用" class="article-heading"><a href="#使用" class="headerlink" title="使用"></a>使用<a class="article-anchor" href="#使用" aria-hidden="true"></a></h2><p>如果未安装 Debugger Server，在命令行执行 <code>npm install -g weex-toolkit</code> 既可以安装调试服务器，运行命令 <code>weex debug</code> 就会启动 DebugServer 并打开一个调试页面（详情请查看 <a href="../guide/develop-on-your-local-machine.html">本地开发</a>）。页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接。</p>
+<ol>
+<li><p>日志级别控制</p>
+<p><img src="https://img.alicdn.com/tps/TB1F8WONXXXXXa_apXXXXXXXXXX-1706-674.png" alt="_"><br>日志级别可以控制native端关于weex的日志。</p>
+<p>日记级别描述如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Off       = 0, </div><div class="line">Error     = Error</div><div class="line">Warning   = Error | Warning,</div><div class="line">Info      = Warning | Info,</div><div class="line">Log       = Log | Info,</div><div class="line">Debug     = Log | Debug,    </div><div class="line">All       = NSUIntegerMax</div></pre></td></tr></table></figure>
+<p>解释：off 关闭日志，Warning 包含 Error、Warning，Info 包含 Warning、Info，Log 包含 Info、Log，Debug 包含 Log、Debug，All 包含所有。</p>
+</li>
+<li><p>Vdom/Native tree选择</p>
+<p><img src="https://img.alicdn.com/tps/TB19Yq5NXXXXXXVXVXXXXXXXXXX-343-344.png" alt=""></p>
+<p><em>图一</em></p>
+<p><img src="https://img.alicdn.com/tps/TB1vomVNXXXXXcXaXXXXXXXXXXX-2072-1202.png" alt="图二" title="图二">  </p>
+<p><em>图二</em></p>
+<p>点击图一所示native选项会打开图二，方便查看native tree以及view property</p>
+<p><img src="https://img.alicdn.com/tps/TB116y0NXXXXXXNaXXXXXXXXXXX-1448-668.png" alt="vdom"></p>
+<p><em>图三</em></p>
+<p><img src="https://img.alicdn.com/tps/TB16frmNXXXXXa7XXXXXXXXXXXX-2106-1254.png" alt="vdom_tree">  </p>
+<p><em>图四</em></p>
+<p>点击图三所示 vdom 选项会打开图四，方便查看 vdom tree 以及 component property。 </p>
+</li>
+</ol>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/integrate-devtools-to-ios.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

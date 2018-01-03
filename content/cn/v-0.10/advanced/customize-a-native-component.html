@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>自定义 native 组件 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何自定义 native 组件？Weex 已经包含了最关键的平台组件，例如 ScrollView, ListView, Text, Imageview 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。 Android步骤：1.自定义组件必须继承自">
+<meta property="og:type" content="website">
+<meta property="og:title" content="自定义 native 组件">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/customize-a-native-component.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="如何自定义 native 组件？Weex 已经包含了最关键的平台组件，例如 ScrollView, ListView, Text, Imageview 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。 Android步骤：1.自定义组件必须继承自">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义 native 组件">
+<meta name="twitter:description" content="如何自定义 native 组件？Weex 已经包含了最关键的平台组件，例如 ScrollView, ListView, Text, Imageview 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。 Android步骤：1.自定义组件必须继承自">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/customize-a-native-component.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/customize-a-native-component.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/customize-a-native-component.html" class="sidebar-link current ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        自定义 native 组件
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="如何自定义-native-组件？" class="article-heading"><a href="#如何自定义-native-组件？" class="headerlink" title="如何自定义 native 组件？"></a>如何自定义 native 组件？<a class="article-anchor" href="#如何自定义-native-组件？" aria-hidden="true"></a></h1><p>Weex 已经包含了最关键的平台组件，例如 <code>ScrollView, ListView, Text, Imageview</code> 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。</p>
+<h2 id="Android" class="article-heading"><a href="#Android" class="headerlink" title="Android"></a>Android<a class="article-anchor" href="#Android" aria-hidden="true"></a></h2><h3 id="步骤：" class="article-heading"><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：<a class="article-anchor" href="#步骤：" aria-hidden="true"></a></h3><p>1.自定义组件必须继承自 <code>WXComponent</code> 或者 <code>WXContainer</code> ；<br>2.weex SDK 可以识别 @WXComponentProp (name = value(value 是 attr 或者 dsl style))；<br>3.方法必须是 <code>public</code> 的；<br>4.组件类不能是一个内部类；<br>5.自定义组件不能被 ProGuard 之类的工具混淆；<br>6.组件方法在 UI 线程被调用，因此不要在里面进行耗时的操作；<br>7.Weex 的参数类型可以是 int, double, float, String, Map, List 和实现了 WXObject 接口的自定义类；</p>
+<h3 id="参考以下例子：" class="article-heading"><a href="#参考以下例子：" class="headerlink" title="参考以下例子："></a>参考以下例子：<a class="article-anchor" href="#参考以下例子：" aria-hidden="true"></a></h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"> `<span class="keyword">package</span> com.taobao.weex.ui.component;</div><div class="line"><span class="comment">// ……</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span>  <span class="title">MyViewComponent</span> <span class="keyword">extends</span> <span class="title">WXComponent</span></span>&#123;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="title">MyViewComponent</span><span class="params">(WXSDKInstance instance, WXDomObject node, </span></span></div><div class="line">                    WXVContainer parent,  String instanceId, <span class="keyword">boolean</span> lazy) &#123;                </div><div class="line">           <span class="keyword">super</span>(instance, node, parent, instanceId, lazy);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</div><div class="line">          <span class="comment">//<span class="doctag">TODO:</span>your own code ……</span></div><div class="line">       &#125;</div><div class="line"></div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> WXFrameLayout <span class="title">getView</span><span class="params">()</span> </span>&#123;</div><div class="line">         <span class="comment">//<span class="doctag">TODO:</span>your own code ………        </span></div><div class="line">      &#125;</div><div class="line">      <span class="meta">@WXComponentProp</span>(name=WXDomPropConstant.WX_ATTR_VALUE)</div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMyViewValue</span><span class="params">(String value)</span> </span>&#123;</div><div class="line">         ((TextView)mHost).setText(value);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>必须注册组件：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.registerComponent(<span class="string">"MyView"</span>, MyViewComponent.class);</div></pre></td></tr></table></figure>
+<h2 id="iOS" class="article-heading"><a href="#iOS" class="headerlink" title="iOS"></a>iOS<a class="article-anchor" href="#iOS" aria-hidden="true"></a></h2><p>虽然 WeexSDK 中有很多的 native 的 Component，但这有可能并不能满足你的需求。在之前你可能已经写了一些很酷炫 native 的组件，想包装一下，导入到 Weex 中，因此我们提供了让开发者实现自己的 native Component。下面将以 WeexSDK 中已经存在的 Component：<code>image</code> 为例子，介绍一下如何构建一个 native Component。假设你已经了解 iOS 开发</p>
+<h3 id="注册-Component" class="article-heading"><a href="#注册-Component" class="headerlink" title="注册 Component"></a>注册 Component<a class="article-anchor" href="#注册-Component" aria-hidden="true"></a></h3><p>注册一个 component 比较简单，调用 <code>WXSDKEngine</code> 中的 <code>registerComponent:withClass:</code> 方法，传入组件的标签名称，还有对应的 class  然后你可以创建一个 <code>WXImageComponent</code> 表示 <code>image</code> 组件的实现。在 <code>.we</code> 文件中，只需要写 <code>&lt;image&gt;&lt;/image&gt;</code></p>
+<h3 id="添加属性" class="article-heading"><a href="#添加属性" class="headerlink" title="添加属性"></a>添加属性<a class="article-anchor" href="#添加属性" aria-hidden="true"></a></h3><p>现在我们要做一些让 image component 更加强大的事情。既然作为一个图片的 component，那它应该要有源，给他加上一个  <code>src</code> 的属性，同时给它加上一个 <code>resize</code> 的属性（可以配置的有 <code>contain/cover/stretch</code>）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@interface WXImageComponent ()</div><div class="line"></div><div class="line">@property (nonatomic, strong) NSString *imageSrc;</div><div class="line">@property (nonatomic, assign) UIViewContentMode resizeMode;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>component 中所有的 style，attribute，events 都会被传递到 Component 的初始化方法中，所以，你可以在初始化方法中存储你感兴趣的一些属性值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImageComponent</div><div class="line"></div><div class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>attribute 中拿到的值的类型都是 <code>id</code>，我们可以用转换方法把它转换到任何值。Weex SDK 提供了一些基础的转换方法，可以参考 <code>WXConvert</code> 类，或者你可以添加自己的转换函数。</p>
+<h3 id="Hooking-渲染生命周期" class="article-heading"><a href="#Hooking-渲染生命周期" class="headerlink" title="Hooking 渲染生命周期"></a>Hooking 渲染生命周期<a class="article-anchor" href="#Hooking-渲染生命周期" aria-hidden="true"></a></h3><p>native 的 component 是由 Weex 管理的，Weex 创建，布局，渲染，销毁。Weex 的 component 生命周期都是可以 hook 的，你可以在这些生命周期中去做自己的事情。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">initWithRef:type:…</td>
+<td>用给定的属性初始化一个component.</td>
+</tr>
+<tr>
+<td style="text-align:center">layoutDidFinish</td>
+<td>在component完成布局时候会调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">loadView</td>
+<td>创建component管理的view.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewWillLoad</td>
+<td>在component的view加载之前会调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewDidLoad</td>
+<td>在component的view加载完之后调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewWillUnload</td>
+<td>在component的view被释放之前调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewDidUnload</td>
+<td>在component的view被释放之后调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">updateStyles:</td>
+<td>在component的style更新时候调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">updateAttributes:</td>
+<td>在component的attribute更新时候调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">addEvent:</td>
+<td>给component添加event的时候调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">removeEvent:</td>
+<td>在event移除的时候调用.</td>
+</tr>
+</tbody>
+</table>
+<p>在 image component 的例子里面，如果我们需要我们自己的 image view 的话，可以复写 <code>loadView</code>这个方法.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (UIView *)loadView</div><div class="line">&#123;</div><div class="line">return [[WXImageView alloc] init];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们使用 <code>WXImageView</code> 渲染 <code>image</code> component。<br>作为一个 image component，我们需要拿到服务器图片，而且把它设置进 image view 里. 这个操作可以在 <code>viewDidLoad</code> 方法中做，这个方法是在 view 已经被创建而且加载了时候 Weex SDK 会调用到，而且 <code>viewDidLoad</code> 这个方法是你做额外初始化工作比如改变 content mode(也就是设置resize) 的最好时间.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    UIImageView *imageView = (UIImageView *)self.view;</div><div class="line">    imageView.contentMode = _resizeMode;</div><div class="line">    imageView.userInteractionEnabled = YES;</div><div class="line">    imageView.clipsToBounds = YES;</div><div class="line">    imageView.exclusiveTouch = YES;</div><div class="line"></div><div class="line">    // Do your image fetching and updating logic</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果可以改变 image 的 src，也可以 hook <code>updateAttributes:</code>  方法来做属性更新操作，当 <code>updateAttributes:</code> 或者  <code>updateStyles:</code> 被调用的时候， component 的 view 已经加载完成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)updateAttributes:(NSDictionary *)attributes</div><div class="line">&#123;</div><div class="line">    if (attributes[@&quot;src&quot;]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        // Do your image updating logic</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (attributes[@&quot;resize&quot;]) &#123;</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">        self.view.contentMode = _resizeMode;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>或许你需要考虑更多的生命周期方法去 Hook，当布局完成时候，像 <code>layoutDidFinish</code>，如果你想了解更多，可以参考一下<code>WXComponent.h</code> 声明的方法。</p>
+<p>现在你可以用在任何 <code>.we</code> 文件里面使用 <code>&lt;image&gt;</code>，而且可以加上 image 的属性。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"your-custom-style"</span> <span class="attr">src</span>=<span class="string">"image-remote-source"</span> <span class="attr">resize</span>=<span class="string">"contain/cover/stretch"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div></pre></td></tr></table></figure>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/customize-a-native-component.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/customize-a-native-component.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

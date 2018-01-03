@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>weex-html5 扩展 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
+<meta property="og:type" content="website">
+<meta property="og:title" content="weex-html5 扩展">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/extend-to-html5.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="weex-html5 扩展">
+<meta name="twitter:description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/customize-a-native-component.html" class="sidebar-link  ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-html5.html" class="sidebar-link current ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        weex-html5 扩展
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="扩展-weex-html5" class="article-heading"><a href="#扩展-weex-html5" class="headerlink" title="扩展 weex-html5"></a>扩展 weex-html5<a class="article-anchor" href="#扩展-weex-html5" aria-hidden="true"></a></h1><h3 id="简介" class="article-heading"><a href="#简介" class="headerlink" title="简介"></a>简介<a class="article-anchor" href="#简介" aria-hidden="true"></a></h3><p>Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。</p>
+<p>首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助于组件的分散化管理，去除中心化依赖。</p>
+<p>其次，当你扩展一个组件，你需要同时扩展三端的组件（android, ios 和 web 端），毕竟 Weex 是一个重视三端一致体验的跨平台移动框架。你可以一个端一个端的扩展，也可以召唤其他端上的开发者来共同完成你在其他端上的组件（你总是可以在社区找到对某个功能有共同需求的开发者）。这里有一些在 <a href="./extend-to-android.md">android 端</a>和 <a href="./extend-to-ios.md">ios 端</a>做扩展的文档可以参考。</p>
+<p>你应该将你的扩展发布到 Weex 开发者可以方便找到和使用的渠道，比如 <code>npm</code>。我们推荐你将你开发的组件发布到 <code>npm</code> 供其他 Weex 开发者使用。</p>
+<p>最重要的是，你的组件的命名需要遵守 Weex 组件命名规范：以 <code>weex-</code> 开头作为组件的前缀，并且以 <code>-&lt;platform&gt;</code> 做为结尾后缀，除非你发布的包是三端的实现都包含在内的。这里有个 <a href="https://github.com/MrRaindrop/weex-hello-web" target="_blank" rel="external"><code>&lt;weex-hello-web</code>&gt;</a> 的例子作为参考，这里注册了一个简单的自定义的组件。</p>
+<h3 id="创建新组件" class="article-heading"><a href="#创建新组件" class="headerlink" title="创建新组件"></a>创建新组件<a class="article-anchor" href="#创建新组件" aria-hidden="true"></a></h3><p>步骤:</p>
+<ol>
+<li>在你的组件实现中必须继承 <code>Weex.Component</code> 这个类, 并选择性的重写其中的一些方法。</li>
+<li>你的组件的 exports 需要暴露一个 <code>init</code> 方法，并在其中使用 <code>Weex.registerComponent</code> 注册你的组件。</li>
+</ol>
+<p><strong>这里用一个例子展示如何扩展一个新的组件</strong></p>
+<p>看这个组件扩展的代码( web 端上的组件)：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> attr = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> style = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> event = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 每个扩展组件都需要实现一个init方法，Weex会通过这方法进行安装和注册.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span> (<span class="params">Weex</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> Component = Weex.Component</div><div class="line">  <span class="keyword">const</span> extend = Weex.utils.extend</div><div class="line"></div><div class="line">  <span class="comment">// 组件的构造函数</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Hello</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    Component.call(<span class="keyword">this</span>, data)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// prototype继承</span></div><div class="line">  Hello.prototype = <span class="built_in">Object</span>.create(Component.prototype)</div><div class="line">  extend(Hello.prototype, proto)</div><div class="line"></div><div class="line">  <span class="comment">// 配置属性、样式以及事件</span></div><div class="line">  extend(Hello.prototype, &#123; attr &#125;)</div><div class="line">  extend(Hello.prototype, &#123;</div><div class="line">    <span class="attr">style</span>: extend(<span class="built_in">Object</span>.create(Component.prototype.style), style)</div><div class="line">  &#125;)</div><div class="line">  extend(Hello.prototype, &#123; event &#125;)</div><div class="line"></div><div class="line">  Weex.registerComponent(<span class="string">'weex-hello'</span>, Hello)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 暴露init方法接口.</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123; init &#125;</div></pre></td></tr></table></figure>
+<p>上述代码摘引自 <a href="https://github.com/MrRaindrop/weex-hello-web/blob/master/src/index.js#L46-L65" target="_blank" rel="external">weex-hello-web/src/index.js</a></p>
+<p>这个demo重写了基类 <code>Component</code>中的<code>create</code>方法。你也可以选择重写<code>Component</code>中的一些其他方法来定制组件的行为。典型的方法包括：</p>
+<ul>
+<li><code>create</code>: 创建组件的节点，在方法体中return这个节点.</li>
+<li><code>createChildren</code> 创建子节点.</li>
+<li><code>insertBefore</code> 在某个子节点之前插入一个新的子节点.</li>
+<li><code>appendChild</code> 在子节点列表的最后加上一个节点.</li>
+<li><code>removeChild</code> 移除一个子节点.</li>
+</ul>
+<p><strong>进阶</strong>：更多关于组件定制和扩展的细节和代码展示，可以参考 <a href="https://github.com/apache/incubator-weex/tree/dev/html5" target="_blank" rel="external">weex 主仓库的代码</a>，这里的组件基本上都是通过上述方式进行定义的。</p>
+<p>重要的一点，注册组件的关键方法是 <code>Weex.registerComponent</code>，如示例里的 <code>weex-hello</code> 组件的注册：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">Weex.registerComponent(<span class="string">'weex-hello'</span>, Hello)</div></pre></td></tr></table></figure>
+<p>上述代码引自 <a href="https://github.com/MrRaindrop/weex-hello-web/blob/master/src/index.js#L62" target="_blank" rel="external">weex-hello-web/src/index.js</a></p>
+<p>在某个需要使用该组件的weex项目中使用 <code>Weex.install</code> 方法安装该组件：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// import the original weex-html5.</span></div><div class="line"><span class="keyword">import</span> weex <span class="keyword">from</span> <span class="string">'weex-html5'</span></div><div class="line"><span class="keyword">import</span> hello <span class="keyword">from</span> <span class="string">'weex-hello-web'</span></div><div class="line"><span class="comment">// install the component.</span></div><div class="line">weex.install(hello)</div></pre></td></tr></table></figure>
+<p>上述代码引自 <a href="https://github.com/MrRaindrop/weex_extend_demo/blob/master/src/main.js#L1-L5" target="_blank" rel="external">weex_extend_demo/src/main.js</a></p>
+<p>在你的 <code>.we</code> 文件中直接使用这个组件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">weex-hello</span> <span class="attr">class</span>=<span class="string">"hello"</span> <span class="attr">style</span>=<span class="string">"txt-color:#fff;bg-color:green"</span></span></div><div class="line">      <span class="attr">value</span>=<span class="string">"WEEX"</span> <span class="attr">onclick</span>=<span class="string">"handleClick"</span>&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">weex-hello</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>上述代码引自<a href="https://github.com/MrRaindrop/weex_extend_demo/blob/master/demo/index.we#L10-L15" target="_blank" rel="external">weex_extend_demo/demo/index.we</a></p>
+<h3 id="扩展API" class="article-heading"><a href="#扩展API" class="headerlink" title="扩展API"></a>扩展API<a class="article-anchor" href="#扩展API" aria-hidden="true"></a></h3><p>你可以扩展新的 API 模块，或者为某个已有的模块添加新的 API. 比如，你可以添加一个 API 模块叫做 <code>user</code>，在里面添加一些用户登录登出处理的 API，比如 <code>login</code>, <code>logout</code> 等等。你可以通过 <code>require(&#39;@weex-module/moduleName)[methodName](arg1, arg2, ...)</code> (<a href="../references/api.md">Module APIs</a>) 的方式调用你的 API.</p>
+<p>步骤:</p>
+<ol>
+<li>实现你的 API module.</li>
+<li>在你的 API 安装模块里暴露一个 <code>init</code> 方法，并在这个方法里面使用 <code>Weex.registerAPIModules</code> 注册你的 API module.</li>
+</ol>
+<p><strong>这里用一个例子展示如何扩展一个新的 API 模块</strong></p>
+<p>创建一个文件 <code>user.js</code>，在其中定义登录登出 <code>login/logout</code> 方法.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> user = &#123;</div><div class="line">  <span class="comment">// 定义用户登录方法.</span></div><div class="line">  login (callbackId) &#123;</div><div class="line">    login.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, res)</div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, err)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// 定义用户登出方法.</span></div><div class="line">  logout (callbackId) &#123;</div><div class="line">    logout.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, res)</div><div class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.sender.performCallback(callbackId, err)</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 定义user模块的元 (meta) 信息.</span></div><div class="line"><span class="keyword">const</span> meta = &#123;</div><div class="line">  <span class="attr">user</span>: [&#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'login'</span>,</div><div class="line">    <span class="attr">args</span>: [<span class="string">'function'</span>]</div><div class="line">  &#125;, &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'logout'</span>,</div><div class="line">    <span class="attr">args</span>: [<span class="string">'function'</span>]</div><div class="line">  &#125;]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  init (Weex) &#123;</div><div class="line">    <span class="comment">// 注册这个模块，最后一个参数是模块的元信息.</span></div><div class="line">    Weex.registerApiModule(<span class="string">'user'</span>, user, meta)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个简单的 user helper 模块就实现好了，可以发布到 npm 上，我们可以给这个模块取个名字，比如说 <code>weex-user-helper</code>。</p>
+<p>在你的新的 Weex 项目里安装这个模块:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Weex <span class="keyword">from</span> <span class="string">'weex-html5'</span></div><div class="line"><span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'weex-user-helper'</span></div><div class="line"></div><div class="line">Weex.install(user)</div></pre></td></tr></table></figure>
+<p>安装了这个模块，你就可以在 DSL 代码里引用这个模块干点事情了:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">onclick</span>=<span class="string">"handleClick"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>LOGIN<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> userHelper = <span class="built_in">require</span>(<span class="string">'@weex-module/user'</span>)</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">handleClick</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        userHelper.login(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="comment">// ... do sth. in callback.</span></div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="定制加载器loader" class="article-heading"><a href="#定制加载器loader" class="headerlink" title="定制加载器loader"></a>定制加载器loader<a class="article-anchor" href="#定制加载器loader" aria-hidden="true"></a></h3><p><strong>Loader仅用于weex-html5 (web端)加载dsl打包出来的bundle代码，native平台有其他的加载机制</strong></p>
+<p>已有的加载器包括 <code>xhr</code>, <code>jsonp</code> 和 <code>source</code>. 你可以使用 <code>weex.registerLoader</code> 注册一个新的加载器。例如，你有一个获取 Weex bundle 的服务 <code>myServe.getWeexBundle</code> , 通过这个服务可以加载 weex bundle，为此你可以定义一个加载器：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadByMyServe</span>(<span class="params">pageId, callback</span>) </span>&#123;</div><div class="line">  myServe.getWeexBundle(pageId).then(<span class="function"><span class="keyword">function</span> (<span class="params">bundle</span>) </span>&#123;</div><div class="line">    callback(bundle)</div><div class="line">  &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    callback(err)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 暴露init方法用于Weex安装此加载器.</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  init (Weex) &#123;</div><div class="line">    Weex.registerLoader(<span class="string">'myserve'</span>, loadByMyServe)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在你的 weex-html5 项目的启动文件里安装并使用这个加载器：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Weex <span class="keyword">from</span> <span class="string">'weex-html5'</span></div><div class="line"></div><div class="line"><span class="comment">// 或者import from './myserve.js'，不管是import一个npm模块还是import一个文件.</span></div><div class="line"><span class="keyword">import</span> loader <span class="keyword">from</span> <span class="string">'myLoader'</span></div><div class="line"></div><div class="line">Weex.install(loader)</div><div class="line"></div><div class="line"><span class="comment">// 在init方法里使用这个加载器加载bundle文件.</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getUrlParam</span> (<span class="params">key</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?|&amp;]'</span> + key + <span class="string">'=([^&amp;]+)'</span>)</div><div class="line">    <span class="keyword">const</span> match = location.search.match(reg)</div><div class="line">    <span class="keyword">return</span> match &amp;&amp; match[<span class="number">1</span>]</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">const</span> page = getUrlParam(<span class="string">'page'</span>) || <span class="string">'examples/build/index.js'</span></div><div class="line">  Weex.init(&#123;</div><div class="line">    <span class="attr">appId</span>: location.href,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'myserve'</span>,  <span class="comment">// 使用刚才定义的loader类型</span></div><div class="line">    source: page,</div><div class="line">    <span class="attr">rootId</span>: <span class="string">'weex'</span></div><div class="line">  &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>以上是 Weex 带来的扩展性里比较主要的一部分，更多实现细节可以在 <a href="https://github.com/alibaba/weex" target="_blank" rel="external">weex 项目代码库</a>以及 weex 的开源社区里找到。</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>用 Weex 构建移动应用 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。 移动应用需要支撑并行研发如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
+<meta property="og:type" content="website">
+<meta property="og:title" content="用 Weex 构建移动应用">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/intro/app-architecture.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。 移动应用需要支撑并行研发如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用 Weex 构建移动应用">
+<meta name="twitter:description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。 移动应用需要支撑并行研发如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/intro/app-architecture.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link current ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link  ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link  ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link current ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link  ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link  ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        用 Weex 构建移动应用
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="用-Weex-构建移动应用" class="article-heading"><a href="#用-Weex-构建移动应用" class="headerlink" title="用 Weex 构建移动应用"></a>用 Weex 构建移动应用<a class="article-anchor" href="#用-Weex-构建移动应用" aria-hidden="true"></a></h1><h2 id="今天的移动应用" class="article-heading"><a href="#今天的移动应用" class="headerlink" title="今天的移动应用"></a>今天的移动应用<a class="article-anchor" href="#今天的移动应用" aria-hidden="true"></a></h2><p>这里谈一谈 Weex 对移动应用的理解。</p>
+<h3 id="移动应用需要支撑并行研发" class="article-heading"><a href="#移动应用需要支撑并行研发" class="headerlink" title="移动应用需要支撑并行研发"></a>移动应用需要支撑并行研发<a class="article-anchor" href="#移动应用需要支撑并行研发" aria-hidden="true"></a></h3><p>如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。</p>
+<h3 id="移动应用需要动态性" class="article-heading"><a href="#移动应用需要动态性" class="headerlink" title="移动应用需要动态性"></a>移动应用需要动态性<a class="article-anchor" href="#移动应用需要动态性" aria-hidden="true"></a></h3><p>如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展速度极不相符。移动应用需要更简单轻量的研发模型，需要摆脱版本部署和分发的笨重过程。</p>
+<h3 id="移动应用需要开放互联" class="article-heading"><a href="#移动应用需要开放互联" class="headerlink" title="移动应用需要开放互联"></a>移动应用需要开放互联<a class="article-anchor" href="#移动应用需要开放互联" aria-hidden="true"></a></h3><p>如今移动应用的内容和信息都是相互孤立的，应用之间的交流变得非常复杂和困难，也缺乏一定的标准和规范化的容器来承载。</p>
+<h2 id="整体结构设计" class="article-heading"><a href="#整体结构设计" class="headerlink" title="整体结构设计"></a>整体结构设计<a class="article-anchor" href="#整体结构设计" aria-hidden="true"></a></h2><p>我们认为一个具有高并行研发能力、动态化和标准化规范化的移动应用应该由以下几个方面构成：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">|------|------|------|------| |-----|</div><div class="line">| page | page | page | page | | api |</div><div class="line">|------|------|------|------| | api |</div><div class="line">| page | page | page | page | | api |</div><div class="line">|------|------|------|------| | api |</div><div class="line">| page | page | page | page | | api |</div><div class="line">|---------------------------| | api |</div><div class="line">|           router          | | api |</div><div class="line">|---------------------------| |-----|</div></pre></td></tr></table></figure>
+<ul>
+<li>页面：首先移动应用应该可以被拆解成若干个页面，每个页面相对解耦独立，同时每个页面都有一个 URL 进行唯一标识。</li>
+<li>路由：这些页面将会通过路由机制有机的串联起来，页面之间的关系是通过路由来进行调度的。常见的移动应用路由包括导航栏、tab 切换等。</li>
+<li>设备能力：以各种 API 或服务的方式提供出来，供页面自由使用。</li>
+</ul>
+<p>这样的话，在构建一个完整的移动应用之前，先确定你的应用有多少页面，每个页面分别是什么 URL，页面之间的关联和跳转逻辑是怎样的，然后梳理整个移动应用需要的所有 API 和服务。</p>
+<p>然后通过 Weex 创建不同的页面，并分别进行开发、调试和发布。</p>
+<p><strong>相关链接</strong></p>
+<ul>
+<li><a href="./page-architecture.html">页面结构</a></li>
+</ul>
+<p>如果你已经有一个做好的移动应用，只想用 Weex 开发其中的一部分页面甚至仅仅其中的一两个页面，这对 Weex 来说完全不是问题。Weex 只是一个 SDK，对整体的移动应用架构不会产生任何侵入性。并且完全可以和纯 native 界面或 hybrid 页面共存。</p>
+<p>如果需要 WeexSDK 额外的组件、模块或其它功能，可以通过 Weex 的扩展机制进行扩展。这部分工作需要 native 的研发知识，但是随着 Weex 组件和模块的丰富以及业务迭代的深入，这部分成本会承下降和收敛的趋势。</p>
+<p><strong>相关链接</strong></p>
+<ul>
+<li><a href="../../references/advanced/extend-to-ios.html">如何扩展 iOS</a></li>
+<li><a href="../../references/advanced/extend-to-android.html">如何扩展 Android</a></li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/guide/intro/app-architecture.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/guide/intro/app-architecture.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

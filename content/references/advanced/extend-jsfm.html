@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Extend JS framework | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Extend JS frameworkThis part of the extension of JS framework is still in the discussion, may be adjusted at any time, please pay attention.    Weex wants to be able to respect as many developer devel">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Extend JS framework">
+<meta property="og:url" content="https://weex.apache.org/references/advanced/extend-jsfm.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Extend JS frameworkThis part of the extension of JS framework is still in the discussion, may be adjusted at any time, please pay attention.    Weex wants to be able to respect as many developer devel">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extend JS framework">
+<meta name="twitter:description" content="Extend JS frameworkThis part of the extension of JS framework is still in the discussion, may be adjusted at any time, please pay attention.    Weex wants to be able to respect as many developer devel">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/advanced/extend-jsfm.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link current ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link current ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Extend JS framework
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Extend-JS-framework" class="article-heading"><a href="#Extend-JS-framework" class="headerlink" title="Extend JS framework"></a>Extend JS framework<a class="article-anchor" href="#Extend-JS-framework" aria-hidden="true"></a></h1><p>This part of the extension of JS framework is still in the discussion, may be adjusted at any time, please pay attention.   </p>
+<p>Weex wants to be able to respect as many developer development habits as possible.So, in addition to Weex official support Vue 2.0, the developer can also customize and horizontally extension their own or their favorite JS Framework.The steps to customize the JS Framework are as follows:     </p>
+<ul>
+<li>First you have a complete set of JS Framework.</li>
+<li>Learn about Weex’s JS engine feature support.</li>
+<li>Adapting Weex’s native DOM APIs.</li>
+<li>Adapting Weex’s initialization portal and multi-instance management mechanism.</li>
+<li>Add your own JS Framework to the framework configuration of the Weex JS runtime. Then pack it.</li>
+<li>Build JS bundles based on the JS Framework. You need to add a specific prefix comment so that the Weex JS runtime can recognize it.</li>
+</ul>
+<h2 id="Weex-JS-engine-features-support" class="article-heading"><a href="#Weex-JS-engine-features-support" class="headerlink" title="Weex JS engine features support"></a>Weex JS engine features support<a class="article-anchor" href="#Weex-JS-engine-features-support" aria-hidden="true"></a></h2><ul>
+<li><p>Under iOS, Weex uses the JavaScriptCore that comes with the system, so the ES support depends on the version of the operating system.<br>The current conservative judgments, ES5 features on the market mainstream iOS devices are perfectly supported, but some of the features of ES6 + is not supported.</p>
+</li>
+<li><p>Under Android, Weex uses the v8 kernel provided by UC. For performance and stability considerations, we are not using the latest version of the v8 kernel.The same conservative judgment, the ES5 feature can all support, including strict mode <code>Object.freeze</code> and so on.      </p>
+</li>
+<li><p>The Weex JS engine does not support HTML DOM APIs and HTML5 JS APIs, including <code>document</code>, <code>set</code>Timeout`, and so on.  </p>
+</li>
+<li><p>We added <code>Promise</code>‘s polyfill, as well as the <code>console</code>‘s polyfill.    </p>
+</li>
+<li><p>In addition, in order to ensure that the JS engine can manage memory as much as possible, we have a generic global object for the <code>Object.freeze ()</code> freeze operation, which includes:  </p>
+<ul>
+<li><code>Object</code><ul>
+<li><code>Object.prototype</code></li>
+<li><code>Array</code></li>
+<li><code>Array.prototype</code></li>
+<li><code>String.prototype</code></li>
+<li><code>Number.prototype</code></li>
+<li><code>Boolean.prototype</code></li>
+<li><code>Error.prototype</code></li>
+<li><code>Date.prototype</code></li>
+<li><code>RegExp.prototype</code>   </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Adapt-to-Weex’s-initial-entry-and-multi-instance-management-mechanism" class="article-heading"><a href="#Adapt-to-Weex’s-initial-entry-and-multi-instance-management-mechanism" class="headerlink" title="Adapt to Weex’s initial entry and multi-instance management mechanism"></a>Adapt to Weex’s initial entry and multi-instance management mechanism<a class="article-anchor" href="#Adapt-to-Weex’s-initial-entry-and-multi-instance-management-mechanism" aria-hidden="true"></a></h2><p>The JS Framework provided by the developer needs to be packaged as a <strong>CommonJS</strong> package, and the package needs to be extension to the following methods:    </p>
+<h3 id="Framework-initialization" class="article-heading"><a href="#Framework-initialization" class="headerlink" title="Framework initialization"></a>Framework initialization<a class="article-anchor" href="#Framework-initialization" aria-hidden="true"></a></h3><ul>
+<li><code>init(config)</code><ul>
+<li><code>config</code><ul>
+<li><code>Document</code></li>
+<li><code>Element</code></li>
+<li><code>Comment</code></li>
+<li><code>TaskSender</code></li>
+<li><code>CallbackManager</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This method places the Native DOM class and two auxiliary classes provided by Weex in the <code>config</code> parameter and allows the framework itself to be initialized.   </p>
+<p>Tip: At the same time, the author can pass in a different <code>config</code> in the framework of the initialization time. This allows for framework testing or environmental simulation.</p>
+<h4 id="Introduction-to-parameter-format" class="article-heading"><a href="#Introduction-to-parameter-format" class="headerlink" title="Introduction to parameter format"></a>Introduction to parameter format<a class="article-anchor" href="#Introduction-to-parameter-format" aria-hidden="true"></a></h4><ul>
+<li><code>TaskSender</code>: wip…</li>
+<li><code>CallbackManager</code>: wip…</li>
+</ul>
+<h3 id="Register-available-native-components-and-modules" class="article-heading"><a href="#Register-available-native-components-and-modules" class="headerlink" title="Register available native components and modules"></a>Register available native components and modules<a class="article-anchor" href="#Register-available-native-components-and-modules" aria-hidden="true"></a></h3><ul>
+<li><code>registerComponents(components)</code></li>
+<li><code>registerModules(modules)</code></li>
+</ul>
+<p>These two methods are called immediately after the frame is initialized. This framework will be able to know which components and modules the current client supports.</p>
+<h4 id="Introduction-to-parameter-format-1" class="article-heading"><a href="#Introduction-to-parameter-format-1" class="headerlink" title="Introduction to parameter format"></a>Introduction to parameter format<a class="article-anchor" href="#Introduction-to-parameter-format-1" aria-hidden="true"></a></h4><ul>
+<li><code>components: Array</code>: Describe the array of components, each of which includes:<ul>
+<li><code>type: string</code>: Component name, for example <code>div</code>。</li>
+<li><code>methods: string[]</code>: Optional, a list of method names supported by this component. These methods can follow the native DOM APIs call.</li>
+</ul>
+</li>
+<li><code>modules: Object</code>: Describe the hash table of a series of modules. Key is the module name, the value is an array. The elements of the array describe a method in the module. The information of the method includes:   <ul>
+<li><code>name: string</code>: Method name</li>
+<li><code>args: string[]</code>: Parameter number and type description   </li>
+</ul>
+</li>
+</ul>
+<p><strong>E.g:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">registerComponents([</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'web'</span>, <span class="attr">methods</span>: [<span class="string">'goBack'</span>, <span class="string">'goForward'</span>, <span class="string">'refresh'</span>]&#125;</div><div class="line">])</div><div class="line">registerModules(&#123;</div><div class="line">  <span class="attr">event</span>: [</div><div class="line">    &#123;<span class="attr">name</span>: <span class="string">'openURL'</span>, <span class="attr">args</span>: [<span class="string">'string'</span>]&#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="Multi-instance-lifecycle-management" class="article-heading"><a href="#Multi-instance-lifecycle-management" class="headerlink" title="Multi - instance lifecycle management"></a>Multi - instance lifecycle management<a class="article-anchor" href="#Multi-instance-lifecycle-management" aria-hidden="true"></a></h3><ul>
+<li><code>createInstance(instanceId, code, config, data, env)</code></li>
+<li><code>refreshInstance(instanceId, data)</code></li>
+<li><code>destroyInstance(instanceId)</code></li>
+</ul>
+<p>Each Weex page has two stages: created and destroyed. At the same time in the Weex page running process, native can send messages to the Weex page. Different frameworks can follow their own ideas to achieve the message.     </p>
+<h4 id="Introduction-to-parameter-format-2" class="article-heading"><a href="#Introduction-to-parameter-format-2" class="headerlink" title="Introduction to parameter format"></a>Introduction to parameter format<a class="article-anchor" href="#Introduction-to-parameter-format-2" aria-hidden="true"></a></h4><ul>
+<li><code>instanceId: string</code>: The unique id of the Weex page is generated by native.</li>
+<li><code>code: string</code>:The Wex page’s JS bundle’s code is passed through native.</li>
+<li><code>config: Object?</code>: The configuration information for the Wex page, such as the bundleUrl representing the bundle address, is generated by the native configuration. It has nothing to do with the contents of the JS bundle itself.</li>
+<li><code>data: Object?</code>: Native can import an external data when creating a Weex page. The JS framework can also generate different page content for the same JS bundle with different data.</li>
+<li><code>env: Object?</code>:The current environment information about the Weex page, the meaning of each field:<ul>
+<li><code>info: Object</code>: Framework information, see the “JS Bundle format requirements” later. </li>
+<li><code>config: Object</code>:Equivalent to the third parameter of the method <code>config</code></li>
+<li><code>callbacks: CallbackManager</code>:  only <code>CallbackManager</code>instance of Weex page.</li>
+<li><code>created: number</code>:The number of seconds that the Wex page was created.</li>
+<li><code>framework: string</code>:The name of the framework used by the Wex page. Equivalent to <code>info.framework</code>.  </li>
+</ul>
+</li>
+</ul>
+<h3 id="Native-communication" class="article-heading"><a href="#Native-communication" class="headerlink" title="Native communication"></a>Native communication<a class="article-anchor" href="#Native-communication" aria-hidden="true"></a></h3><ul>
+<li><code>receiveTasks(instanceId, tasks)</code></li>
+</ul>
+<p>Native can use the <code>refreshInstance</code> method to send a message to the JS framework layer. But in many cases will use <code>receiveTasks</code> to send user events or methods callback to the JS framework.</p>
+<p>For example, if the user clicks on a button, native will send a <code>fireEvent</code> type of task to the JS framework, and then the JS framework will handle the corresponding event logic. This part of the working mechanism is related to the design of the <code>addEvent</code> in the native DOM interface.     </p>
+<p>Another example is the user using fetch to send network requests. When the request is done at the native end, it will be sent to the JS framework with a callback type of task. Since native can not pass the function in JavaScript, it actually only sends a callbackId to the JS framework. This part of the working mechanism is related to the design of CallbackManager.      </p>
+<h4 id="Auxiliary-method" class="article-heading"><a href="#Auxiliary-method" class="headerlink" title="Auxiliary method"></a>Auxiliary method<a class="article-anchor" href="#Auxiliary-method" aria-hidden="true"></a></h4><ul>
+<li><code>getRoot(instanceId): JSON</code>   </li>
+</ul>
+<p>This method returns the full JSON description of the document body node. Developers can view the full native DOM tree as a result. The format of the specific return value is the same as the return method of the toJSON () method in the native DOM interface. This feature is used extensively as a developer tool extension.</p>
+<h2 id="Configure-the-JS-Framework-in-WeexSDK" class="article-heading"><a href="#Configure-the-JS-Framework-in-WeexSDK" class="headerlink" title="Configure the JS Framework in WeexSDK"></a>Configure the JS Framework in WeexSDK<a class="article-anchor" href="#Configure-the-JS-Framework-in-WeexSDK" aria-hidden="true"></a></h2><h3 id="Prepare-your-JS-Framework-code" class="article-heading"><a href="#Prepare-your-JS-Framework-code" class="headerlink" title="Prepare your JS Framework code"></a>Prepare your JS Framework code<a class="article-anchor" href="#Prepare-your-JS-Framework-code" aria-hidden="true"></a></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// your-own-js-framework.js</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">init</span> (<span class="params">config</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">registerComponents</span> (<span class="params">components</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">registerModules</span> (<span class="params">modules</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createInstance</span> (<span class="params">id, code, config, data, env</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">destroyInstance</span> (<span class="params">id</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">refreshInstance</span> (<span class="params">id, data</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">recieveTasks</span> (<span class="params">id, tasks</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRoot</span> (<span class="params">id</span>) </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
+<h3 id="Register-a-JS-Framework" class="article-heading"><a href="#Register-a-JS-Framework" class="headerlink" title="Register a JS Framework"></a>Register a JS Framework<a class="article-anchor" href="#Register-a-JS-Framework" aria-hidden="true"></a></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Vue <span class="keyword">from</span> <span class="string">'...'</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'...'</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Angular <span class="keyword">from</span> <span class="string">'...'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123; Vue, React, Angular &#125;;</div></pre></td></tr></table></figure>
+<p>And then packaged JS runtime, integrated into WeexSDK.</p>
+<h4 id="JS-Bundle-format-requirements" class="article-heading"><a href="#JS-Bundle-format-requirements" class="headerlink" title="JS Bundle format requirements"></a>JS Bundle format requirements<a class="article-anchor" href="#JS-Bundle-format-requirements" aria-hidden="true"></a></h4><p><strong>Framework info</strong><br>The note(alias framework info) at the beginning of the JS Bundle file is very important. The format is as follows: </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// &#123; "framework": "Vue" &#125;</span></div></pre></td></tr></table></figure>
+<p>So that the Weex JS engine will know that the JS bundle needs to use the Vue framework to resolve.Similarly, Weex supports multiple frameworks.It will be based on js bundle notes to select the corresponding framework resolution.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/advanced/extend-jsfm.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/advanced/extend-jsfm.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

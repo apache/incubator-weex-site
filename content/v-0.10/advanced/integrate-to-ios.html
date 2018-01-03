@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Integrate to iOS | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="import Weex iOS to your projectYou will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patche">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Integrate to iOS">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/integrate-to-ios.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="import Weex iOS to your projectYou will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patche">
+<meta property="og:image" content="https://img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Integrate to iOS">
+<meta name="twitter:description" content="import Weex iOS to your projectYou will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patche">
+<meta name="twitter:image" content="https://img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Advanced
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/index.html" class="sidebar-link  ">How it works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link current ">Integrate to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Integrate to iOS
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="import-Weex-iOS-to-your-project" class="article-heading"><a href="#import-Weex-iOS-to-your-project" class="headerlink" title="import Weex iOS to your project"></a>import Weex iOS to your project<a class="article-anchor" href="#import-Weex-iOS-to-your-project" aria-hidden="true"></a></h1><p>You will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patches that cannot be merged to the core.</p>
+<p>Assuming you have installed <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS Develop Environment</a> and <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a>. </p>
+<h4 id="1-Clone-source-from-github" class="article-heading"><a href="#1-Clone-source-from-github" class="headerlink" title="1. Clone source from github"></a>1. Clone source from github<a class="article-anchor" href="#1-Clone-source-from-github" aria-hidden="true"></a></h4><p>First, you need to git clone <code>weex</code> from github:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">git clone https://github.com/alibaba/weex.git</div></pre></td></tr></table></figure>
+<h4 id="2-Import-WeexSDK-to-project" class="article-heading"><a href="#2-Import-WeexSDK-to-project" class="headerlink" title="2. Import WeexSDK to project"></a>2. Import WeexSDK to project<a class="article-anchor" href="#2-Import-WeexSDK-to-project" aria-hidden="true"></a></h4><p>Copy the whole folder <code>/ios/sdk</code> to your project directory.</p>
+<p>Before adding the dependencies, please confirm that the project directory already exists the Podfile. If not, create a new one. Then, edit this file, adding some necessary dependecis for the target.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">target &apos;YourTarget&apos; do</div><div class="line">2platform :ios, &apos;7.0&apos;</div><div class="line">2pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>You can get your <code>YourTarget</code> below</p>
+<p><img src="//img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de" alt="img"></p>
+<p>Run pod install in current directory, for a while, .xcworkspace will be created.  At this point, the dependencies have been established.</p>
+<h4 id="3-Init-Weex-Environment" class="article-heading"><a href="#3-Init-Weex-Environment" class="headerlink" title="3. Init Weex Environment"></a>3. Init Weex Environment<a class="article-anchor" href="#3-Init-Weex-Environment" aria-hidden="true"></a></h4><p>We are used to doing some initial tasks in appDelegate. Of course, there is no exception. You can do this in <code>didFinishLaunchingWithOptions</code> as follows.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//business configuration</div><div class="line">[WXAppConfiguration setAppGroup:@&quot;AliApp&quot;];</div><div class="line">[WXAppConfiguration setAppName:@&quot;WeexDemo&quot;];</div><div class="line">[WXAppConfiguration setAppVersion:@&quot;1.0.0&quot;];</div><div class="line"></div><div class="line">//init sdk enviroment   </div><div class="line">[WXSDKEngine initSDKEnviroment];</div><div class="line"> </div><div class="line">//register custom module and component，optional</div><div class="line">[WXSDKEngine registerComponent:@&quot;MyView&quot; withClass:[MyViewComponent class]];</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div><div class="line"></div><div class="line">//register the implementation of protocol, optional</div><div class="line">[WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];</div><div class="line"></div><div class="line">//set the log level    </div><div class="line">[WXLog setLogLevel:WXLogLevelVerbose];</div></pre></td></tr></table></figure>
+<h4 id="4-Render-Weex-Instance" class="article-heading"><a href="#4-Render-Weex-Instance" class="headerlink" title="4. Render Weex Instance"></a>4. Render Weex Instance<a class="article-anchor" href="#4-Render-Weex-Instance" aria-hidden="true"></a></h4><p>Weex supports two different modes, the full page rendering and part of page rendering.<br>Something you have to do is to render weex view with specific URL, then add it to the parent container, which may be the viewController.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#import &lt;WeexSDK/WXSDKInstance.h&gt;</div><div class="line"></div><div class="line">- (void)viewDidLoad </div><div class="line">&#123;</div><div class="line">2[super viewDidLoad];</div><div class="line">2</div><div class="line">2_instance = [[WXSDKInstance alloc] init];</div><div class="line">2_instance.viewController = self;</div><div class="line">    _instance.frame = self.view.frame; </div><div class="line">    </div><div class="line">    __weak typeof(self) weakSelf = self;</div><div class="line">    _instance.onCreate = ^(UIView *view) &#123;</div><div class="line">        [weakSelf.weexView removeFromSuperview];</div><div class="line">        weakSelf.weexView = view;</div><div class="line">        [weakSelf.view addSubview:weakSelf.weexView];</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _instance.onFailed = ^(NSError *error) &#123;</div><div class="line">    	//process failure</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    _instance.renderFinish = ^ (UIView *view) &#123;</div><div class="line">    	//process renderFinish</div><div class="line">    &#125;;</div><div class="line">    [_instance renderWithURL:self.url options:@&#123;@&quot;bundleUrl&quot;:[self.url absoluteString]&#125; data:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>WXSDKInstance is a very imporent class, which provides you with some basic methods and callbacks, such as renderWithURL、onCreate、onFailed and etc. You can understand their usage by reading WXSDKInstance.h.</p>
+<h4 id="5-Destroy-Weex-Instance" class="article-heading"><a href="#5-Destroy-Weex-Instance" class="headerlink" title="5. Destroy Weex Instance"></a>5. Destroy Weex Instance<a class="article-anchor" href="#5-Destroy-Weex-Instance" aria-hidden="true"></a></h4><p>Please release weex instance in dealloc stage of viewContoller, or it will lead to memory leak.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)dealloc</div><div class="line">&#123;</div><div class="line">    [_instance destroyInstance];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="6-Build-IPA-for-Weex" class="article-heading"><a href="#6-Build-IPA-for-Weex" class="headerlink" title="6. Build .IPA for Weex"></a>6. Build .IPA for Weex<a class="article-anchor" href="#6-Build-IPA-for-Weex" aria-hidden="true"></a></h4><p>We can also pack all the JS files into the app’s resources. This way you can run your app without development server and submit it to the AppStore.</p>
+<ul>
+<li><a href="https://github.com/alibaba/weex_toolchain/tree/master/toolkit" target="_blank" rel="external">Install weex-toolkit</a> and transform your <code>.we</code> file to JS by running <code>weex index.we -o index.js</code>, <code>index.we</code> is the entry file of your app.</li>
+<li>Move <code>index.js</code> to your app’s Xcode project and add the file to your target.</li>
+<li><p>Replace <code>[_instance renderWithURL:&#39;httpURL&#39;]</code> with: <code>[_instance renderWithURL: [[NSBundle mainBundle] URLForResource:@&quot;index&quot; withExtension:@&quot;js&quot;]]</code></p>
+</li>
+<li><p>Go to Product -&gt; Archive in Xcode and follow the steps to build your .IPA file and submit it to the AppStore.</p>
+</li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

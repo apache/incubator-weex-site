@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex ❤️ iOS 11 系列之二：ARKit初探 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ARKit苹果在wwdc 2017公布了第一款具有AR功能的操作系统iOS11，并提供了AR的SDK，ARKit，同时宣称苹果是世界上最大的AR平台，Weex也积极拥抱AR，让Weex用户也可以方便开发AR功能 AR体验就是创建和追踪用户所在的现实世界和可建立模型的空间的对应关系的能力，让用户感觉产生虚拟内容在现实世界的错觉，这就是所谓的增强现实。ARKit通过识别图像场景中的显著特征，追踪这些特">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weex ❤️ iOS 11 系列之二：ARKit初探">
+<meta property="og:url" content="https://weex.apache.org/en/arkit/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="ARKit苹果在wwdc 2017公布了第一款具有AR功能的操作系统iOS11，并提供了AR的SDK，ARKit，同时宣称苹果是世界上最大的AR平台，Weex也积极拥抱AR，让Weex用户也可以方便开发AR功能 AR体验就是创建和追踪用户所在的现实世界和可建立模型的空间的对应关系的能力，让用户感觉产生虚拟内容在现实世界的错觉，这就是所谓的增强现实。ARKit通过识别图像场景中的显著特征，追踪这些特">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6271687-d5b0e534ef0d7aaa.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+<meta property="og:image" content="https://github.com/kfeagle/firstdemo/blob/master/arkit.png?raw=true">
+<meta property="og:image" content="http://gitlab.alibaba-inc.com/Jerry/amapdemo/raw/master/ar/1.gif">
+<meta property="og:image" content="http://gitlab.alibaba-inc.com/Jerry/amapdemo/raw/master/ar/tap.gif">
+<meta property="og:image" content="http://gitlab.alibaba-inc.com/Jerry/amapdemo/raw/master/ar/game.gif">
+<meta property="og:updated_time" content="2017-07-28T14:44:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex ❤️ iOS 11 系列之二：ARKit初探">
+<meta name="twitter:description" content="ARKit苹果在wwdc 2017公布了第一款具有AR功能的操作系统iOS11，并提供了AR的SDK，ARKit，同时宣称苹果是世界上最大的AR平台，Weex也积极拥抱AR，让Weex用户也可以方便开发AR功能 AR体验就是创建和追踪用户所在的现实世界和可建立模型的空间的对应关系的能力，让用户感觉产生虚拟内容在现实世界的错觉，这就是所谓的增强现实。ARKit通过识别图像场景中的显著特征，追踪这些特">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6271687-d5b0e534ef0d7aaa.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="blog" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "blog";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/arkit/" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/arkit/" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="wrapper article-wrapper post-layout">
+  
+
+<article class="article article-type-blog">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Weex ❤️ iOS 11 系列之二：ARKit初探
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-27T06:32:10.000Z">Updated time: 27/06/2017</time>
+</header>
+    <h2 id="ARKit" class="article-heading"><a href="#ARKit" class="headerlink" title="ARKit"></a>ARKit<a class="article-anchor" href="#ARKit" aria-hidden="true"></a></h2><p>苹果在wwdc 2017公布了第一款具有AR功能的操作系统iOS11，并提供了AR的SDK，ARKit，同时宣称苹果是世界上最大的AR平台，Weex也积极拥抱AR，让Weex用户也可以方便开发AR功能</p>
+<p>AR体验就是创建和追踪用户所在的现实世界和可建立模型的空间的对应关系的能力，让用户感觉产生虚拟内容在现实世界的错觉，这就是所谓的增强现实。ARKit通过识别图像场景中的显著特征，追踪这些特征的差异位置，最后与传感器数据比较，得到设备位置和运动状态的高精度模型</p>
+<h2 id="原理" class="article-heading"><a href="#原理" class="headerlink" title="原理"></a>原理<a class="article-anchor" href="#原理" aria-hidden="true"></a></h2><p>ARkit 在ARSCNView，ARSession,ARFrame的基础上实现</p>
+<h3 id="ARSCNView和ARSession" class="article-heading"><a href="#ARSCNView和ARSession" class="headerlink" title="ARSCNView和ARSession"></a>ARSCNView和ARSession<a class="article-anchor" href="#ARSCNView和ARSession" aria-hidden="true"></a></h3><p><img src="http://upload-images.jianshu.io/upload_images/6271687-d5b0e534ef0d7aaa.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="x"><br>ARKit提供了两种增强现实的视图，他们分别是ARSCNView(3D)和ARSKView(2D),这两种视图都采用ARCamera作为视图背景的，而ARSCNView等视图和相机没有直接关系，他们是通过ARSession这个桥梁和camera交互的，运行一个session，需要指定会话追踪配置的对象：ARSessionConfiguration，ARSessionConfiguration负责追踪相机在3D世界中的位置和平面探测</p>
+<h3 id="ARWorldTrackingSessionConfiguration与ARFrame" class="article-heading"><a href="#ARWorldTrackingSessionConfiguration与ARFrame" class="headerlink" title="ARWorldTrackingSessionConfiguration与ARFrame"></a>ARWorldTrackingSessionConfiguration与ARFrame<a class="article-anchor" href="#ARWorldTrackingSessionConfiguration与ARFrame" aria-hidden="true"></a></h3><p><img src="https://github.com/kfeagle/firstdemo/blob/master/arkit.png?raw=true" alt="x"><br>ARWorldTrackingSessionConfiguration通过一系列的复杂计算和调用传感器来跟踪设备的方向和位置，当ARWorldTrackingSessionConfiguration计算出位置，会交给ARSession管理,ARSession就会维护一个相机的位置ARFame，用户可以通过这个frame将4x4矩阵世界坐标转换为3D系统相机坐标</p>
+<h2 id="weex-ar" class="article-heading"><a href="#weex-ar" class="headerlink" title="weex-ar"></a>weex-ar<a class="article-anchor" href="#weex-ar" aria-hidden="true"></a></h2><p>ARKit在wwdc上带来的震撼效果，我通过weex插件的方式将ARKit能力透传到Weex，让用户在weex上也第一时间体验到Native的AR效果<br>所有的demo以及源码我已经开源，同步到<a href="https://github.com/kfeagle/weex-ar" target="_blank" rel="external">github</a>，用户在自己工程依赖即可使用</p>
+<h3 id="在现实世界渲染一个3D的虚拟物体" class="article-heading"><a href="#在现实世界渲染一个3D的虚拟物体" class="headerlink" title="在现实世界渲染一个3D的虚拟物体"></a>在现实世界渲染一个3D的虚拟物体<a class="article-anchor" href="#在现实世界渲染一个3D的虚拟物体" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">this.$refs[&apos;scene&apos;].addNode(&#123;</div><div class="line">        name:&apos;color&apos;,</div><div class="line">        width:0.1,</div><div class="line">        height:0.1,</div><div class="line">        length:0.1,</div><div class="line">        chamferRadius:0,</div><div class="line">        vector:&#123;</div><div class="line">          x:0.1,</div><div class="line">          y:0.1,</div><div class="line">          z:-0.5</div><div class="line">        &#125;,</div><div class="line">        contents:&#123;</div><div class="line">          type:&apos;color&apos;,</div><div class="line">          name:&apos;red&apos;</div><div class="line">        &#125;</div><div class="line">      &#125;);</div></pre></td></tr></table></figure>
+<p>Weex在compnonent中增加addNode方法，用户可以设置好节点的参数，然后就会构建一个虚拟物体</p>
+<ul>
+<li>效果<ul>
+<li><img src="http://gitlab.alibaba-inc.com/Jerry/amapdemo/raw/master/ar/1.gif" alt="x"></li>
+</ul>
+</li>
+</ul>
+<h3 id="交互支持" class="article-heading"><a href="#交互支持" class="headerlink" title="交互支持"></a>交互支持<a class="article-anchor" href="#交互支持" aria-hidden="true"></a></h3><p>当native触发了点击事件，会向jsfm发送点击位置信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-(void)tapped:(UITapGestureRecognizer *)recognizer</div><div class="line">&#123;</div><div class="line">    SCNView *sceneView = (SCNView *)recognizer.view ;</div><div class="line">    CGPoint touchLocation =  [recognizer locationInView:sceneView];</div><div class="line">    [self fireEvent:@&quot;tap&quot; params:@&#123;@&quot;touchLocation&quot;:@&#123;@&quot;x&quot;:@(touchLocation.x),@&quot;y&quot;:@(touchLocation.y)&#125;&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当VUE接收到相关信息，会处理位置信息，然后更新节点<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tap:function (event) &#123;</div><div class="line">        this.index = this.index+1;</div><div class="line">        if(this.index&gt;3)&#123;</div><div class="line">          this.index = 0;</div><div class="line">        &#125;</div><div class="line">        var color = &apos;red&apos;;</div><div class="line">        if(this.index == 1)&#123;</div><div class="line">          color = &apos;blue&apos;;</div><div class="line">        &#125;</div><div class="line">        if(this.index == 2)&#123;</div><div class="line">          color = &apos;green&apos;;</div><div class="line">        &#125;</div><div class="line">        if(this.index == 3)&#123;</div><div class="line">          color = &apos;yellow&apos;;</div><div class="line">        &#125;</div><div class="line">        this.$refs[&apos;scene&apos;].updateNode(&#123;</div><div class="line">          name:&apos;color&apos;,</div><div class="line">          x:event.touchLocation.x,</div><div class="line">          y:event.touchLocation.y,</div><div class="line">          color:color</div><div class="line">        &#125;)</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>效果<ul>
+<li><img src="http://gitlab.alibaba-inc.com/Jerry/amapdemo/raw/master/ar/tap.gif" alt="x"></li>
+</ul>
+</li>
+</ul>
+<h3 id="碰撞游戏" class="article-heading"><a href="#碰撞游戏" class="headerlink" title="碰撞游戏"></a>碰撞游戏<a class="article-anchor" href="#碰撞游戏" aria-hidden="true"></a></h3><p>设置节点的mask，通过arkit的代理就可以检测碰撞了<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">node.physicsBody.categoryBitMask= [self getMask:[WXConvert NSInteger:[options objectForKey:@&quot;categoryBitMask&quot;]]];</div><div class="line">    node.physicsBody.contactTestBitMask= [self getMask:[WXConvert NSInteger:[options objectForKey:@&quot;contactTestBitMask&quot;]]];</div></pre></td></tr></table></figure></p>
+<p>当碰撞发生时候，会通过physicsWorld:(SCNPhysicsWorld <em>)world didBeginContact:(SCNPhysicsContact </em>)contact代理获取到节点的信息，weex将相关信息发送到jsfm<br>vue获取先关节点可以删除节点，增减节点，从而完成碰撞的处理<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">contact:function (event) &#123;</div><div class="line">                if(event.nodes.nodeA.mask == 0 || event.nodes.nodeB.mask == 0 )&#123;</div><div class="line"></div><div class="line">                    this.isAdd = false;</div><div class="line">                    this.$refs[&apos;scene&apos;].removeNode(event.nodes.nodeA.name);</div><div class="line">                    this.$refs[&apos;scene&apos;].removeNode(event.nodes.nodeB.name);</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>效果</p>
+<ul>
+<li><img src="http://gitlab.alibaba-inc.com/Jerry/amapdemo/raw/master/ar/game.gif" alt="x"></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/arkit/" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/arkit/" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

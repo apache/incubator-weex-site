@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>集成 Devtools 到 Android | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="集成 Devtools 到 AndroidWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。 Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="集成 Devtools 到 Android">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/integrate-devtools-to-android.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="集成 Devtools 到 AndroidWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。 Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集成 Devtools 到 Android">
+<meta name="twitter:description" content="集成 Devtools 到 AndroidWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。 Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。">
+<meta name="twitter:image" content="https://img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/integrate-devtools-to-android.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/customize-a-native-component.html" class="sidebar-link  ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" class="sidebar-link current ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        集成 Devtools 到 Android
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="集成-Devtools-到-Android" class="article-heading"><a href="#集成-Devtools-到-Android" class="headerlink" title="集成 Devtools 到 Android"></a>集成 Devtools 到 Android<a class="article-anchor" href="#集成-Devtools-到-Android" aria-hidden="true"></a></h1><p>Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。</p>
+<h2 id="Android-应用接入" class="article-heading"><a href="#Android-应用接入" class="headerlink" title="Android 应用接入"></a>Android 应用接入<a class="article-anchor" href="#Android-应用接入" aria-hidden="true"></a></h2><h3 id="添加依赖" class="article-heading"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖<a class="article-anchor" href="#添加依赖" aria-hidden="true"></a></h3><p>可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。强烈建议使用最新版本，因为 Weex SDK 和 devtools 都在快速的迭代开发中，新版本会有更多惊喜，同时也修复老版本中一些问题。最新的 release 版本可在<a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="external">这里</a>查看。所有的 release 版本都会发布到 <a href="https://bintray.com/alibabaweex/maven/weex_inspector" target="_blank" rel="external">jcenter repo</a>。</p>
+<ul>
+<li><p><em>Gradle 依赖</em></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.taobao.android:weex_inspector:0.8.0.0'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><em>Maven依赖</em></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.taobao.android<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>weex_inspector<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.8.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><em>源码依赖</em></p>
+<p>需要复制 <a href="https://github.com/weexteam/weex_devtools_android/tree/master/inspector" target="_blank" rel="external">inspector</a> 目录到你的 App 的同级目录，然后在工程的 <code>settings.gradle</code> 文件下添加 <code>include &quot;:inspector&quot;</code>，此过程可以参考 playground 源码的工程配置及其配置，然后在 App 的 <code>build.gralde</code> 中添加依赖。</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':inspector'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外 weex_inspector 中有一部分包是以 provided 的方式引入，接入方需要自行解决依赖和版本冲突。</p>
+<ul>
+<li><p><strong>provided方式引用的包</strong></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  provided <span class="string">'com.google.code.findbugs:jsr305:2.0.1'</span></div><div class="line">  provided <span class="string">'com.android.support:appcompat-v7:23.1.1'</span></div><div class="line">  provided <span class="string">'com.taobao.android:weex_sdk:0.8.0'</span></div><div class="line">  provided <span class="string">'com.alibaba:fastjson:1.1.45+'</span></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>反射引用的包(0.8.0.0以上版本)</strong></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp:2.3.0'</span></div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp-ws:2.3.0'</span></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>或者
+
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp:3.4.1'</span></div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp-ws:3.4.1'</span></div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h4 id="版本兼容" class="article-heading"><a href="#版本兼容" class="headerlink" title="版本兼容"></a>版本兼容<a class="article-anchor" href="#版本兼容" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>weex sdk</th>
+<th>weex inspector</th>
+<th>Debugger Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.8.0.1+</td>
+<td>0.0.8.1+</td>
+<td>0.2.39+</td>
+</tr>
+<tr>
+<td>0.7.0+</td>
+<td>0.0.7.13</td>
+<td>0.2.38</td>
+</tr>
+<tr>
+<td>0.6.0+</td>
+<td>0.0.2.2</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="添加-Debug-模式开关" class="article-heading"><a href="#添加-Debug-模式开关" class="headerlink" title="添加 Debug 模式开关"></a>添加 Debug 模式开关<a class="article-anchor" href="#添加-Debug-模式开关" aria-hidden="true"></a></h3><p>控制调试模式的打开和关闭的关键点可以概括为三条规则。</p>
+<p><strong>规则一：通过 <code>sRemoteDebugMode</code> 和 <code>sRemoteDebugProxyUrl</code> 和来设置开关和 Debugger Server 地址。</strong></p>
+<p>Weex SDK 的 <code>WXEnvironment</code> 类里有一对静态变量标记了 Weex 当前的调试模式是否开启分别是：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> sRemoteDebugMode; <span class="comment">// 是否开启 debug 模式，默认关闭</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String sRemoteDebugProxyUrl; <span class="comment">// DebugServer的websocket地址</span></div></pre></td></tr></table></figure>
+<p>无论在 App 中无论以何种方式设置 Debug 模式，都必须在恰当的时机调用类似如下的方法来设置 <code>WXEnvironment.sRemoteDebugMode</code> 和 <code>WXEnvironment.sRemoteDebugProxyUrl</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initDebugEnvironment</span><span class="params">(<span class="keyword">boolean</span> enable, String host)</span> </span>&#123;</div><div class="line">  WXEnvironment.sRemoteDebugMode = enable;</div><div class="line">  WXEnvironment.sRemoteDebugProxyUrl = <span class="string">"ws://"</span> + host + <span class="string">":8088/debugProxy/native"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>规则二：修改 <code>sRemoteDebugMode</code> 后一定要调用<code>`WXSDKEngine.reload()</code>。</strong></p>
+<p>一般來說，在修改了 <code>WXEnvironment.sRemoteDebugMode</code> 以后调用了 <code>WXSDKEngine.reload()</code> 方法才能够使 Debug模式生效。<code>WXSDKEngine.reload()</code> 用来重置 Weex 的运行环境上下文，在切换调试模式时需要调用此方法来创建新的 Weex 运行时和 DebugBridge 并将所有的 JS 调用桥接到调试服务器执行。在 reload 过程中会调用 launchInspector，这就是 SDK 控制 Debug 模式最核心一个方法，其传入参数即为 <code>sRemoteDebugMode</code>，若为 <code>true</code> 则该方法中尝试以反射的方式获取 DebugBridge 用来在远端执行 JS，否则在本地运行。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">launchInspector</span><span class="params">(<span class="keyword">boolean</span> remoteDebug)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (WXEnvironment.isApkDebugable()) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) &#123;</div><div class="line">        mWxDebugProxy.stop();</div><div class="line">      &#125;</div><div class="line">      HackedClass&lt;Object&gt; debugProxyClass = WXHack.into(<span class="string">"com.taobao.weex.devtools.debug.DebugServerProxy"</span>);</div><div class="line">      mWxDebugProxy = (IWXDebugProxy) debugProxyClass.constructor(Context.class, WXBridgeManager.class)</div><div class="line">              .getInstance(WXEnvironment.getApplication(), WXBridgeManager.<span class="keyword">this</span>);</div><div class="line">      <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) &#123;</div><div class="line">        mWxDebugProxy.start();</div><div class="line">        <span class="keyword">if</span> (remoteDebug) &#123;</div><div class="line">          mWXBridge = mWxDebugProxy.getWXBridge();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="keyword">if</span> (mWXBridge != <span class="keyword">null</span> &amp;&amp; !(mWXBridge <span class="keyword">instanceof</span> WXBridge)) &#123;</div><div class="line">            mWXBridge = <span class="keyword">null</span>;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (HackAssertionException e) &#123;</div><div class="line">      WXLogUtils.e(<span class="string">"launchInspector HackAssertionException "</span>, e);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>只要遵循上面的原理，开启 Debug 模式的方式和时机可由接入方灵活实现。从 launchInspector 可以看到，SDK 对 devtools 的 aar 包并无强依赖,我们的 App 只需要在 Debug 包中打包该 aar 即可，这样多少可以缓解包大小问题和安全问题。</p>
+<p><strong>例外：</strong> <em>若修改 <code>WXEnvironment.sRemoteDebugMode</code> 的时机在 <code>WXBridgeManager</code> 初始化和 restart 和之前则 <code>WXSDKEngine.reload()</code> 可忽略.</em></p>
+<p><strong>规则三：通过响应 <code>ACTION_DEBUG_INSTANCE_REFRESH</code> 广播及时刷新。</strong></p>
+<p>广播 <code>ACTION_DEBUG_INSTANCE_REFRESH</code> 在调试模式切换和 Chrome 调试页面刷新时发出，主要用来通知当前的 Weex容器以 Debug 模式重新加载当前页。在 playground 中的处理过程如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefreshBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (IWXDebugProxy.ACTION_DEBUG_INSTANCE_REFRESH.equals(intent.getAction())) &#123;</div><div class="line">      <span class="keyword">if</span> (mUri != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (TextUtils.equals(mUri.getScheme(), <span class="string">"http"</span>) || TextUtils.equals(mUri.getScheme(), <span class="string">"https"</span>)) &#123;</div><div class="line">          loadWXfromService(mUri.toString());</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          loadWXfromLocal(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果接入方的容器未对该广播做处理，那么将不支持刷新和调试过程中编辑代码时的 watch 功能。</p>
+<h2 id="接入示例" class="article-heading"><a href="#接入示例" class="headerlink" title="接入示例"></a>接入示例<a class="article-anchor" href="#接入示例" aria-hidden="true"></a></h2><p>最简单方式就是复用 Playground 的相关代码，比如扫码和刷新等模块，但是扫码不是必须的，它只是与 App 通信的一种形式，二维码里的包含DebugServer IP 及 bundle 地址等信息，用于建立 App 和 Debugger Server 之间的连接及动态加载 bundle。在 Playground 中给出了两种开启 debug 模式的范例。</p>
+<ul>
+<li>范例1：通过在 <code>XXXApplication</code> 中设置开关打开调试模式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">super</span>.onCreate();</div><div class="line">  initDebugEnvironment(<span class="keyword">true</span>, <span class="string">"xxx.xxx.xxx.xxx"</span><span class="comment">/*"DEBUG_SERVER_HOST"*/</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种方式最直接，在代码中直接 hardcode 了开启调试模式，如果在 SDK 初始化之前调用甚至连 <code>WXSDKEngine.reload()</code> 都不需要调用，接入方如果需要更灵活的策略可以将 <code>initDebugEnvironment(boolean enable, String host)</code> 和 <code>WXSDKEngine.reload()</code> 组合在一起在合适的位置和时机调用即可。</p>
+<ul>
+<li>范例2：通过扫码打开调试模式</li>
+</ul>
+<p>Playground 中较多的使用扫码的方式传递信息，不仅用这种方式控制 Debug 模式的开关,而且还通过它来传入 bundle 的 url 直接调试。应当说在开发中这种方式是比较高效的，省去了修改 SDK 代码重复编译和安装 App 的麻烦，缺点就是调试工具这种方式接入需要 App 具有扫码和处理特定规则二维码的能力。除了 Playground 中的方式，接入方亦可根据业务场景对 Debugger 和接入方式进行二次开发。</p>
+<p>Playground 集成的具体代码可参考如下两个文件：</p>
+<ul>
+<li><p>开关控制，主要参考对二维码的处理部分，详见 <a href="https://github.com/weexteam/weex_devtools_android/blob/master/playground/app/src/main/java/com/alibaba/weex/WXApplication.java" target="_blank" rel="external"><code>WXApplication.java</code></a></p>
+</li>
+<li><p>刷新控制 ，主要参考是对容器 <code>ACTION_DEBUG_INSTANCE_REFRESH</code>的处理，详见 <a href="https://github.com/weexteam/weex_devtools_android/blob/master/playground/app/src/main/java/com/alibaba/weex/WXPageActivity.java" target="_blank" rel="external"><code>WXPageActivity.java</code></a></p>
+</li>
+</ul>
+<h2 id="牛刀小试" class="article-heading"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a>牛刀小试<a class="article-anchor" href="#牛刀小试" aria-hidden="true"></a></h2><h3 id="前置工作" class="article-heading"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作<a class="article-anchor" href="#前置工作" aria-hidden="true"></a></h3><p>如果未安装 Debugger Server，在命令行执行 <code>npm install -g weex-toolkit</code> 既可以安装调试服务器，运行命令 <code>weex debug</code> 就会启动 DebugServer 并打开一个调试页面（详情请查看 <a href="/develop-on-your-local-machine.md">本地开发</a>）。页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接。</p>
+<p><img src="https://img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png" alt="_"></p>
+<h3 id="开始调试" class="article-heading"><a href="#开始调试" class="headerlink" title="开始调试"></a>开始调试<a class="article-anchor" href="#开始调试" aria-hidden="true"></a></h3><p>如果你的 App 客户端完成了以上步骤那么恭喜你已经接入完毕，可以愉快的调试 Weex bundle 了，调试体验和网页调试一致！建议新手首先用官方的 Playground 体验一下调试流程。只需要启动 App 扫描 Chrome 调试页面下方的第一个二维码即可建立与 Debugger Server 的通信，Chorome 的调试页面将会列出连接成功的设备信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png" alt="devtools-main"></p>
+<h4 id="主要步骤如下" class="article-heading"><a href="#主要步骤如下" class="headerlink" title="主要步骤如下"></a>主要步骤如下<a class="article-anchor" href="#主要步骤如下" aria-hidden="true"></a></h4><ol>
+<li>如果你要加载服务器上 bundle，第一步就是要让你的 bundle sever 跑起来. 在 Playground 中特别简单，只需要你到 Weex 源码目录下，运行 <code>./start</code> 即可。</li>
+<li>命令行运行 <code>weex debug</code> 启动 Debugger Server，Chrome 将会打开一个网页，在网页下方有一个二维码和简单的介绍。</li>
+<li>启动 App 并确认打开调试模式。你将在上一步中打开的网页中看到一个设备列表，每个设备项都有两个按钮，分别是 <code>Debugger</code> 和 <code>Inspector</code>。</li>
+<li>点击 <code>Inspector</code> Chrome 将创建 Inspector 网页；点击 <code>Debugger</code> Chrome 将创建 Debugger 网页；二者是相互独立的功能，不相互依赖。</li>
+</ol>
+<hr>
+<h2 id="背景知识" class="article-heading"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识<a class="article-anchor" href="#背景知识" aria-hidden="true"></a></h2><h3 id="Devtools-组件介绍" class="article-heading"><a href="#Devtools-组件介绍" class="headerlink" title="Devtools 组件介绍"></a>Devtools 组件介绍<a class="article-anchor" href="#Devtools-组件介绍" aria-hidden="true"></a></h3><p>Devtools 扩展了 <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external">Chrome Debugging Protocol</a>，在客户端和调试服务器之间的采用 <a href="https://en.wikipedia.org/wiki/JSON-RPC" target="_blank" rel="external">JSON-RPC</a> 作为通信机制，本质上调试过程是两个进程间协同，相互交换控制权及运行结果的过程。更多细节还请阅读 <a href="http://www.atatech.org/articles/59284" target="_blank" rel="external">Weex Devtools Debugger 的技术选型实录</a>这篇文章。</p>
+<ul>
+<li><p><strong>客户端</strong></p>
+<p>Devtools 客户端作为 aar 被集成 App 中，它通过 webscoket 连接到调试服务器，此处并未做安全检查。出于安全机制及包大小考虑，强烈建议接入方只在 debug 版本中打包此 aar。</p>
+</li>
+<li><p><strong>服务器</strong></p>
+<p>Devtools 服务器端是信息交换的中枢，既连接客户端，又连接 Chrome，大多数情况下扮演一个消息转发服务器和 Runtime Manager 的角色。</p>
+</li>
+<li><p><strong>Web端</strong></p>
+<p>Chrome 的 V8 引擎扮演着 Bundle javascript runtime 的角色。开启 debug 模式后，所有的 bundle js 代码都在该引擎上运行。另一方面我们也复用了 Chrome 前端的调试界面，例如设置断点，查看调用栈等，调试页关闭则 runtime 将会被清理。</p>
+</li>
+</ul>
+<p>调试的大致过程请参考如下时序图。</p>
+<p><img src="https://img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg" alt="debug sequence diagram" title="debug sequence diagram"></p>
+<h2 id="FAQ" class="article-heading"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ<a class="article-anchor" href="#FAQ" aria-hidden="true"></a></h2><p>在各业务接入过程中，陆续发现一些问题，对高频次的问题解答如下，开发中以 weex debug -V 的方式启动 Debugger Server 可以看到 server 端的 log 信息，对照上文中的时序图对于定位问题还是非常有帮助，建议调试中默认开启 server 端 log。</p>
+<ol>
+<li><p><strong>扫码 App 在 DebugServerProxy 中抛出 class not found</strong></p>
+<p>已知的原因如下：</p>
+<ul>
+<li>weex_inspector 以 provided 方式引用的包是否引入成功，如 fastjson 等。</li>
+<li>weex_inspector 以 compile 方式引用的包是否引入成功，某些 app 重新引入 <code>com.squareup.okhttp:okhttp:2.3.0</code> 和 <code>com.squareup.okhttp:okhttp-ws:2.3.0</code> 则不再报错。</li>
+<li>混淆规则影响反射。</li>
+</ul>
+</li>
+<li><p><strong>playground 扫码调试 crash</strong></p>
+<p>已知的原因如下：</p>
+<ul>
+<li>系统为 android 6+，崩溃信息提示进程需要 <code>android.permission.READ_PHONE_STATE</code> 权限，代码中未做权限检查，在 0.0.2.7 版本以后已修复，不再需要此权限。</li>
+</ul>
+</li>
+<li><p><strong>扫码后设备列表页并没有出现我的设备信息</strong></p>
+<p>已知的原因如下：</p>
+<ul>
+<li>Debugger Server 和手机在不同网段，被防火墙隔离。</li>
+<li>手机连接了 PC 端的代理，当前尚不支持。</li>
+<li>多进程连接服务器端的同一端口，比如在 Application 的 <code>onCreate</code> 中初始化 sdk，若多个进程连接服务器端的同一端口则报错，在 0.0.2.3 版本以后已支持多进程无此问题。</li>
+</ul>
+</li>
+<li><p><strong>调试过程中频繁刷新连接失败，Server 端提示重新启动 App，非必现</strong></p>
+<p>已知的原因如下：</p>
+<ul>
+<li>多线程操作网络连接引起，在频繁的即断即连时容易触发。在 0.0.7.1 版本已修复。</li>
+</ul>
+</li>
+</ol>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/integrate-devtools-to-android.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

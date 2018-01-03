@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex语法支持插件 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Weex语法支持插件Weex Language Support 插件是官方提供的一个工具，你可以使用它在IntelliJ IDEA，WebStorm等一系列IDE上对Weex DSL进行语法高亮，自动补全和错误检查等操作。 支持的IDE你可以在任何操作系统上的下列IDE上安装和使用Weex Language Support插件：IntelliJ IDEA Ultimate, PhpStorm,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weex语法支持插件">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/tools/plugin.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Weex语法支持插件Weex Language Support 插件是官方提供的一个工具，你可以使用它在IntelliJ IDEA，WebStorm等一系列IDE上对Weex DSL进行语法高亮，自动补全和错误检查等操作。 支持的IDE你可以在任何操作系统上的下列IDE上安装和使用Weex Language Support插件：IntelliJ IDEA Ultimate, PhpStorm,">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1y6nrXwvGK1Jjy0FdXXaxzVXa-1316-462.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1FonrXwvGK1Jjy0FgXXX9hFXa-559-244.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1ihvDXE6FK1Jjy0FoXXXHqVXa-360-430.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1LeLDXDzGK1JjSspjXXcHWXXa-416-86.png">
+<meta property="og:updated_time" content="2017-08-23T03:30:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex语法支持插件">
+<meta name="twitter:description" content="Weex语法支持插件Weex Language Support 插件是官方提供的一个工具，你可以使用它在IntelliJ IDEA，WebStorm等一系列IDE上对Weex DSL进行语法高亮，自动补全和错误检查等操作。 支持的IDE你可以在任何操作系统上的下列IDE上安装和使用Weex Language Support插件：IntelliJ IDEA Ultimate, PhpStorm,">
+<meta name="twitter:image" content="https://img.alicdn.com/tfs/TB1y6nrXwvGK1Jjy0FdXXaxzVXa-1316-462.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/tools/plugin.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link  ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link current ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link  ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link current ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Weex语法支持插件
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-08-23T03:30:17.000Z">Updated time: 23/08/2017</time>
+</header>
+    <h1 id="Weex语法支持插件" class="article-heading"><a href="#Weex语法支持插件" class="headerlink" title="Weex语法支持插件"></a>Weex语法支持插件<a class="article-anchor" href="#Weex语法支持插件" aria-hidden="true"></a></h1><p><a href="https://plugins.jetbrains.com/plugin/9189-weex-language-support" target="_blank" rel="external">Weex Language Support</a> 插件是官方提供的一个工具，你可以使用它在IntelliJ IDEA，WebStorm等一系列IDE上对Weex DSL进行语法高亮，自动补全和错误检查等操作。</p>
+<h3 id="支持的IDE" class="article-heading"><a href="#支持的IDE" class="headerlink" title="支持的IDE"></a>支持的IDE<a class="article-anchor" href="#支持的IDE" aria-hidden="true"></a></h3><p>你可以在任何操作系统上的下列IDE上安装和使用Weex Language Support插件：<br><strong>IntelliJ IDEA Ultimate, PhpStorm,  WebStorm,  PyCharm,  RubyMine,  AppCode,  CLion,  Gogland,  Rider</strong></p>
+<h3 id="安装" class="article-heading"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="article-anchor" href="#安装" aria-hidden="true"></a></h3><p>在IDE的插件仓库中搜索<code>Weex Language Support</code>来安装该插件，安装完毕后重启IDE即可激活插件相关功能<br><img src="https://img.alicdn.com/tfs/TB1y6nrXwvGK1Jjy0FdXXaxzVXa-1316-462.png" alt="install plugin"></p>
+<h3 id="配置" class="article-heading"><a href="#配置" class="headerlink" title="配置"></a>配置<a class="article-anchor" href="#配置" aria-hidden="true"></a></h3><p>打开<code>Preferences -&gt; Other Settings -&gt; Weex language support</code>可配置插件的相关功能<br><img src="https://img.alicdn.com/tfs/TB1FonrXwvGK1Jjy0FgXXX9hFXa-559-244.png" alt="plugin settings">    </p>
+<ul>
+<li>Target Weex Version: 配置插件以哪一个版本的语法规则来对DSL进行提示及检查，默认值<code>LATEST</code>表示总是应用最行新版本weex的语法规则</li>
+<li>Vue Support: 配置插件是否支持Weex 2.0版本的DSL(.vue文件)，开启后重启生效（注意：如果IDE内有其他支持Vue语法的插件，则需要关闭相应的插件后Weex插件才能生效）</li>
+<li>Custom Rules: 引入自定义的Weex DSL规则，如果你在native中定义了自己的Module或Component，可通过自定义规则引入插件中来提供相应的提示和补全支持，自定义规则的格式将在后文列出</li>
+<li>Global Weex Components: 默认地，插件会解析当前工程及npm root路径下的<code>node_modules</code>目录，解析其中包含的Weex Components并对其提供补全支持。如果你的项目中引用了这两个路径以外的Components，可以在此处将其添加到搜索路径中，插件将会将其中的Components载入，并在编写DSL时为相应的标签提供补全支持</li>
+</ul>
+<h3 id="自定义规则格式" class="article-heading"><a href="#自定义规则格式" class="headerlink" title="自定义规则格式"></a>自定义规则格式<a class="article-anchor" href="#自定义规则格式" aria-hidden="true"></a></h3><p>自定义规则包含在一个json文件中，json文件的根节点为数组类型，数组中的每一个元素对应DSL中的一个标签。<br>我们以<code>&lt;loading&gt;</code>标签的规则来举例：</p>
+<pre><code class="js">{
+    <span class="string">"tag"</span>: <span class="string">"loading"</span>, <span class="comment">//标签名，不可为空</span>
+    <span class="string">"attrs"</span>: [ <span class="comment">//标签属性列表，可为空</span>
+      {
+        <span class="string">"name"</span>: <span class="string">"display"</span>, <span class="comment">//属性名，不可为空</span>
+        <span class="string">"valuePattern"</span>: <span class="literal">null</span>, <span class="comment">//属性值的正则表达式，用于检测值是否合法，可为空</span>
+        <span class="string">"valueEnum"</span>: [ <span class="comment">//属性值枚举，可为空</span>
+          <span class="string">"show"</span>,
+          <span class="string">"hide"</span>
+        ],
+        <span class="string">"valueType"</span>: <span class="string">"var"</span>, <span class="comment">//属性值类型，必须是var或function，决定该从数据列表还是函数列表中查找属性值补全的候选值，不可为空</span>
+        <span class="string">"since"</span>: <span class="number">0</span>, <span class="comment">//该属性何时被添加到sdk中，例如0.11，默认为0</span>
+        <span class="string">"weexOnly"</span>: <span class="literal">false</span> <span class="comment">//该属性是否仅在1.0语法中可用，默认为false</span>
+      }
+    ],
+    <span class="string">"events"</span>: [ <span class="comment">//事件列表。可为空</span>
+      {
+        <span class="string">"name"</span>: <span class="string">"loading"</span>, <span class="comment">//事件名称，不可为空</span>
+        <span class="string">"since"</span>: <span class="number">0</span> <span class="comment">//该事件何时被添加到sdk中</span>
+      }
+    ],
+    <span class="string">"parents"</span>: [ <span class="comment">//该标签允许被作为哪些标签的子元素，空表示可以作为任意元素的子元素</span>
+      <span class="string">"list"</span>,
+      <span class="string">"scroller"</span>
+    ],
+    <span class="string">"childes"</span>: [ <span class="comment">//该标签允许哪些元素作为自己的子元素，空表示任意元素都可作为子元素</span>
+      <span class="string">"text"</span>,
+      <span class="string">"image"</span>,
+      <span class="string">"loading-indicator"</span>
+    ],
+    <span class="string">"document"</span>: <span class="string">"/references/components/loading.html"</span> <span class="comment">//文档地址，配置该属性之后可在编辑界面中对应的标签上直接打开文档</span>
+  }
+</code></pre>
+<h3 id="使用" class="article-heading"><a href="#使用" class="headerlink" title="使用"></a>使用<a class="article-anchor" href="#使用" aria-hidden="true"></a></h3><p>插件的绝大部分功能被集成到编辑器上下文中，会随用户输入在需要补全，提示或Lint时被触发，无需特殊干预。下列功能需要用户手动触发：</p>
+<h4 id="文档搜索" class="article-heading"><a href="#文档搜索" class="headerlink" title="文档搜索"></a>文档搜索<a class="article-anchor" href="#文档搜索" aria-hidden="true"></a></h4><p>打开IDE右侧工具栏的<code>Weex Documents</code>即可对文档进行搜索，搜索结果与官网保持同步，勾选 <code>EN</code> 可切换搜索结果为英文内容<br><img src="https://img.alicdn.com/tfs/TB1ihvDXE6FK1Jjy0FoXXXHqVXa-360-430.png" alt="doc search"></p>
+<h4 id="打开标签对应的文档" class="article-heading"><a href="#打开标签对应的文档" class="headerlink" title="打开标签对应的文档"></a>打开标签对应的文档<a class="article-anchor" href="#打开标签对应的文档" aria-hidden="true"></a></h4><p>将光标定位到标签上，并通过<code>Show Intention Actions</code>操作（OSX上默认键为 option + enter，可通过Keymap查看）打开Intenion菜单，选择<code>Open Document</code>可打开标签对应的文档<br><img src="https://img.alicdn.com/tfs/TB1LeLDXDzGK1JjSspjXXcHWXXa-416-86.png" alt="open doc"></p>
+<h3 id="参与插件建设" class="article-heading"><a href="#参与插件建设" class="headerlink" title="参与插件建设"></a>参与插件建设<a class="article-anchor" href="#参与插件建设" aria-hidden="true"></a></h3><p>请将Issues及Pull Requests提交到<a href="https://github.com/misakuo/weex-language-support" target="_blank" rel="external">weex-language-support</a>项目中</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/guide/tools/plugin.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/guide/tools/plugin.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

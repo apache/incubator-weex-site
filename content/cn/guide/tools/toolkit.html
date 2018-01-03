@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用 weex-toolkit | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="weex-toolkitweex-toolkit 是官方提供的一个脚手架命令行工具，你可以使用它进行 Weex 项目的创建，调试以及打包等功能。 安装使用 npm 安装: $ npm install -g weex-toolkit 安装成功后，你输入 weex 应该可以看到下面的提示效果；  如果你本地没有安装 node.js 你可以前往官网下载安装。 *请确保你的 node 版本是&amp;gt;=6，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="使用 weex-toolkit">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/tools/toolkit.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="weex-toolkitweex-toolkit 是官方提供的一个脚手架命令行工具，你可以使用它进行 Weex 项目的创建，调试以及打包等功能。 安装使用 npm 安装: $ npm install -g weex-toolkit 安装成功后，你输入 weex 应该可以看到下面的提示效果；  如果你本地没有安装 node.js 你可以前往官网下载安装。 *请确保你的 node 版本是&amp;gt;=6，">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1NBhdQXXXXXXzXFXXXXXXXXXX-712-343.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1.02bKFXXXXXwaXXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1NjO_KFXXXXcaaXXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1ck6lKFXXXXbZXFXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1a7HqKFXXXXXMXFXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1oY6cKFXXXXXQaXXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1aPTEKFXXXXXaXXXXXXXXXXXX-1436-813.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1_trbKFXXXXc0XVXXXXXXXXXX-2880-1800.png">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB19n4AQXXXXXawXVXXXXXXXXXX-577-70.png">
+<meta property="og:updated_time" content="2017-09-18T11:34:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 weex-toolkit">
+<meta name="twitter:description" content="weex-toolkitweex-toolkit 是官方提供的一个脚手架命令行工具，你可以使用它进行 Weex 项目的创建，调试以及打包等功能。 安装使用 npm 安装: $ npm install -g weex-toolkit 安装成功后，你输入 weex 应该可以看到下面的提示效果；  如果你本地没有安装 node.js 你可以前往官网下载安装。 *请确保你的 node 版本是&amp;gt;=6，">
+<meta name="twitter:image" content="https://img.alicdn.com/tfs/TB1NBhdQXXXXXXzXFXXXXXXXXXX-712-343.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/tools/toolkit.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link current ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link  ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/guide">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/intro/index.html" class="sidebar-link  ">介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/intro/how-it-works.html" class="sidebar-link  ">工作原理</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/toolkit.html" class="sidebar-link current ">使用 weex-toolkit</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/plugin.html" class="sidebar-link  ">Weex语法支持插件</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        使用 weex-toolkit
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-09-18T11:34:50.000Z">Updated time: 18/09/2017</time>
+</header>
+    <h1 id="weex-toolkit" class="article-heading"><a href="#weex-toolkit" class="headerlink" title="weex-toolkit"></a>weex-toolkit<a class="article-anchor" href="#weex-toolkit" aria-hidden="true"></a></h1><p><a href="https://github.com/weexteam/weex-toolkit" target="_blank" rel="external">weex-toolkit</a> 是官方提供的一个脚手架命令行工具，你可以使用它进行 Weex 项目的创建，调试以及打包等功能。</p>
+<h3 id="安装" class="article-heading"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="article-anchor" href="#安装" aria-hidden="true"></a></h3><p>使用 <code>npm</code> 安装:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<p>安装成功后，你输入 <code>weex</code> 应该可以看到下面的提示效果；</p>
+<p><img src="https://img.alicdn.com/tfs/TB1NBhdQXXXXXXzXFXXXXXXXXXX-712-343.png" alt="weex-commands"></p>
+<p>如果你本地没有安装 node.js 你可以前往<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>下载安装。</p>
+<p>*请确保你的 node 版本是&gt;=6，你可以使用 <a href="https://github.com/tj/n" target="_blank" rel="external">n</a> 来进行 node 的版本管理。</p>
+<p>中国用户如果npm遭遇网络问题，可以使用淘宝的 <a href="https://npm.taobao.org/" target="_blank" rel="external">cnpm</a> 镜像：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line">$ cnpm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<p>如果你安装的过程中遇到了问题，比如 <em>permission error</em> 你可以去 <a href="https://github.com/weexteam/weex-toolkit/issues" target="_blank" rel="external">weex-toolkit issues</a> 找到解决方法。</p>
+<h3 id="初始化-weex-项目" class="article-heading"><a href="#初始化-weex-项目" class="headerlink" title="初始化 weex 项目"></a>初始化 weex 项目<a class="article-anchor" href="#初始化-weex-项目" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex init awesome-project</div></pre></td></tr></table></figure>
+<p>执行完命令后，在 <code>awesome-project</code> 目录中就创建了一个使用 <code>Weex</code> 和 <code>Vue</code> 的模板项目。</p>
+<p>然后我们进入项目所在路径，<code>weex-toolkit</code> 已经为我们生成了标准项目结构。</p>
+<p>在 <code>package.json</code> 中，已经配置好了几个常用的 npm script，分别是：</p>
+<ul>
+<li><code>build</code>: 源码打包，生成 JS Bundle</li>
+<li><code>dev</code>: webpack watch 模式，方便开发</li>
+<li><code>serve</code>: 开启静态服务器</li>
+<li><code>debug</code>: 调试模式</li>
+</ul>
+<p>我们先通过 <code>npm install</code> 安装项目依赖。之后运行根目录下的 <code>npm run dev &amp; npm run serve</code> 开启 watch 模式和静态服务器。</p>
+<p>然后我们打开浏览器，进入 <code>http://localhost:8080/index.html</code> 即可看到 Weex h5 页面。</p>
+<h3 id="实时预览" class="article-heading"><a href="#实时预览" class="headerlink" title="实时预览"></a>实时预览<a class="article-anchor" href="#实时预览" aria-hidden="true"></a></h3><p><code>weex-toolkit</code> 支持预览你当前开发的weex页面(<code>.we</code>或者<code>.vue</code>)，你只需要指定预览的文件路径即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex src/foo.vue</div></pre></td></tr></table></figure>
+<p>浏览器会自动弹出页面，这个时候你可以看到你所编辑的 Weex页面的具体效果和页面布局。如果你使用 <a href="https://weex.apache.org/cn/playground.html">Playground</a> 扫描右边的二维码，就能够看到 Weex 在 Android/IOS 设备上的效果了。</p>
+<p>如果你需要预览整个项目目录，你可以输入这样的命令:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex src --entry src/foo.vue</div></pre></td></tr></table></figure>
+<p>你需要在传入的参数指定预览的目录和入口文件。</p>
+<h3 id="打包weex项目" class="article-heading"><a href="#打包weex项目" class="headerlink" title="打包weex项目"></a>打包weex项目<a class="article-anchor" href="#打包weex项目" aria-hidden="true"></a></h3><p>如果开发完成后，你可以使用 <code>weex compile</code> 通过命令行工具进行单个文件或者整个项目的打包。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">weex compile src/foo.vue dist</div></pre></td></tr></table></figure>
+<p>命令行需要两个参数，你的源码文件或者目录， 以及你生成打包后的目录地址。</p>
+<h3 id="调试-Weex-页面" class="article-heading"><a href="#调试-Weex-页面" class="headerlink" title="调试 Weex 页面"></a>调试 Weex 页面<a class="article-anchor" href="#调试-Weex-页面" aria-hidden="true"></a></h3><p>weex-toolkit支持调试工具。<strong><a href="https://github.com/weexteam/weex-devtool" target="_blank" rel="external">weex devtools</a></strong> ，它是专门为Weex定制的一款实现了 <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external"><strong>Chrome Debugging Protocol</strong></a> 的 inspect/debug 工具，能够帮助你快速查看 app 运行状态和调试 Weex 中的 JS 代码，当前支持 <strong>IOS</strong> 和 <strong>Android</strong> 两个平台。</p>
+<h4 id="用法" class="article-heading"><a href="#用法" class="headerlink" title="用法"></a>用法<a class="article-anchor" href="#用法" aria-hidden="true"></a></h4><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">weex debug [options] [we_file|bundles_dir]</div></pre></td></tr></table></figure>
+<p>  选项:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-h, --help           显示帮助</div><div class="line">-V, --verbose        显示 debug 服务器运行时的各种 log</div><div class="line">-v, --version        显示版本</div><div class="line">-p, --port [port]    设置 debug 服务器端口号 默认为8088</div><div class="line">-e, --entry [entry]  debug 一个目录时,这个参数指定整个目录的入口 bundle 文件,这个 bundle 文件的地址会显示在 debug 主页上(作为二维码)</div><div class="line">-m, --mode [mode]    设置构建 we 文件的方式，transformer 最基础的风格适合单文件， loader:webpack 风格 适合模块化的多文件 . 默认为 transformer</div></pre></td></tr></table></figure>
+<h4 id="开启调试" class="article-heading"><a href="#开启调试" class="headerlink" title="开启调试"></a>开启调试<a class="article-anchor" href="#开启调试" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ weex debug</div></pre></td></tr></table></figure>
+<p>单纯启动一个调试服务器，并同时唤起Chrome浏览器打开<code>调试主页</code>。<br>这个<code>调试主页</code>上会有一个二维码，使用 Playground App 扫这个二维码可以开启 Playground 调试。<br>开启调试后,设备列表中会出现您的设备，根据提示进行后续的调试操作。</p>
+<h4 id="调试-we-vue-文件" class="article-heading"><a href="#调试-we-vue-文件" class="headerlink" title="调试 .we | .vue 文件"></a>调试 <code>.we</code> | <code>.vue</code> 文件<a class="article-anchor" href="#调试-we-vue-文件" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ weex debug your_weex.vue</div></pre></td></tr></table></figure>
+<p>这个命令会将 <code>your_weex.vue</code> 编译成 <code>JS Bundle</code> 文件 部署到 debug 服务器；<br>并启动debug服务器如上述命令那样打开的<code>调试vue主页</code>会多显示一个二维码，使用 Playground App扫这个二维码码可以加载 <code>your_weex.we</code> (注意要先扫描开启调试的那个二维码码)。<br>这个命令会自动检测 <code>your_weex.we</code> 文件变动，如果发现内容被修改则立即重新编译部署，并刷新 <code>debugger</code> 页面。<br>.</p>
+<h4 id="调试整个bundle-we文件夹" class="article-heading"><a href="#调试整个bundle-we文件夹" class="headerlink" title="调试整个bundle/we文件夹"></a>调试整个bundle/we文件夹<a class="article-anchor" href="#调试整个bundle-we文件夹" aria-hidden="true"></a></h4><p>同样你也可以调试整个目录的文件，你只需要传入目录的路径和入口文件即可；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex debug your/we/path  -e index.we</div></pre></td></tr></table></figure>
+<p>这个命令会编译你指定目录下的所有的 <code>.we</code> 文件,并把编译好的 JS Bundle 部署到 debug 服务器,他们的地址会映射到 <a href="http://lcoalhost:8088/weex/" target="_blank" rel="external">http://lcoalhost:8088/weex/</a> 下<br>比如 <code>your/we/path/index.we</code> 可以通过 <a href="http://lcoalhost:8088/weex/index.js" target="_blank" rel="external">http://lcoalhost:8088/weex/index.js</a> 访问。<br><code>your/we/path/demo/test.we</code> 可以通过 <a href="http://lcoalhost:8088/weex/demo/index.js" target="_blank" rel="external">http://lcoalhost:8088/weex/demo/index.js</a> 。</p>
+<p><code>-e</code> 参数可以指定一个入口的 <code>.we</code> 文件，这个文件的地址会显示在<code>调试主页</code>上(作为二维码)。</p>
+<h4 id="特性" class="article-heading"><a href="#特性" class="headerlink" title="特性"></a>特性<a class="article-anchor" href="#特性" aria-hidden="true"></a></h4><h5 id="连接设备" class="article-heading"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备<a class="article-anchor" href="#连接设备" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png" alt="devtools-main"></p>
+<h5 id="Inspector" class="article-heading"><a href="#Inspector" class="headerlink" title="Inspector"></a>Inspector<a class="article-anchor" href="#Inspector" aria-hidden="true"></a></h5><p> Inspector 能够用来查看 <code>Element</code> \ <code>NetWork</code> \ <code>Console log</code> \ <code>ScreenCast</code> \ <code>BoxModel</code> \ <code>Native View</code> 等。</p>
+<p><img src="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png" alt="devtools-inspector"></p>
+<h5 id="Element" class="article-heading"><a href="#Element" class="headerlink" title="Element"></a>Element<a class="article-anchor" href="#Element" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB1.02bKFXXXXXwaXXXXXXXXXXX-2880-1800.png" alt="inspector-element"></p>
+<h5 id="NetWork" class="article-heading"><a href="#NetWork" class="headerlink" title="NetWork"></a>NetWork<a class="article-anchor" href="#NetWork" aria-hidden="true"></a></h5><h5 id="查看网络请求的总耗时和延时" class="article-heading"><a href="#查看网络请求的总耗时和延时" class="headerlink" title="查看网络请求的总耗时和延时"></a>查看网络请求的总耗时和延时<a class="article-anchor" href="#查看网络请求的总耗时和延时" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB1NjO_KFXXXXcaaXXXXXXXXXXX-2880-1800.png" alt="inspector-network"></p>
+<h5 id="查看网络请求的header和response" class="article-heading"><a href="#查看网络请求的header和response" class="headerlink" title="查看网络请求的header和response"></a>查看网络请求的header和response<a class="article-anchor" href="#查看网络请求的header和response" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB1ck6lKFXXXXbZXFXXXXXXXXXX-2880-1800.png" alt="inspector-network"></p>
+<h5 id="控制台" class="article-heading"><a href="#控制台" class="headerlink" title="控制台"></a>控制台<a class="article-anchor" href="#控制台" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB1a7HqKFXXXXXMXFXXXXXXXXXX-2880-1800.png" alt="inspector-console"></p>
+<h5 id="资源" class="article-heading"><a href="#资源" class="headerlink" title="资源"></a>资源<a class="article-anchor" href="#资源" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB1oY6cKFXXXXXQaXXXXXXXXXXX-2880-1800.png" alt="inspector-resource"></p>
+<h4 id="Debugger" class="article-heading"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger<a class="article-anchor" href="#Debugger" aria-hidden="true"></a></h4><p> 调试器用来调试 Weex 中的 JS 代码，能够设置断点、查看调用栈。 </p>
+<p><img src="https://img.alicdn.com/tps/TB1aPTEKFXXXXXaXXXXXXXXXXXX-1436-813.png" alt="devtools-debugger"></p>
+<h5 id="Breakpoint-and-CallStack" class="article-heading"><a href="#Breakpoint-and-CallStack" class="headerlink" title="Breakpoint and CallStack"></a>Breakpoint and CallStack<a class="article-anchor" href="#Breakpoint-and-CallStack" aria-hidden="true"></a></h5><p><img src="https://img.alicdn.com/tps/TB1_trbKFXXXXc0XVXXXXXXXXXX-2880-1800.png" alt="debugger-breakpoint"></p>
+<h4 id="集成devtools" class="article-heading"><a href="#集成devtools" class="headerlink" title="集成devtools"></a>集成devtools<a class="article-anchor" href="#集成devtools" aria-hidden="true"></a></h4><ul>
+<li>Android<ul>
+<li>请参考文档 <a href="../../references/advanced/integrate-devtool-to-android.html">Weex devtools (Android)</a>，其中有详细说明。</li>
+</ul>
+</li>
+<li>IOS<ul>
+<li>请参考文档 <a href="../../references/advanced/integrate-devtool-to-ios.html">Weex devtools (iOS)</a>， 其中有详细说明。</li>
+</ul>
+</li>
+</ul>
+<h3 id="weex-toolkit-对-weexpack-的水平扩展" class="article-heading"><a href="#weex-toolkit-对-weexpack-的水平扩展" class="headerlink" title="weex-toolkit 对 weexpack 的水平扩展"></a>weex-toolkit 对 weexpack 的水平扩展<a class="article-anchor" href="#weex-toolkit-对-weexpack-的水平扩展" aria-hidden="true"></a></h3><p><a href="https://github.com/weexteam/weex-pack" target="_blank" rel="external">weexpack</a> 是基于 Weex 快速搭建应用原型的利器。它能够帮助开发者通过命令行创建 Weex 工程，添加相应平台的 Weex app 模版，并基于模版从本地，GitHub 或者 Weex 应用市场安装插件，快速打包 Weex 应用并安装到手机运行，对于具有分享精神的开发者而言还能够创建 Weex 插件模版并发布插件到 Weex 应用市场。</p>
+<p>现在使用 <code>weex-toolkit</code> 同样支持对 <code>weexpack</code> 的命令调用,如果你当前的项目与 <code>weexpack</code> 生成的项目目录一致，那么你可以直接实现对于 <code>platform</code> 的操作，从而构建具体的 Android/IOS app 。</p>
+<h3 id="weex-platform-以及-run-命令" class="article-heading"><a href="#weex-platform-以及-run-命令" class="headerlink" title="weex platform 以及 run 命令"></a>weex platform 以及 run 命令<a class="article-anchor" href="#weex-platform-以及-run-命令" aria-hidden="true"></a></h3><p>如果我们希望在模拟器或者真机上查看 Weex 运行的效果，我们可以使用 <code>platform</code> 添加或者删除 Weex 应用模板。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex platform add ios</div></pre></td></tr></table></figure>
+<p>在第一次使用 platform/plugin 命令的时候，可能会遇到下面的界面，你只需要输入 Y 或者直接 enter 键即可。<br><img src="https://gw.alicdn.com/tfs/TB19n4AQXXXXXawXVXXXXXXXXXX-577-70.png" alt="install weexpack"></p>
+<p>添加ios平台，然后这个时候只要输入:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex run ios</div></pre></td></tr></table></figure>
+<p>就能看到启动的模拟器运行的效果了。</p>
+<h3 id="weex-plugin-命令" class="article-heading"><a href="#weex-plugin-命令" class="headerlink" title="weex plugin 命令"></a>weex plugin 命令<a class="article-anchor" href="#weex-plugin-命令" aria-hidden="true"></a></h3><p>如果你想使用<a href="https://market.dotwe.org" target="_blank" rel="external">插件市场</a>的插件，你可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex plugin add plugin_name</div></pre></td></tr></table></figure>
+<p>你只需要输入插件的名称就可以从远程添加插件到你本地的项目，比如添加 weex-chart，我们可以输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex plugin add weex-chart</div></pre></td></tr></table></figure>
+<p>我们可以使用<code>plugin remove</code>移除插件，比如移除安装好的 weex-cahrt：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex plugin remove weex-chart</div></pre></td></tr></table></figure>
+<p>关于 <code>weexpack</code> 更加详细的介绍，你可以阅读 <a href="https://github.com/weexteam/weex-pack" target="_blank" rel="external">官方文档</a>。</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/guide/tools/toolkit.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/guide/tools/toolkit.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Devtools for Android | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Devtools for Android               Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and deb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Devtools for Android">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/tools/devtools-android.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Devtools for Android               Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and deb">
+<meta property="og:image" content="https://img.shields.io/github/release/weexteam/weex_devtools_android.svg">
+<meta property="og:image" content="https://api.codacy.com/project/badge/Grade/af0790bf45c9480fb0ec90ad834b89a3">
+<meta property="og:image" content="https://codeclimate.com/github/weexteam/weex_devtools_android/badges/gpa.svg">
+<meta property="og:image" content="https://codeclimate.com/github/weexteam/weex_devtools_android/badges/issue_count.svg">
+<meta property="og:image" content="https://img.shields.io/github/issues/weexteam/weex_devtools_android.svg">
+<meta property="og:image" content="https://api.bintray.com/packages/alibabaweex/maven/weex_inspector/images/download.svg">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Devtools for Android">
+<meta name="twitter:description" content="Devtools for Android               Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and deb">
+<meta name="twitter:image" content="https://img.shields.io/github/release/weexteam/weex_devtools_android.svg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="tools" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "tools";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/tools/devtools-android.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/tools/devtools-android.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/tools">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Tools
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/index.html" class="sidebar-link  ">CLI</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/devtools.html" class="sidebar-link  ">Devtools</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/tools/devtools-android.html" class="sidebar-link current ">Devtools for Android</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/tools/devtools-ios.html" class="sidebar-link  ">Devtools for IOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/transformer.html" class="sidebar-link  ">Transformer</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/playground.html" class="sidebar-link  ">Playground</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-tools">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Devtools for Android
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Devtools-for-Android" class="article-heading"><a href="#Devtools-for-Android" class="headerlink" title="Devtools for Android"></a>Devtools for Android<a class="article-anchor" href="#Devtools-for-Android" aria-hidden="true"></a></h1><p><a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="external"><img src="https://img.shields.io/github/release/weexteam/weex_devtools_android.svg" alt="GitHub release"></a>   <a href="https://www.codacy.com/app/weex_devtools/weex_devtools_android?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=weexteam/weex_devtools_android&amp;utm_campaign=Badge_Grade" target="_blank" rel="external"><img src="https://api.codacy.com/project/badge/Grade/af0790bf45c9480fb0ec90ad834b89a3" alt="Codacy Badge"></a>     <a href="https://codeclimate.com/github/weexteam/weex_devtools_android" target="_blank" rel="external"><img src="https://codeclimate.com/github/weexteam/weex_devtools_android/badges/gpa.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/weexteam/weex_devtools_android" target="_blank" rel="external"><img src="https://codeclimate.com/github/weexteam/weex_devtools_android/badges/issue_count.svg" alt="Issue Count"></a> <a href="https://github.com/weexteam/weex_devtools_android/issues" target="_blank" rel="external"><img src="https://img.shields.io/github/issues/weexteam/weex_devtools_android.svg" alt="GitHub issues"></a>  <a href="https://bintray.com/alibabaweex/maven/weex_inspector/_latestVersion" target="_blank" rel="external"> <img src="https://api.bintray.com/packages/alibabaweex/maven/weex_inspector/images/download.svg" alt="Download"> </a></p>
+<p>Weex devtools is a custom devtools for weex that implements <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external">Chrome Debugging Protocol</a> inspired by <a href="https://github.com/facebook/stetho" target="_blank" rel="external">Stetho</a>, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page.At present The devtools consist of two part : <code>Inspector</code> and <code>Debugger</code>. If you want it work well, you must install a <code>weex-devtool</code> as debug server.</p>
+<ul>
+<li><p><strong>Inspector</strong><br>Inspector can be used to show your <code>Element</code> \ <code>NetWork</code> \ <code>Console log</code> \ <code>ScreenCast</code> \ <code>BoxModel</code> \ <code>Native View</code> and so on.</p>
+</li>
+<li><p><strong>Debugger</strong><br>Debugger can be used to debug your bundle js source, you can set <code>Breakpoint</code> \ watch <code>CallStack</code>.</p>
+</li>
+</ul>
+<h2 id="Install-and-launch-devtools-server" class="article-heading"><a href="#Install-and-launch-devtools-server" class="headerlink" title="Install and launch devtools server"></a>Install and launch devtools server<a class="article-anchor" href="#Install-and-launch-devtools-server" aria-hidden="true"></a></h2><p>Open your terminal then type <code>npm install -g weex-toolkit</code> and run.Launch it just type and run the command <code>weex debug</code>, then a Chrome web page will be opened.</p>
+<h2 id="Use-on-an-android-device-or-emulator" class="article-heading"><a href="#Use-on-an-android-device-or-emulator" class="headerlink" title="Use on an android device or emulator"></a>Use on an android device or emulator<a class="article-anchor" href="#Use-on-an-android-device-or-emulator" aria-hidden="true"></a></h2><h3 id="Taste-of-first-debug-with-playground" class="article-heading"><a href="#Taste-of-first-debug-with-playground" class="headerlink" title="Taste of first debug with playground"></a>Taste of first debug with playground<a class="article-anchor" href="#Taste-of-first-debug-with-playground" aria-hidden="true"></a></h3><p>If you are a green hand to the debug of weex, we recommend you to try your first debug with <code>playground</code>, what you need to do is just launch the playground and scan the QR code shown in the debug page which wound opened if the <code>devtools server</code> have been launched. after you scan the QR code, the web page will list your connected devices.</p>
+<p><img src="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png" alt="devtools-main" title="connecting (multiple) devices"></p>
+<h4 id="How-Debugger-Works" class="article-heading"><a href="#How-Debugger-Works" class="headerlink" title="How Debugger Works"></a>How Debugger Works<a class="article-anchor" href="#How-Debugger-Works" aria-hidden="true"></a></h4><p>Devtools expands <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external">Chrome Debugging Protocol</a> and the mechanism of communication between client and debug sever is based on <a href="https://en.wikipedia.org/wiki/JSON-RPC" target="_blank" rel="external">JSON-RPC</a>.</p>
+<h5 id="Devtools-Client" class="article-heading"><a href="#Devtools-Client" class="headerlink" title="Devtools Client"></a>Devtools Client<a class="article-anchor" href="#Devtools-Client" aria-hidden="true"></a></h5><p>Devtools Client is integrated in App as aar, it connects to debug server through webscoket protocol with out permission check. I recommend you just packaged it in your debug version consider of the security mechanism.</p>
+<h5 id="Devtools-Debug-Server" class="article-heading"><a href="#Devtools-Debug-Server" class="headerlink" title="Devtools Debug Server"></a>Devtools Debug Server<a class="article-anchor" href="#Devtools-Debug-Server" aria-hidden="true"></a></h5><p>Devtools Debug Server is the center node of the communication, it connects to both app and chrome, acts as the turn server of debugging protocol messages and the manager of the js runtime.</p>
+<h5 id="Chrome-FrontEnd" class="article-heading"><a href="#Chrome-FrontEnd" class="headerlink" title="Chrome FrontEnd"></a>Chrome FrontEnd<a class="article-anchor" href="#Chrome-FrontEnd" aria-hidden="true"></a></h5><p>Chrome’s V8 engine acts as the javascript runtime, when debug mode is enabled, all the js code run on it. On the other side we also reuse most of the Chrome’s debugging user interface, such as set breakpoint, see call stack and so on. </p>
+<p><img src="https://img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg" alt="debug sequence diagram" title="debug sequence diagram"></p>
+<h3 id="Enable-devtools-in-your-own-app" class="article-heading"><a href="#Enable-devtools-in-your-own-app" class="headerlink" title="Enable devtools in your own app"></a>Enable devtools in your own app<a class="article-anchor" href="#Enable-devtools-in-your-own-app" aria-hidden="true"></a></h3><p>Of course you can reuse the code of playground to build your own app, that is the simplest way to let your app’s js code debuggable. On the other hand QR code is not necessary, if your review the source code you can draw a conclusion that QR CODE is just a way to set <code>devtools server</code> address. following those steps you can do the same thing.</p>
+<h4 id="Gradle-dependency-on-inspector" class="article-heading"><a href="#Gradle-dependency-on-inspector" class="headerlink" title="Gradle dependency on inspector."></a>Gradle dependency on inspector.<a class="article-anchor" href="#Gradle-dependency-on-inspector" aria-hidden="true"></a></h4><p>There are two choices to set the dependency, the Choice A is recommanded if you have no change to weex_sdk or inspector, while if you use your own custom weex_sdk or inspector Choice B is suitable.</p>
+<ul>
+<li><em>A - aar dependency from jcenter</em>.<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">        compile &apos;com.taobao.android:weex_inspector:0.0.8.1&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>I strongly recommend you use the latest version since both weex sdk and devtools are developed iteratively and rapidly. See the release version list <a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="external">here</a>. All the release version will publish to the <a href="https://bintray.com/alibabaweex/maven/weex_inspector" target="_blank" rel="external">jcenter repo</a>.</p>
+<ul>
+<li><p><em>B - source code dependency.</em></p>
+<p>you need to copy the dir of inspector to the same dir of your app and add <code>include &quot;:inspector&quot;</code>in your project’s <code>settings.gradle</code> file just like playground have done, then add dependency in your app’s <code>build.gralde</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">        compile project(&apos;:inspector&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Version-compatibility" class="article-heading"><a href="#Version-compatibility" class="headerlink" title="Version compatibility"></a>Version compatibility<a class="article-anchor" href="#Version-compatibility" aria-hidden="true"></a></h5><table>
+<thead>
+<tr>
+<th>weex sdk</th>
+<th>weex inspector</th>
+<th>debug server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.8.0.1+</td>
+<td>0.0.8.1</td>
+<td>0.2.39+</td>
+</tr>
+<tr>
+<td>0.7.0+</td>
+<td>0.0.7.13</td>
+<td>0.2.38</td>
+</tr>
+<tr>
+<td>0.6.0+</td>
+<td>0.0.2.2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Initialize-in-your-XXXApplication-file" class="article-heading"><a href="#Initialize-in-your-XXXApplication-file" class="headerlink" title="Initialize in your XXXApplication file."></a>Initialize in your XXXApplication file.<a class="article-anchor" href="#Initialize-in-your-XXXApplication-file" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">    public class MyApplication extends Application &#123;</div><div class="line">      public void onCreate() &#123;</div><div class="line">      super.onCreate();</div><div class="line">      initDebugEnvironment(true, &quot;xxx.xxx.xxx.xxx&quot;/*&quot;DEBUG_SERVER_HOST&quot;*/);</div><div class="line">      &#125;</div><div class="line">      private void initDebugEnvironment(boolean enable, String host) &#123;</div><div class="line">        WXEnvironment.sRemoteDebugMode = enable;</div><div class="line">        WXEnvironment.sRemoteDebugProxyUrl = &quot;ws://&quot; + host + &quot;:8088/debugProxy/native&quot;;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Ship-It" class="article-heading"><a href="#Ship-It" class="headerlink" title="Ship It!"></a>Ship It!<a class="article-anchor" href="#Ship-It" aria-hidden="true"></a></h4><ol>
+<li>You must launch your bundle server firstly. In your weex dir, run command “./start”;</li>
+<li>Launch your remote debug server. Run command <code>weex debug</code>, chrome will open a web page show a simply guidance and QR code;</li>
+<li>Launch your app and make sure debug mode was enabled. You will see a device list in the chrome web page opened by last step, each device item have two button, <code>Debugger</code> and <code>Inspector</code>;There are two way to enable debug mode:<ul>
+<li>scaning the QR code and handle the content just like the playground have done.</li>
+<li>init it in the XXXApplication by calling <code>initDebugEnvironment(true, &quot;xxx.xxx.xxx.xxx&quot;)</code>, if you call <code>initDebugEnvironment(true, &quot;xxx.xxx.xxx.xxx&quot;)</code> after weex sdk inited, you need to call <code>WXSDKEngine.reload()</code> to refresh the runtime.</li>
+</ul>
+</li>
+<li>Once you click the button <code>Inspector</code> chrome will open a page show the inspector view, on the other side, click the button <code>Debugger</code> chrome will open a new page to show the debug view;</li>
+</ol>
+<hr>
+<h4 id="OPTIONS" class="article-heading"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a>OPTIONS<a class="article-anchor" href="#OPTIONS" aria-hidden="true"></a></h4><h5 id="OPTION-set-your-remote-bundle-server-ip" class="article-heading"><a href="#OPTION-set-your-remote-bundle-server-ip" class="headerlink" title="[OPTION] set your remote bundle server ip."></a>[<strong>OPTION</strong>] <em>set your remote bundle server ip.</em><a class="article-anchor" href="#OPTION-set-your-remote-bundle-server-ip" aria-hidden="true"></a></h5><pre><code>For example, in the playground it is in the `IndexActivity.java`, you need to change the value of `DEFAULT_IP` in IndexActivity.java from `&quot;your_current_IP&quot;` to a server ip like `&quot;30.30.30.150&quot;`:
+</code></pre><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">private static final String DEFAULT_IP = &quot;30.30.30.150&quot;; // &quot;your_current_IP&quot;;</div></pre></td></tr></table></figure>
+<h5 id="OPTION-enable-network-inspection" class="article-heading"><a href="#OPTION-enable-network-inspection" class="headerlink" title="[OPTION] enable network inspection."></a>[<strong>OPTION</strong>] <em>enable network inspection.</em><a class="article-anchor" href="#OPTION-enable-network-inspection" aria-hidden="true"></a></h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">OkHttpClient client = new OkHttpClient();</div><div class="line">client.networkInterceptors().add(new OkHttpInterceptor());</div></pre></td></tr></table></figure>
+<h6 id="Notice" class="article-heading"><a href="#Notice" class="headerlink" title="Notice"></a>Notice<a class="article-anchor" href="#Notice" aria-hidden="true"></a></h6><p>  The network inspection only support OKHttpClient right now!!! If you want to use the network inspection to catch your bundle request, you must change your bundle server ip to the real server ip.</p>
+<h4 id="Known-Issues" class="article-heading"><a href="#Known-Issues" class="headerlink" title="Known Issues"></a>Known Issues<a class="article-anchor" href="#Known-Issues" aria-hidden="true"></a></h4><p> You can report issues and bugs <a href="https://github.com/weexteam/weex_devtools_android/issues" target="_blank" rel="external">here</a>. We will reply as soon as possible.</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/tools/devtools-android.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/tools/devtools-android.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

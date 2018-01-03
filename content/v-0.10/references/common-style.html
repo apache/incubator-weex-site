@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Common Style | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Common StyleAll of weex tags share some common style rules Box Model Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Common Style">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/references/common-style.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Common StyleAll of weex tags share some common style rules Box Model Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/references/images/css-boxmodel.png">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/references/images/css-flexbox-justify.svg">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/references/images/css-flexbox-align.jpg">
+<meta property="og:image" content="https://weex.apache.org/v-0.10/references/images/css-flexbox-sample.png">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Common Style">
+<meta name="twitter:description" content="Common StyleAll of weex tags share some common style rules Box Model Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
+<meta name="twitter:image" content="https://weex.apache.org/v-0.10/references/images/css-boxmodel.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/common-style.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/api.html" class="sidebar-link  ">Component APIs</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-event.html" class="sidebar-link  ">Common Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-style.html" class="sidebar-link current ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/special-element.html" class="sidebar-link  ">Special Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/components/slider.html" class="sidebar-link  "><slider></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/index.html" class="sidebar-link  ">Build-in Components</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/api.html" class="sidebar-link  ">Component APIs</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-event.html" class="sidebar-link  ">Common Events</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/common-style.html" class="sidebar-link current ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/special-element.html" class="sidebar-link  ">Special Element</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/components/slider.html" class="sidebar-link  "><slider></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/index.html" class="sidebar-link  ">Build-in Components</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Common Style
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Common-Style" class="article-heading"><a href="#Common-Style" class="headerlink" title="Common Style"></a>Common Style<a class="article-anchor" href="#Common-Style" aria-hidden="true"></a></h1><p>All of weex tags share some common style rules</p>
+<h2 id="Box-Model" class="article-heading"><a href="#Box-Model" class="headerlink" title="Box Model"></a>Box Model<a class="article-anchor" href="#Box-Model" aria-hidden="true"></a></h2><p><img src="./images/css-boxmodel.png" alt="box model"></p>
+<p>Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.</p>
+<p>you can use the definition below in weex box model.</p>
+<ul>
+<li><code>width</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>height</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding</code>: <code>length</code> type, default value <code>0</code>, (space around content, between element content and the element border)<ul>
+<li><code>padding-left</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-right</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-top</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-bottom</code>: <code>length</code> type, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>margin</code>: <code>length</code> type, default value <code>0</code>, (space around elements, outside the border)<ul>
+<li><code>margin-left</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-right</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-top</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-bottom</code>: <code>length</code> type, default value <code>0</code></li>
+</ul>
+</li>
+<li><p><code>border</code></p>
+<ul>
+<li><code>border-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code><ul>
+<li><code>border-left-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-top-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-right-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-bottom-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+</ul>
+</li>
+<li><code>border-width</code>: <code>length</code> type, non-negative, default value <code>0</code><br><strong>DO NOT</strong> use <code>border-width:1</code>. There is a default viewport <code>&lt;viewport width=&quot;750&quot;&gt;</code>, if the actual width of a device is 720px, then <code>border-width:1</code> will be <code>border-width:0.96</code>. As weex <strong>do not</strong> support sub-pixel, this border would not be rendered.<ul>
+<li><code>border-left-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-right-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-bottom-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>border-color</code>: <code>color</code> type, default value <code>#000000</code><ul>
+<li><code>border-left-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-top-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-right-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-bottom-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+</ul>
+</li>
+<li><code>border-radius</code>: <code>length</code> type, default value <code>0</code>, (rounded borders to elements , default value is 0 meaning right angle )</li>
+</ul>
+<p>Although the the default overflow style is <code>overflow:hidden</code> in android, a view will not be clipped by its parents’ <code>border-radius</code>. This only happens on Android, it works fine on iOS.</p>
+<ul>
+<li><code>border-bottom-left-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-bottom-right-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-left-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-right-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+</ul>
+</li>
+</ul>
+<p>Notes: The rule of border-radius for a specific corner such as <code>border-top-left-radius</code> is not currently supported for component <code>&lt;image&gt;</code> and <code>&lt;text&gt;</code>.</p>
+<p>Weex box model uses <code>border-box</code> as the default value of <code>box-sizing</code>, meaning the width and height properties includes content, padding and border, but not the margin.</p>
+<p>example:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"width: 400; height: 200; margin-left: 20;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Flexbox" class="article-heading"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox<a class="article-anchor" href="#Flexbox" aria-hidden="true"></a></h2><p>Weex box style model based on the CSS flexbox, ensures that elements behave predictably and the page layout can accommodates to different screen sizes and different display devices.</p>
+<p>Flexbox consists of flex containers and flex items. If a weex element can containing other elements, it is a flex container.</p>
+<p>Notice that the old version of flexbox specification has differences with the new ones, such as whether or not to support wrapping. This is described at w3c’s working drafts, and you should notice the differences among them. Also notice that the old version is only supported below the 4.4 version of android.</p>
+<h3 id="Flex-container" class="article-heading"><a href="#Flex-container" class="headerlink" title="Flex container"></a>Flex container<a class="article-anchor" href="#Flex-container" aria-hidden="true"></a></h3><p>Flexbox is the default and only style model in Weex, so you don’t have to add <code>display: flex;</code> in a container.</p>
+<ul>
+<li><code>flex-direction</code>: values <code>row</code> | <code>column</code>, default value <code>column</code></li>
+</ul>
+<p>The flex-direction property specifies the direction of the flexible items inside the flex container. Default value is <code>column</code> (top-to-bottom).</p>
+<ul>
+<li><code>justify-content</code>: values <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code>, default value <code>flex-start</code></li>
+</ul>
+<p>The justify-content property horizontally aligns the flexible container’s items when the items do not use all available space on the main-axis. Default value is <code>flex-start</code> meaning the flex items are positioned at the beginning of the container. <code>flex-end</code> means the items are positioned at the end of the container. <code>center</code> means the items are positioned at the center of the container. <code>space-between</code> means the items are positioned with space between the lines.</p>
+<p><img src="./images/css-flexbox-justify.svg" alt="justify-content"></p>
+<ul>
+<li><code>align-items</code>: values <code>stretch</code> | <code>flex-start</code> | <code>center</code> | <code>flex-end</code>, default value <code>stretch</code></li>
+</ul>
+<p>The align-items property vertically aligns the flexible container’s items when the items do not use all available space on the cross-axis. Default value is <code>stretch</code> meaning the items are stretched to fit the container. <code>flex-start</code> means the items are positioned at the top of the container; <code>flex-end</code> means the items are positioned at the bottom of the container; <code>center</code> means items are positioned at the center of the container (vertically).</p>
+<p><img src="./images/css-flexbox-align.jpg" alt="align-items"></p>
+<h3 id="Flex-item" class="article-heading"><a href="#Flex-item" class="headerlink" title="Flex item"></a>Flex item<a class="article-anchor" href="#Flex-item" aria-hidden="true"></a></h3><ul>
+<li><code>flex</code>: <code>number</code> type, default value <code>0</code></li>
+</ul>
+<p>the flex property specifies the length of the flex item, relative to the rest of the flex items inside the same container.  If all of the flex items set <code>flex: 1</code>, they will have equal width or height on direction of flex container’s <code>flex-direction</code>. If there are two flex items, with one setting <code>flex: 1</code>, and the other setting <code>flex: 2</code>, the first one will take 1/3 container space, and the second one will take 2/3 container space. If all of flex items don’t set <code>flex</code>, they will be aligned depending on the container’s <code>justify-content</code> property.</p>
+<h2 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h2><p>a list of images with equal scales align at the vertical axis:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 300; height: 100;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>a image with fixed width aligns with a stretched text:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 300; height: 100;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"width: 100; height: 100;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"flex: 1;"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>mixed direction alignment:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"width: 100; height: 100;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"flex: 2; font-size: 32;"</span>&gt;</span>title<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"flex: 1; font-size: 16;"</span>&gt;</span>$100<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>one text align left , the other float right:</p>
+<p><img src="./images/css-flexbox-sample.png" alt="one text align left , the other float right"></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row; justify-content: space-between;"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">text</span>&gt;</span>WEEX<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">text</span>&gt;</span>2016-05-08<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Position" class="article-heading"><a href="#Position" class="headerlink" title="Position"></a>Position<a class="article-anchor" href="#Position" aria-hidden="true"></a></h2><p>we can use properties below to control placement of weex tag</p>
+<ul>
+<li><code>position</code>: values <code>relative</code> | <code>absolute</code> | <code>fixed</code> | <code>sticky</code>, default value <code>relative</code></li>
+</ul>
+<p><code>relative</code> means the item is positioned relative to its normal position. <code>absolute</code> means the item is positioned relative to its container. <code>fixed</code> keeps the elements position fixed when the page is scrolling. <code>sticky</code> keeps elements positioned inside the viewport as “stuck” at the top or “relative” at its original place depending on whether does it about to scroll out of the view.</p>
+<ul>
+<li><code>top</code>: <code>number</code> type, default value <code>0</code>, upward offset value</li>
+<li><code>bottom</code>: <code>number</code> type, default value <code>0</code>, downward offset value</li>
+<li><code>left</code>: <code>number</code> type, default value <code>0</code>, leftward offset value</li>
+<li><code>right</code>: <code>number</code> type, default value <code>0</code>, rightward offset value</li>
+</ul>
+<h3 id="Examples-1" class="article-heading"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples-1" aria-hidden="true"></a></h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 3000;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"top: 50; left: 50; ..."</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 3000;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"position: sticky; ..."</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 3000;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 50; left: 50; ..."</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Other-Common-Style" class="article-heading"><a href="#Other-Common-Style" class="headerlink" title="Other Common Style"></a>Other Common Style<a class="article-anchor" href="#Other-Common-Style" aria-hidden="true"></a></h2><ul>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<h2 id="Type-of-Style-Value" class="article-heading"><a href="#Type-of-Style-Value" class="headerlink" title="Type of Style Value"></a>Type of Style Value<a class="article-anchor" href="#Type-of-Style-Value" aria-hidden="true"></a></h2><ul>
+<li><code>length</code> type</li>
+<li><code>number</code> type</li>
+<li><code>color</code> type (<em><a href="./color-names.html">The list of color keywords.</a></em>)</li>
+<li>enumerated type</li>
+</ul>
+<h2 id="Simple-Step" class="article-heading"><a href="#Simple-Step" class="headerlink" title="Simple Step"></a>Simple Step<a class="article-anchor" href="#Simple-Step" aria-hidden="true"></a></h2><p>These up-to-down steps may help you to plan the whole style of weex pages.</p>
+<ol>
+<li>overall style: divide the whole page to different parts</li>
+<li>flex alignment: align boxes in every part of page</li>
+<li>position box: place box, set offset</li>
+<li>element specific style: set styles for certain element if needed</li>
+</ol>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/common-style.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/common-style.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CLI | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Weex-ToolkitPlease access npmjs.com for latest version Weex CLI tool set Pre Installsome dependencies need recent version of npm to install if your$ npm --version output less then 2.15.1, please run b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CLI">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/tools/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Weex-ToolkitPlease access npmjs.com for latest version Weex CLI tool set Pre Installsome dependencies need recent version of npm to install if your$ npm --version output less then 2.15.1, please run b">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CLI">
+<meta name="twitter:description" content="Weex-ToolkitPlease access npmjs.com for latest version Weex CLI tool set Pre Installsome dependencies need recent version of npm to install if your$ npm --version output less then 2.15.1, please run b">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="tools" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "tools";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/tools/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/tools/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/tools">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Tools
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/index.html" class="sidebar-link current ">CLI</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/devtools.html" class="sidebar-link  ">Devtools</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/v-0.10/tools/devtools-android.html" class="sidebar-link  ">Devtools for Android</a>
+              </li>
+            
+              <li>
+                <a href="/v-0.10/tools/devtools-ios.html" class="sidebar-link  ">Devtools for IOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/transformer.html" class="sidebar-link  ">Transformer</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/tools/playground.html" class="sidebar-link  ">Playground</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-tools">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        CLI
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Weex-Toolkit" class="article-heading"><a href="#Weex-Toolkit" class="headerlink" title="Weex-Toolkit"></a>Weex-Toolkit<a class="article-anchor" href="#Weex-Toolkit" aria-hidden="true"></a></h1><p>Please access <a href="https://www.npmjs.com/package/weex-toolkit" target="_blank" rel="external">npmjs.com</a> for latest version</p>
+<p>Weex CLI tool set</p>
+<h2 id="Pre-Install" class="article-heading"><a href="#Pre-Install" class="headerlink" title="Pre Install"></a>Pre Install<a class="article-anchor" href="#Pre-Install" aria-hidden="true"></a></h2><p>some dependencies need recent version of npm to install</p>
+<p>if your<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm --version</div></pre></td></tr></table></figure></p>
+<p>output less then <code>2.15.1</code>, please run below cmd upgrade your npm at first<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo npm install -g npm</div></pre></td></tr></table></figure></p>
+<h2 id="Install" class="article-heading"><a href="#Install" class="headerlink" title="Install"></a>Install<a class="article-anchor" href="#Install" aria-hidden="true"></a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$npm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<h2 id="Usage" class="article-heading"><a href="#Usage" class="headerlink" title="Usage"></a>Usage<a class="article-anchor" href="#Usage" aria-hidden="true"></a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex foo/bar/input_path  [options]  </div><div class="line"></div><div class="line">$weex create file_name  [options]</div><div class="line"></div><div class="line">Options:</div><div class="line">  --qr     display QR code for native runtime, **default action**</div><div class="line">  -o,--output  transform weex we file to JS Bundle, output path (single JS bundle file or dir)</div><div class="line">           [for create sub cmd] it specified we file output path                    </div><div class="line">  --watch  using with -o , watch input path , auto run transform if change</div><div class="line">           happen</div><div class="line">  -s,--server  start a http file server, weex .we file will be transforme to JS</div><div class="line">           bundle on the server , specify local root path using the option</div><div class="line">  --port    http listening port number ,default is 8081            </div><div class="line">  --wsport  websocket listening port number ,default is 8082</div><div class="line">  -f, --force   [for create sub cmd] force to replace exsisting file(s) </div><div class="line">  --version show version of weex toolkit </div><div class="line">  --help   Show help</div></pre></td></tr></table></figure>
+<h2 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h2><h4 id="crate-a-we-file-weex-source-file-using-standard-template" class="article-heading"><a href="#crate-a-we-file-weex-source-file-using-standard-template" class="headerlink" title="crate a we file(weex source file) using standard template"></a>crate a <code>we file</code>(weex source file) using standard template<a class="article-anchor" href="#crate-a-we-file-weex-source-file-using-standard-template" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex create hello-world-weex</div></pre></td></tr></table></figure>
+<p>a file named ‘hello-world-weex.we’ we be created in current directory</p>
+<h4 id="transform-a-we-file-to-JS-Bundle" class="article-heading"><a href="#transform-a-we-file-to-JS-Bundle" class="headerlink" title="transform a we file to JS Bundle"></a>transform a <code>we file</code> to JS Bundle<a class="article-anchor" href="#transform-a-we-file-to-JS-Bundle" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex your_best_weex.we  -o .</div></pre></td></tr></table></figure>
+<p><code>your_best_weex.we</code> will be transform to JS Bundle file <code>your_best_weex.js</code> , saved in your current directory</p>
+<h4 id="transform-a-we-file-to-JS-Bundle-watch-this-file-，auto-run-transformer-if-change-happen" class="article-heading"><a href="#transform-a-we-file-to-JS-Bundle-watch-this-file-，auto-run-transformer-if-change-happen" class="headerlink" title="transform a we file to JS Bundle , watch this file ，auto run transformer if change happen."></a>transform a <code>we file</code> to JS Bundle , watch this file ，auto run transformer if change happen.<a class="article-anchor" href="#transform-a-we-file-to-JS-Bundle-watch-this-file-，auto-run-transformer-if-change-happen" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex your_best_weex.we  -o . --watch</div></pre></td></tr></table></figure>
+<h4 id="transform-every-we-file-in-a-directory" class="article-heading"><a href="#transform-every-we-file-in-a-directory" class="headerlink" title="transform every we file in a directory"></a>transform every we file in a directory<a class="article-anchor" href="#transform-every-we-file-in-a-directory" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex we/file/storage/path  -o outputpath</div></pre></td></tr></table></figure>
+<p>every <code>we file</code> in <code>we/file/storage/path</code> we be transform to JS Bundle  , saved in <code>outputpath</code> path</p>
+<h4 id="preview-your-we-file-using-Weex-Playground-App" class="article-heading"><a href="#preview-your-we-file-using-Weex-Playground-App" class="headerlink" title="preview your we file using Weex Playground App"></a>preview your we file using Weex Playground App<a class="article-anchor" href="#preview-your-we-file-using-Weex-Playground-App" aria-hidden="true"></a></h4><p>download &amp; install <a href="http://alibaba.github.io/weex/download.html" target="_blank" rel="external">weex playground App</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex your_best_weex.we  --qr</div></pre></td></tr></table></figure></p>
+<p>a QR code will display in your terminal , using Playground App scan that.</p>
+<h4 id="start-http-server" class="article-heading"><a href="#start-http-server" class="headerlink" title="start http server"></a>start http server<a class="article-anchor" href="#start-http-server" aria-hidden="true"></a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$weex -s .</div></pre></td></tr></table></figure>
+<p>a http server will start running , your current directory(.) will be the document root for the server , every weex .we file will be transforme to JS Bundle when access through the server</p>
+<h2 id="Issue-amp-Feedback" class="article-heading"><a href="#Issue-amp-Feedback" class="headerlink" title="Issue &amp; Feedback"></a>Issue &amp; Feedback<a class="article-anchor" href="#Issue-amp-Feedback" aria-hidden="true"></a></h2><p><a href="https://github.com/weexteam/weex-toolkit/issues" target="_blank" rel="external">Github Issue List</a></p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/tools/index.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/tools/index.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

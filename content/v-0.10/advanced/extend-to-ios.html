@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Extend to iOS | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Extend to iOSModule extendWeex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want these features, you need to imp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Extend to iOS">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/extend-to-ios.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Extend to iOSModule extendWeex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want these features, you need to imp">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extend to iOS">
+<meta name="twitter:description" content="Extend to iOSModule extendWeex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want these features, you need to imp">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/extend-to-ios.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/extend-to-ios.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      Advanced
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/index.html" class="sidebar-link  ">How it works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-ios.html" class="sidebar-link current ">Extend to iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Extend to iOS
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Extend-to-iOS" class="article-heading"><a href="#Extend-to-iOS" class="headerlink" title="Extend to iOS"></a>Extend to iOS<a class="article-anchor" href="#Extend-to-iOS" aria-hidden="true"></a></h1><h3 id="Module-extend" class="article-heading"><a href="#Module-extend" class="headerlink" title="Module extend"></a>Module extend<a class="article-anchor" href="#Module-extend" aria-hidden="true"></a></h3><p>Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want these features, you need to implement it.</p>
+<p>For example: If you want to implement an address jumping function, you can achieve a Module following the steps below.</p>
+<h4 id="Step-to-customize-a-module" class="article-heading"><a href="#Step-to-customize-a-module" class="headerlink" title="Step to customize a module"></a>Step to customize a module<a class="article-anchor" href="#Step-to-customize-a-module" aria-hidden="true"></a></h4><ol>
+<li>Module<br> customized must implement WXModuleProtocol</li>
+<li>A macro named <code>WX_EXPORT_METHOD</code> must be added, as it is the only way to be recognized by Weex. It takes arguments that specifies the method in module   called by JavaScript code.</li>
+<li>The weexInstance should be synthesized. Each module object is bind to a specific instance.</li>
+<li>Module methods will be invoked in UI thread, so do not put time consuming operation there. If you want to  execute the whole module methods in other     thread, please implement the method <code>- (NSThread *)targetExecuteThread</code> in protocol. In the way, tasks distributed to this module will be executed in targetExecuteThread. </li>
+<li>Weex params can be String or Map.</li>
+<li>Module supports to return results to Javascript in callback. This callback is type of <code>WXModuleCallback</code>, the params of which can be String or Map.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXEventModule</div><div class="line">@synthesize weexInstance;</div><div class="line">    WX_EXPORT_METHOD(@selector(openURL:callback))</div><div class="line"></div><div class="line">- (void)openURL:(NSString *)url callback:(WXModuleCallback)callback</div><div class="line">&#123;</div><div class="line">    NSString *newURL = url;</div><div class="line">    if ([url hasPrefix:@&quot;//&quot;]) &#123;</div><div class="line">        newURL = [NSString stringWithFormat:@&quot;http:%@&quot;, url];</div><div class="line">    &#125; else if (![url hasPrefix:@&quot;http&quot;]) &#123;</div><div class="line">        newURL = [NSURL URLWithString:url relativeToURL:weexInstance.scriptURL].absoluteString;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    UIViewController *controller = [[WXDemoViewController alloc] init];</div><div class="line">    ((WXDemoViewController *)controller).url = [NSURL URLWithString:newURL];</div><div class="line"></div><div class="line">    [[weexInstance.viewController navigationController] pushViewController:controller animated:YES];</div><div class="line">    callback(@&#123;@&quot;result&quot;:@&quot;success&quot;&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<h4 id="Register-the-module" class="article-heading"><a href="#Register-the-module" class="headerlink" title="Register the module"></a>Register the module<a class="article-anchor" href="#Register-the-module" aria-hidden="true"></a></h4><p>You can register the customized module by calling the method <code>registerModule:withClass</code> in WXSDKEngine.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">*  @abstract Registers a module for a given name</div><div class="line">*  @param name The module name to register</div><div class="line">*  @param clazz  The module class to register</div><div class="line">**/</div><div class="line">+ (void)registerModule:(NSString *)name withClass:(Class)clazz;</div><div class="line"></div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div></pre></td></tr></table></figure>
+<h3 id="Handler-extend" class="article-heading"><a href="#Handler-extend" class="headerlink" title="Handler extend"></a>Handler extend<a class="article-anchor" href="#Handler-extend" aria-hidden="true"></a></h3><p>Weex SDK doesn’t have capabilitis, such as image download 、navigator operation，please implement these protocols by yourself.</p>
+<h4 id="WXImgLoaderProtocol" class="article-heading"><a href="#WXImgLoaderProtocol" class="headerlink" title="WXImgLoaderProtocol"></a>WXImgLoaderProtocol<a class="article-anchor" href="#WXImgLoaderProtocol" aria-hidden="true"></a></h4><p><font color="gray"><br>Weex SDK has no image download capability, you need to implement <code>WXImgLoaderProtocol</code>. Refer to the following examples.</font></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXImageLoaderProtocol.h</div><div class="line">@protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line"></div><div class="line">/**</div><div class="line">    * @abstract Creates a image download handler with a given URL</div><div class="line">    * @param imageUrl The URL of the image to download</div><div class="line">    * @param imageFrame  The frame of the image you want to set</div><div class="line">    * @param options : The options to be used for this download</div><div class="line">    * @param completedBlock : A block called once the download is completed.</div><div class="line">    image : the image which has been download to local.</div><div class="line">    error : the error which has happened in download.</div><div class="line">    finished : a Boolean value indicating whether download action has finished.</div><div class="line">    */</div><div class="line">    -(id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">    @end</div></pre></td></tr></table></figure>
+<p>Implement above protocol as follows.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImgLoaderDefaultImpl</div><div class="line">#pragma mark -</div><div class="line">#pragma mark WXImgLoaderProtocol</div><div class="line"></div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock</div><div class="line">&#123;</div><div class="line">    if ([url hasPrefix:@&quot;//&quot;]) &#123;</div><div class="line">        url = [@&quot;http:&quot; stringByAppendingString:url];</div><div class="line">    &#125;</div><div class="line">    return (id&lt;WXImageOperationProtocol&gt;)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) &#123;     </div><div class="line">    &#125; completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) &#123;</div><div class="line">    if (completedBlock) &#123;</div><div class="line">        completedBlock(image, error, finished);</div><div class="line">    &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h4 id="Register-the-handler" class="article-heading"><a href="#Register-the-handler" class="headerlink" title="Register the handler"></a>Register the handler<a class="article-anchor" href="#Register-the-handler" aria-hidden="true"></a></h4><p>You can register the handler which implements the protocol by calling  <code>registerHandler:withProtocol</code> in WXSDKEngine.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">* @abstract Registers a handler for a given handler instance and specific protocol</div><div class="line">* @param handler The handler instance to register</div><div class="line">* @param protocol The protocol to confirm</div><div class="line">*/</div><div class="line">+ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;</div><div class="line">        </div><div class="line">[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];</div></pre></td></tr></table></figure>
+<h2 id="Custom-Native-Components-for-iOS" class="article-heading"><a href="#Custom-Native-Components-for-iOS" class="headerlink" title="Custom Native Components for iOS"></a>Custom Native Components for iOS<a class="article-anchor" href="#Custom-Native-Components-for-iOS" aria-hidden="true"></a></h2><h3 id="Component-extend" class="article-heading"><a href="#Component-extend" class="headerlink" title="Component extend"></a>Component extend<a class="article-anchor" href="#Component-extend" aria-hidden="true"></a></h3><p>There are a lot of native components ready to be used in the Weex SDK,  but users always have their own use cases. You might have written an awesome native UI widget in your previous work and just want to wrap up it and export to Weex. So we provide a way to enable developers to create their own custom fully-native components.</p>
+<p>This guide will use the implementation of existing component <code>image</code> to show you how to build a native component. It will also assume that you are familiar with iOS programming.</p>
+<h4 id="Registration" class="article-heading"><a href="#Registration" class="headerlink" title="Registration"></a>Registration<a class="article-anchor" href="#Registration" aria-hidden="true"></a></h4><p>Defining a custom native component is simple. Just call <code>[WXSDKEngine registerComponent:withClass:]</code> with the component’s tag name as first argument.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[WXSDKEngine registerComponent:@&quot;image&quot; withClass:[WXImageComponent class]];</div></pre></td></tr></table></figure>
+<p>Then you can create a <code>WXImageComponent</code> class to represent the implementation of image component.</p>
+<p>Now you can use <code>&lt;image&gt;</code> wherever you want in the template.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">image</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="Adding-Properties" class="article-heading"><a href="#Adding-Properties" class="headerlink" title="Adding Properties"></a>Adding Properties<a class="article-anchor" href="#Adding-Properties" aria-hidden="true"></a></h4><p>The next thing we can do is to extend some native properties to make the component more powerful. As an image, let’s say we should have a <code>src</code> attribute as image’s remote source and a <code>resize</code> attribute as image’s resize mode(contain/cover/stretch).</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@interface WXImageComponent ()</div><div class="line"></div><div class="line">@property (nonatomic, strong) NSString *imageSrc;</div><div class="line">@property (nonatomic, assign) UIViewContentMode resizeMode;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>All of the styles, attributes and events will be passed to the component’s initialization method, so here you can store the properties which you are interested in.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImageComponent</div><div class="line"></div><div class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>The properties getted in the attributes are of <code>id</code> type, so we have to convert them to the type we want using a conversion function.  Basic conversion functions can be found in the <code>WXConvert</code> file,  or you can just add your own conversion function.</p>
+<h4 id="Hooking-Render-Life-Cycle" class="article-heading"><a href="#Hooking-Render-Life-Cycle" class="headerlink" title="Hooking Render Life Cycle"></a>Hooking Render Life Cycle<a class="article-anchor" href="#Hooking-Render-Life-Cycle" aria-hidden="true"></a></h4><p>A Native Component has a life cycle managed by Weex. Weex creates it, layout it, renders it and destroys it.</p>
+<p>Weex offers component life cycle hooks that give you visibility into these key moments and the ability to act when they occur.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">method</th>
+<th>description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">initWithRef:type:…</td>
+<td>Initializes a new component using the specified  properties. </td>
+</tr>
+<tr>
+<td style="text-align:center">layoutDidFinish</td>
+<td>Called when the component has just laid out.</td>
+</tr>
+<tr>
+<td style="text-align:center">loadView</td>
+<td>Creates the view that the component manages.  </td>
+</tr>
+<tr>
+<td style="text-align:center">viewWillLoad</td>
+<td>Called before the load of component’s view .  </td>
+</tr>
+<tr>
+<td style="text-align:center">viewDidLoad</td>
+<td>Called after the component’s view is loaded and set.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewWillUnload</td>
+<td>Called just before releasing the component’s view.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewDidUnload</td>
+<td>Called when the component’s view is released.</td>
+</tr>
+<tr>
+<td style="text-align:center">updateStyles:</td>
+<td>Called when component’s style are updated.</td>
+</tr>
+<tr>
+<td style="text-align:center">updateAttributes:</td>
+<td>Called when component’s attributes are updated.</td>
+</tr>
+<tr>
+<td style="text-align:center">addEvent:</td>
+<td>Called when adding an event to the component.</td>
+</tr>
+<tr>
+<td style="text-align:center">removeEvent:</td>
+<td>Called when removing an event frome the component.</td>
+</tr>
+</tbody>
+</table>
+<p>As in the image component example, if we need to use our own image view, we can override the <code>loadView</code> method.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (UIView *)loadView</div><div class="line">&#123;</div><div class="line">    return [[WXImageView alloc] init];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Now Weex will use <code>WXImageView</code> to render the <code>image</code> component.</p>
+<p>As an image component, we will need to fetch the remote image and set it to the image view.  This can be done in <code>viewDidLoad</code> method when the view is created and loaded. <code>viewDidLoad</code> is also the best time to perform additional initialization for your view， such as content mode changing.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    UIImageView *imageView = (UIImageView *)self.view;</div><div class="line">    imageView.contentMode = _resizeMode;</div><div class="line">    imageView.userInteractionEnabled = YES;</div><div class="line">    imageView.clipsToBounds = YES;</div><div class="line">    imageView.exclusiveTouch = YES;</div><div class="line">    </div><div class="line">    // Do your image fetching and updating logic</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>If image’s remote source can be changed, you can also hook the <code>updateAttributes:</code> method to perform your attributes changing logic. Component’s view always has been loaded while <code>updateAttributes:</code> or <code>updateStyles:</code> is called.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)updateAttributes:(NSDictionary *)attributes</div><div class="line">&#123;</div><div class="line">    if (attributes[@&quot;src&quot;]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        // Do your image updating logic</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if (attributes[@&quot;resize&quot;]) &#123;</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">        self.view.contentMode = _resizeMode;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Maybe there is even more life cycle hooks you might need to consider, such as <code>layoutDidFinish</code> while layout computing is finished.  If you want to go deeper, check out the <code>WXComponent.h</code> file in the source code.</p>
+<p>Now you can use <code>&lt;image&gt;</code> and its attributes wherever you want in the template.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"your-custom-style"</span> <span class="attr">src</span>=<span class="string">"image-remote-source"</span> <span class="attr">resize</span>=<span class="string">"contain/cover/stretch"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="Component-Method" class="article-heading"><a href="#Component-Method" class="headerlink" title="Component Method"></a>Component Method<a class="article-anchor" href="#Component-Method" aria-hidden="true"></a></h4><p>from WeexSDK <code>0.9.5</code>, you can define your component method by macro <code>WX_EXPORT_METHOD</code><br>for example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXMyComponent</div><div class="line"> +WX_EXPORT_METHOD(@selector(focus))</div><div class="line"> +- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line"> &#123;</div><div class="line">     if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">         // handle your attributes</div><div class="line">         // handle your styles</div><div class="line">     &#125;</div><div class="line">     </div><div class="line">     return self;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> </div><div class="line"> - (void)focus</div><div class="line">   &#123;</div><div class="line">      NSLog(@&quot;you got it&quot;);</div><div class="line">   &#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>after your registration for your own custom component, now you can call it in your js file.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">template</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">
+  <span class="built_in">module</span>.exports = {
+    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+      <span class="keyword">this</span>.$el(<span class="string">'mycomponent'</span>).focus();
+    }
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/extend-to-ios.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/extend-to-ios.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

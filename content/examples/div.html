@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>div | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;div class=&quot;box&quot;&amp;gt;&amp;lt;/div&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;style scoped&amp;gt;  .box &amp;#123;    border-width: 2px;    border-style: solid;    border-color: #BBB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="div">
+<meta property="og:url" content="https://weex.apache.org/examples/div.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;div class=&quot;box&quot;&amp;gt;&amp;lt;/div&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;style scoped&amp;gt;  .box &amp;#123;    border-width: 2px;    border-style: solid;    border-color: #BBB">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="div">
+<meta name="twitter:description" content="&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;div class=&quot;box&quot;&amp;gt;&amp;lt;/div&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;style scoped&amp;gt;  .box &amp;#123;    border-width: 2px;    border-style: solid;    border-color: #BBB">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="example" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "example";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/examples/div.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/examples/div.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="example-wrapper clearfix">
+  <div class="horizontal">
+    <h2>div</h2>
+    <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#BBB</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">250px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">250px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">250px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">250px</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#EEE</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>      
+  </div>
+  <div class="horizontal phone">
+    <div class="mock-phone">
+      <div class="inner">
+        <iframe frameborder="0" src="about:blank" id="iframe">
+        </iframe>
+      </div>
+      <div class="camera"></div>
+      <div class="earpiece"></div>
+      <div class="home-btn"></div>
+    </div>
+  </div>
+  <div class="horizontal qrcode">
+    <div id="qrcode-img"></div>
+    <p>Playground Scan</p>
+    <p>目前还未提供 Playground 正式版下载，需要手动 build playground。</p>
+  </div>
+</div>
+<script>
+  var WEB_BUNDLE_URL = location.origin + ROOT + 'js/examples/' + 'div' + '.web.js'
+  var NATIVE_BUNDLE_URL = location.origin + ROOT + 'js/examples/' + 'div' + '.weex.js'
+</script>
+
+<script src="/js/qrcode.min.js"></script>
+<script src="/js/example.js"></script>
+
+<script>
+var qrcode = new QRCode(document.getElementById("qrcode-img"), {
+    text: NATIVE_BUNDLE_URL,
+    width: 150,
+    height: 150,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+</script>
+
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

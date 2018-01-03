@@ -1,0 +1,3883 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Web standards | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Web standardsHTMLrefs: https://www.advancedwebranking.com/html/ 2016-12-11 Overview   percentage name supported     98.1% &amp;lt;head&amp;gt; -   97.9% &amp;lt;body&amp;gt; -   97.9% &amp;lt;html&amp;gt; -   97% &amp;lt;title&amp;g">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Web standards">
+<meta property="og:url" content="https://weex.apache.org/references/web-standards.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Web standardsHTMLrefs: https://www.advancedwebranking.com/html/ 2016-12-11 Overview   percentage name supported     98.1% &amp;lt;head&amp;gt; -   97.9% &amp;lt;body&amp;gt; -   97.9% &amp;lt;html&amp;gt; -   97% &amp;lt;title&amp;g">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web standards">
+<meta name="twitter:description" content="Web standardsHTMLrefs: https://www.advancedwebranking.com/html/ 2016-12-11 Overview   percentage name supported     98.1% &amp;lt;head&amp;gt; -   97.9% &amp;lt;body&amp;gt; -   97.9% &amp;lt;html&amp;gt; -   97% &amp;lt;title&amp;g">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/web-standards.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/web-standards.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link current ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/references">
+  
+    <option value="2v" selected>v2.x</option>
+    <option value="1v">v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/index.html" class="sidebar-link  ">Common Options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/bubble.html" class="sidebar-link  ">Event Bubble</a>
+              </li>
+            
+              <li>
+                <a href="/references/downgrade.html" class="sidebar-link  ">downgrade</a>
+              </li>
+            
+              <li>
+                <a href="/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+              </li>
+            
+              <li>
+                <a href="/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/references/color-names.html" class="sidebar-link  ">Color name</a>
+              </li>
+            
+              <li>
+                <a href="/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/references/path.html" class="sidebar-link  ">Path</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/components/index.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/unit.html" class="sidebar-link  ">CSS unit</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/common-event.html" class="sidebar-link  ">Common Events</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link current ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/vue/difference-with-web.html" class="sidebar-link  ">Difference with Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+              </li>
+            
+              <li>
+                <a href="/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/references/platform-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
+              </li>
+            
+              <li>
+                <a href="/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Web standards
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Web-standards" class="article-heading"><a href="#Web-standards" class="headerlink" title="Web standards"></a>Web standards<a class="article-anchor" href="#Web-standards" aria-hidden="true"></a></h1><h2 id="HTML" class="article-heading"><a href="#HTML" class="headerlink" title="HTML"></a>HTML<a class="article-anchor" href="#HTML" aria-hidden="true"></a></h2><p>refs: <a href="https://www.advancedwebranking.com/html/" target="_blank" rel="external">https://www.advancedwebranking.com/html/</a> 2016-12-11</p>
+<h3 id="Overview" class="article-heading"><a href="#Overview" class="headerlink" title="Overview"></a>Overview<a class="article-anchor" href="#Overview" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>percentage</th>
+<th>name</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>98.1%</td>
+<td><code>&lt;head&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>97.9%</td>
+<td><code>&lt;body&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>97.9%</td>
+<td><code>&lt;html&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>97%</td>
+<td><code>&lt;title&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>93.9%</td>
+<td><code>&lt;meta&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>89.9%</td>
+<td><code>&lt;div&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>89.6%</td>
+<td><code>&lt;a&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>88.5%</td>
+<td><code>&lt;script&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>86.5%</td>
+<td><code>&lt;link&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>86.3%</td>
+<td><code>&lt;img&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>81.5%</td>
+<td><code>&lt;p&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>75.6%</td>
+<td><code>&lt;span&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>73.8%</td>
+<td><code>&lt;li&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>73.7%</td>
+<td><code>&lt;ul&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>70.3%</td>
+<td><code>&lt;br&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>60.4%</td>
+<td><code>&lt;style&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>55.8%</td>
+<td><code>&lt;h1&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>52.7%</td>
+<td><code>&lt;h2&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>48.4%</td>
+<td><code>&lt;input&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>46.9%</td>
+<td><code>&lt;form&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>44.3%</td>
+<td><code>&lt;strong&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>43.1%</td>
+<td><code>&lt;h3&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>30.9%</td>
+<td><code>&lt;table&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>30.3%</td>
+<td><code>&lt;tr&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>30.2%</td>
+<td><code>&lt;td&gt;</code></td>
+<td>✕</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Forms" class="article-heading"><a href="#Forms" class="headerlink" title="Forms"></a>Forms<a class="article-anchor" href="#Forms" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>percentage</th>
+<th>name</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>49.5%</td>
+<td><code>&lt;option&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>30.2%</td>
+<td><code>&lt;input&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>16.6%</td>
+<td>&gt; <code>[type=&quot;hidden&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>8%</td>
+<td>&gt; <code>[type=&quot;text&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>4.2%</td>
+<td>&gt; <code>[type=&quot;submit&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>2%</td>
+<td>&gt; <code>[type=&quot;checkbox&quot;]</code></td>
+<td>- (<code>&lt;switch&gt;</code>)</td>
+</tr>
+<tr>
+<td>1.2%</td>
+<td>&gt; <code>[type=&quot;email&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>1.1%</td>
+<td>&gt; <code>[type=&quot;radio&quot;]</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.9%</td>
+<td>&gt; <code>[type=&quot;image&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0.8%</td>
+<td>&gt; <code>[type=&quot;button&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0.6%</td>
+<td>&gt; <code>[type=&quot;search&quot;]</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.6%</td>
+<td>&gt; <code>[type=&quot;password&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0.1%</td>
+<td>&gt; <code>[type=&quot;tel&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0.1%</td>
+<td>&gt; <code>[type=&quot;number&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;reset&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;file&quot;]</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;date&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;url&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;range&quot;]</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;color&quot;]</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;time&quot;]</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;datetime-local&quot;]</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>7.2%</td>
+<td><code>&lt;label&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>6.1%</td>
+<td><code>&lt;form&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>3.7%</td>
+<td><code>&lt;button&gt;</code></td>
+<td>- (can be customized)</td>
+</tr>
+<tr>
+<td>2.6%</td>
+<td>&gt; <code>[type=&quot;button&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>1.3%</td>
+<td>&gt; <code>[type=&quot;submit&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0%</td>
+<td>&gt; <code>[type=&quot;reset&quot;]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>1.9%</td>
+<td><code>&lt;select&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.7%</td>
+<td><code>&lt;textarea&gt;</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>0.5%</td>
+<td><code>&lt;fieldset&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0.1%</td>
+<td><code>&lt;optgroup&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1%</td>
+<td><code>&lt;legend&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0%</td>
+<td><code>&lt;progress&gt;</code></td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0%</td>
+<td><code>&lt;datalist&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0%</td>
+<td><code>&lt;output&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0%</td>
+<td><code>&lt;meter&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSS-Properties" class="article-heading"><a href="#CSS-Properties" class="headerlink" title="CSS Properties"></a>CSS Properties<a class="article-anchor" href="#CSS-Properties" aria-hidden="true"></a></h2><p>refs: <a href="https://www.chromestatus.com/metrics/feature/popularity" target="_blank" rel="external">https://www.chromestatus.com/metrics/feature/popularity</a> 2016-12-11</p>
+<table>
+<thead>
+<tr>
+<th>percentage</th>
+<th>name</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90.5115%</td>
+<td>display</td>
+<td>✕ <code>flex</code> only</td>
+</tr>
+<tr>
+<td>89.8243%</td>
+<td>margin</td>
+<td>✓ (not support combo)</td>
+</tr>
+<tr>
+<td>88.7012%</td>
+<td>width</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>88.6468%</td>
+<td>overflow</td>
+<td>✓ iOS only, <code>hidden</code> only for Android</td>
+</tr>
+<tr>
+<td>88.6432%</td>
+<td>background-color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>88.0803%</td>
+<td>height</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>87.7648%</td>
+<td>font-size</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>87.3837%</td>
+<td>padding</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>87.2721%</td>
+<td>color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>86.9788%</td>
+<td>text-align</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>86.6841%</td>
+<td>position</td>
+<td>✓ <code>relative</code> by default, <code>static</code> not supported</td>
+</tr>
+<tr>
+<td>86.6039%</td>
+<td>font-family</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>86.5943%</td>
+<td>font-weight</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>85.0072%</td>
+<td>opacity</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>80.6911%</td>
+<td>max-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>79.4476%</td>
+<td>box-sizing</td>
+<td>✕ <code>border-box</code> only</td>
+</tr>
+<tr>
+<td>75.7623%</td>
+<td>max-height</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>74.9939%</td>
+<td>webkit-user-select</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>57.0292%</td>
+<td>align-items</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>56.8182%</td>
+<td>justify-content</td>
+<td>✓ <code>space-around</code> not supported well in browser</td>
+</tr>
+<tr>
+<td>50.5941%</td>
+<td>flex-direction</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>48.5052%</td>
+<td>border</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>47.5161%</td>
+<td>top</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>46.9136%</td>
+<td>background</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>46.1552%</td>
+<td>cursor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>46.1443%</td>
+<td>margin-left</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>46.0956%</td>
+<td>left</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>46.0848%</td>
+<td>text-decoration</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.9575%</td>
+<td>float</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>45.8391%</td>
+<td>border-bottom</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.7639%</td>
+<td>padding-left</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.7128%</td>
+<td>margin-top</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.7013%</td>
+<td>line-height</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.5836%</td>
+<td>background-image</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>45.0837%</td>
+<td>z-index</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>45.0649%</td>
+<td>right</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.0516%</td>
+<td>margin-bottom</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>45.0459%</td>
+<td>white-space</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>44.8710%</td>
+<td>margin-right</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>44.8476%</td>
+<td>vertical-align</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>44.6306%</td>
+<td>padding-top</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>44.1466%</td>
+<td>border-radius</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>44.0136%</td>
+<td>border-top</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>43.9815%</td>
+<td>padding-bottom</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>43.9392%</td>
+<td>padding-right</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>43.8539%</td>
+<td>visibility</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>43.4306%</td>
+<td>background-position</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>43.4098%</td>
+<td>background-repeat</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>43.0391%</td>
+<td>clear</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>42.9100%</td>
+<td>bottom</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>42.2092%</td>
+<td>content</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>42.0690%</td>
+<td>box-shadow</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>41.9004%</td>
+<td>border-color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>41.7341%</td>
+<td>outline</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>41.4297%</td>
+<td>border-right</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>41.2605%</td>
+<td>border-left</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>41.1127%</td>
+<td>min-height</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>41.0736%</td>
+<td>font-style</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>41.0523%</td>
+<td>min-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>40.4298%</td>
+<td>list-style</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>39.7341%</td>
+<td>font</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>38.8999%</td>
+<td>background-size</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>38.7811%</td>
+<td>border-width</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>38.7718%</td>
+<td>border-collapse</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>37.8110%</td>
+<td>border-style</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>37.4962%</td>
+<td>text-overflow</td>
+<td>✓ must work with <code>lines</code></td>
+</tr>
+<tr>
+<td>37.3471%</td>
+<td>text-transform</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>37.2154%</td>
+<td>transition</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>36.5155%</td>
+<td>overflow-y</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>36.3025%</td>
+<td>transform</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>36.2488%</td>
+<td>text-indent</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>35.5075%</td>
+<td>text-shadow</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>34.7607%</td>
+<td>webkit-appearance</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>34.1925%</td>
+<td>list-style-type</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>34.0238%</td>
+<td>border-spacing</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>33.6664%</td>
+<td>word-wrap</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>31.9961%</td>
+<td>overflow-x</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>31.9922%</td>
+<td>zoom</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>31.2495%</td>
+<td>border-bottom-left-radius</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>31.1306%</td>
+<td>pointer-events</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>31.1229%</td>
+<td>border-top-left-radius</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>30.2131%</td>
+<td>border-bottom-color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>29.9608%</td>
+<td>border-top-color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>29.4297%</td>
+<td>border-bottom-right-radius</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>29.2668%</td>
+<td>border-top-right-radius</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>28.6489%</td>
+<td>letter-spacing</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>27.8327%</td>
+<td>animation</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>26.6738%</td>
+<td>border-right-width</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>26.0169%</td>
+<td>src</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>25.2661%</td>
+<td>clip</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>25.2512%</td>
+<td>webkit-font-smoothing</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>25.1971%</td>
+<td>border-bottom-width</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>25.0246%</td>
+<td>border-right-color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>24.7790%</td>
+<td>direction</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>24.4094%</td>
+<td>webkit-tap-highlight-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>23.9751%</td>
+<td>border-left-color</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>23.9321%</td>
+<td>border-top-width</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>23.7902%</td>
+<td>fill</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>23.2617%</td>
+<td>border-left-width</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>22.7278%</td>
+<td>table-layout</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>21.5766%</td>
+<td>word-break</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>20.4319%</td>
+<td>background-clip</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>19.3198%</td>
+<td>transform-origin</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>18.9233%</td>
+<td>filter</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>17.7879%</td>
+<td>resize</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>16.2501%</td>
+<td>flex</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>15.1656%</td>
+<td>font-variant</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>14.9181%</td>
+<td>text-rendering</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>14.7125%</td>
+<td>webkit-filter</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>14.5263%</td>
+<td>transition-duration</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>14.3966%</td>
+<td>transition-property</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>14.2124%</td>
+<td>webkit-box-orient</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>13.5432%</td>
+<td>outline-offset</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>12.9300%</td>
+<td>transition-timing-function</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>12.2788%</td>
+<td>unicode-range</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>12.0880%</td>
+<td>word-spacing</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>11.9124%</td>
+<td>quotes</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>11.6800%</td>
+<td>border-bottom-style</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>11.4263%</td>
+<td>webkit-background-clip</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>11.0070%</td>
+<td>flex-grow</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>10.5925%</td>
+<td>backface-visibility</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>10.4417%</td>
+<td>animation-name</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>10.4302%</td>
+<td>stroke</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>10.4144%</td>
+<td>animation-duration</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>10.2804%</td>
+<td>touch-action</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.9663%</td>
+<td>list-style-position</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.8662%</td>
+<td>order</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.7770%</td>
+<td>outline-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.7504%</td>
+<td>transition-delay</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.4689%</td>
+<td>border-top-style</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>9.3474%</td>
+<td>webkit-box-pack</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.3078%</td>
+<td>webkit-box-align</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.2375%</td>
+<td>page-break-inside</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>9.1898%</td>
+<td>webkit-line-clamp</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.9350%</td>
+<td>list-style-image</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.8339%</td>
+<td>page-break-after</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.5735%</td>
+<td>speak</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.4754%</td>
+<td>unicode-bidi</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.4307%</td>
+<td>animation-timing-function</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.1464%</td>
+<td>webkit-box-flex</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>8.0048%</td>
+<td>orphans</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>7.9947%</td>
+<td>widows</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>7.6671%</td>
+<td>flex-wrap</td>
+<td>✓ not supported well in browser</td>
+</tr>
+<tr>
+<td>7.5756%</td>
+<td>animation-fill-mode</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>7.4163%</td>
+<td>animation-delay</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>7.3284%</td>
+<td>border-left-style</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>7.1586%</td>
+<td>outline-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>6.9102%</td>
+<td>flex-shrink</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>6.7754%</td>
+<td>perspective</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>6.7748%</td>
+<td>border-right-style</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>6.4619%</td>
+<td>outline-style</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>6.0382%</td>
+<td>animation-iteration-count</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.9838%</td>
+<td>background-origin</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.9714%</td>
+<td>fill-opacity</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.9357%</td>
+<td>will-change</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.3740%</td>
+<td>stroke-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.3172%</td>
+<td>transform-style</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.2608%</td>
+<td>overflow-wrap</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>5.1730%</td>
+<td>background-attachment</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>4.9039%</td>
+<td>counter-increment</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>4.5950%</td>
+<td>counter-reset</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>4.5031%</td>
+<td>align-self</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>4.4109%</td>
+<td>webkit-box-ordinal-group</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>4.4046%</td>
+<td>webkit-animation-direction</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.7598%</td>
+<td>background-position-x</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.6867%</td>
+<td>border-image</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.6601%</td>
+<td>background-position-y</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.5749%</td>
+<td>webkit-user-drag</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.3376%</td>
+<td>flex-basis</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.1840%</td>
+<td>align-content</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.1832%</td>
+<td>flex-flow</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.1774%</td>
+<td>image-rendering</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>3.0879%</td>
+<td>webkit-margin-start</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.9551%</td>
+<td>font-stretch</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.8934%</td>
+<td>empty-cells</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.7619%</td>
+<td>webkit-margin-after</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.7220%</td>
+<td>perspective-origin</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.6125%</td>
+<td>webkit-margin-end</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.6089%</td>
+<td>column-count</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.5880%</td>
+<td>webkit-text-fill-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.5466%</td>
+<td>webkit-box-direction</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.4618%</td>
+<td>font-feature-settings</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.3959%</td>
+<td>webkit-mask-image</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.3431%</td>
+<td>webkit-padding-end</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.2555%</td>
+<td>stroke-dasharray</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.1788%</td>
+<td>user-select</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.1679%</td>
+<td>object-fit</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.0643%</td>
+<td>column-gap</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.0459%</td>
+<td>text-size-adjust</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2.0253%</td>
+<td>caption-side</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.9695%</td>
+<td>stroke-dashoffset</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.7923%</td>
+<td>stroke-linecap</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.7861%</td>
+<td>animation-direction</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.7559%</td>
+<td>webkit-font-feature-settings</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.7404%</td>
+<td>stroke-opacity</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.5926%</td>
+<td>stroke-miterlimit</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.5786%</td>
+<td>fill-rule</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.4859%</td>
+<td>webkit-user-modify</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.3439%</td>
+<td>webkit-border-image</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.3091%</td>
+<td>animation-play-state</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.2676%</td>
+<td>contain</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.2029%</td>
+<td>webkit-padding-start</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.1840%</td>
+<td>webkit-margin-before</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.1269%</td>
+<td>page-break-before</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.1222%</td>
+<td>webkit-margin-top-collapse</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.0418%</td>
+<td>columns</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>1.0354%</td>
+<td>webkit-mask-size</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.9650%</td>
+<td>border-image-slice</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.9425%</td>
+<td>stop-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.9408%</td>
+<td>webkit-mask-repeat</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.9125%</td>
+<td>webkit-box-lines</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.8804%</td>
+<td>webkit-column-break-inside</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.8752%</td>
+<td>size</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.8334%</td>
+<td>font-kerning</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.8034%</td>
+<td>stroke-linejoin</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.7869%</td>
+<td>tab-size</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.7689%</td>
+<td>break-inside</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.7589%</td>
+<td>webkit-text-stroke-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.7353%</td>
+<td>column-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.6924%</td>
+<td>webkit-mask-position</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.6869%</td>
+<td>border-image-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.6323%</td>
+<td>border-image-repeat</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.5994%</td>
+<td>border-image-outset</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.5885%</td>
+<td>all</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.5859%</td>
+<td>webkit-text-stroke-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.5435%</td>
+<td>webkit-print-color-adjust</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.5420%</td>
+<td>webkit-text-stroke</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.5195%</td>
+<td>writing-mode</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4741%</td>
+<td>clip-rule</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4685%</td>
+<td>webkit-clip-path</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4578%</td>
+<td>text-anchor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4535%</td>
+<td>shape-rendering</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4526%</td>
+<td>webkit-column-break-before</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4494%</td>
+<td>clip-path</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4452%</td>
+<td>webkit-mask</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4393%</td>
+<td>mix-blend-mode</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4166%</td>
+<td>text-align-last</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.4033%</td>
+<td>column-rule</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3990%</td>
+<td>webkit-mask-box-image</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3989%</td>
+<td>font-variant-ligatures</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3881%</td>
+<td>column-fill</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3865%</td>
+<td>webkit-line-break</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3857%</td>
+<td>border-image-source</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3528%</td>
+<td>stop-opacity</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3075%</td>
+<td>webkit-perspective-origin-y</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.3054%</td>
+<td>webkit-perspective-origin-x</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2994%</td>
+<td>webkit-writing-mode</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2717%</td>
+<td>dominant-baseline</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2634%</td>
+<td>column-rule-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2586%</td>
+<td>webkit-box-decoration-break</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2467%</td>
+<td>webkit-text-security</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2374%</td>
+<td>webkit-background-origin</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2146%</td>
+<td>font-variant-caps</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.2005%</td>
+<td>column-rule-style</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1976%</td>
+<td>shape-outside</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1971%</td>
+<td>webkit-padding-before</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1896%</td>
+<td>break-after</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1782%</td>
+<td>webkit-padding-after</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1774%</td>
+<td>text-orientation</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1747%</td>
+<td>webkit-text-orientation</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1655%</td>
+<td>mask</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1626%</td>
+<td>alignment-baseline</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1572%</td>
+<td>page</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1530%</td>
+<td>webkit-column-break-after</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1521%</td>
+<td>webkit-box-reflect</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1504%</td>
+<td>webkit-text-emphasis-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1499%</td>
+<td>object-position</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1470%</td>
+<td>break-before</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1455%</td>
+<td>webkit-margin-collapse</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1452%</td>
+<td>baseline-shift</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1451%</td>
+<td>hyphens</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1309%</td>
+<td>rx</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1304%</td>
+<td>ry</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1256%</td>
+<td>background-blend-mode</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1136%</td>
+<td>font-variant-numeric</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1135%</td>
+<td>background-repeat-x</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1123%</td>
+<td>background-repeat-y</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1086%</td>
+<td>webkit-text-emphasis</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1058%</td>
+<td>webkit-rtl-ordering</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1040%</td>
+<td>column-rule-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1036%</td>
+<td>isolation</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.1002%</td>
+<td>webkit-highlight</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0843%</td>
+<td>webkit-transform-origin-y</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0786%</td>
+<td>webkit-transform-origin-x</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0770%</td>
+<td>webkit-app-region</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0685%</td>
+<td>column-span</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0653%</td>
+<td>r</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0611%</td>
+<td>y</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0602%</td>
+<td>x</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0555%</td>
+<td>webkit-border-vertical-spacing</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0545%</td>
+<td>webkit-border-horizontal-spacing</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0542%</td>
+<td>webkit-border-start-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0450%</td>
+<td>webkit-border-start-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0424%</td>
+<td>webkit-border-after-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0424%</td>
+<td>webkit-border-before-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0423%</td>
+<td>webkit-border-end-width</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0351%</td>
+<td>marker</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0349%</td>
+<td>webkit-border-end-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0347%</td>
+<td>webkit-border-after-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0347%</td>
+<td>webkit-border-before-color</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0342%</td>
+<td>mask-type</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0328%</td>
+<td>color-interpolation-filters</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0325%</td>
+<td>webkit-border-end</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0319%</td>
+<td>vector-effect</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>0.0307%</td>
+<td>color-rendering</td>
+<td>✕</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSS-Units-and-Values" class="article-heading"><a href="#CSS-Units-and-Values" class="headerlink" title="CSS Units and Values"></a>CSS Units and Values<a class="article-anchor" href="#CSS-Units-and-Values" aria-hidden="true"></a></h2><p>refs: <a href="https://drafts.csswg.org/css-values/" target="_blank" rel="external">https://drafts.csswg.org/css-values/</a> 2016-12-11</p>
+<h3 id="Textual" class="article-heading"><a href="#Textual" class="headerlink" title="Textual"></a>Textual<a class="article-anchor" href="#Textual" aria-hidden="true"></a></h3><ul>
+<li>pre-defined keywords<ul>
+<li>CSS-wide keywords<ul>
+<li><code>initial</code></li>
+<li><code>inherit</code></li>
+<li><code>unset</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>&lt;custom-ident&gt;</code>: author-defined identifiers ✓</li>
+<li><code>&lt;string&gt;</code>: quoted strings (<code>&quot;xxx&quot;</code>)</li>
+<li><code>&lt;url&gt;</code>: resourec locators (<code>url()</code>)</li>
+</ul>
+<h3 id="Numeric" class="article-heading"><a href="#Numeric" class="headerlink" title="Numeric"></a>Numeric<a class="article-anchor" href="#Numeric" aria-hidden="true"></a></h3><ul>
+<li><code>&lt;integer&gt;</code> ✓</li>
+<li><code>&lt;number&gt;</code> ✓</li>
+<li><code>&lt;percentage&gt;</code></li>
+</ul>
+<h3 id="Length-lt-length-gt" class="article-heading"><a href="#Length-lt-length-gt" class="headerlink" title="Length &lt;length&gt;"></a>Length <code>&lt;length&gt;</code><a class="article-anchor" href="#Length-lt-length-gt" aria-hidden="true"></a></h3><ul>
+<li>relative<ul>
+<li>font-relative<ul>
+<li><code>em</code></li>
+<li><code>ex</code></li>
+<li><code>ch</code></li>
+<li><code>ic</code></li>
+<li><code>rem</code> ✓🔧</li>
+</ul>
+</li>
+<li>viewport-percentage<ul>
+<li><code>vw</code> ✓🔧</li>
+<li><code>vh</code> ✓🔧</li>
+<li><code>vi</code></li>
+<li><code>vb</code></li>
+<li><code>vmin</code> ✓🔧</li>
+<li><code>vmax</code> ✓🔧</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>absolute<ul>
+<li><code>cm</code> ✓🔧</li>
+<li><code>mm</code> ✓🔧</li>
+<li><code>Q</code> ✓🔧</li>
+<li><code>in</code> ✓🔧</li>
+<li><code>pc</code> ✓🔧</li>
+<li><code>pt</code> ✓🔧</li>
+<li><code>px</code> autofixed to number</li>
+</ul>
+</li>
+</ul>
+<h3 id="Quantities" class="article-heading"><a href="#Quantities" class="headerlink" title="Quantities"></a>Quantities<a class="article-anchor" href="#Quantities" aria-hidden="true"></a></h3><ul>
+<li><code>&lt;angle&gt;</code><ul>
+<li><code>deg</code></li>
+<li><code>grad</code></li>
+<li><code>rad</code></li>
+<li><code>turn</code></li>
+</ul>
+</li>
+<li><code>&lt;time&gt;</code><ul>
+<li><code>s</code></li>
+<li><code>ms</code></li>
+</ul>
+</li>
+<li><code>&lt;frequency&gt;</code><ul>
+<li><code>Hz</code></li>
+<li><code>kHz</code></li>
+</ul>
+</li>
+<li><code>&lt;resolution&gt;</code><ul>
+<li><code>dpi</code></li>
+<li><code>dpcm</code></li>
+<li><code>dppx</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Elsewhere" class="article-heading"><a href="#Elsewhere" class="headerlink" title="Elsewhere"></a>Elsewhere<a class="article-anchor" href="#Elsewhere" aria-hidden="true"></a></h3><ul>
+<li><code>&lt;color&gt;</code> ✓</li>
+<li><code>&lt;image&gt;</code></li>
+<li><code>&lt;position&gt;</code></li>
+</ul>
+<h3 id="Functional" class="article-heading"><a href="#Functional" class="headerlink" title="Functional"></a>Functional<a class="article-anchor" href="#Functional" aria-hidden="true"></a></h3><ul>
+<li><code>calc()</code></li>
+<li><code>toggle()</code></li>
+<li><code>attr()</code></li>
+</ul>
+<h2 id="JS-APIs" class="article-heading"><a href="#JS-APIs" class="headerlink" title="JS APIs"></a>JS APIs<a class="article-anchor" href="#JS-APIs" aria-hidden="true"></a></h2><p>refs: <a href="https://www.w3.org/standards/techs/js" target="_blank" rel="external">https://www.w3.org/standards/techs/js</a> 2016-12-11</p>
+<h3 id="Completed-Work" class="article-heading"><a href="#Completed-Work" class="headerlink" title="Completed Work"></a>Completed Work<a class="article-anchor" href="#Completed-Work" aria-hidden="true"></a></h3><h4 id="Standards" class="article-heading"><a href="#Standards" class="headerlink" title="Standards"></a>Standards<a class="article-anchor" href="#Standards" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>last update</th>
+<th>spec</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016-11-17</td>
+<td>Media Source Extensions™</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-11-08</td>
+<td>Geolocation API Specification 2nd Edition</td>
+<td>✕ developing</td>
+</tr>
+<tr>
+<td>2016-10-27</td>
+<td>Pointer Lock</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-10-18</td>
+<td>Vibration API (Second Edition)</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-04-19</td>
+<td>Web Storage (Second Edition)</td>
+<td>✓ async <code>storage</code> module</td>
+</tr>
+<tr>
+<td>2015-10-22</td>
+<td>Web Notifications</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2015-05-19</td>
+<td>HTML5 Web Messaging</td>
+<td>✕ <code>BroadcastChannel</code> developing</td>
+</tr>
+<tr>
+<td>2015-02-24</td>
+<td>Pointer Events</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2015-02-10</td>
+<td>Vibration API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2015-02-03</td>
+<td>Server-Sent Events</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2015-01-08</td>
+<td>Indexed Database API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2014-03-13</td>
+<td>Metadata API for Media Resources 1.0</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2014-02-11</td>
+<td>Progress Events</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2014-01-16</td>
+<td>JSON-LD 1.0 Processing Algorithms and API</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2013-12-12</td>
+<td>Performance Timeline</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2013-12-12</td>
+<td>User Timing</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2013-10-31</td>
+<td>Widget Interface</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2013-10-29</td>
+<td>Page Visibility (Second Edition)</td>
+<td>✕ <code>onviewappear</code>/<code>onviewdisappear</code></td>
+</tr>
+<tr>
+<td>2013-10-10</td>
+<td>Touch Events</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2013-02-21</td>
+<td>Selectors API Level 1</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2012-12-17</td>
+<td>Navigation Timing</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2012-12-17</td>
+<td>High Resolution Time</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2008-12-22</td>
+<td>Element Traversal Specification</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Drafts" class="article-heading"><a href="#Drafts" class="headerlink" title="Drafts"></a>Drafts<a class="article-anchor" href="#Drafts" aria-hidden="true"></a></h3><h4 id="Proposed-Recommendations" class="article-heading"><a href="#Proposed-Recommendations" class="headerlink" title="Proposed Recommendations"></a>Proposed Recommendations<a class="article-anchor" href="#Proposed-Recommendations" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>last update</th>
+<th>spec</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016-09-15</td>
+<td>WebIDL Level 1</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Candidate-Recommendations" class="article-heading"><a href="#Candidate-Recommendations" class="headerlink" title="Candidate Recommendations"></a>Candidate Recommendations<a class="article-anchor" href="#Candidate-Recommendations" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>last update</th>
+<th>spec</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016-12-08</td>
+<td>Performance Timeline Level 2</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-11-22</td>
+<td>Page Visibility Level 2</td>
+<td>✕ <code>onviewappear</code>/<code>onviewdisappear</code></td>
+</tr>
+<tr>
+<td>2016-11-01</td>
+<td>High Resolution Time Level 2</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-08-18</td>
+<td>DeviceOrientation Event Specification</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-07-21</td>
+<td>Resource Timing Level 1</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-07-14</td>
+<td>Presentation API</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-07-07</td>
+<td>Battery Status API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-07-05</td>
+<td>Encrypted Media Extensions</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-05-19</td>
+<td>Media Capture and Streams</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2014-12-11</td>
+<td>Web Cryptography API</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2014-09-09</td>
+<td>HTML Media Capture</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2012-09-20</td>
+<td>The WebSocket API</td>
+<td>✕</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Last-Call-Drafts" class="article-heading"><a href="#Last-Call-Drafts" class="headerlink" title="Last Call Drafts"></a>Last Call Drafts<a class="article-anchor" href="#Last-Call-Drafts" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>last update</th>
+<th>spec</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2011-12-01</td>
+<td>Geolocation API Specification Level 2</td>
+<td>✕</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Other-Working-Drafts" class="article-heading"><a href="#Other-Working-Drafts" class="headerlink" title="Other Working Drafts"></a>Other Working Drafts<a class="article-anchor" href="#Other-Working-Drafts" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>last update</th>
+<th>spec</th>
+<th>supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016-12-09</td>
+<td>MediaStream Image Capture</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-12-06</td>
+<td>MediaStream Recording</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-12-06</td>
+<td>Selection API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-12-05</td>
+<td>Input Events</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-12-02</td>
+<td>Gamepad</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-11-29</td>
+<td>WebDriver</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-11-24</td>
+<td>WebRTC 1.0: Real-time Communication Between Browsers</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-11-22</td>
+<td>Pointer Lock 2.0</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-11-07</td>
+<td>Remote Playback API</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-11-03</td>
+<td>Resource Timing Level 2</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-11-02</td>
+<td>Audio Output Devices API</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-11-01</td>
+<td>Indexed Database API 2.0</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-11-01</td>
+<td>User Timing Level 2</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-10-31</td>
+<td>The Screen Orientation API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-10-31</td>
+<td>High Resolution Time Level 3</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-10-24</td>
+<td>UI Events KeyboardEvent code Values</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-10-24</td>
+<td>UI Events KeyboardEvent key Values</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-10-11</td>
+<td>Service Workers 1</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-09-21</td>
+<td>Identifiers for WebRTC’s Statistics API</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-09-13</td>
+<td>Accelerometer Sensor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-09-13</td>
+<td>Gyroscope Sensor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-09-13</td>
+<td>Magnetometer Sensor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-08-30</td>
+<td>Ambient Light Sensor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-08-30</td>
+<td>Media Capture from DOM Elements</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-08-30</td>
+<td>Generic Sensor API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-08-03</td>
+<td>Wake Lock API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>Proximity Sensor</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>Pointer Events - Level 2</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2016-07-14</td>
+<td>Screen Capture</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-07-12</td>
+<td>Media Capture Depth Stream Extensions</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2016-05-17</td>
+<td>Cooperative Scheduling of Background Tasks</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2016-04-22</td>
+<td>Navigation Timing Level 2</td>
+<td>- (perf related)</td>
+</tr>
+<tr>
+<td>2016-04-03</td>
+<td>Clipboard API and events</td>
+<td>✕ <code>clipboard</code> module</td>
+</tr>
+<tr>
+<td>2015-12-15</td>
+<td>Push API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2015-12-08</td>
+<td>Web Audio API</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2015-10-15</td>
+<td>FindText API</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2015-09-24</td>
+<td>Web Workers</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2015-04-21</td>
+<td>File API</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2014-02-20</td>
+<td>Network Service Discovery</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>2012-03-06</td>
+<td>MediaStream Capture Scenarios</td>
+<td>- (media related)</td>
+</tr>
+<tr>
+<td>2011-12-15</td>
+<td>Audio Processing API</td>
+<td>- (media related)</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/references/web-standards.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/references/web-standards.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

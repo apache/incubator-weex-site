@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>集成到 iOS | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Weex SDK 集成到 iOScocoaPods 引入 Weex iOS SDK到工程可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature cocoaPods集成  假设你已经完成了安装iOS 开发环境 和 CocoaPods  从 github 上 clone 一份代码     git clone https://github.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="集成到 iOS">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/integrate-to-ios.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Weex SDK 集成到 iOScocoaPods 引入 Weex iOS SDK到工程可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature cocoaPods集成  假设你已经完成了安装iOS 开发环境 和 CocoaPods  从 github 上 clone 一份代码     git clone https://github.">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集成到 iOS">
+<meta name="twitter:description" content="Weex SDK 集成到 iOScocoaPods 引入 Weex iOS SDK到工程可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature cocoaPods集成  假设你已经完成了安装iOS 开发环境 和 CocoaPods  从 github 上 clone 一份代码     git clone https://github.">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "advanced";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/advanced">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link  ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link current ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/customize-a-native-component.html" class="sidebar-link  ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/advanced/integrate-devtools-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        集成到 iOS
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Weex-SDK-集成到-iOS" class="article-heading"><a href="#Weex-SDK-集成到-iOS" class="headerlink" title="Weex SDK 集成到 iOS"></a>Weex SDK 集成到 iOS<a class="article-anchor" href="#Weex-SDK-集成到-iOS" aria-hidden="true"></a></h1><h3 id="cocoaPods-引入-Weex-iOS-SDK到工程" class="article-heading"><a href="#cocoaPods-引入-Weex-iOS-SDK到工程" class="headerlink" title="cocoaPods 引入 Weex iOS SDK到工程"></a>cocoaPods 引入 Weex iOS SDK到工程<a class="article-anchor" href="#cocoaPods-引入-Weex-iOS-SDK到工程" aria-hidden="true"></a></h3><p>可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature</p>
+<h4 id="cocoaPods集成" class="article-heading"><a href="#cocoaPods集成" class="headerlink" title="cocoaPods集成"></a>cocoaPods集成<a class="article-anchor" href="#cocoaPods集成" aria-hidden="true"></a></h4><p>  假设你已经完成了安装<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS 开发环境</a> 和 <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a></p>
+<ol>
+<li><p>从 github 上 clone 一份代码    </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">git clone https://github.com/alibaba/weex.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>把 WeexSDK 导入到你已有的项目，如果没有，可以<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">参考</a>新建项目<br>拷贝 <code>ios/sdk</code> 下面目录到你的项目目录，在添加依赖之前，确保项目目录有 <code>Podfile</code>，如果没有，创建一个，用文本编辑器打开，添加如下依赖</p>
+<p> 如果使用正式版本如 0.6.1 的，就不需要做  拷贝 <code>ios/sdk</code> 这个操作，直接引用 cocoaPods 的 master repo 上就可以，这个需要在 Podfile 最前面添加</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">target &apos;YourTarget&apos; do</div><div class="line">    platform :ios, &apos;7.0&apos; </div><div class="line">    pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos;   # pod &apos;WeexSDK&apos;, &apos;0.6.1&apos;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p> 在命令行（terminal）中，切换到当前目录，运行 <code>pod install</code>, 过一会，项目的 .workspace 结尾的文件就被创建出来，到这步，依赖已经添加完了</p>
+</li>
+<li><p>初始化 Weex 环境<br>在 AppDelegate.m 文件中做初始化操作，一般会在 <code>didFinishLaunchingWithOptions</code> 方法中如下添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//business configuration</div><div class="line">[WXAppConfiguration setAppGroup:@&quot;AliApp&quot;];</div><div class="line">[WXAppConfiguration setAppName:@&quot;WeexDemo&quot;];</div><div class="line">[WXAppConfiguration setAppVersion:@&quot;1.0.0&quot;];</div><div class="line"></div><div class="line">//init sdk enviroment   </div><div class="line">[WXSDKEngine initSDKEnviroment];</div><div class="line"></div><div class="line">//register custom module and component，optional</div><div class="line">[WXSDKEngine registerComponent:@&quot;MyView&quot; withClass:[MyViewComponent class]];</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div><div class="line"></div><div class="line">//register the implementation of protocol, optional</div><div class="line">[WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];</div><div class="line"></div><div class="line">//set the log level    </div><div class="line">[WXLog setLogLevel: WXLogLevelAll];</div></pre></td></tr></table></figure>
+</li>
+<li><p>渲染 weex Instance<br>Weex 支持整体页面渲染和部分渲染两种模式，你需要做的事情是用指定的 URL 渲染 weex 的 view，然后添加到它的父容器上，父容器一般都是 viewController</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#import &lt;WeexSDK/WXSDKInstance.h&gt;</div><div class="line">- (void)viewDidLoad </div><div class="line">&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line"></div><div class="line">    _instance = [[WXSDKInstance alloc] init];</div><div class="line">    _instance.viewController = self;</div><div class="line">    _instance.frame = self.view.frame; </div><div class="line"></div><div class="line">    __weak typeof(self) weakSelf = self;</div><div class="line">    _instance.onCreate = ^(UIView *view) &#123;</div><div class="line">        [weakSelf.weexView removeFromSuperview];</div><div class="line">        [weakSelf.view addSubview:weakSelf.weexView];</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    _instance.onFailed = ^(NSError *error) &#123;</div><div class="line">        //process failure</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    _instance.renderFinish = ^ (UIView *view) &#123;</div><div class="line">        //process renderFinish</div><div class="line">    &#125;;</div><div class="line">    [_instance renderWithURL:self.url options:@&#123;@&quot;bundleUrl&quot;:[self.url absoluteString]&#125; data:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   WXSDKInstance 是很重要的一个类，提供了基础的方法和一些回调，如<code>renderWithURL</code>,<code>onCreate</code>,<code>onFailed</code>等，可以参见 <code>WXSDKInstance.h</code>的  声明</p>
+<ol>
+<li><p>销毁 Weex Instance</p>
+<p>在 viewController 的 dealloc 阶段 销毁掉 weex instance， 释放内存，避免造成内存泄露</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)dealloc</div><div class="line">&#123;</div><div class="line">    [_instance destroyInstance];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="导入-Weex-SDK-framework到工程" class="article-heading"><a href="#导入-Weex-SDK-framework到工程" class="headerlink" title="导入 Weex SDK framework到工程"></a>导入 Weex SDK framework到工程<a class="article-anchor" href="#导入-Weex-SDK-framework到工程" aria-hidden="true"></a></h3><p>  参考<a href="https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.tFddsV&amp;&amp;docType=1&amp;articleId=104829" target="_blank" rel="external">此处</a>直接导入weexSDK</p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

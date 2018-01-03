@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Weex Cheat SheetNative Components   component attribtues styles events special parent children     &amp;lt;div&amp;gt; - box modelflexboxpositionbackground-coloropacity clickappeardisappear - (any)   &amp;lt;text">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weex">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/references/cheatsheet.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Weex Cheat SheetNative Components   component attribtues styles events special parent children     &amp;lt;div&amp;gt; - box modelflexboxpositionbackground-coloropacity clickappeardisappear - (any)   &amp;lt;text">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex">
+<meta name="twitter:description" content="Weex Cheat SheetNative Components   component attribtues styles events special parent children     &amp;lt;div&amp;gt; - box modelflexboxpositionbackground-coloropacity clickappeardisappear - (any)   &amp;lt;text">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="v-0.10/references/cheatsheet" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "v-0.10/references/cheatsheet";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/cheatsheet.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/cheatsheet.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+   
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-v-0.10/references/cheatsheet">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="Weex-Cheat-Sheet" class="article-heading"><a href="#Weex-Cheat-Sheet" class="headerlink" title="Weex Cheat Sheet"></a>Weex Cheat Sheet<a class="article-anchor" href="#Weex-Cheat-Sheet" aria-hidden="true"></a></h1><h2 id="Native-Components" class="article-heading"><a href="#Native-Components" class="headerlink" title="Native Components"></a>Native Components<a class="article-anchor" href="#Native-Components" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>component</th>
+<th>attribtues</th>
+<th>styles</th>
+<th>events</th>
+<th>special parent</th>
+<th>children</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;div&gt;</code></td>
+<td>-</td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>(any)</td>
+</tr>
+<tr>
+<td><code>&lt;text&gt;</code></td>
+<td><code>value</code></td>
+<td><strong>box model</strong><br>flex<br><code>position</code><br><code>background-color</code><br><code>opacity</code><br><code>color</code><br><code>font-size</code><br><code>font-style</code><br><code>font-weight</code><br><code>text-decoration</code><br><code>text-align</code><br><code>text-overflow</code><br><code>line-height</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>text only</td>
+</tr>
+<tr>
+<td><code>&lt;image&gt;</code></td>
+<td><code>src</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code><br><code>resize</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;scroller&gt;</code></td>
+<td><code>show-scrollbar</code><br><code>scroll-direction</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>(any)</td>
+</tr>
+<tr>
+<td><code>&lt;list&gt;</code></td>
+<td><code>loadmoreoffset</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code><br><code>loadmore</code><br><code>refresh</code><br><code>loading</code></td>
+<td>-</td>
+<td><code>&lt;cell&gt;</code><br><code>&lt;header&gt;</code><br><code>&lt;refresh&gt;</code><br><code>&lt;loading&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;cell&gt;</code></td>
+<td>-</td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td><code>&lt;list&gt;</code></td>
+<td>(any)</td>
+</tr>
+<tr>
+<td><code>&lt;slider&gt;</code></td>
+<td><code>auto-play</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code><br><code>change</code></td>
+<td>-</td>
+<td>(any)<br><code>&lt;indicator&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;indicator&gt;</code></td>
+<td>-</td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>item-color</code><br><code>item-selected-color</code><br><code>item-size</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td><code>&lt;slider&gt;</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;wxc-navpage&gt;</code></td>
+<td><code>height</code><br><code>background-color</code><br><code>title</code><br><code>title-color</code><br><code>left-item-title</code><br><code>left-item-color</code><br><code>right-item-title</code><br><code>right-item-color</code><br><code>left-item-src</code><br><code>right-item-src</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code><br><code>naviBar.leftItem.click</code><br><code>naviBar.rightItem.click</code></td>
+<td>-</td>
+<td>(any)</td>
+</tr>
+<tr>
+<td><code>&lt;wxc-tabbar&gt;</code></td>
+<td><code>tab-items</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>tabBar.onClick</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;embed&gt;</code></td>
+<td><code>src</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;web&gt;</code></td>
+<td><code>src</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code><br><code>pagestart</code><br><code>pagefinish</code><br><code>error</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;video&gt;</code></td>
+<td><code>src</code><br><code>play-status</code><br><code>auto-play</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code><br><code>start</code><br><code>pause</code><br><code>finish</code><br><code>fail</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;a&gt;</code></td>
+<td><code>href</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>(any)</td>
+</tr>
+<tr>
+<td><code>&lt;input&gt;</code></td>
+<td><code>type</code><br><code>value</code><br><code>placeholder</code><br><code>disabled</code><br><code>autofocus</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code><br><code>placeholder-color</code><br><code>color</code><br><code>font-size</code><br><code>font-style</code><br><code>font-weight</code><br><code>text-align</code></td>
+<td><code>click</code><br><code>appear</code><br><code>disappear</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>&lt;switch&gt;</code></td>
+<td><code>checked</code><br><code>disabled</code></td>
+<td><strong>box model</strong><br><strong>flexbox</strong><br><code>position</code><br><code>background-color</code><br><code>opacity</code></td>
+<td><code>appear</code><br><code>disappear</code><br><code>input</code><br><code>change</code><br><code>focus</code><br><code>blur</code></td>
+<td>-</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Native-Modules" class="article-heading"><a href="#Native-Modules" class="headerlink" title="Native Modules"></a>Native Modules<a class="article-anchor" href="#Native-Modules" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>module</th>
+<th>apis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@weex-module/dom</code></td>
+<td><code>scrollToElement(node, { offset })</code></td>
+</tr>
+<tr>
+<td><code>@weex-module/modal</code></td>
+<td><code>toast({ message, duration })</code><br><code>alert({ message, okTitle }, callback)</code><br><code>confirm({ message, okTitle, cancelTitle }, callback(result))</code><br><code>prompt({ message, okTitle, cancelTitle }, callback(result, data))</code></td>
+</tr>
+<tr>
+<td><code>@weex-module/stream</code></td>
+<td><code>fetch({ method, url, headers, type, body }, callback({ status, ok, statusText, data, headers }), progressCallback({ readyState, status, length, statusText, headers}))</code></td>
+</tr>
+<tr>
+<td><code>@weex-module/webview</code></td>
+<td><code>goBack(ref)</code><br><code>goForward(ref)</code><br><code>reload(ref)</code></td>
+</tr>
+<tr>
+<td><code>@weex-module/navigator</code></td>
+<td><code>push({ url, animated }, callback)</code><br><code>pop({ animated }, callback)</code></td>
+</tr>
+<tr>
+<td><code>@weex-module/animation</code></td>
+<td><code>transition(node, { styles, duration, timingFunction, delay, transform-origin }, callback)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Special-Template-Syntax" class="article-heading"><a href="#Special-Template-Syntax" class="headerlink" title="Special Template Syntax"></a>Special Template Syntax<a class="article-anchor" href="#Special-Template-Syntax" aria-hidden="true"></a></h2><ul>
+<li><code>&lt;foo x=&quot;abc&quot;&gt;</code></li>
+<li><code><foo x="{{expr}}"></foo></code></li>
+<li><code>&lt;foo style=&quot;name1: value1; name2: value2&quot;&gt;</code></li>
+<li><code><foo style="name1: value1; name2: {{expr}}; name3: ..."></foo></code></li>
+<li><code>&lt;foo class=&quot;a b c&quot;&gt;</code></li>
+<li><code><foo class="a {{expr}} c"></foo></code></li>
+<li><code>&lt;foo onclick=&quot;methodName&quot;&gt;</code></li>
+<li><code>&lt;foo id=&quot;abc&quot;&gt;</code></li>
+<li><code>&lt;foo if=&quot;expr&quot;&gt;</code></li>
+<li><code>&lt;foo repeat=&quot;item in list&quot;&gt;</code></li>
+<li><code>&lt;foo repeat=&quot;(key,item) in list&quot;&gt;</code></li>
+<li><code>&lt;component type=&quot;foo&quot;&gt;</code></li>
+<li><code><component type="{{expr}}"></component></code></li>
+</ul>
+<h2 id="ViewModel-APIs" class="article-heading"><a href="#ViewModel-APIs" class="headerlink" title="ViewModel APIs"></a>ViewModel APIs<a class="article-anchor" href="#ViewModel-APIs" aria-hidden="true"></a></h2><ul>
+<li><code>this.$vm(el)</code></li>
+<li><code>this.$el(el)</code></li>
+<li><code>this.$getConfig()</code></li>
+<li><code>this.$emit(type, data)</code></li>
+<li><code>this.$dispatch(type, data)</code></li>
+<li><code>this.$broadcast(type, data)</code></li>
+</ul>
+<h2 id="ViewModel-Options" class="article-heading"><a href="#ViewModel-Options" class="headerlink" title="ViewModel Options"></a>ViewModel Options<a class="article-anchor" href="#ViewModel-Options" aria-hidden="true"></a></h2><ul>
+<li><code>data</code></li>
+<li><code>methods</code></li>
+<li><code>computed</code></li>
+<li><code>init</code>, <code>created</code>, <code>ready</code></li>
+<li><code>events</code></li>
+</ul>
+<p>example:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line"></div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">x</span>: <span class="number">1</span>,</div><div class="line">      <span class="attr">y</span>: <span class="number">2</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  methods: &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'foo'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">computed</span>: &#123;</div><div class="line">    <span class="attr">z</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.x + <span class="keyword">this</span>.y</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">events</span>: &#123;</div><div class="line">    <span class="attr">custom</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(e)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/cheatsheet.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/cheatsheet.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

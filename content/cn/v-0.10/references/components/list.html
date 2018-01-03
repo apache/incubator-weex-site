@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;list&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;list&amp;gt;&amp;lt;list&amp;gt; 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 &amp;lt;list&amp;gt; 标签内使用一组由简单数组 repeat 生成的 &amp;lt;cell&amp;gt; 标签填充。 一个最简例子： &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<list>">
+<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/components/list.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;list&amp;gt;&amp;lt;list&amp;gt; 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 &amp;lt;list&amp;gt; 标签内使用一组由简单数组 repeat 生成的 &amp;lt;cell&amp;gt; 标签填充。 一个最简例子： &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
+<meta property="og:image" content="https://weex.apache.org/cn/v-0.10/references/images/list_2.jpg">
+<meta property="og:image" content="https://weex.apache.org/cn/v-0.10/references/images/list_4.jpg">
+<meta property="og:updated_time" content="2017-06-14T04:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<list>">
+<meta name="twitter:description" content="&amp;lt;list&amp;gt;&amp;lt;list&amp;gt; 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 &amp;lt;list&amp;gt; 标签内使用一组由简单数组 repeat 生成的 &amp;lt;cell&amp;gt; 标签填充。 一个最简例子： &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
+<meta name="twitter:image" content="https://weex.apache.org/cn/v-0.10/references/images/list_2.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/cn/guide">教程</a></li>
+        <li><a href="/cn/references">手册</a></li>
+        <li><a href="/cn/guide/contributing.html">参与</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">说明</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本说明</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">博客</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/components/list.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link current ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+    
+
+
+<div class="doc-nav-version">
+  <select class="versionBtn" stype="/cn/references">
+  
+    <option value="2v">v2.x</option>
+    <option value="1v" selected>v1.x</option>
+  
+ </select>
+</div>
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/bubble.html" class="sidebar-link  ">事件冒泡</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/components/refresh.html" class="sidebar-link  "><refresh></a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/index.html" class="sidebar-link  ">内建组件</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link current ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+              </li>
+            
+              <li>
+                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/cheatsheet.html" class="sidebar-link  ">Weex 快查手册</a></h3>
+        
+      </li>
+    
+    
+  </ul>
+</div>
+<div class="hostbyaliyun">
+  <a href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+    <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+  </a>
+  <div style="color: #7f8c8d;font-size: 12px;">阿里云赞助</div>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;list&gt;
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-06-14T04:08:17.000Z">Updated time: 14/06/2017</time>
+</header>
+    <h1 id="lt-list-gt" class="article-heading"><a href="#lt-list-gt" class="headerlink" title="&lt;list&gt;"></a>&lt;list&gt;<a class="article-anchor" href="#lt-list-gt" aria-hidden="true"></a></h1><p><code>&lt;list&gt;</code> 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 <code>&lt;list&gt;</code> 标签内使用一组由简单数组 <code>repeat</code> 生成的 <code>&lt;cell&gt;</code> 标签填充。</p>
+<p>一个最简例子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"item in rows"</span> <span class="attr">index</span>=<span class="string">"&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item-title"</span>&gt;</span>row &#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">rows</span>:[</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">1</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">3</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">4</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">5</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/bcaf48a63b49750b828d2d23762d4a15" target="_blank" rel="external">体验一下</a></p>
+<p><img src="../images/list_2.jpg" alt="mobile_preview"></p>
+<h2 id="子组件" class="article-heading"><a href="#子组件" class="headerlink" title="子组件"></a>子组件<a class="article-anchor" href="#子组件" aria-hidden="true"></a></h2><p><code>&lt;list&gt;</code> 组件支持更多高级功能，由以下子组件提供：</p>
+<ul>
+<li><p><code>&lt;cell&gt;</code></p>
+<p>用于定义列表中的子列表项，类似于 HTML 中的 <code>ul</code> 之于 <code>li</code>。Weex 会对 <code>&lt;cell&gt;</code> 进行高效的内存回收以达到更好的性能。</p>
+<p>使用文档请查看 <a href="./cell.html"><code>&lt;cell&gt;</code></a>。</p>
+</li>
+<li><p><code>header</code> <sup class="wx-v">0.6.1+</sup></p>
+<p>当 <code>&lt;header&gt;</code> 到达屏幕顶部时，吸附在屏幕顶部。</p>
+</li>
+<li><p><code>&lt;refresh&gt;</code></p>
+<p>用于给列表添加下拉刷新的功能。</p>
+<p>使用文档请查看 <a href="./refresh.html"><code>&lt;refresh&gt;</code></a></p>
+</li>
+<li><p><code>&lt;loading&gt;</code></p>
+<p><code>&lt;loading&gt;</code> 用法与特性和 <code>&lt;refresh&gt;</code> 类似，用于给列表添加上拉加载更多的功能。</p>
+<p>使用文档请查看 <a href="./loading.html"><code>&lt;loading&gt;</code></a></p>
+</li>
+</ul>
+<p><strong>注意：</strong></p>
+<p><code>&lt;list&gt;</code> 的子组件只能包括以上四种组件或是 <code>fix</code> 定位的组件，其他形式的组件将不能被正确的渲染。</p>
+<p>一个错误的示范，此例子无法在客户端正常渲染，因为 <code>&lt;list&gt;</code> 子组件是 <code>&lt;div&gt;</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"item in rows"</span> <span class="attr">index</span>=<span class="string">"&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item-title"</span>&gt;</span>row &#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">rows</span>:[</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">1</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">3</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">4</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">5</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="特性" class="article-heading"><a href="#特性" class="headerlink" title="特性"></a>特性<a class="article-anchor" href="#特性" aria-hidden="true"></a></h2><ul>
+<li><p><code>loadmoreoffset {number}</code>：默认值为 0，触发 <code>loadmore</code> 事件所需要的垂直偏移距离（设备屏幕底部与 <code>&lt;list&gt;</code> 底部之间的距离）。当 <code>&lt;list&gt;</code> 的滚动条滚动到足够接近 <code>&lt;list&gt;</code> 底部时将会触发 <code>loadmore</code> 这个事件。</p>
+<p><img src="../images/list_4.jpg" alt="mobile_preview"></p>
+</li>
+</ul>
+<h2 id="样式" class="article-heading"><a href="#样式" class="headerlink" title="样式"></a>样式<a class="article-anchor" href="#样式" aria-hidden="true"></a></h2><ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
+</li>
+</ul>
+<h2 id="事件" class="article-heading"><a href="#事件" class="headerlink" title="事件"></a>事件<a class="article-anchor" href="#事件" aria-hidden="true"></a></h2><ul>
+<li><p><code>loadmore</code> <sup class="wx-v">0.5+</sup>：如果列表滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。</p>
+<p><a href="http://dotwe.org/bc445ede8746a31360e3607d210304c5" target="_blank" rel="external">体验一下</a></p>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
+</li>
+</ul>
+<h2 id="扩展" class="article-heading"><a href="#扩展" class="headerlink" title="扩展"></a>扩展<a class="article-anchor" href="#扩展" aria-hidden="true"></a></h2><h3 id="scrollToElement-node-options" class="article-heading"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)<a class="article-anchor" href="#scrollToElement-node-options" aria-hidden="true"></a></h3><p>滚动到列表某个指定项是常见需求，<code>&lt;list&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="../modules/dom.html">dom module</a> 。</p>
+<h4 id="参数" class="article-heading"><a href="#参数" class="headerlink" title="参数"></a>参数<a class="article-anchor" href="#参数" aria-hidden="true"></a></h4><ul>
+<li><code>node {node}</code>：指定目标节点。</li>
+<li><code>options {Object}</code>：<ul>
+<li><code>offset {number}</code>：一个到其可见位置的偏移距离，默认是 0</li>
+</ul>
+</li>
+</ul>
+<h4 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">cell</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">onclick</span>=<span class="string">"go"</span> <span class="attr">style</span>=<span class="string">"width: 750;height: 50; position: fixed; left: 0; right: 0; bottom: 0; background-color: #eeeeee;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></div><div class="line">          Go to 50th line.</div><div class="line">        <span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"item in rows"</span> <span class="attr">id</span>=<span class="string">"item-&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item-title"</span>&gt;</span>row &#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> dom = <span class="built_in">require</span>(<span class="string">'@weex-module/dom'</span>)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">rows</span>: []</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</div><div class="line">      <span class="keyword">this</span>.rows.push(&#123;</div><div class="line">        <span class="attr">id</span>: i</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">go</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> el = <span class="keyword">this</span>.$el(<span class="string">'item-49'</span>)</div><div class="line"></div><div class="line">      dom.scrollToElement(el, &#123;</div><div class="line">        <span class="attr">offset</span>: <span class="number">0</span></div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/65d91cb47d0e348c5750d2248d59b6bd" target="_blank" rel="external">体验一下</a></p>
+<h2 id="约束" class="article-heading"><a href="#约束" class="headerlink" title="约束"></a>约束<a class="article-anchor" href="#约束" aria-hidden="true"></a></h2><ol>
+<li><p><strong>不允许</strong>相同方向的 <code>&lt;list&gt;</code> 或者 <code>&lt;scroller&gt;</code> 互相嵌套，换句话说就是嵌套的 <code>&lt;list&gt;</code>/<code>&lt;scroller&gt;</code> 必须是不同的方向。</p>
+<p>举个例子，<strong>不允许</strong>一个垂直方向的 <code>&lt;list&gt;</code> 嵌套的一个垂直方向的 <code>&lt;scroller&gt;</code> 中，但是一个垂直方向的 <code>&lt;list&gt;</code> 是可以嵌套的一个水平方向的 list 或者 <code>&lt;scroller&gt;</code> 中的。</p>
+</li>
+<li><p><code>&lt;list&gt;</code> 为根节点时无需设置高度，但是内嵌 <code>&lt;list&gt;</code> 高度<strong>必须可计算</strong>，你可以使用 <code>flex</code> 或 <code>postion</code> 将 <code>&lt;list&gt;</code> 设为一个响应式高度（例如全屏显示）, 也可以显式设置 <code>&lt;list&gt;</code> 组件的 <code>height</code> 样式。</p>
+</li>
+</ol>
+<h2 id="示例-1" class="article-heading"><a href="#示例-1" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例-1" aria-hidden="true"></a></h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Search Results<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">style</span>=<span class="string">"width: 750; padding: 30;"</span> <span class="attr">onrefresh</span>=<span class="string">"refreshData"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;refreshDisplay&#125;&#125;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span> ↓ Pull to refresh <span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">loading-indicator</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span><span class="tag">&lt;/<span class="name">loading-indicator</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"item in items"</span> <span class="attr">id</span>=<span class="string">"item-&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>Repo name: &#123;&#123;item.full_name&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>Repo star: &#123;&#123;item.stargazers_count&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">loading</span> <span class="attr">onloading</span>=<span class="string">"loadingData"</span> <span class="attr">style</span>=<span class="string">"width: 750; padding: 30;"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;loadingDisplay&#125;&#125;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;loadingText&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">loading</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span> <span class="attr">onclick</span>=<span class="string">"goToTop"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">src</span>=<span class="string">"https://img.alicdn.com/tps/TB1ZVOEOpXXXXcQaXXXXXXXXXXX-200-200.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-class">.wrapper</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.list</span>&#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</div><div class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.header</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#efefef</span>;</div><div class="line">  <span class="attribute">border-bottom-color</span>: <span class="number">#eeeeee</span>;</div><div class="line">  <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">border-bottom-style</span>: solid;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.title</span> &#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.text</span> &#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.row</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">20</span>;</div><div class="line">  <span class="attribute">border-bottom-color</span>: <span class="number">#eeeeee</span>;</div><div class="line">  <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">border-bottom-style</span>: solid;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.up</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">70</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">70</span>;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">right</span>: <span class="number">20</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.img</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">70</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">70</span>;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> dom = <span class="built_in">require</span>(<span class="string">'@weex-module/dom'</span>) || &#123;&#125;</div><div class="line"><span class="keyword">var</span> stream = <span class="built_in">require</span>(<span class="string">'@weex-module/stream'</span>) || &#123;&#125;</div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>) || &#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SEARCH_URL = <span class="string">'https://api.github.com/search/repositories?q=language:javascript&amp;sort=stars&amp;order=desc'</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">isLoaded</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">page</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">loadingDisplay</span>: <span class="string">'hide'</span>,</div><div class="line">    <span class="attr">refreshDisplay</span>: <span class="string">'hide'</span>,</div><div class="line">    <span class="attr">loadingText</span>: <span class="string">'Loading...'</span>,</div><div class="line">    <span class="attr">items</span>:[]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> url = SEARCH_URL + <span class="string">'&amp;page='</span> + <span class="keyword">this</span>.page</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.renderData(url)</div><div class="line">    </div><div class="line">    <span class="keyword">this</span>.page++</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">renderData</span>: <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> self = <span class="keyword">this</span></div><div class="line"></div><div class="line">      stream.fetch(&#123;</div><div class="line">        <span class="attr">method</span>: <span class="string">'GET'</span>,</div><div class="line">        <span class="attr">url</span>: url,</div><div class="line">        <span class="attr">type</span>:<span class="string">'json'</span></div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">        self.refreshDisplay = <span class="string">'hide'</span></div><div class="line">        self.loadingDisplay = <span class="string">'hide'</span></div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">          <span class="keyword">var</span> results = res.data.items || []</div><div class="line">          </div><div class="line">          <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(results)) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; results.length; i++) &#123;</div><div class="line">              self.items.push(results[i])</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">          self.isLoaded = <span class="literal">true</span></div><div class="line">        &#125; <span class="keyword">catch</span>(e) &#123;&#125;</div><div class="line">      &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">          </div><div class="line">      &#125;)</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">loadingData</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> url = SEARCH_URL + <span class="string">'&amp;page='</span> + <span class="keyword">this</span>.page</div><div class="line">      <span class="keyword">var</span> self = <span class="keyword">this</span></div><div class="line">      </div><div class="line">      <span class="keyword">if</span> (self.isLoaded === <span class="literal">false</span>) <span class="keyword">return</span> </div><div class="line">      </div><div class="line">      self.loadingDisplay = <span class="string">'show'</span></div><div class="line">      </div><div class="line">      <span class="keyword">if</span> (self.page &lt;=<span class="number">10</span> ) &#123;</div><div class="line">        self.renderData(url)</div><div class="line">        self.page++</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        self.loadingDisplay = <span class="string">'hide'</span></div><div class="line">        self.loadingText = <span class="string">'NO MORE!'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">goToTop</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      dom.scrollToElement(<span class="keyword">this</span>.$el(<span class="string">'item-0'</span>), &#123;</div><div class="line">        <span class="attr">offset</span>: <span class="number">-100</span></div><div class="line">      &#125;)</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">refreshData</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> url = SEARCH_URL + <span class="string">'&amp;page=1'</span></div><div class="line"></div><div class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.isLoaded === <span class="literal">false</span>) <span class="keyword">return</span> </div><div class="line">      </div><div class="line">      <span class="keyword">this</span>.refreshDisplay = <span class="string">'show'</span></div><div class="line"></div><div class="line">      modal.toast(&#123;</div><div class="line">        <span class="string">'message'</span>: <span class="string">'Refreshing...'</span>, </div><div class="line">        <span class="string">'duration'</span>: <span class="number">1</span></div><div class="line">      &#125;)</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.items = []</div><div class="line">      <span class="keyword">this</span>.page = <span class="number">1</span></div><div class="line">      <span class="keyword">this</span>.renderData(url)</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.refreshDisplay = <span class="string">'hide'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/ed524ade679b0fa96e980600c53ea5ce" target="_blank" rel="external">体验一下</a></p>
+
+  </div>
+  
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/v-0.10/references/components/list.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/v-0.10/references/components/list.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</article>
+</div>
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

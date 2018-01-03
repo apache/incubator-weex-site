@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A framework for building Mobile cross-platform UIs. Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weex">
+<meta property="og:url" content="https://weex.apache.org/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="A framework for building Mobile cross-platform UIs. Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex">
+<meta name="twitter:description" content="A framework for building Mobile cross-platform UIs. Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple,">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+
+<body id="index" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "index";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/references">References</a></li>
+        <li><a href="/guide/contributing.html">Get Involved</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/toolkit.html">Weex-toolkit</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;">Note</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">ReleaseNote</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="index-sidebar">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin || 'https://weex-project.io',
+        currentPathname = location.pathname,
+        currentLang = navigator.language || navigator.browserLanguage || 'en',
+        selectedLang = '';
+
+    if (window.localStorage) {
+      selectedLang = window.localStorage.getItem('lang')
+      currentLang = selectedLang ? selectedLang : currentLang
+    }
+
+    if (/zh|cn/i.test(currentLang)) { // Chinese
+      if (currentPathname.indexOf('/cn/') != 0) {
+        location.href = currentOrigin + '/cn/'
+      }
+    } else if (/en/i.test(currentLang)) { // English
+      if (!/^\/$|^\/index/.test(currentPathname)) {
+        location.href = currentOrigin
+      }
+    } else { // Other
+      if (!/^\/$|^\/index/.test(currentPathname)) {
+        location.href = currentOrigin
+      }
+    }
+  })();
+</script>
+<div class="scene header" style="background: #00BDFF;">
+  <div class="scene-container">
+    <div class="galaxy left">
+      <canvas width="560" height="560" id="left-canvas"></canvas>
+    </div>
+    <div class="galaxy right">
+      <canvas width="500" height="500" id="right-canvas"></canvas>
+    </div>
+    <div id="slider">
+  <div class="swiper-container swiper-container-horizontal">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background:url('//gw.alicdn.com/tps/TB1rY5sPXXXXXbfapXXXXXXXXXX-800-800.png') 50% 50% / contain no-repeat">
+        <div class="slide-content">
+          <h1 class="page-title">A framework for building Mobile cross-platform UIs</h1>
+          <div class="btn-group">
+            <a href="/guide/index.html" class="button get-started">Get Started</a>
+            <a href="/guide/contributing.html" class="button get-started">Get Involved</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="swiper-button-next iconfont icon-arrow-small"></div>
+    <div class="swiper-button-prev iconfont icon-arrow-small"></div>-->
+  </div>
+</div>
+  </div>
+</div>
+<div class="scene edge overlength horizon">
+  <div class="scene-container">
+    <div class="textbox">
+      <h2>Competitive Edge</h2>
+    </div>
+    <div class="sketch-content">
+      <div class="inner-box">
+        <img src="//gw.alicdn.com/tps/TB17ga7PXXXXXbnXXXXXXXXXXXX-120-121.svg" alt="Lightweight">
+        <h3>Lightweight</h3>
+        <span class="underline"></span>
+        <p>low footprint，simple syntax，and easy to use</p>
+      </div>
+      <div class="inner-box">
+        <img src="//gw.alicdn.com/tps/TB1BGSCPXXXXXb1aXXXXXXXXXXX-79-79.svg" alt="Extendable">
+        <h3>Extendable</h3>
+        <span class="underline"></span>
+        <p>abundant built-in components，extendable apis，various events</p>
+      </div>
+      <div class="inner-box">
+        <img src="//img.alicdn.com/tps/TB1uMC9PXXXXXaFXXXXXXXXXXXX-80-69.svg" alt="High Performance">
+        <h3>High Performance</h3>
+        <span class="underline"></span>
+        <p>load fast，render fast，better Experience</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="scene feature">
+  <div class="scene-container">
+    <div class="feature-content">
+      <div class="left-text">
+        <h2>Help you build a real Native App</h2>
+        <p>Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple, because you can build native applications just using HTML, CSS, Javascript. But underneath, the core of the application is Objective-C or Java. At the same time, Weex will provide a lot of native components or modules for developers to use.</p>
+      </div>
+      <div class="right-box">
+        <div class="imgbox phone-layer level1">
+        </div>
+        <div class="imgbox phone-layer level2">
+        </div>
+        <div class="imgbox phone-layer level3">
+        </div>
+        <div class="imgbox phone-layer level4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="scene cross-platform horizon">
+  <div class="scene-container">
+    <div class="textbox">
+      <h2>Write Once Run Everywhere</h2>
+      <p>Weex provides the ability to publish cross platform, so web, Android, and IOS apps can use the same API development functions. At the same time, we provide a rich extension of the native interfaces. In this way, it will be very convenient when you need to extend native components or modules.</p>
+    </div>
+    <div class="sketch-content">
+      <div class="inner-box imgbox ios"></div>
+      <div class="inner-box imgbox android"></div>
+      <div class="inner-box imgbox h5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="scene supporting-vue horizon">
+  <div class="scene-container">
+    <div class="textbox">
+      <h2>Supporting Vue syntax</h2>
+      <p>Weex follows the web standard, while supporting the &quot;vue.js&quot; syntax. So, you can use the &quot;vue.js&quot; syntax to develop applications.</p>
+    </div>
+    <div class="sketch-content imgbox">
+      <div class="imgbox"></div>
+    </div>
+  </div>
+</div>
+
+<div class="scene schematic horizon">
+  <div class="scene-container">
+    <div class="textbox">
+      <h2>How it works</h2>
+      <p>Weex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with &lt;template&gt;, &lt;style&gt; and &lt;script&gt; tags, and then transform them into bundles for deploying. On the server-side we can use these JS bundles for client requests. When clients get a bundle from the server, it will be processed by the client-side JavaScript engine that manages the native view rendering, the native API invoking, and user interactions.</p>
+    </div>
+    <div class="sketch-content imgbox">
+    </div>
+  </div>
+</div>
+
+<div class="scene users horizon overlength">
+  <div class="scene-container">
+    <div class="textbox">
+      <h2>Who uses it</h2>
+    </div>
+    <div class="sketch-content">
+      <div class="user-logo tmall-logo">
+        <h3>Tmall</h3>
+        <div class="user-info">
+          <h4>Tmall</h4>
+          <p>Tmall is a business-to-consumer (B2C) platform and is the most visited B2C online retail website in China.</p>
+        </div>
+      </div>
+      <div class="user-logo aliyun-logo">
+        <h3>Alibaba Cloud</h3>
+        <div class="user-info">
+          <h4>Alibaba Cloud</h4>
+          <p>As the cloud computing arm and business unit of Alibaba Group (NYSE BABA), Alibaba Cloud provides a comprehensive suite of global cloud computing services to power both our international customers’ online businesses and Alibaba Group’s own e-commerce ecosystem.</p>
+        </div>
+      </div>
+      <div class="user-logo taobao-logo">
+        <h3>Taobao</h3>
+        <div class="user-info">
+          <h4>Taobao</h4>
+          <p>Taobao is China&#39;s largest consumer-to-consumer online shopping platform.</p>
+        </div>
+      </div>
+      <div class="user-logo ding-logo">
+        <h3>DingTalk</h3>
+        <div class="user-info">
+          <h4>DingTalk</h4>
+          <p>DingTalk, an App by Alibaba. Free communication and collaboration platform used by millions of enterprises or organizations.</p>
+        </div>
+      </div>
+      <div class="user-logo alibaba-logo">
+        <h3>1688</h3>
+        <div class="user-info">
+          <h4>1688</h4>
+          <p>Launched in 1999, 1688.com is the leading platform for global wholesale trade. We serve millions of buyers and suppliers around the world.</p>
+        </div>
+      </div>
+      <div class="user-logo cainiao-logo">
+        <h3>Cainiao</h3>
+        <div class="user-info">
+          <h4>Cainiao</h4>
+          <p>Cainiao is committed to providing you the best tracking service for all kinds of your cross-border packages.</p>
+        </div>
+      </div>
+      <div class="user-logo xiami-logo">
+        <h3>Xiami</h3>
+        <div class="user-info">
+          <h4>Xiami</h4>
+          <p>Xiami is a music and audio platform that is operated by Alibaba Group.</p>
+        </div>
+      </div>
+      <div class="user-logo youku-logo">
+        <h3>Youku</h3>
+        <div class="user-info">
+          <h4>Youku</h4>
+          <p>Youku is one of China&#39;s top online video and streaming service platforms.</p>
+        </div>
+      </div>
+      <div class="user-logo taopiaopiao-logo">
+        <h3>Tao Tickets Pro</h3>
+        <div class="user-info">
+          <h4>Tao Tickets Pro</h4>
+          <p>Tao Tickets Pro is an intelligent data application which offers film industry practitioners with valuable data and information. Base on the huge data from Alibaba group, it provides services of realtime box office statistic and prediction，film schedule , cinema management information and user profile etc.</p>
+        </div>
+      </div>
+      <div class="user-logo fliggy-logo">
+        <h3>Fliggy</h3>
+        <div class="user-info">
+          <h4>Fliggy</h4>
+          <p>Fliggy is Alibaba Group&#39;s travel brand, designed to provide users with convenient, more cost-effective travel services.</p>
+        </div>
+      </div>
+      <div class="user-logo juhuasuan-logo">
+        <h3>Juhuasuan</h3>
+        <div class="user-info">
+          <h4>Juhuasuan</h4>
+          <p>Juhuasuan is Alibaba Group&#39;s platform for Taobao, Lynx business from 800 million commodities in the carefully selected high-quality goods, independent network to carry out activities to sell, with higher service standards to provide you with cost-effective goods.</p>
+        </div>
+      </div>
+      <div class="user-logo qianniu-logo">
+        <h3>Qianniu</h3>
+        <div class="user-info">
+          <h4>Qianniu</h4>
+          <p>Alibaba produced for the seller stop working units, for the seller the integration of the shop management tools, business information and news, business partnerships, in order to enhance the operational efficiency of the sellers, in order to promote cooperation between the two win, so that the seller can...</p>
+        </div>
+      </div>
+    </div>
+    <!--<div class="more">
+      <a class="more" href="">More</a>
+    </div>-->
+  </div>
+</div>
+
+<div class="scene feedback horizon overlength">
+  <div class="scene-container">
+    <div class="textbox">
+      <h2>People say</h2>
+    </div>
+    <div class="sketch-content">
+      <div class="user-feedback">
+        <img class="avatar" src="//gw.alicdn.com/tps/TB1xHiYPXXXXXc8XpXXXXXXXXXX-130-130.jpg" alt="avatar">
+        <p class="user-name">Tianyu Chen</p>
+        <p class="user-title">Zhong An Insurance, R&amp;D Director</p>
+        <p class="user-say">Weex is not only flexible and powerful, but also allows front-end developers to maximize the reuse of existing technology to help us design a new cross-platform architecture, and as soon as possible into the implementation phase.</p>
+      </div>
+      <div class="user-feedback">
+        <img class="avatar" src="//gw.alicdn.com/tps/TB1e.CYPXXXXXcsXpXXXXXXXXXX-130-130.jpg" alt="avatar">
+        <p class="user-name">Jianfeng Lin</p>
+        <p class="user-title">Eleme, FE Leader</p>
+        <p class="user-say">Weex provides Web development efficiency and Native performance, comparable to our iterative speed requirements of the team is relatively high, is currently the best solution.</p>
+      </div>
+      <div class="user-feedback">
+        <img class="avatar" src="//gw.alicdn.com/tps/TB15MOQPXXXXXbCXFXXXXXXXXXX-130-130.jpg" alt="avatar">
+        <p class="user-name">Taicheng Huang</p>
+        <p class="user-title">Tmall, Technical Expert</p>
+        <p class="user-say">Weex as a lightweight rendering engine also provides a very convenient plug-in mechanism, so that each side can put their ability to play out, give full play to the cat&#39;s business, and good support for Global Shopping Festival.</p>
+      </div>
+    </div>
+    <div class="go-2-doc">
+      <a href="/guide/index.html" class="button get-started">Get Started →</a>
+    </div>
+  </div>
+</div>
+<a href="javascript:;" id="back2top" class="back2top"><span class="iconfont icon-arrow-small"></span></a>
+<footer id="footer">
+  <div class="row clearfix">
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu pick-lang">
+        <li>
+          <a href="/index.html" data-lang="en">English</a>
+        </li>
+        <li>
+          <a href="/cn/index.html" data-lang="zh-cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div><img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="200px" alt="Apache Incubator"></div>
+    <div><span class="title">Disclaimer:</span> Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+    <br/>
+  </div>
+  <hr>
+  <div class="row">
+    <p> <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="50px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span> <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div></div>
+  </div>
+</footer>
+
+<div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+
+<script src="/js/swiper.min.js"></script>
+<script src="/js/velocity.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: false,
+  autoplay: false,
+  autoplayDisableOnInteraction: false
+});
+</script>
+    
+  
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+      
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>
