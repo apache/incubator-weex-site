@@ -2,7 +2,7 @@
 title: Extend JS framework
 type: guide
 group: Extend
-order: 6.5
+order: 6.4
 version: 2.1
 ---
 
