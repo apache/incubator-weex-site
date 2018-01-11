@@ -8,11 +8,12 @@ version: 2.1
 
 # Integrate to Your App
 
-## Integrate on Android Platform
+## Integrate to Android Platform
 The following documents assume that you already have a certain Android development experience.
 
 
-### Quick Start
+### Quick Start Five Steps
+
 The keys to intergrating Weex into your Android application are the following five step:
 
 1.Configure gralde dependency in build.gradle
