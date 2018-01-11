@@ -8,7 +8,7 @@ version: 2.1
 
 # &lt;cell&gt;
 
-用于定义列表中的子列表项，类似于 HTML 中的 `ul` 之于 `li`。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为[`<list>`](./list.html) 组件的子组件, 这是为了优化滚动时的性能。
+用于定义列表中的子列表项，类似于 HTML 中的 `ul` 之于 `li`。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为[`<list>`](./list.html) [`<recycler>`](./list.html) [`<waterfall.>`](./waterfall.html)组件的子组件, 这是为了优化滚动时的性能。
 
 ## 子组件
 
