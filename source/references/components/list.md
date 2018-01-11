@@ -10,7 +10,15 @@ version: 2.1
 
 <span class="weex-version">v0.6.1+</span>
 
-The List component, which inherits from Scroller component, is a core component, and it provides the most popular features for using a list of items.
+The List component, which inspired by Android RecyclerView, is a core component, and it provides the most popular features for using a list of items. which support vertical and horizontal list.
+
+List Component provids Alias Compoent Name.
+
+* list   vertical list
+
+* hlist  horizontal list
+
+*recycler list, wich support  layoutType attr,  grid  multi-column, you can define multi column list. you can use columnCount columnGap  columnWidth to control its behavor.
 
 It can provide excellent experience and performance while still maintaining smooth scroll and low memory usage.
 
@@ -25,6 +33,13 @@ It can provide excellent experience and performance while still maintaining smoo
       </div>
     </cell>
   </list>
+  <hlist class="list">
+    <cell class="cell" v-for="num in lists">
+      <div class="panel">
+        <text class="text">{{num}}</text>
+      </div>
+    </cell>
+  </hlist>
 </template>
 
 <script>
