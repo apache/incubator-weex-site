@@ -12,6 +12,7 @@
   }
 
   a {
+    color: #999;
     &.current {
       border: none;
       color: $text-blue;
@@ -23,6 +24,9 @@
 
   h3.chapter-title {
     font-size: 1.2em;
+    a {
+      color: #333;
+    }
   }
 
   ul.chapter {
