@@ -17,8 +17,7 @@ $ npm install -g weex-toolkit
 You can use the `weex -v` command to confirm that the installation is successful.
 
 If you have never installed node.js, you should go [node.js.org]( https://nodejs.org/en/) to download and install it.
-* node engine version >= 6. You can try [n](https://github.com/tj/n) to manage your node versions*
-If you meet some errors when installing, please go [weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues) or [weex-toolkit faq](https://github.com/weexteam/weex-toolkit#faq) to find some solution or have a discuss with us.
+> **NOTE:** The node version needs to be upper 6.0. You can try [n](https://github.com/tj/n) to manage your node versions. If you meet some errors when installing, please go [weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues) or [weex-toolkit faq](https://github.com/weexteam/weex-toolkit#faq) to find some solution or have a discuss with us.
 
 
 ## Commands
@@ -41,7 +40,7 @@ You need to run `npm i` before running `npm start` to install project dependenci
 weex-toolkit supports previewing your Weex file(`.vue`) in a watch mode. You only need specify your file path.
 
 ``` bash
-$ weex src/foo.vue
+$ weex preview src/foo.vue
 ```
 
 The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a [Playground](https://weex.apache.org/cn/playground.html) app in your mobile devices, you can scan the QR code at the opened page.
@@ -49,7 +48,7 @@ The browser automatically opens the preview page and you can see the layout and 
 Try the command below, you’ll preview the whole directory files.
 
 ``` bash
-$ weex src --entry src/foo.vue
+$ weex preview src --entry src/foo.vue
 ```
 
 You need to specify the folder path to preview and the entry file (passed in via `--entry`).
@@ -68,7 +67,7 @@ $ weex compile [source] [dist]  [options]
 | --------   | :-----   |
 |`-w, --watch`        | watch we file changes auto build them and refresh debugger page! [default `true`]|
 |`-d,--devtool [devtool]`        |set webpack devtool mode|
-|`-e,--ext [ext]`        | set enabled extname for compiler default is vue|we|
+|`-e,--ext [ext]`        | set enabled extname for compiler default is vue |
 |`-m, --min`| set jsbundle uglify or not. [default `false`]|
 
 You can use like this:
@@ -113,10 +112,10 @@ weex debug [we_file|bundles_dir] [options]
 |`-v, --version`       | display version|
 |`-p, --port [port]`   | set debugger server port|
 |`-e, --entry [entry]` | set the entry bundlejs path when you specific the bundle server root path|
-|`-m, --mode [mode]`   | set build mode [transformer|loader]|
-|`-w, --watch`        | watch we file changes auto build them and refresh debugger page! [default `true`]|
+|`-m, --mode [mode]`   | set build mode [transformer or loader]|
+|`-w, --watch`        | watch we file changes auto build them and refresh debugger page [default `true`]|
 |`--ip [ip]`|set the host ip of debugger server|
-|`--loglevel [loglevel]`| set log level `silent|error|warn|info|log|debug`|
+|`--loglevel [loglevel]`| set log level|
 |`--min`| set jsbundle uglify or not. [default `false`]|
 |`--debug`| start with node-inspect default port is 9331|
 
