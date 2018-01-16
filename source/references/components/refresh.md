@@ -13,7 +13,7 @@ version: 2.1
 The `<refresh>` Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the `<loading>` Component.
 > **Note：** To be rendered properly, the `<refresh>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
 
- - Simple example :
+ - Example:
 
 ```
 <list>
@@ -23,15 +23,16 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
   ...
 </list>
 ```
+
  - Complete example goes [here](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
 
 ## Child Components
 
  - Any other components, like the `<text>` and `<image>` components, can be put inside the refresh component.
 
- - `<loading-indicator>`: There is a special Component named loading-indicator used only inside the `<refresh>` or the `<loading>` Components, which implemented with default animation effect for the refresh component.
+ - `<loading-indicator>`: This is a dedicated component which provides a default refresh animation effect, can only be used inside the `<refresh>` or the `<loading>` components.
 
- - Simple example :
+ - Example:
 
 ```
 <refresh>
@@ -52,13 +53,13 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
 #### `display`
 
- - `show`：If a `<loading-indicator>` Component is included in the `<refresh>` Component, it will display and start the animation.
+ - `show`：The refresh animation will be started if a `<loading-indicator>` is included in the refresh component.
 
- - `hide`：Collapse the refresh view. If a `<loading-indicator>` Component is included in the `<refresh>` Component, it will hide and stop the animation.
+ - `hide`：Collapse the refresh view. It also hides the `<loading-indicator>` and stops the loading animation if there's a `<loading-indicator>` included in the refresh component.
 
-> **Note：** The display and hide of `<refresh>` Components can only be controlled by an attribute named `display` which has the value of show and hide. A `display="show"` statement is always paired with a `display="hide"` statement.
+> **Note：** The visibility of `<refresh>` component can be controlled by display attribute with the value show and hide. A `display="show"` should always be paired with a `display="hide"` statement.
 
- - Simple example :
+ - Example:
 
 ```
 <template>
@@ -86,17 +87,17 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
 ## Styles
 
- - Support all common styles, check out [common styles](../common/common-style)
+ - Please check out the [common styles](../common/common-style)
 
 ## Events
 
 ### `onrefresh`
 
- - Triggered when the scroller or list has been pulled down.
+ - Triggered when the scroller or list is pulled down.
 
 ### `onpullingdown` <span class="weex-version">v0.6.1+</span>
 
- - Triggered when the scroller or list has been pulled down. you can get `dy`, `pullingDistance`, `viewHeight` and `type` from onpullingdown `event` object :
+ - Triggered when the scroller or list is pulled down. The attributes `dy`, `pullingDistance`, `viewHeight` and `type` are accessible from the `event` object :
 
   - `dy` : The offset between two scroll actions
   - `pullingDistance` : The distance of pulling
@@ -104,7 +105,7 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
   - `type` : "pullingdown" constant string type for this event
 
 
- - Simple example :
+ - Example:
 
 ```
 <scroller>
@@ -132,10 +133,8 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 ```
  - Complete example goes [here](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
 
-## Usage Notes
 
- - On the Android platform, it is not allowed for the refresh view to be pushed back when it is been pulling down or its onrefresh event is tiggered, while it is allow as for iOS platform and HTML5.
 
-## Examples
+## Example
 
  - Complete example goes [here](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
