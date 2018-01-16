@@ -8,11 +8,11 @@ version: 2.1
 
 <span class="weex-version">v0.5+</span>
 
-`<web>` is used to display web content that specified by `src` attribute in weex page. You also can use `webview` module to control WebView behavior such as goBack, goForward and reload, See [webview module](../modules/webview.html) for more infomation.
+`<web>` is used to display web content that specified by `src` attribute in weex page. You also can use `webview` module to control WebView behavior such as goBack, goForward and reload, See [webview module](../modules/webview.html) for more information.
 
 ## Basic Usage
 
-> **Note:** `<web>` does not support any nested child components, and the style attributes of `width` and `height` must be specified, otherwise it won't work.
+> **Note:** `<web>` does not support any nested child components, and must specific `width` and `height` in style attribute, otherwise it won't work.
 
 ```html
 <web src="https://vuejs.org"></web>
@@ -28,7 +28,7 @@ See the [example](http://dotwe.org/vue/81da1f0129dfc72e1666cfd4b90f20ae).
 
 ### `src`
 
-  A URL value for web content to be loaded. You can specify a URL which is relative to bundle URL, it will be rewritten to the real resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
+A URL value for web content to be loaded. You can specify a URL which is relative to bundle URL, it will be rewritten to the real resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
 
 ## Events
 
