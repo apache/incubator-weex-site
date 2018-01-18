@@ -22,6 +22,16 @@ A toast provides simple feedback about an operation in a small popup. For exampl
    - For Android: If the duration is longer than 3, it will use a system defined variable called **LONG**, otherwise it will use another variable called **SHORT**
    - For iOS: It will show the toast during the specified time.
 
+#### Basic Usage
+```
+var modal = weex.requireModule('modal')
+modal.toast({
+    message: 'This is a toast',
+    duration: 0.3
+})
+```
+
+
 ### alert(options, callback)
 
 An alert box is often used if you want to make sure information comes through to the user.
@@ -35,6 +45,18 @@ When an alert box pops up, the user will have to click "OK" to proceed.
  - `callback` (function): callback when complete.
   This method has a callback function whose arguments will be:
 - `result` (string): the title text of the confirm button that clicked by user.
+
+#### Basic Usage
+```
+var modal = weex.requireModule('modal')
+modal.alert({
+    message: 'This is a alert',
+    duration: 0.3
+}, function (value) {
+    console.log('alert callback', value)
+})
+```
+
 
 ### confirm(options, callback)
 A confirm box is often used if you want the user to verify or accept something.
@@ -50,6 +72,18 @@ When a confirm box pops up, the user will have to click either confirm or cancel
 
 This method has a callback function whose arguments will be:
 - `result`(string): the title text of the button that clicked by user.
+
+#### Basic Usage
+```
+var modal = weex.requireModule('modal')
+modal.confirm({
+    message: 'Do you confirm ?',
+    duration: 0.3
+}, function (value) {
+    console.log('confirm callback', value)
+})
+```
+
 
 ### prompt(options, callback)
 
@@ -67,81 +101,18 @@ When a prompt box pops up, the user will have to click either confirm or cancel 
   - `result` (string): the title of the button that clicked by user.
   - `data` (string): the value of the text that entered by user.
 
-## Example
-
-```html
-<template>
-  <div class="wrapper">
-    <text class="button" @click="showToast">Toast</text>
-    <text class="button" @click="showAlert">Alert</text>
-    <text class="button" @click="showConfirm">Confirm</text>
-    <text class="button" @click="showPrompt">Prompt</text>
-  </div>
-</template>
-
-<script>
-  var modal = weex.requireModule('modal')
-
-  export default {
-    methods: {
-      showToast (event) {
-        console.log('will show toast')
-        modal.toast({
-          message: 'This is a toast',
-          duration: 0.3
-        })
-      },
-      showAlert (event) {
-        console.log('will show alert')
-        modal.alert({
-          message: 'This is a alert',
-          duration: 0.3
-        }, function (value) {
-          console.log('alert callback', value)
-        })
-      },
-      showConfirm (event) {
-        console.log('will show confirm')
-        modal.confirm({
-          message: 'Do you confirm ?',
-          duration: 0.3
-        }, function (value) {
-          console.log('confirm callback', value)
-        })
-      },
-      showPrompt (event) {
-        console.log('will show prompt')
-        modal.prompt({
-          message: 'This is a prompt',
-          duration: 0.3
-        }, function (value) {
-          console.log('prompt callback', value)
-        })
-      }
-    }
-  };
-</script>
-
-<style scoped>
-  .wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .button {
-    font-size: 60px;
-    width: 450px;
-    text-align: center;
-    margin-top: 30px;
-    margin-left: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-width: 2px;
-    border-style: solid;
-    color: #666666;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5
-  }
-</style>
+#### Basic Usage
+```
+var modal = weex.requireModule('modal')
+modal.prompt({
+    message: 'This is a prompt',
+    duration: 0.3
+}, function (value) {
+    console.log('prompt callback', value)
+})
 ```
 
-[try it](http://dotwe.org/vue/a7dddfb24edb72be947fc4eec3803f1d)
+
+## Example
+
+[Modal demo](http://dotwe.org/vue/a7dddfb24edb72be947fc4eec3803f1d)

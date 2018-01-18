@@ -22,7 +22,17 @@ version: 2.1
   - `message {string}`：展示的内容
   - `duration {number}`：展示的持续时间（以秒为单位）
     - Android: 如果时间长度大于3s，将使用一个被称为**LONG**的系统变量, 否则使用**SHORT**这个系统变量
-    - iOS: 持续的时间同Duration相同。
+    - iOS: 持续的时间同Duration相同
+
+#### 基本用法
+```
+var modal = weex.requireModule('modal')
+modal.toast({
+    message: 'This is a toast',
+    duration: 0.3
+})
+```
+
 
 ### `alert(options, callback)`
 
@@ -34,6 +44,19 @@ version: 2.1
   - `message {string}`：警告框内显示的文字信息
   - `okTitle {string}`：确定按钮上显示的文字信息，默认是“OK”
   - `callback {Function}`：用户操作完成后的回调
+
+#### 基本用法
+```
+var modal = weex.requireModule('modal')
+modal.alert({
+    message: 'This is a alert',
+    duration: 0.3
+}, function (value) {
+    console.log('alert callback', value)
+})
+```
+
+
 
 ### `confirm(options, callback)`
 
@@ -47,6 +70,18 @@ version: 2.1
   - `cancelTitle {string}`：取消按钮上显示的文字信息，默认是 `Cancel`
 - `callback {function (result)}`：用户操作完成后的回调，回调函数的参数 `result` 是确定按钮上的文字信息字符串
 
+#### 基本用法
+```
+var modal = weex.requireModule('modal')
+modal.confirm({
+    message: 'Do you confirm ?',
+    duration: 0.3
+}, function (value) {
+    console.log('confirm callback', value)
+})
+```
+
+
 ### `prompt(options, callback)`
 
 提示框经常用于提示用户在进入页面前输入某个值。当提示框出现后，用户需要输入某个值，然后点击确认或取消按钮才能继续操作。
@@ -57,86 +92,22 @@ version: 2.1
   - `message {string}`：提示框内要显示的文字信息
   - `okTitle {string}`：确认按钮上显示的文字信息，默认是 `OK`
   - `cancelTitle {string}`：取消按钮上显示的文字信息，默认是 `Cancel`
-- `callback {function (ret)}`：用户操作完成后的回调，回调函数的参数 `ret` 格式形如 `{ result: 'OK', data: 'hello world' }`，如下
+- `callback {function (ret)}`：用户操作完成后的回调，回调函数的参数 `ret` 格式形如 `{ result: 'OK', data: 'hello world' }`，如下：
   - `result {string}`：用户按下的按钮上的文字信息
   - `data {string}`：用户输入的文字信息
 
-
-## Example
-
-```html
-<template>
-  <div class="wrapper">
-    <text class="button" @click="showToast">Toast</text>
-    <text class="button" @click="showAlert">Alert</text>
-    <text class="button" @click="showConfirm">Confirm</text>
-    <text class="button" @click="showPrompt">Prompt</text>
-  </div>
-</template>
-
-<script>
-  var modal = weex.requireModule('modal')
-
-  export default {
-    methods: {
-      showToast (event) {
-        console.log('will show toast')
-        modal.toast({
-          message: 'This is a toast',
-          duration: 0.3
-        })
-      },
-      showAlert (event) {
-        console.log('will show alert')
-        modal.alert({
-          message: 'This is a alert',
-          duration: 0.3
-        }, function (value) {
-          console.log('alert callback', value)
-        })
-      },
-      showConfirm (event) {
-        console.log('will show confirm')
-        modal.confirm({
-          message: 'Do you confirm ?',
-          duration: 0.3
-        }, function (value) {
-          console.log('confirm callback', value)
-        })
-      },
-      showPrompt (event) {
-        console.log('will show prompt')
-        modal.prompt({
-          message: 'This is a prompt',
-          duration: 0.3
-        }, function (value) {
-          console.log('prompt callback', value)
-        })
-      }
-    }
-  };
-</script>
-
-<style scoped>
-  .wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .button {
-    font-size: 60px;
-    width: 450px;
-    text-align: center;
-    margin-top: 30px;
-    margin-left: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-width: 2px;
-    border-style: solid;
-    color: #666666;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5
-  }
-</style>
+#### 基本用法
+```
+var modal = weex.requireModule('modal')
+modal.prompt({
+    message: 'This is a prompt',
+    duration: 0.3
+}, function (value) {
+    console.log('prompt callback', value)
+})
 ```
 
-[try it](http://dotwe.org/vue/a7dddfb24edb72be947fc4eec3803f1d)
+
+## 示例
+
+[Modal demo](http://dotwe.org/vue/a7dddfb24edb72be947fc4eec3803f1d)
