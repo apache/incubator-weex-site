@@ -61,7 +61,7 @@ If you want to get the bounding rect of outside viewport of the weex container, 
 
 #### Example
 
-![get box's rect](http://dotwe.org/vue/d69ec16302e06300096c7285baef538a)
+[get box's rect](http://dotwe.org/vue/d69ec16302e06300096c7285baef538a)
 
 
 ### addRule(type, contentObject) <span class="api-version">v0.12.0+</span>
