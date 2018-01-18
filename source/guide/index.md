@@ -1,5 +1,5 @@
 ---
-title: Get Started
+title: Getting Started
 type: guide
 group: Overview
 order: 1.1
