@@ -8,11 +8,11 @@ version: 2.1
 
 # &lt;input&gt;
 
-Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组件。 `<input>` 组件的工作方式因 `type` 属性的值而异，比如 `<text>`， `password`，`url`，`email`，`tel` 等。
+Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组件。 `<input>` 组件的工作方式因 `type` 属性的值而异，比如 `text`， `password`，`url`，`email`，`tel` 等。
 
 **注意：** 
 
-此组件不支持 `click` 事件。请监听 `<input>` 或 `change` 来代替 `click` 事件。
+此组件不支持 `click` 事件。请监听 `input` 或 `change` 来代替 `click` 事件。
 
 ## 子组件
 
@@ -20,13 +20,18 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 
 ## 特性
 
-- `type {string}`：控件的类型，默认值是 `<text>`。`type` 值可以是 `text`，`password`，`url`，`email`，`tel` ，`number` 。每个 `type` 值都符合 W3C 标准。
-- `value {string}`：组件的接收到的输入字符。
+- `type {string}`：控件的类型，默认值是 `<text>`。`type` 值可以是 `text`，`date`，`datetime`，`email`， `password`，`tel`，`time`，`url`，`number` 。每个 `type` 值都符合 W3C 标准。
+- `value {string}`：组件的默认内容。
 - `placeholder {string}`：提示用户可以输入什么。 提示文本不能有回车或换行。
 - `disabled {boolean}`：布尔类型的数据，表示是否支持输入。通常 `click` 事件在 `disabled` 控件上是失效的。
 - `autofocus {boolean}`：布尔类型的数据，表示是否在页面加载时控件自动获得输入焦点。
 - `maxlength {nubmer}`：<sup class="wx-v">v0.7</sup>一个数值类型的值，表示输入的最大长度。
 - `return-key-type {string}`：<sup class="wx-v">v0.11</sup>键盘返回键的类型,支持 defalut;go;next;search;send,done。
+- `singleline {boolean}`：控制内容是否只允许单行
+- `max-length {number}`：控制输入内容的最大长度
+- `lines`：控制输入内容的最大行数
+- `max`：控制当`type`属性为`date`时选择日期的最大时间，格式为`yyyy-MM-dd`
+- `min`：控制当`type`属性为`date`时选择日期的最小时间，格式为`yyyy-MM-dd`
 
 ## 样式
 
