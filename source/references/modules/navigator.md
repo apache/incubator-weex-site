@@ -1,7 +1,8 @@
 ---
 title: navigator
 type: references
-order: 3.5
+group: Build-in Modules
+order: 9.07
 version: 2.1
 ---
 

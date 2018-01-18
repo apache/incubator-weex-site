@@ -10,7 +10,7 @@ version: 2.1
 
 Vue.js 也有较多周边技术产品，如 [Vuex](https://github.com/vuejs/vuex) 和 [vue-router](https://github.com/vuejs/vue-router) 等，这些库也可以在 Weex 中很好的工作。
 
-> 我们基于 Weex 和 Vue 开发了一个的完整项目 [weex-hackernews](https://github.com/weexteam/weex-hackernews) ，在项目中使用了 Vuex 和 vue-router ，能够实现同一份代码，在 iOS、Android、Web 下都能完整地工作。
+> **注意**： Weex 使用原生的 navigator 来管理页面实例，多个实例之间的状态是隔离的。也就是说，Vuex 和 vue-router 只能作用于当前一个页面，无法在多个页面间共享状态。
 
 ## 使用 Vuex
 
@@ -18,9 +18,7 @@ Vue.js 也有较多周边技术产品，如 [Vuex](https://github.com/vuejs/vuex
 
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理工具库，可以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
 
-由于在 Vuex 本身就是平台无关的，有较强的移植能力，完全可以在 Weex 中正常地使用 Vuex ，阅读其[官方文档](https://vuex.vuejs.org/zh-cn/)可以了解详细的使用方法。
-
-Vuex 也集成到了其官方调试工具 [devtools extension](https://github.com/vuejs/vue-devtools)中，提供了诸如 time-travel 调试、状态快照导入导出等高级调试功能。这些工具在 Web 平台中可以一如既往地工作。
+由于在 Vuex 本身就是平台无关的，有较强的移植能力，完全可以在 Weex 中正常地使用 Vuex。 Vuex 也集成到了其官方调试工具 [devtools extension](https://github.com/vuejs/vue-devtools)中，提供了诸如 time-travel 调试、状态快照导入导出等高级调试功能。这些工具在 Web 平台中可以一如既往地工作。
 
 ## 使用 vue-router
 
