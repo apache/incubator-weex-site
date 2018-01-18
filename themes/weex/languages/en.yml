@@ -99,6 +99,7 @@ menu:
   examples: Examples
   contribute: How to Contribute
   bugReportGuidelines: Bug Report Guidelines
+  releaseNote: Release Note
   developmentProcess: Development Process
   usingWeex: Who is using Weex?
 playground:

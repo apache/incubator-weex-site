@@ -99,6 +99,7 @@ menu:
   examples: 实例
   contribute: 如何参与贡献
   bugReportGuidelines: bug 报告指南
+  releaseNote: 版本发布历史
   developmentProcess: 开发流程
   usingWeex: 谁在使用 Weex
 playground:
