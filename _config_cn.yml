@@ -175,7 +175,7 @@ alias:
   doc/how-to/require-3rd-party-libs.html: guide/index.html
   doc/how-to/transform-code-into-js-bundle.html: guide/index.html
   doc/advanced/main.html: references/index.html
-  doc/advanced/how-it-works.html: wiki/.html
+  doc/advanced/how-it-works.html: wiki/index.html
   doc/advanced/how-data-binding-works.html: references/index.html
   doc/advanced/integrate-to-android.html: references/index.html
   doc/advanced/integrate-to-ios.html: references/index.html
@@ -266,7 +266,7 @@ alias:
   cn/doc/how-to/require-3rd-party-libs.html: cn/guide/index.html
   cn/doc/how-to/transform-code-into-js-bundle.html: cn/guide/index.html
   cn/doc/advanced/main.html: cn/references/index.html
-  cn/doc/advanced/how-it-works.html: cn/guide/intro/index.html
+  cn/doc/advanced/how-it-works.html: cn/wiki/index.html
   cn/doc/advanced/how-data-binding-works.html: cn/references/advanced/index.html
   cn/doc/advanced/integrate-to-android.html: cn/references/advanced/index.html
   cn/doc/advanced/integrate-to-ios.html: cn/references/advanced/index.html
@@ -396,7 +396,7 @@ alias:
   cn/guide/tools/weexpack.html: cn/tools/toolkit.html
   cn/guide/tools/plugin.html: cn/tools/helpers.html
   cn/guide/contributing.html: cn/contributing.html
-  cn/guide/intro/how-it-works.html: cn/guide/wiki/index.html
+  cn/guide/intro/how-it-works.html: cn/wiki/index.html
   cn/guide/intro/web-dev-experience.html: cn/guide/front-end-frameworks.html
   cn/guide/intro/using-vue.html: cn/guide/use-vue.html
   cn/guide/intro/write-once.html: cn/guide/index.html
