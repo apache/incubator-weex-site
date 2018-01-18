@@ -91,11 +91,11 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
 ## Events
 
-### `onrefresh`
+### `refresh`
 
  - Triggered when the scroller or list is pulled down.
 
-### `onpullingdown` <span class="weex-version">v0.6.1+</span>
+### `pullingdown` <span class="weex-version">v0.6.1+</span>
 
  - Triggered when the scroller or list is pulled down. The attributes `dy`, `pullingDistance`, `viewHeight` and `type` are accessible from the `event` object :
 

@@ -132,10 +132,6 @@ version: 2.1
 ```
  - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
 
-## 使用提示
-
- - Android 上，在下拉过程中或 onrefresh 事件触发时，不支持 refresh view 的回推，而在 iOS 和 Html5 上是支持的。
-
 ## 示例
 
  - [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)

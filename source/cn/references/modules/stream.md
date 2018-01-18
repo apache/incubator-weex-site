@@ -37,6 +37,7 @@ version: 2.1
   - `statusText {string}`：状态描述文本
   - `data {Object | string}`: 返回的数据，如果请求类型是 `json` 和 `jsonp`，则它就是一个 object ，如果不是，则它就是一个 string。
   - `headers {Object}`：响应头
+
 - `progressCallback {Function}`：关于请求状态的回调。 这个回调函数将在请求完成后就被调用:
   - `readyState {number}`：当前状态
     state:'1': 请求连接中
@@ -50,76 +51,8 @@ version: 2.1
 ### 注意
 
  - 默认 Content-Type 是 'application/x-www-form-urlencoded'。
- - 如果你需要通过 `POST` json ， 你需要将 Content-Type 设为 'application/json'。
+ - 如果你需要通过 `POST` json ， 需要将 Content-Type 设为 'application/json'。
 
 ### Example
 
-```html
-<template>
-  <div class="wrapper">
-    <div class="group">
-      <text class="title">Weex Star :</text>
-      <text class="count">{{weexStar}}</text>
-    </div>
-    <div class="group">
-      <text class="title">Vue Star :</text>
-      <text class="count">{{vueStar}}</text>
-    </div>
-  </div>
-</template>
-
-<script>
-  var stream = weex.requireModule('stream')
-  export default {
-    data () {
-      return {
-        weexStar: 'unknown',
-        vueStar: 'unknown'
-      }
-    },
-
-    methods: {
-      getStarCount (repo, callback) {
-        return stream.fetch({
-          method: 'GET',
-          type: 'json',
-          url: 'https://api.github.com/repos/' + repo
-        }, callback)
-      }
-    },
-    created () {
-      this.getStarCount('alibaba/weex', res => {
-        this.weexStar = res.ok ? res.data.stargazers_count : '(network error)'
-      })
-      this.getStarCount('vuejs/vue', res => {
-        this.vueStar = res.ok ? res.data.stargazers_count : '(network error)'
-      })
-    }
-  }
-</script>
-
-
-<style scoped>
-  .wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .group {
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-  .title {
-    font-size: 45px;
-    color: #888888;
-  }
-  .count {
-    font-size: 45px;
-    font-weight: bold;
-    margin-left: 12px;
-    color: #41B883;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/29bbf2d49fc8a204f98240044bbe211a)
+[stream demo](http://dotwe.org/vue/e182a9fbbeb6f0763cd1df1baddf1e10)
