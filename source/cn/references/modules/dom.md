@@ -57,7 +57,7 @@ version: 2.1
 
 #### 示例
 
-![获取 box 的布局信息](http://dotwe.org/vue/d69ec16302e06300096c7285baef538a)
+[获取 box 的布局信息](http://dotwe.org/vue/d69ec16302e06300096c7285baef538a)
 
 
 ### addRule(type, contentObject) <span class="api-version">v0.12.0+</span>
