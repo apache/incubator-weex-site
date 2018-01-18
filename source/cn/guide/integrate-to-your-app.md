@@ -208,46 +208,40 @@ WXSample地址
 
 ## 集成到 iOS
 
-### 通过cocoaPods 集成 Weex iOS SDK到你的项目
+### 通过 [CocoaPods](https://cocoapods.org/) 或者 [Carthage](https://github.com/Carthage/Carthage) 集成 Weex iOS SDK到你的项目
 
-首先假设你已经完成了安装 [iOS 开发环境](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) 和 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+首先假设你已经完成了安装 [iOS 开发环境](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) 和 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)(或者[Carthage](https://github.com/Carthage/Carthage#installing-carthage))
 
 #### 第一步：添加依赖
 
-导入 Weex iOS SDK 到你已有的项目, 如果没有，可以[参考](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html)新建项目
-在继续下面内容之前，确保你已有的项目目录有名称为 `Podfile` 文件，如果没有，创建一个，用文本编辑器打开
+导入 Weex iOS SDK 到你已有的项目, 如果没有，可以[参考](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html)新建项目。
+在继续下面内容之前，确保你已有的项目目录有名称为 `Podfile` 文件，如果没有，创建一个，用文本编辑器打开(如果使用 Carthage ，请确保已有项目目录下存在 [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile))。选择其中一个集成方法就可以。
 
-- 集成 framework
+- 添加依赖
 
-  WeexSDK  在 cocoaPods 上最新版本 可以在[这](https://cocoapods.org/pods/WeexSDK)获取
+ - 使用[CocoaPods](https://cocoapods.org/)  
+  WeexSDK 在 cocoaPods 上最新版本 可以在[这](https://cocoapods.org/pods/WeexSDK)获取
 
   在 `Podfile` 文件中添加如下内容
+  
+	  ```
+	  source 'git@github.com:CocoaPods/Specs.git'
+	  target 'YourTarget' do
+	      platform :ios, '7.0'
+	      pod 'WeexSDK', '0.17.0'   ## 建议使用WeexSDK新版本
+	  end
+	  ```   
+  打开命令行，切换到你已有项目 `Podfile` 这个文件存在的目录，执行 `pod install`，没有出现任何错误表示已经完成环境配置。
+  
+ - 使用 [Carthage](https://github.com/Carthage/Carthage)
+    
+  可以在[这](https://github.com/apache/incubator-weex/tags)查询到当前最新的版本。  
+  在 [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) 中添加如下内容   
+  `github "apache/incubator-weex"`  
+  在包含 `Cartfile` 文件目录的终端中执行 `carthage update`。 
+  [添加 framework 到你的工程](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
 
-  ```
-  source 'git@github.com:CocoaPods/Specs.git'
-  target 'YourTarget' do
-      platform :ios, '7.0'
-      pod 'WeexSDK', '0.9.5'   ## 建议使用WeexSDK新版本
-  end
-  ```
-
-- 源码集成
-
-  首先 拷贝 `ios/sdk` 目录到你已有项目目录 (此处以拷贝到你已有项目的根目录为例子)，然后在 `Podfile` 文件中添加
-
-  ````object-c
-  source 'git@github.com:CocoaPods/Specs.git'
-  target 'YourTarget' do
-      platform :ios, '7.0'
-      pod 'WeexSDK', :path=>'./sdk/'
-  end
-  ````
-
-#### 第二步：安装依赖
-
-打开命令行，切换到你已有项目 `Podfile` 这个文件存在的目录，执行 `pod install`，没有出现任何错误表示已经完成环境配置。
-
-#### 第三步：初始化 Weex 环境
+#### 第二步：初始化 Weex 环境
 
 在 `AppDelegate.m` 文件中做初始化操作，一般会在 `didFinishLaunchingWithOptions` 方法中如下添加。
 
@@ -271,7 +265,7 @@ WXSample地址
 [WXLog setLogLevel: WXLogLevelAll];
 ```
 
-#### 第四步：渲染 weex Instance
+#### 第三步：渲染 weex Instance
 
 Weex 支持整体页面渲染和部分渲染两种模式，你需要做的事情是用指定的 URL 渲染 Weex 的 view，然后添加到它的父容器上，父容器一般都是 viewController。
 
@@ -306,7 +300,7 @@ Weex 支持整体页面渲染和部分渲染两种模式，你需要做的事情
 
 WXSDKInstance 是很重要的一个类，提供了基础的方法和一些回调，如 `renderWithURL`, `onCreate`, `onFailed` 等，可以参见 `WXSDKInstance.h` 的声明。
 
-#### 第五步：销毁 Weex Instance
+#### 第四步：销毁 Weex Instance
 
    在 viewController 的 dealloc 阶段 销毁掉 Weex instance，释放内存，避免造成内存泄露。
 
@@ -320,5 +314,29 @@ WXSDKInstance 是很重要的一个类，提供了基础的方法和一些回调
 ### 导入 Weex SDK framework 到工程
 
   可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature。
+  - 使用 git clone [Weex](https://github.com/apache/incubator-weex.git)  
+  SSH  
+	   ``` 
+	   git clone git@github.com:apache/incubator-weex.git
+	   ```   
+	  或者 https   
+	   ``` 
+		  git clone https://github.com/apache/incubator-weex.git
+	   ```
+    
+- 打开 WeexSDK.xcodeproj in `weex/ios/sdk`  
+  切换到如下图所示 target 
+  ![img](http://img1.tbcdn.cn/L1/461/1/4fe050b36e7fea52f121e73790b1fdb7ea934e97)
+  
+- 编译当前target，可以直接用快捷键 `⌘ + b`
 
-  参考[此处](https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.tFddsV&&docType=1&articleId=104829)直接导入 weexSDK。
+- 最后找到产物在 `weex/ios/sdk/Products` 目录  
+  ![img](http://img4.tbcdn.cn/L1/461/1/52594fea03ee1154845d0f897558b81b4b5bef2e)
+
+- 导入 framework 到自己工程
+  - 需要添加如下图系统依赖
+ ![img](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/ae71160e726421cd96b49353a740252b.png)
+ - 添加 `-ObjC` 到工程设置中
+  ![img](http://img3.tbcdn.cn/L1/461/1/430ae522f5031ff728c95efea49219a11e6852b3)
+ - 添加 `js-framework` 到自己的 main bundle, `js-framework` 的位置在 WeexSDK.framework 中，文件名称为 `native-bundle-main.js`
+   ![img](http://img1.tbcdn.cn/L1/461/1/bb3998595bafe9c9336411160c0b6bd3eeb843ef)
