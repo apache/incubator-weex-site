@@ -6,12 +6,12 @@ order: 9.07
 version: 2.1
 ---
 
-# Navigator
+# Navigator 
 
 <span class="weex-version">v0.6.1+</span>
 
 As it's known to all that, we can navigate back and forth in the web browser using the navigation bar.
-And The navigator module mimics the same behaviors in the iOS/Android application. Without such an ability, We will have to stay in the same page forever, so it is very important. Besides the navigation, the module can let us to specify whether to apply animation or not during the transition.
+And The navigator module mimics the same behaviors in the iOS/Android application. Without such an ability, We will have to stay in the same page forever, so it is very important. Besides the navigation, the module can specify whether to apply animation or not during the transition.
 
 ## API
 ### push(options, callback)
@@ -42,7 +42,8 @@ pop a weex page onto the navigator stack, you can specify whether apply animatio
 ```html
 <template>
   <div class="wrapper">
-    <text class="button" @click="jump">Jump</text>
+    <text class="button" @click="push">Push</text>
+    <text class="button" @click="pop">Pop</text>
   </div>
 </template>
 
@@ -52,10 +53,17 @@ pop a weex page onto the navigator stack, you can specify whether apply animatio
 
   export default {
     methods: {
-      jump (event) {
-        console.log('will jump')
+      push (event) {
+        var bundleUrl = weex.config.bundleUrl;
         navigator.push({
-          url: 'http://dotwe.org/raw/dist/519962541fcf6acd911986357ad9c2ed.js',
+          url: bundleUrl,
+          animated: "true"
+        }, event => {
+          modal.toast({ message: 'callback: ' + event })
+        })
+      },
+      pop (event) {
+        navigator.pop({
           animated: "true"
         }, event => {
           modal.toast({ message: 'callback: ' + event })
@@ -87,4 +95,4 @@ pop a weex page onto the navigator stack, you can specify whether apply animatio
 </style>
 ```
 
-[try it](http://dotwe.org/vue/5c670b07735ee6d08de5c8eb93f91f11)
+[try it](http://dotwe.org/vue/f2daa25e32eec2a294d59a9144660cad)
