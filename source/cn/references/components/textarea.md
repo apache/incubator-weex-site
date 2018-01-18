@@ -2,7 +2,7 @@
 title: <textarea>
 type: references
 group: 内置组件
-order: 8.11
+order: 8.14
 version: 2.1
 ---
 

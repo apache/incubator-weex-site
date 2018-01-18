@@ -2,7 +2,7 @@
 title: <slider>
 type: references
 group: 内置组件
-order: 8.13
+order: 8.11
 version: 2.1
 ---
 

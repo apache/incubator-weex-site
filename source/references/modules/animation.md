@@ -1,5 +1,5 @@
 ---
-title: <animation>
+title: animation
 type: references
 order: 9.01
 version: 2.1
@@ -9,7 +9,7 @@ version: 2.1
 
 ## Overview
 
-The ``<animation>`` module is used to perform animation on components. 
+The `animation` module is used to perform animation on components. 
 
 JS-Animation can perform a series of simple transformations  (position, size, rotation, background color, and opacity) on the component with Javascript.
 
