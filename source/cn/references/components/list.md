@@ -2,7 +2,7 @@
 title: <list>
 type: references
 group: 内置组件
-order: 8.06
+order: 8.07
 version: 2.1
 ---
 
@@ -73,7 +73,8 @@ version: 2.1
     - `x {number}`: x轴上的偏移量
     - `y {number}`: y轴上的偏移量
 
-  [体验一下](http://dotwe.org/bc445ede8746a31360e3607d210304c5)
+  [示例1](http://dotwe.org/bc445ede8746a31360e3607d210304c5)
+ [示例2](http://dotwe.org/vue/3b450a89aefc5c0fea0f76713e1355b6)
 
 - 通用事件
 
@@ -111,63 +112,4 @@ version: 2.1
 
 ## 示例
 
-
-```html
-<template>
-  <list class="list" @loadmore="fetch" loadmoreoffset="10">
-    <cell class="cell" v-for="num in lists">
-      <div class="panel">
-        <text class="text">{{num}}</text>
-      </div>
-    </cell>
-  </list>
-</template>
-
-<script>
-  const modal = weex.requireModule('modal')
-  const LOADMORE_COUNT = 4
-
-  export default {
-    data () {
-      return {
-        lists: [1, 2, 3, 4, 5]
-      }
-    },
-    methods: {
-      fetch (event) {
-        modal.toast({ message: 'loadmore', duration: 1 })
-
-        setTimeout(() => {
-          const length = this.lists.length
-          for (let i = length; i < length + LOADMORE_COUNT; ++i) {
-            this.lists.push(i + 1)
-          }
-        }, 800)
-      }
-    }
-  }
-</script>
-
-<style scoped>
-  .panel {
-    width: 600px;
-    height: 250px;
-    margin-left: 75px;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    flex-direction: column;
-    justify-content: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgb(162, 217, 192);
-    background-color: rgba(162, 217, 192, 0.2);
-  }
-  .text {
-    font-size: 50px;
-    text-align: center;
-    color: #41B883;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)
+[加载更多](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)

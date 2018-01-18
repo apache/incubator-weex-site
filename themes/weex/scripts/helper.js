@@ -21,11 +21,7 @@ hexo.extend.helper.register('page_anchor', function(str){
   if (!headings.length) return str;
 
   headings.each(function(){
-    var id = $(this).attr('id');
-
-    $(this)
-      .addClass('article-heading')
-      .append('<a class="article-anchor" href="#' + id + '" aria-hidden="true"></a>');
+    $(this).addClass('article-heading')
   });
 
   return $.html();

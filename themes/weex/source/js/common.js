@@ -532,30 +532,30 @@
     /**
      * Index page animation:  screenshot layer
      */
-    function initLayerAnim () {
-      var featureScene = document.querySelector('.feature')
-      var img_level_1 = featureScene.querySelector('.level1')
-      var img_level_2 = featureScene.querySelector('.level2')
-      var img_level_3 = featureScene.querySelector('.level3')
-      var img_level_4 = featureScene.querySelector('.level4')
+    // function initLayerAnim () {
+    //   var featureScene = document.querySelector('.feature')
+    //   // var img_level_1 = featureScene.querySelector('.level1')
+    //   var img_level_2 = featureScene.querySelector('.level2')
+    //   var img_level_3 = featureScene.querySelector('.level3')
+    //   var img_level_4 = featureScene.querySelector('.level4')
 
-      var featureScroll = new AppearController(featureScene, {
-        threshold: -30,
-        appear: function (el, offset) {
-          var layerSequence = [
-            { e: img_level_1, p: { left: '0px' }, o: { easing: 'ease-out', duration: 700 } },
-            { e: img_level_2, p: { left: '15px' }, o: { easing: 'ease-out', duration: 700}},
-            { e: img_level_3, p: { left: '15px' }, o: { easing: 'ease-out', duration: 700 } },
-            { e: img_level_4, p: { left: '-15px' }, o: { easing: 'ease-out', duration: 700 } }
-          ]
+    //   var featureScroll = new AppearController(featureScene, {
+    //     threshold: -30,
+    //     appear: function (el, offset) {
+    //       var layerSequence = [
+    //         { e: img_level_1, p: { left: '0px' }, o: { easing: 'ease-out', duration: 700 } },
+    //         { e: img_level_2, p: { left: '15px' }, o: { easing: 'ease-out', duration: 700}},
+    //         { e: img_level_3, p: { left: '15px' }, o: { easing: 'ease-out', duration: 700 } },
+    //         { e: img_level_4, p: { left: '-15px' }, o: { easing: 'ease-out', duration: 700 } }
+    //       ]
 
-          Velocity.RunSequence(layerSequence)
-          this._destroy()
-        }
-      })
-    }
+    //       Velocity.RunSequence(layerSequence)
+    //       this._destroy()
+    //     }
+    //   })
+    // }
 
-    initLayerAnim()
+    // initLayerAnim()
 
 
     /**
@@ -587,30 +587,7 @@
 
     initGalaxy()
 
-    /**
-     * Index page back to top
-     */
-    function initBack2Top () {
-      var firstScene = BODY.querySelector('.header'),
-          back2top = document.getElementById('back2top')
-
-      new AppearController(firstScene, {
-        threshold: -50,
-        appear: function () {
-          back2top.classList.remove('show')
-        },
-        disappear: function () {
-          back2top.classList.add('show')
-        }
-      })
-      
-      back2top.addEventListener('click', function (e) {
-        window.scrollTo && window.scrollTo(0, 0)
-      })
-    }
-
-    initBack2Top()
-  } else {}
+}
 
 function initVersionChange(){
     var btns = document.querySelectorAll('.versionBtn')

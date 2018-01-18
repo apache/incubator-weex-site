@@ -2,71 +2,41 @@
 title: <a>
 type: references
 group: Build-in Components
-order: 8.04
+order: 8.01
 version: 2.1
 ---
 
-# &lt;a&gt;
+`<a>` is mainly used for navigation between weex pages。
 
-`a` defines a hyperlink to a page in the web. Its purpose and syntax is very similar to [<a>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) in HTML5.
+> **Note:** The behavior of `<a>` is similar to [`<div>`](./div.html) except for the aspect mentioned in current page.
 
-## Child Components
+> **Note:** It's forbidden to add text directly to `<a>`, use [`<text>`](./text.html) to wrap your text instead.
 
-This type of component supports all kinds of weex component as it's child components except for its own kind.
+## Basic Usage
+Wrap the element navigating from with `<a>`
 
-## Attributes
+    <a href="http://dotwe.org/raw/dist/a5e3760925ac3b9d68a3aa0cc0298857.bundle.wx">
+      <text>Jump</text>
+    </a> 
 
-* href: href attributes defines the URL of the hyperlink.
+Refer the [demo](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955).
 
-## Styles:
+## Attributes:
+| Attribute       | Type    |Value| Default Value|
+| -------------   | ------  | --- | ------------ |
+| `href` | String | {URL}   | -   | -            |
 
-### common styles
+### `href`
+`href` defines the URL that current page will navigate. `href` **must** point to a weex page, the behavior of other case is **undefined**.
 
-Check out the [common styles](../common-style.html)
+## Style
+Support [common styles](../../wiki/common-styles.html).
 
 ## Events
+Support [common events](../../wiki/common-events.html)
 
-### common events
-
-Check out the [common events](../common-event.html)
-
-### Notes
-
-We can't guarantee the order of execution between onclick function and href. we recommend that do not use the click event in `a`.
+### `click`
+> **Notes:** The execution order of callback function of click and href is **undefined**. Do **not** use click event to do the preprocessing of `href`.
 
 ## Examples
-
-```html
-<template>
-  <div class="wrapper">
-    <a class="button" href="http://dotwe.org/raw/dist/3e0e40f9ddad79f98cd236753965ffd8.js">
-      <text class="text">Jump</text>
-    </a>
-  </div>
-</template>
-
-<style scoped>
-  .wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .button {
-    width: 450px;
-    margin-top: 30px;
-    margin-left: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5
-  }
-  .text {
-    font-size: 60px;
-    color: #666666;
-    text-align: center;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/025db54e37123ab5336a4b848397660f)
+* [Basic usage for `<a>`](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955) .

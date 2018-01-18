@@ -2,7 +2,7 @@
 title: globalEvent
 type: references
 group: 内置模块
-order: 9.13
+order: 9.04
 version: 2.1
 ---
 

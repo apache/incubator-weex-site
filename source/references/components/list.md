@@ -2,7 +2,7 @@
 title: <list>
 type: references
 group: Build-in Components
-order: 8.06
+order: 8.07
 version: 2.1
 ---
 
@@ -10,54 +10,13 @@ version: 2.1
 
 <span class="weex-version">v0.6.1+</span>
 
-The List component, which inherits from Scroller component, is a core component, and it provides the most popular features for using a list of items.
+The List component, which inspired by Android RecyclerView, is a core component, and it provides the most popular features for using a list of items. which support vertical and horizontal list.
 
 It can provide excellent experience and performance while still maintaining smooth scroll and low memory usage.
 
-**example**
+[list demo](http://dotwe.org/vue/edd19cdf2f03fbe857b76fadd65a08c3)
+[list demo](http://dotwe.org/vue/2170622cc99895e5ad6af89d06355b84)
 
-```html
-<template>
-  <list class="list">
-    <cell class="cell" v-for="num in lists">
-      <div class="panel">
-        <text class="text">{{num}}</text>
-      </div>
-    </cell>
-  </list>
-</template>
-
-<script>
-  export default {
-    data () {
-      return {
-        lists: ['A', 'B', 'C', 'D', 'E']
-      }
-    }
-  }
-</script>
-
-<style scoped>
-  .panel {
-    width: 600px;
-    height: 300px;
-    margin-left: 75px;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    flex-direction: column;
-    justify-content: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgb(162, 217, 192);
-    background-color: rgba(162, 217, 192, 0.2);
-  }
-  .text {
-    font-size: 88px;
-    text-align: center;
-    color: #41B883;
-  }
-</style>
-```
 
 ### Child Components
 
@@ -79,6 +38,7 @@ Notes: The list now supports the following child components: cell, header, refre
 Please checkout [Scroller Component Attributes](./scroller.html) to have a look at the inherited attributes from direct parent.
 
 ### Styles
+
 
 common styles: check out [common styles for components](../common-style.html)
 
@@ -113,64 +73,5 @@ onloadmore is an event that will be triggered when the rest of the scroller/list
 Nested lists or scrollers within the same direction are not supported. In other words. nested lists/scroller must have different directions.
 For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.
 
-### Example
 
-```html
-<template>
-  <list class="list" @loadmore="fetch" loadmoreoffset="10">
-    <cell class="cell" v-for="num in lists">
-      <div class="panel">
-        <text class="text">{{num}}</text>
-      </div>
-    </cell>
-  </list>
-</template>
-
-<script>
-  const modal = weex.requireModule('modal')
-  const LOADMORE_COUNT = 4
-
-  export default {
-    data () {
-      return {
-        lists: [1, 2, 3, 4, 5]
-      }
-    },
-    methods: {
-      fetch (event) {
-        modal.toast({ message: 'loadmore', duration: 1 })
-
-        setTimeout(() => {
-          const length = this.lists.length
-          for (let i = length; i < length + LOADMORE_COUNT; ++i) {
-            this.lists.push(i + 1)
-          }
-        }, 800)
-      }
-    }
-  }
-</script>
-
-<style scoped>
-  .panel {
-    width: 600px;
-    height: 250px;
-    margin-left: 75px;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    flex-direction: column;
-    justify-content: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgb(162, 217, 192);
-    background-color: rgba(162, 217, 192, 0.2);
-  }
-  .text {
-    font-size: 50px;
-    text-align: center;
-    color: #41B883;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)
+[load more demo](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)

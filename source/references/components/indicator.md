@@ -2,7 +2,7 @@
 title: <indicator>
 type: references
 group: Build-in Components
-order: 8.14
+order: 8.05
 version: 2.1
 ---
 
@@ -10,11 +10,11 @@ version: 2.1
 
 ### Summary
 
-This component must be used as a subcomponent of a [`slider`](./slider.html) component.
+The `<indicator>` component usually used to show an indicator effect, it must be used as a subcomponent of a [`slider`](./slider.html) component.
 
 ### Child Components
 
-This component supports no child components.
+This component dosen not supports any child components.
 
 ### Attributes
 
@@ -22,11 +22,12 @@ There is no specific attribute for this component.
 
 ### Styles
 
-- `item-color`: &lt;colors&gt; This style attribute sets the normal item color using either a named color or a color specified in the hexadecimal #RRGGBB format.
-- `item-selectedColor`: &lt;colors&gt; This style attribute sets the selected item color using either a named color or a color specified in the hexadecimal #RRGGBB format.
-- `item-size`: &lt;length&gt; The size of the indicator elements, which is an float attribute.
+Threr are some private styles for `<indicator>` :
+- `item-color`: &lt;colors&gt; This style attribute sets the normal item, default is `#CCCCCC`.
+- `item-selectedColor`: &lt;colors&gt; This style attribute sets the selected item, default is `#444444`.
+- `item-size`: &lt;length&gt; The radius of the indicator elements, default is `5px`
 
-**common styles**: check out the [common styles](../common-style.html)
+**common styles**: see [common styles](../common-style.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -45,78 +46,4 @@ There is no specific attribute for this component.
 
 ### Example
 
-```html
-<template>
-  <div>
-    <slider class="slider" interval="4500" @change="onchange">
-      <div class="frame" v-for="img in imageList">
-        <image class="image" resize="cover" :src="img.src"></image>
-        <text class="title">{{img.title}}</text>
-      </div>
-      <indicator class="indicator"></indicator>
-    </slider>
-  </div>
-</template>
-
-<style>
-  .image {
-    width: 700px;
-    height: 700px;
-  }
-  .slider {
-    margin-top: 25px;
-    margin-left: 25px;
-    width: 700px;
-    height: 700px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #41B883;
-  }
-  .title {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding-left: 20px;
-    width: 200px;
-    color: #FFFFFF;
-    font-size: 36px;
-    line-height: 60px;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .frame {
-    width: 700px;
-    height: 700px;
-    position: relative;
-  }
-  .indicator {
-    width: 700px;
-    height: 700px;
-    item-color: green;
-    item-selected-color: red;
-    item-size: 50px;
-    top: 200px;
-    left: 200px;
-  }
-</style>
-
-<script>
-  export default {
-    data () {
-      return {
-        imageList: [
-          { title: 'item A', src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg'},
-          { title: 'item B', src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'},
-          { title: 'item C', src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'}
-        ]
-      }
-    },
-    methods: {
-      onchange (event) {
-        console.log('changed:', event.index)
-      }
-    }
-  }
-</script>
-```
-
-[try it](http://dotwe.org/vue/d2a654c4b75f1b4d80336c8a5fe133b9)
+[indicator demo](http://dotwe.org/vue/e1b4fd8a37ed4cafd8f5e161698754aa)

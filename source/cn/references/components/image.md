@@ -2,185 +2,154 @@
 title: <image>
 type: references
 group: 内置组件
-order: 8.02
+order: 8.04
 version: 2.1
 ---
 
-# &lt;image&gt;
+`<image>` 用于在界面中显示单个图片。
 
-`<image>` 组件用于渲染图片，并且它不能包含任何子组件。新版 Vue 2.0 中**不支持**用 `<img>` 作简写。
+> **注意：**在HTML中通常使用的 `<img>` 标签在 Weex 中不支持，你应该使用`<image>` 。
 
-需要注意的是，需要明确指定 `width` 和 `height`，否则图片无法显示。
+> **注意：** Weex 没有内置的图片下载器，因为相关的下载、缓存、解码机制非常复杂，一些开源的工具如 [SDWebImage](https://github.com/rs/SDWebImage) 已经处理得很好， 所以在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
+>
+> 参见:  [Android adapter](../android-apis.html#Adapter) 和 [iOS handler](../ios-apis.html#Handler-like-Android-Adapter)。
 
-简单例子：
+## 基本用法
+
+> **注意：** 必须指定样式中的宽度和高度，否则无法工作。
 
 ```html
-<template>
-  <div>
-    <image style="width: 560px;height: 560px;" src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></image>
-  </div>
-</template>
+<image style="width:500px;height:500px" src="https://vuejs.org/images/logo.png"></image>
 ```
 
-[体验一下](http://dotwe.org/vue/1d6145d98cbdb8c66c69b4d4dcd2744d)
+参见[示例](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f)。
 
-## 子组件
+## 属性
 
-`<image>` 组件不支持任何子组件，因此不要尝试在 `<image>` 组件中添加任何组件。如果需要实现 `background-image` 的效果，可以使用 `<image>` 组件和 `position` 定位来现实，如下面代码。
+| 属性名           | 类型     | 值                          | 默认值     |
+| ------------- | ------ | -------------------------- | ------- |
+| `placeholder` | String | {URL / Base64}             | -       |
+| `resize`      | String | conver / contain / stretch | stretch |
+| `src`         | String | {URL / Base64 }            | -       |
+
+> **注意：**您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/path.html)。
+
+### `placeholder`
+
+占位图的 URL，当由 `src` 表示的图片下载完成并展示后将被删除。 ([示例](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c))
+
+### `resize`
+
+![image resize property](../../../references/images/image-resize-property.png)
+
+- `contain`：缩放图片以完全装入`<image>`区域，可能背景区部分空白。 ([示例](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
+- `cover`：缩放图片以完全覆盖`<image>`区域，可能图片部分看不见。 ([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
+- `stretch`：`默认值`. 按照`<image>`区域的宽高比例缩放图片。([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
+
+参见: [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
+
+### `src`
+
+要显示图片的 URL，该属性是 `<image>` 组件的强制属性。
+
+#### 支持的图片格式
+
+Weex没有提供必须支持的图片格式列表，主要依赖于你正在使用的图片 adapter 或者 handler。例如，如果你使用 [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) 作为iOS上的图片 handler，你可以使用像 JPEG、PNG、GIF、WebP 等图片格式。
+
+## Component 方法
+
+### `save` <span class="api-version">v0.16.0+</span>
+
+保存图片内容到本地文件或相册，此操作可能需要设备相关权限。
+
+**参数**:
+
+* `callback`：{Function} 在图片被写入到本地文件或相册后的回调，回调参数：
+  * `result`：{Object} 回调结果对象，属性列表：
+    * `success`：{Boolean} 标记图片是否已写入完成。
+    * `errorDesc`：{String} 如果图像没有成功写入，该字符串包含了详细的错误描述。
+
+**返回值**: null
+
+> **注意**: 你必须加入`NSPhotoLibraryAddUsageDescription` 和 `NSPhotoLibraryAddUsageDescription` (iOS 11) 以获得访问 iOS 系统相册权限. 参见: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
+
+#### 使用 `save` 方法
+
+在 `<image>`标签上增加 `ref` 属性 (Vue.js *[Child Component Refs](https://vuejs.org/v2/guide/components.html#Child-Component-Refs)*) ：
 
 ```html
-<template>
-  <div>
-    <image style="width:750px; height:750px;" src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></image>
-    <div class="title">
-      <text style="font-size:50px; color: #ff0000">你好，image</text>
-    </div>
-  </div>
-</template>
-<style>
-  .title{
-    position:absolute;
-    top:50;
-    left:10;
+<image ref="poster" src="path/to/image.png"></image>
+```
+
+获取组件引用并使用 `save` 方法:
+
+```js
+const $image = this.$refs.poster
+$image.save(result => {
+  if (result.success) {
+    // Do something to hanlde success
+  } else {
+    console.log(result.errorDesc)
+    // Do something to hanlde failure
   }
-</style>
+})
 ```
 
-[体验一下](http://dotwe.org/vue/0a81d27b5dbc68ea3bf5f9fd56c882e8)
-
-## 特性
-
-`<image>` 组件，包含 `src` 和 `resize` 两个重要特性。
-
-- `src {string}`：定义图片链接，目前图片暂不支持本地图片。
-- `resize {string}`：可以控制图片的拉伸状态，值行为和 W3C 标准一致。
-
-  可选值为：
-
-  - `stretch`：默认值，指定图片按照容器拉伸，有可能使图片产生形变。
-  - `cover`：指定图片可以被调整到容器，以使图片完全覆盖背景区域，图片有可能被剪裁。
-  - `contain`：指定可以不用考虑容器的大小，把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
-
-  例子：
-
-  ![mobile_preview](../images/image_1.jpg)
-
-- `placeholder`: <span class="api-version">v0.9+</span> &lt;string&gt; 当源图片下载中时显示一张占位图。
-
-  [体验一下](http://dotwe.org/vue/18e71ab3484bb6751ad77ff7d5195404)
-
-## 样式
-
-- 通用样式：支持所有通用样式
-
-  - 盒模型
-  - `flexbox` 布局
-  - `position`
-  - `opacity`
-  - `background-color`
-
-  查看 [组件通用样式](../common-style.html)
+参见 [完整例子](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df414).
 
 ## 事件
 
-- `load`: <sup class="api-version">v0.8+</sup>：当图片加载完成时触发。目前在 Android、iOS 上支持，H5 暂不支持。[示例](http://dotwe.org/vue/e291159ac60b35dcd4994638a78d54ad)
+支持 **[通用事件](../../wiki/common-events.html)**.
 
-  - 事件对象
-    - `success`: 当图片成功加载时为`true`，否则为`false`
-    - `size`: 图片的原始尺寸，包含两个参数：`naturalWidth` 代表图片的原始宽度像素值，`naturalHeight` 代表图片的原始高度值。这两个参数的默认值都为`0`
+### `load`
 
-- 通用事件
+当加载完成 `src` 指定的图片时，`load`事件将被触发。
 
-  支持所有通用事件：
+**事件对象**:
 
-  - `click`
-  - `longpress`
-  - `appear`
-  - `disappear`
+- `success`: {Boolean} 标记图片是否成功加载。
 
-  查看 [通用事件](../common-event.html)
 
-## 组件方法
-  <sup class="api-version">v0.16.0+</sup>
+- `size`: {Object} 加载的图片大小对象，属性列表：
+  - `naturalWidth`: {Number} 图片宽度，如果图片加载失败则为0。
+  - `naturalHeight`: {Number} 图片高度，如果图片加载失败则为0。
 
-  - save：保存当前图片到本地
-    - 参数
-      回调函数作为方法入参，接收保存结果.
-      ```
-     	var image = this.$refs.imageRef; // image 是之前已经定义过的ref
-  		image.save(function(result) {
-  			console.log(JSON.stringify(result))
-		});
-    	```
-    - 异步返回的数据描述
-     ```
-      	{
-    		"success" : true/false, // 保存成功或失败
-    		"errorDesc": "errordesc" // 在success 为false的情况会返回
-     	}
-     	```
-    - 说明
-      对于 iOS 系统需要添加 `NSPhotoLibraryAddUsageDescription`相册访问权限, iOS 11 需要再添加一个`NSPhotoLibraryAddUsageDescription`权限, [查看更多iOS系统权限](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
- 
- [试一试](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df414)
+#### 处理 `load` 事件
 
-## 约束
+在 `<image>` 标签上绑定 `load` 事件：
 
-1. 需要指定宽高；
-2. 不支持子组件。
+```html
+<image @load="onImageLoad" src="path/to/image.png"></image>
+```
+
+增加事件处理函数：
+
+```js
+export default {
+  methods: {
+    onImageLoad (event) {
+      if (event.success) {
+        // Do something to hanlde success
+      }
+    }
+  }
+}
+```
+
+参见[完整示例](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0)。
+
+## 样式
+
+支持**[通用样式](../../wiki/common-styles.html)**。
+
+## 使用说明
+
+- 在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
+- `<image>` 必须指定样式中的宽度和高度。
+- `<image>` 不支持内嵌子组件。
 
 ## 示例
 
-```html
-<template>
-  <scroller class="wrapper" >
-    <div class="page-head" >
-      <image class="title-bg" resize="cover" src="https://img.alicdn.com/tps/TB1dX5NOFXXXXc6XFXXXXXXXXXX-750-202.png"></image>
-      <div class="title-box">
-        <text class="title">Alan Mathison Turing</text>
-      </div>
-    </div>
-    <div class="article">
-      <text class="paragraph">Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.</text>
-      <text class="paragraph">During the Second World War, Turing worked for the Government Code and Cypher School (GC&CS) at Bletchley Park, Britain's codebreaking centre. For a time he led Hut 8, the section responsible for German naval cryptanalysis. He devised a number of techniques for speeding the breaking of German ciphers, including improvements to the pre-war Polish bombe method, an electromechanical machine that could find settings for the Enigma machine. Turing played a pivotal role in cracking intercepted coded messages that enabled the Allies to defeat the Nazis in many crucial engagements, including the Battle of the Atlantic; it has been estimated that this work shortened the war in Europe by more than two years and saved over fourteen million lives.</text>
-      <text class="paragraph">After the war, he worked at the National Physical Laboratory, where he designed the ACE, among the first designs for a stored-program computer. In 1948 Turing joined Max Newman's Computing Machine Laboratory at the Victoria University of Manchester, where he helped develop the Manchester computers and became interested in mathematical biology. He wrote a paper on the chemical basis of morphogenesis, and predicted oscillating chemical reactions such as the Belousov–Zhabotinsky reaction, first observed in the 1960s.</text>
-      <text class="paragraph">Turing was prosecuted in 1952 for homosexual acts, when by the Labouchere Amendment, "gross indecency" was still criminal in the UK. He accepted chemical castration treatment, with DES, as an alternative to prison. Turing died in 1954, 16 days before his 42nd birthday, from cyanide poisoning. An inquest determined his death as suicide, but it has been noted that the known evidence is also consistent with accidental poisoning. In 2009, following an Internet campaign, British Prime Minister Gordon Brown made an official public apology on behalf of the British government for "the appalling way he was treated." Queen Elizabeth II granted him a posthumous pardon in 2013.</text>
-    </div>
-  </scroller>
-</template>
-
-<style>
-  .page-head {
-    width: 750px;
-    height: 200px;
-  }
-  .title-bg {
-    width: 750px;
-    height: 200px;
-  }
-  .title-box {
-    width: 750px;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .title {
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: bold;
-  }
-  .article {
-    padding: 20px;
-  }
-  .paragraph{
-    margin-bottom: 15px;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/e2122bc245beafb0348d79bfd1274904)
+- [Base64 示例](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
+- [Multi-layer images 示例](http://dotwe.org/vue/c44359c0f200abc1f66504b88587e4f6)
+- [Lazy load image 示例](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)

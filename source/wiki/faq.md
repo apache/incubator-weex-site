@@ -4,7 +4,6 @@ type: wiki
 group: FAQ
 order: 8
 version: 2.1
-layout: post
 ---
 
 # FAQ

@@ -8,102 +8,50 @@ version: 2.1
 
 # Integrate to Your App
 
-## Integrate to Android
-Tip：The following documents assume that you already have a certain Android development experience.
+## Integrate to Android Platform
+The following documents assume that you already have a certain Android development experience.
 
-### Android has two ways to integrate weex
-1.using source code: Can quickly use the latest features of WEEX, according to your own characteristics of the project. So, you can do some related improvements.
 
-2.using SDK: WEEX will regularly release a stable version at jcenter.[jcenter](https://bintray.com/alibabaweex/maven/weex_sdk/view)
+### Quick Start Five Steps
 
-### Prerequisites
-Make sure the following configuration is complete:
+The keys to intergrating Weex into your Android application are the following five step:
 
-+ [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) version >= 1.7 , and configure the environment variable
-+ Android SDK installed and configure the environment variable
-+ Android SDK version 23 (compileSdkVersion in build.gradle)
-+ SDK build tools version 23.0.1 (buildToolsVersion in build.gradle)
-+ Android Support Repository >= 17 (for Android Support Library)
+1.Configure Gralde dependency in build.gradle
+```javascript
+dependencies {
+    ...
+    // weex sdk and fastjson
+    compile 'com.taobao.android:weex_sdk:0.5.1@aar'   
+    compile 'com.alibaba:fastjson:1.1.46.android'
 
-### Quick to use
-If you are the first time to try or have a higher demand for stability, you can use the way to dependence on the SDK.
-The steps are as follows:
-
-1. Create an Android project. There is nothing to be specified, according to your habits to.
-2. Update build.gradle by adding the following dependencies:
-
-```java
-compile 'com.android.support:recyclerview-v7:23.1.1'
-compile 'com.android.support:support-v4:23.1.1'
-compile 'com.android.support:appcompat-v7:23.1.1'
-compile 'com.alibaba:fastjson:1.1.46.android'
-compile 'com.taobao.android:weex_sdk:0.5.1@aar'
-```
-
-Note: the version can be high can not be low.
-
-#### Start writing code
-
-Note: There is a complete code address in the appendix
-
-+ Implement the picture download interface, set the initialization.
-
-```java
-package com.weex.sample;
-import android.widget.ImageView;
-import com.taobao.weex.adapter.IWXImgLoaderAdapter;
-import com.taobao.weex.common.WXImageStrategy;
-import com.taobao.weex.dom.WXImageQuality;
-/**
-* Created by lixinke on 16/6/1.
-*/
-public class ImageAdapter implements IWXImgLoaderAdapter {
-  @Override
-  public void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy) {
-    //To implement picture download interface, otherwise the picture can not be displayed.
-  }
+    //support library dependencies
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
+2.Add required permissions in your AndroidManifest.xml
 
-+ initialization
-
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+```
+3.Init Week SDK When Application Create
 ```java
-package com.weex.sample;
-import android.app.Application;
-import com.taobao.weex.InitConfig;
-import com.taobao.weex.WXSDKEngine;
-
-/**
-* Note: add android:name=".WXApplication"  into Manifest file
-* To implement ImageAdapter, otherwise the picture can not be downloaded
-* Gradle must add some dependencies, otherwise the initialization will fail.
-* compile 'com.android.support:recyclerview-v7:23.1.1'
-* compile 'com.android.support:support-v4:23.1.1'
-* compile 'com.android.support:appcompat-v7:23.1.1'
-* compile 'com.alibaba:fastjson:1.1.45'
-*/
-
 public class WXApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    InitConfig config=new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();
+    InitConfig config = new InitConfig.Builder().setImgAdapter(new FrescoImageAdapter()).build();
     WXSDKEngine.initialize(this,config);
   }
 }
-```
+```[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)  
 
-+ Start rendering
-
+4. Create an WXSDKInstance,  add IWXRenderListener and activity lifecycle on it. load weex bundle url. when  page load success; target view will be send for you on  onViewCreated callback, set target view to activity contentView.
 ```java
-package com.weex.sample;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import com.taobao.weex.IWXRenderListener;
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.common.WXRenderStrategy;
-import com.taobao.weex.utils.WXFileUtils;
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
   WXSDKInstance mWXSDKInstance;
   @Override
@@ -113,14 +61,11 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     mWXSDKInstance = new WXSDKInstance(this);
     mWXSDKInstance.registerRenderListener(this);
     /**
-    * WXSample can be replaced by any string
-    * Template is  js file that .we converted
-    * Option can be empty, or through the option passed js required parameters. Such as the address of the bundle js.
-    * JsonInitData can be empty.
-    * width is -1 , default full screen, you can customize it.
-    * height is -1 , default full screen, you can customize it.
+    * bundleUrl source http://dotwe.org/vue/38e202c16bdfefbdb88a8754f975454c
     */
-    mWXSDKInstance.render("WXSample", WXFileUtils.loadFileContent("hello.js", this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
+    String pageName = "WXSample";
+    String bundleUrl = "http://dotwe.org/raw/dist/38e202c16bdfefbdb88a8754f975454c.bundle.wx";
+    mWXSDKInstance.renderByUrl(pageName, bundleUrl, null, null,WXRenderStrategy.APPEND_ASYNC);
   }
   @Override
   public void onViewCreated(WXSDKInstance instance, View view) {
@@ -146,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
   protected void onPause() {
     super.onPause();
     if(mWXSDKInstance!=null){
-      mWXSDKInstance.onActivityPause();
+       mWXSDKInstance.onActivityPause();
     }
   }
   @Override
@@ -165,57 +110,42 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
   }
 }
 ```
+5. Run app, start activity, then you will see hello world demo. well done.
 
-### Dependence on source code (IDE Android Studio)
-1.Download source code. git clone https://github.com/alibaba/weex.
-2.Create an android project.
-3.Import the SDK Module through the following path:
-` File->New-Import Module-> chose WEEX SDK Module(weex/android/sdk) -> Finish`
-4.Add the following dependencies: compile project (': weex_sdk') to build.gradle file.
-5.Other settings please refer to the above "Quick to use".
+[Hello World Demo Source](http://dotwe.org/vue/38e202c16bdfefbdb88a8754f975454c)
 
-Appendix: [WXSample address](https://github.com/xkli/WXSample.git) `https://github.com/xkli/WXSample.git`
+Tip: Click QRCode Image in Demo Source Page, your will see compiled bundle js.
 
 
 ## Integrated to iOS
 
-Through the cocoaPods integrated Weex iOS SDK to the project.
-First assume that you have finished installing the [iOS development environment](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html).
+Through the [CocoaPods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage) integrated Weex iOS SDK to your project.
+First assume that you have finished installing the [iOS development environment](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)(or [Carthage](https://github.com/Carthage/Carthage#installing-carthage)).
 
 ### Step 1: Add Dependencies
-Import Weex iOS SDK to your existing project, if not, you can create a new project.
-Before proceeding, make sure that the Podfile file is under the project file. If not, create one and open with  text editor.
+Import Weex iOS SDK to your existing project, if not, you can create a new project according to the [tutorial](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html)).
+Before proceeding, make sure that the Podfile file is under the project file. If not, create one and open with  text editor(if Carthage, please ensure the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in your project directory). You can choose one of Integration method.
 
-+ Integration framework
+- using [CocoaPods](https://cocoapods.org/)
+	WeexSDK The latest version on cocoaPods can be obtained [here](https://cocoapods.org/pods/WeexSDK) .
+	Add the following to the Podfile file:
+	
+	```object-c
+	source 'git@github.com:CocoaPods/Specs.git'
+	target 'YourTarget' do
+	    platform :ios, '7.0'
+	    pod 'WeexSDK', '0.17.0'   ## latest Weex SDK recommended
+	end
+	```
+	Open the command line, switch to the directory of the Podfile file, and run the pod install command. If there are no errors, it means that the environment has been configured.
+- using [Carthage](https://github.com/Carthage/Carthage)  
+  [here](https://github.com/apache/incubator-weex/tags) you can get the latest version of WeexSDK. 
+  Add `github "apache/incubator-weex"` to [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile)
+  Open the command line, switch to the directory of the Cartfile, and run `carthage update`.  
+  [Add Carthage build framework to your project](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
 
-WeexSDK The latest version on cocoaPods can be obtained [here](https://cocoapods.org/pods/WeexSDK) .
-Add the following to the Podfile file:
 
-```object-c
-source 'git@github.com:CocoaPods/Specs.git'
-target 'YourTarget' do
-    platform :ios, '7.0'
-    pod 'WeexSDK', '0.9.5'   ## Suggest using latest Weex SDK
-end
-```
-
-+ Integrate with source code
-
-First copy the ios / sdk directory to your existing project directory (here to copy the root directory of your existing project as an example), and then add the Podfile file.
-
-```object-c
-source 'git@github.com:CocoaPods/Specs.git'
-target 'YourTarget' do
-    platform :ios, '7.0'
-    pod 'WeexSDK', :path=>'./sdk/'
-end
-```
-
-### Step 2: Install Dependencies
-
-Open the command line, switch to the directory of the Podfile file, and run the pod install command. If there are no errors, it means that the environment has been configured.
-
-### Step 3: Initialize the Weex environment
+### Step 2: Initialize the Weex environment
 In the AppDelegate.m file to do the initialization operation, usually in the didFinishLaunchingWithOptions method as follows to add.
 
 ```object-c
@@ -234,7 +164,7 @@ In the AppDelegate.m file to do the initialization operation, usually in the did
 [WXLog setLogLevel: WXLogLevelAll];
 ```
 
-### Step 4: Render weex Instance
+### Step 3: Render weex Instance
 
 Weex supports both full page rendering and partial rendering. What you need to do is render Weex's view with the specified URL and add it to its parent container. The parent container is generally a viewController.
 
@@ -265,7 +195,7 @@ Weex supports both full page rendering and partial rendering. What you need to d
 
 WXSDKInstance is a very important class that provides a basic method and some callbacks, such as renderWithURL, onCreate, onFailed, etc., can be found in WXSDKInstance.h.
 
-### Step 5: Destroy Weex Instance
+### Step 4: Destroy Weex Instance
 In the dealloc phase of the viewController destroyed Weex instance, can play a role in avoiding memory leaks.
 
 ```object-c
@@ -275,6 +205,35 @@ In the dealloc phase of the viewController destroyed Weex instance, can play a r
 }
 ```
 
-#### Import the Weex SDK framework to the project.
+#### Build your own WeexSDK.framework and Import to your project.
 The Weex SDK can be compiled from the source code. You can try the latest feature in the new feature or bugfix branch.
-Refer to [here](https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.tFddsV&&docType=1&articleId=104829) for direct import of weexSDK.
+
+- clone [Weex](https://github.com/apache/incubator-weex.git) project  
+  you can use SSH
+  
+	```
+	git clone git@github.com:apache/incubator-weex.git
+	```
+  or use https   
+  
+	```
+	git clone https://github.com/apache/incubator-weex.git
+	```
+  	    
+- open WeexSDK.xcodeproj in `weex/ios/sdk`  
+  switch target just below  
+  ![img](http://img1.tbcdn.cn/L1/461/1/4fe050b36e7fea52f121e73790b1fdb7ea934e97)
+  
+- Build this project or just use the xcode default hot key `⌘ + b`
+
+- Finally you can find `Products` directory in `weex/ios/sdk`, `WeexSDK.framework` was here
+  ![img](http://img4.tbcdn.cn/L1/461/1/52594fea03ee1154845d0f897558b81b4b5bef2e)
+  
+- Add `js-framework`(which is in the `WeexSDK.framework` and renamed to `native-bundle-main.js`) to your main bundle
+  ![img](http://img1.tbcdn.cn/L1/461/1/bb3998595bafe9c9336411160c0b6bd3eeb843ef)
+- Import the framework you get above and import system framework
+  ![img](http://img1.tbcdn.cn/L1/461/1/ce309c54c7b3dd3607d7a3d07c44bfd0e0e10f86) 
+- add `-ObjC` to your project settings,just like this
+![img](http://img3.tbcdn.cn/L1/461/1/430ae522f5031ff728c95efea49219a11e6852b3)
+
+
