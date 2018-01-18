@@ -10,7 +10,7 @@ version: 2.1
 
 ### Summary
 
-This component must be used as a subcomponent of a [`list`](./list.html) component, which is for the performance optimizing during scrolling.
+This component must be used as a subcomponent of a [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) component, which is for the performance optimizing for long list scrolling.
 
 ### Child Components
 
@@ -42,4 +42,4 @@ This type of component supports all kinds of weex component as its child compone
 
 ### Example
 
-please refer to [List](./list.html)
+please refer to [List](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html)
