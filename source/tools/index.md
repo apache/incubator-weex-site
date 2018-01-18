@@ -10,4 +10,4 @@ version: 2.1
 + [Playground App](./playground.html)
 + [Online Playground](http://dotwe.org/vue/)
 + [weex-toolkit](./toolkit.html)
-+ [Weex Language Support插件](./plugin.html)
++ [Syntax Highlight Plugins](./helpers.html)
