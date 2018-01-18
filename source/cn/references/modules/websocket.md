@@ -1,12 +1,12 @@
 ---
-title: WebSocket
+title: webSocket
 type: references
 group: 内置模块
-order: 9.12
+order: 9.11
 version: 2.1
 ---
 
-# WebSocket
+# webSocket
 <span class="weex-version">v0.12+</span>
 
 ## Summary

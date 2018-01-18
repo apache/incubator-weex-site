@@ -33,23 +33,18 @@ body {
     color: $text-black;
   }
 
-  .article-anchor {
+  .header-anchor {
     margin-left: 10px;
     display: none
   }
 
-  .article-anchor:before {
-      content: "#";
-      color:#00BDFF
-  }
-
   @media print {
-      .article-anchor {
+      .header-anchor {
           display: none!important
       }
   }
 
-  .article-heading:hover .article-anchor {
+  .article-heading:hover .header-anchor {
       display: inline-block;
       color:#00BDFF
   }

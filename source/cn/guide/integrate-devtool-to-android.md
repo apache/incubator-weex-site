@@ -87,6 +87,9 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
 | 0.8.0.1+ | 0.0.8.1+       | 0.2.39+         |
 | 0.7.0+   | 0.0.7.13       | 0.2.38          |
 | 0.6.0+   | 0.0.2.2        | -               |
+| 0.16.0+  | 0.12.1         | -               |
+| 0.17.0+  | 0.13.2         | -               |
+
 
 
 ### 添加 Debug 模式开关
@@ -103,6 +106,8 @@ public static String sRemoteDebugProxyUrl; // DebugServer的websocket地址
 ```
 
 无论在 App 中无论以何种方式设置 Debug 模式，都必须在恰当的时机调用类似如下的方法来设置 `WXEnvironment.sRemoteDebugMode` 和 `WXEnvironment.sRemoteDebugProxyUrl`。
+
+更详细和合适的位置,初始化 inspector 的方法请参考 `Playground`.
 
 ```java
 private void initDebugEnvironment(boolean enable, String host) {
@@ -200,7 +205,7 @@ Playground 集成的具体代码可参考如下两个文件：
 
 ### 前置工作
 
-如果未安装 Debugger Server，在命令行执行 `npm install -g weex-toolkit` 既可以安装调试服务器，运行命令 `weex debug` 就会启动 DebugServer 并打开一个调试页面（详情请查看 [《Get Started》](../../guide/index.html)）。页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接。
+如果未安装 Debugger Server，在命令行执行 `npm install -g weex-toolkit` 既可以安装调试服务器，运行命令 `weex debug`,最新的版本我们建议您使用 `weex debugx` 就会启动 DebugServer 并打开一个调试页面（详情请查看 [《Get Started》](../../guide/index.html)）。页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接。
 
 ![_](//img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png)
 
