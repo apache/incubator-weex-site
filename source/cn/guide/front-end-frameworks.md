@@ -10,7 +10,7 @@ version: 2.1
 
 ## Weex 中的前端框架
 
-![Vue and Rax](./images/vue-rax.png)
+![Vue and Rax](../../guide/images/vue-rax.png)
 
 前端技术看起来很繁荣，测试、打包、调试等工具都比较丰富，开发效率比原生开发要高很多。在大型项目中使用前端框架也是一个管理应用好方法，这样更方便于长期维护。
 

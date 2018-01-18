@@ -24,7 +24,7 @@ Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发�
 
 这里有一个使用 Weex 和 Vue.js 开发的[最简单的例子](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380)：
 
-![Weex Example](./images/weex-example-yo.png)
+![Weex Example](../../guide/images/weex-example-yo.png)
 
 这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](https://weex-project.io/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
 
@@ -38,7 +38,7 @@ Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发�
 
 在上面的例子中，`<div>` 和 `<text>` 在移动端上渲染出来的都是原生组件，而不是 `HTMLElement`。
 
-![Native Components](./images/native-component.png)
+![Native Components](../../guide/images/native-component.png)
 
 Weex 在 iOS 和 Android 上都实现了一个渲染引擎，并提供了一套基础的[内置组件](../references/components/)。基于这些组件，你可以用 js 封装更多的上层组件。
 
@@ -46,7 +46,7 @@ Weex 在 iOS 和 Android 上都实现了一个渲染引擎，并提供了一套�
 
 在框架内部，Weex 使用的是原生系统提供的 Widget 来渲染的。尽管 Weex 强调每个跨平台的一致性，但我们仍然接受平台本身的行为和 UI 差异。 例如 [<switch>` 组件](http://dotwe.org/vue/d96943452b6708422197c47920903823) 在 Android 和 iOS 上看起来是不同的（在 Web 端的外观模拟了 iOS）。
 
-![Different switch](./images/different-switch.png)
+![Different switch](../../guide/images/different-switch.png)
 
 除了内置组件以外，Weex 也支持你扩展更多原生组件，但是你需要在每个平台上实现它们，并保持其行为一致。最实用的方法是将现有的本地组件集成到 Weex 平台中。
 
@@ -76,7 +76,7 @@ Weex 可以只开写一份代码，开发出三端都可用的页面。
 
 目前 Weex 将 [Vue.js](https://vuejs.org/) 和 [Rax](https://alibaba.github.io/rax/) 作为其内置的前端框架。你可以阅读 *[前端框架](./front-end-frameworks.html)* 这篇文档了解更多信息。
 
-![Vue and Rax](./images/vue-rax.png)
+![Vue and Rax](../../guide/images/vue-rax.png)
 
 + **Vue.js** 是一套用于构建用户界面的渐进式框架。
 + **Rax** 兼容 React 接口的前端框架。
@@ -121,7 +121,7 @@ npm start
 
 然后工具会启动一个本地的 web 服务，监听 `8081` 端口。你可以打开 `http://localhost:8081` 查看页面在 Web 下的渲染效果。 源代码在 `src/` 目录中，你可以像一个普通的 Vue.js 项目一样来开发.
 
-![Preview](./images/toolkit-preview.png)
+![Preview](../../guide/images/toolkit-preview.png)
 
 除此之外，你还可以打开 `http://localhost:8081/preview.html` 开启一个预览页面，它会把 web 端的页面放在一个 iframe 中渲染，而且在右侧生成一个二维码。用 [Weex playground app](http://weex-project.io/playground.html) 扫描这个二维码可以看到页面在手机上渲染的真实效果。
 
