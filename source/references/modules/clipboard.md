@@ -2,7 +2,7 @@
 title: clipboard
 type: references
 group: Build-in Modules
-order: 9.08
+order: 9.02
 version: 2.1
 ---
 
