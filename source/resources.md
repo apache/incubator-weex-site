@@ -12,32 +12,24 @@ version: 2.1
 - [Weex Project Incubation Status](http://incubator.apache.org/projects/weex.html).
 - [Mailing List](https://lists.apache.org/list.html?dev@weex.apache.org).
 - [Issues](https://issues.apache.org/jira/projects/WEEX/issues).
-- [Weex Contributing Guide](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md)
-A guidance document tells you how to be submitted by the person weex and how to participate in mailing discussions.
+- [Weex Contributing Guide](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md) A guidance document tells you how to be submitted by the person weex and how to participate in mailing discussions.
 - [Weex FAQ](https://weex.apache.org/faq.html).
 
 ## Supported Front-end Frameworks
 
-- [Rax](https://alibaba.github.io/rax/)
-**Rax** is a front-end framework with React-compatible APIs.
-- [Vue.js](https://vuejs.org/)
-**Vue.js** is a progressive front-end framework for building user interfaces.
+- [Rax](https://alibaba.github.io/rax/) **Rax** is a front-end framework with React-compatible APIs.
+- [Vue.js](https://vuejs.org/) **Vue.js** is a progressive front-end framework for building user interfaces.
 
 ## Components and Modules
 
-- [Weex Ui](https://alibaba.github.io/weex-ui/)
-**Weex Ui** is a rich interaction, lightweight, high performance UI library.
-- [Weex Market](https://market.dotwe.org)
-A website that provides a quick porting of weex's third-party component list, where you can find the weex components you need for integration.
+- [Weex Ui](https://alibaba.github.io/weex-ui/) **Weex Ui** is a rich interaction, lightweight, high performance UI library.
+- [Weex Market](https://market.dotwe.org) A website that provides a quick porting of weex's third-party component list, where you can find the weex components you need for integration.
 
 ## Tools
 
-- [Online Playground](http://dotwe.org/vue/)
-A website provides weex code practice and preview, as well as a convenient sharing platform.
-- [Playground App](http://localhost:4000/tools/playground.html)
-You can preview weex on the Playground App and learning how to use weex on it.
-- [Weex Language support for Intellij](https://plugins.jetbrains.com/plugin/9189-weex-language-support)
-A plugin supports Weex Language for Intellij. 
+- [Online Playground](http://dotwe.org/vue/) A website provides weex code practice and preview, as well as a convenient sharing platform.
+- [Playground App](http://localhost:4000/tools/playground.html) You can preview weex on the Playground App and learning how to use weex on it.
+- [Weex Language support for Intellij](https://plugins.jetbrains.com/plugin/9189-weex-language-support) A plugin supports Weex Language for Intellij.
 
 ## Community
 

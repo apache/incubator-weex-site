@@ -391,8 +391,6 @@ alias:
   references/advanced/integrate-devtool-to-ios.html: guide/integrate-devtool-to-ios.html
   playground.html: tools/playground.html
   faq.html: wiki/faq.html
-  releasenote.html: wiki/faq.html
-  releasenote.html: wiki/release-note.html
   cn/guide/tools/toolkit.html: cn/tools/toolkit.html
   cn/guide/tools/devtools.html: cn/tools/toolkit.html
   cn/guide/tools/weexpack.html: cn/tools/toolkit.html
@@ -432,6 +430,4 @@ alias:
   cn/references/advanced/integrate-devtool-to-ios.html: cn/guide/integrate-devtool-to-ios.html
   cn/playground.html: cn/tools/playground.html
   cn/faq.html: cn/wiki/faq.html
-  cn/releasenote.html: cn/wiki/faq.html
-  cn/releasenote.html: cn/wiki/release-note.html
 
