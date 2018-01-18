@@ -1,7 +1,7 @@
 ---
 title: Weex语法支持插件
 type: tools
-order: 5.1
+order: 5.2
 version: 2.1
 ---
 

@@ -102,6 +102,11 @@ menu:
   releaseNote: Release Note
   developmentProcess: Development Process
   usingWeex: Who is using Weex?
+  onlinePlayground: Online Playground
+  playgroundApp: Playground App
+  toolkit: weex-toolkit
+  market: Weex Market
+  helpers: Helpers
 playground:
   content: Weex Native Runtime showcase & Weex we file preview.
 categories: Categories

@@ -102,6 +102,11 @@ menu:
   releaseNote: 版本发布历史
   developmentProcess: 开发流程
   usingWeex: 谁在使用 Weex
+  onlinePlayground: 在线编写代码
+  playgroundApp: Playground 应用
+  toolkit: weex-toolkit
+  market: Weex 插件市场
+  helpers: 辅助工具
 playground:
   content: Weex Native 运行时实例 & Weex 文件预览工具。
 categories: Categories
