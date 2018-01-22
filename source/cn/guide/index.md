@@ -68,7 +68,7 @@ Weex 可以只开写一份代码，开发出三端都可用的页面。
 
 在多个端中使用相同的源代码可以显着提高开发效率，并简化测试，构建和发布流程。在此基础上，Weex 可以将前端的打包、测试流程与手机端监控、发布系统结合起来，提高开发效率。
 
-尽管 Weex 多端都是用的同一份代码，但是仍然支持针对特定的平台开发功能。Weex 提供了 `weex.config.env` 和 `WXEnvironment`（它们是相同的）来获得当前的运行时环境。你可以用 `WXEnvironment.platform` 来确定代码运行在哪个平台上。除了平台以外，`WXEnvironment` 还包含其他环境信息，如 *osVersion* 和 *deviceModel*，参考 *[Weex variable](../references/weex-variable.html* 了解更多详细信息。
+尽管 Weex 多端都是用的同一份代码，但是仍然支持针对特定的平台开发功能。Weex 提供了 `weex.config.env` 和 `WXEnvironment`（它们是相同的）来获得当前的运行时环境。你可以用 `WXEnvironment.platform` 来确定代码运行在哪个平台上。除了平台以外，`WXEnvironment` 还包含其他环境信息，如 *osVersion* 和 *deviceModel*，参考 *[Weex variable](../references/weex-variable.html)* 了解更多详细信息。
 
 ## 支持多个前端框架
 
