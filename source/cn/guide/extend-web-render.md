@@ -16,7 +16,7 @@ Weex 本身提供了很多内置组件和模块，也具备横向扩展的能力
 
 Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得更加容易。
 
-目前我们提供了 [weex-vue-render](https://github.com/weexteam/weex-vue-render) 作为 Vue 2.x Web 端的渲染器。首先引入该库到你的项目里，然后牛就可以使用 `weex.registerComponent` 来进行内置组件扩展了，也可以使用 `Vue.component`，两者基本上是一致的。
+目前我们提供了 [weex-vue-render](https://github.com/weexteam/weex-vue-render) 作为 Vue 2.x Web 端的渲染器。首先引入该库到你的项目里，然后你就可以使用 `weex.registerComponent` 来进行内置组件扩展了，也可以使用 `Vue.component`，两者基本上是一致的。
 
 ## 扩展内置组件示例
 
