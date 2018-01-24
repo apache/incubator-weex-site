@@ -96,12 +96,12 @@ menu:
   advanced: 高阶知识
   github: GitHub
   legacy: 旧语法文档
-  examples: 实例
   contribute: 如何参与贡献
   bugReportGuidelines: bug 报告指南
   releaseNote: 版本发布历史
   developmentProcess: 开发流程
   usingWeex: 谁在使用 Weex
+  examples: 例子
   onlinePlayground: 在线编写代码
   playgroundApp: Playground 应用
   toolkit: weex-toolkit

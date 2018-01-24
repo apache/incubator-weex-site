@@ -96,12 +96,12 @@ menu:
   advanced: Advanced
   github: GitHub
   legacy: Old Syntax Doc
-  examples: Examples
   contribute: How to Contribute
   bugReportGuidelines: Bug Report Guidelines
   releaseNote: Release Note
   developmentProcess: Development Process
   usingWeex: Who is using Weex?
+  examples: Examples
   onlinePlayground: Online Playground
   playgroundApp: Playground App
   toolkit: weex-toolkit
