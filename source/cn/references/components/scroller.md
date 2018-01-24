@@ -35,7 +35,7 @@ version: 2.1
 - `show-scrollbar {boolean}`：可选值为 `true`/ `false`，默认值为 `true`。控制是否出现滚动条。
 
 - `scroll-direction {string}`：可选为 `horizontal` 或者 `vertical`，默认值为 `vertical` 。定义滚动的方向。
-  - `scroll-direction`定义了 scroller 的滚动方向，`flex-direction` 定义了 scroller 的布局方向，两个方向必须一致。
+  - `scroll-direction`定义了 scroller 的滚动方向，样式表属性 `flex-direction` 定义了 scroller 的布局方向，两个方向必须一致。
   - `scroll-direction` 的默认值是 `vertical`, `flex-direction` 的默认值是 `row`。
   - 当需要一个水平方向的 scroller 时，使用 `scroll-direction:horizontal` 和 `flex-direction: row`。
   - 当需要一个竖直方向的 scroller 时，使用 `scroll-direction:vertical` 和 `flex-direction: column`。由于这两个值均是默认值，当需要一个竖直方向的 scroller 时，这两个值可以不设置。
