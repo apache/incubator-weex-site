@@ -12,7 +12,7 @@ version: 2.1
 
 ## Front-end Frameworks in Weex
 
-Front-end technologies seem flourishing and productive. Using front-end frameworks in production is a good way to manage apps wr. industry. collaborate, maintainable.
+Front-end technologies seem flourishing and productive. Using front-end frameworks in production is a good way to write maintainable apps.
 
 However, **Weex is not a front-end framework**. Indeed, front-end frameworks are just the syntax layer or DSL (Domain-specific Language) of Weex, they are decoupled from native render engines. In another word, Weex does not relay on any specific front-end frameworks, with the evolution of technology, Weex can integrate more widely used front-end frameworks as well.
 
