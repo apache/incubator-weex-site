@@ -108,7 +108,7 @@ JS 调用如下：
 ```html
 <template>
   <div>
-    <richText tel="12305" style="width:200;height:100">12305</text>
+    <richText tel="12305" style="width:200;height:100">12305</richText>
   </div>
 </template>
 ```
@@ -133,7 +133,7 @@ JS 调用如下：
 	<script>
     module.exports = {
       created: function() {
-        this.$el('mycomponent').focus();
+        this.$refs.mycomponent.focus();
       }
     }
 	</script>
