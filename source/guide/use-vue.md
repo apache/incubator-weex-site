@@ -120,7 +120,7 @@ const webpackConfig = {
 
 > The Vue "Global" config only affect the single page on Weex, the configuration will not be shared between different Weex pages.
 
-| Vue Global API | Supported | Notes |
+| Vue Global Config | Supported | Notes |
 | -------------- | --------- | ----- |
 | [Vue.config.silent](https://vuejs.org/v2/api/#silent)                               | <b class="tag-yes">Yes</b> | - |
 | [Vue.config.optionMergeStrategies](https://vuejs.org/v2/api/#optionMergeStrategies) | <b class="tag-yes">Yes</b> | - |
