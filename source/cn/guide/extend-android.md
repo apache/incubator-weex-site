@@ -128,7 +128,7 @@ JS 调用如下：
 
   ```html
 	<template>
-    <mycomponent id='mycomponent'></mycomponent>
+    <mycomponent ref='mycomponent'></mycomponent>
 	</template>
 	<script>
     module.exports = {
