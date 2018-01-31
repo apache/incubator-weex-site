@@ -73,6 +73,8 @@ version: 2.1
     - `x {number}`: x轴上的偏移量
     - `y {number}`: y轴上的偏移量
 
+- 支持 `scrollstart` 和 `scrollend` 事件 <sup class="wx-v">0.17+</sup> .当列表开始或者结束滚动的时候会分别触发相应的 `scrollstart` 和 `scrollend` 事件，当前的内容高度和列表偏移会在callback中返回。可以参见这个[example](http://dotwe.org/vue/fd1b271fa1fa100cefb40f8d69198a1b)
+
 - 通用事件
 
   支持所有通用事件：
