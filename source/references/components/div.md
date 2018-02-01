@@ -10,7 +10,7 @@ version: 2.1
 
 ### Summary
 
-The most fundamental component which is a contianer to wrap any other components. It supports all the common styles, attributes and layout of flexbox.
+The most fundamental component which is a container to wrap any other components. It supports all the common styles, attributes and layout of flexbox.
 
 alias: `<container>` (deprecated)
 
