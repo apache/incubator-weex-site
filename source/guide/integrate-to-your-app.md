@@ -9,6 +9,7 @@ version: 2.1
 # Integrate to Your App
 
 ## Integrate to Android Platform
+
 The following documents assume that you already have a certain Android development experience.
 
 
@@ -16,7 +17,8 @@ The following documents assume that you already have a certain Android developme
 
 The keys to intergrating Weex into your Android application are the following five step:
 
-1.Configure Gralde dependency in build.gradle
+1. Configure Gralde dependency in build.gradle
+
 ```javascript
 dependencies {
     ...
@@ -30,7 +32,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
-2.Add required permissions in your AndroidManifest.xml
+
+2. Add required permissions in your AndroidManifest.xml
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -38,7 +41,9 @@ dependencies {
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
-3.Init Week SDK When Application Create
+
+3. Init Week SDK When Application Create
+
 ```java
 public class WXApplication extends Application {
   @Override
@@ -48,9 +53,12 @@ public class WXApplication extends Application {
     WXSDKEngine.initialize(this,config);
   }
 }
-```[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)  
+```
+
+[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)  
 
 4. Create an WXSDKInstance,  add IWXRenderListener and activity lifecycle on it. load weex bundle url. when  page load success; target view will be send for you on  onViewCreated callback, set target view to activity contentView.
+
 ```java
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
   WXSDKInstance mWXSDKInstance;
@@ -110,12 +118,12 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
   }
 }
 ```
+
 5. Run app, start activity, then you will see hello world demo. well done.
 
 [Hello World Demo Source](http://dotwe.org/vue/38e202c16bdfefbdb88a8754f975454c)
 
 Tip: Click QRCode Image in Demo Source Page, your will see compiled bundle js.
-
 
 ## Integrated to iOS
 
@@ -123,6 +131,7 @@ Through the [CocoaPods](https://cocoapods.org/) or [Carthage](https://github.com
 First assume that you have finished installing the [iOS development environment](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)(or [Carthage](https://github.com/Carthage/Carthage#installing-carthage)).
 
 ### Step 1: Add Dependencies
+
 Import Weex iOS SDK to your existing project, if not, you can create a new project according to the [tutorial](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html)).
 Before proceeding, make sure that the Podfile file is under the project file. If not, create one and open with  text editor(if Carthage, please ensure the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in your project directory). You can choose one of Integration method.
 
@@ -146,6 +155,7 @@ Before proceeding, make sure that the Podfile file is under the project file. If
 
 
 ### Step 2: Initialize the Weex environment
+
 In the AppDelegate.m file to do the initialization operation, usually in the didFinishLaunchingWithOptions method as follows to add.
 
 ```object-c
@@ -196,6 +206,7 @@ Weex supports both full page rendering and partial rendering. What you need to d
 WXSDKInstance is a very important class that provides a basic method and some callbacks, such as renderWithURL, onCreate, onFailed, etc., can be found in WXSDKInstance.h.
 
 ### Step 4: Destroy Weex Instance
+
 In the dealloc phase of the viewController destroyed Weex instance, can play a role in avoiding memory leaks.
 
 ```object-c
@@ -206,6 +217,7 @@ In the dealloc phase of the viewController destroyed Weex instance, can play a r
 ```
 
 #### Build your own WeexSDK.framework and Import to your project.
+
 The Weex SDK can be compiled from the source code. You can try the latest feature in the new feature or bugfix branch.
 
 - clone [Weex](https://github.com/apache/incubator-weex.git) project  
@@ -235,5 +247,3 @@ The Weex SDK can be compiled from the source code. You can try the latest featur
   ![img](http://img1.tbcdn.cn/L1/461/1/ce309c54c7b3dd3607d7a3d07c44bfd0e0e10f86) 
 - add `-ObjC` to your project settings,just like this
 ![img](http://img3.tbcdn.cn/L1/461/1/430ae522f5031ff728c95efea49219a11e6852b3)
-
-
