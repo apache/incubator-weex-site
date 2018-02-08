@@ -103,3 +103,8 @@ dianwoda:
   icon: 'http://prodwbbucket.oss-cn-hangzhou.aliyuncs.com/weex/rider/icon/dwdriderandroid.png'
   iOS: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.dwd.rider'
   android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.dwd.rider'
+geektime:
+  name: '极客时间'
+  icon: 'http://res001.geekbang.org/static/time/logo/logo-for-weex.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1280245865'
+  android: 'http://a.app.qq.com/o/simple.jsp?pkgname=org.geekbang.geekTime'
