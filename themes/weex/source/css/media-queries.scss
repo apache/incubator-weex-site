@@ -115,7 +115,7 @@
   }
 
   .horizon .sketch-content {
-    padding: 0 5em;
+    padding: 50px 5em;
   }
 
   .horizon .sketch-content .inner-box {
@@ -183,7 +183,36 @@
   }
 
   .horizon .sketch-content {
-    padding: 0 1em;
+    padding: 50px 1em;
+    .title {
+      font-size: 18px;
+    }
+    .app-listing {
+      margin-top: 0;
+      li{
+        padding: 5px;
+      }
+      .img{
+        width: 60px;
+        height: 60px;
+        background-size: 60px 60px;
+      }
+      .tooltip{
+        width: 60px;
+        font-size: 12px;
+        height: 30px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .addmore{
+      font-size: 14px;
+      margin-top: 0;
+      &:before{
+        font-size: 14px;
+      }
+    }
   }
 
   .horizon .sketch-content .inner-box {
