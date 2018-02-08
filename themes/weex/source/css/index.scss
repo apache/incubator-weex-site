@@ -379,99 +379,89 @@
 }
 
 .users {
-
-  background: $bg-blue; 
-  color: $text-white;
-
+  $color: #333;
+  .addmore {
+    padding: 15px 15px;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 50px;
+    position:relative;
+    cursor: pointer;
+    color: $color;
+    .bottom {
+      transition: all ease .2s;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $color;
+    }
+    &:hover {
+      .bottom {
+        width: 100%;
+      }
+    }
+    &:before {
+      content: '+';
+      font-size: 28px;
+      margin-right:10px;
+    }
+  }
+  .title {
+    font-size: 28px;
+    text-align: center;
+    line-height: 80px;
+    width: 100%;
+  }
   .sketch-content {
+    padding-top: 100px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: flex-start;
-
-    .user-logo {
-      width: 150px;
-      height: 150px;
-      margin: 1px;
-      overflow: hidden;
-      position: relative;
-      transition-duration: .3s;
-      transition-property: box-shadow;
-
-      h3 {
-        font-size: 1em;
-        margin-top: 30px;
-        text-align: center;
-        margin-top: 125px;
-      }
-
-      &:hover {
+    max-width: 1200px;
+    margin: 0 auto;
+    .app-listing {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      li  {
+        padding: 20px;
         position: relative;
-        z-index: 999;
-        box-shadow: 0px 1px 12px 0 rgba(0,0,0,0.54);
+        padding-bottom:0;
+        &:hover {
+          .img{
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,.16);
+          }
+        }
       }
-
-      &:hover .user-info {
-        opacity: .9;
+      .tooltip{
+        text-align: center;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        width: 90px;
+        font-size:14px;
+        color: #333;
+        transition: all .2s ease,transform .2s ease;
       }
-    }
-
-    .tmall-logo {
-      background: $bg-light-blue url("../images/tmall.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .aliyun-logo {
-      background: $bg-light-blue url("../images/aliyun.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .taobao-logo {
-      background: $bg-light-blue url("../images/taobao.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .alibaba-logo {
-      background: $bg-light-blue url("../images/alibaba.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .cainiao-logo {
-      background: $bg-light-blue url("../images/cainiao.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .xiami-logo {
-      background: $bg-light-blue url("../images/xiami.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .youku-logo {
-      background: $bg-light-blue url("../images/youku.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .ding-logo {
-      background: $bg-light-blue url("../images/ding.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .taopiaopiao-logo {
-      background: $bg-light-blue url("../images/taopiaopiao.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .fliggy-logo {
-      background: $bg-light-blue url("../images/fliggy.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .juhuasuan-logo {
-      background: $bg-light-blue url("../images/juhuasuan.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .qianniu-logo {
-      background: $bg-light-blue url("../images/qianniu.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
+      .img {
+        width: 90px;
+        height: 90px;
+        transition: box-shadow .2s ease,transform .2s ease;
+        vertical-align: middle;
+        border-radius: 15px;
+        background-size: 90px 90px;
+        background-position: center center;
+        cursor: pointer;
+      }
+      
     }
   }
-
   .user-info {
     opacity: 0;
     position: absolute;

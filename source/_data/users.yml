@@ -1,0 +1,105 @@
+taobao:
+  name: '手机淘宝'
+  icon: 'https://img.alicdn.com/tfs/TB1y5JUnvDH8KJjy1XcXXcpdXXa-148-150.png'
+  iOS: 'https://itunes.apple.com/cn/app/id387682726?mt=8'
+  android: 'https://play.google.com/store/apps/details?id=com.taobao.taobao&hl=zh_CN'
+tmall:
+  name: '手机天猫'
+  icon: 'https://img.alicdn.com/tfs/TB1k2XXnBHH8KJjy0FbXXcqlpXa-138-142.png'
+  iOS: 'https://itunes.apple.com/cn/app/id518966501?mt=8'
+  android: 'https://play.google.com/store/apps/details?id=com.tmall.wireless&hl=zh_CN'
+youku:
+  name: '优酷'
+  icon: 'https://img.alicdn.com/tfs/TB1.lo5XQyWBuNjy0FpXXassXXa-122-118.png'
+  iOS: ''
+  android: ''
+xianyu:
+  name: '闲鱼'
+  icon: 'https://img.alicdn.com/tfs/TB13I8cnC_I8KJjy0FoXXaFnVXa-150-150.jpg'
+  iOS: 'https://itunes.apple.com/cn/app/id510909506?mt=8'
+  android: 'https://play.google.com/store/apps/details?id=com.taobao.idlefish'
+fliggy:
+  name: '飞猪'
+  icon: 'https://img.alicdn.com/tfs/TB194hfnsrI8KJjy0FhXXbfnpXa-200-200.png'
+  iOS: 'https://itunes.apple.com/cn/app/id453691481?mt=8'
+  android: 'https://play.google.com/store/apps/details?id=com.taobao.trip&hl=zh_CN'
+uc:
+  name: 'UC浏览器'
+  icon: 'https://img.alicdn.com/tfs/TB17epRnv6H8KJjy0FjXXaXepXa-200-200.png'
+  iOS: 'https://itunes.apple.com/cn/app/id586871187?mt=8'
+  android: 'https://play.google.com/store/apps/details?id=com.UCMobile.intl&hl=zh_CN'
+cainiao:
+  name: '菜鸟裹裹'
+  icon: 'https://img.alicdn.com/tfs/TB1JMw3XMmTBuNjy1XbXXaMrVXa-512-512.jpg'
+  iOS: ''
+  android: ''
+qianniu:
+  name: '千牛'
+  icon: 'https://img.alicdn.com/tfs/TB19dd_nv6H8KJjSspmXXb2WXXa-200-200.png'
+  iOS: 'https://itunes.apple.com/cn/app/id590217303?mt=8'
+  android: 'https://play.google.com/store/apps/details?id=com.taobao.qianniu'
+aliyun:
+  name: '阿里云'
+  icon: 'https://gw.alicdn.com/tfs/TB1DSqRX_tYBeNjy1XdXXXXyVXa-1024-1024.png'
+  iOS: ''
+  android: ''
+1688:
+  name: '阿里巴巴'
+  icon: 'https://img.alicdn.com/tfs/TB1WJc9XKuSBuNjy1XcXXcYjFXa-80-80.jpg'
+  iOS: ''
+  android: ''
+taopiaopiao:
+  name: '淘票票'
+  icon: 'https://gw.alicdn.com/tfs/TB1qB1RX_tYBeNjy1XdXXXXyVXa-512-512.png'
+  iOS: ''
+  android: ''
+hema:
+  name: '盒马'
+  icon: 'https://gw.alicdn.com/tfs/TB1dq38XQyWBuNjy0FpXXassXXa-144-144.png'
+  iOS: ''
+  android: ''
+eleme:
+  name: '饿了么'
+  icon: 'https://img.alicdn.com/tfs/TB12BM5XFOWBuNjy0FiXXXFxVXa-225-225.jpg'
+  iOS: ''
+  android: ''
+lazada:
+  name: 'Lazada'
+  icon: 'https://gw.alicdn.com/tfs/TB15Zg.XGmWBuNjy1XaXXXCbXXa-225-225.png'
+  iOS: ''
+  android: ''
+paytmmall:
+  name: 'Paytm Mall'
+  icon: 'https://img.alicdn.com/tfs/TB1poU.XL5TBuNjSspmXXaDRVXa-225-225.png'
+  iOS: ''
+  android: ''
+qierdianjing:
+  name: '企鹅电竞'
+  icon: 'https://img.alicdn.com/tfs/TB1jbs5XFOWBuNjy0FiXXXFxVXa-114-114.png'
+  iOS: 'https://app.kaola.com/'
+  android: 'http://dldir1.qq.com//egame/qgame/3.5.0/126/qgame_3.5.0.228.435_r13799_default_release.apk'
+kaola:
+  name: '网易考拉海购'
+  icon: 'https://haitao.nos.netease.com/5c5f27c5-71f1-4f73-978d-e1f244bb4128.jpg'
+  iOS: 'https://app.kaola.com/'
+  android: 'https://app.kaola.com/'
+fenqile:
+  name: '分期乐'
+  icon: 'http://cimg1.fenqile.com/ibanner2/M00/00/8E/jqgHAFpgQnWAV3iwAABPXZNzjzM459.png'
+  iOS: 'http://itunes.apple.com/app/id906611031'
+  android: 'http://mall.m.fenqile.com/app/download/fenqile/app/official/fenqile.apk'
+weidian:
+  name: '微店买家版'
+  icon: 'https://si.geilicdn.com/hz_img_02480000016107fb8e120a02685e_216_216_unadjust.png'
+  iOS: 'https://h5.weidian.com/m/weidian-buyer/down-buyer/index.html'
+  android: 'https://h5.weidian.com/m/weidian-buyer/down-buyer/index.html'
+daren:
+  name: '达人店'
+  icon: 'http://cdn1.showjoy.com/images/c5/c5847462b5d942bab077fe932219f4df.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1123389168?mt=8'
+  android: 'http://sj.qq.com/myapp/detail.htm?apkName=com.showjoy.shop'
+dianwoda:
+  name: '点我达骑手'
+  icon: 'http://prodwbbucket.oss-cn-hangzhou.aliyuncs.com/weex/rider/icon/dwdriderandroid.png'
+  iOS: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.dwd.rider'
+  android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.dwd.rider'

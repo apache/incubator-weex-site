@@ -76,7 +76,8 @@ index:
       name: 黄泰成
       title: 天猫技术专家
       content: “ Weex 作为轻量渲染引擎又提供了很方便的插件机制，让各个端可以把自己的能力发挥出来，充分发挥在天猫的业务上，并良好的支持双11。”
-
+  addmore: 添加你的App
+  whosuse: 谁在使用 Weex ？
 menu:
   guide: 教程
   references: 手册
