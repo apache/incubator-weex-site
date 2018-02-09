@@ -2,7 +2,7 @@
 title: <loading>
 type: references
 group: 内置组件
-order: 8.09
+order: 8.10
 version: 2.1
 ---
 

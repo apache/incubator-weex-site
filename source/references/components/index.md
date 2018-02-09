@@ -12,6 +12,7 @@ version: 2.1
 - [`<a>`](./a.html)
 - [`<list>`](./list.html)
 - [`<cell>`](./cell.html)
+- [`<recycle-list>`](./recycle-list.html)
 - [`<refresh>` & `<loading>`](./refresh.html)
 - [`<scroller>`](./scroller.html)
 - [`<input>`](./input.html)

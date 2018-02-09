@@ -2,7 +2,7 @@
 title: <scroller>
 type: references
 group: 内置组件
-order: 8.10
+order: 8.20
 version: 2.1
 ---
 

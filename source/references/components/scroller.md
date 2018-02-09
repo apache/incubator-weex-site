@@ -1,7 +1,7 @@
 ---
 title: <scroller>
 type: references
-order: 8.09
+order: 8.20
 version: 2.1
 ---
 
@@ -19,8 +19,8 @@ Notes: A <scroller> can be used as a root element or a embed element. The scroll
 Scroller supports all kinds of components, such as div, text, etc.
 There are two special components that can only be used inside scroller component.
 
-* refresh 0.6.1 used inside list to add pull-down-to-refresh functionality. 
-* loading 0.6.1 used inside list to add pull-up-to-load-more functionality. 
+* refresh 0.6.1 used inside list to add pull-down-to-refresh functionality.
+* loading 0.6.1 used inside list to add pull-up-to-load-more functionality.
 
 
 ## Attributes

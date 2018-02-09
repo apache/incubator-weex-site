@@ -2,7 +2,7 @@
 title: <switch>
 type: references
 group: Build-in Components
-order: 8.11
+order: 8.22
 version: 2.1
 ---
 

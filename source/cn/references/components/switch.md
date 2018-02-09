@@ -2,14 +2,14 @@
 title: <switch>
 type: references
 group: 内置组件
-order: 8.12
+order: 8.22
 version: 2.1
 ---
 
 <span class="weex-version">v0.6.1+</span>
 
 
-`<switch>` 是个类似 checkbox 的 UI 
+`<switch>` 是个类似 checkbox 的 UI
 
 > **注意:** switch 组件的外观在三个平台（iOS, Android, Web）稍有不同，这和各平台的 UI 风格有关。
 
@@ -76,7 +76,7 @@ version: 2.1
 - `height`
 - `min-width`
 - `min-height`
-- `margin` 和 `margin-xxx`  
+- `margin` 和 `margin-xxx`
 - `padding` 和 `padding-xxx`
 - `border` 和 `border-xxx`
 
