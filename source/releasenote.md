@@ -4,8 +4,6 @@ type: releasenote
 layout: post
 ---
 
-# Release Note
-
 ## v0.17
 ---
 
@@ -117,7 +115,7 @@ https://github.com/apache/incubator-weex/commit/f50fba8647c8bb6ac522b1a4569a2a22
 [apache/incubator-weex/pull/149|https://github.com/apache/incubator-weex/pull/149]
 
 - Native input/textarea enhancement by kfeagle &  misakuo
-support `number` data type; support soft keyboard event 
+support `number` data type; support soft keyboard event
 
 - Picker module enhancement
 More picker options to customize picker dialog style(background color etc.). Related pull requests: [apache/incubator-weex/pull/234|https://github.com/apache/incubator-weex/pull/234], [apache/incubator-weex/pull/233|https://github.com/apache/incubator-weex/pull/233]
@@ -129,46 +127,46 @@ Seperate module code by action, increasing the maintainability.
 ## v0.10.0
 ------
 - New Feature
-  - Support Vue.js  
-    The Vue.js 2.1.8 ([runtime-only build](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build)) is in WeexSDK now. You can use Vue.js to build native app by WeexSDK 0.10.0.  
-    We reused the original native render engine and developed a new renderer ([weex-vue-render](https://www.npmjs.com/package/weex-vue-render)) for the web platform, which is based on Vue 2.0.  
+  - Support Vue.js
+    The Vue.js 2.1.8 ([runtime-only build](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build)) is in WeexSDK now. You can use Vue.js to build native app by WeexSDK 0.10.0.
+    We reused the original native render engine and developed a new renderer ([weex-vue-render](https://www.npmjs.com/package/weex-vue-render)) for the web platform, which is based on Vue 2.0.
     The former front-end framework (commonly known as `.we`), which is inspired by Vue 1.0, is deprecated. Although it still works well in this release, we suggest to migrate it to Vue 2.0.
   - SDK
     - New CSS support
-      - [text `font-weight`](https://weex-project.io/references/text-style.html)  
+      - [text `font-weight`](https://weex-project.io/references/text-style.html)
         `font-weight` can set to [`normal`|`bold`] or 100-900.
-      - gradient  
-        like CSS3, now you can use gradient in Weex. For example:   
-        
+      - gradient
+        like CSS3, now you can use gradient in Weex. For example:
+
         ``` css
         background-image: linear-gradient(to right, blue, white);
         ```
         ![img_1695](https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg)
         [Read more about gradient](https://weex-project.io/references/common-style.html).
-      - Pseudo class  
-        Currently, Weex supports 4 pseudo classes:`active`, `focus`, `disabled`, `enabled`. 
+      - Pseudo class
+        Currently, Weex supports 4 pseudo classes:`active`, `focus`, `disabled`, `enabled`.
     - New BroadcastChannel API
-      Developers can use `BroadcastChannel` API to implement inter-instance communication.   
-      
+      Developers can use `BroadcastChannel` API to implement inter-instance communication.
+
       ``` js
       const Stack = new BroadcastChannel('Avengers')
       Stack.onmessage = function (event) {
         console.log(event.data) // in this case, it's "Hulk Smash !!!"
       }
-      
+
       // in another instance
       const Hulk = new BroadcastChannel('Avengers')
       Hulk.postMessage("Hulk Smash !!!")
       ```
     - Image's `onload` event add [`naturalHeight` and `naturalWidthimage`](https://weex-project.io/references/components/image.html) to get the original size of image file.
-    - Websocket Support  
-      WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's h5/iOS/android and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.  
+    - Websocket Support
+      WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's h5/iOS/android and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.
       [Read more about Weex's websocket.](https://weex-project.io/cn/references/modules/websocket.html)
     - Support synchronous method call
       Both module and component method can defined synchronous method exposed to JS runtime now. Means native will invoke these method in JS thread directly.
     - Support `viewport` configuration
-      Similar to [W3C specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta), Weex support set define `viewport` in script tag:   
-      
+      Similar to [W3C specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta), Weex support set define `viewport` in script tag:
+
       ``` html
       <script type="config">
         {
@@ -178,9 +176,9 @@ Seperate module code by action, increasing the maintainability.
         }
       </script>
       ```
-  - Tools   
+  - Tools
     - [Devtools](https://github.com/weexteam/weex-devtool)
-      - Support Vue 2.0 debugging.  
+      - Support Vue 2.0 debugging.
       - Add network switch for network inspector.
       - Make application capable to decide which bundle is 'un-debuggable', which means page's source code is unreadable in debug mode.
     - [Weexpack](https://github.com/weexteam/weex-pack)
@@ -195,7 +193,7 @@ Seperate module code by action, increasing the maintainability.
 - New features
   - SDK
     - New API to get Component's size and position:
-      Now you can get these data through `getComponentRect`:   
+      Now you can get these data through `getComponentRect`:
       ``` javascript
       var dom = require('@weex-module/dom');
       dom.getComponentRect(this.$el('comp_id'), function(data){
@@ -204,7 +202,7 @@ Seperate module code by action, increasing the maintainability.
       });
       ```
       The `data` callback parameter contains a `result` to tell if operation is success. And `size` tell you the true data(`bottom`/`top`/`left`/`right`/`width`/`height`) of component.
-    - A brand new `picker` module. We have 'single-picker','date-picker' and 'time-picker' currently, and more common pickers are on the way.  
+    - A brand new `picker` module. We have 'single-picker','date-picker' and 'time-picker' currently, and more common pickers are on the way.
       ![img_1282](https://cloud.githubusercontent.com/assets/115201/21414801/e6341b36-c83d-11e6-9e5a-3acdabb592ee.png)
     There are two ways to use `picker`
     - Use `picker` module directly:
@@ -241,7 +239,7 @@ Seperate module code by action, increasing the maintainability.
   - Components can expose methods too, like modules do. Developers use the same way as create module method to achieve that.
   -  Add `blur` and `focus` method to manually control `input` component to lose or get focus.
   -  Support relative URL, which will resolve real URL by bundle's URL.
-  -  Core javascript framework's unit test coverage is 100% now. we'll pay more attention to quality.  
+  -  Core javascript framework's unit test coverage is 100% now. we'll pay more attention to quality.
   - DevTool
     - Support to check the node hierarchy in [weex-devtool-extension](https://github.com/weexteam/weex-devtool-extension) and highlight the node if it exceeds an specified level.
     - Support different refresh mode in devtools to reload the page or SDK automatically when source file updated.
@@ -277,11 +275,11 @@ Seperate module code by action, increasing the maintainability.
   - Add [weex-pack](https://github.com/weexteam/weex-pack), our next generation of engineering development kits. It allows developers to create weex projects with simple commands and run the project on different development platforms.
   - Add [weex-devtool-extension](https://github.com/weexteam/weex-devtool-extension), a extension for Weex devtool to improve your debug experience，which equivalent an element tag for debugger page.
   - Move devtool to separate [iOS](https://github.com/weexteam/weex-devtool-iOS) and [Android](https://github.com/weexteam/weex_devtools_android) repos.
-    - Add "screencast" which enable the screen of the device(or monitor) to appear on the "Inspector" page; 
-    - Add "remote control" function, in Android user could control remote device(or monitor) when he moves mouse on screencast; 
-    - Add "select element" function which enable the user to find the exact node in "Elements" inspector Tab when he click the mouse on screencast;  
-    - Add "vdom inspector", so user can choose to see the details of native dom or vdom in "Elements" Tab at his preference; 
-    - Adjust interfaces with weex SDK to support "callAddElement"; 
+    - Add "screencast" which enable the screen of the device(or monitor) to appear on the "Inspector" page;
+    - Add "remote control" function, in Android user could control remote device(or monitor) when he moves mouse on screencast;
+    - Add "select element" function which enable the user to find the exact node in "Elements" inspector Tab when he click the mouse on screencast;
+    - Add "vdom inspector", so user can choose to see the details of native dom or vdom in "Elements" Tab at his preference;
+    - Adjust interfaces with weex SDK to support "callAddElement";
 
 
 ## v0.7.0
@@ -299,8 +297,8 @@ Seperate module code by action, increasing the maintainability.
   - Use `callNative` signal to stop JSFM render after instance been destroyed
   - Lazily initialize JSFM When device is in low-memory status, improve SDK stability
 - [Tools](http://alibaba.github.io/weex/doc/tools/devtools.html)
-  - Support debugging  weex(.we) and  react(.jsx) source 
-  - Support apps debugging on the same device 
+  - Support debugging  weex(.we) and  react(.jsx) source
+  - Support apps debugging on the same device
   - Support "watch" feature
   - Solve the dependency on Debugger, user could start "Inspector" first or "Debugger" at will
   - Add "refresh" function in sdk, user could inspect new file by scanning its QR code in playground;
@@ -313,8 +311,8 @@ Seperate module code by action, increasing the maintainability.
   2. [Lifecycle Page Event](https://github.com/alibaba/weex/blob/v0.6.1/doc/references/common-event.md#page-event): viewappear, viewdisappear
   3. [fetch](https://github.com/alibaba/weex/blob/v0.6.1/doc/modules/stream.md#fetchoptions-callbackprogresscallback)
   4. [line-height](https://github.com/alibaba/weex/blob/v0.6.1/doc/components/text.md#styles)
-  5. [list component](https://github.com/alibaba/weex/blob/v0.6.1/doc/components/list.md) 
-     - support sticky header 
+  5. [list component](https://github.com/alibaba/weex/blob/v0.6.1/doc/components/list.md)
+     - support sticky header
      - support scrollToElement API
      - support nested horizontal scroller
      - support cell children nodes event: appear/disappear
@@ -328,7 +326,7 @@ Seperate module code by action, increasing the maintainability.
   1. [weex-toolkit](https://www.npmjs.com/package/weex-toolkit) supports require and generator
   2. Playground supports runtime performance viewer
   3. [Weex DevTools](https://github.com/alibaba/weex/blob/v0.6.1/doc/tools/devtools.md)
-     
+
      <img src="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png" width="600">
 
 
