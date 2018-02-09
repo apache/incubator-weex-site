@@ -1,16 +1,16 @@
 taobao:
   name: '手机淘宝'
-  icon: 'https://img.alicdn.com/tfs/TB1y5JUnvDH8KJjy1XcXXcpdXXa-148-150.png'
+  icon: 'https://img.alicdn.com/tfs/TB1jH9bX3mTBuNjy1XbXXaMrVXa-270-271.png'
   iOS: 'https://itunes.apple.com/cn/app/id387682726?mt=8'
   android: 'https://play.google.com/store/apps/details?id=com.taobao.taobao&hl=zh_CN'
 tmall:
   name: '手机天猫'
-  icon: 'https://img.alicdn.com/tfs/TB1k2XXnBHH8KJjy0FbXXcqlpXa-138-142.png'
+  icon: 'https://img.alicdn.com/tfs/TB16oCjX4GYBuNjy0FnXXX5lpXa-300-300.png'
   iOS: 'https://itunes.apple.com/cn/app/id518966501?mt=8'
   android: 'https://play.google.com/store/apps/details?id=com.tmall.wireless&hl=zh_CN'
 youku:
   name: '优酷'
-  icon: 'https://img.alicdn.com/tfs/TB1.lo5XQyWBuNjy0FpXXassXXa-122-118.png'
+  icon: 'https://img.alicdn.com/tfs/TB1CjajX1uSBuNjy1XcXXcYjFXa-740-737.png'
   iOS: ''
   android: ''
 xianyu:
@@ -43,7 +43,7 @@ aliyun:
   icon: 'https://gw.alicdn.com/tfs/TB1DSqRX_tYBeNjy1XdXXXXyVXa-1024-1024.png'
   iOS: ''
   android: ''
-1688:
+alibaba:
   name: '阿里巴巴'
   icon: 'https://img.alicdn.com/tfs/TB1WJc9XKuSBuNjy1XcXXcYjFXa-80-80.jpg'
   iOS: ''
