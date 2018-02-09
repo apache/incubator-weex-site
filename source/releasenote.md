@@ -6,6 +6,62 @@ layout: post
 
 # Release Note
 
+## v0.18.0
+
+- `feature` `Android/iOS` TemplateList support lifecycle and statefull component [#1019](https://github.com/apache/incubator-weex/pull/1019) [#1023](https://github.com/apache/incubator-weex/pull/1023)
+- `feature` `Android` Support real time format to input component, support disable copy paste to input component [#1013](https://github.com/apache/incubator-weex/pull/1013)
+- `feature` `Android` Support use base64 to import fontface [#1006](https://github.com/apache/incubator-weex/pull/1006)
+- `feature` `Android` High performance binary Wson supported [#974](https://github.com/apache/incubator-weex/pull/974)
+- `feature` `Android` New touch dispatch mechanism and bubble sync method call for android touch event [#961](https://github.com/apache/incubator-weex/pull/961)
+- `feature` `Android` Support set global font to text component [#952](https://github.com/apache/incubator-weex/pull/952)
+- `feature` `Android` List component supported show scrollbar options [#951](https://github.com/apache/incubator-weex/pull/951)
+- `feature` `Android` box-shadow support multi shadows declaration [#915](https://github.com/apache/incubator-weex/pull/915)
+- `feature` `Android` Support `role` property to accessibility [#911](https://github.com/apache/incubator-weex/pull/911) 
+- `bugfix` `Android` Fix network operation on main thread by WebSocket [#1015](https://github.com/apache/incubator-weex/pull/1015)
+- `bugfix` `Android` Fix font not rendered right when font is first downloaded [#972](https://github.com/apache/incubator-weex/pull/972)
+- `bugfix` `Android` Fix the `background-color` can not be set to `transparent` [#959](https://github.com/apache/incubator-weex/pull/959)
+- `bugfix` `Android` Improve JSService usage, support mutil type params [#941](https://github.com/apache/incubator-weex/pull/941)
+- `bugfix` `Android` Fix fix security weaknesses on libweex*.so [#934](https://github.com/apache/incubator-weex/pull/934)
+- `bugfix` `Android` Fix long-running operation on WXThread.scure() [#919](https://github.com/apache/incubator-weex/pull/919)
+- `bugfix` `Android` Fix status of pseudo class can not restore after touch [#907](https://github.com/apache/incubator-weex/pull/907)
+- `bugfix` `Android` Fix parallax component not reseted to right position when scrollToElement with animated:false option [#906](https://github.com/apache/incubator-weex/pull/906)
+
+- `feature` `weex-js-framework` Upgrade weex-vue-framework to [v2.5.13](https://github.com/vuejs/vue/releases/tag/v2.5.13), which implemented the `<recycle-list>`.
+- Only update batched and mutated attributes and styles in js framework ([#953](https://github.com/apache/incubator-weex/pull/953))
+- `feature` `weex-js-framework` Support append as tree on root element ([#954](https://github.com/apache/incubator-weex/pull/954))
+- `improvement` `weex-js-framework` Enhance the multi-instance isolation (sandbox) ([#960](https://github.com/apache/incubator-weex/pull/960))
+- `improvement` `weex-js-framework` Refactor the file structure and build scripts of js framework ([#964](https://github.com/apache/incubator-weex/pull/964) | [#1010](https://github.com/apache/incubator-weex/pull/1010))
+- `improvement` `weex-js-framework` Stop using ES6 Proxy to require a module ([#1017](https://github.com/apache/incubator-weex/pull/1017))
+
+- `bugfix` `iOS` bugfix about longpress and pangesture innner waterfall component invalid[#1007](https://github.com/apache/incubator-weex/pull/1007)
+- `improvemnet` `iOS` improve for threadSafe dictionary [1005](https://github.com/apache/incubator-weex/pull/1005)
+- `feature` `iOS` deprecate WXCallback and WXModuleCallback, use WXKeepAliveCallback and WXModuleKeepAliveCallback [1000](https://github.com/apache/incubator-weex/pull/1000)
+- `bugfix` `iOS` bugfix about iconfont draw failed on occasion [#997](https://github.com/apache/incubator-weex/pull/997)
+- `improvement` `iOS` [remove redundant implementation of slider](https://github.com/apache/incubator-weex/pull/973)
+- `feature` `iOS` support css value for safe-area-inset-left, safe-area-inset-right, safe-area-inset-top, and safe-area-inset-bottom like [iPhone X design](https://webkit.org/blog/7929/designing-websites-for-iphone-x/)[#916](https://github.com/apache/incubator-weex/pull/916)
+- `feature` `iOS` support word-wrap on iOS when drawing text [#887](https://github.com/apache/incubator-weex/pull/887)
+
+- `improvement` `web` refactor appear watcher, image lazyloading, components implementation, some APIs, and the event triggering and handling system.
+- `improvement` `web` significantly improved runtime performance.
+- `bugfix` `web` fix event binding.
+- `bugfix` `web` fix indicator item styles.
+- `bugfix` `web` fix slider's overflow style.
+- `feature` `web` support create weex components through render function.
+- `feature` `web` support binding native events for custom components with .native modifier.
+- `feature` `web` all weex native events should be dispatched through dom elements.
+- `improvement` `web` refactor test procedure flow and increase test cases' total number to 96.
+- `bugfix` `web` fix two way binding for `<input>` component.
+- `bugfix` `web` fix return event for `<input>` component.
+- `bugfix` `web` fix errors relative to createEventMap.
+- `feature` `web` now you can use 'wx' unit.
+- `improvement` `web` remove weex.createEventMap method.
+- `bugfix` `web` fix <switch> component's styles.
+- `bugfix` `web` fix test cases for `<switch>` and `<input>`.
+- `bugfix` `web` webview.reload for `<web>` component always throws a error.
+- `bugfix` `web` should trigger error event when a cross origin issue arises.
+- `bugfix` `web` always trigger a error event when loaded a cross origin page.
+- `bugfix` `web` trigger duplicated appear/disappear events when there're more than one list.
+
 ## v0.17
 ---
 
