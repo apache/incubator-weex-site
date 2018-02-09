@@ -150,7 +150,7 @@ const longList = [
 
 ### 属性和文本的绑定
 
-绑定属性或者文本时，仅支持表达式，不支持函数调用，也不支持使用 filter，可以参考 [Implementation.md#支持的表达式](./Implementation.md#%E6%94%AF%E6%8C%81%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F)。
+绑定属性或者文本时，仅支持表达式，不支持函数调用，也不支持使用 filter，可以参考 [Implementation.md#支持的表达式](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md#%E6%94%AF%E6%8C%81%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F)。
 
 例如，下列写法不可用：
 
@@ -198,7 +198,7 @@ const longList = [
 + `vm.#slots`
 + `vm.#scopedSlots`
 
-`vm.$refs` 里的值可能是数组、子组件的实例、DOM 元素，在前端里比较常用，如果不支持对 Weex 里的 [`dom` 模块](http://weex-project.io/cn/references/modules/dom.html)和 [`animation` 模块](http://weex-project.io/cn/references/modules/animation.html)的功能也有影响。目前正在讨论技术方案，部分接口可能会重新设计，或者是在 `vm` 上透出专为 `<recycle-list>` 设计的接口。
+`vm.$refs` 里的值可能是数组、子组件的实例、DOM 元素，在前端里比较常用，如果不支持对 Weex 里的 [`dom` 模块](../modules/dom.html)和 [`animation` 模块](../modules/animation.html)的功能也有影响。目前正在讨论技术方案，部分接口可能会重新设计，或者是在 `vm` 上透出专为 `<recycle-list>` 设计的接口。
 
 #### 组件的属性
 
