@@ -5,16 +5,16 @@
     </a>
     <div class="main-nav">
       <ul class="links">
-        <li class="<%= page.path.match(/\/?guide\/?/i) ? 'current': '' %>">
+        <li class="<%= page.path.match(/\/?guide\//i) ? 'current': '' %>">
           <a href="<%= url_for_lang('guide') %>"><%= _p('menu.guide') %></a>
         </li>
-        <li class="<%= page.path.match(/\/?references\/?/i) ? 'current': '' %>">
+        <li class="<%= page.path.match(/\/?references\//i) ? 'current': '' %>">
           <a href="<%= url_for_lang('references') %>"><%= _p('menu.references') %></a>
         </li>
-        <li class="<%= page.path.match(/\/?wiki\/?/i) ? 'current': '' %>">
+        <li class="<%= page.path.match(/\/?wiki\//i) ? 'current': '' %>">
           <a href="<%= url_for_lang('wiki') %>"><%= _p('menu.wiki') %></a>
         </li>
-        <li class="dropdown <%= page.path.match(/\/?tools\/?/i) ? 'current': '' %>">
+        <li class="dropdown <%= page.path.match(/\/?tools\//i) ? 'current': '' %>">
           <a><%= _p('menu.tools') %></a>
           <ul class="dropdown-menu subnav">
             <li>
@@ -34,7 +34,7 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown <%= page.path.match(/\/?community\/?/i) ? 'current': '' %>">
+        <li class="dropdown <%= page.path.match(/\/?community\//i) ? 'current': '' %>">
           <a href="javascript:;"><%= _p('menu.community') %></a>
           <ul class="dropdown-menu subnav">
             <li>
