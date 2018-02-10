@@ -49,10 +49,10 @@ alibaba:
   iOS: ''
   android: ''
 taopiaopiao:
-  name: '淘票票'
+  name: '淘票票专业版'
   icon: 'https://gw.alicdn.com/tfs/TB1qB1RX_tYBeNjy1XdXXXXyVXa-512-512.png'
-  iOS: ''
-  android: ''
+  iOS: 'https://itunes.apple.com/cn/app/id1211116737?mt=8'
+  android: 'https://appdownload.alicdn.com/publish/moviepro_android/latest/moviepro_android_700125.apk'
 hema:
   name: '盒马'
   icon: 'https://gw.alicdn.com/tfs/TB1dq38XQyWBuNjy0FpXXassXXa-144-144.png'
