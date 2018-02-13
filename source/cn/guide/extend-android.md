@@ -72,7 +72,7 @@ JS 调用如下：
 2. Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))
 3. Weex sdk 通过反射调用对应的方法，所以 Component 对应的属性方法必须是 public，并且不能被混淆。请在混淆文件中添加代码  `-keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}`
 4. Component 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数
-5. 完成 Component 后一定要在初始化时注册 `WXSDKEngine.registerComponent("richtext",RichText.class);`
+5. 完成 Component 后一定要在初始化时注册 `WXSDKEngine.registerComponent("richText",RichText.class);`
 
 示例如下:
 
