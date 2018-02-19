@@ -29,7 +29,7 @@ version: 2.1
 | 属性名           | 类型     | 值                          | 默认值     |
 | ------------- | ------ | -------------------------- | ------- |
 | `placeholder` | String | {URL / Base64}             | -       |
-| `resize`      | String | conver / contain / stretch | stretch |
+| `resize`      | String | cover / contain / stretch | stretch |
 | `src`         | String | {URL / Base64 }            | -       |
 
 > **注意：**您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/path.html)。
