@@ -113,3 +113,8 @@ kyur:
   icon: 'https://img.alicdn.com/tfs/TB1V.z1X_tYBeNjy1XdXXXXyVXa-1024-1024.png'
   iOS: 'https://itunes.apple.com/cn/app/%E5%BC%80%E8%AF%AD-%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/id1281878843?l=en&mt=8'
   android: ''
+youzan:
+  name: '有赞零售'
+  icon: 'https://img.yzcdn.cn/public_files/2018/02/13/2e34b39ef45295e47919d34dc84b4cb5.png'
+  iOS: 'https://itunes.apple.com/cn/app/%E6%9C%89%E8%B5%9E%E9%9B%B6%E5%94%AE/id1248696859?mt=8'
+  android: ''
