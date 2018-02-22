@@ -45,7 +45,7 @@ public class MyModule extends WXModule{
 Register the module
 
 ```java
-WXSDKEngine.registerModule("MyModule", WXEventModule.class);
+WXSDKEngine.registerModule("MyModule", WyModule.class);
 ```
 JS 调用如下：
 
