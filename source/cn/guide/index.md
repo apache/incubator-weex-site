@@ -64,9 +64,9 @@ Weex 在 iOS 和 Android 上都实现了一个渲染引擎，并提供了一套�
 
 ### 一次编写，处处运行
 
-Weex 可以只开写一份代码，开发出三端都可用的页面。
+Weex 可以只编写一份代码，开发出三端都可用的页面。
 
-在多个端中使用相同的源代码可以显着提高开发效率，并简化测试，构建和发布流程。在此基础上，Weex 可以将前端的打包、测试流程与手机端监控、发布系统结合起来，提高开发效率。
+在多个端中使用相同的源代码可以显著提高开发效率，并简化测试，构建和发布流程。在此基础上，Weex 可以将前端的打包、测试流程与手机端监控、发布系统结合起来，提高开发效率。
 
 尽管 Weex 多端都是用的同一份代码，但是仍然支持针对特定的平台开发功能。Weex 提供了 `weex.config.env` 和 `WXEnvironment`（它们是相同的）来获得当前的运行时环境。你可以用 `WXEnvironment.platform` 来确定代码运行在哪个平台上。除了平台以外，`WXEnvironment` 还包含其他环境信息，如 *osVersion* 和 *deviceModel*，参考 *[Weex variable](../references/weex-variable.html)* 了解更多详细信息。
 
@@ -134,7 +134,7 @@ weex platform add ios
 weex platform add android
 ```
 
-由于网络环境的不同，安装过程可以需要一些时间，请耐心等待。如果安装失败，请确保自己的网络环境畅通。
+由于网络环境的不同，安装过程可能需要一些时间，请耐心等待。如果安装失败，请确保自己的网络环境畅通。
 
 为了能在本地机器上打开 Android 和 iOS 项目，你应该配置好客户端的开发环境。对于 iOS，你应该安装并且配置好 [Xcode](https://developer.apple.com/xcode/)。对于 Android，你应该安装并且配置好 [Android Studio](https://developer.android.com/studio/index.html)。当开发环境准备就绪后，运行下面的命令，可以在模拟器或真实设备上启动应用：
 
