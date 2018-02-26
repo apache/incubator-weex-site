@@ -21,7 +21,7 @@ version: 2.1
 #### 参数
 
 * `options {Object}`：选项参数
-  * `url {stirng}`：要压入的 Weex 页面的 URL
+  * `url {string}`：要压入的 Weex 页面的 URL
   * `animated {string}`：`"true"` 示意为页面压入时需要动画效果，`"false"` 则不需要，默认值为 `"true"`
 * `callback {Function}`：执行完该操作后的回调函数
 
