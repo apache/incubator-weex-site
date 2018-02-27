@@ -68,39 +68,39 @@ JS 调用如下：
 ```
 ## Component 扩展
 
-1. Component 扩展类必须集成 WXComponent.
+1. Component 扩展类必须继承 WXComponent.
 2. Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))
 3. Weex sdk 通过反射调用对应的方法，所以 Component 对应的属性方法必须是 public，并且不能被混淆。请在混淆文件中添加代码  `-keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}`
 4. Component 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数
-5. 完成 Component 后一定要在初始化时注册 `WXSDKEngine.registerComponent("richText",RichText.class);`
+5. 完成 Component 后一定要在初始化时注册 `WXSDKEngine.registerComponent("richText", RichText.class);`
 
 示例如下:
 
 ```java
-public class RichText extends WXComponent {
+public class RichText extends WXComponent<TextView> {
 
-  public RichText(WXSDKInstance instance, WXDomObject dom, WXVContainer parent, boolean isLazy) {
-    super(instance, dom, parent, isLazy);
-  }
+    public RichText(WXSDKInstance instance, WXDomObject dom, WXVContainer parent) {
+        super(instance, dom, parent);
+    }
 
-  @Override
-  protected void initView() {
-    mHost=new TextView(mContext);
-    ((TextView)mHost).setMovementMethod(LinkMovementMethod.getInstance());
-  }
+    @Override
+    protected TextView initComponentHostView(@NonNull Context context) {
+        TextView textView = new TextView(context);
+        textView.setTextSize(20);
+        textView.setTextColor(Color.BLACK);
+        return textView;
+    }
 
-  @WXComponentProp(name = "tel")
-  public void setTelLink(String tel){
-    SpannableString spannable=new SpannableString(tel);
-    spannable.setSpan(new URLSpan("tel:"+tel),0,tel.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-    ((TextView)mHost).setText(spannable);
-  }
+    @WXComponentProp(name = "tel")
+    public void setTel(String telNumber) {
+        getHostView().setText("tel: " + telNumber);
+    }
 }
 ```
 注册你的组件：
 
 ```java
-WXSDKEngine.registerComponent("MyView",MyViewComponent.class);
+WXSDKEngine.registerComponent("richText", RichText.class);
 ```
 
 JS 调用如下：
