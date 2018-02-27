@@ -27,15 +27,15 @@ Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功
 示例如下：
 
 ```java
-public class MyModule extends WXModule{
+public class MyModule extends WXModule {
 
-  //run ui thread 
+  //run ui thread
   @JSMethod (uiThread = true)
   public void printLog(String msg) {
     Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();
   }
 
-  //run JS thread 
+  //run JS thread
   @JSMethod (uiThread = false)
   public void fireEventSyncCall(){
    //implement your module logic here
@@ -45,7 +45,7 @@ public class MyModule extends WXModule{
 Register the module
 
 ```java
-WXSDKEngine.registerModule("MyModule", WXEventModule.class);
+WXSDKEngine.registerModule("MyModule", MyModule.class);
 ```
 JS 调用如下：
 
