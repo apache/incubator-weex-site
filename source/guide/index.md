@@ -85,7 +85,7 @@ Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/r
 
 > Vue.js and Rax are already integrated into Weex SDK, you don't need to require them manually.
 
-However, Vue and Rax are not the only options, it's possible to integrate other your favorite front-end framework into Weex. There is a document *[Extend JS Framework](./advanced/extend-js-framework.html)* that describes how to implement it, but the process is still very complicated and tricky. To achieve it, you need to understand many underlying details about the js-native bridge and native render engines.
+However, Vue and Rax are not the only options, it's possible to integrate other your favorite front-end framework into Weex. There is a document *[Extend JS Framework](./extend-js-framework.html)* that describes how to implement it, but the process is still very complicated and tricky. To achieve it, you need to understand many underlying details about the js-native bridge and native render engines.
 
 You can read *[Front-End Frameworks](./front-end-frameworks.html)* to learn more details.
 
