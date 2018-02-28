@@ -128,3 +128,13 @@ sinazc:
   icon: 'http://n.sinaimg.cn/tech/zcapp/zhongce_3x.png'
   iOS: 'https://itunes.apple.com/cn/app/%E6%96%B0%E6%B5%AA%E4%BC%97%E6%B5%8B/id1309407290?l=zh&ls=1&mt=8'
   android: ''
+bandou:
+  name: '班豆'
+  icon: 'https://app.bandou.cn/download/app/bandou.png'
+  iOS: 'https://app.bandou.cn/download/app_download.html'
+  android: 'https://app.bandou.cn/download/app_download.html'
+cschool:
+  name: '超级云校'
+  icon: 'https://app.cschool.cc/download/imgs/512.png'
+  iOS: 'https://app.cschool.cc/download/download.html'
+  android: 'https://app.cschool.cc/download/download.html'
