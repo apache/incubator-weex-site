@@ -14,9 +14,8 @@ version: 2.1
 ``` bash
 $ npm install -g weex-toolkit
 ```
-如果你本地没有安装 node.js 你可以前往[官网](https://nodejs.org/en/)下载安装。
 
-* 请确保你的 node 版本是>=6，你可以使用 [n](https://github.com/tj/n) 来进行 node 的版本管理。
+> 如果你本地没有安装 node.js 你可以前往[Nodejs 官网](https://nodejs.org/en/)下载安装, 并确保你的 node 版本是>=6，你可以使用 [n](https://github.com/tj/n) 来进行 node 的版本管理。
 
 中国用户如果npm遭遇网络问题，可以使用淘宝的 [npm镜像](https://npm.taobao.org/)或通过[nrm](https://www.npmjs.com/package/nrm)工具切换你的npm镜像：
 
@@ -27,30 +26,29 @@ $ nrm use taobao
 $ npm install weex-toolkit -g
 ```
 
-如果你安装的过程中遇到了问题，你可以在[weex-toolkit问题汇总](https://github.com/weexteam/weex-toolkit#faq)中找到解决方法或者在[weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues)中与我们讨论。
+如果你安装的过程中遇到了问题，你可以在[weex-toolkit常见问题](https://github.com/weexteam/weex-toolkit/blob/master/README-zh.md#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)中找到解决方法或者在[weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues)中进行反馈。
 
 
 ## 命令
 
 ### create
 ```bash
-$ weex create awesome-project
+# 从官方模板中创建项目
+$ weex create my-project
+
+# 从github上下载模板到本地
+$ weex create username/repo my-project
 ```
-该命令用于创建一个新的weex项目。命令运行后，你可以找到`awesome-project`目录，里面有一些Weex模板,里面提供了一些内置的脚本
-
-- `build`: 用于打包源文件生成JS bundle
-- `dev`: 运行监听模式的webpack打包脚本
-- `serve`: 启动热更新静态服务器
-
-你需要在运行`npm start`前运行一下`npm i`来安装项目依赖，之后浏览器就会自动打开开发页面。
+从官方模板或者远程源创建项目模板，你也可以创建你自己的`weex`项目模板，更多细节你可以查看[如何创建你自己的模板](https://github.com/weex-templates/How-to-create-your-own-template).
 
 ### preview
 
 weex-toolkit supports previewing your Weex file(`.we` or `.vue`) in a watch mode. You only need specify your file path.
 weex-toolkit工具支持对你的Weex文件（`.vue`)在监听模式下进行预览，你只需要指定一下你的项目路径。
 
+自`weex-toolkit v1.1.0+`版本后修改
 ``` bash
-$ weex src/foo.vue
+$ weex preview src/foo.vue
 ```
 
 浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](https://weex.apache.org/cn/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
@@ -75,10 +73,10 @@ $ weex compile [source] [dist]  [options]
 
 | Option        | Description    | 
 | --------   | :-----   |
-|`-w, --watch`        | watch we file changes auto build them and refresh debugger page! [default `true`]|
-|`-d,--devtool [devtool]`        |set webpack devtool mode|
-|`-e,--ext [ext]`        | set enabled extname for compiler default is vue|we|
-|`-m, --min`| set jsbundle uglify or not. [default `false`]|
+|`-w, --watch` | 开启watch模式，同步文件改动并进行编译|
+|`-d,--devtool [devtool]`|设置devtool选项|
+|`-e,--ext [ext]`| 设置文件拓展名，默认为vue|
+|`-m, --min`| 压缩jsbundle选项|
 
 你可以这样子使用：
 
@@ -122,86 +120,81 @@ weex debug [we_file|bundles_dir] [options]
 
 | Option        | Description    | 
 | --------   | :-----   |
-|`-V, --verbose`       | display logs of debugger server|
-|`-v, --version`       | display version|
-|`-p, --port [port]`   | set debugger server port|
-|`-e, --entry [entry]` | set the entry bundlejs path when you specific the bundle server root path|
-|`-m, --mode [mode]`   | set build mode [transformer|loader]|
-|`-w, --watch`        | watch we file changes auto build them and refresh debugger page! [default `true`]|
-|`--ip [ip]`|set the host ip of debugger server|
-|`--loglevel [loglevel]`| set log level `silent|error|warn|info|log|debug`|
-|`--min`| set jsbundle uglify or not. [default `false`]|
-|`--debug`| start with node-inspect default port is 9331|
+|`-v, --version`|  显示weex-debugger版本信息|
+|`-h, --help`| 展示帮助信息 |
+|` -H --host [host]`| 设置浏览器打开的host地址（适用于代理环境下，如docker环境等）|
+|`-p, --port [port]`| 设置调试服务器的端口，默认值 8088|
+|`-m, --manual`|开启该选项后将不会自动打开浏览器|
+|`-e,--ext [ext]`|设置文件拓展名用于编译器编译，默认值为`vue`|
+|`--min`|开启该选项后将会压缩jsbunlde|
+|`--telemetry`|上传用户数据帮助提升weex-toolkit体验|
+|`--verbose`|显示详细的日志数据|
+|`--loglevel [loglevel]`|设置日志等级，可选silent/error/warn/info/log/debug,默认值为error|
+|`--remotedebugport [remotedebugport]`|设置调试服务器端口号，默认值为9222|
 
-#### 特性
+#### 功能介绍
 
 ##### 连接设备
-
+使用以下命令打开调试页面，使用测试包扫码，进入你需要调试的weex页面
 ```
 $ weex debug
 ```
+自`weex-toolkit v1.1.0+`版本起默认的debug工具已从[weex-devtool](https://github.com/weexteam/weex-devtool)切换至[weex-debugger](https://github.com/weexteam/weex-debugger)，如想使用旧版本devtool，可通过以下命令使用：
 
-这个命令将启动调试服务器并启动一个打开“DeviceList”页面的chrome。
-这个页面会显示一个二维码，你可以使用[Playground](https://weex.apache.org/cn/playground.html)来扫描它来启动调试或者在你的应用中集成[Weex devtools](#集成devtool工具)
+```
+$ weex xbind debugx weex-devtool
+$ weex debugx
+```
 
-![devtools-main](https://img.alicdn.com/tfs/TB1xPipftfJ8KJjy0FeXXXKEXXa-2880-2314.png)
+##### 链接设备
 
-##### 调试`.vue`文件
+请使用[weex playground app](http://weex.apache.org/tools/playground.html)扫码或使用集成了weex-devtool的app进行扫码，集成方法见[集成devtool工具](#集成devtool工具)。有ios模拟器环境的用户也可以通过点击二维码的方式进行模拟器调试（仅限mac用户使用）。
+
+![debugger-main](https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png)
+
+##### 编译 `.vue` 文件
 
 ```
 $ weex debug your_weex.vue
 ```
-这个命令会将`your_weex.vue`编译成`your_weex.js`，并根据命令启动调试服务器。
-`your_weex.js`将部署在服务器上并显示在调试页面中，使用另一个二维码用于`your_weex.js`文件的调试。
+点击可扫码的二维码按钮即可打开编译后得到的产物二维码，可直接通过weex playground app 进行扫码预览。
 
-![devtools-entry](https://img.alicdn.com/tfs/TB13a9Zfx6I8KJjy0FgXXXXzVXa-2880-2314.png)
+![devtools-entry](https://img.alicdn.com/tfs/TB1j3DIbntYBeNjy1XdXXXXyVXa-1915-1001.png)
 
-##### 调试文件夹中的`.vue`文件
+##### Inspector功能
+> Inspector功能可查看页面的VDOM/Native Tree结构
 
-```
-$ weex debug your/vue/path  -e index.vue
-```
-这个命令将编译`your/vue/path`中的每个文件，并将它们部署在捆绑服务器上，新的文件将映射到`http://localhost:port/weex/`路径下，使用`-e`指定的路径作为页面的入口。
+注：如不需要此功能尽量保持关闭状态，开启浏览器Inspector界面会增加大量页面通讯，较为影响性能。
 
-##### Inspector
+![inspectors-one](https://img.alicdn.com/tfs/TB166B8bhGYBuNjy0FnXXX5lpXa-2876-1652.png)
 
- Inspector 能够用来查看 `Element` \ `NetWork` \ `Console log` \ `ScreenCast` \ `BoxModel` \ `Native View` 等。
+![inspectors-two](https://img.alicdn.com/tfs/TB11kN2beuSBuNjy1XcXXcYjFXa-2872-1636.png)
 
-![devtools-inspector](https://img.alicdn.com/tfs/TB1rmGMfBTH8KJjy0FiXXcRsXXa-2826-1636.png)
+##### JS Debug功能
+> JS Debug功能可对weex页面中的Jsbundle进行调试。
 
-##### Element
+![js-debug](https://img.alicdn.com/tfs/TB1b5J2beuSBuNjy1XcXXcYjFXa-2880-1648.png)
 
-![inspector-element](https://img.alicdn.com/tfs/TB1V.CJfBTH8KJjy0FiXXcRsXXa-2880-1652.png)
 
-##### NetWork
+##### Network功能
+> Network功能可以收集weex应用中的网络请求信息。
 
-![network](https://img.alicdn.com/tfs/TB1I.uRfwvD8KJjy0FlXXagBFXa-2840-1622.png)
+![network](https://img.alicdn.com/tfs/TB126JNbbGYBuNjy0FoXXciBFXa-2868-1642.png)
 
-##### 查看网络请求的总耗时和延时
 
-![inspector-network](https://img.alicdn.com/tfs/TB1eKz_c5qAXuNjy1XdXXaYcVXa-2870-1650.png)
+##### LogLevel和ElementMode功能
+> LogLevel和ElementMode功能用于调整调试工具的输出配置。
 
-##### 查看网络请求的header和response
+LogLevel分别有 debug/info/warn/log/error五个log等级，切换可输出不同等级的log信息  
+ElementMode可以切换Element标签中Domtree显示模式，下图为vdom显示界面，可从标签中看到详细的数据结构：  
+![loglevel-elementMode](https://img.alicdn.com/tfs/TB1qzrObntYBeNjy1XdXXXXyVXa-2872-1636.png)
 
-![inspector-network](https://img.alicdn.com/tfs/TB1eKz_c5qAXuNjy1XdXXaYcVXa-2870-1650.png)
 
-##### 控制台
+##### Prophet功能（加载时序图）
+> Prophet功能用于查看weex的加载时序图和页面性能指标。
 
-![inspector-console](https://img.alicdn.com/tfs/TB1Vt9PfwvD8KJjy0FlXXagBFXa-2880-1652.png)
-
-##### 资源
-
-![inspector-resource](https://img.alicdn.com/tfs/TB131eDfv2H8KJjy0FcXXaDlFXa-2872-1642.png)
-
-#### 调试
-
- 调试器用来调试 Weex 中的 JS 代码，能够设置断点、查看调用栈。
-
-![devtools-debugger](https://img.alicdn.com/tfs/TB1iuS5fDnI8KJjy0FfXXcdoVXa-2816-1642.png)
-
-##### Breakpoint and CallStack
-
-![debugger-breakpoint](https://img.alicdn.com/tfs/TB1cV5MfxrI8KJjy0FpXXb5hVXa-2860-1644.png)
+点击右上角Prophet即可查看时序图(iOS暂不支持，性能数据可在log的performance中查看)，如下：  
+![prophet](https://img.alicdn.com/tfs/TB1E4rObntYBeNjy1XdXXXXyVXa-2852-1626.png)
 
 
 #### 集成devtool工具

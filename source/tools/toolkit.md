@@ -16,24 +16,23 @@ $ npm install -g weex-toolkit
 ```
 You can use the `weex -v` command to confirm that the installation is successful.
 
-If you have never installed node.js, you should go [node.js.org]( https://nodejs.org/en/) to download and install it.
-> **NOTE:** The node version needs to be upper 6.0. You can try [n](https://github.com/tj/n) to manage your node versions. If you meet some errors when installing, please go [weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues) or [weex-toolkit faq](https://github.com/weexteam/weex-toolkit#faq) to find some solution or have a discuss with us.
+
+> If you have never installed node.js, you should go [node.js.org]( https://nodejs.org/en/) to download and install it. The node version needs to be upper 6.0. You can try [n](https://github.com/tj/n) to manage your node versions. 
+
+If you meet some errors when installing, please go [weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues) or [weex-toolkit faq](https://github.com/weexteam/weex-toolkit#faq) to find some solution or have a discuss with us.
 
 
 ## Commands
 
 ### create
 ```bash
-$ weex create awesome-project
+# create a new project with an official template
+$ weex create my-project
+
+# create a new project straight from a github template
+$ weex create username/repo my-project
 ```
-Creates a new weex project. After command running, you can find `awesome-project` directory and there are some Weex templates in it.
-There are some useful npm scripts you will use in the future:
-
-- `build`: build the source code and generate the JS bundle
-- `dev`: run webpack watch configuration
-- `serve`: start a hot-reload web server
-
-You need to run `npm i` before running `npm start` to install project dependencies，after that, the development page will open in the browser automatically
+Create a new project with an official template or from other remote, also you can create your own weex template, more detail you can see [How-to-create-your-own-template](https://github.com/weex-templates/How-to-create-your-own-template).
 
 ### preview
 
@@ -43,7 +42,7 @@ weex-toolkit supports previewing your Weex file(`.vue`) in a watch mode. You onl
 $ weex preview src/foo.vue
 ```
 
-The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a [Playground](https://weex.apache.org/cn/playground.html) app in your mobile devices, you can scan the QR code at the opened page.
+The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a [Playground App](https://weex.apache.org/cn/playground.html) in your mobile devices, you can scan the QR code at the opened page.
 
 Try the command below, you’ll preview the whole directory files.
 
@@ -78,11 +77,20 @@ $ weex compile src dest --devtool source-map -m
 
 ### platform
 
-Use `weex platform [add|remove] [ios|android]` to add or remove ios / android project templates.
+Use `weex platform [add|remove|update] [ios|android]` to add, remove or update your ios / android project templates.
 
 ``` bash
-$ weex platform add ios
-$ weex platform remove ios
+# add weex platform
+$ weex platform add [ios|android]
+
+# remove weex platform
+$ weex platform remove [ios|android]
+
+# update weex platform
+$ weex platform update [ios|android]
+
+# list weex platform
+$ weex platform list
 ```
 Use `weex platform list` to show what platforms your application supported.
 
@@ -91,8 +99,13 @@ Use `weex platform list` to show what platforms your application supported.
 You can use `weex-toolkit` to run project on android/ios/web.
 
 ``` bash
-$ weex run ios
+# run weex Android project
 $ weex run android
+
+# run weex iOS project
+$ weex run ios
+
+# run weex web
 $ weex run web
 ```
 
@@ -117,7 +130,7 @@ weex debug [we_file|bundles_dir] [options]
 |`--ip [ip]`|set the host ip of debugger server|
 |`--loglevel [loglevel]`| set log level|
 |`--min`| set jsbundle uglify or not. [default `false`]|
-|`--debug`| start with node-inspect default port is 9331|
+|`--remotedebugport [remotedebugport]`|set the remote debug port,default 9222|
 
 #### Features
 
@@ -130,61 +143,45 @@ $ weex debug
 This command will start debug server and launch a chrome opening `DeviceList` page.
 this page will display a QR code, you can use [Playground](https://weex.apache.org/cn/playground.html) scan it for starting debug or integrate [Weex devtools](#Integrate devtool) into your application.
 
-![devtools-main](https://img.alicdn.com/tfs/TB1xPipftfJ8KJjy0FeXXXKEXXa-2880-2314.png)
+![devtools-main](https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png)
 
 ##### debug with `.vue` file
 
 ```
 $ weex debug your_weex.vue
 ```
+Click the button you can use your app or [weex playground app](http://weex.apache.org/tools/playground.html) to preview your pages.
 
-This command will compile `your_weex.vue` to `your_weex.js`  and start the debug server as upon command.
-`your_weex.js` will be deployed on the server and displayed on the debug page, using another QR code for debugging `your_weex.js` file.
+![devtools-entry](https://img.alicdn.com/tfs/TB1j3DIbntYBeNjy1XdXXXXyVXa-1915-1001.png)
 
-![devtools-entry](https://img.alicdn.com/tfs/TB13a9Zfx6I8KJjy0FgXXXXzVXa-2880-2314.png)
-
-##### start debugger with a directory of vue files
-
-```
-$weex debug your/vue/path  -e index.vue
-```
-
-This command will compile each of the files in `your/vue/path` and deploy them on the bundled server with the new file mapped to the path `http://localhost:port/weex/` with the `-e` designated path as the entrance to the page.
 
 ##### Inspector
 
- Inspector can be used to show your `Element` \ `Network` \ `Console log` \ `ScreenCast` \ `BoxModel` \ `Native View` and so on.
+> Inspector feature to view the page's VDOM / Native Tree structure
 
-![devtools-inspector](https://img.alicdn.com/tfs/TB1rmGMfBTH8KJjy0FiXXcRsXXa-2826-1636.png)
+Note: If you do not need this feature as far as possible to maintain the closed state, open the browser Inspector interface will increase the page communication, more affect performance.
 
-##### Element
+![inspectors-one](https://img.alicdn.com/tfs/TB166B8bhGYBuNjy0FnXXX5lpXa-2876-1652.png)
 
-![inspector-element](https://img.alicdn.com/tfs/TB1V.CJfBTH8KJjy0FiXXcRsXXa-2880-1652.png)
+![inspectors-two](https://img.alicdn.com/tfs/TB11kN2beuSBuNjy1XcXXcYjFXa-2872-1636.png)
 
 ##### NetWork
 
-![network](https://img.alicdn.com/tfs/TB1I.uRfwvD8KJjy0FlXXagBFXa-2840-1622.png)
+> The Network feature collects network request information from weex applications.
 
-##### show the total time and latency
+![network](https://img.alicdn.com/tfs/TB126JNbbGYBuNjy0FoXXciBFXa-2868-1642.png)
 
-![inspector-network](https://img.alicdn.com/tfs/TB1mziKfC_I8KJjy0FoXXaFnVXa-2866-1648.png)
-##### show the header and response
+##### Loglevel & ElementMode
 
-![inspector-network](https://img.alicdn.com/tfs/TB1eKz_c5qAXuNjy1XdXXaYcVXa-2870-1650.png)
-##### Console
+> The LogLevel and ElementMode feature are used to adjust the output configuration of the debugger.
 
-![inspector-console](cd ..FlXXagBFXa-2880-1652.png)
-##### Resource
+![loglevel-elementMode](https://img.alicdn.com/tfs/TB1qzrObntYBeNjy1XdXXXXyVXa-2872-1636.png)
 
-![inspector-resource](https://img.alicdn.com/tfs/TB131eDfv2H8KJjy0FcXXaDlFXa-2872-1642.png)
+##### Prophet
+> The Prophet feature is used to view weex's load timing diagram and page performance metrics.
 
-#### Debugger
-
-![devtools-debugger](https://img.alicdn.com/tfs/TB1iuS5fDnI8KJjy0FfXXcdoVXa-2816-1642.png)
-
-##### Breakpoint and CallStack
-
-![debugger-breakpoint](https://img.alicdn.com/tfs/TB1cV5MfxrI8KJjy0FpXXb5hVXa-2860-1644.png)
+Click on the upper right corner of the Prophet to view the timing diagram (iOS is not supported, the performance data can be viewed in the log performance), as follows:
+![prophet](https://img.alicdn.com/tfs/TB1E4rObntYBeNjy1XdXXXXyVXa-2852-1626.png)
 
 #### Integrate devtool
 * Android
