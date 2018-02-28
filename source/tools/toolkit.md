@@ -145,7 +145,7 @@ this page will display a QR code, you can use [Playground](https://weex.apache.o
 
 ![devtools-main](https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png)
 
-##### debug with `.vue` file
+##### Debug with `.vue` file
 
 ```
 $ weex debug your_weex.vue
@@ -164,6 +164,13 @@ Note: If you do not need this feature as far as possible to maintain the closed 
 ![inspectors-one](https://img.alicdn.com/tfs/TB166B8bhGYBuNjy0FnXXX5lpXa-2876-1652.png)
 
 ![inspectors-two](https://img.alicdn.com/tfs/TB11kN2beuSBuNjy1XcXXcYjFXa-2872-1636.png)
+
+##### Breakpoint
+> JS Debug feature support you to set breakpoint on your jsbundle and debugging with it.
+
+You can find your jsbundle in the `source` folder of the `Runtime.js` directory. If you do not see the `Runtime.js` directory, check if the weex-debugger tool is completely installed or try to restart the debug tool.
+
+![js-debug](https://img.alicdn.com/tfs/TB1b5J2beuSBuNjy1XcXXcYjFXa-2880-1648.png)
 
 ##### NetWork
 
