@@ -123,3 +123,13 @@ qiang100:
   icon: 'https://www.qiang100.com/public/images/appicon-v2/512-512.png'
   iOS: 'https://itunes.apple.com/cn/app/id1206796488?mt=8'
   android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.qiang100.app'
+bandou:
+  name: '班豆'
+  icon: 'https://app.bandou.cn/download/app/bandou.png'
+  iOS: 'https://app.bandou.cn/download/app_download.html'
+  android: 'https://app.bandou.cn/download/app_download.html'
+cschool:
+  name: '超级云校'
+  icon: 'https://app.cschool.cc/download/imgs/512.png'
+  iOS: 'https://app.cschool.cc/download/download.html'
+  android: 'https://app.cschool.cc/download/download.html'
