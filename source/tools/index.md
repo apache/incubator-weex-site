@@ -9,5 +9,5 @@ version: 2.1
 
 + [Playground App](./playground.html)
 + [Online Playground](http://dotwe.org/vue/)
-+ [weex-toolkit](./toolkit.html)
++ [Weex Toolkit](./toolkit.html)
 + [Syntax Highlight Plugins](./helpers.html)
