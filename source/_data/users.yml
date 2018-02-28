@@ -123,3 +123,8 @@ qiang100:
   icon: 'https://www.qiang100.com/public/images/appicon-v2/512-512.png'
   iOS: 'https://itunes.apple.com/cn/app/id1206796488?mt=8'
   android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.qiang100.app'
+sinazc:
+  name: '新浪众测'
+  icon: 'http://n.sinaimg.cn/tech/zcapp/zhongce_3x.png'
+  iOS: 'https://itunes.apple.com/cn/app/%E6%96%B0%E6%B5%AA%E4%BC%97%E6%B5%8B/id1309407290?l=zh&ls=1&mt=8'
+  android: ''
