@@ -379,7 +379,35 @@
 }
 
 .users {
-  $color: #333;
+  $color: rgb(88, 87, 87);
+  li {
+    position: relative;
+  }
+  .download-btn {
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    bottom: 30px;
+    left: 20px;
+    opacity: 0;
+    transition: all .2s ease;
+    background: rgba(0,0,0,.5);
+    a {
+      display: block;
+      width: 50%;
+      height: 100%;
+      float:left;
+    }
+    .android {
+      background: url(../images/android-icon.png) center center no-repeat;
+      background-size: 24px 24px;
+    }
+    .ios {
+      background: url(../images/ios-icon.png) center center no-repeat;
+      background-size: 24px 24px;
+    }
+  }
   .addmore {
     padding: 15px 15px;
     font-size: 26px;
@@ -437,6 +465,11 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(0,0,0,.16);
           }
+          .download-btn{
+            opacity: 1;
+            transform: translateY(-2px);
+            z-index: 999;
+          }
         }
       }
       .tooltip{
@@ -455,6 +488,7 @@
         transition: box-shadow .2s ease,transform .2s ease;
         vertical-align: middle;
         border-radius: 15px;
+        background-color: transparent;
         background-size: 90px 90px;
         background-position: center center;
         cursor: pointer;
