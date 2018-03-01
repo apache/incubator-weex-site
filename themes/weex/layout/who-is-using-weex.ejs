@@ -6,12 +6,8 @@
       <% for (var user in site.data.users) { %>
         <li>
           <div class="download-btn">
-            <a class="android" href="<%= site.data.users[user].android || '#' %>">
-
-            </a>
-            <a class="ios" href="<%= site.data.users[user].iOS || '#' %>">
-
-            </a>
+            <a class="android" target="_blank" href="<%= site.data.users[user].android || '#' %>"></a>
+            <a class="ios" target="_blank" href="<%= site.data.users[user].iOS || '#' %>"></a>
           </div>
           <div class="img" style="background-image:url(<%= site.data.users[user].icon %>)"></div>
           <div class="tooltip"><%= site.data.users[user].name %></div>

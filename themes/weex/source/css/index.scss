@@ -14,12 +14,12 @@
   height: calc(100% - 72px);
 
   // &:nth-child(even) {
-  //   background: $bg-blue; 
+  //   background: $bg-blue;
   //   color: $text-white;
   // }
 
   // &:nth-child(odd) {
-    
+
 
   //   background: $bg-gray;
   //   color: $text-blue;
@@ -79,7 +79,7 @@
 .header {
   height: 100%;
   position: relative;
-  background: $bg-blue; 
+  background: $bg-blue;
   color: $text-white;
 
   #slider {
@@ -118,7 +118,7 @@
     max-width: $content-max-width;
     margin: auto;
     height: 100%;
-    
+
     .page-title {
       font-size: 2.3em;
       font-family: "Gill Sans";
@@ -153,12 +153,12 @@
 
   .left {
     left: -40px;
-  } 
+  }
 
   .right {
     top: 55%;
     right: -110px;
-  } 
+  }
 }
 
 .edge {
@@ -179,7 +179,7 @@
       padding: 2em 7em;
       display: flex;
       flex: 5;
-      flex-direction: row; 
+      flex-direction: row;
       align-items: flex-start;
     }
   }
@@ -217,7 +217,7 @@
 }
 
 .feature {
-  background: $bg-blue; 
+  background: $bg-blue;
   color: $text-white;
   .feature-content {
     height: 100%;
@@ -343,7 +343,7 @@
 }
 
 .supporting-vue {
-  background: $bg-blue; 
+  background: $bg-blue;
   color: $text-white;
 
   .sketch-content.imgbox {
@@ -359,7 +359,7 @@
       top: -50px;
       left: 0;
       right: 0;
-    } 
+    }
   }
 }
 
@@ -385,7 +385,7 @@
   }
   .download-btn {
     width: 90px;
-    height: 30px;
+    height: 40px;
     position: absolute;
     border-radius: 0 0 15px 15px;
     bottom: 30px;
@@ -401,11 +401,11 @@
     }
     .android {
       background: url(../images/android-icon.png) center center no-repeat;
-      background-size: 24px 24px;
+      background-size: 28px 28px;
     }
     .ios {
       background: url(../images/ios-icon.png) center center no-repeat;
-      background-size: 24px 24px;
+      background-size: 28px 28px;
     }
   }
   .addmore {
@@ -493,7 +493,7 @@
         background-position: center center;
         cursor: pointer;
       }
-      
+
     }
   }
   .user-info {
@@ -522,7 +522,7 @@
   }
 
   .more {
-    flex: 1;    
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -556,7 +556,7 @@
       width: 66px;
       height: 66px;
       border-radius: 100%;
-    } 
+    }
 
     .user-name {
       font-weight: bold;
@@ -576,7 +576,7 @@
   }
 
   .scene-container .go-2-doc {
-    flex: 1;    
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
