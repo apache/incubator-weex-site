@@ -22,7 +22,7 @@ DOM（Document Object Model），即文档对象模型，是 HTML 和 XML 文档
 
 Weex 支持在标签上绑定事件，和在浏览器中的写法一样，但是 Weex 中的事件是由原生组件捕获并触发的，行为和浏览器中有所不同，事件中的属性也和 Web 中有差异。
 
-+ 并不支持 Web 中所有的事件类型，详情请参考[《通用事件》](./common-event.html)。
++ 并不支持 Web 中所有的事件类型，详情请参考[《通用事件》](./common-events.html)。
 + 不区分事件的捕获阶段和冒泡阶段，相当于 DOM 0 级事件。
 
 ## Weex 环境中没有 BOM
