@@ -43,8 +43,7 @@ $ weex create username/repo my-project
 
 ### preview
 
-weex-toolkit supports previewing your Weex file(`.we` or `.vue`) in a watch mode. You only need specify your file path.
-weex-toolkit工具支持对你的Weex文件（`.vue`)在监听模式下进行预览，你只需要指定一下你的项目路径。
+weex-toolkit工具支持对你的Weex文件（`.we`或`.vue`)在监听模式下进行预览，你只需要指定一下你的项目路径。
 
 自`weex-toolkit v1.1.0+`版本后修改
 ``` bash
