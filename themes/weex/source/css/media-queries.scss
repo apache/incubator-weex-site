@@ -187,6 +187,26 @@
     .title {
       font-size: 18px;
     }
+    .download-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      top: 5px;
+      left: 5px;
+      a {
+        width: 100%;
+        height: 30px;
+        float:none;
+      }
+      .android {
+        background: url(../images/android-icon.png) center center no-repeat;
+        background-size: 24px 24px;
+      }
+      .ios {
+        background: url(../images/ios-icon.png) center center no-repeat;
+        background-size: 24px 24px;
+      }
+    }
     .app-listing {
       margin-top: 0;
       li{

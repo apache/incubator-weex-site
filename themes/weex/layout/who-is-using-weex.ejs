@@ -5,6 +5,14 @@
 
       <% for (var user in site.data.users) { %>
         <li>
+          <div class="download-btn">
+            <a class="android" href="<%= site.data.users[user].android || '#' %>">
+
+            </a>
+            <a class="ios" href="<%= site.data.users[user].iOS || '#' %>">
+
+            </a>
+          </div>
           <div class="img" style="background-image:url(<%= site.data.users[user].icon %>)"></div>
           <div class="tooltip"><%= site.data.users[user].name %></div>
         </li>
@@ -12,9 +20,6 @@
       </ul>
       <a class="addmore" href="https://github.com/apache/incubator-weex-site/tree/master/source/_data/users.yml" target="_blank">
         <%= _p('index.addmore') %>
-        <span class="top"></span>
-        <span class="left"></span>
-        <span class="right"></span>
         <span class="bottom"></span>
       </a>
   </div>
