@@ -23,6 +23,9 @@ It supports all kinds of weex components as its slides, especially the `indicato
 - `index`: <number> . This value determines the  index of current shown slide. The default value is `0`.
 - `offset-x-accuracy {float}`：set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
 
+- `index {number}`: specify current page index of slider 
+  [try in dotWe](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
+
 ## Styles
 
 **common styles**: check out [common styles for components](../common-style.html)

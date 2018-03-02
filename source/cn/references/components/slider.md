@@ -26,6 +26,9 @@ version: 2.1
 - `infinite {boolean}`：循环播放，可选值为 `true`/`false`，默认的是 `true`。
 - `offset-x-accuracy {number}`<sup class="wx-v">0.11+</sup>：控制`onscroll`事件触发的频率，默认值为10，表示两次`onscroll`事件之间Slider Page至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。
 
+- `index {number}`: 指定当前展示页面的索引
+  [体验一下](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
+
 ## 样式
 
 - 通用样式：支持所有通用样式
