@@ -60,7 +60,7 @@ JS 调用如下：
   module.exports = {
     methods: {
       click: function() {
-        weex.requireModule('myModule').printLog("I am a weex Module");
+        weex.requireModule('MyModule').printLog("I am a weex Module");
       }
     }
   }
