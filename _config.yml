@@ -68,6 +68,11 @@ permalink_defaults:
 permalink: :lang/:title/
 new_post_name: :lang/:title.md
 
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+
 # Directory
 source_dir: source
 public_dir: public

@@ -7,14 +7,19 @@ This is the source code of Weex official website.
 
 ## Develop
 
-First you should install the [Node.js](https://nodejs.org/), then run:
+First you should install the [Node.js](https://nodejs.org/), and install dependencies:
 
 ```bash
 npm install
+```
+
+After that, you can start a web server to preview the website on your local machine.
+
+```bash
 npm run server
 ```
 
-It will start a server at `http://localhost:4000`.
+It will start a web server at `http://localhost:4000`. The pages will be updated automatically once you save the corresponding source file.
 
 ## Contribute
 
