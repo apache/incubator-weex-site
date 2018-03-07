@@ -10,7 +10,7 @@ version: 2.1
 
 > Experiment Feature
 
-Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Just set `on` attributes on a node to listen to gesture.
+Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex.
 
 ## Type
 For now, there are four types of gestures:
@@ -52,6 +52,10 @@ The following properties can be used in gesture callback:
 * `pageY`. The Y coordinate of the touch pointer relative to the top of the document.
 * `screenX`. The X coordinate of the touch point relative to the left edge of the screen.
 * `screenY`. The Y coordinate of the touch point relative to the top edge of the screen.
+* `force`. A float value that represents the amount of pressure the user is applying to the touch surface. This is a value between 0.0 (no pressure) and 1.0 (the maximum amount of pressure the hardware can recognize).
+>>> iOS only and force is included in iPhone 6S and later models
+
+[have a try](http://dotwe.org/vue/91b6929f4f9f97a099a30c516dc2db06)
 
 ## Constrain
 Currently, Weex Android do not support listening to gesture on `scroller`, `list` and `webview`, as it would lead a large amount of event conflicting.
