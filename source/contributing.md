@@ -10,7 +10,7 @@ version: 2.1
 Apache Weex is an open source project that is under active development and we're continuously working out to simplify contributing to Weex ecosystem. Developers can participate and contribute to the Apache Weex community by reporting bugs, contributing code, answering questions, joining in discussions and contributing to documentation.
 
 ## Bugs
-You can use Weex directly through [Get Started](./guide/index.html) tutorial. If you encounter any unexpected phenomena during your use, feel free to let us know by filing a bug report.
+You can use Weex directly through [Getting Started](./guide/index.html) tutorial. If you encounter any unexpected phenomena during your use, feel free to let us know by filing a bug report.
 
 ##### Find Known Issues
 We are using JIRA for tracking all the issues and updating whenever when have an internal fix in progress. Before filing a new task, try to confirm if it is already listed or if there is a fix in progress.
