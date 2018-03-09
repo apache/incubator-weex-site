@@ -52,7 +52,7 @@ taopiaopiao:
   name: '淘票票专业版'
   icon: 'https://gw.alicdn.com/tfs/TB1qB1RX_tYBeNjy1XdXXXXyVXa-512-512.png'
   iOS: 'https://itunes.apple.com/cn/app/id1211116737?mt=8'
-  android: 'https://appdownload.alicdn.com/publish/moviepro_android/latest/moviepro_android_700125.apk'
+  android: 'https://piaofang.taopiaopiao.com/pro/download/pc/index.html'
 hema:
   name: '盒马'
   icon: 'https://gw.alicdn.com/tfs/TB1dq38XQyWBuNjy0FpXXassXXa-144-144.png'
@@ -76,8 +76,8 @@ paytmmall:
 qierdianjing:
   name: '企鹅电竞'
   icon: 'https://img.alicdn.com/tfs/TB1jbs5XFOWBuNjy0FiXXXFxVXa-114-114.png'
-  iOS: 'https://app.kaola.com/'
-  android: 'http://dldir1.qq.com//egame/qgame/3.5.0/126/qgame_3.5.0.228.435_r13799_default_release.apk'
+  iOS: 'https://itunes.apple.com/cn/app/qi-e-dian-jing/id1111160472'
+  android: 'https://egame.qq.com/download'
 kaola:
   name: '网易考拉海购'
   icon: 'https://haitao.nos.netease.com/5c5f27c5-71f1-4f73-978d-e1f244bb4128.jpg'
