@@ -15,7 +15,7 @@ version: 2.1
 3. The access level of mehtod must be `public`.
 4. Do not obfuscate code using tools like ProGuard.
 5. Extended method suppport the data type of int, double, float, String, Map, List as its param.
-7. Register the module: `WXSDKEngine.registerModule("myModule", MyModule.class);`or else may report an error: `ReportException :undefined:9: TypeError: Object #<Object> has no method 'xxx'` .
+7. Register the module: `WXSDKEngine.registerModule("MyModule", MyModule.class);`or else may report an error: `ReportException :undefined:9: TypeError: Object #<Object> has no method 'xxx'` .
 
 Refer to the following example:
 
@@ -38,7 +38,7 @@ public class MyModule extends WXModule{
 Register the module
 
 ```java
-WXSDKEngine.registerModule("MyModule", WXEventModule.class);
+WXSDKEngine.registerModule("MyModule", MyModule.class);
 ```
 Use this module in weex DSL
 Now `event` moudle is avaiable in weex, use the module like this:
@@ -54,7 +54,7 @@ Now `event` moudle is avaiable in weex, use the module like this:
   module.exports = {
     methods: {
       click: function() {
-        weex.requireModule('myModule').printLog("I am a weex Module!");
+        weex.requireModule('MyModule').printLog("I am a weex Module!");
       }
     }
   }
@@ -83,7 +83,7 @@ event.openURL("http://www.github.com",function(resp){ console.log(resp.result); 
 
 ## Component extend
 
-1. Customize components must extend from WXComponent or WXContainer
+1. Customize components must extend from WXComponent
 2. Use the `@WXComponentProp(name = value(value is attr or style))` annotation to let the update of attribute or style be recognized automatically.
 3. The access levels of mehtod must be **public**
 4. Customize can not be obfuscated by tools like ProGuard
@@ -94,30 +94,30 @@ event.openURL("http://www.github.com",function(resp){ console.log(resp.result); 
 Refer to the following example
 
 ```java
-public class RichText extends WXComponent {
+public class RichText extends WXComponent<TextView> {
 
-  public RichText(WXSDKInstance instance, WXDomObject dom, WXVContainer parent, boolean isLazy) {
-    super(instance, dom, parent, isLazy);
-  }
+    public RichText(WXSDKInstance instance, WXDomObject dom, WXVContainer parent) {
+        super(instance, dom, parent);
+    }
 
-  @Override
-  protected void initView() {
-    mHost=new TextView(mContext);
-    ((TextView)mHost).setMovementMethod(LinkMovementMethod.getInstance());
-  }
+    @Override
+    protected TextView initComponentHostView(@NonNull Context context) {
+        TextView textView = new TextView(context);
+        textView.setTextSize(22);
+        textView.setTextColor(Color.BLACK);
+        return textView;
+    }
 
-  @WXComponentProp(name = "tel")
-  public void setTelLink(String tel){
-    SpannableString spannable=new SpannableString(tel);
-    spannable.setSpan(new URLSpan("tel:"+tel),0,tel.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-    ((TextView)mHost).setText(spannable);
-  }
+    @WXComponentProp(name = "tel")
+    public void setTel(String telNumber) {
+        getHostView().setText("tel: " + telNumber);
+    }
 }
 ```
 Register your Component：
 
 ```java
-WXSDKEngine.registerComponent("MyView",MyViewComponent.class);
+WXSDKEngine.registerComponent("richText", RichText.class);
 ```
 
 Use this component in weex DSL：
@@ -125,7 +125,7 @@ Use this component in weex DSL：
 ```html
 <template>
   <div>
-    <richText tel="12305" style="width:200;height:100">12305</text>
+    <richText tel="12305" style="width:200;height:100">12305</richText>
   </div>
 </template>
 ```
@@ -145,12 +145,12 @@ Use this component in weex DSL：
 
 ```html
 <template>
-  <mycomponent id='mycomponent'></mycomponent>
+  <mycomponent ref='mycomponent'></mycomponent>
 </template>
 <script>
   module.exports = {
     created: function() {
-      this.$el('mycomponent').focus();
+      this.$refs.mycomponent.focus();
     }
   }
 </script>
