@@ -11,5 +11,5 @@ has_chapter_content: true
   * [Weex 实例变量](./weex-variable.html)
   * [JS Service](./js-service.html)
   * [BroadcastChannel](./broadcast-channel.html)
-* 内置组件(./components/a.html)
-* 内置模块(./modules/animation.html)
+* [内置组件](./components/)
+* [内置模块](./modules/)
