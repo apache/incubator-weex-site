@@ -8,11 +8,11 @@ has_chapter_content: true
 
 # Common Options
 
-- [iOS APIs](./ios-apis.html)
-- [Android APIs](./android-apis.html)
-- [JS Service](./js-service.html)
-- [Common Style](/wiki/common-styles.html)
-- [Text Style](/wiki/text-styles.html)
-- [Color name](/wiki/color-names.html)
-- [Gesture](/wiki/gestures.html)
-- [Event bubble](/wiki/event-bubble.html)
+* API
+  * [Android APIs](./android-apis.html)
+  * [iOS APIS](./ios-apis.html)
+  * [Weex Variable](./weex-variable.html)
+  * [JS Service](./js-service.html)
+  * [BroadcastChannel](./broadcast-channel.html)
+* [Built-in Components](./components/)
+* [Built-in Modules](./modules/)
