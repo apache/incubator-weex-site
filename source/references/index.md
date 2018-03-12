@@ -14,5 +14,5 @@ has_chapter_content: true
   * [Weex Variable](./weex-variable.html)
   * [JS Service](./js-service.html)
   * [BroadcastChannel](./broadcast-channel.html)
-* Build-in Components(./components/a.html)
-* Build-in Modules(./modules/animation.html)
+* [Built-in Components](./components/)
+* [Built-in Modules](./modules/)
