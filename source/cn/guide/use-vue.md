@@ -6,6 +6,8 @@ order: 1.6
 version: 2.1
 ---
 
+<!-- toc -->
+
 自2016年2月17日发布 WeexSDK [v0.10.0](https://github.com/alibaba/weex/releases/tag/v0.10.0) 后， Weex 集成了 v2 版本的 Vue。Vue（读音 /vjuː/，类似于 view 的读音）是一套构建用户界面的渐进式框架。详情请参阅其[官方网站](https://cn.vuejs.org/)。
 
 > 如果没有特别指示，文章中的 "Vue.js" 或者 "Vue" 都指的是 v2 版本的 Vue。
@@ -127,7 +129,6 @@ const webpackConfig = {
 | [Vue.config.performance](https://cn.vuejs.org/v2/api/#performance)                     | <b class="tag-no">不支持</b>   | 与 *devtools* 一样 |
 | [Vue.config.productionTip](https://cn.vuejs.org/v2/api/#productionTip)                 | <b class="tag-yes">支持</b> | - |
 
-
 ### 全局 API
 
 | Vue 全局 API | 是否支持 | 说明 |
@@ -224,7 +225,7 @@ Vue 组件的实例生命周期钩子将在特定的阶段发出，详情请参�
 | [vm.$nextTick()](https://cn.vuejs.org/v2/api/#vm-nextTick)       | <b class="tag-yes">支持</b> | - |
 | [vm.$destroy()](https://cn.vuejs.org/v2/api/#vm-destroy)         | <b class="tag-yes">支持</b> | - |
 
-### 指令
+### 模板指令
 
 | Vue 指令 | 是否支持 | 说明 |
 | ------------- | --------- | ----- |
@@ -235,11 +236,11 @@ Vue 组件的实例生命周期钩子将在特定的阶段发出，详情请参�
 | [v-else](https://cn.vuejs.org/v2/api/#v-else)       | <b class="tag-yes">支持</b> | - |
 | [v-else-if](https://cn.vuejs.org/v2/api/#v-else-if) | <b class="tag-yes">支持</b> | - |
 | [v-for](https://cn.vuejs.org/v2/api/#v-for)         | <b class="tag-yes">支持</b> | - |
-| [v-on](https://cn.vuejs.org/v2/api/#v-on)           | <b class="tag-yes">支持</b> | - |
+| [v-on](https://cn.vuejs.org/v2/api/#v-on)           | <b class="tag-yes">支持</b> | 不支持[事件修饰符](https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6) |
 | [v-bind](https://cn.vuejs.org/v2/api/#v-bind)       | <b class="tag-yes">支持</b> | - |
 | [v-model](https://cn.vuejs.org/v2/api/#v-model)     | <b class="tag-yes">支持</b> | - |
 | [v-pre](https://cn.vuejs.org/v2/api/#v-pre)         | <b class="tag-yes">支持</b> | - |
-| [v-cloak](https://cn.vuejs.org/v2/api/#v-cloak)     | <b class="tag-no">不支持</b>   | 只支持单类选择器|
+| [v-cloak](https://cn.vuejs.org/v2/api/#v-cloak)     | <b class="tag-no">不支持</b> | 只支持单类名选择器 |
 | [v-once](https://cn.vuejs.org/v2/api/#v-once)       | <b class="tag-yes">支持</b> | - |
 
 ### 特殊属性

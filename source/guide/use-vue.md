@@ -239,7 +239,7 @@ Instance lifecycle hooks of Vue components will be emitted at particular stages,
 | [v-else](https://vuejs.org/v2/api/#v-else)       | <b class="tag-yes">Yes</b> | - |
 | [v-else-if](https://vuejs.org/v2/api/#v-else-if) | <b class="tag-yes">Yes</b> | - |
 | [v-for](https://vuejs.org/v2/api/#v-for)         | <b class="tag-yes">Yes</b> | - |
-| [v-on](https://vuejs.org/v2/api/#v-on)           | <b class="tag-yes">Yes</b> | - |
+| [v-on](https://vuejs.org/v2/api/#v-on)           | <b class="tag-yes">Yes</b> | Not support [event modifiers](https://vuejs.org/v2/guide/events.html#Event-Modifiers). |
 | [v-bind](https://vuejs.org/v2/api/#v-bind)       | <b class="tag-yes">Yes</b> | - |
 | [v-model](https://vuejs.org/v2/api/#v-model)     | <b class="tag-yes">Yes</b> | - |
 | [v-pre](https://vuejs.org/v2/api/#v-pre)         | <b class="tag-yes">Yes</b> | - |
