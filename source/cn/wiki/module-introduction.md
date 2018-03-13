@@ -28,4 +28,5 @@ version: 2.1
   ```
   查看 [stream](../references/modules/stream.html) 完整文档
 
-## module 和 [handler](./handler-introduction.html) 区别
+## module 方法
+  require 之后直接可以调用，相对于 [component 方法](./component-introduction.html) 可以不依赖特定的组件实例。

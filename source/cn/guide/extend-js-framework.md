@@ -2,7 +2,7 @@
 title: 拓展 JS framework
 type: guide
 group: 扩展
-order: 6.4
+order: 6.5
 version: 2.1
 ---
 
