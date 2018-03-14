@@ -12,7 +12,7 @@ version: 2.1
 
 1. Customize modules class must extend from WXModule. 
 2. Extended method must add @JSMethod (uiThread = false or true) annotation, which determines whether the method is run on UI thread.
-3. The access level of mehtod must be `public`.
+3. The access level of method must be `public`.
 4. Do not obfuscate code using tools like ProGuard.
 5. Extended method suppport the data type of int, double, float, String, Map, List as its param.
 7. Register the module: `WXSDKEngine.registerModule("MyModule", MyModule.class);`or else may report an error: `ReportException :undefined:9: TypeError: Object #<Object> has no method 'xxx'` .
@@ -85,7 +85,7 @@ event.openURL("http://www.github.com",function(resp){ console.log(resp.result); 
 
 1. Customize components must extend from WXComponent
 2. Use the `@WXComponentProp(name = value(value is attr or style))` annotation to let the update of attribute or style be recognized automatically.
-3. The access levels of mehtod must be **public**
+3. The access levels of method must be **public**
 4. Customize can not be obfuscated by tools like ProGuard
 5. Component method with the annotation of `@JSMethod` can 
 7. Weex params can be int, double, float, String, Map, List, Array
