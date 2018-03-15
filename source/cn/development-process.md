@@ -23,7 +23,7 @@ version: 2.1
 
 2. Clone 你 fork 出来的仓库，创建一个新的分支用于提交变更
 
-3. 编写需要开发的特性或 bug 修复代码，确保你的更改符合[代码风格指南](../development-process.html#Code-Style-Guidelines)。
+3. 编写需要开发的特性或 bug 修复代码，确保你的更改符合[代码风格指南](../development-process.html#code-style-guidelines)。
 
 4. 复制并粘贴下面的注释到你的新文件顶部:
 
@@ -50,7 +50,7 @@ version: 2.1
 
 5. 修改或添加该变更相关de的文档和测试。
 
-6. 提交符合 [commit 指南](../development-process.html#Commit-Guidelines) 的 commit 到你的分支。
+6. 提交符合 [commit 指南](../development-process.html#commit-guidelines) 的 commit 到你的分支。
 
 ## 3. 创建一个 Pull Request
 
