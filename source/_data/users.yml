@@ -145,6 +145,6 @@ flya:
   android: 'http://app.hicloud.com/app/C100145677'
 lieyou:
   name: '猎游'
-  icon: 'https://res28-lieyou.weplay.cn/aipai_platform/vue/lieyou/about/assets/img/logo_lieyou@2x.png'
+  icon: 'https://res28-lieyou.weplay.cn/aipai_platform/vue/lieyou/common/assets/img/logo512.png'
   iOS: 'https://itunes.apple.com/cn/app/id1331853626?mt=8'
   android: 'http://www.lieyou.com/'
