@@ -33,6 +33,11 @@ cainiao:
   icon: 'https://img.alicdn.com/tfs/TB1JMw3XMmTBuNjy1XbXXaMrVXa-512-512.jpg'
   iOS: 'https://itunes.apple.com/us/app/%E8%8F%9C%E9%B8%9F%E8%A3%B9%E8%A3%B9-%E6%98%A5%E8%8A%82%E4%B8%8D%E6%89%93%E7%83%8A-%E5%BF%AB%E9%80%92%E9%9A%8F%E6%97%B6%E6%9F%A5%E5%AF%84%E5%8F%96/id951610982'
   android: 'https://www.guoguo-app.com/mobileApp.htm'
+cainiaobgx:
+  name: '裹裹包裹侠'
+  icon: 'https://img.alicdn.com/tfs/TB1dvEjdrGYBuNjy0FoXXciBFXa-1024-1024.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1097678299?mt=8'
+  android: 'http://www.wandoujia.com/apps/com.cainiao.cs'
 qianniu:
   name: '千牛'
   icon: 'https://img.alicdn.com/tfs/TB19dd_nv6H8KJjSspmXXb2WXXa-200-200.png'
