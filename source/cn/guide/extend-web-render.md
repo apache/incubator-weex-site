@@ -1,12 +1,12 @@
 ---
-title: HTML5 扩展
+title: 扩展 HTML5 的功能
 type: guide
 group: 扩展
 order: 6.1
 version: 2.1
 ---
 
-# 横向扩展 weex 组件
+<!-- toc -->
 
 Vue.js 本身就是一个独立的前端框架，在浏览器中完全能够不基于 Weex 容器渲染。因此，针对 Weex 平台扩展 Vue.js 的 Web 端组件，和直接使用 Vue.js 开发一个 Web 组件是一样的。具体的组件编写方法可以参考其官方文档：[组件](https://cn.vuejs.org/v2/guide/components.html) ，另外建议使用 `.vue` 格式的文件编写组件，使用方法参考：[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)。
 

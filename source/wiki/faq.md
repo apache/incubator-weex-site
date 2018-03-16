@@ -6,7 +6,7 @@ order: 8
 version: 2.1
 ---
 
-# FAQ
+<!-- toc -->
 
 ## Where are legacy docs?
 

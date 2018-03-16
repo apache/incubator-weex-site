@@ -6,6 +6,8 @@ order: 5.1
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Setup Develop Environment
 
 Using [dotWe](http://dotwe.org/vue) is a good choice, but if you want to develop locally on your own machine, you will need to set up your develop environment.
@@ -71,7 +73,7 @@ It will open the preview server automaticly, if you just want to see the web sit
 | —— configs
   | —— config.js                  global config of webpack
   | —— helper.js                  helper functions
-  | —— logo.png                   
+  | —— logo.png
   | —— plugin.js                  script for compile plugins
   | —— utils.js                   tool functions
   | —— vue-loader.conf.js         loader config of weex
@@ -96,8 +98,8 @@ It will open the preview server automaticly, if you just want to see the web sit
 | —— android.config.json          configuration for packing android project
 | —— ios.config.json              configuration for packing ios project
 | —— npm-shrinkwrap.json          npm dependence lock file
-| —— package.json                 
-| —— README.md                    
+| —— package.json
+| —— README.md
 | —— webpack.config.js            entry file of the webpack command
 
 ```

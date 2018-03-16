@@ -4,10 +4,9 @@ type: wiki
 group: FAQ
 order: 8
 version: 2.1
-layout: post
 ---
 
-# 常见问题解答
+<!-- toc -->
 
 ## 如何查阅旧文档？
 

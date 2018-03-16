@@ -6,7 +6,7 @@ order: 3.2
 version: 2.1
 ---
 
-# 文本样式
+<!-- toc -->
 
 <span class="weex-version">v0.5+</span>
 

@@ -1,12 +1,12 @@
 ---
-title: Common Style
+title: Common Styles
 type: wiki
 group: Style
 order: 3.1
 version: 2.1
 ---
 
-# Common Style
+<!-- toc -->
 
 All of weex tags share some common style rules
 

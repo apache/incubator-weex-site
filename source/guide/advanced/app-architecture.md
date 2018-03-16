@@ -6,7 +6,7 @@ order: 8.5
 version: 2.1
 ---
 
-# Mobile App Architecture
+<!-- toc -->
 
 ## Today's Mobile App
 

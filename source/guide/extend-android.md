@@ -5,12 +5,14 @@ group: Extend
 order: 6.3
 version: 2.1
 ---
-# Android extend
-  Weex supports module-extend、component-extend and adapter-extend.
+
+<!-- toc -->
+
+Weex supports module-extend、component-extend and adapter-extend.
 
 ## Module extend
 
-1. Customize modules class must extend from WXModule. 
+1. Customize modules class must extend from WXModule.
 2. Extended method must add @JSMethod (uiThread = false or true) annotation, which determines whether the method is run on UI thread.
 3. The access level of method must be `public`.
 4. Do not obfuscate code using tools like ProGuard.
@@ -22,13 +24,13 @@ Refer to the following example:
 ```java
 public class MyModule extends WXModule{
 
-  //run ui thread 
+  //run ui thread
   @JSMethod (uiThread = true)
   public void printLog(String msg) {
     Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();
   }
 
-  //run JS thread 
+  //run JS thread
   @JSMethod (uiThread = false)
   public void fireEventSyncCall(){
    //implement your module logic here
@@ -87,7 +89,7 @@ event.openURL("http://www.github.com",function(resp){ console.log(resp.result); 
 2. Use the `@WXComponentProp(name = value(value is attr or style))` annotation to let the update of attribute or style be recognized automatically.
 3. The access levels of method must be **public**
 4. Customize can not be obfuscated by tools like ProGuard
-5. Component method with the annotation of `@JSMethod` can 
+5. Component method with the annotation of `@JSMethod` can
 7. Weex params can be int, double, float, String, Map, List, Array
 8. Register your Component by `WXSDKEngine.registerComponent`
 
@@ -132,9 +134,9 @@ Use this component in weex DSL：
 
 
 ### Extend Component Method
- WeexSDK `(0.9.5+)` support the component method that can be invoked  
+ WeexSDK `(0.9.5+)` support the component method that can be invoked
  for example：
- 
+
  ```java
  @JSMethod
  public void focus(){
@@ -161,7 +163,7 @@ Use this component in weex DSL：
 
 ## ImagedownloadAdapter
 
-Weex SDK has no image download capability, you need to implement `IWXImgLoaderAdapter`. 
+Weex SDK has no image download capability, you need to implement `IWXImgLoaderAdapter`.
 
 Refer to the following example
 ```java
