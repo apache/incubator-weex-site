@@ -6,7 +6,7 @@ order: 1.1
 version: 2.1
 ---
 
-# How it works
+<!-- toc -->
 
 ## Overall Structure
 

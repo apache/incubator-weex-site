@@ -7,7 +7,7 @@ version: 2.1
 has_chapter_content: true
 ---
 
-# 集成 Weex 到已有应用
+<!-- toc -->
 
 ## 集成到 Android
 
@@ -219,26 +219,26 @@ WXSample地址
 
 - 添加依赖
 
- - 使用[CocoaPods](https://cocoapods.org/)  
+ - 使用[CocoaPods](https://cocoapods.org/)
   WeexSDK 在 cocoaPods 上最新版本 可以在[这](https://cocoapods.org/pods/WeexSDK)获取
 
   在 `Podfile` 文件中添加如下内容
-  
+
 	  ```
 	  source 'git@github.com:CocoaPods/Specs.git'
 	  target 'YourTarget' do
 	      platform :ios, '7.0'
 	      pod 'WeexSDK', '0.17.0'   ## 建议使用WeexSDK新版本
 	  end
-	  ```   
+	  ```
   打开命令行，切换到你已有项目 `Podfile` 这个文件存在的目录，执行 `pod install`，没有出现任何错误表示已经完成环境配置。
-  
+
  - 使用 [Carthage](https://github.com/Carthage/Carthage)
-    
-  可以在[这](https://github.com/apache/incubator-weex/tags)查询到当前最新的版本。  
-  在 [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) 中添加如下内容   
-  `github "apache/incubator-weex"`  
-  在包含 `Cartfile` 文件目录的终端中执行 `carthage update`。 
+
+  可以在[这](https://github.com/apache/incubator-weex/tags)查询到当前最新的版本。
+  在 [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) 中添加如下内容
+  `github "apache/incubator-weex"`
+  在包含 `Cartfile` 文件目录的终端中执行 `carthage update`。
   [添加 framework 到你的工程](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
 
 #### 第二步：初始化 Weex 环境
@@ -314,23 +314,23 @@ WXSDKInstance 是很重要的一个类，提供了基础的方法和一些回调
 ### 导入 Weex SDK framework 到工程
 
   可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature。
-  - 使用 git clone [Weex](https://github.com/apache/incubator-weex.git)  
-  SSH  
-	   ``` 
+  - 使用 git clone [Weex](https://github.com/apache/incubator-weex.git)
+  SSH
+	   ```
 	   git clone git@github.com:apache/incubator-weex.git
-	   ```   
-	  或者 https   
-	   ``` 
+	   ```
+	  或者 https
+	   ```
 		  git clone https://github.com/apache/incubator-weex.git
 	   ```
-    
-- 打开 WeexSDK.xcodeproj in `weex/ios/sdk`  
-  切换到如下图所示 target 
+
+- 打开 WeexSDK.xcodeproj in `weex/ios/sdk`
+  切换到如下图所示 target
   ![img](http://img1.tbcdn.cn/L1/461/1/4fe050b36e7fea52f121e73790b1fdb7ea934e97)
-  
+
 - 编译当前target，可以直接用快捷键 `⌘ + b`
 
-- 最后找到产物在 `weex/ios/sdk/Products` 目录  
+- 最后找到产物在 `weex/ios/sdk/Products` 目录
   ![img](http://img4.tbcdn.cn/L1/461/1/52594fea03ee1154845d0f897558b81b4b5bef2e)
 
 - 导入 framework 到自己工程

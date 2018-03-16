@@ -88,7 +88,7 @@ check out [common events](../common-event.html)
 * support `appear` / `disappear` event.
 
 
-### Methoads
+### Methods
 
  - `focus()` <span class="api-version">v0.9+</span>
 

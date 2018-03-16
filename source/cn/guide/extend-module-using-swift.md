@@ -1,5 +1,5 @@
 ---
-title: iOS 扩展
+title: 使用 swift 扩展 Weex
 type: guide
 group: 扩展
 order: 6.4

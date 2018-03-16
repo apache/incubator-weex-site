@@ -6,6 +6,8 @@ order: 4.2
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Event Bubble <span class="api-version">v0.13+</span>
 
 Weex 2.0 implements the W3C standard event bubbling mechanism.

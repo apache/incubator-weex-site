@@ -53,4 +53,4 @@ All subcomponents in waterfall support the scrollToElement API in [dom module](.
 
 ### Example
 
-see [playground waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)
+see [playground waterfall example](http://dotwe.org/vue/a914f99b510ed7712a3d43ebf8f03b51)

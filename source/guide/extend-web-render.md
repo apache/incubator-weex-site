@@ -6,6 +6,8 @@ order: 6.2
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Extend Web components
 
 Vue.js is an independent front-end framework. In the browser, you can not use the Weex container for page rendering. So, the two things are the same: (1) for the Weex platform to expand Vue.js Web components. (2) directly using Vue.js to develop a Web component. The development of components can refer to its documentation: [component](https://vuejs.org/v2/guide/components.html). It is also recommended to use the `.vue` file to write components. How to use it: [Single file component](https://vuejs.org/v2/guide/single-file-components.html).

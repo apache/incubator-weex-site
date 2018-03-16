@@ -1,12 +1,12 @@
 ---
-title: 拓展 JS framework
+title: 扩展前端框架
 type: guide
 group: 扩展
 order: 6.5
 version: 2.1
 ---
 
-# 定制自己的 JS Framework
+<!-- toc -->
 
 *这部分扩展能力还在讨论尝试中，可能随时会有调整，请留意。*
 

@@ -6,6 +6,8 @@ order: 1.3
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Integrate to Your App
 
 ## Integrate to Android Platform
@@ -23,7 +25,7 @@ The keys to intergrating Weex into your Android application are the following fi
 dependencies {
     ...
     // weex sdk and fastjson
-    compile 'com.taobao.android:weex_sdk:0.5.1@aar'   
+    compile 'com.taobao.android:weex_sdk:0.5.1@aar'
     compile 'com.alibaba:fastjson:1.1.46.android'
 
     //support library dependencies
@@ -55,7 +57,7 @@ public class WXApplication extends Application {
 }
 ```
 
-[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)  
+[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)
 
 4. Create an WXSDKInstance,  add IWXRenderListener and activity lifecycle on it. load weex bundle url. when  page load success; target view will be send for you on  onViewCreated callback, set target view to activity contentView.
 
@@ -138,7 +140,7 @@ Before proceeding, make sure that the Podfile file is under the project file. If
 - using [CocoaPods](https://cocoapods.org/)
 	WeexSDK The latest version on cocoaPods can be obtained [here](https://cocoapods.org/pods/WeexSDK) .
 	Add the following to the Podfile file:
-	
+
 	```object-c
 	source 'git@github.com:CocoaPods/Specs.git'
 	target 'YourTarget' do
@@ -147,10 +149,10 @@ Before proceeding, make sure that the Podfile file is under the project file. If
 	end
 	```
 	Open the command line, switch to the directory of the Podfile file, and run the pod install command. If there are no errors, it means that the environment has been configured.
-- using [Carthage](https://github.com/Carthage/Carthage)  
-  [here](https://github.com/apache/incubator-weex/tags) you can get the latest version of WeexSDK. 
+- using [Carthage](https://github.com/Carthage/Carthage)
+  [here](https://github.com/apache/incubator-weex/tags) you can get the latest version of WeexSDK.
   Add `github "apache/incubator-weex"` to [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile)
-  Open the command line, switch to the directory of the Cartfile, and run `carthage update`.  
+  Open the command line, switch to the directory of the Cartfile, and run `carthage update`.
   [Add Carthage build framework to your project](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
 
 
@@ -220,30 +222,30 @@ In the dealloc phase of the viewController destroyed Weex instance, can play a r
 
 The Weex SDK can be compiled from the source code. You can try the latest feature in the new feature or bugfix branch.
 
-- clone [Weex](https://github.com/apache/incubator-weex.git) project  
+- clone [Weex](https://github.com/apache/incubator-weex.git) project
   you can use SSH
-  
+
 	```
 	git clone git@github.com:apache/incubator-weex.git
 	```
-  or use https   
-  
+  or use https
+
 	```
 	git clone https://github.com/apache/incubator-weex.git
 	```
-  	    
-- open WeexSDK.xcodeproj in `weex/ios/sdk`  
-  switch target just below  
+
+- open WeexSDK.xcodeproj in `weex/ios/sdk`
+  switch target just below
   ![img](http://img1.tbcdn.cn/L1/461/1/4fe050b36e7fea52f121e73790b1fdb7ea934e97)
-  
+
 - Build this project or just use the xcode default hot key `⌘ + b`
 
 - Finally you can find `Products` directory in `weex/ios/sdk`, `WeexSDK.framework` was here
   ![img](http://img4.tbcdn.cn/L1/461/1/52594fea03ee1154845d0f897558b81b4b5bef2e)
-  
+
 - Add `js-framework`(which is in the `WeexSDK.framework` and renamed to `native-bundle-main.js`) to your main bundle
   ![img](http://img1.tbcdn.cn/L1/461/1/bb3998595bafe9c9336411160c0b6bd3eeb843ef)
 - Import the framework you get above and import system framework
-  ![img](http://img1.tbcdn.cn/L1/461/1/ce309c54c7b3dd3607d7a3d07c44bfd0e0e10f86) 
+  ![img](http://img1.tbcdn.cn/L1/461/1/ce309c54c7b3dd3607d7a3d07c44bfd0e0e10f86)
 - add `-ObjC` to your project settings,just like this
 ![img](http://img3.tbcdn.cn/L1/461/1/430ae522f5031ff728c95efea49219a11e6852b3)

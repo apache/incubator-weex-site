@@ -6,6 +6,8 @@ order: 6.5
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Extend JS framework
 
 This part of the extension of JS framework is still in the discussion, may be adjusted at any time, please pay attention.

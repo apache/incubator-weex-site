@@ -1,12 +1,12 @@
 ---
-title: Android 扩展
+title: 扩展 Android 的功能
 type: guide
 group: 扩展
 order: 6.2
 version: 2.1
 ---
 
-# Android 扩展
+<!-- toc -->
 
 Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。
 主要分为两类扩展：
