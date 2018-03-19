@@ -58,5 +58,7 @@ version: 2.1
 
 **相关链接**
 
-* [如何扩展 iOS](../../references/advanced/extend-to-ios.html)
-* [如何扩展 Android](../../references/advanced/extend-to-android.html)
+* [如何扩展 iOS](../extend-ios.html)
+* [如何扩展 Android](../extend-android.html)
+* [如何扩展 HTML5](../extend-web-render.html)
+* [如何扩展前端框架](../extend-js-framework.html)
