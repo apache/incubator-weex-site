@@ -148,3 +148,8 @@ flya:
   icon: 'https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/2a/0f/69/2a0f69df-c1a4-0358-559c-1c9b52e417ae/AppIcon-1x_U007emarketing-sRGB-85-220-4.png/230x0w.jpg'
   iOS: 'https://itunes.apple.com/cn/app/id1301943383?mt=8'
   android: 'http://app.hicloud.com/app/C100145677'
+lieyou:
+  name: '猎游'
+  icon: 'https://res28-lieyou.weplay.cn/aipai_platform/vue/lieyou/common/assets/img/logo512.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1331853626?mt=8'
+  android: 'http://www.lieyou.com/'
