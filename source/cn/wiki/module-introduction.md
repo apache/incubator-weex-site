@@ -2,7 +2,7 @@
 title: module
 type: wiki
 group: 概念
-order: 4.3
+order: 5.1
 version: 2.1
 ---
 ## 什么是 module
@@ -10,7 +10,7 @@ version: 2.1
 
 ## module 注册过程
    native 端注册moudle 的流程如下图:
-  ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/300d1b44bb5b94f6f6c0322a355fa574.png)
+  ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/888abce9fbdb2650abc88e28bdca8f0f.png)
 
 ## 内置 module
 `stream` module, 开发者可以利用它给服务端发送网络请求，接受数据返回，开发者可以在 Weex 的页面中执行如下代码：

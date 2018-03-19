@@ -13,7 +13,7 @@ version: 2.1
 > **如果需要扩展自定义的 module 或者 component ，一定注意不要将 OC 的 runtime 暴露给 JS ， 不要将一些诸如 `dlopen()`， `dlsym()`， `respondsToSelector:`，`performSelector:`，`method_exchangeImplementations()` 的动态和不可控的方法暴露给JS， 也不要将系统的私有API暴露给JS**
 
 Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你需要一些特性但 Weex 并未提供，可以通过扩展自定义的一些插件来实现，通过 WeexSDK 加载。这些插件包括 [component](../wiki/component-introduction.html), [module](../wiki/module-introduction.html) 和 [handler](../wiki/handler-introduction.html)。
->>> 本文都以 Objective-C 为例子书写，如果需要 swift 请参考
+> 本文都以 Objective-C 为例子书写，如果需要 swift 请参考 [使用 swift 扩展 Weex](./extend-module-using-swift.html)
 
 ## 自定义 module
 
@@ -47,7 +47,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
    3. `WXModuleKeepAliveCallback`  
     Module 支持返回值给 JavaScript中的回调，回调的类型是`WXModuleKeepAliveCallback`,回调的参数可以是String或者Map, 该 block 第一个参数为回调给 JavaScript 的数据，第二参数是一个 BOOL 值，表示该回调执行完成之后是否要被清除，JavaScript 每次调用都会产生一个回调，但是对于单独一次调用，是否要在完成该调用之后清除掉回调函数 id 就由这个选项控制，如非特殊场景，建议传 NO。
    4. `WX_EXPORT_METHOD_SYNC` 
-    >>> WeexSDK 0.10 版本后才支持，暴露的同步方法只能在 JS 线程执行，请不要做太多同步的工作导致JS执行阻塞。
+    > WeexSDK 0.10 版本后才支持，暴露的同步方法只能在 JS 线程执行，请不要做太多同步的工作导致JS执行阻塞。
     
      使用 `WX_EXPORT_METHOD` 暴露到前端的方法都是异步方法(获得结果需要通过回调函数获得), 如果期望获得同步调用结果，可以使用`WX_EXPORT_METHOD_SYNC` 暴露module 方法。
 
@@ -68,16 +68,15 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
     
 	    ```
 	     - (UIView *)loadView {
-	      return [MKMapView new];
+             return [MKMapView new];
 	     }
     	```
-    	
   - `viewDidLoad`  
      对组件 view 需要做一些配置，比如设置 delegate, 可以在 `viewDidLoad` 生命周期做，如果当前 view 没有添加 subview 的话，不要设置 view 的 frame，WeexSDK 会根据 style 设置。
     
 	    ```
 	    - (void)viewDidLoad {
-	    ((MKMapView*)self.view).delegate = self;
+            ((MKMapView*)self.view).delegate = self;
 	    }
 	    ```
 - 注册 component
@@ -87,7 +86,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
     ```
  在前端页面直接可以使用 `map` 标签，如下所示
  
-```
+```html
     <template>
         <div>
             <map style="width:200px;height:200px"></map>
@@ -98,7 +97,8 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 - 支持自定义事件
 
    给 map 组件支持 `mapLoaded` 事件
-    ```
+
+    ```html
     <template>
         <div>
             <map style="width:200px;height:200px" @mapLoaded="onMapLoaded"></map>
@@ -121,7 +121,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
     
     覆盖 `addEvent` 和 `removeEvent` 方法 
 
-    ```
+    ```Objective-C
     - (void)addEvent:(NSString *)eventName {
         if ([eventName isEqualToString:@"mapLoaded"]) {
             _mapLoaded = YES;
@@ -139,7 +139,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
     在 MKMapView 加载完成的 delegate 方法中，发事件通知自定义事件 
 
-    ```
+    ```object-c
     - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
         if (_mapLoaded) {
             [self fireEvent:@"mapLoaded" params:@{@"customKey":@"customValue"} domChanges:nil]
@@ -151,9 +151,9 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
 - 支持自定义属性
 
-    添加自定义属性 showTraffic
+    添加自定义属性 `showTraffic`
 
-    ```
+    ```html
         <template>
             <div>
                 <map style="width:200px;height:200px" showTraffic="true"></map>
@@ -164,7 +164,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
    当前component 添加 `BOOL` 成员 showsTraffic，接受保存用户输入值，添加到当前组件上的所有属性都会在初始化方法中 `attributes` 中传过来，此处我们处理我们感兴趣的属性即可。
 
-    ```
+    ```object-c
     - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {
         if(self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
             
@@ -178,7 +178,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
     - 在 `viewDidLoad` 中设置该属性
      
-     ```
+     ```object-c
      - (void)viewDidLoad {
         ((MKMapView*)self.view).showsTraffic = _showsTraffic;
      }
@@ -186,7 +186,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
     - 支持属性更新
     
-    ```
+    ```object-c
     - (void)updateAttributes:(NSDictionary *)attributes
     {
         if (attributes[@"showsTraffic"]) {
@@ -224,7 +224,7 @@ WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，自定
 
 - 自定义一个 WXMyCompoenent 的组件
 
-  ```
+  ```object-c
   @implementation WXMyComponent
   WX_EXPORT_METHOD(@selector(focus)) // 暴露该方法给js
   - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
@@ -306,7 +306,7 @@ WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，自定
 
   handler 可以在 native 的 module 或者 component 实现中使用
   
-  ```objective-c
+  ```object-c
     id<WXImgLoaderProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(WXImgLoaderProtocol)];
     [iamgeLoader downloadImageWithURL:imageURl imageFrame:frame userInfo:customParam completed:^(UIImage *image, NSError *error, BOOL finished){
     }];
