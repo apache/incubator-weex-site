@@ -63,7 +63,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 - 覆盖 `WXComponent` 中的生命周期方法
  
   - `loadView`  
-    一个 component 默认对应于一个 view ， 如果未覆盖 `loadView` 提供自定义 `view`, 会使用 `WXComponent` 基类中的 `WXView`, `WXView` 是继承自 UIView 的一个派生 view。
+    一个 component 默认对应于一个 view，如果未覆盖 `loadView` 提供自定义 `view`, 会使用 `WXComponent` 基类中的 `WXView`, `WXView` 是继承自 UIView 的一个派生 view。
     要实现地图功能，我们需要对应的地图 view, 比如系统的 `MKMapView`
     
 	    ```
@@ -115,7 +115,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
     }
     </script>
     ```
-   给当前组件添加 `BOOL` 成员 mapLoaded,记录当前事件是否被添加
+   给当前组件添加 `BOOL` 成员 mapLoaded,记录当前事件是否被添加，当地图加载完成时候，我们可以根据这个判断是否应该发送事件。
    
    - 覆盖组件生命周期方法添加和移除事件
     
@@ -137,7 +137,8 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
     ```
     - 在适宜的时间发事件通知
 
-    在 MKMapView 加载完成的 delegate 方法中，发事件通知自定义事件 
+    在 MKMapView 加载完成的 delegate 方法中，发事件通知自定义事件
+    > 不要忘记设置 MKMapView 的 delegate.
 
     ```object-c
     - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
@@ -268,6 +269,7 @@ WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，自定
   开发者也可以定义自己的 `protocol` 和对应的实现来使用 `handler` 机制
 
 - 新建基类为 NSObject 的 class 实现 `WXImgLoaderProtocol` 协议， 实现 `WXImgLoaderProtocol` 的方法
+> 下面加载图片的逻辑需要依赖 SDWebImage，你也可以不依赖 SDWebimage 使用自己的方式加载对应 URL 图片。
 
     ```object-c
     @implementation WXImgLoaderDefaultImpl

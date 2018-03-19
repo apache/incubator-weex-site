@@ -89,7 +89,7 @@ version: 2.1
     [WXSDKEngine registerModule:@"swifter" withClass:[WXSwiftTestModule class]];
     
     ```
-  -  we 文件中使用
+  - 前端脚本中用法
     
     ```
       <template>
@@ -97,14 +97,9 @@ version: 2.1
       </template>
     
       <script>
-        require('weex-components');
-    
         module.exports = {
-          data: {
-    
-          },
           ready: function() {
-            var swifter = require('@weex-module/swifter');
+            var swifter = weex.require('swifter');
             swifter.printSome("https://www.taobao.com",function(param){
               nativeLog(param);
             });
