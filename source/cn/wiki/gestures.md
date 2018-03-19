@@ -57,7 +57,7 @@ Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于
 - `screenX`：触摸点相对于屏幕左侧边缘的 X 轴坐标。
 - `screenY`：触摸点相对于屏幕顶部边缘的 Y 轴坐标。
 - `force`: 屏幕收到的按压力度，值的范围为 0~1
->>> force 属性目前在支持 forceTouch iOS 设备才支持, iPhone 6s 及更新的 iOS 设备
+> force 属性目前在支持 forceTouch iOS 设备才支持, iPhone 6s 及更新的 iOS 设备
 
 [试一试](http://dotwe.org/vue/91b6929f4f9f97a099a30c516dc2db06)
 
