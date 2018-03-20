@@ -11,14 +11,14 @@ version: 2.1
 
 ## Summary
 
-`storage` is a series of apis, allowing you to for example add, modify or delete stored data items.
+`storage` is a series of apis, support add, modify and delete stored data.
 
 ## API
 
 ### setItem(key, value, callback)
 
-When passed a key name and value, will add that key to the storage,
-or update that key's value if it already exists.
+When passed a key and a value, it will saved into the storage,
+or update the value if the key already exists.
 
 #### Arguments
 
@@ -28,7 +28,7 @@ or update that key's value if it already exists.
 
 ### getItem(key, callback)
 
-When passed a key name, will return that key's value.
+When passed a key, will return that key's value.
 
 #### Arguments
 
@@ -37,7 +37,7 @@ When passed a key name, will return that key's value.
 
 ### removeItem(key, callback)
 
-When passed a key name, will remove that key from the storage.
+When passed a key, will remove that key and value from the storage.
 
 #### Arguments
 
@@ -57,7 +57,7 @@ storage.removeItem('foo', function(e) {
 
 ### length(callback)
 
-Returns an integer representing the number of data items stored in the Storage object.
+Returns an integer representing the number of key-value items stored in the storage.
 
 #### Arguments
 
@@ -65,7 +65,7 @@ Returns an integer representing the number of data items stored in the Storage o
 
 ### getAllKeys(callback)
 
-Returns an array that contains all keys stored in Storage object.
+Returns an array that contains all keys stored in the storage.
 
 #### Arguments
 
