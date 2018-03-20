@@ -13,6 +13,8 @@ version: 2.1
 
 `storage` is a series of apis, support add, modify and delete stored data.
 
+**Cauction**: There is NO same-origin-policy in weex storage moudle. Any one can access any key, even can change the value. So be careful of your usage.
+
 ## API
 
 ### setItem(key, value, callback)
