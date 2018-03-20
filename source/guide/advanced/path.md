@@ -19,7 +19,7 @@ This article will cover uri (url) usage in Weex. Including using image/typeface 
 Weex SDK provide `local` scheme to access resources packaged with application, and of cource, it's not working in the HTML5 runtime.
 Currently, developers can use this scheme with `image` and text's font file location.
   * In iOS, it's always locate file in 'bundle resources'. For example, a `image` component with `local:///app_icon` will load image file named 'app_icon' in bundle resouce, and font file work in the same way.
-  * In Android, image component will load from 'drawable' resource folder like 'res/drawable-xxx'. But load font file is different, android framework can not load font file from 'res', so SDK will load it from `asserts` folder.
+  * In Android, image component will load from 'drawable' resource folder like 'res/drawable-xxx'. But load font file is different, android framework can not load font file from 'res', so SDK will load it from `assets` folder.
 
 * HTTP/HTTPS
 It's working in the same way as in web, Weex support these at very beginning.
