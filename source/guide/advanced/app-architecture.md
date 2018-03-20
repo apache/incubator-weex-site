@@ -58,5 +58,7 @@ If the feature of WeexSDK is limited to your mobile app. You can extend your own
 
 **Links**
 
-* [Extend to iOS](../../references/advanced/extend-to-ios.html)
-* [Extend to Android](../../references/advanced/extend-to-android.html)
+* [Extend iOS](../extend-ios.html)
+* [Extend Android](../extend-android.html)
+* [Extend Web Renderer](../extend-web-render.html)
+* [Extend JS framework](../extend-js-framework.html)
