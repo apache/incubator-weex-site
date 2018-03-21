@@ -9,7 +9,8 @@
     "server": "hexo server",
     "clean": "rm -rf .deploy_git && hexo clean",
     "deploy": "npm run clean && hexo deploy",
-    "build": "hexo g -d -w"
+    "build": "hexo g -d -w",
+    "test": "node test/url-validator.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
@@ -30,5 +31,12 @@
     "hexo-server": "^0.3.1",
     "hexo-toc": "^1.1.0",
     "uglify-js": "^3.3.7"
+  },
+  "devDependencies": {
+    "chalk": "^2.3.2",
+    "find-line-column": "^0.5.2",
+    "glob": "^7.1.2",
+    "node-fetch": "^2.1.1",
+    "url-extractor": "^2.0.2"
   }
 }
