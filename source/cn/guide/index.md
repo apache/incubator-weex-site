@@ -123,7 +123,7 @@ npm start
 
 ![Preview](../../guide/images/toolkit-preview.png)
 
-除此之外，你还可以打开 `http://localhost:8081/preview.html` 开启一个预览页面，它会把 web 端的页面放在一个 iframe 中渲染，而且在右侧生成一个二维码。用 [Weex playground app](http://weex-project.io/playground.html) 扫描这个二维码可以看到页面在手机上渲染的真实效果。
+除此之外，你还可以打开 `http://localhost:8081/preview.html` 开启一个预览页面，它会把 web 端的页面放在一个 iframe 中渲染，而且在右侧生成一个二维码。用 [Weex playground app](http://weex.apache.org/cn/tools/playground.html) 扫描这个二维码可以看到页面在手机上渲染的真实效果。
 
 ### 编译和运行
 
