@@ -18,12 +18,8 @@ version: 2.1
 
 `textarea` 组件不支持子组件。
 
-## 特性
-
-- `value {string}`：组件的接收到的输入字符。
-- `placeholder {string}`：提示用户可以输入什么。 提示文本不能有回车或换行。
-- `disabled {boolean}`：表示是否支持输入。通常 `click` 事件在 `disabled` 控件上是失效的。
-- `autofocus {boolean}`：表示是否在页面加载时控件自动获得输入焦点。
+## 属性
+`textarea`组件支持`text`组件的所有属性，除此之外还支持以下属性：
 - `rows {number}`：接收 number 类型的数据，指定组件的高度，默认值是 2
 
 ## 样式

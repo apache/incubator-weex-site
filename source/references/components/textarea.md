@@ -22,10 +22,8 @@ This component supports no child components.
 
 ### attributes
 
-- `value`: &lt;string&gt; the value of the control.
-- `placeholder`: &lt;string&gt; a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.
-- `disabled`: &lt;boolean&gt; a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.
-- `autofocus`: &lt;boolean&gt; a boolean attribute lets you specify that a form control should have input focus when the page loads.
+The `textarea` component supports all the properties of the `text` component, in addition to the following properties:
+
 - `rows:`&lt;number&gt; a number which can specify the height of textarea, default is `2`.
 
 ### Styles
