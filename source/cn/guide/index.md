@@ -26,7 +26,7 @@ Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发�
 
 ![Weex Example](../../guide/images/weex-example-yo.png)
 
-这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](http://weex.apache.org/cn/tools/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
+这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](https://weex.apache.org/cn/tools/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
 
 在源代码的 `<template>` 中，`<div>` 你应该很熟悉了，它在 Weex 平台上也是一个通用容器。但是 `<text>` 组件是由 Weex 特有的，它是一个块级的文本容器，可以用来渲染文字。
 
