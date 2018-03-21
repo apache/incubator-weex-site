@@ -50,7 +50,7 @@ weex-toolkit工具支持对你的Weex文件（`.we`或`.vue`)在监听模式下�
 $ weex preview src/foo.vue
 ```
 
-浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](https://weex.apache.org/cn/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
+浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](https://weex.apache.org/cn/tools/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
 
 使用下面的命令，你将可以预览整个文件夹中的`.vue`文件
 

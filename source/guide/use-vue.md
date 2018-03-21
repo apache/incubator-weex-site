@@ -85,7 +85,7 @@ Use different bundles for different platforms is to make good use of the platfor
 
 ### Use weex-loader
 
-[weex-loader](https://github.com/weexteam/weex-loader) is a [loader](http://webpack.github.io/docs/using-loaders.html) for webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader](https://vue-loader.vuejs.org/en/).
+[weex-loader](https://github.com/weexteam/weex-loader) is a [loader](https://webpack.js.org/concepts/loaders/#using-loaders) for webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader](https://vue-loader.vuejs.org/en/).
 
 One thing should be noted that if the *entry* option of your Webpack config is a `*.vue` file, you also need to pass an additional `entry` parameter.
 
