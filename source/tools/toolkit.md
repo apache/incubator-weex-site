@@ -17,7 +17,7 @@ $ npm install -g weex-toolkit
 You can use the `weex -v` command to confirm that the installation is successful.
 
 
-> If you have never installed node.js, you should go [node.js.org]( https://nodejs.org/en/) to download and install it. The node version needs to be upper 6.0. You can try [n](https://github.com/tj/n) to manage your node versions.
+> If you have never installed node.js, you should go [node.js.org]( https://nodejs.org/en/) to download and install it. The node version needs to be upper 6.0. You can try [n](https://github.com/tj/n) to manage your node versions. 
 
 If you meet some errors when installing, please go [weex-toolkit issues](https://github.com/weexteam/weex-toolkit/issues) or [weex-toolkit faq](https://github.com/weexteam/weex-toolkit#faq) to find some solution or have a discuss with us.
 
@@ -42,7 +42,7 @@ weex-toolkit supports previewing your Weex file(`.vue`) in a watch mode. You onl
 $ weex preview src/foo.vue
 ```
 
-The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a [Playground App](https://weex.apache.org/tools/playground.html) in your mobile devices, you can scan the QR code at the opened page.
+The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a [Playground App](https://weex.apache.org/cn/playground.html) in your mobile devices, you can scan the QR code at the opened page.
 
 Try the command below, you’ll preview the whole directory files.
 
@@ -62,7 +62,7 @@ $ weex compile [source] [dist]  [options]
 
 #### options
 
-| Option        | Description    |
+| Option        | Description    | 
 | --------   | :-----   |
 |`-w, --watch`        | watch we file changes auto build them and refresh debugger page! [default `true`]|
 |`-d,--devtool [devtool]`        |set webpack devtool mode|
@@ -119,7 +119,7 @@ $ weex run web
 weex debug [we_file|bundles_dir] [options]
 ```
 
-| Option        | Description    |
+| Option        | Description    | 
 | --------   | :-----   |
 |`-V, --verbose`       | display logs of debugger server|
 |`-v, --version`       | display version|
@@ -141,7 +141,7 @@ $ weex debug
 ```
 
 This command will start debug server and launch a chrome opening `DeviceList` page.
-this page will display a QR code, you can use [Playground](https://weex.apache.org/tools/playground.html) scan it for starting debug or integrate [Weex devtools](#Integrate devtool) into your application.
+this page will display a QR code, you can use [Playground](https://weex.apache.org/cn/playground.html) scan it for starting debug or integrate [Weex devtools](#Integrate devtool) into your application.
 
 ![devtools-main](https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png)
 
@@ -192,6 +192,6 @@ Click on the upper right corner of the Prophet to view the timing diagram (iOS i
 
 #### Integrate devtool
 * Android
-    * See the doc [Weex devtools (Android)](../../references/advanced/integrate-devtool-to-android.html), it will lead you to config and use it step by step.
+    * See the doc [Weex devtools (Android)](/guide/integrate-devtool-to-android.html), it will lead you to config and use it step by step.
 * iOS
-    * See the doc [Weex devtools (iOS)](../../references/advanced/integrate-devtool-to-ios.html), it will lead you to config and use it step by step.
+    * See the doc [Weex devtools (iOS)](/guide/integrate-devtool-to-ios.html), it will lead you to config and use it step by step.

@@ -50,7 +50,7 @@ weex-toolkit工具支持对你的Weex文件（`.we`或`.vue`)在监听模式下�
 $ weex preview src/foo.vue
 ```
 
-浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](https://weex.apache.org/cn/tools/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
+浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](https://weex.apache.org/cn/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
 
 使用下面的命令，你将可以预览整个文件夹中的`.vue`文件
 
@@ -198,6 +198,7 @@ ElementMode可以切换Element标签中Domtree显示模式，下图为vdom显示
 
 #### 集成devtool工具
 * Android
-    * 查看文档 [Weex devtools (Android)](../../references/advanced/integrate-devtool-to-android.html), 它会引导你一步一步配置和使用它。
+    * 查看文档 [Weex devtools (Android)](/cn/guide/integrate-devtool-to-android.html), 它会引导你一步一步配置和使用它。
 * iOS
-    * 查看文档 [Weex devtools (iOS)](../../references/advanced/integrate-devtool-to-ios.html), 它会引导你一步一步配置和使用它。
+    * 查看文档 [Weex devtools (iOS)](/cn/guide/integrate-devtool-to-ios.html), 它会引导你一步一步配置和使用它。
+和使用它。

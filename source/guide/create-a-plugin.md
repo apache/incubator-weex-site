@@ -102,7 +102,7 @@ See [Extend iOS](./extend-ios.html).
   ```
 
 ## Publish the plugin in the weex market
-You can publish to the [Weex Market](../tools/market.html) with the simple command:
+You can publish to the [Weex Market](https://market.dotwe.org/) with the simple command:
 ```
 weex plugin publish
 ```

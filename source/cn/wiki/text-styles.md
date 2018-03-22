@@ -10,7 +10,7 @@ version: 2.1
 
 <span class="weex-version">v0.5+</span>
 
-文本类组件共享一些通用样式, 这类组件目前包括 [`<text>`](./components/text.html) 和 [`<input>`](./components/input.html)。
+文本类组件共享一些通用样式, 这类组件目前包括 [`<text>`](/cn/references/components/text.html) 和 [`<input>`](/cn/references/components/input.html)。
 
 ## 属性
 

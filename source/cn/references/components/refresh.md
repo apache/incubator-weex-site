@@ -86,7 +86,7 @@ version: 2.1
 
 ## 样式
 
- - 支持所有通用样式。查看 [组件通用样式](../common-style.html)
+ - 支持所有通用样式。查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ## 事件
 

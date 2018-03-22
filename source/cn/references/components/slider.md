@@ -39,7 +39,7 @@ version: 2.1
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](../common-style.html)
+  查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ## 事件
 
@@ -62,7 +62,7 @@ version: 2.1
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 ## 示例
 

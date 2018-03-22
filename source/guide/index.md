@@ -26,7 +26,7 @@ Here is an [example](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380) writ
 
 ![Weex Example](./images/weex-example-yo.png)
 
-This example renders a word "Yo" in the center of the screen. If you want to preview the rendered result on mobile devices, you need to install the [Weex playground app](https://weex.apache.org/tools/playground.html) or integrate Weex SDK into your own app. Then scan your page's QR code with your playground app or your own app (with the QR scan feature to load scanned URL with Weex SDK), and you will see the rendered result on your device.
+This example renders a word "Yo" in the center of the screen. If you want to preview the rendered result on mobile devices, you need to install the [Weex playground app](https://weex-project.io/playground.html) or integrate Weex SDK into your own app. Then scan your page's QR code with your playground app or your own app (with the QR scan feature to load scanned URL with Weex SDK), and you will see the rendered result on your device.
 
 Within the `<template>` of the source code, You must be familiar with the `<div>` which is widely used on the web, and it's also the generic container on Weex. But the `<text>` component is provided by Weex, it's a block-level text container.
 
@@ -127,7 +127,7 @@ It will start a web server on the `8081` port. You can open `http://localhost:80
 
 ![Preview](./images/toolkit-preview.png)
 
-Besides, You can also open `http://localhost:8081/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](../tools/playground.html) then you'll see the rendered result on the mobile device.
+Besides, You can also open `http://localhost:8081/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) then you'll see the rendered result on the mobile device.
 
 ### Build and Run
 

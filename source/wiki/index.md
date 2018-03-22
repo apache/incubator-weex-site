@@ -20,7 +20,7 @@ The WeexSDK would prepare a JavaScript engine to run corresponding JS bundle whe
 
 Even if a user does not install the App, he can still open a same web page in the browser, using the same source code.
 
-![How it works](../images/flow.png)
+![How it works](/guide/images/flow.png)
 
 ## Local Development Environment
 
@@ -32,8 +32,8 @@ Also same as the best practice of web development, each Weex page will be built 
 
 **Links**
 
-* [Platform differences between Weex and web](../../references/platform-difference.html)
-* [Differences of using Vue between Weex with web](../../references/vue/difference-with-web.html)
+* [Platform differences between Weex and web](/wiki/platform-difference.html)
+* [Differences of using Vue between Weex with web](/wiki/platform-difference.html)
 * [Get Started](../index.html)
 * [Using Devtools](./devtools.html)
 
@@ -56,10 +56,10 @@ Although Weex has provided a group of most commonly used components and modules 
 **Links**
 
 * [Differences between Weex and web standard](../../references/web-standards.html)
-* [Using Weex in iOS](../../references/ios-apis.html)
-* [Using Weex in Android](../../references/android-apis.html)
-* [Extend to iOS](../../references/advanced/extend-to-ios.html)
-* [Extend to Android](../../references/advanced/extend-to-android.html)
+* [Using Weex in iOS](/references/ios-apis.html)
+* [Using Weex in Android](/references/android-apis.html)
+* [Extend to iOS](/guide/extend-ios.html)
+* [Extend to Android](/guide/extend-android.html)
 
 ## In the Browser
 

@@ -92,7 +92,7 @@ weex.requireModule(name: string): Object | void;
 
 ### Use Native Module
 
-You can require a native module and use its APIs just like normal javascript functions. Here is [a simple example](http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828) of using the [`modal`](../components/modal.html) module:
+You can require a native module and use its APIs just like normal javascript functions. Here is [a simple example](http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828) of using the [`modal`](/examples/modal.html) module:
 
 ```html
 <template>

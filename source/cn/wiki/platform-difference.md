@@ -55,16 +55,16 @@ Weex 中并未提供浏览器中的 `window` 和 `screen` 对象，不支持使�
 
 这些接口与浏览器自身的实现有关，可以控制页面的前进后退并且获取状态信息。虽然在 Android 和 iOS 中也有“历史”和“导航”的概念，但是它是用于多个管理视图之间的跳转的。换句话说，在浏览器中执行“前进”、“后退”仍然会处于同一个页签中，在原生应用中“前进”、“后退”则会真实的跳转到其他页面。
 
-此外 Weex 也提供了 `navigator` 模块来操作页面的跳转，使用方法参考[《navigator 导航控制》](./modules/navigator.html)。
+此外 Weex 也提供了 `navigator` 模块来操作页面的跳转，使用方法参考[《navigator 导航控制》](/cn/references/modules/navigator.html)。
 
 ## 能够调用移动设备原生 API
 
 在 Weex 中能够调用移动设备原生 API，使用方法是通过注册、调用模块来实现。其中有一些模块是 Weex 内置的，如 clipboard 、 navigator 、storage 等。
 
-+ [《clipboard 剪切板》](./modules/clipboard.html)
-+ [《navigator 导航控制》](./modules/navigator.html)
-+ [《storage 本地存储 》](./modules/storage.html)
++ [《clipboard 剪切板》](/cn/references/modules/clipboard.html)
++ [《navigator 导航控制》](/cn/references/modules/navigator.html)
++ [《storage 本地存储 》](/cn/references/modules/storage.html)
 
-为了保持框架的通用性，Weex 内置的原生模块有限，不过 Weex 提供了横向扩展的能力，可以扩展原生模块，具体的扩展方法请参考[《iOS 扩展》](./advanced/index.html) 和[《Android 扩展》](./advanced/extend-to-android.html)。
+为了保持框架的通用性，Weex 内置的原生模块有限，不过 Weex 提供了横向扩展的能力，可以扩展原生模块，具体的扩展方法请参考[《iOS 扩展》](/cn/index.html) 和[《Android 扩展》](/cn/guide/extend-android.html)。
 
 > 有些接口在浏览器环境中也存在，不过在使用时应该注意浏览器的兼容性；如剪贴板功能，出于安全性考虑，绝大多数浏览器都限制其使用。

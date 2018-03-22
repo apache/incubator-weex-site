@@ -35,7 +35,7 @@ The `textarea` component supports all the properties of the `text` component, in
 * `disabled`
 * `enabled`
 
-**text styles**: checkout [text styles](../text-style.html)
+**text styles**: checkout [text styles](/wiki/text-styles.html)
 
 - support `color` style.
 - support `font-size` style.
@@ -44,7 +44,7 @@ The `textarea` component supports all the properties of the `text` component, in
 - support `text-align` style.
 
 
-**common styles**: check out [common styles for components](../common-style.html)
+**common styles**: check out [common styles for components](/wiki/common-styles.html)
 
 - support flexbox related styles.
 - support box model related styles.
@@ -58,9 +58,9 @@ The `textarea` component supports all the properties of the `text` component, in
 - `focus`: a component has received focus.
 - `blur`: a component has lost focus.
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `appear` / `disappear` event. Check out [common events](../common-event.html).
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html).
 
 **Notes:** `<textarea>` does not support the common-event `click`. Please listen to the `input` or `change` event instead.
 

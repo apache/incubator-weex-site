@@ -27,7 +27,7 @@ Threr are some private styles for `<indicator>` :
 - `item-selectedColor`: &lt;colors&gt; This style attribute sets the selected item, default is `#444444`.
 - `item-size`: &lt;length&gt; The radius of the indicator elements, default is `5px`
 
-**common styles**: see [common styles](../common-style.html)
+**common styles**: see [common styles](/wiki/common-styles.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -39,10 +39,10 @@ Threr are some private styles for `<indicator>` :
 
 ### Events
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
 ### Example
 

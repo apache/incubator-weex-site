@@ -26,7 +26,7 @@ Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发�
 
 ![Weex Example](../../guide/images/weex-example-yo.png)
 
-这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](https://weex.apache.org/cn/tools/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
+这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](https://weex-project.io/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
 
 在源代码的 `<template>` 中，`<div>` 你应该很熟悉了，它在 Weex 平台上也是一个通用容器。但是 `<text>` 组件是由 Weex 特有的，它是一个块级的文本容器，可以用来渲染文字。
 
@@ -83,7 +83,7 @@ Weex 可以只编写一份代码，开发出三端都可用的页面。
 
 > Vue.js 和 Rax 都已经集成进了 Weex SDK，你不需要再额外引入。
 
-然而 Weex 也不是只支持 Vue 和 Rax，你也可以把自己喜欢的前端框架集成到 Weex 中。有一个文档*[扩展前端框架](./advanced/extend-js-framework.html)*描述了如何实现，但是这个过程仍然非常复杂和棘手，你需要了解关于 js-native 之间通信和原生渲染引擎的许多底层细节。
+然而 Weex 也不是只支持 Vue 和 Rax，你也可以把自己喜欢的前端框架集成到 Weex 中。有一个文档*[扩展前端框架](/cn/guide/extend-js-framework.html)*描述了如何实现，但是这个过程仍然非常复杂和棘手，你需要了解关于 js-native 之间通信和原生渲染引擎的许多底层细节。
 
 ## 创建一个 App
 

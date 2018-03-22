@@ -40,7 +40,7 @@ Please checkout [Scroller Component Attributes](./scroller.html) to have a look 
 ### Styles
 
 
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles
@@ -53,10 +53,10 @@ onloadmore  0.5 used with loadmoreoffset attribute. if the view has less than lo
 
 scroll  <sup class="wx-v">0.12+</sup> used with offset-accuracy attribute. This event is fired when the list scrolls. The current contentOffset value is given in this event callback. See details in [scroll event demo](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
 
-common events: check out the [common events](../common-event.html)
+common events: check out the [common events](/wiki/common-events.html)
 
-* support onclick event. Check out [common events](../common-event.html)
-* support onappear / ondisappear event. Check out [common events](../common-event.html)
+* support onclick event. Check out [common events](/wiki/common-events.html)
+* support onappear / ondisappear event. Check out [common events](/wiki/common-events.html)
 
 
 ### API
