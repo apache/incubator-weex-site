@@ -50,7 +50,7 @@ weex-toolkit工具支持对你的Weex文件（`.we`或`.vue`)在监听模式下�
 $ weex preview src/foo.vue
 ```
 
-浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](https://weex.apache.org/cn/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
+浏览器会自动得打开预览页面并且你可以看到你的weex页面的布局和效果。如果你在你的设备上安装了[Playground](/cn/tools/playground.html)，你还可以通过扫描页面上的二维码来查看页面。
 
 使用下面的命令，你将可以预览整个文件夹中的`.vue`文件
 
@@ -70,7 +70,7 @@ $ weex compile [source] [dist]  [options]
 
 #### 参数
 
-| Option        | Description    | 
+| Option        | Description    |
 | --------   | :-----   |
 |`-w, --watch` | 开启watch模式，同步文件改动并进行编译|
 |`-d,--devtool [devtool]`|设置devtool选项|
@@ -106,7 +106,7 @@ $ weex run web
 
 ### debug
 
-** [Weex devtools](https://github.com/weexteam/weex-devtool) ** 是实现[Chrome调试协议](https://developer.chrome.com/devtools/docs/debugger-protocol)的Weex自定义开发工具, 
+** [Weex devtools](https://github.com/weexteam/weex-devtool) ** 是实现[Chrome调试协议](https://developer.chrome.com/devtools/docs/debugger-protocol)的Weex自定义开发工具,
 主要用于帮助你快速检查您的应用程序，并在Chrome网页中调试您的JS bundle源代码，支持Android和iOS平台。所以你可以通过`weex-toolkit`使用的`weex-devtool`功能。
 
 #### 用法
@@ -117,7 +117,7 @@ weex debug [we_file|bundles_dir] [options]
 
 #### 参数
 
-| Option        | Description    | 
+| Option        | Description    |
 | --------   | :-----   |
 |`-v, --version`|  显示weex-debugger版本信息|
 |`-h, --help`| 展示帮助信息 |
@@ -147,7 +147,7 @@ $ weex debugx
 
 ##### 链接设备
 
-请使用[weex playground app](http://weex.apache.org/tools/playground.html)扫码或使用集成了weex-devtool的app进行扫码，集成方法见[集成devtool工具](#集成devtool工具)。有ios模拟器环境的用户也可以通过点击二维码的方式进行模拟器调试（仅限mac用户使用）。
+请使用[weex playground app](/tools/playground.html)扫码或使用集成了weex-devtool的app进行扫码，集成方法见[集成devtool工具](#集成devtool工具)。有ios模拟器环境的用户也可以通过点击二维码的方式进行模拟器调试（仅限mac用户使用）。
 
 ![debugger-main](https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png)
 
@@ -184,15 +184,15 @@ $ weex debug your_weex.vue
 ##### LogLevel和ElementMode功能
 > LogLevel和ElementMode功能用于调整调试工具的输出配置。
 
-LogLevel分别有 debug/info/warn/log/error五个log等级，切换可输出不同等级的log信息  
-ElementMode可以切换Element标签中Domtree显示模式，下图为vdom显示界面，可从标签中看到详细的数据结构：  
+LogLevel分别有 debug/info/warn/log/error五个log等级，切换可输出不同等级的log信息
+ElementMode可以切换Element标签中Domtree显示模式，下图为vdom显示界面，可从标签中看到详细的数据结构：
 ![loglevel-elementMode](https://img.alicdn.com/tfs/TB1qzrObntYBeNjy1XdXXXXyVXa-2872-1636.png)
 
 
 ##### Prophet功能（加载时序图）
 > Prophet功能用于查看weex的加载时序图和页面性能指标。
 
-点击右上角Prophet即可查看时序图(iOS暂不支持，性能数据可在log的performance中查看)，如下：  
+点击右上角Prophet即可查看时序图(iOS暂不支持，性能数据可在log的performance中查看)，如下：
 ![prophet](https://img.alicdn.com/tfs/TB1E4rObntYBeNjy1XdXXXXyVXa-2852-1626.png)
 
 

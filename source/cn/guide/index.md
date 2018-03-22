@@ -26,7 +26,7 @@ Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发�
 
 ![Weex Example](../../guide/images/weex-example-yo.png)
 
-这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](https://weex-project.io/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
+这个例子在屏幕正中间渲染了一个单词 “Yo”。 如果你想在移动设备上预览渲染结果，你只需要安装[Weex playground app](/cn/tools/playground.html) 或将 Weex SDK 集成到您自己的应用程序中，然后使用扫描网页右侧的二维码。
 
 在源代码的 `<template>` 中，`<div>` 你应该很熟悉了，它在 Weex 平台上也是一个通用容器。但是 `<text>` 组件是由 Weex 特有的，它是一个块级的文本容器，可以用来渲染文字。
 
@@ -89,7 +89,7 @@ Weex 可以只编写一份代码，开发出三端都可用的页面。
 
 > 以下步骤假设您已经了解了 Node.js 和 npm 的基本知识。如果对它们不熟悉，可以访问 [https://docs.npmjs.com/](https://docs.npmjs.com/) 来了解更多关于 npm 的用法。
 
-Weex 提供了一个命令行工具 [weex-toolkit](http://weex-project.io/tools/toolkit.html) 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。
+Weex 提供了一个命令行工具 [weex-toolkit](/cn/tools/toolkit.html) 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。
 
 目前 `weex-toolkit` 只支持创建 Vue.js 的项目。创建 Rax 的项目可以使用 `rax-cli`，参考 [Rax 的官方网站](https://alibaba.github.io/rax/) 了解其用法。
 
@@ -123,7 +123,7 @@ npm start
 
 ![Preview](../../guide/images/toolkit-preview.png)
 
-除此之外，你还可以打开 `http://localhost:8081/preview.html` 开启一个预览页面，它会把 web 端的页面放在一个 iframe 中渲染，而且在右侧生成一个二维码。用 [Weex playground app](http://weex-project.io/playground.html) 扫描这个二维码可以看到页面在手机上渲染的真实效果。
+除此之外，你还可以打开 `http://localhost:8081/preview.html` 开启一个预览页面，它会把 web 端的页面放在一个 iframe 中渲染，而且在右侧生成一个二维码。用 [Weex playground app](/cn/tools/playground.html) 扫描这个二维码可以看到页面在手机上渲染的真实效果。
 
 ### 编译和运行
 
