@@ -25,6 +25,10 @@ version: 2.1
 - `interval {number}`：值为毫秒数，此值设定 slider 切换时间间隔。当 `auto-play` 值为 `true` 时生效。
 - `infinite {boolean}`：循环播放，可选值为 `true`/`false`，默认的是 `true`。
 - `offset-x-accuracy {number}`<sup class="wx-v">0.11+</sup>：控制`onscroll`事件触发的频率，默认值为10，表示两次`onscroll`事件之间Slider Page至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。
+- `show-indicators {boolean}`：设置是否显示indicator
+- `index {number}`：设置显示slider的第几个页面
+- `scrollable {boolean}`：设置是否可以通过滑动手势来切换slider页面
+- `keep-index {boolean}`：设置slider中的数据发生变化后是否保持变化前的页面index
 
 ## 样式
 

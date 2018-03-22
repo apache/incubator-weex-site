@@ -22,6 +22,10 @@ It supports all kinds of weex components as its slides, especially the `indicato
 - `interval`: &lt;number&gt; millisecond. This value determines time interval for each page displayed in slider.
 - `index`: <number> . This value determines the  index of current shown slide. The default value is `0`.
 - `offset-x-accuracy {float}`：set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
+- `show-indicators {boolean}`：set whether to display indicator
+- `infinite {boolean}`：set whether the page in the slider can be scrolled
+- `scrollable {boolean}`：set whether slider pages can be switched by sliding gestures
+- `keep-index {boolean}`：set whether to maintain the index of the page after the data changes
 
 ## Styles
 
