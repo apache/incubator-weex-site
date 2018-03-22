@@ -174,7 +174,7 @@ layout: post
     The former front-end framework (commonly known as `.we`), which is inspired by Vue 1.0, is deprecated. Although it still works well in this release, we suggest to migrate it to Vue 2.0.
   - SDK
     - New CSS support
-      - [text `font-weight`](https://weex-project.io/references/text-style.html)
+      - [text `font-weight`](https://weex.apache.org/wiki/text-styles.html)
         `font-weight` can set to [`normal`|`bold`] or 100-900.
       - gradient
         like CSS3, now you can use gradient in Weex. For example:
@@ -183,7 +183,7 @@ layout: post
         background-image: linear-gradient(to right, blue, white);
         ```
         ![img_1695](https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg)
-        [Read more about gradient](https://weex-project.io/references/common-style.html).
+        [Read more about gradient](https://weex.apache.org/wiki/common-styles.html#linear-gradient-v0-10).
       - Pseudo class
         Currently, Weex supports 4 pseudo classes:`active`, `focus`, `disabled`, `enabled`.
     - New BroadcastChannel API
@@ -225,7 +225,7 @@ layout: post
       - Has full set of commands for developers to setup android/ios application with his .we/.vue files.
       - Developers could easily pack/install his application with simple command.
       - Has full set of commands for developers to manage weex plugins, including create plugin template, add plugin to his project etc.
-      - [Plugin market](http://market.weex-project.io) was formally used for developers to publish/download weex plugins.
+      - [Plugin market](https://market.dotwe.org) was formally used for developers to publish/download weex plugins.
 
 
 ## v0.9.4
