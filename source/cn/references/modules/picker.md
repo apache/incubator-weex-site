@@ -24,6 +24,15 @@ version: 2.1
 - `options {Object}`：调用单选 picker 选项
   - `index {number}`：默认选中的选项
   - `items {array}`：picker 数据源
+  - `textColor {color}`：picker中文字的颜色
+  - `selectionColor {color}`：picker中选中item的背景色
+  - `confirmTitle {string}`：确认按钮的文案
+  - `cancelTitle {string}`：取消按钮的文案
+  - `confirmTitleColor {color}`：确认按钮的文字颜色
+  - `cancelTitleColor {color}`：取消按钮的文字颜色
+  - `title {string}`：对话框的标题
+  - `titleColor {color}`：对话框标题的文字颜色
+  - `titleBackgroundColor {color}`：对话框标题的背景色
 
 - `callback {function (ret)}`：执行完读取操作后的回调函数。`ret {Object}` 为 `callback` 函数的参数，有两个属性：
   - `result {string}`：结果三种类型 `success`, `cancel`, `error`
