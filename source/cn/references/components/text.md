@@ -18,7 +18,7 @@ version: 2.1
 ## 样式
 * 支持 **[通用样式](../../wiki/common-styles.html)。**
 * `lines {number}`: 指定文本行数。默认值是 `0`， 代表不限制行数。
-* 支持 **[文本样式](../wiki/text-style.html)。**
+* 支持 **[文本样式](/cn/wiki/text-styles.html)。**
   * 支持 `color` 样式.
   * 支持 `font-size` 样式，默认值为`32`.
   * 支持 `font-style` 样式.

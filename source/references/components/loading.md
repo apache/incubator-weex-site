@@ -90,7 +90,7 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
 ## Styles
 
- - Please check out the [common styles](../common/common-style)
+ - Please check out the [common styles](/wiki/common-styles.html)
 
 ## Events
 

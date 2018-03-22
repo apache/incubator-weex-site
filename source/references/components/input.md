@@ -36,7 +36,7 @@ This component does not support any child component.
 
 * `max` constrain the max date when `type` is `date`, format is `yyyy-MM-dd`
 
-* `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd` 
+* `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
 
 * `maxlength`: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.
 
@@ -53,7 +53,7 @@ This component does not support any child component.
   * `disabled`
   * `enabled`
 
-* text styles: checkout [text styles](../text-style.html)
+* text styles: checkout [text styles](/wiki/text-styles.html)
 
   * support `color` style.
   * support `font-size` style.
@@ -62,7 +62,7 @@ This component does not support any child component.
   * support `text-align` style.
 
 ### common styles
-check out [common styles for components](../common-style.html)
+check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles.
 * support box model related styles.
@@ -83,7 +83,7 @@ check out [common styles for components](../common-style.html)
     - `value`: component text value
 
 ### common events
-check out [common events](../common-event.html)
+check out [common events](/wiki/common-events.html)
 
 * support `appear` / `disappear` event.
 

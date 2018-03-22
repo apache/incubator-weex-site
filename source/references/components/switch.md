@@ -47,9 +47,9 @@ None.
 
 ## Events
 
-* `appear` / `disappear` event. check out [common events](../common-event.html)
-* `click` / `longpress`: check out [common events](../common-event.html)
-* `change`: check out [common events](../common-event.html)
+* `appear` / `disappear` event. check out [common events](/wiki/common-events.html)
+* `click` / `longpress`: check out [common events](/wiki/common-events.html)
+* `change`: check out [common events](/wiki/common-events.html)
 
 ## Parameters of events' object for onchange event:
 
@@ -70,7 +70,7 @@ None.
 
 > **Notes:** If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched.
 
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 ## Usage Notes
 

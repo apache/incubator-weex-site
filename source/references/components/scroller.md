@@ -38,7 +38,7 @@ There are two special components that can only be used inside scroller component
 
 ## Styles
 
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles
@@ -48,10 +48,10 @@ common styles: check out [common styles for components](../common-style.html)
 
 ## Events
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
 - support `loadmore` event. The `loadmore` event should be used in concert with loadmoreoffset. If the view has less than loadmoreoffset to scroll down, the event will be triggered.See details in [example](http://dotwe.org/vue/26e980d5ccd9538941ea6d17761219ff).
 
