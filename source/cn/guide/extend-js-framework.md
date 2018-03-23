@@ -2,7 +2,7 @@
 title: 扩展前端框架
 type: guide
 group: 扩展
-order: 6.4
+order: 6.5
 version: 2.1
 ---
 
