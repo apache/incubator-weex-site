@@ -1,5 +1,5 @@
 ---
-title: <switch>
+title: <switch> (已废弃)
 type: references
 group: 内置组件
 order: 8.12

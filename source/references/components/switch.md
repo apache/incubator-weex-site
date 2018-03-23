@@ -1,5 +1,5 @@
 ---
-title: <switch>
+title: <switch> (deprecated)
 type: references
 group: Build-in Components
 order: 8.11
