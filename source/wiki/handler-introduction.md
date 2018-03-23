@@ -1,5 +1,5 @@
 ---
-title: handler
+title: Handler
 type: wiki
 group: concept
 order: 5.2

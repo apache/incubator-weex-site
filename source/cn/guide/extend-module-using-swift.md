@@ -1,5 +1,5 @@
 ---
-title: 使用 swift 扩展 Weex
+title: 使用 swift 扩展 iOS 的功能
 type: guide
 group: 扩展
 order: 6.4

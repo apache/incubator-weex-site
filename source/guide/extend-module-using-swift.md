@@ -1,5 +1,5 @@
 ---
-title: Extend weex using swift
+title: Extend iOS with swift
 type: guide
 group: Extend
 order: 6.4

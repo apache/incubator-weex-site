@@ -1,5 +1,5 @@
 ---
-title: component
+title: Component
 type: wiki
 group: concept
 order: 5.1

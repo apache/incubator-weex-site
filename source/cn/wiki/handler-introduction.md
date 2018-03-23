@@ -1,5 +1,5 @@
 ---
-title: handler
+title: Handler
 type: wiki
 group: 概念
 order: 5.2

@@ -1,5 +1,5 @@
 ---
-title: component
+title: Component
 type: wiki
 group: 概念
 order: 5.3

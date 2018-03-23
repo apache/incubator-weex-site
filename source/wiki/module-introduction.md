@@ -1,5 +1,5 @@
 ---
-title: module
+title: Module
 type: wiki
 group: concept
 order: 5.3
