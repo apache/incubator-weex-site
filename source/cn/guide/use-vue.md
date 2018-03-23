@@ -82,7 +82,7 @@ Vue 中的[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components
 
 ### 使用weex-loader
 
-[weex-loader](https://github.com/weexteam/weex-loader) 是一个 webpack 的 [loader](http://webpack.github.io/docs/using-loaders.html)，它能把`*.vue`文件转化为简单的javascript 模块用于安卓以及 iOS 平台。所有的特性和配置都是跟 [vue-loader](https://vue-loader.vuejs.org/en/) 一样的。
+[weex-loader](https://github.com/weexteam/weex-loader) 是一个 webpack 的 [loader](https://webpack.js.org/concepts/loaders/#using-loaders)，它能把`*.vue`文件转化为简单的javascript 模块用于安卓以及 iOS 平台。所有的特性和配置都是跟 [vue-loader](https://vue-loader.vuejs.org/en/) 一样的。
 
 需要注意的是，如果您的Webpack配置的*entry*选项是一个`*.vue`文件的话，你仍需要传递一个额外的`entry`参数。
 
