@@ -17,7 +17,7 @@ version: 2.1
 
 ## Command errors in MS Windows
 
-Please install [Git for Windows](https://git-scm.com/download/win) first, see [For Windows](https://github.com/apache/incubator-weex/tree/dev#for-windows) for more information.
+Please install [Git for Windows](https://git-scm.com/download/win) first, see [For Windows](https://github.com/apache/incubator-weex/tree/master#for-windows) for more information.
 
 
 ## Gradle errors in Android Studio
