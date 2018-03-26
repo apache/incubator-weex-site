@@ -1,12 +1,12 @@
 ---
-title: WebSocket
+title: webSocket
 type: references
 group: 内置模块
-order: 9.12
+order: 9.11
 version: 2.1
 ---
 
-# WebSocket
+# webSocket
 <span class="weex-version">v0.12+</span>
 
 ## Summary
@@ -15,9 +15,9 @@ WebSockets 是一种先进的技术, 这使得在用户的 H5/iOS/Android 和一
 
 ## **注意：**
 - iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter 实现，source:
-  - [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
-  - [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
-  - 集成例子参考weex [playground](https://github.com/apache/incubator-weex/tree/dev/android/playground)
+  - [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
+  - [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
+  - 集成例子参考weex [playground](https://github.com/apache/incubator-weex/tree/master/android/playground)
 
 
 ## API

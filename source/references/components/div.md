@@ -2,7 +2,7 @@
 title: <div>
 type: references
 group: Build-in Components
-order: 8.01
+order: 8.03
 version: 2.1
 ---
 
@@ -10,7 +10,7 @@ version: 2.1
 
 ### Summary
 
-The most fundamental component which is a contianer to wrap any other components. It supports all the common styles, attributes and layout of flexbox.
+The most fundamental component which is a container to wrap any other components. It supports all the common styles, attributes and layout of flexbox.
 
 alias: `<container>` (deprecated)
 
@@ -24,7 +24,7 @@ There is no specific attribute for this component.
 
 ### Styles
 
-**common styles**: check out the [common styles](../common-style.html)
+**common styles**: check out the [common styles](/wiki/common-styles.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -33,10 +33,10 @@ There is no specific attribute for this component.
 
 ### Events
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
 ### Examples
 

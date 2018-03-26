@@ -2,7 +2,7 @@
 title: <textarea>
 type: references
 group: Build-in Components
-order: 8.11
+order: 8.24
 version: 2.1
 ---
 
@@ -22,10 +22,8 @@ This component supports no child components.
 
 ### attributes
 
-- `value`: &lt;string&gt; the value of the control.
-- `placeholder`: &lt;string&gt; a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.
-- `disabled`: &lt;boolean&gt; a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.
-- `autofocus`: &lt;boolean&gt; a boolean attribute lets you specify that a form control should have input focus when the page loads.
+The `textarea` component supports all the properties of the `text` component, in addition to the following properties:
+
 - `rows:`&lt;number&gt; a number which can specify the height of textarea, default is `2`.
 
 ### Styles
@@ -37,7 +35,7 @@ This component supports no child components.
 * `disabled`
 * `enabled`
 
-**text styles**: checkout [text styles](../text-style.html)
+**text styles**: checkout [text styles](/wiki/text-styles.html)
 
 - support `color` style.
 - support `font-size` style.
@@ -46,7 +44,7 @@ This component supports no child components.
 - support `text-align` style.
 
 
-**common styles**: check out [common styles for components](../common-style.html)
+**common styles**: check out [common styles for components](/wiki/common-styles.html)
 
 - support flexbox related styles.
 - support box model related styles.
@@ -60,9 +58,9 @@ This component supports no child components.
 - `focus`: a component has received focus.
 - `blur`: a component has lost focus.
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `appear` / `disappear` event. Check out [common events](../common-event.html).
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html).
 
 **Notes:** `<textarea>` does not support the common-event `click`. Please listen to the `input` or `change` event instead.
 

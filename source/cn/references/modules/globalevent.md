@@ -2,7 +2,7 @@
 title: globalEvent
 type: references
 group: 内置模块
-order: 9.13
+order: 9.04
 version: 2.1
 ---
 
@@ -87,3 +87,24 @@ globalEvent.addEventListener("geolocation", function (e) {
 var globalEvent = weex.requireModule('globalEvent');
 globalEvent.removeEventListener("geolocation");
 ```
+
+## 已有的全局事件
+<span class="weex-version">0.14</span>
+### 应用前后事件
+WeexSDK 对获取应用前后台事件做了支持，开发者可以在页面内监听对应的事件，获得应用被前后后这后台，以方便暂停音乐，视频等，只需要指定需要监听的事件名称和回调函数就可以，例如：
+
+```
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("WXApplicationDidBecomeActiveEvent", function (e) {
+  console.log("WXApplicationDidBecomeActiveEvent");
+});
+```
+支持的事件名称
+
+  - WXApplicationDidBecomeActiveEvent  应用被前台的时候触发
+  - WXApplicationWillResignActiveEvent 应用即将被后台时候触发
+
+在 [dotWe 上试一试](http://dotwe.org/vue/5a774e8ce3766c88038cab6fe3331f5b)
+
+> 目前只有 platform 为 iOS 和 Android 才能支持。[获取当前 platform](../weex-variable.html#weex-environment-object)
+

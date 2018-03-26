@@ -6,7 +6,7 @@ order: 4.1
 version: 2.1
 ---
 
-# Common Events
+<!-- toc -->
 
 Weex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Bellow are the common event attributes that can be added to weex components to define event actions.
 

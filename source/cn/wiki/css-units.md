@@ -6,7 +6,7 @@ order: 3.3
 version: 2.1
 ---
 
-# CSS 单位
+<!-- toc -->
 
 ## CSS `color` 单位
 
@@ -53,7 +53,7 @@ version: 2.1
 
 ## CSS `number` 单位
 
-仅仅一个数字。用于 [`opacity`](./common-style.html)，[`lines`](./text-style.html)等。
+仅仅一个数字。用于 [`opacity`](./common-styles.html)，[`lines`](./text-styles.html)等。
 
 有时值必须是整数，例如：`lines`。
 

@@ -6,6 +6,8 @@ order: 5.4
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Integrate Devtool to Android
 
 Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page. To make it work, at first you must integrate devtool to your App. This page will help you integrate devtool to your Android App.
@@ -20,7 +22,7 @@ Weex Devtools depend on `weex_inspector`. I strongly recommend you use the lates
 
   ```gradle
   dependencies {
-    compile 'com.taobao.android:weex_inspector:0.8.0.0'
+    compile 'com.taobao.android:weex_inspector:0.13.2'
   }
   ```
 
@@ -41,6 +43,8 @@ Weex Devtools depend on `weex_inspector`. I strongly recommend you use the lates
 | 0.8.0.1+ | 0.0.8.1+       | 0.2.39+         |
 | 0.7.0+   | 0.0.7.13       | 0.2.38          |
 | 0.6.0+   | 0.0.2.2        | -               |
+| 0.16.0+  | 0.12.1         | -               |
+| 0.17.0+  | 0.13.2         | -               |
 
 
 ### Adding Debug mode switch
@@ -64,6 +68,9 @@ private void initDebugEnvironment(boolean enable, String host) {
   WXEnvironment.sRemoteDebugProxyUrl = "ws://" + host + ":8088/debugProxy/native";
 }
 ```
+
+You can find detail and suitable way of initialize inspector in `Playground`.
+
 
 **No.2: You must call `WXSDKEngine.reload()` method when `sRemoteDebugMode` was changed.**
 

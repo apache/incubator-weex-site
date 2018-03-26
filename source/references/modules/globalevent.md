@@ -2,7 +2,7 @@
 title: globalEvent
 type: references
 group: Build-in Modules
-order: 9.13
+order: 9.04
 version: 2.1
 ---
 
@@ -87,4 +87,23 @@ remove global event
 var globalEvent = weex.requireModule('globalEvent');
 globalEvent.removeEventListener("geolocation");
 ```
+
+## Built-in global event
+<span class="weex-version">0.14</span>
+### background or foreground event
+You can specify the event name as `WXApplicationDidBecomeActiveEvent ` or `WXApplicationWillResignActiveEvent` to obtain application becoming foreground or background, so that you can pause your video or music at this time.For example
+
+```
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("WXApplicationDidBecomeActiveEvent", function (e) {
+  console.log("WXApplicationDidBecomeActiveEvent");
+});
+```
+
+- `WXApplicationDidBecomeActiveEvent`   fired while application did become foreground 
+- `WXApplicationWillResignActiveEvent`  fired while application will become background
+
+[have a try at DotWe](http://dotwe.org/vue/5a774e8ce3766c88038cab6fe3331f5b)
+
+> this feature only works on iOS and Android platforms, it doesn't work on Web. [Obtain your weex platform on weex page](../weex-variable.html#weex-environment-object)
 

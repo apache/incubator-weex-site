@@ -2,7 +2,7 @@
 title: <waterfall>
 type: references
 group: Build-in Components
-order: 8.17
+order: 8.26
 version: 2.1
 ---
 
@@ -35,7 +35,7 @@ To see other attributes in list,  please checkout [List Component Attributes](./
 
 ### Styles
 
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles
@@ -44,10 +44,10 @@ common styles: check out [common styles for components](../common-style.html)
 
 ### Events
 
-common events: check out the [common events](../common-event.html)
+common events: check out the [common events](/wiki/common-events.html)
 
-* support onclick event. Check out [common events](../common-event.html)
-* support onappear / ondisappear event. Check out [common events](../common-event.html)
+* support onclick event. Check out [common events](/wiki/common-events.html)
+* support onappear / ondisappear event. Check out [common events](/wiki/common-events.html)
 
 ### API
 

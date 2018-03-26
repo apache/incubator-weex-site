@@ -6,7 +6,7 @@ order: 8.6
 version: 2.1
 ---
 
-# Weex Page Architecture
+<!-- toc -->
 
 A Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
 

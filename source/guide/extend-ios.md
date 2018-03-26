@@ -2,304 +2,222 @@
 title: Extend iOS
 type: guide
 group: Extend
-order: 6.3
+order: 6.4
 version: 2.1
 ---
 
-#### Notice
+<!-- toc -->
 
-**All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do any system hacks at runtime,  neither can they change the primary purpose of the Application**.
+> **NOTICE**: **All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do any system hacks at runtime,  neither can they change the primary purpose of the Application**.
+>
+> **If you are extending your custom modules/components,  be sure NOT to export the ability of Objective-C runtime, be sure NOT to export  dynamic and uncontrolled methods such as `dlopen()`, `dlsym()`, `respondsToSelector:`, `performSelector:`, `method_exchangeImplementations()`, be sure NOT to export any private methods. **
 
-**If you are extending your custom modules/components,  be sure NOT to export the ability of Objective-C runtime, be sure NOT to export  dynamic and uncontrolled methods such as `dlopen()`, `dlsym()`, `respondsToSelector:`, `performSelector:`, `method_exchangeImplementations()`, be sure NOT to export any private methods. **
+Weex SDK provides only rendering capabilities, rather than have other capabilities. There are some internal [components](../wiki/component-introduction.html), [modules](../wiki/module-introduction.html) and [handlers](../wiki/handler-introduction.html). If you want these features which weexSDK doesn't provide, you can to extend.
+> The following section we will extend iOS using Objective-C and here is [swift](./extend-module-using-swift.html).
 
-### Module extend
+### extend custom module
 
-Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want these features, you need to implement it.
+ To extend your custom weex modules in iOS, you must make your class conform to `WXModuleProtocol` protocol, and then exports your method to javaScript using macro `WX_EXPORT_METHOD`,finally register your module with your class and a self-define module name.
 
-For example: If you want to implement an address jumping function, you can achieve a Module following the steps below.
+- basic
+  we will custom a module to print params that javaScript give.
 
-#### Step to customize a module
+  1. new a class derived from `NSObject` conforming `WXModuleProtocol` protocol
+  
+    ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png)
 
-1. Module
-    customized must implement WXModuleProtocol
-2. A macro named `WX_EXPORT_METHOD` must be added, as it is the only way to export methods to JavaScript.
-3. The weexInstance should be synthesized. Each module object is bind to a specific instance.
-4. Module methods will be invoked in UI thread, so do not put time consuming operation there. If you want to  execute the whole module methods in other     thread, please implement the method `- (NSThread *)targetExecuteThread` in protocol. In the way, tasks distributed to this module will be executed in targetExecuteThread.
-5. Weex params can be String or Map.
-6. Module supports to return results to Javascript in callback. This callback is type of `WXModuleCallback`, the params of which can be String or Map.
+  2. add your module method and then exports using macro `WX_EXPORT_METHOD`
 
-```objective-c
-@implementation WXEventModule
+    ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/8079e55e74f098eb42e074f696537de1.png)
 
-@synthesize weexInstance;
-WX_EXPORT_METHOD(@selector(openURL:callback:))
+  3. register module after WeexSDK's initialization
 
-- (void)openURL:(NSString *)url callback:(WXModuleCallback)callback
-{
-    NSString *newURL = url;
-    if ([url hasPrefix:@"//"]) {
-        newURL = [NSString stringWithFormat:@"http:%@", url];
-    } else if (![url hasPrefix:@"http"]) {
-        newURL = [NSURL URLWithString:url relativeToURL:weexInstance.scriptURL].absoluteString;
+    ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/dd6b2a43132c0bfa724f5c1e56f300b4.png)
+
+  by far, we've finished a basic custom module, and you may understand how to custom a weex module in iOS using Objective-C.
+
+  We can use it in javaScript code like this: 
+
+  ```javaScript
+      weex.requireModule("event").showParams("hello Weex)
+  ```
+
+- advanced extendibility
+
+ you must understand more in `WXModuleProtocol` protocol, we'll talk more about blueprint methods and properties in this protocol.
+
+   1. `weexInstance`
+    The instance of `WXSDKInstance` holds the references of all modules created in a single page. if you add `@synthesize weexInstance` in your module class, your module will hold a reference to the instance of `WXSDKInstance` who create and initialize your module, or you get nothing. You can get more details by `weexInstance` such as pageName.
+
+   2. `targetExecuteThread`
+    We will schedule your module method to main thread(UI thread), we highly recommend that you can not do much works here, if must, you can add implementation for this method. You can provide a thread so that we can schedule to.
+
+   3. `WXModuleKeepAliveCallback`
+    Sometimes you can return your result to your caller, callback is important in this scene,the params for callback can be string or dictionary. You must specify a second params to keep your callback function id in js after used. We'll create a new function id every time callback, `NO` will be a better choice for memory.
+
+   4. `WX_EXPORT_METHOD_SYNC`
+    > This feature only works on WeexSDK 0.10 and later. Synchronous method only works in JavaScript thread, you cannot do much works here.
+    exports asynchronous method using `WX_EXPORT_METHOD`, you may get result in callback function.
+    `WX_EXPORT_METHOD_SYNC` to export synchronous method. You can get result on the left of operand `=`.
+
+### extend custom component
+
+- new a class derived from `WXComponent` class
+  if we do nothing in this class and then register to WeexSDK engine, its functionality is just like `div`.
+
+- override the lifecycle of `WXComponent`
+
+  - `loadView`
+    We will load a view for a component default, if you didn't override this method, supperclass will provide a `WXView` derived from `UIView`. If we want to load html or just to show a map, override `loadView` and provide a custom view is a good choice.
+
+    ```
+        - (UIView *)loadView {
+            return [MKMapView new];
+        }
+    ```
+  - `viewDidLoad`
+    If you want to make some configurations for your custom view like set delegate, you can finish here.
+    You don't need to set frame for your custom view if it doesn't has any subview, weexSDK will set it's frame according to style.
+
+    ```
+	    - (void)viewDidLoad {
+            ((MKMapView*)self.view).delegate = self;
+	    }
+	```
+- register component
+
+ ```
+    [WXSDKEngine registerComponent:@"map" withClass:[WXMapComponent class]];
+ ```
+
+ by far you can use your custom component in front-end
+
+ ```html
+    <template>
+        <div>
+            <map style="width:200px;height:200px"></map>
+        </div>
+    </template>
+```
+
+Weex engine has done some works to support common events and other attributes, if you want support your own attributes, let's continue.
+
+- custom events for your component
+ Our target is that support `mapLoaded` event for the component we just implement, and then we can use in front-end directyly. The front-end code can be like this.
+
+ ```html
+    <template>
+        <div>
+            <map style="width:200px;height:200px" @mapLoaded="onMapLoaded"></map>
+        </div>
+    </template>
+
+    <script>
+    export default {
+        methods: {
+            onMapLoaded:function(e) {
+                console.log("map loaded"+JSON.stringify(e))
+            }
+        }
     }
-
-    UIViewController *controller = [[WXDemoViewController alloc] init];
-    ((WXDemoViewController *)controller).url = [NSURL URLWithString:newURL];
-
-    [[weexInstance.viewController navigationController] pushViewController:controller animated:YES];
-    callback(@{@"result":@"success"});
-}
-
-@end
+    </script>
 ```
+we must save status for event added or not, so we add a `BOOL` member named `mapLoaded` for the component class to make it record, and when event map loaded, we can fire event according to this record.
 
-#### export synchronous methods <span class="api-version">v0.10+</span>
+- custom event
+    - override method add/remove event
 
-If you want to export synchronous methods which could make Javascript receive return values from natvie, you can use `WX_EXPORT_METHOD_SYNC`  macro.
+    ```Objective-C
+        - (void)addEvent:(NSString *)eventName {
+            if ([eventName isEqualToString:@"mapLoaded"]) {
+                _mapLoaded = YES;
+            }
+        }
 
-native code:
+        - (void)removeEvent:(NSString *)eventName
+        {
+            if ([eventName isEqualToString:@"mapLoaded"]) {
+                _mapLoaded = NO;
+            }
+        }
+    ```
+    - fire event to front-end
+    we'll fire `mapLoaded` event when map loaded finish according to our record.
+    > do not forget to set delegate for MKMapView.
 
-```objective-c
-@implementation WXEventModule
+    ```object-c
+        - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
+            if (_mapLoaded) {
+                [self fireEvent:@"mapLoaded" params:@{@"customKey":@"customValue"} domChanges:nil]
+            }
+        }
+    ```
 
-WX_EXPORT_METHOD_SYNC(@selector(getString))
+We have finish our custom event, so what about custom attributes? this is the same important as custom events.
 
-- (NSString *)getString
-{
-    return @"testString";
-}
-
-@end
-```
-
-js code:
-
-```javascript
-const eventModule = weex.requireModule('event')
-const returnString = syncTest.getString()  // return "testString"
-```
-
-You can alse return number/array/dictionary except string.
-
-`notice:`  the exported synchronous native method **can only be called on JS thread**. **Do not** do heavy work which will block js execution.
-
-`notice:`  Vue 2.0 has not supported this feature yet.  It will be supported in version 0.12 at the soonest.
-
-#### Register the module
-
-You can register the customized module by calling the method `registerModule:withClass` in WXSDKEngine.
-
-```objective-c
-WXSDKEngine.h
-/**
-*  @abstract Registers a module for a given name
-*  @param name The module name to register
-*  @param clazz  The module class to register
-**/
-+ (void)registerModule:(NSString *)name withClass:(Class)clazz;
-
-[WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
-```
-
-### Handler extend
-
-Weex SDK doesn't have capabilitis, such as image download 、navigator operation，please implement these protocols by yourself.
-
-#### WXImgLoaderProtocol
-<font color="gray">
-Weex SDK has no image download capability, you need to implement `WXImgLoaderProtocol`. Refer to the following examples.
-
-```objective-c
-WXImageLoaderProtocol.h
-@protocol WXImgLoaderProtocol <WXModuleProtocol>
-
-/**
-    * @abstract Creates a image download handler with a given URL
-    * @param imageUrl The URL of the image to download
-    * @param imageFrame  The frame of the image you want to set
-    * @param options : The options to be used for this download
-    * @param completedBlock : A block called once the download is completed.
-    image : the image which has been download to local.
-    error : the error which has happened in download.
-    finished : a Boolean value indicating whether download action has finished.
-    */
-    -(id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;
-    @end
-```
-
-Implement above protocol as follows.
-
-
-```objective-c
-@implementation WXImgLoaderDefaultImpl
-#pragma mark -
-#pragma mark WXImgLoaderProtocol
-
-- (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
-{
-    if ([url hasPrefix:@"//"]) {
-        url = [@"http:" stringByAppendingString:url];
-    }
-    return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-    if (completedBlock) {
-        completedBlock(image, error, finished);
-    }
-    }];
-}
-@end
-```
-
-#### Register the handler
-
-You can register the handler which implements the protocol by calling  `registerHandler:withProtocol` in WXSDKEngine.
-
-```objective-c
-WXSDKEngine.h
-/**
-* @abstract Registers a handler for a given handler instance and specific protocol
-* @param handler The handler instance to register
-* @param protocol The protocol to confirm
-*/
-+ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;
-
-[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
-```
-
-## Custom Native Components for iOS
-
-### Component extend
-
-There are a lot of native components ready to be used in the Weex SDK,  but users always have their own use cases. You might have written an awesome native UI widget in your previous work and just want to wrap up it and export to Weex. So we provide a way to enable developers to create their own custom fully-native components.
-
-This guide will use the implementation of existing component `image` to show you how to build a native component. It will also assume that you are familiar with iOS programming.
-
-#### Registration
-
-Defining a custom native component is simple. Just call `[WXSDKEngine registerComponent:withClass:]` with the component's tag name as first argument.
-
-```objective-c
-[WXSDKEngine registerComponent:@"image" withClass:[WXImageComponent class]];
-```
-
-Then you can create a `WXImageComponent` class to represent the implementation of image component.
-
-Now you can use `<image>` wherever you want in the template.
+- custom attributes
+ The next target is that we add a custom attribute `showTraffic`, we can display real time traffic or not according to this attribute. The front-end code can be like the following.
 
 ```html
-<image></image>
+    <template>
+        <div>
+            <map style="width:200px;height:200px" showTraffic="true"></map>
+        </div>
+    </template>
 ```
 
-#### Adding Properties
-
-The next thing we can do is to extend some native properties to make the component more powerful. As an image, let's say we should have a `src` attribute as image's remote source and a `resize` attribute as image's resize mode(contain/cover/stretch).
-
-```objective-c
-@interface WXImageComponent ()
-
-@property (nonatomic, strong) NSString *imageSrc;
-@property (nonatomic, assign) UIViewContentMode resizeMode;
-
-@end
-```
-
-All of the styles, attributes and events will be passed to the component's initialization method, so here you can store the properties which you are interested in.
-
-```objective-c
-@implementation WXImageComponent
-
-- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
-{
-    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
-        _imageSrc = [WXConvert NSString:attributes[@"src"]];
-        _resizeMode = [WXConvert UIViewContentMode:attributes[@"resize"]];
+  - override component init method `initWithRef...`
+    add a `BOOL` member `showsTraffic` to make the status whether front-end user use the attribute or not record. We can get all the attribute for this component by override init method of component.
+     
+    ```object-c
+    - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {
+        if(self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
+            
+            if (attributes[@"showsTraffic"]) {
+                _showsTraffic = [WXConvert BOOL: attributes[@"showsTraffic"]];
+            }
+        }
+        return self;
     }
-
-    return self;
-}
-
-@end
-```
-
-The properties getted in the attributes are of `id` type, so we have to convert them to the type we want using a conversion function.  Basic conversion functions can be found in the `WXConvert` file,  or you can just add your own conversion function.
-
-
-#### Hooking Render Life Cycle
+    ```
+  - set property for custom view.
+    ```object-c
+        - (void)viewDidLoad {
+        ((MKMapView*)self.view).showsTraffic = _showsTraffic;
+        }
+    ```
+  - support attribute updates
+    
+    ```object-c
+    - (void)updateAttributes:(NSDictionary *)attributes
+    {
+        if (attributes[@"showsTraffic"]) {
+            _showsTraffic = [WXConvert BOOL: attributes[@"showsTraffic"]];
+            ((MKMapView*)self.view).showsTraffic = _showsTraffic;
+        }
+    }
+    ```
+-  more life cycle for component
 
 A Native Component has a life cycle managed by Weex. Weex creates it, layout it, renders it and destroys it.
 
 Weex offers component life cycle hooks that give you visibility into these key moments and the ability to act when they occur.
 
-|        method        | description                              |
-| :------------------: | ---------------------------------------- |
-| initWithRef:type:... | Initializes a new component using the specified  properties. |
-|   layoutDidFinish    | Called when the component has just laid out. |
-|       loadView       | Creates the view that the component manages. |
-|     viewWillLoad     | Called before the load of component's view . |
-|     viewDidLoad      | Called after the component's view is loaded and set. |
-|    viewWillUnload    | Called just before releasing the component's view. |
-|    viewDidUnload     | Called when the component's view is released. |
-|    updateStyles:     | Called when component's style are updated. |
-|  updateAttributes:   | Called when component's attributes are updated. |
-|      addEvent:       | Called when adding an event to the component. |
-|     removeEvent:     | Called when removing an event frome the component. |
+    |        method        | description                              |
+    | :------------------: | ---------------------------------------- |
+    | initWithRef:type:... | Initializes a new component using the specified  properties. |
+    |   layoutDidFinish    | Called when the component has just laid out. |
+    |       loadView       | Creates the view that the component manages. |
+    |     viewWillLoad     | Called before the load of component's view . |
+    |     viewDidLoad      | Called after the component's view is loaded and set. |
+    |    viewWillUnload    | Called just before releasing the component's view. |
+    |    viewDidUnload     | Called when the component's view is released. |
+    |    updateStyles:     | Called when component's style are updated. |
+    |  updateAttributes:   | Called when component's attributes are updated. |
+    |      addEvent:       | Called when adding an event to the component. |
+    |     removeEvent:     | Called when removing an event frome the component. |
 
-
-As in the image component example, if we need to use our own image view, we can override the `loadView` method.
-
-
-```objective-c
-- (UIView *)loadView
-{
-    return [[WXImageView alloc] init];
-}
-```
-
-Now Weex will use `WXImageView` to render the `image` component.
-
-As an image component, we will need to fetch the remote image and set it to the image view.  This can be done in `viewDidLoad` method when the view is created and loaded. `viewDidLoad` is also the best time to perform additional initialization for your view， such as content mode changing.
-
-
-```objective-c
-- (void)viewDidLoad
-{
-    UIImageView *imageView = (UIImageView *)self.view;
-    imageView.contentMode = _resizeMode;
-    imageView.userInteractionEnabled = YES;
-    imageView.clipsToBounds = YES;
-    imageView.exclusiveTouch = YES;
-
-    // Do your image fetching and updating logic
-}
-```
-
-If image's remote source can be changed, you can also hook the `updateAttributes:` method to perform your attributes changing logic. Component's view always has been loaded while `updateAttributes:` or `updateStyles:` is called.
-
-
-```objective-c
-- (void)updateAttributes:(NSDictionary *)attributes
-{
-    if (attributes[@"src"]) {
-        _imageSrc = [WXConvert NSString:attributes[@"src"]];
-        // Do your image updating logic
-    }
-
-    if (attributes[@"resize"]) {
-        _resizeMode = [WXConvert UIViewContentMode:attributes[@"resize"]];
-        self.view.contentMode = _resizeMode;
-    }
-}
-```
-
-Maybe there is even more life cycle hooks you might need to consider, such as `layoutDidFinish` while layout computing is finished.  If you want to go deeper, check out the `WXComponent.h` file in the source code.
-
-Now you can use `<image>` and its attributes wherever you want in the template.
-
-```html
-<image style="your-custom-style" src="image-remote-source" resize="contain/cover/stretch"></image>
-```
-
-#### Component Method
+### Component Method
 from WeexSDK `0.9.5`, you can define your component method by macro `WX_EXPORT_METHOD`
 for example:
 
@@ -338,3 +256,53 @@ after your registration for your own custom component, now you can call it in yo
   }
 </script>
 ```
+
+### custom your handlers
+
+We don't provide functionality for downloading image but defines a blueprint of methods in `WXImgLoaderProtocol` for loading image, and image component get image content from these methods. You must implement methods in `WXImgLoaderProtocol` except the `optional` methods to display image from specified url.
+You can also define your own `protocol` and implement its handler.
+
+- new a class derived from `NSObject` conforming `WXImgLoaderProtocol` and then add implementation for methods in `WXImgLoaderProtocol`.
+
+> the flowing code may require SDWebImage as dependency, you can download remote url image by your own way without SDWebImage. 
+ 
+ ```object-c
+    @implementation WXImgLoaderDefaultImpl
+    - (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
+    {
+        if ([url hasPrefix:@"//"]) {
+            url = [@"http:" stringByAppendingString:url];
+        }
+        return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        if (completedBlock) {
+            completedBlock(image, error, finished);
+        }
+        }];
+    }
+    @end
+```
+- register handler
+  register handler by the method `registerHandler:withProtocol` in WXSDKEngine
+
+  ```object-c
+    WXSDKEngine.h
+    /**
+    * @abstract Registers a handler for a given handler instance and specific protocol
+    * @param handler The handler instance to register
+    * @param protocol The protocol to confirm
+    */
+    + (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;
+
+    [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]
+
+  ```
+- use handler
+ you can use your handle in any native code including `component`, `module` and other `handlers`
+ ```object-c
+    id<WXImgLoaderProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(WXImgLoaderProtocol)];
+    [iamgeLoader downloadImageWithURL:imageURl imageFrame:frame userInfo:customParam completed:^(UIImage *image, NSError *error, BOOL finished){
+    }];
+  ```
+
+

@@ -2,7 +2,7 @@
 title: <cell>
 type: references
 group: Build-in Components
-order: 8.07
+order: 8.08
 version: 2.1
 ---
 
@@ -10,7 +10,7 @@ version: 2.1
 
 ### Summary
 
-This component must be used as a subcomponent of a [`list`](./list.html) component, which is for the performance optimizing during scrolling.
+This component must be used as a subcomponent of a [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) component, which is for the performance optimizing for long list scrolling.
 
 ### Child Components
 
@@ -24,7 +24,7 @@ This type of component supports all kinds of weex component as its child compone
 
 ### Styles
 
-**common styles**: check out the [common styles](../common-style.html)
+**common styles**: check out the [common styles](/wiki/common-styles.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -35,11 +35,11 @@ This type of component supports all kinds of weex component as its child compone
 
 ### Events
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
 ### Example
 
-please refer to [List](./list.html)
+please refer to [List](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html)

@@ -14,12 +14,12 @@
   height: calc(100% - 72px);
 
   // &:nth-child(even) {
-  //   background: $bg-blue; 
+  //   background: $bg-blue;
   //   color: $text-white;
   // }
 
   // &:nth-child(odd) {
-    
+
 
   //   background: $bg-gray;
   //   color: $text-blue;
@@ -79,7 +79,7 @@
 .header {
   height: 100%;
   position: relative;
-  background: $bg-blue; 
+  background: $bg-blue;
   color: $text-white;
 
   #slider {
@@ -118,7 +118,7 @@
     max-width: $content-max-width;
     margin: auto;
     height: 100%;
-    
+
     .page-title {
       font-size: 2.3em;
       font-family: "Gill Sans";
@@ -153,12 +153,12 @@
 
   .left {
     left: -40px;
-  } 
+  }
 
   .right {
     top: 55%;
     right: -110px;
-  } 
+  }
 }
 
 .edge {
@@ -179,7 +179,7 @@
       padding: 2em 7em;
       display: flex;
       flex: 5;
-      flex-direction: row; 
+      flex-direction: row;
       align-items: flex-start;
     }
   }
@@ -217,7 +217,7 @@
 }
 
 .feature {
-  background: $bg-blue; 
+  background: $bg-blue;
   color: $text-white;
   .feature-content {
     height: 100%;
@@ -343,7 +343,7 @@
 }
 
 .supporting-vue {
-  background: $bg-blue; 
+  background: $bg-blue;
   color: $text-white;
 
   .sketch-content.imgbox {
@@ -359,7 +359,7 @@
       top: -50px;
       left: 0;
       right: 0;
-    } 
+    }
   }
 }
 
@@ -379,99 +379,123 @@
 }
 
 .users {
-
-  background: $bg-blue; 
-  color: $text-white;
-
+  $color: rgb(88, 87, 87);
+  li {
+    position: relative;
+  }
+  .download-btn {
+    width: 90px;
+    height: 40px;
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    bottom: 30px;
+    left: 20px;
+    opacity: 0;
+    transition: all .2s ease;
+    background: rgba(0,0,0,.5);
+    a {
+      display: block;
+      width: 50%;
+      height: 100%;
+      float:left;
+    }
+    .android {
+      background: url(../images/android-icon.png) center center no-repeat;
+      background-size: 28px 28px;
+    }
+    .ios {
+      background: url(../images/ios-icon.png) center center no-repeat;
+      background-size: 28px 28px;
+    }
+  }
+  .addmore {
+    padding: 15px 15px;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 50px;
+    position:relative;
+    cursor: pointer;
+    color: $color;
+    .bottom {
+      transition: all ease .2s;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $color;
+    }
+    &:hover {
+      .bottom {
+        width: 100%;
+      }
+    }
+    &:before {
+      content: '+';
+      font-size: 28px;
+      margin-right:10px;
+    }
+  }
+  .title {
+    font-size: 28px;
+    text-align: center;
+    line-height: 80px;
+    width: 100%;
+  }
   .sketch-content {
+    padding-top: 100px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: flex-start;
-
-    .user-logo {
-      width: 150px;
-      height: 150px;
-      margin: 1px;
-      overflow: hidden;
-      position: relative;
-      transition-duration: .3s;
-      transition-property: box-shadow;
-
-      h3 {
-        font-size: 1em;
-        margin-top: 30px;
-        text-align: center;
-        margin-top: 125px;
-      }
-
-      &:hover {
+    max-width: 1200px;
+    margin: 0 auto;
+    .app-listing {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      li  {
+        padding: 20px;
         position: relative;
-        z-index: 999;
-        box-shadow: 0px 1px 12px 0 rgba(0,0,0,0.54);
+        padding-bottom:0;
+        &:hover {
+          .img{
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,.16);
+          }
+          .download-btn{
+            opacity: 1;
+            transform: translateY(-2px);
+            z-index: 999;
+          }
+        }
+      }
+      .tooltip{
+        text-align: center;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        width: 90px;
+        font-size:14px;
+        color: #333;
+        transition: all .2s ease,transform .2s ease;
+      }
+      .img {
+        width: 90px;
+        height: 90px;
+        transition: box-shadow .2s ease,transform .2s ease;
+        vertical-align: middle;
+        border-radius: 15px;
+        background-color: transparent;
+        background-size: 90px 90px;
+        background-position: center center;
+        cursor: pointer;
       }
 
-      &:hover .user-info {
-        opacity: .9;
-      }
-    }
-
-    .tmall-logo {
-      background: $bg-light-blue url("../images/tmall.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .aliyun-logo {
-      background: $bg-light-blue url("../images/aliyun.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .taobao-logo {
-      background: $bg-light-blue url("../images/taobao.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .alibaba-logo {
-      background: $bg-light-blue url("../images/alibaba.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .cainiao-logo {
-      background: $bg-light-blue url("../images/cainiao.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .xiami-logo {
-      background: $bg-light-blue url("../images/xiami.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-
-    .youku-logo {
-      background: $bg-light-blue url("../images/youku.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .ding-logo {
-      background: $bg-light-blue url("../images/ding.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .taopiaopiao-logo {
-      background: $bg-light-blue url("../images/taopiaopiao.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .fliggy-logo {
-      background: $bg-light-blue url("../images/fliggy.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .juhuasuan-logo {
-      background: $bg-light-blue url("../images/juhuasuan.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
-    }
-    .qianniu-logo {
-      background: $bg-light-blue url("../images/qianniu.png") 50% 50% / 64px 64px no-repeat;
-      background-origin: content-box;
     }
   }
-
   .user-info {
     opacity: 0;
     position: absolute;
@@ -498,7 +522,7 @@
   }
 
   .more {
-    flex: 1;    
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -532,7 +556,7 @@
       width: 66px;
       height: 66px;
       border-radius: 100%;
-    } 
+    }
 
     .user-name {
       font-weight: bold;
@@ -552,7 +576,7 @@
   }
 
   .scene-container .go-2-doc {
-    flex: 1;    
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;

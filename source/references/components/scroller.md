@@ -1,8 +1,7 @@
 ---
 title: <scroller>
 type: references
-group: Build-in Components
-order: 8.09
+order: 8.20
 version: 2.1
 ---
 
@@ -10,7 +9,7 @@ version: 2.1
 
 <span class="weex-version">v0.6.1+</span>
 
-A scroller is a component in vertical direction which can have multiple child components in one column. If total height of its child components exceed the height of the scroller, the whole child components will be scrollable.
+Scroller is a component which can have multiple child components in one column. It supports both direcitons. If the content size of child components exceeds the frame of the scroller, the whole child components will be scrollable.
 
 Notes: A <scroller> can be used as a root element or a embed element. The scroll direction of this component is column, and it can't be changed.
 
@@ -18,7 +17,7 @@ Notes: A <scroller> can be used as a root element or a embed element. The scroll
 ## Child Components
 
 Scroller supports all kinds of components, such as div, text, etc.
-And there are two special components that can only be used inside scroller component.
+There are two special components that can only be used inside scroller component.
 
 * refresh 0.6.1 used inside list to add pull-down-to-refresh functionality.
 * loading 0.6.1 used inside list to add pull-up-to-load-more functionality.
@@ -26,20 +25,20 @@ And there are two special components that can only be used inside scroller compo
 
 ## Attributes
 
-* show-scrollbar: true/false whether show the scroll bar or not, default value is true
-* scroll-direction: <string> define scroll direction of component, horizontal or vertical
+* show-scrollbar: &lt;boolean&gt;  true | false, default value is true. This attribute indicates whether show the scroll bar or not.
+* scroll-direction: &lt;string&gt;  the scroll direction of component, horizontal or vertical.
   * `scroll-direction` defines the scrollable axis of scroller and `flex-direction` defines the layout axis of scroller. `scroll-direction` and `flex-direction` must be set to the same direction, otherwise, undefined behavior may happen.
   * Default value for `scroll-direction` is vertical, and for `flex-direction` is row .
   * Use `scroll-direction:horizontal` and `flex-direction: row` when a horizontal layout and scrollable scroller is expected.
-  * Use `scroll-direction:vertical` and `flex-direction: column` when a vertical layout and scrollable scroller is expected. But thoes two values are default, if you don't set them, it also works fine.
-* loadmoreoffset : <number> default value is 0. The loadmore event will be triggered when the list is loadmoreoffset left to reach the bottom of the list view. e.g. a list has total content length of 1000, and the loadmoreoffset is set to 400, the loadmore event will be triggered when 600 has beed scrolled and there is less than 400 left.
-* loadmoreretry : <number> default value 0，whether to reset loadmore related UI when loadmore failed, will be deprecated in further release.
-* offset-accuracy：<number> default value is 0, the vertical offset distance required to trigger the scroll event.
+  * Use `scroll-direction:vertical` and `flex-direction: column` when a vertical layout and scrollable scroller is expected. But those two values are default, if you don't set them, it also works fine.
+* loadmoreoffset : &lt;number&gt; default value is 0. The loadmore event will be triggered when the list is loadmoreoffset left to reach the bottom. e.g. A list has total content length of 1000, and the loadmoreoffset is set to 400, the loadmore event will be triggered when 600 has beed scrolled and there is less than 400 left.
+* loadmoreretry : &lt;number&gt; default value 0，whether to reset loadmore related UI when loadmore failed, will be deprecated in further release.
+* offset-accuracy：&lt;number&gt; default value is 0, the vertical offset distance required to trigger the scroll event.
 
 
 ## Styles
 
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles
@@ -49,20 +48,21 @@ common styles: check out [common styles for components](../common-style.html)
 
 ## Events
 
-`loadmore`  used with loadmoreoffset attribute. if the view has less than loadmoreoffset to scroll down, the onloadmore event will be triggered.
+**common events**: check out the [common events](/wiki/common-events.html)
 
-`scroll`  <sup class="wx-v">0.12+</sup> used with offset-accuracy attribute. This event is fired when the list scrolls. The current contentOffset value is given in this event callback.  See details in [scroll event demo](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
-common events: check out the [common events](../common-event.html)
+- support `loadmore` event. The `loadmore` event should be used in concert with loadmoreoffset. If the view has less than loadmoreoffset to scroll down, the event will be triggered.See details in [example](http://dotwe.org/vue/26e980d5ccd9538941ea6d17761219ff).
 
-* support onclick event. Check out [common events](../common-event.html)
-* support onappear / ondisappear event. Check out [common events](../common-event.html)
+- support `scroll` event <sup class="wx-v">0.12+</sup> .The `scroll` should be used in concert with offset-accuracy. This event is fired when the list scrolls. The current contentOffset value is given in this event callback.  See details in [example](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
 
+- support `scrollstart` and `scrollend` event <sup class="wx-v">0.17+</sup> .These events are fired when the list begins or ends scrolling.The current contentSize and contentOffset value are given in this event callback.  See details in [example](http://dotwe.org/vue/fd1b271fa1fa100cefb40f8d69198a1b)
 
 
 ## Restrictions
 
-Nested lists or scrollers within the same direction are not supported. In other words. nested lists/scroller must have different directions.
+Nested lists or scrollers within the same direction are not supported. In other words. nested list/scroller must have different directions.
 For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.
 
 ## example

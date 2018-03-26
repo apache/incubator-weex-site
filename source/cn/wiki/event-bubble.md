@@ -6,7 +6,9 @@ order: 4.2
 version: 2.1
 ---
 
-# 事件冒泡 <span class="api-version">v0.13+</span>
+<!-- toc -->
+
+> 仅在 <span class="api-version">v0.13</span> 及以上版本中支持。
 
 Weex 2.0 实现了 W3C 标准的事件冒泡机制。
 

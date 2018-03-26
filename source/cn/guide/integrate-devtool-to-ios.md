@@ -6,7 +6,7 @@ order: 5.5
 version: 2.1
 ---
 
-# 集成 Devtools 到 iOS
+<!-- toc -->
 
 Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。
 

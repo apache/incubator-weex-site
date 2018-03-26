@@ -2,129 +2,48 @@
 title: dom
 type: references
 group: Build-in Modules
-order: 9.01
+order: 9.03
 version: 2.1
 ---
 
-# dom
+# Dom
 
-## Summary
+## Overview
 
-A series of dom apis that sending virtual-dom's messages to the native renderer to update the dom tree. The only API for developers to use in a `.vue` file is `scrollToElement` <del>which you can use by calling the `$scrollTo` method</del>. Other APIs mentioned on this page should only be used through the native renderer in the `callNative` process.
+The `dom` module is used to manipulate the components in weex pages.
+
+You can use these APIs to get a component's bounding rect in the page, or scroll a list to some specific component, or add a font-face rule to the page and so on.
+
+> **Note:** The `addRule` method is currently used only with font-face supportability.
 
 ## API
 
-### scrollToElement(node, options)
+### scrollToElement(ref, options)
 
-Scroll the page to the specified node. This API should only be used on the element in the `scroller` or `list` component.
+Scroll the scrollable component to the referenced component. This API should only be used in the children components of a scrollable component, such as in a `<scroller>` or `<list>` component.
 
-<del>This API can be used by calling the VM's method `$scrollTo` **(deprecated)**.</del> You can use `weex.requireModule('dom').scrollToElement` to call this API in your `.we` file.
+> **NOTE:** You can use `weex.requireModule('dom')` to requrie the dom module, and use `weex.requireModule('dom').scrollToElement` to call this API.
 
 #### Arguments
 
-* `node`*(Node)*: an element that scrolled into the view.
-* `options`*(object)*: some options.
-  * `offset`*(number)*: An offset to the visible position, default is `0`.
-  * `animated` *(bool)* :set element animation, default true
+* `ref`*(Node)*: the referenced component who is meant to scroll into the view.
+* `options`*(object)*:
+  * `offset`*(number)*: An space on top of the ref component, which is also scrolling down to the visual viewport. Default is `0`.
+  * `animated` *(bool)*: <sup class="wx-v">0.10+</sup> Indicates whether a scroll animation should be played. If set to false, the ref component will jump into the view without any transition animation. Default is true.
 
 #### Example
 
-```html
-<template>
-  <div class="wrapper">
-    <scroller class="scroller">
-      <div class="row" v-for="(name, index) in rows" :ref="'item'+index">
-        <text class="text" :ref="'text'+index">{{name}}</text>
-      </div>
-    </scroller>
-    <div class="group">
-      <text @click="goto10" class="button">Go to 10</text>
-      <text @click="goto20" class="button">Go to 20</text>
-    </div>
-  </div>
-</template>
+[Scroll To Floor](http://dotwe.org/vue/56e0d256cbb26facd958dbd6424f42b2)
 
-<script>
-  const dom = weex.requireModule('dom')
+### getComponentRect(ref, callback) <span class="api-version">v0.9.4+</span>
 
-  export default {
-    data () {
-      return {
-        rows: []
-      }
-    },
-    created () {
-      for (let i = 0; i < 30; i++) {
-        this.rows.push('row ' + i)
-      }
-    },
-    methods: {
-      goto10 (count) {
-        const el = this.$refs.item10[0]
-        dom.scrollToElement(el, {})
-      },
-      goto20 (count) {
-        const el = this.$refs.item20[0]
-        dom.scrollToElement(el, { offset: 0 })
-      }
-    }
-  }
-</script>
+`support: >=0.9.4`
 
-<style scoped>
-  .scroller {
-    width: 700px;
-    height: 700px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: rgb(162, 217, 192);
-    margin-left: 25px;
-  }
-  .row {
-    height: 100px;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 30px;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #DDDDDD;
-  }
-  .text {
-    font-size: 45px;
-    color: #666666;
-  }
-  .group {
-    flex-direction: row;
-    /*justify-content: space-around;*/
-    justify-content: center;
-    margin-top: 60px;
-  }
-  .button {
-    width: 200px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 40px;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: center;
-    color: #41B883;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgb(162, 217, 192);
-    background-color: rgba(162, 217, 192, 0.2);
-  }
-</style>
-```
+You can get the bounding rect of the referenced component using this API.
 
-[try it](http://dotwe.org/vue/56e0d256cbb26facd958dbd6424f42b2)
+An example callback result should be like:
 
-### getComponentRect(ref,callback) <span class="api-version">v0.9.4+</span>
-
-You can get the view rectangle information of named element.
-
-An example callback result maybe:
-
-```json
+```javascript
 {
   result: true,
   size: {
@@ -138,140 +57,29 @@ An example callback result maybe:
 }
 ```
 
-If you want to get the rectangle information of 'weex view' container, you can specify the `ref='viewport'`.
+If you want to get the bounding rect of outside viewport of the weex container, you can specify the `ref` as a literal string `'viewport'`, like `getComponentRect('viewport', callback)`.
 
-Example Useage:
+#### Example
 
-```html
-<template>
-  <div class="wrapper" style='margin-top:200px'>
-    <div ref="box"  class="box">
-      <text class="info">Width: {{size.width}}</text>
-      <text class="info">Height: {{size.height}}</text>
-      <text class="info">Top: {{size.top}}</text>
-      <text class="info">Bottom: {{size.bottom}}</text>
-      <text class="info">Left: {{size.left}}</text>
-      <text class="info">Right: {{size.right}}</text>
-    </div>
-
-    <text class="info btn"  @click='click()'>{{this.tip}}</text>
-
-  </div>
-</template>
-
-<script>
-  const dom = weex.requireModule('dom')
-
- function round(size) {
-      var roundSize = {
-        'width': Math.round(size.width),
-        'height': Math.round(size.height),
-        'top': Math.round(size.top),
-        'bottom': Math.round(size.bottom),
-        'left': Math.round(size.left),
-        'right': Math.round(size.right)
-      }
-      return roundSize
-  }
-
-  export default {
-    data () {
-      return {
-        size: {
-          width: 0,
-          height: 0,
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0
-        },
-        ref:"viewport",
-        tip:"get box rect"
-      }
-    },
-    mounted () {
-      const result = dom.getComponentRect(this.ref, option => {
-        console.log('getComponentRect:', option)
-        this.size = round.call(this,option.size);
-      })
-    },
-
-    methods:{
-      click:function() {
-        if (this.ref === 'viewport') {
-          this.ref = this.$refs.box;
-          this.tip = "get viewport rect"
-        } else {
-          this.ref = 'viewport'
-          this.tip = "get box rect"
-        }
-
-         const result = dom.getComponentRect(this.ref, option => {
-          console.log('getComponentRect:', option)
-          this.size = round.call(this,option.size);
-        })
-      }
-    }
-
-  }
-</script>
-
-<style scoped>
-  .btn {
-    margin-top:20px;
-    border-width:2px;
-    border-style: solid;
-    border-radius:10px;
-    width:300px;
-    margin-left:170px;
-    padding-left:35px;
-    border-color: rgb(162, 217, 192);
-
-  }
-  .btn:active {
-    background-color: #8fbc8f;
-		border-color: gray;
-  }
-
-  .box {
-    align-items:center;
-    margin-left: 150px;
-    width: 350px;
-    height: 400px;
-    background-color: #DDD;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgb(162, 217, 192);
-    background-color: rgba(162, 217, 192, 0.2);
-  }
-  .info {
-    font-size: 40px;
-    top:30px;
-    margin-left:20px;
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    color: #41B883;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/87d4ed571de129ab28052b06a5d65fc8)
+[get box's rect](http://dotwe.org/vue/d69ec16302e06300096c7285baef538a)
 
 
-### addRule
-`support:v0.12.0`
+### addRule(type, contentObject) <span class="api-version">v0.12.0+</span>
 
-you can add your rule for dom by this, now we support `fontFace` only for building your custom `font-family`, use it on [text](../components/text.html#iconfont) directly.
+`support: >=0.12.0`
+
+You can add certain rules for dom throught this API. Now we only support `fontFace` for building a custom `font-family`. You can use the built `font-family` in your project for [text](../components/text.html#iconfont) component directly.
 
 #### fontFace
 
-```html
-var domModule = weex.requireModule('dom');
+```javascript
+const domModule = weex.requireModule('dom')
 domModule.addRule('fontFace', {
-    'fontFamily': "iconfont2",
-    'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"
+  'fontFamily': "iconfont2",
+  'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"
 });
-
 ```
-[try it](http://dotwe.org/vue/95b2c6716f37066d5f44c5c75c979394)
 
+#### Example
 
+[add rule fontface](http://dotwe.org/vue/95b2c6716f37066d5f44c5c75c979394)

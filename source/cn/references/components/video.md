@@ -2,7 +2,7 @@
 title: <video>
 type: references
 group: 内置组件
-order: 8.15
+order: 8.25
 version: 2.1
 ---
 
@@ -32,7 +32,7 @@ version: 2.1
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](../common-style.html)
+  查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ## 事件
 

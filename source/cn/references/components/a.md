@@ -2,85 +2,41 @@
 title: <a>
 type: references
 group: 内置组件
-order: 8.04
+order: 8.01
 version: 2.1
 ---
 
-# &lt;a&gt;
+`<a>` 用于实现页面间的跳转。
 
-`<a>` 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) 非常类似，区别在于 Weex 的 `<a>` 组件**不能**直接在里面添加文本（字符串），如果要展示文本，应该添加 `<text>` 组件。
+> **注意：** 除了本文档中注明的特性，`<a>` 的表现同 [`<div>`](./div.html) 一致。
 
-## 子组件
+> **注意：** 不能要 `<a>` 中直接添加匿名文本，请用 [`<text>`](./text.html) 包裹文本。
 
-此组件支持除了自己外的所有 Weex 组件作为子组件。
+## 基本用法
+用 `<a>` 将待跳转的元素包裹起来即可。
 
-## 特性
+    <a href="http://dotwe.org/raw/dist/a5e3760925ac3b9d68a3aa0cc0298857.bundle.wx">
+      <text>Jump</text>
+    </a> 
 
-- `href {string}`：定义了超链接的 URL。
+参见[示例](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955)。
+
+## 属性
+| 属性名           | 类型     | 值  | 默认值   |
+| -------------   | ------  | --- | ------- |
+| `href` | String | {URL}   | -   | -       |
+
+### `href`
+待跳转的页面URL，待跳转页面**需要**是一个Weex页面。如果待跳转页面是一个普通**HTML**，这会是一个**未定义**行为。
 
 ## 样式
-
-`<a>` 支持所有通用样式。
-
-- 盒模型
-- `flexbox` 布局
-- `position`
-- `opacity`
-- `background-color`
-
-查看 [组件通用样式](../common-style.html)。
+`<a>` 支持[通用样式](../../wiki/common-styles.html)。
 
 ## 事件
+`<a>`支持 [通用事件](../../wiki/common-events.html).
 
-`<a>` 支持所有通用事件。
-
-- `click`
-  **注意：**我们不能保证 `click` 事件和 `href` 跳转的执行顺序。建议不要使用 `click` 事件来处理 `href` 跳转前的逻辑处理。
-- `longpress`
-- `appear`
-- `disappear`
-
-查看 [通用事件](../common-event.html)。
-
-## 约束
-
-- **不能**直接在 `<a>` 中添加文本。
-
-- 请不要为 `<a>` 添加 `click` 事件。我们不能确保 `click` 事件和 `href` 跳转的执行顺序。
+### `click`
+> **注意：** `click` 事件的回调函数和 `href` 跳转的执行顺序**未被定义**。**不要**使用 `click` 来进行 `href` 跳转前的逻辑处理。
 
 ## 示例
-
-```html
-<template>
-  <div class="wrapper">
-    <a class="button" href="http://dotwe.org/raw/dist/3e0e40f9ddad79f98cd236753965ffd8.js">
-      <text class="text">Jump</text>
-    </a>
-  </div>
-</template>
-
-<style scoped>
-  .wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .button {
-    width: 450px;
-    margin-top: 30px;
-    margin-left: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5
-  }
-  .text {
-    font-size: 60px;
-    color: #666666;
-    text-align: center;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/025db54e37123ab5336a4b848397660f)
+* [`<a>` 的基本用法](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955)。

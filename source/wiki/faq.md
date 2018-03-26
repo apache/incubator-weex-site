@@ -4,10 +4,9 @@ type: wiki
 group: FAQ
 order: 8
 version: 2.1
-layout: post
 ---
 
-# FAQ
+<!-- toc -->
 
 ## Where are legacy docs?
 
@@ -18,7 +17,7 @@ layout: post
 
 ## Command errors in MS Windows
 
-Please install [Git for Windows](https://git-scm.com/download/win) first, see [For Windows](https://github.com/apache/incubator-weex/tree/dev#for-windows) for more information.
+Please install [Git for Windows](https://git-scm.com/download/win) first, see [For Windows](https://github.com/apache/incubator-weex/tree/master#for-windows) for more information.
 
 
 ## Gradle errors in Android Studio
@@ -33,7 +32,7 @@ Weex's native runtime support load image file from device's disk, all you have t
 This's is caused by weex-toolkit's dependency 'http-server', whose old version is not working well in chinese windows environment. We have fixed that, you should upgrade weex-toolkit before use that.
 
 ## Playground app display nothing (white screen) after scan
-Best way to find out what's happening is read debug log, you can follow [this document](./guide/index.html) to firgure out how to do that.
+Best way to find out what's happening is read debug log, you can follow [this document](/guide/index.html) to firgure out how to do that.
 
 ## About ECMAScript Version
 
@@ -132,8 +131,8 @@ else {
 
 If you have 2 pages, A and B.
 
-0. A -> B, use [storage module](./references/modules/storage.html) to transfer data
-0. B -> A, use [storage module](./references/modules/storage.html) to transfer data
+0. A -> B, use [storage module](/references/modules/storage.html) to transfer data
+0. B -> A, use [storage module](/references/modules/storage.html) to transfer data
 
 ## How to use `repeat` in Parent-Child components
 

@@ -5,32 +5,58 @@
     </a>
     <div class="main-nav">
       <ul class="links">
-        <li class="<%= page.path.match(/\/?guide\/?/i) ? 'current': '' %>">
+        <li class="<%= page.path.match(/\/?guide\//i) ? 'current': '' %>">
           <a href="<%= url_for_lang('guide') %>"><%= _p('menu.guide') %></a>
         </li>
-        <li class="<%= page.path.match(/\/?references\/?/i) ? 'current': '' %>">
+        <li class="<%= page.path.match(/\/?references\//i) ? 'current': '' %>">
           <a href="<%= url_for_lang('references') %>"><%= _p('menu.references') %></a>
         </li>
-        <li class="<%= page.path.match(/\/?wiki\/?/i) ? 'current': '' %>">
+        <li class="<%= page.path.match(/\/?wiki\//i) ? 'current': '' %>">
           <a href="<%= url_for_lang('wiki') %>"><%= _p('menu.wiki') %></a>
         </li>
-        <li class="<%= page.path.match(/\/?tools\/?/i) ? 'current': '' %>">
-            <a  href="<%= url_for_lang('tools') %>"><%= _p('menu.tools') %></a>
+        <li class="dropdown <%= page.path.match(/\/?tools\//i) ? 'current': '' %>">
+          <a><%= _p('menu.tools') %></a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/"><%= _p('menu.onlinePlayground') %></a>
+            </li>
+            <li>
+              <a href="<%= url_for_lang('tools/playground.html') %>"><%= _p('menu.playgroundApp') %></a>
+            </li>
+            <li>
+              <a href="<%= url_for_lang('tools/toolkit.html') %>"><%= _p('menu.toolkit') %></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://market.dotwe.org/"><%= _p('menu.market') %></a>
+            </li>
+            <li>
+              <a href="<%= url_for_lang('tools/helpers.html') %>"><%= _p('menu.helpers') %></a>
+            </li>
+          </ul>
         </li>
-        <li class="dropdown <%= page.path.match(/\/?community\/?/i) ? 'current': '' %>">
+        <li class="dropdown <%= page.path.match(/\/?community\//i) ? 'current': '' %>">
           <a href="javascript:;"><%= _p('menu.community') %></a>
           <ul class="dropdown-menu subnav">
             <li>
-              <a href="<%= url_for_lang('resources.html') %>"><%= _p('menu.resources') %></a>
+              <a href="<%= url_for_lang('contributing.html') %>"><%= _p('menu.contribute') %></a>
             </li>
             <li>
-              <a href="<%= url_for_lang('contributing.html') %>"><%= _p('menu.contribute') %></a>
+              <a href="<%= url_for_lang('bug-report-guidelines.html') %>"><%= _p('menu.bugReportGuidelines') %></a>
             </li>
             <li>
               <a href="<%= url_for_lang('development-process.html') %>"><%= _p('menu.developmentProcess') %></a>
             </li>
             <li>
+              <a href="<%= url_for_lang('resources.html') %>"><%= _p('menu.resources') %></a>
+            </li>
+            <li>
+              <a href="<%= url_for_lang('releasenote.html') %>"><%= _p('menu.releaseNote') %></a>
+            </li>
+            <li>
               <a href="<%= url_for_lang('who-is-using-weex.html') %>"><%= _p('menu.usingWeex') %></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://hanks10100.github.io/weex-vue-examples/"><%= _p('menu.examples') %></a>
             </li>
           </ul>
         </li>

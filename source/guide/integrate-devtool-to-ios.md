@@ -6,6 +6,8 @@ order: 5.5
 version: 2.1
 ---
 
+<!-- toc -->
+
 # Integrate Devtool to iOS
 
 Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page. To make it work, at first you must integrate devtool to your App. This page will help you integrate devtool to your iOS App.
