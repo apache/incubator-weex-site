@@ -10,11 +10,11 @@ version: 2.1
 
 <span class="weex-version">v0.11.0+</span>
 
-A component providing waterfall layout.
+A component providing waterfall layout over list component.
 
 ### Child Components
 
-Notes: The waterfall now supports the following child components: cell, header, refresh, loading and fixed-position components. Other kinds of components will not be guaranteed to be displayed correctly.
+Notes: The waterfall only supports the following child components: cell, header, refresh, loading and fixed-position components. Other kinds of components will not be guaranteed to be displayed correctly.
 
 * cell: presents the content for a single data item in waterfall
 * header: components that need to stretch across multiple columns. It can be sticky by using css position.
@@ -28,8 +28,10 @@ Notes: The waterfall now supports the following child components: cell, header, 
   * `auto`: means that the number of columns will be determined by other properties (e.g., column-width, if it has a non-auto value).
   * `<integer>`: describes the optimal number of columns into which the content of the element will be flowed. Values must be greater than 0. If both column-width and column-count have non-auto values, the integer value describes the maximum number of columns.
 * **column-gap**:sets the gap between columns. if `normal` is specified,  the gap will be `32`.
+* **left-gap**:sets the gap between left edge and left cell. if `none` is specified,  the gap will be `0`<span class="api-version">v0.19+</span>.
+* **right-gap**:sets the gap between right edge and right most cell. if `none` is specified,  the gap will be `0`<span class="api-version">v0.19+</span>.
 
-To see other attributes,  please checkout [List Component Attributes](./list.html)
+To see other attributes in list,  please checkout [List Component Attributes](./list.html)
 
 ### Styles
 
@@ -53,4 +55,4 @@ All subcomponents in waterfall support the scrollToElement API in [dom module](.
 
 ### Example
 
-see [playground waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)
+[waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)
