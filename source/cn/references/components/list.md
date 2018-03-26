@@ -72,9 +72,16 @@ version: 2.1
   - `contentOffset {Object}`: 列表的偏移尺寸
     - `x {number}`: x轴上的偏移量
     - `y {number}`: y轴上的偏移量
+    
+    [简单示例](http://dotwe.org/vue/edd19cdf2f03fbe857b76fadd65a08c3)
 
-  [示例1](http://dotwe.org/bc445ede8746a31360e3607d210304c5)
- [示例2](http://dotwe.org/vue/3b450a89aefc5c0fea0f76713e1355b6)
+    ![mobile_preview](../images/list_demo.jpg)
+
+    [滑动加载示例](http://dotwe.org/vue/2170622cc99895e5ad6af89d06355b84)
+
+    [头部sticky示例](http://dotwe.org/vue/2ecfe0a1c7b820c9d9c9965e1a8cde19)
+
+    [cell appear事件](http://dotwe.org/vue/ce0e953112b132e5897725b3149f3924)
 
 - 通用事件
 
@@ -112,4 +119,4 @@ version: 2.1
 
 ## 示例
 
-[加载更多](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)
+[滑动加载](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)

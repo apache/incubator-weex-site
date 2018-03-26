@@ -14,8 +14,15 @@ The List component, which inspired by Android RecyclerView, is a core component,
 
 It can provide excellent experience and performance while still maintaining smooth scroll and low memory usage.
 
-[list demo](http://dotwe.org/vue/edd19cdf2f03fbe857b76fadd65a08c3)
-[list demo](http://dotwe.org/vue/2170622cc99895e5ad6af89d06355b84)
+[list simple demo](http://dotwe.org/vue/edd19cdf2f03fbe857b76fadd65a08c3)
+
+![mobile_preview](../images/list_demo.jpg)
+
+[list loadmore demo](http://dotwe.org/vue/2170622cc99895e5ad6af89d06355b84)
+
+[list sticky header](http://dotwe.org/vue/2ecfe0a1c7b820c9d9c9965e1a8cde19)
+
+[list cell appear event](http://dotwe.org/vue/ce0e953112b132e5897725b3149f3924)
 
 
 ### Child Components
