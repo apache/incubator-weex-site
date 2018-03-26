@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
 ### 源码依赖(IDE Android Studio)
 
-1. 下载源码 `git clone https://github.com/alibaba/weex`
+1. 下载源码 `git clone https://github.com/apache/incubator-weex.git`
 2. 创建 Android 工程。
 3. 通过以下路径引入 SDK Module
    File->New-Import Module-> 选择 WEEX SDK Module(weex/android/sdk) -> Finish
@@ -202,9 +202,12 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
 #### 附录
 
-WXSample地址
+Native WXSample地址
+`https://github.com/apache/incubator-weex/tree/master/android/playground/app`
+`https://github.com/apache/incubator-weex/tree/master/ios/playground`
 
-`https://github.com/xkli/WXSample.git`
+Vue WXSample地址：
+`https://hanks10100.github.io/weex-vue-examples/`
 
 ## 集成到 iOS
 
