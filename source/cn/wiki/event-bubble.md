@@ -10,7 +10,7 @@ version: 2.1
 
 <span class="api-version">v0.13+</span>
 
-> **Note:** 目前仅 Weex Native（Android 和 iOS）支持，[web 端](https://github.com/weexteam/weex-vue-render) 暂时不支持此项特性.
+> **注意:** 目前仅 Weex Native（Android 和 iOS）支持，[web 端](https://github.com/weexteam/weex-vue-render) 暂时不支持此项特性.
 
 如果你是个 web 开发者，你大概对浏览器事件冒泡机制已经很熟悉了，而且可能认为 Weex 默认会支持事件冒泡。然而，Weex 在 0.13 之前是不支持这一特性的，在 0.13 版本，Weex 提供了这项支持。
 
