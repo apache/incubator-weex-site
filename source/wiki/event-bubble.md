@@ -50,7 +50,7 @@ In the event handler function, you can use the `event.stopPropagation()` method 
 ```javascript
 {
   handleClick (event) {
-    // stop event propagation.
+    // Stop event propagation.
     event.stopPropagation()
   }
 }
@@ -62,6 +62,6 @@ One thing should be noticed: **For compatibility reason, Weex does not turn on e
 
 ## Examples
 
-[enable event bubbling](http://dotwe.org/vue/fa2957ce3e9eb47ad9ae1da22d845e95): Use Weex playground APP to scan the qr-code, and then click on the middle of the rectangle with a line of text 'click me' on, you can see the event bubbling up, being handled with every listener binding on each div element, printing messages which indicate that they are indeed been reached by the event.
+- [enable event bubbling](http://dotwe.org/vue/fa2957ce3e9eb47ad9ae1da22d845e95): Use Weex playground APP to scan the qr-code, and then click on the middle of the rectangle with a line of text 'click me' on, you can see the event bubbling up, being handled with every listener binding on each div element, printing messages which indicate that they are indeed been reached by the event.
 
-[stop event propagation](http://dotwe.org/vue/2cc80e19c9b2430fb780234628065a69): Use Weex playground APP to scan the qr-code, and then click on the middle of the rectangle with a line of text 'click me' on, you can see the event bubbling is disturbed, no longer continue to spread to the root element.
+- [stop event propagation](http://dotwe.org/vue/2cc80e19c9b2430fb780234628065a69): Use Weex playground APP to scan the qr-code, and then click on the middle of the rectangle with a line of text 'click me' on, you can see the event bubbling is disturbed, no longer continue to spread to the root element.

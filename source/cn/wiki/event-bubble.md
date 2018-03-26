@@ -50,7 +50,7 @@ Weex 在 0.13 版本 SDK 里实现了事件冒泡机制。注意事件冒泡默�
 ```javascript
 {
   handleClick (event) {
-    // stop event propagation.
+    // 阻止继续冒泡.
     event.stopPropagation()
   }
 }
@@ -62,6 +62,6 @@ Weex 在 0.13 版本 SDK 里实现了事件冒泡机制。注意事件冒泡默�
 
 ## 实例
 
-[开启事件冒泡](http://dotwe.org/vue/fa2957ce3e9eb47ad9ae1da22d845e95)：使用 Weex playground App 扫描页面里的二维码，然后在打开页面中点击包含 'click me' 文字的方框，会看到事件冒泡效果，即外层的组件依次显示事件成功冒泡到当前组件的提示。
+- [开启事件冒泡](http://dotwe.org/vue/fa2957ce3e9eb47ad9ae1da22d845e95)：使用 Weex playground App 扫描页面里的二维码，然后在打开页面中点击包含 'click me' 文字的方框，会看到事件冒泡效果，即外层的组件依次显示事件成功冒泡到当前组件的提示。
 
-[阻止冒泡](http://dotwe.org/vue/2cc80e19c9b2430fb780234628065a69)：使用 Weex playground App 扫描页面里的二维码，然后在打开页面中点击包含 'click me' 文字的方框，可以看到事件冒泡被父组件中断了，不再冒泡到最外层组件。
+- [阻止冒泡](http://dotwe.org/vue/2cc80e19c9b2430fb780234628065a69)：使用 Weex playground App 扫描页面里的二维码，然后在打开页面中点击包含 'click me' 文字的方框，可以看到事件冒泡被父组件中断了，不再冒泡到最外层组件。
