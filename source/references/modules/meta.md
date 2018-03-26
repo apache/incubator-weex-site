@@ -8,7 +8,7 @@ version: 2.1
 
 # meta
 
-The meta module can be used to declare meta information for a single page, such as the viewport of the container.
+The meta module can be used to update meta information for a single page, such as the viewport of the container.
 
 ## API
 
