@@ -28,6 +28,8 @@ version: 2.1
   - `auto`: 意味着列数是被其他属性所决定的(比如 column-width)
   - `<integer>`: 最佳列数，column-width 和  column-count 都指定非0值， 则 column-count 代表最大列数。
 - **column-gap**: 列与列的间隙. 如果指定了 `normal` ，则对应 `32`.
+- **left-gap**: 左边cell和列表的间隙. 如果未指定 ，则对应 `0`<span class="api-version">v0.19+</span>.
+- **column-gap**: 右边cell和列表的间隙. 如果未指定，则对应 `0`<span class="api-version">v0.19+</span>.
 
 其他支持的属性参见 [List Component Attributes](./list.html)
 
@@ -62,4 +64,4 @@ version: 2.1
 
 ### 示例
 
-参见 [playground waterfall example](http://dotwe.org/vue/a914f99b510ed7712a3d43ebf8f03b51)
+[waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)
