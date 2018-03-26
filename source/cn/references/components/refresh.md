@@ -2,132 +2,136 @@
 title: <refresh>
 type: references
 group: 内置组件
-order: 8.09
+order: 8.11
 version: 2.1
 ---
 
 # &lt;refresh&gt;
 
-<span class="weex-version">v0.6.1+</span>
+### <span class="weex-version">v0.6.1+</span>
 
-`<refresh>` 为 `<scroller>` 和 `<list>` 提供下拉加载功能。用法与特性与 `<loading>` 类似，`<scroller>` 和 `<list>` 的子组件，且只能在被 `<scroller>` 和 `<list>` 包含时才能被正确的渲染。
+`<refresh>` 为容器提供下拉刷新功能，用法和属性与 `<loading>` 类似。
+> **注意：**`<refresh>` 是 `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>` 的子组件，只能在被它们包含时才能被正确渲染。
+
+ - 简单示例：
+
+```
+<list>
+  <refresh>
+    ...
+  </refresh>
+  ...
+</list>
+```
+ - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
 
 ## 子组件
 
-- [`<text>`](./text.html)
-- [`<image>`](./image.html)
-- `<loading-indicator>`: `<refresh>` 和 `<loading>` 组件的子组件，拥有默认的动画效果的实现。
+ - 诸如 `<text>`、`<image>` 之类的任何组件，都可以放到 `<refresh>` 进行渲染。
 
-## 特性
+ - 特殊子组件 `<loading-indicator>`: 只能作为 `<refresh>` 和 `<loading>` 的子组件使用，拥有默认的动画效果实现。
 
-- `display {string}`：可选值为 `show` 或者 `hide`，仅隐藏 `<indicator>`，`<refresh>` 其他子组件依然可见，`<refresh>` 事件仍会被触发。
+ - 简单示例：
 
-## 样式
+```
+<refresh>
+  <text>Refreshing</text>
+  <loading-indicator></loading-indicator>
+  ...
+</refresh>
+```
+ - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
 
-支持所有通用样式。
+## 属性
 
-- 盒模型
-- `flexbox` 布局
-- `position`
-- `opacity`
-- `background-color`
+| 属性名           | 类型     | 值                          | 默认值     |
+| ------------- | ------ | -------------------------- | ------- |
+| `display` | String | show / hide             | show      |
 
-查看 [组件通用样式](../common-style.html)
+### `display`
 
-## 事件
+ - `show`：如果 `<refresh>` 中包含 `<loading-indicator>`，则将其显示并开始默认动画。
 
-- `refresh`： 当 `<scroller>`/`<list>` 被下拉时触发。
-- `pullingdown`<span class="weex-version">v0.6.1+</span>: 当 `<scroller>`/`<list>` 被下拉时触发，可以从事件的参数对象中获取 dy,pullingDistance, viewHeight, type
+ - `hide`：收起 refresh view，如果 `<refresh>` 中包含 `<loading-indicator>`，则将其视图隐藏。
 
-  ```
-  dy: 前后两次回调滑动距离的差值
-  pullingDistance: 下拉的距离
-  viewHeight: refreshView 高度
-  type: "pullingdown" 常数字符串
-  ```
+> **注意：** `display` 的设置必须成对出现，即设置 `display="show"`,必须有对应的 `display="hide"`。
 
-## 约束
+ - 简单示例：
 
-- `<refresh>` 不支持 `remove`，v0.9 版本会修复。
-- `display` 值为 `show` 或 `hide`。仅隐藏 `<indicator>`，`<refresh>` 其他子组件依然可见，`refresh` 事件仍会被触发。
-
-  如果需要 `<refresh>` hide 时隐藏文案并不再触发事件，有两种解决方法：
-
-  1. 修改提示文案，并在 `refresh` 事件中添加判断逻辑；
-  2. v0.9+ 可通过 `remove` 解决。
-
-- 只能通过 `display` 特性进行展示和隐藏，且必须成对出现，即设置 `display="show"`,必须有对应的 `display="hide"`。
-
-## 示例
-
-```html
+```
 <template>
-  <scroller class="scroller">
-    <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
-      <text class="indicator">Refreshing ...</text>
+  <list>
+    <refresh @refresh="onrefresh" :display="refreshing ? 'show' : 'hide'">
+      ...
     </refresh>
-    <div class="cell" v-for="num in lists">
-      <div class="panel">
-        <text class="text">{{num}}</text>
-      </div>
-    </div>
-  </scroller>
+    ...
+  </list>
 </template>
 
 <script>
-  const modal = weex.requireModule('modal')
-
-  export default {
-    data () {
-      return {
-        refreshing: false,
-        lists: [1, 2, 3, 4, 5]
-      }
+  ...
+  methods: {
+    onrefresh (event) {
+      this.refreshing = true
+      setTimeout(() => {
+        this.refreshing = false
+      }, 2000)
     },
+  }
+</script>
+```
+ - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
+
+ - 支持所有通用属性。查看 [组件通用属性](../common-attrs.html)
+
+## 样式
+
+ - 支持所有通用样式。查看 [组件通用样式](/cn/wiki/common-styles.html)
+
+## 事件
+
+### `refresh`
+
+ - 当 `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>` 被下拉时触发。
+
+### `pullingdown` <span class="weex-version">v0.6.1+</span>
+
+ - 当 `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>` 被下拉时触发，可以从 `event` 参数对象中获取 dy, pullingDistance, viewHeight, type
+
+  - dy: 前后两次回调滑动距离的差值
+  - pullingDistance: 下拉的距离
+  - viewHeight: refresh 组件高度
+  - type: "pullingdown" 常数字符串
+
+
+ - 简单示例：
+
+```
+<scroller>
+  <refresh @refresh="onrefresh" @pullingdown="onpullingdown">
+    ...
+  </refresh>
+  ...
+</scroller>
+
+<script>
+  export default {
     methods: {
       onrefresh (event) {
-        console.log('is refreshing')
-        modal.toast({ message: 'refresh', duration: 1 })
-        this.refreshing = true
-        setTimeout(() => {
-          this.refreshing = false
-        }, 2000)
+        ...
       },
       onpullingdown (event) {
-        console.log('is onpulling down')
-        modal.toast({ message: 'pulling down', duration: 1 })
+        console.log("dy: " + event.dy)
+        console.log("pullingDistance: " + event.pullingDistance)
+        console.log("viewHeight: " + event.viewHeight)
+        console.log("type: " + type)
       }
     }
   }
 </script>
-
-<style scoped>
-  .indicator {
-    color: #888888;
-    font-size: 42px;
-    text-align: center;
-  }
-  .panel {
-    width: 600px;
-    height: 250px;
-    margin-left: 75px;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    flex-direction: column;
-    justify-content: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5;
-  }
-  .text {
-    font-size: 50px;
-    text-align: center;
-    color: #41B883;
-  }
-</style>
 ```
+ - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
 
-[try it](http://dotwe.org/vue/d3db5f344220a6339de044a5e33c502b)
+## 示例
 
-更多示例可查看 [`<list>`](./list.html)
+ - [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)

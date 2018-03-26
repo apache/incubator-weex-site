@@ -1,28 +1,29 @@
 ---
-title: HTML5 扩展
+title: 扩展 HTML5 的功能
 type: guide
 group: 扩展
 order: 6.1
 version: 2.1
 ---
 
-# 如何扩展 Weex Web 端的组件和模块
+<!-- toc -->
+
+Vue.js 本身就是一个独立的前端框架，在浏览器中完全能够不基于 Weex 容器渲染。因此，针对 Weex 平台扩展 Vue.js 的 Web 端组件，和直接使用 Vue.js 开发一个 Web 组件是一样的。具体的组件编写方法可以参考其官方文档：[组件](https://cn.vuejs.org/v2/guide/components.html) ，另外建议使用 `.vue` 格式的文件编写组件，使用方法参考：[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)。
+
+# 扩展 Web 端 renderer 的内置组件
 
 Weex 本身提供了很多内置组件和模块，也具备横向扩展的能力，允许开发者自行扩展和定制。需要注意的是，Weex 是一个跨平台的解决方案，扩展其内置组件或模块，需要在三端（Android、iOS、Web）中都有相应的实现。
 
 Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得更加容易。
 
-## 扩展 Web 组件
+目前我们提供了 [weex-vue-render](https://github.com/weexteam/weex-vue-render) 作为 Vue 2.x Web 端的渲染器。首先引入该库到你的项目里，然后你就可以使用 `weex.registerComponent` 来进行内置组件扩展了，也可以使用 `Vue.component`，两者基本上是一致的。
 
-Vue.js 本身就是一个独立的前端框架，在浏览器中完全能够不基于 Weex 容器渲染。因此，针对 Weex 平台扩展 Vue.js 的 Web 端组件，和直接使用 Vue.js 开发一个 Web 组件是一样的。具体的组件编写方法可以参考其官方文档：[组件](https://cn.vuejs.org/v2/guide/components.html) ，另外建议使用 `.vue` 格式的文件编写组件，使用方法参考：[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)。
-
-### 扩展组件示例
+## 扩展内置组件示例
 
 以扩展 `<sidebar>` 为例，首先应该编写组件自身的逻辑：
 
 ```html
 <!-- sidebar.vue -->
-
 <template>
   <div class="sidebar">
     <slot></slot>
@@ -49,9 +50,12 @@ Vue.js 本身就是一个独立的前端框架，在浏览器中完全能够不�
 
 ```js
 import Vue from 'vue'
+import weex from 'weex-vue-render'
 import Sidebar from './path/to/sidebar.vue'
-
+weex.init(Vue)
 // 全局注册 sidebar 组件
+weex.registerComponent('sidebar', Sidebar)
+// 或者使用 Vue.component
 Vue.component('sidebar', Sidebar)
 ```
 
@@ -59,21 +63,22 @@ Vue.component('sidebar', Sidebar)
 
 如果你定制组件时不得不用到目前 Weex 不支持的标签和样式，在这种情况下才是真正的“扩展”了 Weex 的组件，你还需要在 Android 和 iOS 中有相应的实现，不然会导致渲染异常。
 
-## 扩展 Web 模块
+# 扩展 Web 模块
 
 除了通用组件以外，Weex 还有提供了通用的模块，可以方便的调用原生 API。通常来说，注册 Weex 模块要求三端都得有相应的实现，否则会影响其正常的使用。
 
-### 注册模块
+## 注册模块
 
 如果你引入了 `weex-vue-render` 这个库，那么在全局能获取到 `weex` 这个变量，其中提供了 `registerModule` 方法可以注册模块。
 
-#### API 格式
+## API 格式
 
 + `registerModule`
-  0. `name`: {String} 必选，模块名称。
-  0. `define`: {Object} 必选，模块的定义。
+  1. `name`: {String} 必选，模块名称。
+  2. `define`: {Object} 必选，模块的定义。
+  3. `meta`: {Object} 可选，如果你需要将非 iterable 的属性或方法注册到模块对象里，你才需要用到这个参数，将 `{ registerType: 'assignment' }` 作为 meta 参数传入即可。
 
-#### 注册模块示例
+## 注册模块示例
 
 下边的代码注册了一个名为 `guide` 的模块：
 
@@ -88,7 +93,7 @@ weex.registerModule('guide', {
 })
 ```
 
-### 使用模块
+## 使用模块
 
 在 `weex` 上提供了 `require` 方法用于获取已注册的模块，直接传递模块名即可：
 
@@ -101,4 +106,4 @@ guide.greeting()
 guide.farewell()
 ```
 
-上述写法在 Native 环境中依然有效，只不过模块中的方法是由 Native 提供的。
+上述模块使用方法在 Native 环境中依然有效，只不过模块中的方法是由 Native 提供的。

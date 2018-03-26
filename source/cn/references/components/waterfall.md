@@ -2,7 +2,7 @@
 title: <waterfall>
 type: references
 group: 内置组件
-order: 8.17
+order: 8.26
 version: 2.1
 ---
 
@@ -41,7 +41,7 @@ version: 2.1
 - `opacity`
 - `background-color`
 
-查看 [组件通用样式](../common-style.html)
+查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ### 事件
 
@@ -54,7 +54,7 @@ version: 2.1
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 ### API
 
@@ -62,4 +62,4 @@ version: 2.1
 
 ### 示例
 
-参见 [playground waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)
+参见 [playground waterfall example](http://dotwe.org/vue/a914f99b510ed7712a3d43ebf8f03b51)

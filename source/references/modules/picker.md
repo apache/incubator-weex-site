@@ -2,7 +2,7 @@
 title: picker
 type: references
 group: Build-in Modules
-order: 9.10
+order: 9.08
 version: 2.1
 ---
 
@@ -24,6 +24,15 @@ pick data(single column)
 - `options {Object}`:pick options
   - `index {number}`:default selected row
   - `items {array}`:picker's data
+  - `textColor {color}`：text color in the picker item
+  - `selectionColor {color}`：the background color of the selected item in the picker
+  - `confirmTitle {string}`：confirm button text
+  - `cancelTitle {string}`：cancel button text
+  - `confirmTitleColor {color}`：confirm button text color
+  - `cancelTitleColor {color}`：cancel button text color
+  - `title {string}`：title of dialog
+  - `titleColor {color}`：text color of the dialog title
+  - `titleBackgroundColor {color}`：background color of the dialog title
 
 - `callback {function (ret)}`:the callback function after executing this action.`ret {Object}` is `callback` 's parameter:
   - `result {string}`:result is one of success,cancel,error

@@ -4,62 +4,140 @@ type: releasenote
 layout: post
 ---
 
-# Release Note
+## v0.18.0
+
+- `feature` `Android/iOS` TemplateList support lifecycle and statefull component [#1019](https://github.com/apache/incubator-weex/pull/1019) [#1023](https://github.com/apache/incubator-weex/pull/1023)
+- `feature` `Android` Support real time format to input component, support disable copy paste to input component [#1013](https://github.com/apache/incubator-weex/pull/1013)
+- `feature` `Android` Support use base64 to import fontface [#1006](https://github.com/apache/incubator-weex/pull/1006)
+- `feature` `Android` High performance binary Wson supported [#974](https://github.com/apache/incubator-weex/pull/974)
+- `feature` `Android` New touch dispatch mechanism and bubble sync method call for android touch event [#961](https://github.com/apache/incubator-weex/pull/961)
+- `feature` `Android` Support set global font to text component [#952](https://github.com/apache/incubator-weex/pull/952)
+- `feature` `Android` List component supported show scrollbar options [#951](https://github.com/apache/incubator-weex/pull/951)
+- `feature` `Android` box-shadow support multi shadows declaration [#915](https://github.com/apache/incubator-weex/pull/915)
+- `feature` `Android` Support `role` property to accessibility [#911](https://github.com/apache/incubator-weex/pull/911)
+- `bugfix` `Android` Fix network operation on main thread by WebSocket [#1015](https://github.com/apache/incubator-weex/pull/1015)
+- `bugfix` `Android` Fix font not rendered right when font is first downloaded [#972](https://github.com/apache/incubator-weex/pull/972)
+- `bugfix` `Android` Fix the `background-color` can not be set to `transparent` [#959](https://github.com/apache/incubator-weex/pull/959)
+- `bugfix` `Android` Improve JSService usage, support mutil type params [#941](https://github.com/apache/incubator-weex/pull/941)
+- `bugfix` `Android` Fix fix security weaknesses on libweex*.so [#934](https://github.com/apache/incubator-weex/pull/934)
+- `bugfix` `Android` Fix long-running operation on WXThread.scure() [#919](https://github.com/apache/incubator-weex/pull/919)
+- `bugfix` `Android` Fix status of pseudo class can not restore after touch [#907](https://github.com/apache/incubator-weex/pull/907)
+- `bugfix` `Android` Fix parallax component not reseted to right position when scrollToElement with animated:false option [#906](https://github.com/apache/incubator-weex/pull/906)
+- `feature` `weex-js-framework` Upgrade weex-vue-framework to [v2.5.13](https://github.com/vuejs/vue/releases/tag/v2.5.13), which implemented the `<recycle-list>`.
+- Only update batched and mutated attributes and styles in js framework ([#953](https://github.com/apache/incubator-weex/pull/953))
+- `feature` `weex-js-framework` Support append as tree on root element ([#954](https://github.com/apache/incubator-weex/pull/954))
+- `improvement` `weex-js-framework` Enhance the multi-instance isolation (sandbox) ([#960](https://github.com/apache/incubator-weex/pull/960))
+- `improvement` `weex-js-framework` Refactor the file structure and build scripts of js framework ([#964](https://github.com/apache/incubator-weex/pull/964) | [#1010](https://github.com/apache/incubator-weex/pull/1010))
+- `improvement` `weex-js-framework` Stop using ES6 Proxy to require a module ([#1017](https://github.com/apache/incubator-weex/pull/1017))
+- `bugfix` `iOS` bugfix about longpress and pangesture innner waterfall component invalid[#1007](https://github.com/apache/incubator-weex/pull/1007)
+- `improvemnet` `iOS` improve for threadSafe dictionary [1005](https://github.com/apache/incubator-weex/pull/1005)
+- `feature` `iOS` deprecate WXCallback and WXModuleCallback, use WXKeepAliveCallback and WXModuleKeepAliveCallback [1000](https://github.com/apache/incubator-weex/pull/1000)
+- `bugfix` `iOS` bugfix about iconfont draw failed on occasion [#997](https://github.com/apache/incubator-weex/pull/997)
+- `improvement` `iOS` [remove redundant implementation of slider](https://github.com/apache/incubator-weex/pull/973)
+- `feature` `iOS` support css value for safe-area-inset-left, safe-area-inset-right, safe-area-inset-top, and safe-area-inset-bottom like [iPhone X design](https://webkit.org/blog/7929/designing-websites-for-iphone-x/)[#916](https://github.com/apache/incubator-weex/pull/916)
+- `feature` `iOS` support word-wrap on iOS when drawing text [#887](https://github.com/apache/incubator-weex/pull/887)
+- `improvement` `web` refactor appear watcher, image lazyloading, components implementation, some APIs, and the event triggering and handling system.
+- `improvement` `web` significantly improved runtime performance.
+- `bugfix` `web` fix event binding.
+- `bugfix` `web` fix indicator item styles.
+- `bugfix` `web` fix slider's overflow style.
+- `feature` `web` support create weex components through render function.
+- `feature` `web` support binding native events for custom components with .native modifier.
+- `feature` `web` all weex native events should be dispatched through dom elements.
+- `improvement` `web` refactor test procedure flow and increase test cases' total number to 96.
+- `bugfix` `web` fix two way binding for `<input>` component.
+- `bugfix` `web` fix return event for `<input>` component.
+- `bugfix` `web` fix errors relative to createEventMap.
+- `feature` `web` now you can use 'wx' unit.
+- `improvement` `web` remove weex.createEventMap method.
+- `bugfix` `web` fix <switch> component's styles.
+- `bugfix` `web` fix test cases for `<switch>` and `<input>`.
+- `bugfix` `web` webview.reload for `<web>` component always throws a error.
+- `bugfix` `web` should trigger error event when a cross origin issue arises.
+- `bugfix` `web` always trigger a error event when loaded a cross origin page.
+- `bugfix` `web` trigger duplicated appear/disappear events when there're more than one list.
+
+## v0.17
+
+* `feature` `Android/iOS` Support `writing direction style:direction=rtl`([#782](https://github.com/apache/incubator-weex/pull/782)[#886](https://github.com/apache/incubator-weex/pull/886))
+* `feature` `Android/iOS` Support scroll start and scroll end event on scroller and list ([#858](https://github.com/apache/incubator-weex/pull/858)[856](https://github.com/apache/incubator-weex/pull/856))
+* `feature` `iOS` support text max-width （[#834](https://github.com/apache/incubator-weex/pull/834)）
+* `feature` `Android` CSS Transiton Animation Supported component ([#851](https://github.com/apache/incubator-weex/pull/851))
+* `feature` `Android` New `local` module ([#781](https://github.com/apache/incubator-weex/pull/781))
+* `feature` `Android` Support ripple background on Android 5.0 and higher ([#792](https://github.com/apache/incubator-weex/pull/792))
+* `feature` `Android` Support multi language on dialog ([#831](https://github.com/apache/incubator-weex/pull/831))
+* `feature` `H5` Support lazyload and appear watcher when body height set to 100% ([#827](https://github.com/apache/incubator-weex/pull/827)).
+* `feature` `H5` Add try catch for storage accessing incase user disabled the related function in a browser ([#827](https://github.com/apache/incubator-weex/pull/827)).
+* `feature` `H5` image support css sprite (sprite-src, sprite-position, sprite-width) ([#827](https://github.com/apache/incubator-weex/pull/827)).
+* `feature` `JSFM` Support batch update styles and attributes in Vue.js ([#819](https://github.com/apache/incubator-weex/pull/819) [#7046](https://github.com/vuejs/vue/pull/7046))
+* `feature` `JSFM` Stop trimming CSS units in richtext component. ([#6927](https://github.com/vuejs/vue/pull/6927))
+* `feature` `JSFM` Stop rethrow the captured error on Weex platform. ([#7024](https://github.com/vuejs/vue/pull/7024))
+* `feature` `JSFM` Upgrade weex-vue-framework to 2.5.3 ([release nodes](https://github.com/vuejs/vue/releases/tag/v2.5.3))
+* `feature` `JSFM` Adjust the behavior of `nextTick` to improve compatibility.
+* `bugfix` `iOS` bugfix boxshadow render abnormal （[#791](https://github.com/apache/incubator-weex/pull/791)）
+* `bugfix` `iOS` bugfix timer exposed on JSContxt （[#839](https://github.com/apache/incubator-weex/pull/839)）
+* `bugfix` `iOS` fix iOS8 scrollview’s assign delegate crash （[#838](https://github.com/apache/incubator-weex/pull/838)）
+* `bugfix` `iOS` fix setViewport：sometimes doesn’t work（[#843](https://github.com/apache/incubator-weex/pull/843)）
+* `bugfix` `iOS` fix addEvent lead to generate a new view while it as been recycled （[#837](https://github.com/apache/incubator-weex/pull/837)）
+* `bugfix` `iOS` fix about setting nan frame crash （[#853](https://github.com/apache/incubator-weex/pull/853)）
+* `bugfix` `iOS` disable tableview estimation row or section height which make list component behavior abnormal （[#867](https://github.com/apache/incubator-weex/pull/867)）
+* `bugfix` `Android` Fix that moveElement doesn’t work when parent is not a list ([#805](https://github.com/apache/incubator-weex/pull/805))
+* `bugfix` `Android` Fix flicker caused by coexistence of box-shadow and border-radius (#[780](https://github.com/apache/incubator-weex/pull/780))
+* `bugfix` `Android` Fix android new Date() cannot get accuracy time ([#753](https://github.com/apache/incubator-weex/pull/753))
+* `bugfix` `H5` Fix scroll event listenning and scrollToElement on chrome for the latest version ([#827](https://github.com/apache/incubator-weex/pull/827)).
 
 ## v0.16
------
-* + support 3d rotate ([#532](https://github.com/apache/incubator-weex/pull/532) [#418](https://github.com/apache/incubator-weex/pull/418))
-* + new feature support perspective function in transform ([#551](https://github.com/apache/incubator-weex/pull/551)[#532](https://github.com/apache/incubator-weex/pull/532))
-* + new feature support save image to photo album ([547](https://github.com/apache/incubator-weex/pull/547) [575](https://github.com/apache/incubator-weex/pull/575) [544](https://github.com/apache/incubator-weex/pull/544))
-* + support `image.save` ([#575](https://github.com/apache/incubator-weex/pull/575)).
-* + optimize event binding and support mobile firefox, and also fix a lot of other things ([#606](https://github.com/apache/incubator-weex/pull/606)).
-* + Support js service in Rax DSL.
-* + Partial support of sending `ArrayBuffer` between js and native.
-* + Add basic support of `<recycle-list>`, both in Vue and Rax DSL.
-* + Support saving image to photo alubm in `image` [#547](https://github.com/apache/incubator-weex/pull/547)
-* + Support perspective features [#551](https://github.com/apache/incubator-weex/pull/551)
-* + New interface to performance tracing [#586](https://github.com/apache/incubator-weex/pull/586)
-* + Add the ability of FlatGUI, it can reduce the view hierarchy in `cell` [#643](https://github.com/apache/incubator-weex/pull/643)
-* + Support the `box-shadow` style for Android 4.3 and higher [#685](https://github.com/apache/incubator-weex/pull/685)
-* + Support float interval/delay in timer [#699](https://github.com/apache/incubator-weex/pull/699)
-* + New `recycle-list` compoent with hight performance and low memory cost [#726](https://github.com/apache/incubator-weex/pull/726)
-* * remove dependency about socketRocket dependency in iOS.
-* * fix coretext crash in iOS.
-* * fix toast view still pop while the page was destroyed in iOS.
-* * separate weex-vue-render into two parts: render core and plugins ([#533](https://github.com/apache/incubator-weex/pull/533)).
-* * Fix Jni crash due to emoji [#574](https://github.com/apache/incubator-weex/pull/574)
-* * Fix the lost refresh header of `list` in viewpager [#601](https://github.com/apache/incubator-weex/pull/601)
-* * Fix draw iconfont fail when first download iconfont [#625](https://github.com/apache/incubator-weex/pull/625)
-* * Fix the problem of 'text-overflow:clip' [#718](https://github.com/apache/incubator-weex/pull/718)
-* * Fix android new Date() cannot get accuracy time [#753](https://github.com/apache/incubator-weex/pull/753)
+
+* support 3d rotate ([#532](https://github.com/apache/incubator-weex/pull/532) [#418](https://github.com/apache/incubator-weex/pull/418))
+* new feature support perspective function in transform ([#551](https://github.com/apache/incubator-weex/pull/551)[#532](https://github.com/apache/incubator-weex/pull/532))
+* new feature support save image to photo album ([547](https://github.com/apache/incubator-weex/pull/547) [575](https://github.com/apache/incubator-weex/pull/575) [544](https://github.com/apache/incubator-weex/pull/544))
+* support `image.save` ([#575](https://github.com/apache/incubator-weex/pull/575)).
+* optimize event binding and support mobile firefox, and also fix a lot of other things ([#606](https://github.com/apache/incubator-weex/pull/606)).
+* Support js service in Rax DSL.
+* Partial support of sending `ArrayBuffer` between js and native.
+* Add basic support of `<recycle-list>`, both in Vue and Rax DSL.
+* Support saving image to photo alubm in `image` [#547](https://github.com/apache/incubator-weex/pull/547)
+* Support perspective features [#551](https://github.com/apache/incubator-weex/pull/551)
+* New interface to performance tracing [#586](https://github.com/apache/incubator-weex/pull/586)
+* Add the ability of FlatGUI, it can reduce the view hierarchy in `cell` [#643](https://github.com/apache/incubator-weex/pull/643)
+* Support the `box-shadow` style for Android 4.3 and higher [#685](https://github.com/apache/incubator-weex/pull/685)
+* Support float interval/delay in timer [#699](https://github.com/apache/incubator-weex/pull/699)
+* New `recycle-list` compoent with hight performance and low memory cost [#726](https://github.com/apache/incubator-weex/pull/726)
+* remove dependency about socketRocket dependency in iOS.
+* fix coretext crash in iOS.
+* fix toast view still pop while the page was destroyed in iOS.
+* separate weex-vue-render into two parts: render core and plugins ([#533](https://github.com/apache/incubator-weex/pull/533)).
+* Fix Jni crash due to emoji [#574](https://github.com/apache/incubator-weex/pull/574)
+* Fix the lost refresh header of `list` in viewpager [#601](https://github.com/apache/incubator-weex/pull/601)
+* Fix draw iconfont fail when first download iconfont [#625](https://github.com/apache/incubator-weex/pull/625)
+* Fix the problem of 'text-overflow:clip' [#718](https://github.com/apache/incubator-weex/pull/718)
+* Fix android new Date() cannot get accuracy time [#753](https://github.com/apache/incubator-weex/pull/753)
 
 ## v0.15
 ------
-* + support fast click and hairlines border [#507](https://github.com/apache/incubator-weex/pull/507).
-* + Add `weex.supports` api for feature detections. [#6053](https://github.com/vuejs/vue/pull/6053)
-* + Change default image quality to `WXImageQuality.AUTO` [#478](https://github.com/apache/incubator-weex/pull/478)
-* + Support the `scroll` event on horizontal scroller[#494](https://github.com/apache/incubator-weex/pull/494)
-* * Fix the console API to adapt JSC on Android. [#470](https://github.com/apache/incubator-weex/pull/470)
-* * Fix invalid call scrollToElement when has not option param [#491](https://github.com/apache/incubator-weex/pull/491)
-* * Fix the lines of `text` cannot be reset [#493](https://github.com/apache/incubator-weex/pull/493)
-* * Fix invalid init index on `slider` [#510](https://github.com/apache/incubator-weex/pull/510)
-* * Fix Memory optimization for `list` [#512](https://github.com/apache/incubator-weex/pull/512)
+* support fast click and hairlines border [#507](https://github.com/apache/incubator-weex/pull/507).
+* Add `weex.supports` api for feature detections. [#6053](https://github.com/vuejs/vue/pull/6053)
+* Change default image quality to `WXImageQuality.AUTO` [#478](https://github.com/apache/incubator-weex/pull/478)
+* Support the `scroll` event on horizontal scroller[#494](https://github.com/apache/incubator-weex/pull/494)
+* Fix the console API to adapt JSC on Android. [#470](https://github.com/apache/incubator-weex/pull/470)
+* Fix invalid call scrollToElement when has not option param [#491](https://github.com/apache/incubator-weex/pull/491)
+* Fix the lines of `text` cannot be reset [#493](https://github.com/apache/incubator-weex/pull/493)
+* Fix invalid init index on `slider` [#510](https://github.com/apache/incubator-weex/pull/510)
+* Fix Memory optimization for `list` [#512](https://github.com/apache/incubator-weex/pull/512)
 
 ## v0.14
 ------
-* + support `waterfall` component ([#438](https://github.com/apache/incubator-weex/pull/438)).
-* + support pseudo-class ([#474](https://github.com/apache/incubator-weex/pull/474)).
-* + Support component method in Vue DSL. ([proposal](https://github.com/alibaba/weex/issues/969))
-* + Support returning value synchronously for module methods. ([proposal](https://github.com/alibaba/weex/issues/1677))
-* + Support drag-drop on `list` [#416](https://github.com/apache/incubator-weex/pull/416)
-* + Support rotateX and rotateY, optimize animation as well [#418](https://github.com/apache/incubator-weex/pull/418)
-* * Fix wrong vertical offset in scroll event on `waterfall` [#424](https://github.com/apache/incubator-weex/pull/424)
-* * Fix `clearTimeout` and `clearInterval` doesn't work when funId is greater than 127 [#439](https://github.com/apache/incubator-weex/pull/439)
-
+* support `waterfall` component ([#438](https://github.com/apache/incubator-weex/pull/438)).
+* support pseudo-class ([#474](https://github.com/apache/incubator-weex/pull/474)).
+* Support component method in Vue DSL. ([proposal](https://github.com/alibaba/weex/issues/969))
+* Support returning value synchronously for module methods. ([proposal](https://github.com/alibaba/weex/issues/1677))
+* Support drag-drop on `list` [#416](https://github.com/apache/incubator-weex/pull/416)
+* Support rotateX and rotateY, optimize animation as well [#418](https://github.com/apache/incubator-weex/pull/418)
+* Fix wrong vertical offset in scroll event on `waterfall` [#424](https://github.com/apache/incubator-weex/pull/424)
+* Fix `clearTimeout` and `clearInterval` doesn't work when funId is greater than 127 [#439](https://github.com/apache/incubator-weex/pull/439)
 
 ## v0.13.0
-------
-### Notable Changes
+
 * Slider implemention is refactored [Pull Request#414](https://github.com/apache/incubator-weex/pull/414)
 * Improve integration test. We are working with macaca team, to write better test code.[Pull Request#411](https://github.com/apache/incubator-weex/pull/411) [Pull Request#397](https://github.com/apache/incubator-weex/pull/397) [Pull Request#402](https://github.com/apache/incubator-weex/pull/402) [Pull Request#413](https://github.com/apache/incubator-weex/pull/413) [Pull Request#390](https://github.com/apache/incubator-weex/pull/390) [Pull Request#346](https://github.com/apache/incubator-weex/pull/346) [Pull Request#319](https://github.com/apache/incubator-weex/pull/319) [Pull Request#304](https://github.com/apache/incubator-weex/pull/304) [Pull Request#295](https://github.com/apache/incubator-weex/pull/295)
 * `scroller` now has `pagingEnabled` attribute, which can enable `paging` feature in native [Pull Request#393](https://github.com/apache/incubator-weex/pull/393)
@@ -69,76 +147,66 @@ layout: post
 * `list` component has new type of event for `sticky` feature [Pull Request#332](https://github.com/apache/incubator-weex/pull/332)
 * Support bota and atob [Pull Request#315](https://github.com/apache/incubator-weex/pull/315)
 * Fix mixing background-color and border-color(rgba) in android [Pull Request#359](https://github.com/apache/incubator-weex/pull/359)
+* Beside these, lots of crashes and bugs are fixed.
+  * [Pull Request#441](https://github.com/apache/incubator-weex/pull/441)
+  * [Pull Request#413](https://github.com/apache/incubator-weex/pull/413)
+  * [Pull Request#403](https://github.com/apache/incubator-weex/pull/403)
+  * [Pull Request#373](https://github.com/apache/incubator-weex/pull/373)
+
+## v0.12.0 (First Offical Release)
 
 
-Beside these, lots of crashes and bugs are fixed.[Pull Request#441](https://github.com/apache/incubator-weex/pull/441) [Pull Request#413](https://github.com/apache/incubator-weex/pull/413) [Pull Request#403](https://github.com/apache/incubator-weex/pull/403) [Pull Request#373](https://github.com/apache/incubator-weex/pull/373)
-
-## v0.12.0 ( First Offical Release)
----------
-- C++ timer  by lycool
-Discussed in https://lists.apache.org/thread.html/567c9b19d68ccf3e0d24c1467298ebcd4316ffa524c557a34c6c087f@%3Cdev.weex.apache.org%3E
-relate pull requests:[apache/incubator-weex/pull/228|https://github.com/apache/incubator-weex/pull/228], [apache/incubator-weex/pull/232|https://github.com/apache/incubator-weex/pull/232], [apache/incubator-weex/pull/221|https://github.com/apache/incubator-weex/pull/221]
-
-- Add scroller/list scroll event in html5 render
-android&iOS already have this feature in v0.11
-https://github.com/apache/incubator-weex/commit/f50fba8647c8bb6ac522b1a4569a2a2269da1953
-
-- Enhance accessibility, new `aria-label` & `role` support
-[apache/incubator-weex/pull/149|https://github.com/apache/incubator-weex/pull/149]
-
-- Native input/textarea enhancement by kfeagle &  misakuo
-support `number` data type; support soft keyboard event 
-
-- Picker module enhancement
-More picker options to customize picker dialog style(background color etc.). Related pull requests: [apache/incubator-weex/pull/234|https://github.com/apache/incubator-weex/pull/234], [apache/incubator-weex/pull/233|https://github.com/apache/incubator-weex/pull/233]
-
-- Android DOM module refactor
-Seperate module code by action, increasing the maintainability.
-[apache/incubator-weex/pull/104|https://github.com/apache/incubator-weex/pull/104]
+- C++ timer by lycool
+ - Discussed in https://lists.apache.org/thread.html/567c9b19d68ccf3e0d24c1467298ebcd4316ffa524c557a34c6c087f@%3Cdev.weex.apache.org%3E
+ - relate pull requests:[apache/incubator-weex/pull/228|https://github.com/apache/incubator-weex/pull/228], [apache/incubator-weex/pull/232|https://github.com/apache/incubator-weex/pull/232], [apache/incubator-weex/pull/221|https://github.com/apache/incubator-weex/pull/221]
+- Add scroller/list scroll event in html5 render android&iOS already have this feature in v0.11 https://github.com/apache/incubator-weex/commit/f50fba8647c8bb6ac522b1a4569a2a2269da1953
+- Enhance accessibility, new `aria-label` & `role` support [apache/incubator-weex/pull/149|https://github.com/apache/incubator-weex/pull/149]
+- Native input/textarea enhancement by kfeagle &  misakuo support `number` data type; support soft keyboard event
+- Picker module enhancement More picker options to customize picker dialog style(background color etc.). Related pull requests: [apache/incubator-weex/pull/234|https://github.com/apache/incubator-weex/pull/234], [apache/incubator-weex/pull/233|https://github.com/apache/incubator-weex/pull/233]
+- Android DOM module refactor Seperate module code by action, increasing the maintainability. [apache/incubator-weex/pull/104|https://github.com/apache/incubator-weex/pull/104]
 
 ## v0.10.0
-------
+
 - New Feature
-  - Support Vue.js  
-    The Vue.js 2.1.8 ([runtime-only build](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build)) is in WeexSDK now. You can use Vue.js to build native app by WeexSDK 0.10.0.  
-    We reused the original native render engine and developed a new renderer ([weex-vue-render](https://www.npmjs.com/package/weex-vue-render)) for the web platform, which is based on Vue 2.0.  
+  - Support Vue.js
+    The Vue.js 2.1.8 ([runtime-only build](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build)) is in WeexSDK now. You can use Vue.js to build native app by WeexSDK 0.10.0.
+    We reused the original native render engine and developed a new renderer ([weex-vue-render](https://www.npmjs.com/package/weex-vue-render)) for the web platform, which is based on Vue 2.0.
     The former front-end framework (commonly known as `.we`), which is inspired by Vue 1.0, is deprecated. Although it still works well in this release, we suggest to migrate it to Vue 2.0.
   - SDK
     - New CSS support
-      - [text `font-weight`](https://weex-project.io/references/text-style.html)  
+      - [text `font-weight`](https://weex.apache.org/wiki/text-styles.html)
         `font-weight` can set to [`normal`|`bold`] or 100-900.
-      - gradient  
-        like CSS3, now you can use gradient in Weex. For example:   
-        
+      - gradient
+        like CSS3, now you can use gradient in Weex. For example:
+
         ``` css
         background-image: linear-gradient(to right, blue, white);
         ```
         ![img_1695](https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg)
-        [Read more about gradient](https://weex-project.io/references/common-style.html).
-      - Pseudo class  
-        Currently, Weex supports 4 pseudo classes:`active`, `focus`, `disabled`, `enabled`. 
+        [Read more about gradient](https://weex.apache.org/wiki/common-styles.html#linear-gradient-v0-10).
+      - Pseudo class
+        Currently, Weex supports 4 pseudo classes:`active`, `focus`, `disabled`, `enabled`.
     - New BroadcastChannel API
-      Developers can use `BroadcastChannel` API to implement inter-instance communication.   
-      
+      Developers can use `BroadcastChannel` API to implement inter-instance communication.
+
       ``` js
       const Stack = new BroadcastChannel('Avengers')
       Stack.onmessage = function (event) {
         console.log(event.data) // in this case, it's "Hulk Smash !!!"
       }
-      
       // in another instance
       const Hulk = new BroadcastChannel('Avengers')
       Hulk.postMessage("Hulk Smash !!!")
       ```
     - Image's `onload` event add [`naturalHeight` and `naturalWidthimage`](https://weex-project.io/references/components/image.html) to get the original size of image file.
-    - Websocket Support  
-      WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's h5/iOS/android and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.  
+    - Websocket Support
+      WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's h5/iOS/android and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.
       [Read more about Weex's websocket.](https://weex-project.io/cn/references/modules/websocket.html)
     - Support synchronous method call
       Both module and component method can defined synchronous method exposed to JS runtime now. Means native will invoke these method in JS thread directly.
     - Support `viewport` configuration
-      Similar to [W3C specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta), Weex support set define `viewport` in script tag:   
-      
+      Similar to [W3C specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta), Weex support set define `viewport` in script tag:
+
       ``` html
       <script type="config">
         {
@@ -148,24 +216,24 @@ Seperate module code by action, increasing the maintainability.
         }
       </script>
       ```
-  - Tools   
+  - Tools
     - [Devtools](https://github.com/weexteam/weex-devtool)
-      - Support Vue 2.0 debugging.  
+      - Support Vue 2.0 debugging.
       - Add network switch for network inspector.
       - Make application capable to decide which bundle is 'un-debuggable', which means page's source code is unreadable in debug mode.
     - [Weexpack](https://github.com/weexteam/weex-pack)
       - Has full set of commands for developers to setup android/ios application with his .we/.vue files.
       - Developers could easily pack/install his application with simple command.
       - Has full set of commands for developers to manage weex plugins, including create plugin template, add plugin to his project etc.
-      - [Plugin market](http://market.weex-project.io) was formally used for developers to publish/download weex plugins.
+      - [Plugin market](https://market.dotwe.org) was formally used for developers to publish/download weex plugins.
 
 
 ## v0.9.4
-------
+
 - New features
   - SDK
     - New API to get Component's size and position:
-      Now you can get these data through `getComponentRect`:   
+      Now you can get these data through `getComponentRect`:
       ``` javascript
       var dom = require('@weex-module/dom');
       dom.getComponentRect(this.$el('comp_id'), function(data){
@@ -174,7 +242,7 @@ Seperate module code by action, increasing the maintainability.
       });
       ```
       The `data` callback parameter contains a `result` to tell if operation is success. And `size` tell you the true data(`bottom`/`top`/`left`/`right`/`width`/`height`) of component.
-    - A brand new `picker` module. We have 'single-picker','date-picker' and 'time-picker' currently, and more common pickers are on the way.  
+    - A brand new `picker` module. We have 'single-picker','date-picker' and 'time-picker' currently, and more common pickers are on the way.
       ![img_1282](https://cloud.githubusercontent.com/assets/115201/21414801/e6341b36-c83d-11e6-9e5a-3acdabb592ee.png)
     There are two ways to use `picker`
     - Use `picker` module directly:
@@ -211,7 +279,7 @@ Seperate module code by action, increasing the maintainability.
   - Components can expose methods too, like modules do. Developers use the same way as create module method to achieve that.
   -  Add `blur` and `focus` method to manually control `input` component to lose or get focus.
   -  Support relative URL, which will resolve real URL by bundle's URL.
-  -  Core javascript framework's unit test coverage is 100% now. we'll pay more attention to quality.  
+  -  Core javascript framework's unit test coverage is 100% now. we'll pay more attention to quality.
   - DevTool
     - Support to check the node hierarchy in [weex-devtool-extension](https://github.com/weexteam/weex-devtool-extension) and highlight the node if it exceeds an specified level.
     - Support different refresh mode in devtools to reload the page or SDK automatically when source file updated.
@@ -230,7 +298,6 @@ Seperate module code by action, increasing the maintainability.
 
 
 ## v0.8.0
-------
 
 - New Features
   - Add [globalEvent module](https://github.com/alibaba/weex/blob/doc/doc/modules/globalevent.md)
@@ -247,15 +314,15 @@ Seperate module code by action, increasing the maintainability.
   - Add [weex-pack](https://github.com/weexteam/weex-pack), our next generation of engineering development kits. It allows developers to create weex projects with simple commands and run the project on different development platforms.
   - Add [weex-devtool-extension](https://github.com/weexteam/weex-devtool-extension), a extension for Weex devtool to improve your debug experience，which equivalent an element tag for debugger page.
   - Move devtool to separate [iOS](https://github.com/weexteam/weex-devtool-iOS) and [Android](https://github.com/weexteam/weex_devtools_android) repos.
-    - Add "screencast" which enable the screen of the device(or monitor) to appear on the "Inspector" page; 
-    - Add "remote control" function, in Android user could control remote device(or monitor) when he moves mouse on screencast; 
-    - Add "select element" function which enable the user to find the exact node in "Elements" inspector Tab when he click the mouse on screencast;  
-    - Add "vdom inspector", so user can choose to see the details of native dom or vdom in "Elements" Tab at his preference; 
-    - Adjust interfaces with weex SDK to support "callAddElement"; 
+    - Add "screencast" which enable the screen of the device(or monitor) to appear on the "Inspector" page;
+    - Add "remote control" function, in Android user could control remote device(or monitor) when he moves mouse on screencast;
+    - Add "select element" function which enable the user to find the exact node in "Elements" inspector Tab when he click the mouse on screencast;
+    - Add "vdom inspector", so user can choose to see the details of native dom or vdom in "Elements" Tab at his preference;
+    - Adjust interfaces with weex SDK to support "callAddElement";
 
 
 ## v0.7.0
-------
+
 - New Features
   - [Timer Module](https://github.com/alibaba/weex/blob/doc/doc/modules/timer.md)
   - [Storage Module](https://github.com/alibaba/weex/blob/dev/doc/modules/storage.md)
@@ -269,22 +336,22 @@ Seperate module code by action, increasing the maintainability.
   - Use `callNative` signal to stop JSFM render after instance been destroyed
   - Lazily initialize JSFM When device is in low-memory status, improve SDK stability
 - [Tools](http://alibaba.github.io/weex/doc/tools/devtools.html)
-  - Support debugging  weex(.we) and  react(.jsx) source 
-  - Support apps debugging on the same device 
+  - Support debugging  weex(.we) and  react(.jsx) source
+  - Support apps debugging on the same device
   - Support "watch" feature
   - Solve the dependency on Debugger, user could start "Inspector" first or "Debugger" at will
   - Add "refresh" function in sdk, user could inspect new file by scanning its QR code in playground;
   - Android/ios inspect module split from weex sdk,  and will deliver in separate repo in future; support inspect in windows system
 
 ## v0.6.1
-------
+
 - New Features
   1. [iOS has been open sourced](https://github.com/alibaba/weex/tree/dev/ios)
   2. [Lifecycle Page Event](https://github.com/alibaba/weex/blob/v0.6.1/doc/references/common-event.md#page-event): viewappear, viewdisappear
   3. [fetch](https://github.com/alibaba/weex/blob/v0.6.1/doc/modules/stream.md#fetchoptions-callbackprogresscallback)
   4. [line-height](https://github.com/alibaba/weex/blob/v0.6.1/doc/components/text.md#styles)
-  5. [list component](https://github.com/alibaba/weex/blob/v0.6.1/doc/components/list.md) 
-     - support sticky header 
+  5. [list component](https://github.com/alibaba/weex/blob/v0.6.1/doc/components/list.md)
+     - support sticky header
      - support scrollToElement API
      - support nested horizontal scroller
      - support cell children nodes event: appear/disappear
@@ -298,12 +365,11 @@ Seperate module code by action, increasing the maintainability.
   1. [weex-toolkit](https://www.npmjs.com/package/weex-toolkit) supports require and generator
   2. Playground supports runtime performance viewer
   3. [Weex DevTools](https://github.com/alibaba/weex/blob/v0.6.1/doc/tools/devtools.md)
-     
+
      <img src="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png" width="600">
 
 
 ## v0.5.0
-------
 
 ### New Features
 1. [TabBar](https://github.com/alibaba/weex/blob/dev/doc/components/wxc-tabbar.md) is a specialized component corresponding to the radio-style selection.
@@ -319,6 +385,3 @@ Seperate module code by action, increasing the maintainability.
    2. [Require Native Module](https://github.com/alibaba/weex/blob/dev/doc/modules#how-to-use) requires a native module by `require('@weex-module/moduleName')`.
    3. [Computed Property](https://github.com/alibaba/weex/blob/dev/doc/syntax/data-binding.md#computed-properties) supports complicated logic in data bindings.
    4. [New Repeat Syntax](https://github.com/alibaba/weex/blob/dev/doc/syntax/display-logic.md#a-extension-of-repeat-syntax) is easy to access the key or value of repeated object.
-
-
-------

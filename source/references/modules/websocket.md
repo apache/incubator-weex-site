@@ -1,12 +1,12 @@
 ---
-title: WebSocket
+title: webSocket
 type: references
 group: Build-in Modules
-order: 9.12
+order: 9.11
 version: 2.1
 ---
 
-# WebSocket
+# webSocket
 <span class="weex-version">v0.12+</span>
 
 ## Summary
@@ -15,9 +15,9 @@ WebSockets is an advanced technology that makes it possible to open an interacti
 
 ## **Notes:**
 - iOS and h5 provide  webSocket default handle. if you use webSocket in android environment . you should provide custom adapter implementation,source:
-  - [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
-  - [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
-  - refer:  [weex playground](https://github.com/apache/incubator-weex/tree/dev/android/playground)
+  - [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
+  - [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
+  - refer:  [weex playground](https://github.com/apache/incubator-weex/tree/master/android/playground)
 
 ## API
 ### `WebSocket(url, protocol)`

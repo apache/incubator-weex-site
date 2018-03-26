@@ -6,7 +6,7 @@ order: 3.4
 version: 2.1
 ---
 
-# List of the names of colors
+<!-- toc -->
 
 ### Basic color keywords:
 

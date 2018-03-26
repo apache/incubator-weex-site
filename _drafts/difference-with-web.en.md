@@ -1,5 +1,5 @@
 ---
-title: Difference with Web   
+title: Difference with Web
 type: references
 order: 10.1
 version: 2.1
@@ -9,7 +9,7 @@ version: 2.1
 
 ## Platform Differences
 
-Vue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are still many differences between web and native. See [Platform Differences Between Weex and Web](../ platform-difference.html) for more details.
+Vue.js was designed for the Web platform at the beginning. Although it can be based on Weex to develop native applications, there are still many differences between web and native. See [Platform Differences Between Weex and Web](../ platform-difference.html) for more details.
 
 Due to those differences, Weex doesn't support those features in Vue.js (mostly are DOM-related):
 

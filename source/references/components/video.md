@@ -2,7 +2,7 @@
 title: <video>
 type: references
 group: Build-in Components
-order: 8.15
+order: 8.25
 version: 2.1
 ---
 
@@ -21,7 +21,7 @@ The video component can be used to embed video content in a weex page.
 * auto-play: &lt;boolean&gt; true | false. Use it to control whether it is playing when the page initialization finished. Defalut value is false.
 
 ## Styles
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles

@@ -7,7 +7,7 @@ version: 2.1
 has_chapter_content: true
 ---
 
-# Path
+<!-- toc -->
 
 <span class="weex-version">v0.9+</span>
 

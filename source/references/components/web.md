@@ -2,148 +2,107 @@
 title: <web>
 type: references
 group: Build-in Components
-order: 8.16
+order: 8.27
 version: 2.1
 ---
 
-# &lt;web&gt;
 <span class="weex-version">v0.5+</span>
 
-Use web component to display any web content in the weex page. The `src`attribute is used to specify a special source. You also can use `webview` module to control some web operation such as goBack,goForward and reload. see [webview module](../modules/webview.html).For example,You can use web component and webview module to assemble a browser.
+`<web>` is used to display web content that specified by `src` attribute in weex page. You also can use `webview` module to control WebView behavior such as goBack, goForward and reload, See [webview module](../modules/webview.html) for more information.
 
-## Child Components
+## Basic Usage
 
-This component supports no child components.
+> **Note:** `<web>` does not support any nested child components, and must specific `width` and `height` in style attribute, otherwise it won't work.
+
+```html
+<web src="https://vuejs.org"></web>
+```
+
+See the [example](http://dotwe.org/vue/81da1f0129dfc72e1666cfd4b90f20ae).
 
 ## Attributes
 
-**src**(string): this attribute specifies the page source to load.
+| Attribute | Type   | Value | Default Value |
+| --------- | ------ | ----- | ------------- |
+| `src`     | String | {URL} | -             |
 
-## Styles
+### `src`
 
-**width**(float): the width of the component, default value is 0. This style must be specified.
-
-**height**(float): the height of the component, default value is 0. This style must be specifed.
-
-
-### common styles
-
-check out the [common styles](../common-style.html).
-
-support flexbox related styles
-support box model related styles
-support `position` related styles
+A URL value for web content to be loaded. You can specify a URL which is relative to bundle URL, it will be rewritten to the real resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
 
 ## Events
 
-**pagestart**: sent after the web component starts loading a page.
-**pagefinish**: sent after the web component finishes loading a page.
-**error**: sent if the web component failed to load a page.
+Only support `appear` and `disappear` event in **[common events](../../wiki/common-events.html)**.
 
-### common events
+### pagestart
 
-support `appear` / `disappear` event.
+`pagestart` event handler will be called when the web content is start loading.
 
-Check out [common events](../common-event.html)
+**Event object**:
 
-### Notes
-not support `click` event.
+- `url`: {String} URL of current web content.
 
-## Example
+### pagefinish
 
-We use a simple Browser Demo to show how to use web component and webview module. Check out [webview module](../modules/webview.html).
+`pagefinish` event handler will be called when the web content is loaded.
 
+**Event object**:
+
+- `url`: {String} URL of current web content.
+- `canGoBack`: {Boolean} Can current web content go back.
+- `canGoForward`: {Boolean} Can current web content go forward.
+- `title`: {String} Title of current web content (iOS platform only).
+
+### error
+
+`error` event handler will be called when the web content loaded failed.
+
+### receivedtitle
+
+`receivedtitle` event handler will be called when the title of web content had changed (Android platform only).
+
+**Event object**:
+
+- `url`: {String} URL of current web content.
+
+### Handle `<web>` Events
+
+Bind events on `<web>`:
 
 ```html
-<template>
-  <div class="wrapper">
-    <div class="group">
-      <input class="input" v-model="value" ref="input" type="url" autofocus="false"></input>
-    </div>
-    <div class="group">
-      <text class="button" @click="loadURL">LoadURL</text>
-      <text class="button" @click="reload">reload</text>
-    </div>
-    <web ref="webview" :src="url" class="webview" @pagestart="start" @pagefinish="finish" @error="error"></web>
-  </div>
-</template>
-
-<script>
-  const webview = weex.requireModule('webview')
-  const modal = weex.requireModule('modal')
-
-  export default {
-    data () {
-      return {
-        url : 'https://m.alibaba.com',
-        value: 'https://m.alibaba.com'
-      }
-    },
-    methods: {
-      loadURL (event) {
-        this.url = this.value
-        modal.toast({ message: 'load url:' + this.url })
-        setTimeout(() => {
-          console.log('will go back.')
-          modal.toast({ message: 'will go back' })
-          webview.goBack(this.$refs.webview)
-        }, 10000)
-      },
-      reload (event) {
-        console.log('will reload webview')
-        modal.toast({ message: 'reload' })
-        webview.reload(this.$refs.webview)
-      },
-      start (event) {
-        console.log('pagestart', event)
-        modal.toast({ message: 'pagestart' })
-      },
-      finish (event) {
-        console.log('pagefinish', event)
-        modal.toast({ message: 'pagefinish' })
-      },
-      error (event) {
-        console.log('error', event)
-        modal.toast({ message: 'error' })
-      }
-    }
-  }
-</script>
-
-<style scoped>
-  .group {
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  .input {
-    width: 600px;
-    font-size: 36px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #BBBBBB;
-  }
-  .button {
-    width: 225px;
-    text-align: center;
-    background-color: #D3D3D3;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    font-size: 30px;
-  }
-
-  .webview {
-    margin-left: 75px;
-    width: 600px;
-    height: 750px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #41B883;
-  }
-</style>
+<web @pagestart="onPageStart" @pagefinish="onPageFinish" @error="onError" src="https://vuejs.org"></web>
 ```
 
-[try it](http://dotwe.org/vue/221ff37113a12d692a7a92a100f20162)
+Add event handler:
+
+```js
+export default {
+  methods: {
+    onPageStart (event) {
+      // page start load
+    },
+    onPageFinish (event) {
+      // page finish load
+    },
+    onError (event) {
+      // page load error
+    },
+  }
+}
+```
+
+See the [example](http://dotwe.org/vue/f9606de73fe386d554217371c4d60d03).
+
+## Styles
+
+Support **[common styles](../../wiki/common-styles.html)**.
+
+## Usage Notes
+
+- The `width` and `height` in the styles of `<web>` must be specified.
+- `<web>` can not have any nested child component.
+- You can use [webview module](../modules/webview.html) to control `<web>` component, see the [example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939).
+
+## Examples
+
+- [Browser example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939)

@@ -2,7 +2,7 @@
 title: <list>
 type: references
 group: Build-in Components
-order: 8.06
+order: 8.07
 version: 2.1
 ---
 
@@ -23,6 +23,7 @@ It can provide excellent experience and performance while still maintaining smoo
 [list sticky header](http://dotwe.org/vue/2ecfe0a1c7b820c9d9c9965e1a8cde19)
 
 [list cell appear event](http://dotwe.org/vue/ce0e953112b132e5897725b3149f3924)
+
 
 ### Child Components
 
@@ -45,7 +46,8 @@ Please checkout [Scroller Component Attributes](./scroller.html) to have a look 
 
 ### Styles
 
-common styles: check out [common styles for components](../common-style.html)
+
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles
@@ -58,10 +60,10 @@ onloadmore  0.5 used with loadmoreoffset attribute. if the view has less than lo
 
 scroll  <sup class="wx-v">0.12+</sup> used with offset-accuracy attribute. This event is fired when the list scrolls. The current contentOffset value is given in this event callback. See details in [scroll event demo](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
 
-common events: check out the [common events](../common-event.html)
+common events: check out the [common events](/wiki/common-events.html)
 
-* support onclick event. Check out [common events](../common-event.html)
-* support onappear / ondisappear event. Check out [common events](../common-event.html)
+* support onclick event. Check out [common events](/wiki/common-events.html)
+* support onappear / ondisappear event. Check out [common events](/wiki/common-events.html)
 
 
 ### API

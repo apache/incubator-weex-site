@@ -7,7 +7,7 @@ version: 2.1
 has_chapter_content: true
 ---
 
-# 搭建开发环境
+<!-- toc -->
 
 使用 [dotWe](http://dotwe.org/vue) 对 Weex 尝鲜是一个不错的选择，但如果你想更专业的开发 Weex， dotWe 就不怎么够用了。本节会教你如何搭建本地开发环境进行 Weex 开发。
 

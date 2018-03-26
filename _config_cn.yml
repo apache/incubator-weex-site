@@ -66,6 +66,11 @@ permalink_defaults:
 permalink: :lang/:title/
 new_post_name: :lang/:title.md
 
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+
 # Directory
 source_dir: source
 public_dir: public
@@ -75,6 +80,16 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
+toc:
+  maxdepth: 3
+  class: article-toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: '#'
+    style: header-anchor
 
 # Writing
 default_layout: post
@@ -142,7 +157,7 @@ docsearch:
   api_key_cn: ce50ba9d18b3295d568b305a7171ceef
 
 alias:
-  doc/index.html: index.html
+   doc/index.html: index.html
   doc/guide.html: guide/index.html
   doc/tutorial.html: guide/index.html
   doc/syntax/main.html: guide/index.html
@@ -164,15 +179,15 @@ alias:
   doc/how-to/debug-with-html5.html: guide/index.html
   doc/how-to/require-3rd-party-libs.html: guide/index.html
   doc/how-to/transform-code-into-js-bundle.html: guide/index.html
-  doc/advanced/main.html: references/advanced/index.html
-  doc/advanced/how-it-works.html: guide/intro/index.html
-  doc/advanced/how-data-binding-works.html: references/advanced/index.html
-  doc/advanced/integrate-to-android.html: references/advanced/index.html
-  doc/advanced/integrate-to-ios.html: references/advanced/index.html
-  doc/advanced/integrate-to-html5.html: references/advanced/index.html
-  doc/advanced/extend-to-android.html: references/advanced/extend-to-android.html
-  doc/advanced/extend-to-ios.html: references/advanced/extend-to-ios.html
-  doc/advanced/extend-to-html5.html: references/advanced/extend-to-html5.html
+  doc/advanced/main.html: references/index.html
+  doc/advanced/how-it-works.html: wiki/index.html
+  doc/advanced/how-data-binding-works.html: references/index.html
+  doc/advanced/integrate-to-android.html: references/index.html
+  doc/advanced/integrate-to-ios.html: references/index.html
+  doc/advanced/integrate-to-html5.html: references/index.html
+  doc/advanced/extend-to-android.html: guide/extend-android.html
+  doc/advanced/extend-to-ios.html: guide/extend-ios.html
+  doc/advanced/extend-to-html5.html: guide/extend-web-render.html
   doc/references/main.html: references/index.html
   doc/references/bootstrap.html: references/index.html
   doc/references/component-defs.html: references/index.html
@@ -180,10 +195,10 @@ alias:
   doc/references/gesture.html: references/gesture.html
   doc/components/main.html: references/components/index.html
   doc/references/common-attrs.html: references/index.html
-  doc/references/common-style.html: references/common-style.html
-  doc/references/text-style.html: references/text-style.html
-  doc/references/color-names.html: references/color-names.html
-  doc/references/common-event.html: references/common-event.html
+  doc/references/common-style.html: references/index.html
+  doc/references/text-style.html: references/index.html
+  doc/references/color-names.html: references/index.html
+  doc/references/common-event.html: references/index.html
   doc/components/special-element.html: references/components/index.html
   doc/components/div.html: references/components/div.html
   doc/components/scroller.html: references/components/scroller.html
@@ -255,8 +270,8 @@ alias:
   cn/doc/how-to/debug-with-devtools.html: cn/guide/index.html
   cn/doc/how-to/require-3rd-party-libs.html: cn/guide/index.html
   cn/doc/how-to/transform-code-into-js-bundle.html: cn/guide/index.html
-  cn/doc/advanced/main.html: cn/references/advanced/index.html
-  cn/doc/advanced/how-it-works.html: cn/guide/intro/index.html
+  cn/doc/advanced/main.html: cn/references/index.html
+  cn/doc/advanced/how-it-works.html: cn/wiki/index.html
   cn/doc/advanced/how-data-binding-works.html: cn/references/advanced/index.html
   cn/doc/advanced/integrate-to-android.html: cn/references/advanced/index.html
   cn/doc/advanced/integrate-to-ios.html: cn/references/advanced/index.html
@@ -342,9 +357,82 @@ alias:
   cn/doc/references/events/blur.html: cn/references/index.html
   cn/doc/references/events/input.html: cn/references/index.html
   cn/doc/references/events/focus.html: cn/references/index.html
-  cn/guide/tools/devtools.html: cn/guide/tools/toolkit.html
-  cn/guide/tools/weexpack.html: cn/guide/tools/toolkit.html
-  guide/tools/devtools.html: guide/tools/toolkit.html
-  guide/tools/weexpack.html: guide/tools/toolkit.html
-  cn/guide/tools/plugin.html: cn/giude/tools/plugin.html
-  guide/tools/plugin.html: guide/tools/plugin.html
+  guide/tools/toolkit.html: tools/toolkit.html
+  guide/tools/devtools.html: tools/toolkit.html
+  guide/tools/weexpack.html: tools/toolkit.html
+  guide/tools/plugin.html: tools/helpers.html
+  guide/contributing.html: contributing.html
+  guide/intro/how-it-works.html: wiki/index.html
+  guide/intro/web-dev-experience.html: guide/front-end-frameworks.html
+  guide/intro/using-vue.html: guide/use-vue.html
+  guide/intro/write-once.html: guide/index.html
+  guide/intro/app-architecture.html: guide/advanced/app-architecture.html
+  guide/intro/page-architecture.html: guide/advanced/page-architecture.html
+  references/path.html: guide/advanced/path.html
+  references/downgrade.html: guide/advanced/downgrade.html
+  references/jsfm-apis.html: references/broadcast-channel.html
+  references/text-style.html: wiki/text-styles.html
+  references/common-style.html: wiki/common-styles.html
+  references/html5-apis.html: references/js-service.html
+  references/bubble.html: wiki/event-bubble.html
+  references/gesture.html: wiki/gestures.html
+  references/color-names.html: wiki/color-namess.html
+  references/unit.html: wiki/css-units.html
+  references/common-event.html: wiki/common-events.html
+  references/native-dom-api.html: wiki/
+  references/web-standards.html: wiki/
+  references/js-service/: references/js-service.html
+  references/js-service/index.html: references/js-service.html
+  references/vue/index.html: guide/use-vue.html
+  references/platform-difference.html: wiki/platform-difference.html
+  references/vue/difference-with-web.html: guide/use-vue.html
+  references/migration/difference.html: guide/use-vue.html
+  references/vue/difference-of-vuex.html: guide/advanced/use-vuex-and-vue-router.html
+  references/advanced/extend-to-ios.html: guide/extend-ios.html
+  references/advanced/extend-to-android.html: guide/extend-android.html
+  references/advanced/extend-to-html5.html: guide/extend-web-render.html
+  references/advanced/extend-to-jsfm.html: guide/extend-js-framework.html
+  references/advanced/integrate-devtool-to-android.html: guide/integrate-devtool-to-android.html
+  references/advanced/integrate-devtool-to-ios.html: guide/integrate-devtool-to-ios.html
+  playground.html: tools/playground.html
+  faq.html: wiki/faq.html
+  cn/guide/tools/toolkit.html: cn/tools/toolkit.html
+  cn/guide/tools/devtools.html: cn/tools/toolkit.html
+  cn/guide/tools/weexpack.html: cn/tools/toolkit.html
+  cn/guide/tools/plugin.html: cn/tools/helpers.html
+  cn/guide/contributing.html: cn/contributing.html
+  cn/guide/intro/how-it-works.html: cn/wiki/index.html
+  cn/guide/intro/web-dev-experience.html: cn/guide/front-end-frameworks.html
+  cn/guide/intro/using-vue.html: cn/guide/use-vue.html
+  cn/guide/intro/write-once.html: cn/guide/index.html
+  cn/guide/intro/app-architecture.html: cn/guide/advanced/app-architecture.html
+  cn/guide/intro/page-architecture.html: cn/guide/advanced/page-architecture.html
+  cn/references/path.html: cn/guide/advanced/path.html
+  cn/references/downgrade.html: cn/guide/advanced/downgrade.html
+  cn/references/jsfm-apis.html: cn/references/broadcast-channel.html
+  cn/references/text-style.html: cn/wiki/text-styles.html
+  cn/references/common-style.html: cn/wiki/common-styles.html
+  cn/references/html5-apis.html: cn/references/js-service.html
+  cn/references/bubble.html: cn/wiki/event-bubble.html
+  cn/references/gesture.html: cn/wiki/gestures.html
+  cn/references/color-names.html: cn/wiki/color-namess.html
+  cn/references/unit.html: cn/wiki/css-units.html
+  cn/references/common-event.html: cn/wiki/common-events.html
+  cn/references/native-dom-api.html: cn/wiki/
+  cn/references/web-standards.html: cn/wiki/
+  cn/references/js-service/: cn/references/js-service.html
+  cn/references/js-service/index.html: cn/references/js-service.html
+  cn/references/vue/index.html: cn/guide/use-vue.html
+  cn/references/platform-difference.html: cn/wiki/platform-difference.html
+  cn/references/vue/difference-with-web.html: cn/guide/use-vue.html
+  cn/references/migration/difference.html: cn/guide/use-vue.html
+  cn/references/vue/difference-of-vuex.html: cn/guide/advanced/use-vuex-and-vue-router.html
+  cn/references/advanced/extend-to-ios.html: cn/guide/extend-ios.html
+  cn/references/advanced/extend-to-android.html: cn/guide/extend-android.html
+  cn/references/advanced/extend-to-html5.html: cn/guide/extend-web-render.html
+  cn/references/advanced/extend-to-jsfm.html: cn/guide/extend-js-framework.html
+  cn/references/advanced/integrate-devtool-to-android.html: cn/guide/integrate-devtool-to-android.html
+  cn/references/advanced/integrate-devtool-to-ios.html: cn/guide/integrate-devtool-to-ios.html
+  cn/playground.html: cn/tools/playground.html
+  cn/faq.html: cn/wiki/faq.html
+

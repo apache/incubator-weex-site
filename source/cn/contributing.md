@@ -1,106 +1,55 @@
 ---
-title: 如何参与 Weex 的开发
+title: 如何参与贡献
 type: community
 has_chapter_content: false
 version: 2.1
 ---
 
-# 如何参与社区
+# 如何参与贡献
 
-## 加入 Weex 邮件列表 (Mailing List)
+Apache Weex 是一个活跃的开源项目，我们一直致力于简化贡献 Weex 生态的流程。开源社区的贡献方式包括但不限于可以报 bug，回答开源社区、邮件组中的问题, 参与讨论新 feature 的方案，纠正或者更改文档， 同时我们也很欢迎直接贡献代码来完善和丰富 Weex。
 
-在 Weex 官方社区所有的信息都会汇聚于邮件列表。订阅开发邮件列表的方式是发送邮件到 `dev-subscribe@weex.incubator.apache.org` 然后你的邮箱会收到一封来自 Apache 的回信 (英文)，把 Apache 的这封回信再次回复过去，即可完成订阅。
+## 报 Bug
 
-这里需要强调的是 Apache 是一个面向全球的全英文的社区，所以我们希望您能够用英文在邮件列表中跟大家交流。
+直接通过[快速上手](../guide/index.html)教程开始使用 Weex，如果在使用过程中遇到任何问题和不符合预期的现象，都可以通过写一个 bug 报告来反馈。
 
-如果您确实对使用英文存在很大的疑虑或困惑，我们也非常欢迎大家来中文问答平台 [SegmentFault](https://segmentfault.com/t/weex) 提问，这里有非常多热心的开发者一起讨论和解答 Weex 相关的问题。
+##### 查找已知问题
+目前我们使用 [JIRA](https://issues.apache.org/jira/projects/WEEX) 来跟踪所有的 issue 和 feature，只要对已知问题有修复或者有新 feature 计划的时候，都会更新对应的 issue 或者 feature 状态。 在填写 issue 或者 feature 时候，可以翻阅下是否已经有对应的 issue 或者 feature 已经在跟踪中。
 
-使用邮件列表的另外一个好处是它可以方便大家随时查阅之前的邮件记录: [http://mail-archives.apache.org/mod_mbox/incubator-weex-dev/](http://mail-archives.apache.org/mod_mbox/incubator-weex-dev/)
+##### 报告新 issue
 
-*如果您对邮件列表中的内容已经不再感兴趣，这里也有退订邮件列表的方法: 发送邮件至 `dev-unsubscribe@weex.incubator.apache.org` 并根据回信的提示进行二次回复确认，完成退订。*
+打开 [JIRA Issue](https://issues.apache.org/jira/projects/WEEX) ，点击最上方红色的 "Create" 按钮（如果还没有注册 JIRA 账号则需要[先注册一下](https://issues.apache.org/jira/secure/Signup!default.jspa)）， [Bug 报告指南](../bug-report-guidelines.html) 文档提供了一些关于 Bug 报告中最有用的信息的细节提示。你的 Bug 报告写得越好，我们就能越快地重现和修复它！
 
-除了开发 (dev) 邮件列表，我们还有另外几个的邮件列表供大家查阅：[http://mail-archives.apache.org/mod_mbox/#weex.incubator](http://mail-archives.apache.org/mod_mbox/#weex.incubator)
+## 贡献代码
+ Weex 是一个开源的 Apache 社区项目，不管是核心团队或者外部开源社区的贡献者提交的 pull request 都需要通过同样的社区 code review 流程。 贡献代码可以通过修复已知的 bug 或者 开发新 feature，建议在贡献代码之前创建 JIRA issue(如果是修复 JIRA 中已经记录的 issue，可以直接使用该JIRA issue 的 ID)，我们写了一份关于[研发流程的文档](../development-process.html)，在开始之前可以先阅读一下。
 
-## 分支管理 (英)
+## 提问或者回答问题
 
-```
-release
- ↑
-release-{version}
- ↑
-master         <--- PR(feature/hotfix/typo)
-```
+对于使用上的问题，建议你在 [stackoverflow.com](http://stackoverflow.com/) 平台上提问， 记得用 **weex** 标签标记它们。
 
-0. `master` branch
-    0. `master` is the stable developing branch.
-    0. ***It's RECOMMENDED to commit hotfix (like typo) or feature PR to `master `***.
-0. `release-{version}` branch
-    0. `release-{version}` is used for every version which we consider for stable publish.
-    0. e.g. `release-0.16`
-0. `release` branch
-    0. `release` is the latest release branch,we will make tag and publish version on this branch.
+你也可以查看所有的 [Weex相关问题](http://stackoverflow.com/questions/tagged/weex)，如果可以的话，尽可能帮助回答一些问题，这些问题常常是新手需要了解的基本概念和常见问题， 这也将帮助你更好地熟悉和使用 Weex 。
 
-### 用于PR的分支命名
+## 参与邮件组讨论
+
+在 Weex 社区，大多数讨论都发生在邮件列表上。
+
+dev 邮件组 "dev@weex.incubator.apache.org" 是 Weex 开发人员交流和讨论新功能、新发布、开发流程的地方。
+
+贡献者和开发者都应该订阅这个邮件组，以便了解到 Weex 项目所发生的事情以及表达自己的观点。 [(订阅)](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29) [(退订)](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29) [(档案)](http://mail-archives.apache.org/mod_mbox/incubator-weex-dev/)
+
+## 帮助提升文档质量
+
+质量好的文档对开发者是极大的帮助。如果有一个功能强大的 API 但不易于使用，它就会变得毫无用处。所以， 我们欢迎任何贡献以帮助 Weex 的文档变得精确和易于阅读。
+
+想要对文档进行更改，可以在 [weex-site 仓库](https://github.com/apache/incubator-weex-site)编辑对应的 Markdown 文件并创建一个 [Pull Request](https://help.github.com/articles/using-pull-requests/).
+
+## 如何成为 Committer
+
+Apache committer 是社区的核心成员，他们可以访问项目的仓库，也可以自己修改代码、文档和网站，也可以接受其他开发者的贡献。
+
+我们正在招募 committer，我们所寻找的是积极参与到社区贡献同时对 Weex 有持续兴趣的同学。如果你有兴趣成为一名 Weex committer，可以联系现有的 committer 或者直接联系 dev 邮件组，欢迎你的加入！
 
 
-```
-{module}-{action}-{shortName}
-```
+## License
 
-* `{module}`, see [commit log module](#commit-log)
-* `{action}`
-    * `feature`: checkout from `{module}` and merge to `{module}` later. If `{module}` not exists, merge to `dev`
-    * `bugfix`: like `feature`, for bugfix only
-    * `hotfix`: checkout from `master` or release `tag`, merge to `master` and `{module}` later. If `{module}` not exists, merge to `dev`
-
-for example:
-
-* `android-bugfix-memory`
-* `jsfm-feature-communication`
-* `android-hotfix-compute-layout`
-
-## 提交日志格式 (英)
-
-```
-{action} [{module}] {description}
-```
-
-* `{action}`
-    * `+` add
-    * `*` update or bugfix
-    * `-` remove
-* `{module}`
-    * Including: android, ios, jsfm, html5, component, doc, website, example, test, all
-* `{description}`
-    * Just make it as clear and simple as possible.
-
-for example:
-
-* `+ [android] close #123, add refreshing for WebView`
-* `* [doc] fix #123, update video auto-play property`
-* `- [example] remove abc`
-
-## 发送 Pull Request (英)
-
-You can [create pull requests](https://github.com/apache/incubator-weex/compare) in GitHub.
-
-1. First we suggest you have some discussion with the community (commonly in our mailing list) before you code.
-2. Fork repo from [https://github.com/apache/incubator-weex/](https://github.com/apache/incubator-weex/)
-3. Finish the job you want to do.
-4. Create a pull request.
-
-## 编码规范 (英)
-
-### Objective-C
-
-* Tabs for indentation(not spaces)
-* `*` operator goes with the variable name (e.g. Type *variable;)
-* Function definitions: place each brace on its own line.
-* Other braces: place the open brace on the line preceding the code block; place the close brace on its own line.
-* Use `#pragma marks` to categorize methods into functional groupings and protocol implementations
-* Follow other guidelines on [GitHub Objective-C Style Guide](https://github.com/github/objective-c-style-guide)
-
-### Java & Android
-
-* Use [Google Java Style](https://google.github.io/styleguide/javaguide.html) as basic guidelines of java code.
-* Follow [AOSP Code Style](https://source.android.com/source/code-style.html) for rest of android related code style.
+ 默认你对 Weex 的贡献是基于 Apache License 2.0。

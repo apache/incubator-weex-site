@@ -2,7 +2,7 @@
 title: <input>
 type: references
 group: Build-in Components
-order: 8.10
+order: 8.06
 version: 2.1
 ---
 
@@ -14,13 +14,13 @@ The weex builtin component `input` is used to create input controls to receive
 
 ## Child Components
 
-This component supports no child components.
+This component does not support any child component.
 
 ## Attributes
 
-* `type`: the type of controls to display. The default value is `text`, if this attribute is not specified. Possible values are `text`, `password`, `tel`, `email`, `url` , `number` etc. each of which has the same meaning with W3C standard.
+* `type`: the type of controls to display. The default value is `text`, if this attribute is not specified. Possible values are `text`, `date`, `datetime`, `email`, `password`, `tel`, `time`, `url`, `number`. each of which has the same meaning with W3C standard.
 
-* `value`: the value(text) of the control.
+* `value`: the default value(text) of the control.
 
 * `placeholder`: a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.
 
@@ -28,9 +28,19 @@ This component supports no child components.
 
 * `autofocus`: a boolean attribute lets you specify that a form control should have input focus when the page loads.
 
+* `singleline`: a boolean sttribute sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
+
+* `lines`: makes the input exactly this many lines tall.
+
+* `max-length`: constrain edits not to make the length of the text greater than the specified length.
+
+* `max` constrain the max date when `type` is `date`, format is `yyyy-MM-dd`
+
+* `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
+
 * `maxlength`: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.
 
-* `return-key-type {string}`：<sup class="wx-v">v0.11</sup>the keybord returen key type support defalut;go;next;search;send,done.
+* `return-key-type`：<sup class="wx-v">v0.11</sup>the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
 
 ## Styles
 
@@ -43,29 +53,29 @@ This component supports no child components.
   * `disabled`
   * `enabled`
 
-* text styles: checkout [text styles](../text-style.html)
+* text styles: checkout [text styles](/wiki/text-styles.html)
 
-  * support 'color' style.
-  * support 'font-size' style.
-  * support 'font-style' style.
-  * support 'font-weight' style.
-  * support 'text-align' style.
+  * support `color` style.
+  * support `font-size` style.
+  * support `font-style` style.
+  * support `font-weight` style.
+  * support `text-align` style.
 
 ### common styles
-check out [common styles for components](../common-style.html)
+check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles.
 * support box model related styles.
-* support 'position' related styles.
-* support 'opacity', 'background-color' etc.
+* support `position` related styles.
+* support `opacity`, `background-color` etc.
 
 ## Events
 
-* input: the value of an input character changes.
-* change: the change event is fired when a change to the component's value is commited by the user. It always come after a 'blur' event.
-* focus: a component has received focus.
-* blur: a component has lost focus.
-* `return`:the return key click.
+* `input`: the input evenr is fired when input content changes.
+* `change`: the change event is fired when a change to the component's value is commited by the user. It always come after a `blur` event.
+* `focus`: a component has received focus.
+* `blur`: a component has lost focus.
+* `return`: the return key clicked.
 
      the object property of event:
 
@@ -73,12 +83,12 @@ check out [common styles for components](../common-style.html)
     - `value`: component text value
 
 ### common events
-check out [common events](../common-event.html)
+check out [common events](/wiki/common-events.html)
 
-* support 'appear' / 'disappear' event.
+* support `appear` / `disappear` event.
 
 
-### Methoads
+### Methods
 
  - `focus()` <span class="api-version">v0.9+</span>
 
@@ -93,17 +103,28 @@ check out [common events](../common-event.html)
   - `selectionStart {number}`:set starting location text selection range
   - `selectionEnd {number}`:set end location text selection range
 
-- `getEditSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>get text selection range of input or textarea
+- `getSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>get text selection range of input or textarea
     - `selectionStart {number}`:get starting location text selection range
     - `selectionEnd {number}`: get end location text selection range
 
+- `setTextFormatter(params)`<span class="api-version">v0.18+</span>: This is a very useful feature,can be used to set a set of rules for the input to formatting the input content in real-time.
+    - `params {object}`：formatting rules, contains the following parameters:
+      - `formatRule {regexp}`: Regular expression used to format the match
+      - `formatReplace {string}`: Contents to replace after format matching
+      - `recoverRule {regexp}`: Regular expressions to restore original content from formatted content
+      - `recoverReplace {string}`: Content to replace when restoring original content
+
+For details of `setTextFormatter`, please refer to [sample](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
 ### Notes
-does not support the common-event 'click'. Please listen to the 'input' or 'change' event instead.
+input does not support the common-event `click`. Please listen to the `input` or `change` event instead.
 
 ### Parameters of events' object
 
-* for 'input' and 'change' events:'value': the value of the component who dispatched this event.'timestamp': the time stamp of the event.
-* for 'focus' and 'blur' events:'timestamp': the time stamp of the event.
+* for `input` and `change` events:
+  - `value`: the value of the component who dispatched this event.
+  - `timestamp`: the time stamp of the event.
+* for `focus` and `blur` events:
+  - `timestamp`: the time stamp of the event.
 
 ## Example
 

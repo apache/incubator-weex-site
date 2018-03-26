@@ -2,115 +2,82 @@
 title: <switch>
 type: references
 group: Build-in Components
-order: 8.12
+order: 8.22
 version: 2.1
 ---
 
-# &lt;switch&gt;
-
 <span class="weex-version">v0.6.1+</span>
 
-The weex builtin component switch is used to create and manage an IOS styled On/Off buttons, for example, the Airplane mode button in the Settings app is a switch button.
+`<switch>` is a checkbox-like UI component.
 
+> **Note:** The appearance of switch component is a bit of different in three ends (iOS, Android, Web) in consideration of different platform styles.
 
-## Child Components
+| Android | Web | iOS |
+| -------- | --- | --- |
+| ![Android](https://img.alicdn.com/tfs/TB1xIEqnfDH8KJjy1XcXXcpdXXa-314-242.png) | ![Web](https://img.alicdn.com/tfs/TB1ugX2k5qAXuNjy1XdXXaYcVXa-308-276.png) | ![iOS](https://img.alicdn.com/tfs/TB1t3X2k5qAXuNjy1XdXXaYcVXa-318-270.png) |
 
-There are no child components for the switch component.
+> **Note:** Layout style attributes listed below such as `width`, `height`, `margin` are not supported.
+
+## Basic Usage
+
+```html
+<switch></switch>
+```
+
+See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
 
 ## Attributes
 
-* checked &lt;boolean&gt; true|false, default value is false, indicating whether the button is on or not.
-* disabled &lt;boolean&gt; true|false, default value is false, indicating whether the button is enable or not.
+| Attribute     | Type   | Value                      | Default Value |
+| ------------- | ------ | -------------------------- | ------------- |
+| `checked`     | Boolean |   true / false            | false         |
+| `disabled`    | Boolean |   true / false            | false         |
 
-## Styles
-Notes: There are several style properties that you mustn't use on this component. And here are all the invalid properties:
+### `checked`
 
-* width
-* height
-* min-width
-* min-height
-* margin and margin-xxs
-* padding and padding-xxs
-* border and border-xxs
+Indicates this component's status is set to true or false.
 
-Notes: If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched.
+### `disabled`
 
-common styles: check out [common styles for components](../common-style.html)
+Indicates this component is not available for interaction.
+
+## Component Methods
+
+None.
 
 ## Events
 
-* onappear / ondisappear event. check out [common events](../common-event.html)
-* onclick: check out [common events](../common-event.html)
-* onchange: check out [common events](../common-event.html)
+* `appear` / `disappear` event. check out [common events](/wiki/common-events.html)
+* `click` / `longpress`: check out [common events](/wiki/common-events.html)
+* `change`: check out [common events](/wiki/common-events.html)
 
 ## Parameters of events' object for onchange event:
 
-* value: the value of the component who dispatched this event, which is the boolean value true or false.
-* timestamp: the time stamp of the event.
+* `value`: the value of the component who dispatched this event, which is the boolean value true or false.
+* `timestamp`: the time stamp of the event.
+
+## Styles
+
+> **Notes:** There are several style properties that you mustn't use on this component. And here are all the invalid properties:
+
+* `width`
+* `height`
+* `min-width`
+* `min-height`
+* `margin` and `margin-xxx`
+* `padding` and `padding-xxx`
+* `border` and `border-xxx`
+
+> **Notes:** If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched.
+
+common styles: check out [common styles for components](/wiki/common-styles.html)
+
+## Usage Notes
+
+- The `width` and `height` in the styles of `<switch>` won't effect the component's apparence and layout.
+- `<switch>` can not have any nested child component.
 
 ## Examples
 
-```html
-<template>
-  <div>
-    <div class="example">
-      <text class="label">normal</text>
-      <switch></switch>
-    </div>
-    <div class="example">
-      <text class="label">checked</text>
-      <switch checked="true"></switch>
-    </div>
-    <div class="example">
-      <text class="label">disabled</text>
-      <switch disabled="true" checked="true"></switch>
-      <switch disabled="true"></switch>
-    </div>
-    <div class="example">
-      <text class="label">onchange</text>
-      <switch @change="onchange"></switch>
-      <text class="info">{{checked}}</text>
-    </div>
-  </div>
-</template>
-
-<script>
-  export default {
-    data () {
-      return {
-        checked: false
-      }
-    },
-    methods: {
-      onchange (event) {
-        console.log(`onchage, value: ${event.value}`)
-        this.checked = event.value
-      }
-    }
-  }
-</script>
-
-<style scoped>
-  .example {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 60px;
-  }
-  .label {
-    font-size: 40px;
-    line-height: 60px;
-    width: 350px;
-    color: #666;
-    text-align: right;
-    margin-right: 20px;
-  }
-  .info {
-    font-size: 30px;
-    line-height: 60px;
-    color: #BBB;
-    margin-left: 10px;
-  }
-</style>
-```
-
-[try it](http://dotwe.org/vue/06b1d740fb69d04f9ebe9eaf730974d1)
+- [Simple Switch](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f)
+- [Switch List](http://dotwe.org/vue/9068f28ba80e871d89dabb9fccff5cc6)

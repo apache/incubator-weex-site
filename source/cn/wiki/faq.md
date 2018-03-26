@@ -4,10 +4,9 @@ type: wiki
 group: FAQ
 order: 8
 version: 2.1
-layout: post
 ---
 
-# 常见问题解答
+<!-- toc -->
 
 ## 如何查阅旧文档？
 
@@ -20,7 +19,7 @@ layout: post
 
 ## Windows 指令错误
 
-请先安装 [Git for Windows](https://git-scm.com/download/win)，在 [For Windows](https://github.com/apache/incubator-weex/tree/dev#for-windows) 中查看更多信息。
+请先安装 [Git for Windows](https://git-scm.com/download/win)，在 [For Windows](https://github.com/apache/incubator-weex/tree/master#for-windows) 中查看更多信息。
 
 
 ## Android Studio 中 Gradle 错误
@@ -138,8 +137,8 @@ else {
 
 如果你有两个页面，A 页面和 B 页面
 
-1. A -> B，使用 [getConfig api](/references/api.md#getconfig) or [storage module](/modules/storage.md) 传递数据；
-2. B -> A，使用 [storage module](/modules/storage.md) 传递数据。
+1. A -> B，使用 [getConfig api](/references/api.md#getconfig) or [storage module](/cn/references/modules/storage.html) 传递数据；
+2. B -> A，使用 [storage module](/cn/references/modules/storage.html) 传递数据。
 
 
 ## 父子组件之间进行 repeat 操作

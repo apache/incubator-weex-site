@@ -2,7 +2,7 @@
 title: <scroller>
 type: references
 group: 内置组件
-order: 8.05
+order: 8.20
 version: 2.1
 ---
 
@@ -35,7 +35,7 @@ version: 2.1
 - `show-scrollbar {boolean}`：可选值为 `true`/ `false`，默认值为 `true`。控制是否出现滚动条。
 
 - `scroll-direction {string}`：可选为 `horizontal` 或者 `vertical`，默认值为 `vertical` 。定义滚动的方向。
-  - `scroll-direction`定义了 scroller 的滚动方向，`flex-direction` 定义了 scroller 的布局方向，两个方向必须一致。
+  - `scroll-direction`定义了 scroller 的滚动方向，样式表属性 `flex-direction` 定义了 scroller 的布局方向，两个方向必须一致。
   - `scroll-direction` 的默认值是 `vertical`, `flex-direction` 的默认值是 `row`。
   - 当需要一个水平方向的 scroller 时，使用 `scroll-direction:horizontal` 和 `flex-direction: row`。
   - 当需要一个竖直方向的 scroller 时，使用 `scroll-direction:vertical` 和 `flex-direction: column`。由于这两个值均是默认值，当需要一个竖直方向的 scroller 时，这两个值可以不设置。
@@ -58,7 +58,7 @@ version: 2.1
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](../common-style.html)
+  查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ## 事件
 
@@ -73,6 +73,8 @@ version: 2.1
     - `x {number}`: x轴上的偏移量
     - `y {number}`: y轴上的偏移量
 
+- 支持 `scrollstart` 和 `scrollend` 事件 <sup class="wx-v">0.17+</sup> .当列表开始或者结束滚动的时候会分别触发相应的 `scrollstart` 和 `scrollend` 事件，当前的内容高度和列表偏移会在callback中返回。可以参见这个[example](http://dotwe.org/vue/fd1b271fa1fa100cefb40f8d69198a1b)
+
 - 通用事件
 
   支持所有通用事件：
@@ -82,7 +84,7 @@ version: 2.1
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 ## 扩展
 
