@@ -8,6 +8,8 @@ version: 2.1
 
 <span class="weex-version">v0.6.1+</span>
 
+> **deprecated:** This built-in component will be deprecated soon. There're some reasons for this deprecation, such as the inconsistency of user experience on different ends, and the component's appearance sometimes being not as expected. Therefore we strongly suggest developers build this component as a customized component using weex's DSL and its rendering ability.
+
 `<switch>` is a checkbox-like UI component.
 
 > **Note:** The appearance of switch component is a bit of different in three ends (iOS, Android, Web) in consideration of different platform styles.
