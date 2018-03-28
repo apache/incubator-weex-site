@@ -29,7 +29,7 @@ There are two choices to install dependencies:
 
 ```
 source https://github.com/CocoaPods/Specs.git，
-pod  'WXDevtool',   '0.7.0', :configurations => ['Debug']，
+pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 ```
 
 I strongly recommend you use the latest version since both Weex SDK and devtools are developed iteratively and rapidly.
