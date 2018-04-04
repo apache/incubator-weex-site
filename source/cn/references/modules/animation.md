@@ -60,6 +60,12 @@ animation.transition(ref1, {
 
 `transform`同时也有很多对应的属性，可以参见下表：
 
+(注:如果想同时执行多个动画只需要用空格隔开，比如)
+```
+ transform: 'translate(250px, 100px) scale(1.5)'
+```
+
+
 | 名称                                       | 描述                              | 值类型     | 默认值  |
 | ---------------------------------------- | ------------------------------- | ------- | ---- |
 | `translate`/`translateX`/`translateY`    | 指定元素要移动到的位置                     | 像素值或百分比 | 无    |
@@ -88,4 +94,4 @@ animation.transition(ref1, {
   > **注意: 在0.16.0+版本后，iOS上可以获取animation是否执行成功的信息，callback中的`result`参数会有两种，分别是是`Success`与`Fail`，Android目前暂不支持。**
 
 ## 示例
-[animation demo](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
+[animation demo](http://dotwe.org/vue/a6c03edd4c5bbd6caea29cac688269a0)
