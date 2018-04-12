@@ -39,8 +39,7 @@ build-in color name you can see [Color Names](./color-names.html).
 
 ## CSS `length` units
 
-In weex we only support `px` length units., and it will resolve to a numeric type in the JavaScript runtime and native renderer.
-
+In weex we only support px length units. It will resolve to a numeric type in the JavaScript runtime and native renderer.
 You can use it like this :
 
 ```css
