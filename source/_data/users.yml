@@ -153,3 +153,8 @@ lieyou:
   icon: 'https://res28-lieyou.weplay.cn/aipai_platform/vue/lieyou/common/assets/img/logo512.png'
   iOS: 'https://itunes.apple.com/cn/app/id1331853626?mt=8'
   android: 'http://www.lieyou.com/'
+igola:
+  name: 'iGola骑鹅旅行'
+  icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/fe/c9/05/fec90578-f81f-cb8f-2010-5c94b0966fd5/AppIcon-1x_U007emarketing-85-220-4.png/460x0w.jpg'
+  iOS: 'https://itunes.apple.com/cn/app/igola%E9%AA%91%E9%B9%85%E6%97%85%E8%A1%8C-%E7%89%B9%E4%BB%B7%E6%9C%BA%E7%A5%A8%E9%85%92%E5%BA%97%E6%AF%94%E4%BB%B7%E5%B9%B3%E5%8F%B0/id1048837629?mt=8'
+  android: 'http://android.myapp.com/myapp/detail.htm?apkName=com.igola.travel'
