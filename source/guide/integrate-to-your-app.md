@@ -19,7 +19,7 @@ The following documents assume that you already have a certain Android developme
 
 The keys to intergrating Weex into your Android application are the following five step:
 
-1. Configure Gralde dependency in build.gradle
+1. Configure Gradle dependency in build.gradle
 
 ```javascript
 dependencies {
