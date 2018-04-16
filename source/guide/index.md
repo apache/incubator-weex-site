@@ -127,7 +127,7 @@ It will start a web server on the `8081` port. You can open `http://localhost:80
 
 ![Preview](./images/toolkit-preview.png)
 
-Besides, You can also open `http://localhost:8081/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) then you'll see the rendered result on the mobile device.
+Besides, You can also open `http://localhost:8081/web/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) then you'll see the rendered result on the mobile device.
 
 ### Build and Run
 
