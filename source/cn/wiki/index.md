@@ -25,10 +25,10 @@ Weex 的本地开发环境基于 web 开发体验而设计，web 开发者可以
 
 **相关阅读**
 
-* [Weex 和 web 平台的差异](/cn/wiki/platform-difference.html)
-* [Vue 2.x 在 Weex 和 web 中的差异](/cn/wiki/platform-difference.html)
-* [快速上手](../index.html)
-* [使用 Devtools](./devtools.html)
+* [Weex 和 Web 平台的差异](/cn/wiki/platform-difference.html)
+* [Vue 2.x 在 Weex 和 Web 中的差异](/cn/guide/use-vue.html)
+* [快速上手](/cn/guide/index.html)
+* [使用 Devtools](/cn/guide/integrate-devtool-to-android.html)
 
 ## 云端部署和分发
 
@@ -47,8 +47,8 @@ Weex 目前提供了 iOS 和 Android 两个客户端的 native 渲染层。每�
 **相关链接**
 
 * [Weex 的组件和模块跟 web 标准的区别](../../references/web-standards.html)
-* [如何使用 iOS](../../references/ios-apis.html)
-* [如何使用 Android](../../references/android-apis.html)
+* [如何使用 iOS](/cn/references/ios-apis.html)
+* [如何使用 Android](/cn/references/android-apis.html)
 * [如何扩展 iOS](/cn/guide/extend-ios.html)
 * [如何扩展 Android](/cn/guide/extend-android.html)
 
@@ -58,5 +58,5 @@ Weex 除了提供 iOS 和 Android 的客户端渲染层之外，还基于 Vue 2.
 
 **相关链接**
 
-* [如何使用 HTML5](../../references/html5-apis.html)
-* [如何扩展 HTML5](../../references/advanced/extend-to-html5.html)
+* [如何使用 HTML5](/cn/references/js-service.html)
+* [如何扩展 HTML5](/cn/guide/extend-web-render.html)
