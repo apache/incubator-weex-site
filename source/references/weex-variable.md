@@ -160,3 +160,36 @@ weex.supports('module/*') // null
 weex.supports('@stream/fetch') // null
 weex.supports('getComponentRect') // null
 ```
+
+## `weex.isRegisteredModule`
+
+Detect whether the specific module or method is registered.
+
+```js
+weex.weex.isRegisteredModule(moduleName: string, methodName: string): boolean
+```
+
+It can only be used to check the compatibility of the specific module or method, not support components.
+
+```js
+weex.isRegisteredModule('stream') // true
+weex.isRegisteredModule('stream', 'fetch') // true
+weex.isRegisteredModule('whatever', '- unknown -') // false
+weex.isRegisteredModule('div') // false, not support components
+```
+
+## `weex.isRegisteredComponent`
+
+Detect whether the specific component is registered.
+
+```js
+weex.weex.isRegisteredComponent(componentName: string): boolean
+```
+
+It can only be used to check the compatibility of the specific component, not support modules.
+
+```js
+weex.isRegisteredComponent('div') // true
+weex.isRegisteredComponent('- unknown -') // false
+weex.isRegisteredComponent('navigator') // false, not support modules
+```
