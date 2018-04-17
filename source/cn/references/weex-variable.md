@@ -160,3 +160,36 @@ weex.supports('module/*') // null
 weex.supports('@stream/fetch') // null
 weex.supports('getComponentRect') // null
 ```
+
+## `weex.isRegisteredModule`
+
+检测某个特定的模块或者接口是否可用。
+
+```js
+weex.weex.isRegisteredModule(moduleName: string, methodName: string): boolean
+```
+
+这个接口只能用于检测特定模块和方法的兼容性，不支持检测组件。
+
+```js
+weex.isRegisteredModule('stream') // true
+weex.isRegisteredModule('stream', 'fetch') // true
+weex.isRegisteredModule('whatever', '- unknown -') // false
+weex.isRegisteredModule('div') // false, not support components
+```
+
+## `weex.isRegisteredComponent`
+
+检测某个特定的组件是否可用。
+
+```js
+weex.weex.isRegisteredComponent(componentName: string): boolean
+```
+
+这个接口只能用于检测组件的兼容性，不支持检测模块。
+
+```js
+weex.isRegisteredComponent('div') // true
+weex.isRegisteredComponent('- unknown -') // false
+weex.isRegisteredComponent('navigator') // false, not support modules
+```
