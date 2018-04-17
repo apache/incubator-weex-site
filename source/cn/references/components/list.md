@@ -46,8 +46,7 @@ version: 2.1
 - `offset-accuracy {number}` <sup class="wx-v">0.11+</sup>：控制`onscroll`事件触发的频率，默认值为10，表示两次`onscroll`事件之间列表至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。
 
   ![mobile_preview](../images/list_4.jpg)
-
-- `offset-accuracy`：默认值是0，触发 `scroll` 事件所需要的垂直偏移距离。
+  
 ## 样式
 
 - 通用样式：支持所有通用样式
