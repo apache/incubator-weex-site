@@ -165,8 +165,8 @@ weex.supports('getComponentRect') // null
 
 检测某个特定的模块或者接口是否可用。
 
-```js
-weex.weex.isRegisteredModule(moduleName: string, methodName: string): boolean
+```typescript
+weex.isRegisteredModule(moduleName: string, methodName: string): boolean
 ```
 
 这个接口只能用于检测特定模块和方法的兼容性，不支持检测组件。
@@ -182,8 +182,8 @@ weex.isRegisteredModule('div') // false, not support components
 
 检测某个特定的组件是否可用。
 
-```js
-weex.weex.isRegisteredComponent(componentName: string): boolean
+```typescript
+weex.isRegisteredComponent(componentName: string): boolean
 ```
 
 这个接口只能用于检测组件的兼容性，不支持检测模块。

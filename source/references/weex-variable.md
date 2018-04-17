@@ -169,7 +169,7 @@ Detect whether the specific module or method is registered.
 weex.weex.isRegisteredModule(moduleName: string, methodName: string): boolean
 ```
 
-It can only be used to check the compatibility of the specific module or method, not support components.
+It can only be used to check compatibility of a specific module or method.
 
 ```js
 weex.isRegisteredModule('stream') // true
@@ -186,7 +186,7 @@ Detect whether the specific component is registered.
 weex.weex.isRegisteredComponent(componentName: string): boolean
 ```
 
-It can only be used to check the compatibility of the specific component, not support modules.
+It can only be used to check compatibility of a specific component.
 
 ```js
 weex.isRegisteredComponent('div') // true
