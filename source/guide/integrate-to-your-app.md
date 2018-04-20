@@ -25,7 +25,7 @@ The keys to intergrating Weex into your Android application are the following fi
 dependencies {
     ...
     // weex sdk and fastjson
-    compile 'com.taobao.android:weex_sdk:0.5.1@aar'
+    compile 'com.taobao.android:weex_sdk:0.10.0@aar'
     compile 'com.alibaba:fastjson:1.1.46.android'
 
     //support library dependencies
