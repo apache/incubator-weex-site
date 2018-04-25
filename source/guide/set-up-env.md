@@ -54,7 +54,7 @@ Then enter the awesome-project folder, you will see a standard project skeleton 
 
 ### Usage
 
-The `weex-toolkit` will prompt you whether to automatically run `npm install`, if not running, manually into the folder and run `npm install`.
+The `weex-toolkit` will prompt you whether to automatically run `npm install`, if not running, manually `cd` into the folder and run `npm install`.
 
 In the `awesome-project` folder, install dependencies with the following command:
 
