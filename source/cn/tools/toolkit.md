@@ -22,7 +22,7 @@ $ npm install -g weex-toolkit
 ``` bash
 $ npm install weex-toolkit -g --registry=https://registry.npm.taobao.org
 // 或者
-$ nrm use taobao
+$ npm use taobao
 $ npm install weex-toolkit -g
 ```
 
