@@ -23,7 +23,7 @@ $ nvm use 6.10.0
 
 And `npm` comes with Node.js, with which you can install the Weex command line tools.
 
-> **NOTE: ** After upgrading the `weex-toolkit` to v1.0.8, the `npm-shrinkwrap.json` npm 5 specification has been added to lock the package dependencies, it is needed to upgrade your npm version to 5 above by command: `npm install npm @latest -g` if your version is lower than this, please check your npm version before using it.
+> **NOTE: ** After upgrading the `weex-toolkit` to v1.0.8, the `npm-shrinkwrap.json` npm 5 specification has been added to lock the package dependencies, it is needed to upgrade your npm version to 5 above by command: `npm install npm@latest -g` if your version is lower than this, please check your npm version before using it.
 
 Run the following commands in a terminal:
 
