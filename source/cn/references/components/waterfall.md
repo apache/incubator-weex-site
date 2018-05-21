@@ -30,7 +30,7 @@ version: 2.1
   - `<integer>`: 最佳列数，column-width 和  column-count 都指定非0值， 则 column-count 代表最大列数。
 - **column-gap**: 列与列的间隙. 如果指定了 `normal` ，则对应 `32`.
 - **left-gap**: 左边cell和列表的间隙. 如果未指定 ，则对应 `0`<span class="api-version">v0.19+</span>.
-- **column-gap**: 右边cell和列表的间隙. 如果未指定，则对应 `0`<span class="api-version">v0.19+</span>.
+- **right-gap**: 右边cell和列表的间隙. 如果未指定，则对应 `0`<span class="api-version">v0.19+</span>.
 
 其他支持的属性参见 [List Component Attributes](./list.html)
 
