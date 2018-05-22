@@ -13,7 +13,7 @@ version: 2.1
 - [Mailing List](https://lists.apache.org/list.html?dev@weex.apache.org).
 - [Issues](https://issues.apache.org/jira/projects/WEEX/issues).
 - [Weex Contributing Guide](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md) A guidance document tells you how to be submitted by the person weex and how to participate in mailing discussions.
-- [Weex FAQ](https://weex.apache.org/faq.html).
+- [Weex FAQ](https://weex.apache.org/wiki/faq.html).
 
 ## Supported Front-end Frameworks
 
@@ -28,7 +28,7 @@ version: 2.1
 ## Tools
 
 - [Online Playground](http://dotwe.org/vue/) A website provides weex code practice and preview, as well as a convenient sharing platform.
-- [Playground App](http://localhost:4000/tools/playground.html) You can preview weex on the Playground App and learning how to use weex on it.
+- [Playground App](https://weex.apache.org/tools/playground.html) You can preview weex on the Playground App and learning how to use weex on it.
 - [Weex Language support for Intellij](https://plugins.jetbrains.com/plugin/9189-weex-language-support) A plugin supports Weex Language for Intellij.
 
 ## Community

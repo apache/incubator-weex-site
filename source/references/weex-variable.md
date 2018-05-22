@@ -92,7 +92,7 @@ weex.requireModule(name: string): Object | void;
 
 ### Use Native Module
 
-You can require a native module and use its APIs just like normal javascript functions. Here is [a simple example](http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828) of using the [`modal`](../components/modal.html) module:
+You can require a native module and use its APIs just like normal javascript functions. Here is [a simple example](http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828) of using the [`modal`](/examples/modal.html) module:
 
 ```html
 <template>
@@ -159,4 +159,37 @@ weex.supports('div') // null
 weex.supports('module/*') // null
 weex.supports('@stream/fetch') // null
 weex.supports('getComponentRect') // null
+```
+
+## `weex.isRegisteredModule`
+
+Detect whether the specific module or method is registered.
+
+```js
+weex.weex.isRegisteredModule(moduleName: string, methodName: string): boolean
+```
+
+It can only be used to check compatibility of a specific module or method.
+
+```js
+weex.isRegisteredModule('stream') // true
+weex.isRegisteredModule('stream', 'fetch') // true
+weex.isRegisteredModule('whatever', '- unknown -') // false
+weex.isRegisteredModule('div') // false, not support components
+```
+
+## `weex.isRegisteredComponent`
+
+Detect whether the specific component is registered.
+
+```js
+weex.weex.isRegisteredComponent(componentName: string): boolean
+```
+
+It can only be used to check compatibility of a specific component.
+
+```js
+weex.isRegisteredComponent('div') // true
+weex.isRegisteredComponent('- unknown -') // false
+weex.isRegisteredComponent('navigator') // false, not support modules
 ```

@@ -1,5 +1,5 @@
 ---
-title: <switch>
+title: <switch> (deprecated)
 type: references
 group: Build-in Components
 order: 8.22
@@ -7,6 +7,8 @@ version: 2.1
 ---
 
 <span class="weex-version">v0.6.1+</span>
+
+> **deprecated:** This built-in component will be deprecated soon. There're some reasons for this deprecation, such as the inconsistency of user experience on different ends, and the component's appearance sometimes being not as expected. Therefore we strongly suggest developers build this component as a customized component using weex's DSL and its rendering ability.
 
 `<switch>` is a checkbox-like UI component.
 
@@ -47,9 +49,9 @@ None.
 
 ## Events
 
-* `appear` / `disappear` event. check out [common events](../common-event.html)
-* `click` / `longpress`: check out [common events](../common-event.html)
-* `change`: check out [common events](../common-event.html)
+* `appear` / `disappear` event. check out [common events](/wiki/common-events.html)
+* `click` / `longpress`: check out [common events](/wiki/common-events.html)
+* `change`: check out [common events](/wiki/common-events.html)
 
 ## Parameters of events' object for onchange event:
 
@@ -70,7 +72,7 @@ None.
 
 > **Notes:** If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched.
 
-common styles: check out [common styles for components](../common-style.html)
+common styles: check out [common styles for components](/wiki/common-styles.html)
 
 ## Usage Notes
 

@@ -43,7 +43,7 @@ modal.toast({
 - `options {Object}`：alert选项
   - `message {string}`：警告框内显示的文字信息
   - `okTitle {string}`：确定按钮上显示的文字信息，默认是“OK”
-  - `callback {Function}`：用户操作完成后的回调
+- `callback {Function}`：用户操作完成后的回调
 
 #### 基本用法
 ```

@@ -87,7 +87,7 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
 ## Styles
 
- - Please check out the [common styles](../common/common-style)
+ - Please check out the [common styles](/wiki/common-styles.html)
 
 ## Events
 

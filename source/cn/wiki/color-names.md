@@ -1,12 +1,12 @@
 ---
-title: 颜色名称列表
+title: 支持的颜色名称列表
 type: wiki
 group: 样式
 order: 3.4
 version: 2.1
 ---
 
-# Weex 支持的所有颜色名称
+<!-- toc -->
 
 ### 基础颜色关键词:
 

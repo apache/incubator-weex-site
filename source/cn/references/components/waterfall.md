@@ -21,6 +21,7 @@ version: 2.1
 
 ### 特性
 
+- **show-scrollbar** : 可选值为 true/ false，默认值为 true。控制是否出现滚动条。
 - **column-width** : 描述瀑布流每一列的列宽
   - `auto`: 意味着列宽是被其他属性所决定的(比如 column-count)
   - `<length>`: 最佳列宽，实际的列宽可能会更宽(需要填充剩余的空间)， 或者更窄(如果剩余空间比列宽还要小)。 该值必须大于0
@@ -28,6 +29,8 @@ version: 2.1
   - `auto`: 意味着列数是被其他属性所决定的(比如 column-width)
   - `<integer>`: 最佳列数，column-width 和  column-count 都指定非0值， 则 column-count 代表最大列数。
 - **column-gap**: 列与列的间隙. 如果指定了 `normal` ，则对应 `32`.
+- **left-gap**: 左边cell和列表的间隙. 如果未指定 ，则对应 `0`<span class="api-version">v0.19+</span>.
+- **right-gap**: 右边cell和列表的间隙. 如果未指定，则对应 `0`<span class="api-version">v0.19+</span>.
 
 其他支持的属性参见 [List Component Attributes](./list.html)
 
@@ -41,7 +44,7 @@ version: 2.1
 - `opacity`
 - `background-color`
 
-查看 [组件通用样式](../common-style.html)
+查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ### 事件
 
@@ -54,7 +57,7 @@ version: 2.1
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 ### API
 
@@ -62,4 +65,4 @@ version: 2.1
 
 ### 示例
 
-参见 [playground waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)
+[waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)

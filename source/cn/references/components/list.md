@@ -41,13 +41,12 @@ version: 2.1
 `<list>` 的子组件只能包括以上四种组件或是 `fix` 定位的组件，其他形式的组件将不能被正确的渲染。
 
 ## 特性
-
+- `show-scrollbar {boolean}`：可选值为 true/ false，默认值为 true。控制是否出现滚动条。
 - `loadmoreoffset {number}`：默认值为 0，触发 `loadmore` 事件所需要的垂直偏移距离（设备屏幕底部与 `<list>` 底部之间的距离）。当 `<list>` 的滚动条滚动到足够接近 `<list>` 底部时将会触发 `loadmore` 这个事件。
 - `offset-accuracy {number}` <sup class="wx-v">0.11+</sup>：控制`onscroll`事件触发的频率，默认值为10，表示两次`onscroll`事件之间列表至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。
 
   ![mobile_preview](../images/list_4.jpg)
-
-- `offset-accuracy`：默认值是0，触发 `scroll` 事件所需要的垂直偏移距离。
+  
 ## 样式
 
 - 通用样式：支持所有通用样式
@@ -58,7 +57,7 @@ version: 2.1
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](../common-style.html)
+  查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ## 事件
 
@@ -72,9 +71,16 @@ version: 2.1
   - `contentOffset {Object}`: 列表的偏移尺寸
     - `x {number}`: x轴上的偏移量
     - `y {number}`: y轴上的偏移量
+    
+    [简单示例](http://dotwe.org/vue/edd19cdf2f03fbe857b76fadd65a08c3)
 
-  [示例1](http://dotwe.org/bc445ede8746a31360e3607d210304c5)
- [示例2](http://dotwe.org/vue/3b450a89aefc5c0fea0f76713e1355b6)
+    ![mobile_preview](../images/list_demo.jpg)
+
+    [滑动加载示例](http://dotwe.org/vue/2170622cc99895e5ad6af89d06355b84)
+
+    [头部sticky示例](http://dotwe.org/vue/2ecfe0a1c7b820c9d9c9965e1a8cde19)
+
+    [cell appear事件](http://dotwe.org/vue/ce0e953112b132e5897725b3149f3924)
 
 - 通用事件
 
@@ -85,7 +91,7 @@ version: 2.1
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 ## 扩展
 
@@ -112,4 +118,4 @@ version: 2.1
 
 ## 示例
 
-[加载更多](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)
+[滑动加载](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)

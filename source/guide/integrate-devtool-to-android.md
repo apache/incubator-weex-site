@@ -1,10 +1,12 @@
----
+# ---
 title: Integrate Devtool to Android
 type: guide
 group: Develop
 order: 5.4
 version: 2.1
 ---
+
+<!-- toc -->
 
 # Integrate Devtool to Android
 
@@ -75,29 +77,42 @@ You can find detail and suitable way of initialize inspector in `Playground`.
 You can control a state of debug mode via the `WXEnvironment.sRemoteDebugMode`, but you need reset Weex runtime if you changed a state of debug mode.
 
 ```java
-private void launchInspector(boolean remoteDebug) {
-  if (WXEnvironment.isApkDebugable()) {
-    try {
-      if (mWxDebugProxy != null) {
-        mWxDebugProxy.stop();
-      }
-      HackedClass<Object> debugProxyClass = WXHack.into("com.taobao.weex.devtools.debug.DebugServerProxy");
-      mWxDebugProxy = (IWXDebugProxy) debugProxyClass.constructor(Context.class, WXBridgeManager.class)
-              .getInstance(WXEnvironment.getApplication(), WXBridgeManager.this);
-      if (mWxDebugProxy != null) {
-        mWxDebugProxy.start();
-        if (remoteDebug) {
-          mWXBridge = mWxDebugProxy.getWXBridge();
-        } else {
-          if (mWXBridge != null && !(mWXBridge instanceof WXBridge)) {
-            mWXBridge = null;
-          }
-        }
-      }
-    } catch (HackAssertionException e) {
-      WXLogUtils.e("launchInspector HackAssertionException ", e);
+private void initWXBridge(boolean remoteDebug) {
+    if (remoteDebug && WXEnvironment.isApkDebugable()) {
+      WXEnvironment.sDebugServerConnectable = true;
     }
-  }
+
+    if (mWxDebugProxy != null) {
+      mWxDebugProxy.stop(false);
+    }
+    if (WXEnvironment.sDebugServerConnectable && (WXEnvironment.isApkDebugable() || WXEnvironment.sForceEnableDevTool)) {
+      if (WXEnvironment.getApplication() != null) {
+        try {
+          Class clazz = Class.forName("com.taobao.weex.devtools.debug.DebugServerProxy");
+          if (clazz != null) {
+            Constructor constructor = clazz.getConstructor(Context.class, WXBridgeManager.class);
+            if (constructor != null) {
+              mWxDebugProxy = (IWXDebugProxy) constructor.newInstance(
+                      WXEnvironment.getApplication(), WXBridgeManager.this);
+              if (mWxDebugProxy != null) {
+                mWxDebugProxy.start(new WXJsFunctions());
+              }
+            }
+          }
+        } catch (Throwable e) {
+          //Ignore, It will throw Exception on Release environment
+        }
+        WXServiceManager.execAllCacheJsService();
+      } else {
+        WXLogUtils.e("WXBridgeManager", "WXEnvironment.sApplication is null, skip init Inspector");
+        WXLogUtils.w("WXBridgeManager", new Throwable("WXEnvironment.sApplication is null when init Inspector"));
+      }
+    }
+    if (remoteDebug && mWxDebugProxy != null) {
+      mWXBridge = mWxDebugProxy.getWXBridge();
+    } else {
+      mWXBridge = new WXBridge();
+    }
 }
 ```
 
@@ -109,18 +124,22 @@ In this way, You can control the debug mode flexibly.
 
 ```java
 public class RefreshBroadcastReceiver extends BroadcastReceiver {
-  @Override
-  public void onReceive(Context context, Intent intent) {
-    if (IWXDebugProxy.ACTION_DEBUG_INSTANCE_REFRESH.equals(intent.getAction())) {
-      if (mUri != null) {
-        if (TextUtils.equals(mUri.getScheme(), "http") || TextUtils.equals(mUri.getScheme(), "https")) {
-          loadWXfromService(mUri.toString());
-        } else {
-          loadWXfromLocal(true);
+    @Override
+    public void onReceive(Context context, Intent intent) {
+      if (IWXDebugProxy.ACTION_INSTANCE_RELOAD.equals(intent.getAction()) ||
+              IWXDebugProxy.ACTION_DEBUG_INSTANCE_REFRESH.equals(intent.getAction())) {
+        Log.v(TAG, "connect to debug server success");
+        if (mUri != null) {
+          if (TextUtils.equals(mUri.getScheme(), "http") || TextUtils.equals(mUri.getScheme(), "https")) {
+            String weexTpl = mUri.getQueryParameter(Constants.WEEX_TPL_KEY);
+            String url = TextUtils.isEmpty(weexTpl) ? mUri.toString() : weexTpl;
+            loadWXfromService(url);
+          } else {
+            loadWXfromLocal(true);
+          }
         }
       }
     }
-  }
 }
 ```
 

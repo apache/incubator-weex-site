@@ -16,7 +16,7 @@ You can use Weex directly through [Getting Started](./guide/index.html) tutorial
 We are using JIRA for tracking all the issues and updating whenever when have an internal fix in progress. Before filing a new task, try to confirm if it is already listed or if there is a fix in progress.
 
 ##### Report New Issues
-Open a  [JIRA Issue](https://issues.apache.org/jira/projects/WEEX) , click on the top red "Create" button (you may need to [create a JIRA account](https://issues.apache.org/jira/secure/Signup!default.jspa) if you haven't registered). [Bug Report Guidelines](../bug-report-guidelines.html) document provides some of the most useful information about writing a good bug report. The better your bug report is, the faster we can reproduce and fix it!
+Open a  [JIRA Issue](https://issues.apache.org/jira/projects/WEEX) , click on the top red "Create" button (you may need to [create a JIRA account](https://issues.apache.org/jira/secure/Signup!default.jspa) if you haven't registered). [Bug Report Guidelines](/bug-report-guidelines.html) document provides some of the most useful information about writing a good bug report. The better your bug report is, the faster we can reproduce and fix it!
 
 ## Contribute Code
 
@@ -24,7 +24,7 @@ Apache Weex is an open source project and both, core team members and external c
 
 You can contribute code by either fixing an existing bug or developing new features. In either case, we always encourage to create a JIRA ticket and ensure we are in agreement on your proposal.
 
-To help you get started, we've created a document with more details about development process. Please read **[Getting Started with Development Process](../development-process.html)**.
+To help you get started, we've created a document with more details about development process. Please read **[Getting Started with Development Process](/development-process.html)**.
 
 ## Ask or Answer Questions
 

@@ -17,9 +17,9 @@ The weex builtin component 'text' is used to render text with specified style 
       this.text = textComponent.attr.value;
 
 ## Styles
-* Support [common styles for components](../wiki/common-style.html)
+* Support [common styles for components](/wiki/common-styles.html)
 * lines: specify the text lines. Default value is `0` for unlimited.
-* Support [text styles](../wiki/text-style.html)
+* Support [text styles](/wiki/text-styles.html)
   * support 'color' style.
   * support 'font-size' style. iOS: default vlaue `32`. Android: platform specify. HTML5: default value `32`.
   * support 'font-style' style.
@@ -30,7 +30,7 @@ The weex builtin component 'text' is used to render text with specified style 
   * support 'line-height'(available from v0.6.1) style.
 
 ## Events
-Support [common events](../common-event.html)
+Support [common events](/wiki/common-events.html)
 
 ## Custom Typeface
 `support:v0.12.0`

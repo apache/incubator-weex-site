@@ -6,7 +6,7 @@ order: 4.3
 version: 2.1
 ---
 
-# Gesture
+<!-- toc -->
 
 > Experiment Feature
 
@@ -53,7 +53,7 @@ The following properties can be used in gesture callback:
 * `screenX`. The X coordinate of the touch point relative to the left edge of the screen.
 * `screenY`. The Y coordinate of the touch point relative to the top edge of the screen.
 * `force`. A float value that represents the amount of pressure the user is applying to the touch surface. This is a value between 0.0 (no pressure) and 1.0 (the maximum amount of pressure the hardware can recognize).
->>> iOS only and force is included in iPhone 6S and later models
+> iOS only and force is included in iPhone 6S and later models
 
 [have a try](http://dotwe.org/vue/91b6929f4f9f97a099a30c516dc2db06)
 

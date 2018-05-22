@@ -36,7 +36,7 @@ This component does not support any child component.
 
 * `max` constrain the max date when `type` is `date`, format is `yyyy-MM-dd`
 
-* `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd` 
+* `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
 
 * `maxlength`: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.
 
@@ -53,7 +53,7 @@ This component does not support any child component.
   * `disabled`
   * `enabled`
 
-* text styles: checkout [text styles](../text-style.html)
+* text styles: checkout [text styles](/wiki/text-styles.html)
 
   * support `color` style.
   * support `font-size` style.
@@ -62,7 +62,7 @@ This component does not support any child component.
   * support `text-align` style.
 
 ### common styles
-check out [common styles for components](../common-style.html)
+check out [common styles for components](/wiki/common-styles.html)
 
 * support flexbox related styles.
 * support box model related styles.
@@ -83,12 +83,12 @@ check out [common styles for components](../common-style.html)
     - `value`: component text value
 
 ### common events
-check out [common events](../common-event.html)
+check out [common events](/wiki/common-events.html)
 
 * support `appear` / `disappear` event.
 
 
-### Methoads
+### Methods
 
  - `focus()` <span class="api-version">v0.9+</span>
 
@@ -103,10 +103,18 @@ check out [common events](../common-event.html)
   - `selectionStart {number}`:set starting location text selection range
   - `selectionEnd {number}`:set end location text selection range
 
-- `getEditSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>get text selection range of input or textarea
+- `getSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>get text selection range of input or textarea
     - `selectionStart {number}`:get starting location text selection range
     - `selectionEnd {number}`: get end location text selection range
 
+- `setTextFormatter(params)`<span class="api-version">v0.18+</span>: This is a very useful feature,can be used to set a set of rules for the input to formatting the input content in real-time.
+    - `params {object}`：formatting rules, contains the following parameters:
+      - `formatRule {regexp}`: Regular expression used to format the match
+      - `formatReplace {string}`: Contents to replace after format matching
+      - `recoverRule {regexp}`: Regular expressions to restore original content from formatted content
+      - `recoverReplace {string}`: Content to replace when restoring original content
+
+For details of `setTextFormatter`, please refer to [sample](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
 ### Notes
 input does not support the common-event `click`. Please listen to the `input` or `change` event instead.
 

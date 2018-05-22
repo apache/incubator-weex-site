@@ -24,7 +24,7 @@ There is no specific attribute for this component.
 
 ### Styles
 
-**common styles**: check out the [common styles](../common-style.html)
+**common styles**: check out the [common styles](/wiki/common-styles.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -33,10 +33,10 @@ There is no specific attribute for this component.
 
 ### Events
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
 ### Examples
 

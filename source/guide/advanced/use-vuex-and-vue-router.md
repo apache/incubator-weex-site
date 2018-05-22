@@ -6,7 +6,7 @@ order: 8.4
 version: 2.1
 ---
 
-# Using Vuex and vue-router
+<!-- toc -->
 
 Vue.js has many peripheral technology products such as [Vuex](https://github.com/vuejs/vuex) and [vue-router](https://github.com/vuejs/vue-router), those libraries can also work well on Weex.
 

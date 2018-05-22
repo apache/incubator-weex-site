@@ -6,7 +6,9 @@ order: 3.2
 version: 2.1
 ---
 
-Text alike components share some common style rules. The text alike components currently includes [`text`](./components/text.html) and [`input`](./components/input.html).
+<!-- toc -->
+
+Text alike components share some common style rules. The text alike components currently includes [`text`](/references/components/text.html) and [`input`](/references/components/input.html).
 
 ## Properties
 

@@ -6,6 +6,8 @@ order: 6.1
 version: 2.1
 ---
 
+<!-- toc -->
+
 The weex plugin development kit is designed to help developers build weex plugins quickly and easily, allowing them to integrate native functionality without changing business code.
 
 The plugin abstracts a functionality and/or component to the rest of the app by including the specific implementation for each target platform ([Web](#web), [Android](#android) and [iOS](#ios)) and exposing it through a common API.
@@ -100,7 +102,7 @@ See [Extend iOS](./extend-ios.html).
   ```
 
 ## Publish the plugin in the weex market
-You can publish to the [Weex Market](../tools/market.html) with the simple command:
+You can publish to the [Weex Market](https://market.dotwe.org/) with the simple command:
 ```
 weex plugin publish
 ```

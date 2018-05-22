@@ -52,7 +52,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   - 支持 `font-weight`
   - 支持 `text-align`
 
-  查看 [文本样式](../text-style.html)
+  查看 [文本样式](/cn/wiki/text-styles.html)
 
 - 通用样式：支持所有通用样式
   - 盒模型
@@ -61,7 +61,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](../common-style.html)
+  查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 ## 事件
 
@@ -109,7 +109,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 
 
@@ -125,9 +125,17 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 - `setSelectionRange(selectionStart,selectionEnd)`  <span class="api-version">v0.11+</span>设置文本选区
   - `selectionStart {number}`：设置文本选区的起始点
   - `selectionEnd {number}`：设置文本选区的起终点
-- `getEditSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>设置文本选区
+- `getSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>设置文本选区
     - `selectionStart {number}`：获取文本选区的起始点
     - `selectionEnd {number}`：获取文本选区的起终点
+- `setTextFormatter(params)`<span class="api-version">v0.18+</span>：这是一个非常有用的特性，可以对input设置一组对输入的内容进行实时格式化的规则。
+    - `params {object}`：格式化规则，包含以下参数：
+      - `formatRule {regexp}`：格式化匹配的正则表达式
+      - `formatReplace {string}`：格式化匹配后用于替换的内容
+      - `recoverRule {regexp}`：从格式化后的内容还原原始内容的正则表达式
+      - `recoverReplace {string}`：还原原始内容时用于替换的内容
+
+`setTextFormatter` 的详细使用方法请参照 [示例](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
 ## 约束
 
 目前不支持 `this.$el(id).value = ''` 这种方式改写 input value。只支持在 `<input>` 组件的 `input`、`change` 事件中改写。

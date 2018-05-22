@@ -1,5 +1,5 @@
 ---
-title: <switch>
+title: <switch> (已废弃)
 type: references
 group: 内置组件
 order: 8.22
@@ -8,6 +8,7 @@ version: 2.1
 
 <span class="weex-version">v0.6.1+</span>
 
+> **废弃:** 本组件已不推荐业务上使用。由于各端实现不一致且端上定制能力较弱，不适合作为内置组件实现，因此建议开发者通过 weex 上层能力自行定制该组件.
 
 `<switch>` 是个类似 checkbox 的 UI
 
@@ -66,7 +67,7 @@ version: 2.1
   - `appear`
   - `disappear`
 
-  查看 [通用事件](../common-event.html)
+  查看 [通用事件](/cn/wiki/common-events.html)
 
 ## 样式
 
@@ -89,7 +90,7 @@ version: 2.1
   - `opacity`
   - `background-color`
 
-查看 [组件通用样式](../common-style.html)
+查看 [组件通用样式](/cn/wiki/common-styles.html)
 
 
 ## 使用说明

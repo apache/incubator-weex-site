@@ -5,12 +5,11 @@ order: 0
 version: 2.1
 has_chapter_content: true
 ---
-
-- [iOS APIs](./ios-apis.html)
-- [Android APIs](./android-apis.html)
-- [JS Service](./js-service.html)
-- [Common Style](cn/wiki/common-styles.html)
-- [Text Style](cn/wiki/text-styles.html)
-- [Color name](cn/wiki/color-names.html)
-- [Gesture](cn/wiki/gestures.html)
-- [Event bubble](cn/wiki/event-bubble.html)
+* API
+  * [Android APIs](./android-apis.html)
+  * [iOS APIS](./ios-apis.html)
+  * [Weex 实例变量](./weex-variable.html)
+  * [JS Service](./js-service.html)
+  * [BroadcastChannel](./broadcast-channel.html)
+* [内置组件](./components/)
+* [内置模块](./modules/)

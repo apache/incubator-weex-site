@@ -6,7 +6,7 @@ order: 8.4
 version: 2.1
 ---
 
-# 使用 Vuex 和 vue-router
+<!-- toc -->
 
 Vue.js 也有较多周边技术产品，如 [Vuex](https://github.com/vuejs/vuex) 和 [vue-router](https://github.com/vuejs/vue-router) 等，这些库也可以在 Weex 中很好的工作。
 

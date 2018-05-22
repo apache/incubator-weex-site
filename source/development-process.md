@@ -23,7 +23,7 @@ Be sure to search the issues before creating new ones to avoid duplication. If y
 
 2. Clone your fork, create a new branch to push your commits to.
 
-3. Develop your feature or bug fix. Make sure your changes meet the [code style guidelines](../development-process.html#Code-Style-Guidelines).
+3. Develop your feature or bug fix. Make sure your changes meet the [code style guidelines](/development-process.html#code-style-guidelines).
 
 4. Copy and paste this to the top of your new file(s):
 
@@ -50,7 +50,7 @@ Be sure to search the issues before creating new ones to avoid duplication. If y
 
 5. Documentation and tests should be added or referenced if they need to be added or updated as part of the change.
 
-6. Commit to your branch following [commit guidelines](../development-process.html#Commit-Guidelines).
+6. Commit to your branch following [commit guidelines](/development-process.html#commit-guidelines).
 
 ## 3. Create a Pull Request
 
@@ -96,4 +96,6 @@ Bug: 123456
 A short subject and a blank line after the subject are crucial. Use the bug number from the JIRA issue.
 
 Some good thoughts on how to write good git commit messages can be found [here](https://chris.beams.io/posts/git-commit/).
+
+
 

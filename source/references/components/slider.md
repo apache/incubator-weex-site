@@ -22,13 +22,17 @@ It supports all kinds of weex components as its slides, especially the `indicato
 - `interval`: &lt;number&gt; millisecond. This value determines time interval for each page displayed in slider.
 - `index`: <number> . This value determines the  index of current shown slide. The default value is `0`.
 - `offset-x-accuracy {float}`：set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
+- `show-indicators {boolean}`：set whether to display indicator
+- `infinite {boolean}`：set whether the page in the slider can be scrolled
+- `scrollable {boolean}`：set whether slider pages can be switched by sliding gestures
+- `keep-index {boolean}`：set whether to maintain the index of the page after the data changes
 
-- `index {number}`: specify current page index of slider 
+- `index {number}`: specify current page index of slider
   [try in dotWe](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
 
 ## Styles
 
-**common styles**: check out [common styles for components](../common-style.html)
+**common styles**: check out [common styles for components](/wiki/common-styles.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -40,10 +44,10 @@ It supports all kinds of weex components as its slides, especially the `indicato
 - `change`: triggerd when the slide's index is changed. The event object contains the attribute of `index`, which is the index number of the currently shown slide.
 - `scroll` <sup class="wx-v">0.11+</sup>：this event is fired when scrolling. The current offsetXRatio value is given in this event callback.
 
-**common events**: check out the [common events](../common-event.html)
+**common events**: check out the [common events](/wiki/common-events.html)
 
-- support `click` event. Check out [common events](../common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../common-event.html)
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
 
 ### Example
 
