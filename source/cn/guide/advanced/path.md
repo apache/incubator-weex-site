@@ -35,7 +35,7 @@ has_chapter_content: true
 
 ## 相对路径
 
-[与我们在 HTML 中的用法类似](https://www.w3.org/TR/html4/types.html#type-uri)，Weex 以相同的方式处理相对路径。以`/`、`.`、`..`、`//` 开头的相对 URI 将相对于 bunle url 解析。
+[与我们在 HTML 中的用法类似](https://www.w3.org/TR/html4/types.html#type-uri)，Weex 以相同的方式处理相对路径。以`/`、`.`、`..`、`//` 开头的相对 URI 将相对于 bundle url 解析。
 
 这意味着， 一个以 `/` 开头的路径将是相对于 JS Bundle 文件的根文件夹。`.` 则是当前文件夹，`..` 是父文件夹。 `//` 则被解析为与 JS Bundle 相同的 scheme。
 
