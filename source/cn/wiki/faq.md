@@ -34,7 +34,7 @@ Weex 的原生运行机制支持从设备中加载图片，你只需要设置文
 
 这是由于 weex-toolkit 的依赖 http-server 导致的，http-server 的老版本在中文 windows 中的支持不是很好。我们已经修复了这个问题，请在使用前升级 weex-toolkit 版本。
 
-## Playground 应用在扫面后什么都没有显示（白屏）
+## Playground 应用在扫码后什么都没有显示（白屏）
 
 最好的方法是查看 debug 日志来查找原因，你可以按照 [这篇文档](./guide/how-to/debug-with-devtools.html) 中的说明来查明导致这一问题的原因。
 
