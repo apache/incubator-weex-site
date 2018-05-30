@@ -29,7 +29,7 @@ See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
 | Attribute     | Type   | Value                      | Default Value |
 | ------------- | ------ | -------------------------- | ------------- |
 | `placeholder` | String | {URL / Base64}             | -             |
-| `resize`      | String | conver / contain / stretch | stretch       |
+| `resize`      | String | cover / contain / stretch  | stretch       |
 | `src`         | String | {URL / Base64 }            | -             |
 
   > **Note:** you can specify a relative URL  for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
