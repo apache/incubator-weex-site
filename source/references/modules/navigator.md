@@ -21,7 +21,7 @@ Push a weex page onto the navigator stack, you can specify whether apply animati
 **Arguments**
 
 * options(object): some options.
-  * url(stirng): The URL of the weex page to push.
+  * url(string): The URL of the weex page to push.
   * animated(string): true, if the weex page is push through animation, otherwise, false. Default value is true.
 
 * callback(object): the callback function to be called after executing this action.
