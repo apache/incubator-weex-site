@@ -163,4 +163,9 @@ yimutian:
   icon: 'http://img.yimutian.com/misc/5aeaeefb5c265556f201b35a01f771e2.png'
   iOS: 'https://itunes.apple.com/cn/app/fei-li/id882549448?mt=8'
   android: 'http://www.ymt.com'
+dentalink:
+  name: '牙医管家'
+  icon: 'http://jfximage.oss-cn-qingdao.aliyuncs.com/app_icon.png'
+  iOS: 'https://itunes.apple.com/cn/app/ya-yi-guan-jia/id904824378?l=zh&ls=1&mt=8'
+  android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.dental360.doctor'
   
