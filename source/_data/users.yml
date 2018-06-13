@@ -168,4 +168,9 @@ dentalink:
   icon: 'http://jfximage.oss-cn-qingdao.aliyuncs.com/app_icon.png'
   iOS: 'https://itunes.apple.com/cn/app/ya-yi-guan-jia/id904824378?l=zh&ls=1&mt=8'
   android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.dental360.doctor'
+fanggeek:
+  name: '小鹿选房'
+  icon: 'http://fangyuantupian.img-cn-shenzhen.aliyuncs.com/57cf8a090cf224f382d5ba18/D1E9490C3BCB78A1C8B6808DC2DE30BE'
+  iOS: 'https://itunes.apple.com/cn/app/id1172227657'
+  android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.fanggeek.agent'
   
