@@ -20,7 +20,7 @@
   var vendors = ['ms', 'moz', 'webkit', 'o']
   for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
     window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame']
-    window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+    window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
                                 || window[vendors[x]+'CancelRequestAnimationFrame']
   }
 
@@ -28,7 +28,7 @@
     window.requestAnimationFrame = function(callback, element) {
       var currTime = new Date().getTime();
       var timeToCall = Math.max(0, 16 - (currTime - lastTime))
-      var id = window.setTimeout(function() { callback(currTime + timeToCall) }, 
+      var id = window.setTimeout(function() { callback(currTime + timeToCall) },
         timeToCall)
       lastTime = currTime + timeToCall
       return id
@@ -55,7 +55,7 @@
     menuBtn.addEventListener('click', function (e) {
       e.preventDefault()
       e.stopPropagation()
-      
+
       sidebarEl.classList.toggle('open')
     })
 
@@ -89,7 +89,7 @@
 
           var target = e.target;
 
-          if (picker.contains(target)) {
+          if (target.href && picker.contains(target)) {
             var lang = target.getAttribute('data-lang')
 
             if (window.localStorage) {
@@ -146,7 +146,7 @@
     })
 
     reqwest({
-      url: ROOT + 'content.json', 
+      url: ROOT + 'content.json',
       type: 'json'
     })
     .then(function (resp) {
@@ -171,7 +171,7 @@
                                   '</h2>' +
                                   '<p>' + post.content + '</p>' +
                                 '</div>'
-              
+
               html += htmlSnippet
             })
             if (panel.classList.contains('results-panel')) {
@@ -219,20 +219,20 @@
             if (indexContent < 0) {
               indexContent = 0;
             }
-            
+
             var start = 0,
                 end = 0
-            
+
             start = indexContent < 11 ? 0 : indexContent - 10
             end = start === 0 ? 70 : indexContent + keyword.length + 60
             if (end > postContent.length) {
               end = postContent.length
             }
 
-            var matchContent = '...' + 
+            var matchContent = '...' +
               postContent
                 .substring(start, end)
-                .replace(regEx, '<em class="search-keyword">$1</em>') + 
+                .replace(regEx, '<em class="search-keyword">$1</em>') +
                 '...'
 
             resultStr += matchContent
@@ -303,7 +303,7 @@
        hosts.forEach(function (i) {
           i.style.display = 'block'
         })
-      
+
     }
   }
 
@@ -312,14 +312,14 @@
 
 
   /*
-   * LANDINGPAGE 
+   * LANDINGPAGE
    */
   if (PAGE_TYPE === 'index') {
     /**
      * Set index page scene max height
      */
     function setMaxHeight () {
-      if(window.innerWidth < 1100 
+      if(window.innerWidth < 1100
         && window.innerWidth >= 700
         && window.innerWidth / window.innerHeight >= 0.7) {
         var scenes = document.querySelectorAll('.scene')
@@ -334,10 +334,10 @@
     setMaxHeight()
 
     /**
-     * Index page animation helper: AppearController 
+     * Index page animation helper: AppearController
      */
     function AppearController(el, opts) {
-      
+
       this._lastScroll = window.pageYOffset
       this._ticking = false
       this.el = el
@@ -391,7 +391,7 @@
       var viewportTop = this._lastScroll
       var viewportBottom = viewportTop + window.innerHeight
       var threshold = (this._optsThreshold / 100) * window.innerHeight
-      var bottomEdge = viewportBottom + threshold 
+      var bottomEdge = viewportBottom + threshold
       var topEdge = viewportTop - this.offsetHeight - threshold
 
       return this.offsetTop <= bottomEdge && this.offsetTop >= topEdge
@@ -407,7 +407,7 @@
 
 
     /**
-     * Index page animation helper: Galaxy anim controller 
+     * Index page animation helper: Galaxy anim controller
      */
     function Galaxy(canvas, orbitColor) {
       var ctx = canvas.getContext("2d")
@@ -434,11 +434,11 @@
             orbit = new Orbit(that.x, that.y, that.radius - i*23, color)
 
         that.orbits.push(orbit)
-        
+
         if (i < 5) {
           for (var j = 0; j < 4; j++) {
-            var size = j === 1 
-                      ? Math.floor(Math.random() * 8 + 10) 
+            var size = j === 1
+                      ? Math.floor(Math.random() * 8 + 10)
                       : Math.floor(Math.random() * 6 + 3),
                 velocity = 1 / ((size - 3) * 45),
                 planet = new Planet(size, '#fff', velocity)
@@ -470,7 +470,7 @@
     Galaxy.prototype.pause = function () {
       var that = this,
           ctx = this.ctx
-      
+
       window.cancelAnimationFrame(that.spinAnim)
       ctx.clearRect(0, 0, this.width, this.height)
     }
@@ -582,7 +582,7 @@
           }
         })
 
-      }  
+      }
     }
 
     initGalaxy()
@@ -600,7 +600,7 @@ function initVersionChange(){
         var stype = target.getAttribute('stype')
         var iscn = location.href.indexOf('/cn/')? '/cn/' : '/'
         if(target.value === '2v' ){
-          url += stype + '/index.html' 
+          url += stype + '/index.html'
         }else{
           if( stype.indexOf('/cn/') != -1 ){
             url += stype.replace('/cn/','/cn/v-0.10/') + '/index.html'
@@ -617,4 +617,4 @@ function initVersionChange(){
 
 })();
 
-  
+
