@@ -1,0 +1,19 @@
+<script>
+  ;(function(){
+    var selectedLanguage = 'en'
+    if (window.localStorage) {
+      selectedLanguage = window.localStorage.getItem('lang')
+    }
+    var locationLanguage = /\/cn\/examples/i.test(window.location.href) ? 'zh' : 'en'
+    window.currentLanguage = locationLanguage || selectedLanguage
+      || navigator.language
+      || navigator.browserLanguage || 'en'
+  })();
+</script>
+
+<%- js('js/vue.min.js') %>
+<%- css('css/examples') %>
+<div class="main-content examples-layout">
+  <div id="root"></div>
+</div>
+<%- js('js/examples.min.js') %>
