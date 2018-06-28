@@ -380,9 +380,9 @@ module.exports = {
       en: 'http://weex-project.io/references/components/waterfall.html'
     },
     examples: [{
-      hash: '4624d605004fc7eb9f14ca9c5a226fe3',
-      title: { zh: '最简例子', en: 'Sample' },
-      screenshot: 'https://gw.alicdn.com/tfs/TB1sF_CcMMPMeJjy1XcXXXpppXa-540-844.png'
+      hash: '7e5840caa24fc71082699f6afcc72ec9',
+      title: { zh: '瀑布流', en: 'Waterfall Sample' },
+      screenshot: 'https://img.alicdn.com/tfs/TB11KFfA7yWBuNjy0FpXXassXXa-540-960.png'
     }]
   }, {
     type: 'recycle-list',
