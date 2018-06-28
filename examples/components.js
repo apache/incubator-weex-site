@@ -442,9 +442,9 @@ module.exports = {
       title: { zh: '无限列表', en: 'Infinite Scroll' },
       screenshot: 'https://gw.alicdn.com/tfs/TB1JGrQilfH8KJjy1XbXXbLdXXa-540-844.png'
     }, {
-      hash: '05f153c3a2478605a66011e981964373',
+      hash: '3dc558662a467082cc4244cfaa3285b1',
       title: {  zh: '水平滚动', en: 'Horizontal Scroll'  },
-      screenshot: 'https://img.alicdn.com/tfs/TB1IoEFxGmWBuNjy1XaXXXCbXXa-540-844.png'
+      screenshot: 'https://gw.alicdn.com/tfs/TB12wdnAYGYBuNjy0FoXXciBFXa-540-844.png'
     }]
   }, {
     type: 'recycle-list-component',

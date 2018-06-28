@@ -155,22 +155,6 @@ module.exports = {
     //   screenshot: 'https://gw.alicdn.com/tfs/TB1sF_CcMMPMeJjy1XcXXXpppXa-540-844.png'
     }]
   }, {
-    type: 'case-touch',
-    name: { zh: 'Touch事件', en: 'Touch Event' },
-    examples: [{
-      hash: '993eb7f1a379a224c2ec5224370b2b76',
-      title: '<touch left move>',
-      screenshot: 'https://img.alicdn.com/tfs/TB1c4dfA1uSBuNjy1XcXXcYjFXa-540-960.png'
-    }, {
-      hash: '06c5fd1948ba95d09ece274902ccf425',
-      title: '<touch ball>',
-      screenshot: 'https://img.alicdn.com/tfs/TB1lUx2A4GYBuNjy0FnXXX5lpXa-540-960.png'
-    }, {
-      hash: '4721a88bfeaa703b4ff28e33ab17609e',
-      title: '<slide pager-indicator>',
-      screenshot: 'https://img.alicdn.com/tfs/TB1r2M.AFOWBuNjy0FiXXXFxVXa-540-960.jpg'
-    }]
-  },{
     type: 'case-benchmark',
     name: { zh: '实例压测', en: 'Real Case Benchmark' },
     examples: [{

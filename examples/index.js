@@ -2,6 +2,7 @@ const components = require('./components')
 const modules = require('./modules')
 const syntax = require('./syntax')
 const styles = require('./styles')
+const events = require('./events')
 const cases = require('./cases')
 const others = require('./others')
 
@@ -10,6 +11,7 @@ const examples = [
   modules,
   syntax,
   styles,
+  events,
   cases,
   others
 ]

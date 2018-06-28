@@ -110,15 +110,15 @@ module.exports = {
       scope: 'website',
       hash: '013b1e76d2c5419e32bc3e02aa1bef26',
       title: '应用列表',
-      screenshot: 'https://img.alicdn.com/tfs/TB1IoEFxGmWBuNjy1XaXXXCbXXa-540-844.png'
+      screenshot: 'https://gw.alicdn.com/tfs/TB1fSbSA_tYBeNjy1XdXXXXyVXa-540-844.png'
     }, {
       hash: '6c458803b2a83a336099ff43dae4d1a5',
       title: '商品展示',
       screenshot: 'https://gw.alicdn.com/tfs/TB1juElXjihSKJjy0FfXXbGzFXa-540-844.png'
     }, {
-      hash: '97c0dc80f34d51aff2551a9916d48fba',
+      hash: '7e46ae0df128bd07c6b8c77290c9a8d9',
       title: { zh: '聊天', en: 'Chat' },
-      screenshot: 'https://img.alicdn.com/tfs/TB1IoEFxGmWBuNjy1XaXXXCbXXa-540-844.png'
+      screenshot: 'https://gw.alicdn.com/tfs/TB16_XwAVOWBuNjy0FiXXXFxVXa-540-844.png'
     }]
   }]
 }
