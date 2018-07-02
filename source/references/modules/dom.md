@@ -79,6 +79,11 @@ domModule.addRule('fontFace', {
   'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"
 });
 ```
+**Important Notes**
+
+You can name `fontFamily` in `addRule` as you wish in your page, any string is OK. But this is not the real font-family name of the font file. The real name or system name for the font is stored in binrary data of ttf file. You must ensure that the real font-family name of font file is unique. Or your font may not be successfully registered to device and your text may display as a '?'.
+
+Specially, if you are using http://www.iconfont.cn/ to build your iconfont. Make sure that you set a unique enough font-family name for your font in project settings.
 
 #### Example
 
