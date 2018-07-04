@@ -99,23 +99,24 @@ Currently, the `weex-toolkit` only supports the creation of Vue.js project. The 
 
 ### Set up
 
-Make sure you have already installed the [Node.js](https://nodejs.org/), and then install the `weex-toolkit` globally.
+With [Node.js](https://nodejs.org/) installed, install `weex-toolkit` CLI globally.
 
 ```bash
 npm install weex-toolkit -g
 ```
 
-It will add the `weex` command to your global path. Then you can use `weex create` to create a starter project:
+This will add the `weex` command to your global path, and will allow you to generate new projects with the `weex create <project-name>` command.
+Use `weex create` to create a starter project:
 
 ```bash
 weex create awesome-app
 ```
 
-After doing that, you'll get a standard **Weex + Vue.js** project under the `awesome-app` folder of current path.
+After doing that, a standard **Weex + Vue.js** project will be generated inside the `awesome-app` folder in the current path.
 
 ### Develop
 
-The next step is to navigate into the generated directory, install dependencies, and start.
+The next step is to navigate into the generated directory, install dependencies, and start:
 
 ```bash
 cd awesome-app
@@ -123,11 +124,11 @@ npm install
 npm start
 ```
 
-It will start a web server on the `8081` port. You can open `http://localhost:8081` to see the render result on the web. The source code is located in `src/` folder. You can develop it as normal Vue.js project.
+`npm start` will start a web server on port `8081`. Open `http://localhost:8081` in your browser of choice to see the rendered result of your Weex app. The source code is located in `src/` folder. You can develop it as normal Vue.js project.
 
 ![Preview](./images/toolkit-preview.png)
 
-Besides, You can also open `http://localhost:8081/web/preview.html` to preview the rendered result for web in iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) then you'll see the rendered result on the mobile device.
+Additionally, you can open `http://localhost:8081/web/preview.html` to preview the rendered result on the web in an iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) then you'll see the rendered result on the mobile device.
 
 ### Build and Run
 
@@ -138,9 +139,9 @@ weex platform add ios
 weex platform add android
 ```
 
-Depends on your network environment, it may take a while, please be patient.
+Depending on your network environment, it may take a while to add them. Please be patient.
 
-In order to develop the app on your local machine, you need to set up mobile development environments. For iOS, you should install [Xcode](https://developer.apple.com/xcode/). And for Android, you should install [Android Studio](https://developer.android.com/studio/index.html). When the development environments are ready, run the commands below to launch your app on the simulator or the device.
+In order to develop the app on your local machine, you need to set up a mobile development environment. For iOS, you should install [Xcode](https://developer.apple.com/xcode/). For Android, you should install [Android Studio](https://developer.android.com/studio/index.html). When the development environment is ready, run the commands below to launch your app on the simulator or the device.
 
 ```bash
 weex run ios
@@ -156,11 +157,11 @@ The `weex-toolkit` can also be used to debug your mobile apps. Just run:
 weex debug
 ```
 
-It'll start debug server and open a web page in Chrome (only support V8 engine). For more technical details of `weex-toolkit`, please refer to the [toolkit document](../tools/toolkit.html).
+`weex debug` will start a debug server and open a web page in Chrome (only support V8 engine). For more technical details of `weex-toolkit`, please refer to the [toolkit document](../tools/toolkit.html).
 
 ## Next Steps
 
-I believe you've learned the basics of Weex when you reach here. The next step is to learn more advanced features of Weex and try it right away.
+At this point, you should have a general understanding of Weex. The next step is to explore and try the advanced features of Weex.
 
 If you want to use weex right now:
 
@@ -179,4 +180,4 @@ After getting acquainted with Weex, if you want to contribute to make it even be
 - [Development Process](../development-process.html)
 - [How to Contribute](../contributing.html)
 
-In addition, Weex is a cross-stack technology, developers are also diverse, learn some fundamental knowledge of front-end development, Vue.js, iOS and Android would be especially helpful.
+Considering that Weex is a cross-stack technology, fundamental knowledge of front-end development, Vue.js, iOS, and Android would be especially helpful.
