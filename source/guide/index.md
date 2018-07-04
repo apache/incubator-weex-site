@@ -72,11 +72,11 @@ Using the same source code across different platforms can dramatically increase 
 
 Although Weex uses a single codebase, you can still write platform specific code. Weex provides `weex.config.env` and `WXEnvironment` (they are strictly equal) to get the current runtime environment. You can use `WXEnvironment.platform` to determine which platform the code is running on. Except for the _platform_, `WXEnvironment` contains other information pertaining to environment, such as _osVersion_ and _deviceModel_. Refer to _[Weex variable](../references/weex-variable.html)_ for the complete list.
 
-## Support Multiple Front-End Frameworks
+## Support For Multiple Front-End Frameworks
 
-Front-end frameworks are syntax layer of weex, they are decoupled from native render engines. Weex does not bind with any specific front-end frameworks, instead, it brings native capabilities to them.
+Front-end frameworks are the syntax layer of Weex; therefore, they are decoupled from native render engines. Weex does not bind with any specific front-end frameworks, instead, Weex brings native capabilities to the front-end.
 
-Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/rax/) as its internal front-end framework.
+Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/rax/) as its internal front-end frameworks.
 
 ![Vue and Rax](./images/vue-rax.png)
 
@@ -85,17 +85,17 @@ Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/r
 
 > Vue.js and Rax are already integrated into Weex SDK, you don't need to require them manually.
 
-However, Vue and Rax are not the only options, it's possible to integrate other your favorite front-end framework into Weex. There is a document _[Extend JS Framework](./extend-js-framework.html)_ that describes how to implement it, but the process is still very complicated and tricky. To achieve it, you need to understand many underlying details about the js-native bridge and native render engines.
+However, Vue and Rax are not the only options. It is entirely possible to integrate your favorite front-end framework into Weex! There is a document _[Extend JS Framework](./extend-js-framework.html)_ that describes how to integrate a different front-end framework, the process, however, is still complicated and tricky. You need to understand many underlying details about the js-native bridge and native render engines in order to successfully integrate an alternate front-end framework.
 
-You can read _[Front-End Frameworks](./front-end-frameworks.html)_ to learn more details.
+You can read _[Front-End Frameworks](./front-end-frameworks.html)_ for more details.
 
 ## Create Your Own App
 
-> The following steps assume you have already known the foundational knowledge of Node.js and npm. If you are not familiar with them, you can visit [https://docs.npmjs.com/](https://docs.npmjs.com/) to learn more about npm.
+> The following steps assume basic knowledge of Node.js and npm. If you are not familiar with them, you can visit [https://docs.npmjs.com/](https://docs.npmjs.com/) to learn more about npm, and [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/) to learn more about Node.js.
 
-Weex provide a command line tool, the [weex-toolkit](/tools/toolkit.html), to help developers to get start easily. It can help you to create a starter project, setup iOS and Android development environments, debug, install plugins and so on.
+Weex provides a command line tool, the [weex-toolkit](/tools/toolkit.html), to help developers get start easily. The CLI can help you create a starter project, setup iOS and Android development environments, debug, install plugins, and so on.
 
-Currently, the `weex-toolkit` only supports the creation of Vue.js project. The `rax-cli` maybe helpful if you want to use Rax. Please visit [Rax's official website](https://alibaba.github.io/rax/) for more details.
+Currently, the `weex-toolkit` only supports the creation of Vue.js project. The `rax-cli` may be helpful if you want to use Rax. Please visit [Rax's official website](https://alibaba.github.io/rax/) for more details.
 
 ### Set up
 
