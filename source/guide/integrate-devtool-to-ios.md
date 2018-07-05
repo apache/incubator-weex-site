@@ -3,7 +3,7 @@ title: Integrate Devtool to iOS
 type: guide
 group: Develop
 order: 5.5
-version: 2.2
+version: 2.1
 ---
 
 <!-- toc -->
