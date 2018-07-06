@@ -128,7 +128,7 @@ npm start
 
 ![Preview](./images/toolkit-preview.png)
 
-Additionally, you can open `http://localhost:8081/web/preview.html` to preview the rendered result on the web in an iframe. You can also scan the QR code generated on the right using the[Weex playground app](/tools/playground.html) to see the rendered result on the mobile device.
+Additionally, you can open `http://localhost:8081/web/preview.html` to preview the rendered result on the web in an iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) to see the rendered result on the mobile device.
 
 ### Build and Run
 
