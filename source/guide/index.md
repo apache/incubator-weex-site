@@ -26,7 +26,7 @@ Here is an [example](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380) writ
 
 ![Weex Example](./images/weex-example-yo.png)
 
-This example renders a word "Yo" in the center of the screen. If you want to preview the rendered result on mobile devices, you need to install the [Weex playground app](/tools/playground.html), or integrate Weex SDK into your own app and scan your page's QR code with your playground app or your own app (with the QR scan feature to load scanned URL with Weex SDK). Thereafter, you will see the rendered result on your device.
+This example renders a word "Yo" in the center of the screen. If you want to preview the rendered result on a mobile device, you need to install the [Weex playground app](/tools/playground.html), or integrate Weex SDK into your own app and scan your page's QR code with your playground app or your own app (with the QR scan feature to load scanned URL with Weex SDK). Thereafter, you will see the rendered result on your device.
 
 Within the `<template>` of the source code, you will notice the `<div>` element, which is widely used on the web, and is also the generic container in Weex. The `<text>` component, however, is provided by Weex and is a block-level text container.
 
@@ -48,7 +48,7 @@ Behind the scenes, Weex uses native widgets. Although Weex emphasizes consistenc
 
 ![Different switch](./images/different-switch.png)
 
-If you want to use additional native components, other than the built-in components Weex provides, you need to implement them on each platform and keep their behaviors consistent. The most practical way is to integrate the existing native components to Weex platform. /_ need explanation _/
+If you want to use additional native components, other than the built-in components provided by Weex, you need to implement them on each platform and keep their behaviors consistent. The most practical way is to integrate the existing native components to Weex platform. /_ need explanation _/
 
 ### Native Modules
 
@@ -64,7 +64,7 @@ Here are some documents about how to extend native components and native modules
 
 ### Write Once, Run Everywhere
 
-Yes, Weex can build for Android, iOS, and Web from a single codebase.
+Yes, Weex can build for Android, iOS, and Web apps from a single codebase.
 
 Using the same source code across different platforms can dramatically increase development productivity and simplify the testing, building, and publishing processes. On this basis, Weex can combine the front-end's packaging and testing process with the mobile's publishing and monitoring system to improve development efficiency.
 
@@ -124,11 +124,11 @@ npm install
 npm start
 ```
 
-`npm start` will start a web server on port `8081`. Open `http://localhost:8081` in your browser of choice to see the rendered result of your Weex app. The source code is located in `src/` folder. You can develop it as normal Vue.js project.
+`npm start` will start a web server on port `8081`. Open `http://localhost:8081` in your browser of choice to see the rendered result of your Weex app. The source code is located in `src/` folder. You can develop it as a normal Vue.js project.
 
 ![Preview](./images/toolkit-preview.png)
 
-Additionally, you can open `http://localhost:8081/web/preview.html` to preview the rendered result on the web in an iframe. You can also scan the QR code generated on the right using the [Weex playground app](/tools/playground.html) then you'll see the rendered result on the mobile device.
+Additionally, you can open `http://localhost:8081/web/preview.html` to preview the rendered result on the web in an iframe. You can also scan the QR code generated on the right using the[Weex playground app](/tools/playground.html) to see the rendered result on the mobile device.
 
 ### Build and Run
 
