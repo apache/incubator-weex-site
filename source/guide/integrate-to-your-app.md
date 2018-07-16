@@ -44,7 +44,7 @@ dependencies {
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 
-3. Init Week SDK When Application Create
+3. Init Weex SDK When Application Create
 
 ```java
 public class WXApplication extends Application {
