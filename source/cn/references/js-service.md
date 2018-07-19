@@ -21,7 +21,9 @@ JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命�
 ### iOS
 
 ```objective-c
-[WeexSDKEngine registerService:@"SERVICE_NAME" withScript: @"SERVICE_JS_CODE" withOptions: @{}];
+[WXSDKEngine registerService:@"SERVICE_NAME" withScript: @"SERVICE_JS_CODE" withOptions: @{}];
+// or
+[WXSDKEngine registerService:@"SERVICE_NAME" serviceScriptUrl: @"SERVICE_JS_URL" withOptions: @{}];
 ```
 
 ### Android
