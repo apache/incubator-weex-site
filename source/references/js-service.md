@@ -20,7 +20,9 @@ JS service and Weex instance are parallel in js runtime. Weex instance lifecycle
 
 ### iOS
 ```objective-c
-[WeexSDKEngine registerService:@"SERVICE_NAME" withScript: @"SERVICE_JS_CODE" withOptions: @{}];
+[WXSDKEngine registerService:@"SERVICE_NAME" withScript: @"SERVICE_JS_CODE" withOptions: @{}];
+// or
+[WXSDKEngine registerService:@"SERVICE_NAME" serviceScriptUrl: @"SERVICE_JS_URL" withOptions: @{}];
 ```
 
 ### Android
