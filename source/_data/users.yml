@@ -168,4 +168,8 @@ dentalink:
   icon: 'http://jfximage.oss-cn-qingdao.aliyuncs.com/app_icon.png'
   iOS: 'https://itunes.apple.com/cn/app/ya-yi-guan-jia/id904824378?l=zh&ls=1&mt=8'
   android: 'http://soft.dental360.cn/soft/app'
-  
+renrendai:
+  name: '人人贷借款'
+  icon: 'https://loan.renrendai.com/static/public/asset/images/logo-raduis.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1149186410?mt=8'
+  android: 'https://loan.renrendai.com/'
