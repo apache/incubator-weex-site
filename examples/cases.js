@@ -116,7 +116,7 @@ module.exports = {
       title: '商品展示',
       screenshot: 'https://gw.alicdn.com/tfs/TB1juElXjihSKJjy0FfXXbGzFXa-540-844.png'
     }, {
-      hash: '7e46ae0df128bd07c6b8c77290c9a8d9',
+      hash: '58adf3ba123757463d58a604753f381e',
       title: { zh: '聊天', en: 'Chat' },
       screenshot: 'https://gw.alicdn.com/tfs/TB16_XwAVOWBuNjy0FiXXXFxVXa-540-844.png'
     }]
