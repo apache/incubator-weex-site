@@ -173,3 +173,8 @@ renrendai:
   icon: 'https://loan.renrendai.com/static/public/asset/images/logo-raduis.png'
   iOS: 'https://itunes.apple.com/cn/app/id1149186410?mt=8'
   android: 'https://loan.renrendai.com/'
+hbfintech:
+  name: '乐和金融'
+  icon: 'https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/d3/f3/d7/d3f3d7de-b8e0-ee59-9ae5-570862d44afb/AppIcon-1x_U007emarketing-85-220-1.png/690x0w.jpg'
+  iOS: 'https://itunes.apple.com/cn/app/%E4%B9%90%E5%92%8C%E9%87%91%E8%9E%8D/id1269462821'
+  android: 'https://www.hbfintech.com'
