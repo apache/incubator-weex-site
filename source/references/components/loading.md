@@ -94,7 +94,7 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
 ## Events
 
-### `onloading`
+### `loading`
 
  - Triggered when the scroller or list is pulled up.
 
