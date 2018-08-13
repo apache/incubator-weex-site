@@ -35,8 +35,8 @@ Support [common events](/wiki/common-events.html)
 ## Custom Typeface
 `support:v0.12.0`
 
-support `ttf` and `woff` font format to custom your text, call [addRule](../modules/dom.html#addRule) in dom module to build your own `font-family`, we suggest that you call `addRule` in `beforeCreate`.
+support `ttf` and `woff` font format to custom your text, call [addRule](../modules/custom_font.html) in dom module to build your own `font-family`, we suggest that you call `addRule` in `beforeCreate`.
 
 ## Examples
 * [Basic usage for `<text>`](http://dotwe.org/vue/9ac60ccb4d1aacbdbd608dd7107ad105).
-* [Usage for custom typeface](http://dotwe.org/vue/1cac4b398df5bb65ed21e83deceead1c).
+

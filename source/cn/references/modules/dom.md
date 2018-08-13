@@ -64,24 +64,4 @@ version: 2.1
 
 `支持版本: >=0.12.0`
 
-addRule是可以为dom 添加一条规则，目前支持自定义字体fontFace规则，构建自定义的font-family，可以在[text](../components/text.html#iconfont)使用
-
-#### fontFace
-
-```javascript
-const domModule = weex.requireModule('dom')
-domModule.addRule('fontFace', {
-  'fontFamily': "iconfont2",
-  'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"
-})
-```
-
-**注意事项**
-
-`addRule` 方法里的 `fontFamily` 可以随意取。这个名字不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。
-
-如果你使用 http://www.iconfont.cn/ 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
-
-#### 示例
-
-[add rule fontface](http://dotwe.org/vue/95b2c6716f37066d5f44c5c75c979394)
+参考[自定义字体](./custom_font.html)。

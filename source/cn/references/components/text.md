@@ -34,10 +34,8 @@ version: 2.1
 ## 自定义字体
 `支持版本:v0.12.0`
 
-支持ttf和woff字体格式的自定义字体, 可以通过调用 `dom` module 里面的 [addRule](../modules/dom.html#addRule)方法, 构建自定义的`font-family`使用, addRule 建议在 `beforeCreate` 或者更早时调用
+支持ttf和woff字体格式的自定义字体, 可以通过调用 `dom` module 里面的 [addRule](../modules/custom_font.html)方法, 构建自定义的`font-family`使用, addRule 建议在 `beforeCreate` 或者更早时调用
 
 ## 示例
 * [`<text>`的基本用法](http://dotwe.org/vue/9ac60ccb4d1aacbdbd608dd7107ad105)
-* [自定义字体的使用方法](http://dotwe.org/vue/1cac4b398df5bb65ed21e83deceead1c)
-
 
