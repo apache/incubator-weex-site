@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bug 报告指南 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bug 报告指南#该文档描述了如何编写一个好的 Weex bug 报告。好的 bug 报告帮助开发者决定一个 bug 的优先级和严重性，并且增加了 bug 被快速修复的可能性，你能提供的具体信息越多越好。 Bug 报告原则# 避免重复:在报 bug 前先搜索! 总是测试最新的可用版本。 每个报告只报一个 bug。 陈述有用的事实，而不是意见或抱怨。  如何编写一个好的 Bug 报告#一个好的 bu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bug 报告指南">
+<meta property="og:url" content="https://weex.apache.org/cn/bug-report-guidelines.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Bug 报告指南#该文档描述了如何编写一个好的 Weex bug 报告。好的 bug 报告帮助开发者决定一个 bug 的优先级和严重性，并且增加了 bug 被快速修复的可能性，你能提供的具体信息越多越好。 Bug 报告原则# 避免重复:在报 bug 前先搜索! 总是测试最新的可用版本。 每个报告只报一个 bug。 陈述有用的事实，而不是意见或抱怨。  如何编写一个好的 Bug 报告#一个好的 bu">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-01-18T03:32:16.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bug 报告指南">
+<meta name="twitter:description" content="Bug 报告指南#该文档描述了如何编写一个好的 Weex bug 报告。好的 bug 报告帮助开发者决定一个 bug 的优先级和严重性，并且增加了 bug 被快速修复的可能性，你能提供的具体信息越多越好。 Bug 报告原则# 避免重复:在报 bug 前先搜索! 总是测试最新的可用版本。 每个报告只报一个 bug。 陈述有用的事实，而不是意见或抱怨。  如何编写一个好的 Bug 报告#一个好的 bu">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="community" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "community";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/bug-report-guidelines.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/bug-report-guidelines.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout no-chapter">
+    
+    
+
+<article class="article article-type-community">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Bug 报告指南
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-01-18T03:32:16.477Z">Updated time: 18/01/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="bug-bao-gao-zhi-nan">Bug &#x62A5;&#x544A;&#x6307;&#x5357;</span><a href="#bug-bao-gao-zhi-nan" class="header-anchor">#</a></h1><p>&#x8BE5;&#x6587;&#x6863;&#x63CF;&#x8FF0;&#x4E86;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x597D;&#x7684; Weex bug &#x62A5;&#x544A;&#x3002;&#x597D;&#x7684; bug &#x62A5;&#x544A;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x51B3;&#x5B9A;&#x4E00;&#x4E2A; bug &#x7684;&#x4F18;&#x5148;&#x7EA7;&#x548C;&#x4E25;&#x91CD;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x589E;&#x52A0;&#x4E86; bug &#x88AB;&#x5FEB;&#x901F;&#x4FEE;&#x590D;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x4F60;&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5177;&#x4F53;&#x4FE1;&#x606F;&#x8D8A;&#x591A;&#x8D8A;&#x597D;&#x3002;</p>
+<h2 class="article-heading"><span id="bug-bao-gao-yuan-ze">Bug &#x62A5;&#x544A;&#x539F;&#x5219;</span><a href="#bug-bao-gao-yuan-ze" class="header-anchor">#</a></h2><ul>
+<li>&#x907F;&#x514D;&#x91CD;&#x590D;:&#x5728;&#x62A5; bug &#x524D;&#x5148;&#x641C;&#x7D22;!</li>
+<li>&#x603B;&#x662F;&#x6D4B;&#x8BD5;&#x6700;&#x65B0;&#x7684;&#x53EF;&#x7528;&#x7248;&#x672C;&#x3002;</li>
+<li>&#x6BCF;&#x4E2A;&#x62A5;&#x544A;&#x53EA;&#x62A5;&#x4E00;&#x4E2A; bug&#x3002;</li>
+<li>&#x9648;&#x8FF0;&#x6709;&#x7528;&#x7684;&#x4E8B;&#x5B9E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x610F;&#x89C1;&#x6216;&#x62B1;&#x6028;&#x3002;</li>
+</ul>
+<h2 class="article-heading"><span id="ru-he-bian-xie-yi-ge-hao-de-bug-bao-gao">&#x5982;&#x4F55;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x597D;&#x7684; Bug &#x62A5;&#x544A;</span><a href="#ru-he-bian-xie-yi-ge-hao-de-bug-bao-gao" class="header-anchor">#</a></h2><p>&#x4E00;&#x4E2A;&#x597D;&#x7684; bug &#x62A5;&#x544A;&#x5E94;&#x8BE5;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;:</p>
+<h3 class="article-heading"><span id="biao-ti">&#x6807;&#x9898;</span><a href="#biao-ti" class="header-anchor">#</a></h3><p>&#x6807;&#x9898;&#x7684;&#x76EE;&#x6807;&#x662F;&#x4F7F; bug &#x80FD;&#x591F;&#x88AB;&#x641C;&#x7D22;&#x5E76;&#x4E14;&#x552F;&#x4E00;&#x53EF;&#x8BC6;&#x522B;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x574F;&#x7684;&#x4F8B;&#x5B50;:<code>List Crash</code></p>
+<p>&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4F8B;&#x5B50;:<code>List Crashes when deleting a header</code></p>
+<h3 class="article-heading"><span id="huan-jing">&#x73AF;&#x5883;</span><a href="#huan-jing" class="header-anchor">#</a></h3><p><strong>Weex &#x7248;&#x672C;</strong>: &#x8BF7;&#x544A;&#x77E5;&#x4F60;&#x5728; bug &#x53D1;&#x751F;&#x65F6;&#x4F7F;&#x7528;&#x7684; WeexSDK &#x3001;Weex Playground &#x6216; weex-toolkit &#x7684;&#x7248;&#x672C;</p>
+<p><strong>&#x8BBE;&#x5907;&#x73AF;&#x5883;</strong>: &#x8BF7;&#x544A;&#x77E5;&#x4F60; bug &#x6240;&#x53D1;&#x751F;&#x7684;&#x673A;&#x578B;&#x3001;&#x5E73;&#x53F0;&#x548C; OS &#x7248;&#x672C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;iPhone 6,iOS 10.3&#x3002;</p>
+<h3 class="article-heading"><span id="gai-shu-miao-shu">&#x6982;&#x8FF0;/&#x63CF;&#x8FF0;</span><a href="#gai-shu-miao-shu" class="header-anchor">#</a></h3><p>bug &#x62A5;&#x544A;&#x7684;&#x6982;&#x8FF0;&#x6216;&#x63CF;&#x8FF0;&#x662F;&#x5411;&#x5F00;&#x53D1;&#x8005;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA; bug&#xFF0C;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x662F;&#x4E00;&#x4E2A; bug</li>
+<li>&#x53EF;&#x4EE5;&#x91CD;&#x73B0; bug &#x7684; <a href="http://dotwe.org/vue/" target="_blank" rel="noopener">dotwe</a> &#x94FE;&#x63A5;</li>
+<li>&#x5728;&#x89C6;&#x89C9;&#x4E0A;&#x53EF;&#x611F;&#x77E5;&#x7684; bug&#xFF0C; &#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x622A;&#x5C4F;</li>
+<li>&#x5BF9;&#x4E8E; crash bug&#xFF0C; &#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x8BE6;&#x7EC6;&#x7684;&#x5806;&#x6808;</li>
+</ul>
+<h3 class="article-heading"><span id="fu-xian-bu-zou">&#x590D;&#x73B0;&#x6B65;&#x9AA4;</span><a href="#fu-xian-bu-zou" class="header-anchor">#</a></h3><p>&#x590D;&#x73B0;&#x6B65;&#x9AA4;&#x7684;&#x76EE;&#x6807;&#x662F;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x4ED6;&#x81EA;&#x5DF1;&#x7684;&#x7CFB;&#x7EDF;&#x4E0A;&#x91CD;&#x73B0; bug &#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x6B65;&#x9AA4;1&#xFF1A;&#x4F7F;&#x7528; Weex playgroud &#x626B;&#x7801;&#x6253;&#x5F00;&#x4E0A;&#x9762;&#x63D0;&#x4F9B;&#x7684; dotwe &#x94FE;&#x63A5;</p>
+<p>&#x6B65;&#x9AA4;2&#xFF1A;&#x6EDA;&#x52A8;&#x5230;&#x5217;&#x8868;&#x5E95;&#x90E8;</p>
+<p>&#x6B65;&#x9AA4;3&#xFF1A;&#x70B9;&#x51FB;&#x7EA2;&#x8272;&#x6309;&#x94AE;&#x5220;&#x9664;&#x5934;&#x90E8;&#x7EC4;&#x4EF6;</p>
+<h3 class="article-heading"><span id="ce-shi-jie-guo">&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</span><a href="#ce-shi-jie-guo" class="header-anchor">#</a></h3><p>&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#xFF0C;&#x5305;&#x62EC;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x548C;&#x5B9E;&#x9645;&#x7ED3;&#x679C;&#xFF0C;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x63CF;&#x8FF0;&#x4E86;&#x5E94;&#x8BE5;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5B9E;&#x9645;&#x7ED3;&#x679C;&#x63CF;&#x8FF0;&#x4E86;&#x5B9E;&#x9645;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x4ECE;&#x800C;&#x8868;&#x660E;&#x8FD9;&#x662F;&#x4E2A; bug &#x3002;</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/bug-report-guidelines.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

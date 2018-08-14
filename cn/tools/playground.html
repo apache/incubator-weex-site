@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A framework for building Mobile cross-platform UIs. Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weex">
+<meta property="og:url" content="https://weex.apache.org/cn/tools/playground.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="A framework for building Mobile cross-platform UIs. Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple,">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-01-03T12:51:51.437Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex">
+<meta name="twitter:description" content="A framework for building Mobile cross-platform UIs. Different from a &quot;web app&quot;, &quot;HTML5 app&quot;, or &quot;hybrid app&quot;, you can use Weex to build a real mobile app. The code that you write is relatively simple,">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="playground" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "playground";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown current">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/tools/playground.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/tools/playground.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="wrapper playground-wrapper clearfix">
+  <div class="left">
+    <h2>Weex Playground App</h2>
+    <p>Weex Native 运行时实例 &amp; Weex 文件预览工具。</p>
+    <div class="download clearfix">
+      <img class="qr-code" src="//img.alicdn.com/tps/TB1Yv7ZQXXXXXaYaXXXXXXXXXXX-148-148.png" alt="playground qr code">
+      <ul class="links">
+        <li class="ios">
+          <a href="" id="ios-link" class="link" target="_blank">iOS</a>
+        </li>
+        <li class="android">
+          <a href="" id="android-link" class="link">Android</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="left">
+    <img src="https://img.alicdn.com/tfs/TB1h.yNnxrI8KJjy0FpXXb5hVXa-688-1270.png" alt="">
+  </div>
+</div>
+
+<script type="text/javascript">
+	function parseWeexVersion(data){
+    document.getElementById("ios-link").href = data.iosDownload
+    document.getElementById("android-link").href = data.androidDownload
+	}
+
+	window.parseWeexVersion = parseWeexVersion;
+</script>
+<script type="text/javascript" src="https://h5.m.taobao.com/js/weex/playground/app/info.js "></script>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

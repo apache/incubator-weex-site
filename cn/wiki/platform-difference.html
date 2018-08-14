@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>与 Web 平台的差异 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Weex 和 Web 平台的差异#Weex 是一个跨平台解决方案，Web 平台只是其一种运行环境，除此之外还可以在 Android 和 iOS 客户端中运行。原生开发平台和 Web 平台之间的差异，在功能和开发体验上都有一些差异。 Weex 环境中没有 DOM#DOM（Document Object Model），即文档对象模型，是 HTML 和 XML 文档的编程接口，是 Web 中的概念。We">
+<meta property="og:type" content="website">
+<meta property="og:title" content="与 Web 平台的差异">
+<meta property="og:url" content="https://weex.apache.org/cn/wiki/platform-difference.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Weex 和 Web 平台的差异#Weex 是一个跨平台解决方案，Web 平台只是其一种运行环境，除此之外还可以在 Android 和 iOS 客户端中运行。原生开发平台和 Web 平台之间的差异，在功能和开发体验上都有一些差异。 Weex 环境中没有 DOM#DOM（Document Object Model），即文档对象模型，是 HTML 和 XML 文档的编程接口，是 Web 中的概念。We">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="与 Web 平台的差异">
+<meta name="twitter:description" content="Weex 和 Web 平台的差异#Weex 是一个跨平台解决方案，Web 平台只是其一种运行环境，除此之外还可以在 Android 和 iOS 客户端中运行。原生开发平台和 Web 平台之间的差异，在功能和开发体验上都有一些差异。 Weex 环境中没有 DOM#DOM（Document Object Model），即文档对象模型，是 HTML 和 XML 文档的编程接口，是 Web 中的概念。We">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="current">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/platform-difference.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/platform-difference.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/design-principles.html" class="sidebar-link  ">设计理念</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/platform-difference.html" class="sidebar-link current ">与 Web 平台的差异</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">样式</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-styles.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/text-styles.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/css-units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/color-names.html" class="sidebar-link  ">支持的颜色名称列表</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">事件</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-events.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/event-bubble.html" class="sidebar-link  ">事件冒泡</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/gestures.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">概念</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">FAQ</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/faq.html" class="sidebar-link  ">常见问题</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        与 Web 平台的差异
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.354Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="weex-he-web-ping-tai-de-chai-yi">Weex &#x548C; Web &#x5E73;&#x53F0;&#x7684;&#x5DEE;&#x5F02;</span><a href="#weex-he-web-ping-tai-de-chai-yi" class="header-anchor">#</a></h1><p>Weex &#x662F;&#x4E00;&#x4E2A;&#x8DE8;&#x5E73;&#x53F0;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;Web &#x5E73;&#x53F0;&#x53EA;&#x662F;&#x5176;&#x4E00;&#x79CD;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x5728; Android &#x548C; iOS &#x5BA2;&#x6237;&#x7AEF;&#x4E2D;&#x8FD0;&#x884C;&#x3002;&#x539F;&#x751F;&#x5F00;&#x53D1;&#x5E73;&#x53F0;&#x548C; Web &#x5E73;&#x53F0;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x5728;&#x529F;&#x80FD;&#x548C;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#x4E0A;&#x90FD;&#x6709;&#x4E00;&#x4E9B;&#x5DEE;&#x5F02;&#x3002;</p>
+<h2 class="article-heading"><span id="weex-huan-jing-zhong-mei-you-dom">Weex &#x73AF;&#x5883;&#x4E2D;&#x6CA1;&#x6709; DOM</span><a href="#weex-huan-jing-zhong-mei-you-dom" class="header-anchor">#</a></h2><p>DOM&#xFF08;Document Object Model&#xFF09;&#xFF0C;&#x5373;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x662F; HTML &#x548C; XML &#x6587;&#x6863;&#x7684;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#xFF0C;&#x662F; Web &#x4E2D;&#x7684;&#x6982;&#x5FF5;&#x3002;Weex &#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4EE5;&#x539F;&#x751F;&#x5E94;&#x7528;&#x4E3A;&#x4E3B;&#xFF0C;&#x5728; Android &#x548C; iOS &#x73AF;&#x5883;&#x4E2D;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x7684;&#x662F;&#x539F;&#x751F;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E0D;&#x662F; DOM Element&#x3002;</p>
+<h3 class="article-heading"><span id="bu-zhi-chi-dom-cao-zuo">&#x4E0D;&#x652F;&#x6301; DOM &#x64CD;&#x4F5C;</span><a href="#bu-zhi-chi-dom-cao-zuo" class="header-anchor">#</a></h3><p>&#x65E2;&#x7136;&#x539F;&#x751F;&#x73AF;&#x5883;&#x4E2D;&#x4E0D;&#x652F;&#x6301; Web API&#xFF0C;&#x6CA1;&#x6709; <code>Element</code> &#x3001;<code>Event</code> &#x3001;<code>File</code> &#x7B49;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE6;&#x7EC6;&#x5217;&#x8868;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank" rel="noopener">Web APIs on MDN</a>&#x3002;&#x4E0D;&#x652F;&#x6301;&#x9009;&#x4E2D;&#x5143;&#x7D20;&#xFF0C;&#x5982; <code>document.getElementById</code> &#x3001; <code>document.querySelector</code> &#x7B49;&#xFF1B;&#x5F53;&#x7136;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x57FA;&#x4E8E; DOM API &#x7684;&#x7A0B;&#x5E8F;&#x5E93;&#xFF08;&#x5982; jQuery&#xFF09;&#x3002;</p>
+<h3 class="article-heading"><span id="you-xian-de-shi-jian-lei-xing">&#x6709;&#x9650;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</span><a href="#you-xian-de-shi-jian-lei-xing" class="header-anchor">#</a></h3><p>Weex &#x652F;&#x6301;&#x5728;&#x6807;&#x7B7E;&#x4E0A;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;&#x548C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x5199;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F; Weex &#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x662F;&#x7531;&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x6355;&#x83B7;&#x5E76;&#x89E6;&#x53D1;&#x7684;&#xFF0C;&#x884C;&#x4E3A;&#x548C;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x4E8B;&#x4EF6;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x4E5F;&#x548C; Web &#x4E2D;&#x6709;&#x5DEE;&#x5F02;&#x3002;</p>
+<ul>
+<li>&#x5E76;&#x4E0D;&#x652F;&#x6301; Web &#x4E2D;&#x6240;&#x6709;&#x7684;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x8003;<a href="./common-events.html">&#x300A;&#x901A;&#x7528;&#x4E8B;&#x4EF6;&#x300B;</a>&#x3002;</li>
+<li>&#x4E0D;&#x533A;&#x5206;&#x4E8B;&#x4EF6;&#x7684;&#x6355;&#x83B7;&#x9636;&#x6BB5;&#x548C;&#x5192;&#x6CE1;&#x9636;&#x6BB5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; DOM 0 &#x7EA7;&#x4E8B;&#x4EF6;&#x3002;</li>
+</ul>
+<h2 class="article-heading"><span id="weex-huan-jing-zhong-mei-you-bom">Weex &#x73AF;&#x5883;&#x4E2D;&#x6CA1;&#x6709; BOM</span><a href="#weex-huan-jing-zhong-mei-you-bom" class="header-anchor">#</a></h2><p>BOM&#xFF08;Browser Object Model&#xFF09;&#xFF0C;&#x5373;&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x4E3A; javascript &#x63D0;&#x4F9B;&#x7684;&#x63A5;&#x53E3;&#x3002;Weex &#x5728;&#x539F;&#x751F;&#x7AEF;&#x6CA1;&#x6709;&#x5E76;&#x4E0D;&#x57FA;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x6D4F;&#x89C8;&#x5668;&#x63D0;&#x4F9B;&#x7684; BOM &#x63A5;&#x53E3;&#x3002;</p>
+<h3 class="article-heading"><span id="mei-you-window-screen-dui-xiang">&#x6CA1;&#x6709; <code>window</code> &#x3001;<code>screen</code> &#x5BF9;&#x8C61;</span><a href="#mei-you-window-screen-dui-xiang" class="header-anchor">#</a></h3><p>Weex &#x4E2D;&#x5E76;&#x672A;&#x63D0;&#x4F9B;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684; <code>window</code> &#x548C; <code>screen</code> &#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;&#x5982;&#x679C;&#x662F;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x8BBE;&#x5907;&#x7684;&#x5C4F;&#x5E55;&#x6216;&#x73AF;&#x5883;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>WXEnvironment</code> &#x53D8;&#x91CF;&#x3002;</p>
+<ul>
+<li><code>WXEnvironment</code><ul>
+<li><code>weexVersion</code>: WeexSDK &#x7684;&#x7248;&#x672C;&#x3002;</li>
+<li><code>appName</code>: &#x5E94;&#x7528;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li><code>appVersion</code>: &#x5E94;&#x7528;&#x7684;&#x7248;&#x672C;&#x3002;</li>
+<li><code>platform</code>: &#x8FD0;&#x884C;&#x5E73;&#x53F0;&#xFF0C;&#x53EF;&#x80FD;&#x7684;&#x503C;&#x662F; <code>Web</code> &#x3001;<code>Android</code> &#x3001;<code>iOS</code> &#x4E4B;&#x4E00;&#x3002;</li>
+<li><code>osName</code>: &#x7CFB;&#x7EDF;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li><code>osVersion</code>: &#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x3002;</li>
+<li><code>deviceWidth</code>: &#x8BBE;&#x5907;&#x5BBD;&#x5EA6;&#x3002;</li>
+<li><code>deviceHeight</code>: &#x8BBE;&#x5907;&#x9AD8;&#x5EA6;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="mei-you-document-dui-xiang">&#x6CA1;&#x6709; <code>document</code> &#x5BF9;&#x8C61;</span><a href="#mei-you-document-dui-xiang" class="header-anchor">#</a></h3><p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D; <code>document</code> &#x8868;&#x793A;&#x4E86;&#x5F53;&#x524D;&#x6D3B;&#x52A8;&#x7684;&#x6587;&#x6863;&#x6A21;&#x578B;&#xFF0C;&#x5728; Android &#x548C; iOS &#x73AF;&#x5883;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x4E0E;&#x5176;&#x76F8;&#x5173;&#x7684; DOM &#x64CD;&#x4F5C;&#x3002;</p>
+<h3 class="article-heading"><span id="mei-you-history-location-navigator-dui-xiang">&#x6CA1;&#x6709; <code>history</code> &#x3001;<code>location</code> &#x3001;<code>navigator</code> &#x5BF9;&#x8C61;</span><a href="#mei-you-history-location-navigator-dui-xiang" class="header-anchor">#</a></h3><ul>
+<li><code>history</code> &#x4FDD;&#x5B58;&#x4E86;&#x5F53;&#x524D;&#x9875;&#x9762;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x524D;&#x8FDB;&#x540E;&#x9000;&#x64CD;&#x4F5C;&#x3002;</li>
+<li><code>location</code> &#x8BB0;&#x5F55;&#x4E86;&#x5F53;&#x524D;&#x9875;&#x9762; URL &#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+<li><code>navigator</code> &#x8BB0;&#x5F55;&#x4E86;&#x5F53;&#x524D;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x8EAB;&#x7684;&#x5B9E;&#x73B0;&#x6709;&#x5173;&#xFF0C;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x9875;&#x9762;&#x7684;&#x524D;&#x8FDB;&#x540E;&#x9000;&#x5E76;&#x4E14;&#x83B7;&#x53D6;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x3002;&#x867D;&#x7136;&#x5728; Android &#x548C; iOS &#x4E2D;&#x4E5F;&#x6709;&#x201C;&#x5386;&#x53F2;&#x201D;&#x548C;&#x201C;&#x5BFC;&#x822A;&#x201D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x662F;&#x7528;&#x4E8E;&#x591A;&#x4E2A;&#x7BA1;&#x7406;&#x89C6;&#x56FE;&#x4E4B;&#x95F4;&#x7684;&#x8DF3;&#x8F6C;&#x7684;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6267;&#x884C;&#x201C;&#x524D;&#x8FDB;&#x201D;&#x3001;&#x201C;&#x540E;&#x9000;&#x201D;&#x4ECD;&#x7136;&#x4F1A;&#x5904;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x7B7E;&#x4E2D;&#xFF0C;&#x5728;&#x539F;&#x751F;&#x5E94;&#x7528;&#x4E2D;&#x201C;&#x524D;&#x8FDB;&#x201D;&#x3001;&#x201C;&#x540E;&#x9000;&#x201D;&#x5219;&#x4F1A;&#x771F;&#x5B9E;&#x7684;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x6B64;&#x5916; Weex &#x4E5F;&#x63D0;&#x4F9B;&#x4E86; <code>navigator</code> &#x6A21;&#x5757;&#x6765;&#x64CD;&#x4F5C;&#x9875;&#x9762;&#x7684;&#x8DF3;&#x8F6C;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53C2;&#x8003;<a href="/cn/references/modules/navigator.html">&#x300A;navigator &#x5BFC;&#x822A;&#x63A7;&#x5236;&#x300B;</a>&#x3002;</p>
+<h2 class="article-heading"><span id="neng-gou-diao-yong-yi-dong-she-bei-yuan-sheng-api">&#x80FD;&#x591F;&#x8C03;&#x7528;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x539F;&#x751F; API</span><a href="#neng-gou-diao-yong-yi-dong-she-bei-yuan-sheng-api" class="header-anchor">#</a></h2><p>&#x5728; Weex &#x4E2D;&#x80FD;&#x591F;&#x8C03;&#x7528;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x539F;&#x751F; API&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x6CE8;&#x518C;&#x3001;&#x8C03;&#x7528;&#x6A21;&#x5757;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x6A21;&#x5757;&#x662F; Weex &#x5185;&#x7F6E;&#x7684;&#xFF0C;&#x5982; clipboard &#x3001; navigator &#x3001;storage &#x7B49;&#x3002;</p>
+<ul>
+<li><a href="/cn/references/modules/clipboard.html">&#x300A;clipboard &#x526A;&#x5207;&#x677F;&#x300B;</a></li>
+<li><a href="/cn/references/modules/navigator.html">&#x300A;navigator &#x5BFC;&#x822A;&#x63A7;&#x5236;&#x300B;</a></li>
+<li><a href="/cn/references/modules/storage.html">&#x300A;storage &#x672C;&#x5730;&#x5B58;&#x50A8; &#x300B;</a></li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x6846;&#x67B6;&#x7684;&#x901A;&#x7528;&#x6027;&#xFF0C;Weex &#x5185;&#x7F6E;&#x7684;&#x539F;&#x751F;&#x6A21;&#x5757;&#x6709;&#x9650;&#xFF0C;&#x4E0D;&#x8FC7; Weex &#x63D0;&#x4F9B;&#x4E86;&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x539F;&#x751F;&#x6A21;&#x5757;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x8BF7;&#x53C2;&#x8003;<a href="/cn/index.html">&#x300A;iOS &#x6269;&#x5C55;&#x300B;</a> &#x548C;<a href="/cn/guide/extend-android.html">&#x300A;Android &#x6269;&#x5C55;&#x300B;</a>&#x3002;</p>
+<blockquote>
+<p>&#x6709;&#x4E9B;&#x63A5;&#x53E3;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x4E2D;&#x4E5F;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x5E94;&#x8BE5;&#x6CE8;&#x610F;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x517C;&#x5BB9;&#x6027;&#xFF1B;&#x5982;&#x526A;&#x8D34;&#x677F;&#x529F;&#x80FD;&#xFF0C;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x6027;&#x8003;&#x8651;&#xFF0C;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x9650;&#x5236;&#x5176;&#x4F7F;&#x7528;&#x3002;</p>
+</blockquote>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/wiki/platform-difference.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

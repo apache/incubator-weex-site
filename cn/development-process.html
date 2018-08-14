@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开发流程 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="开发流程#本文档描述了如何对 Weex 源代码进行更改和提交，以下是建议的步骤： 1. 选择或创建一个 JIRA issue单#目前 Weex 使用 JIRA Issue 来跟踪所有类型的代码更改，而不仅仅是 bug 修复，我们使用 Github Pull Request 来管理代码 review 和合并特定的代码更改。也就是说，JIRA用于描述什么是需要修复或更改的，Pull Request 用">
+<meta property="og:type" content="website">
+<meta property="og:title" content="开发流程">
+<meta property="og:url" content="https://weex.apache.org/cn/development-process.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="开发流程#本文档描述了如何对 Weex 源代码进行更改和提交，以下是建议的步骤： 1. 选择或创建一个 JIRA issue单#目前 Weex 使用 JIRA Issue 来跟踪所有类型的代码更改，而不仅仅是 bug 修复，我们使用 Github Pull Request 来管理代码 review 和合并特定的代码更改。也就是说，JIRA用于描述什么是需要修复或更改的，Pull Request 用">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开发流程">
+<meta name="twitter:description" content="开发流程#本文档描述了如何对 Weex 源代码进行更改和提交，以下是建议的步骤： 1. 选择或创建一个 JIRA issue单#目前 Weex 使用 JIRA Issue 来跟踪所有类型的代码更改，而不仅仅是 bug 修复，我们使用 Github Pull Request 来管理代码 review 和合并特定的代码更改。也就是说，JIRA用于描述什么是需要修复或更改的，Pull Request 用">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="community" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "community";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/development-process.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/development-process.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout no-chapter">
+    
+    
+
+<article class="article article-type-community">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        开发流程
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.308Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="kai-fa-liu-cheng">&#x5F00;&#x53D1;&#x6D41;&#x7A0B;</span><a href="#kai-fa-liu-cheng" class="header-anchor">#</a></h1><p>&#x672C;&#x6587;&#x6863;&#x63CF;&#x8FF0;&#x4E86;&#x5982;&#x4F55;&#x5BF9; Weex &#x6E90;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#x548C;&#x63D0;&#x4EA4;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x5EFA;&#x8BAE;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<h2 class="article-heading"><span id="1-xuan-ze-huo-chuang-jian-yi-ge-jira-issue-dan">1. &#x9009;&#x62E9;&#x6216;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; JIRA issue&#x5355;</span><a href="#1-xuan-ze-huo-chuang-jian-yi-ge-jira-issue-dan" class="header-anchor">#</a></h2><p>&#x76EE;&#x524D; Weex &#x4F7F;&#x7528; <a href="https://issues.apache.org/jira/projects/WEEX" target="_blank" rel="noopener">JIRA Issue</a> &#x6765;&#x8DDF;&#x8E2A;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x6539;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F; bug &#x4FEE;&#x590D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Github Pull Request &#x6765;&#x7BA1;&#x7406;&#x4EE3;&#x7801; review &#x548C;&#x5408;&#x5E76;&#x7279;&#x5B9A;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x6539;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;JIRA&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x4EC0;&#x4E48;&#x662F;&#x9700;&#x8981;&#x4FEE;&#x590D;&#x6216;&#x66F4;&#x6539;&#x7684;&#xFF0C;Pull Request &#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x8FD9;&#x4E9B;&#x4FEE;&#x590D;&#x548C;&#x53D8;&#x66F4;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5728;&#x521B;&#x5EFA;&#x65B0;&#x95EE;&#x9898;&#x4E4B;&#x524D;&#x4E00;&#x5B9A;&#x8981;&#x5148;&#x641C;&#x7D22;&#x95EE;&#x9898;&#xFF0C;&#x907F;&#x514D;&#x91CD;&#x590D;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x66F4;&#x6539;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x548C;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x8005;&#x8FDB;&#x884C;&#x8BA8;&#x8BBA;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="mailto:dev@weex.incubator.apache.org" target="_blank" rel="noopener">weex-dev</a> &#x90AE;&#x4EF6;&#x5217;&#x8868;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA8;&#x8BBA;&#x3002;</p>
+<p><strong>&#x6BCF;&#x4E2A; PR &#x90FD;&#x5E94;&#x8BE5;&#x5BF9;&#x5E94;&#x4E8E; JIRA &#x4E2D;&#x7684;&#x4E00;&#x4E2A; issue&#x3002;</strong></p>
+<h2 class="article-heading"><span id="2-bian-xie-dai-ma">2. &#x7F16;&#x5199;&#x4EE3;&#x7801;</span><a href="#2-bian-xie-dai-ma" class="header-anchor">#</a></h2><ol>
+<li><p><a href="https://help.github.com/articles/fork-a-repo/" target="_blank" rel="noopener">Fork</a> &#x5728; <a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">https://github.com/apache/incubator-weex</a> &#x4E0A;&#x7684; Github &#x4ED3;&#x5E93;</p>
+</li>
+<li><p>Clone &#x4F60; fork &#x51FA;&#x6765;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5206;&#x652F;&#x7528;&#x4E8E;&#x63D0;&#x4EA4;&#x53D8;&#x66F4;</p>
+</li>
+<li><p>&#x7F16;&#x5199;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x7684;&#x7279;&#x6027;&#x6216; bug &#x4FEE;&#x590D;&#x4EE3;&#x7801;&#xFF0C;&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x66F4;&#x6539;&#x7B26;&#x5408;<a href="../development-process.html#code-style-guidelines">&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x6307;&#x5357;</a>&#x3002;</p>
+</li>
+<li><p>&#x590D;&#x5236;&#x5E76;&#x7C98;&#x8D34;&#x4E0B;&#x9762;&#x7684;&#x6CE8;&#x91CA;&#x5230;&#x4F60;&#x7684;&#x65B0;&#x6587;&#x4EF6;&#x9876;&#x90E8;:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></span><br><span class="line"><span class="comment"> * or more contributor license agreements.  See the NOTICE file</span></span><br><span class="line"><span class="comment"> * distributed with this work for additional information</span></span><br><span class="line"><span class="comment"> * regarding copyright ownership.  The ASF licenses this file</span></span><br><span class="line"><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></span><br><span class="line"><span class="comment"> * &quot;License&quot;); you may not use this file except in compliance</span></span><br><span class="line"><span class="comment"> * with the License.  You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></span><br><span class="line"><span class="comment"> * software distributed under the License is distributed on an</span></span><br><span class="line"><span class="comment"> * &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></span><br><span class="line"><span class="comment"> * KIND, either express or implied.  See the License for the</span></span><br><span class="line"><span class="comment"> * specific language governing permissions and limitations</span></span><br><span class="line"><span class="comment"> * under the License.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>&#x4FEE;&#x6539;&#x6216;&#x6DFB;&#x52A0;&#x8BE5;&#x53D8;&#x66F4;&#x76F8;&#x5173;de&#x7684;&#x6587;&#x6863;&#x548C;&#x6D4B;&#x8BD5;&#x3002;</p>
+</li>
+<li><p>&#x63D0;&#x4EA4;&#x7B26;&#x5408; <a href="../development-process.html#commit-guidelines">commit &#x6307;&#x5357;</a> &#x7684; commit &#x5230;&#x4F60;&#x7684;&#x5206;&#x652F;&#x3002;</p>
+</li>
+</ol>
+<h2 class="article-heading"><span id="3-chuang-jian-yi-ge-pull-request">3. &#x521B;&#x5EFA;&#x4E00;&#x4E2A; Pull Request</span><a href="#3-chuang-jian-yi-ge-pull-request" class="header-anchor">#</a></h2><p><a href="https://help.github.com/articles/using-pull-requests/" target="_blank" rel="noopener">&#x521B;&#x5EFA;&#x4E00;&#x4E2A; pull request</a> &#x5E76;&#x63D0;&#x4EA4;&#x5230; <code>apache/incubator-weex</code> &#x7684; <code>master</code> &#x5206;&#x652F;&#xFF0C;&#x786E;&#x4FDD;&#x5B83;&#x7B26;&#x5408;&#x8FD9;&#x4E9B;&#x51C6;&#x5219;:</p>
+<ol>
+<li>&#x4E00;&#x4E2A; Pull Request &#x53EA;&#x89E3;&#x51B3;&#x4E00;&#x4E2A;&#x95EE;&#x9898;</li>
+<li>PR&#x6807;&#x9898;&#x5E94;&#x8BE5;&#x662F; <code>[WEEX-xxxx][&#x6A21;&#x5757;]&#x6807;&#x9898;</code>&#xFF0C;&#x5176;&#x4E2D; <code>xxxx</code> &#x662F;&#x76F8;&#x5173;&#x7684; JIRA &#x95EE;&#x9898;&#x53F7;&#xFF0C;&#x6A21;&#x5757;&#x662F; PR &#x7684;&#x7C7B;&#x522B;&#xFF08;android&#x3001;iOS&#x3001;jsfm&#x3001;web&#x3001;component&#x3001;doc&#x3001;website&#x3001;test&#x3001;other&#xFF09;&#xFF0C;&#x6807;&#x9898;&#x53EF;&#x4EE5;&#x662F; JIRA &#x7684;&#x6807;&#x9898;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x63CF;&#x8FF0; PR &#x672C;&#x8EAB;&#x7684;&#x66F4;&#x5177;&#x4F53;&#x7684;&#x6807;&#x9898;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x8BE5; PR &#x76F8;&#x5173;&#x7684;&#x5DE5;&#x4F5C;&#x8FD8;&#x5728;&#x8FDB;&#x884C;&#x4E2D;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x51C6;&#x5907;&#x597D;&#x88AB;&#x5408;&#x5E76;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x88AB;&#x63A8;&#x5230; Github &#x4E0A;&#x4EE5;&#x65B9;&#x4FBF;&#x67E5;&#x770B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x5757;&#x540E;&#x6DFB;&#x52A0; <code>[WIP]</code> &#x6807;&#x793A;&#x3002;</li>
+</ol>
+<h2 class="article-heading"><span id="dai-ma-feng-ge-zhi-nan">&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x6307;&#x5357;</span><a href="#dai-ma-feng-ge-zhi-nan" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="objective-c">Objective-C</span><a href="#objective-c" class="header-anchor">#</a></h3><ul>
+<li>&#x7528; tab &#x7F29;&#x8FDB;&#x800C;&#x4E0D;&#x662F;&#x7A7A;&#x683C;</li>
+</ul>
+<ul>
+<li><code>*</code> &#x64CD;&#x4F5C;&#x7B26;&#x9760;&#x8FD1;&#x53D8;&#x91CF;&#x540D;&#xFF08;&#x5982; Type *variable&#xFF09;</li>
+<li>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#xFF1A;&#x5927;&#x62EC;&#x53F7;&#x9700;&#x8981;&#x53E6;&#x8D77;&#x4E00;&#x884C;</li>
+<li>&#x5176;&#x4ED6;&#x5927;&#x62EC;&#x53F7;&#xFF1A;&#x5F00;&#x62EC;&#x53F7;&#x7D27;&#x8DDF;&#x5728;&#x4EE3;&#x7801;&#x540E;&#x9762;&#xFF0C;&#x4E0D;&#x53E6;&#x8D77;&#x4E00;&#x884C;&#xFF0C;&#x95ED;&#x62EC;&#x53F7;&#x5355;&#x72EC;&#x5360;&#x4E00;&#x884C;</li>
+<li>&#x4F7F;&#x7528; <code>#pragma marks</code> &#x6807;&#x8BB0;&#x5C06;&#x65B9;&#x6CD5;&#x5206;&#x7C7B;</li>
+<li>&#x9075;&#x5FAA; <a href="https://github.com/github/objective-c-style-guide" target="_blank" rel="noopener">GitHub Objective-C Style Guide</a> &#x4E2D;&#x5176;&#x4ED6;&#x7684;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x6307;&#x5357;</li>
+</ul>
+<h3 class="article-heading"><span id="java-amp-android">Java &amp; Android</span><a href="#java-amp-android" class="header-anchor">#</a></h3><ul>
+<li>&#x4F7F;&#x7528; <a href="https://google.github.io/styleguide/javaguide.html" target="_blank" rel="noopener">Google Java Style</a> &#x4F5C;&#x4E3A;&#x57FA;&#x672C;&#x7684; Java &#x4EE3;&#x7801;&#x98CE;&#x683C;&#x6307;&#x5357;</li>
+<li>&#x5176;&#x4ED6; android &#x76F8;&#x5173;&#x4EE3;&#x7801;&#x9700;&#x9075;&#x5FAA; <a href="https://source.android.com/source/code-style.html" target="_blank" rel="noopener">AOSP Code Style</a> </li>
+</ul>
+<h2 class="article-heading"><span id="commit-zhi-nan">Commit &#x6307;&#x5357;</span><a href="#commit-zhi-nan" class="header-anchor">#</a></h2><p>&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x5199; commit &#x63CF;&#x8FF0;:</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">Summary of change, same as PR title: <span class="code">`[WEEX-xxxx][COMPONENT] Summary`</span></span><br><span class="line"></span><br><span class="line">Longer description of change addressing as appropriate: why the change</span><br><span class="line">is made,context if it is part of many changes, description of previous </span><br><span class="line">behavior andnewly introduced differences, etc.</span><br><span class="line"></span><br><span class="line">Long lines should be wrapped to 80 columns for easier log message </span><br><span class="line">viewing interminals.</span><br><span class="line"></span><br><span class="line">Bug: 123456</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x77ED;&#x7684;&#x4E3B;&#x9898;&#x7D27;&#x8DDF;&#x4E00;&#x4E2A;&#x7A7A;&#x884C;&#x518D;&#x63A5;&#x7740;&#x5199; commit &#x7684;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#xFF0C;Bug &#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x6765;&#x81EA; JIRA &#x7684;&#x95EE;&#x9898;&#x53F7;&#x3002;</p>
+<p>&#x5728;<a href="https://chris.beams.io/posts/git-commit/" target="_blank" rel="noopener">&#x8FD9;&#x91CC;</a>&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x7F16;&#x5199; commit message &#x7684;&#x597D;&#x65B9;&#x6CD5;&#x3002;</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/development-process.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

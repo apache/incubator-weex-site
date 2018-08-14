@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;cell&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;cell&amp;gt;#用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。Weex 会对 &amp;lt;cell&amp;gt; 进行高效的内存回收以达到更好的性能，该组件必须作为&amp;lt;list&amp;gt; &amp;lt;recycler&amp;gt; &amp;lt;waterfall&amp;gt;组件的子组件, 这是为了优化滚动时的性能。 子组件#支持所有 Weex 的组件作为它的子组件。 属性# keep-scr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="&lt;cell&gt;">
+<meta property="og:url" content="https://weex.apache.org/cn/references/components/cell.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;cell&amp;gt;#用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。Weex 会对 &amp;lt;cell&amp;gt; 进行高效的内存回收以达到更好的性能，该组件必须作为&amp;lt;list&amp;gt; &amp;lt;recycler&amp;gt; &amp;lt;waterfall&amp;gt;组件的子组件, 这是为了优化滚动时的性能。 子组件#支持所有 Weex 的组件作为它的子组件。 属性# keep-scr">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-07-31T03:13:52.181Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&lt;cell&gt;">
+<meta name="twitter:description" content="&amp;lt;cell&amp;gt;#用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。Weex 会对 &amp;lt;cell&amp;gt; 进行高效的内存回收以达到更好的性能，该组件必须作为&amp;lt;list&amp;gt; &amp;lt;recycler&amp;gt; &amp;lt;waterfall&amp;gt;组件的子组件, 这是为了优化滚动时的性能。 子组件#支持所有 Weex 的组件作为它的子组件。 属性# keep-scr">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="current">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/cell.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/cell.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link current ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link current ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;cell&gt;
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-07-31T03:13:52.181Z">Updated time: 31/07/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="lt-cell-gt">&lt;cell&gt;</span><a href="#lt-cell-gt" class="header-anchor">#</a></h1><p>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5B50;&#x5217;&#x8868;&#x9879;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; HTML &#x4E2D;&#x7684; <code>ul</code> &#x4E4B;&#x4E8E; <code>li</code>&#x3002;Weex &#x4F1A;&#x5BF9; <code>&lt;cell&gt;</code> &#x8FDB;&#x884C;&#x9AD8;&#x6548;&#x7684;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x4EE5;&#x8FBE;&#x5230;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x8BE5;&#x7EC4;&#x4EF6;&#x5FC5;&#x987B;&#x4F5C;&#x4E3A;<a href="./list.html"><code>&lt;list&gt;</code></a> <a href="./list.html"><code>&lt;recycler&gt;</code></a> <a href="./waterfall.html"><code>&lt;waterfall&gt;</code></a>&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;, &#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x4F18;&#x5316;&#x6EDA;&#x52A8;&#x65F6;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<h2 class="article-heading"><span id="zi-zu-jian">&#x5B50;&#x7EC4;&#x4EF6;</span><a href="#zi-zu-jian" class="header-anchor">#</a></h2><p>&#x652F;&#x6301;&#x6240;&#x6709; Weex &#x7684;&#x7EC4;&#x4EF6;&#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h2 class="article-heading"><span id="shu-xing">&#x5C5E;&#x6027;</span><a href="#shu-xing" class="header-anchor">#</a></h2><ul>
+<li><code>keep-scroll-position {boolean}</code>: <span class="api-version">v0.11+</span> List &#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x4E0A;&#x6B21;&#x6EDA;&#x52A8;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+<h2 class="article-heading"><span id="yang-shi">&#x6837;&#x5F0F;</span><a href="#yang-shi" class="header-anchor">#</a></h2><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<p>&#x7531;&#x4E8E; <code>&lt;cell&gt;</code> &#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x5176;&#x5E03;&#x5C40;&#x7531; <code>&lt;list&gt;</code> &#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x4F60;&#x4E0D;&#x80FD;&#x7ED9; <code>&lt;cell&gt;</code> &#x8BBE;&#x5B9A;<code>flex</code>&#x503C;&#x3002; <code>&lt;cell&gt;</code>&#x7684;&#x5BBD;&#x5EA6;&#x7B49;&#x4E8E;&#x7236;&#x7EC4;&#x4EF6; <code>&lt;list&gt;</code> &#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x5E76;&#x4E14; <code>&lt;cell&gt;</code> &#x9AD8;&#x5EA6;&#x81EA;&#x9002;&#x5E94;&#xFF0C;&#x6307;&#x5B9A; <code>margin</code> &#x6837;&#x5F0F;&#x4E5F;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<ul>
+<li><p>&#x901A;&#x7528;&#x6837;&#x5F0F;&#xFF1A;&#x652F;&#x6301;&#x6240;&#x6709;&#x901A;&#x7528;&#x6837;&#x5F0F;</p>
+<ul>
+<li>&#x76D2;&#x6A21;&#x578B;</li>
+<li><code>flexbox</code> &#x5E03;&#x5C40;</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>&#x67E5;&#x770B; <a href="/cn/wiki/common-styles.html">&#x7EC4;&#x4EF6;&#x901A;&#x7528;&#x6837;&#x5F0F;</a></p>
+</li>
+</ul>
+<h2 class="article-heading"><span id="shi-jian">&#x4E8B;&#x4EF6;</span><a href="#shi-jian" class="header-anchor">#</a></h2><ul>
+<li><p>&#x901A;&#x7528;&#x4E8B;&#x4EF6;</p>
+<p>&#x652F;&#x6301;&#x6240;&#x6709;&#x901A;&#x7528;&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>&#x67E5;&#x770B; <a href="/cn/wiki/common-events.html">&#x901A;&#x7528;&#x4E8B;&#x4EF6;</a></p>
+</li>
+</ul>
+<h2 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h2><p><a href="http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38" target="_blank" rel="noopener">cell &#x793A;&#x4F8B;</a></p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/references/components/cell.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

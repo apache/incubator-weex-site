@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gesture | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Type Properties changedTouches   Constrain      Experiment Feature  Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Type#For now,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gesture">
+<meta property="og:url" content="https://weex.apache.org/wiki/gestures.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Type Properties changedTouches   Constrain      Experiment Feature  Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Type#For now,">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gesture">
+<meta name="twitter:description" content="Type Properties changedTouches   Constrain      Experiment Feature  Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Type#For now,">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="current">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/gestures.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/gestures.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/index.html" class="sidebar-link  ">How it works</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/platform-difference.html" class="sidebar-link  ">Platform Differences with Web</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/design-principles.html" class="sidebar-link  ">Design Principles</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Style</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-styles.html" class="sidebar-link  ">Common Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/text-styles.html" class="sidebar-link  ">Text Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/css-units.html" class="sidebar-link  ">CSS Units</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/color-names.html" class="sidebar-link  ">Color name</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Event</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-events.html" class="sidebar-link  ">Common Events</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/event-bubble.html" class="sidebar-link  ">Event Bubble</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/gestures.html" class="sidebar-link current ">Gesture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">concept</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/wiki/faq.html">FAQ</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Gesture
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.399Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#type">Type</a></li>
+<li><a href="#properties">Properties</a><ul>
+<li><a href="#changedtouches">changedTouches</a></li>
+</ul>
+</li>
+<li><a href="#constrain">Constrain</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<blockquote>
+<p>Experiment Feature</p>
+</blockquote>
+<p>Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex.</p>
+<h2 class="article-heading"><span id="type">Type</span><a href="#type" class="header-anchor">#</a></h2><p>For now, there are four types of gestures:</p>
+<ul>
+<li><strong>Touch</strong>. Touch gesture is fired when a touch point is placed, moved or removed from the touch surface. Touch gesture is accuracy as it will report every trivial event. As a result, listening to touch gesture may be slow, a great deal of events needs to be processed even a small move happened. There are three types of Touch gesture:<ul>
+<li><code>touchstart</code> will be fired when a touch point is placed on the touch surface.</li>
+<li><code>touchmove</code> will be fired when a touch point is moved along the touch surface.</li>
+<li><code>touchend</code> will be fired when a touch point is removed from the touch surface.</li>
+<li><code>shouldStopPropagation</code>  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)</li>
+</ul>
+</li>
+<li><strong>Pan</strong>. Pan gesture also report motion of touch point on the touch surface, which is similar to touch gesture. But Pan gesture is sampled and faster than the touch event. As consequence, it is less accuracy than touch gesture. There are also three types of Pan gesture, and the meaning of these types is very close to types of Touch.<ul>
+<li><code>panstart</code></li>
+<li><code>panmove</code></li>
+<li><code>panend</code></li>
+</ul>
+</li>
+<li><strong>Horizontal/Vertical Pan</strong> <span class="api-version">v0.10+</span> . Mainly used for cell swipe gestures before conflict resolving system is completed. start/move/end state of the gesture will be passed by <code>state</code> property. <strong>Note</strong>: These gestures are in conflict with click event on Android currently.<ul>
+<li><code>horizontalpan</code></li>
+<li><code>verticalpan</code></li>
+</ul>
+</li>
+<li><strong>Swipe</strong>. Swipe is fired when user swipe a touch point on the screen. A serial of motion will only trigger one Swipe gesture.</li>
+<li><strong>LongPress</strong>. LongPress is fired when a touch point is held for 500 ms or more.</li>
+</ul>
+<p>The Touch gesture and Pan is very close to each other, with following features hold:</p>
+<ul>
+<li><strong>Touch</strong>. Not sampled, accuracy, but slow.</li>
+<li><strong>Pan</strong>. Sampled, fast, less accuracy.</li>
+</ul>
+<p>Users may choose their gesture according to their situation.</p>
+<h2 class="article-heading"><span id="properties">Properties</span><a href="#properties" class="header-anchor">#</a></h2><p>The following properties can be used in gesture callback:</p>
+<ul>
+<li><code>direction</code>. Only exists for <strong>Swipe</strong> gesture. Indicate the direcion of the swipe, choose from <code>up</code>, <code>left</code>, <code>bottom</code>, <code>right</code>.</li>
+<li><code>changedTouches</code>. An array of motion for every touch pointer that has contribute to the current gesture.</li>
+</ul>
+<h3 class="article-heading"><span id="changedtouches">changedTouches</span><a href="#changedtouches" class="header-anchor">#</a></h3><p><code>changedTouches</code> is an array, with the following properties in its children:</p>
+<ul>
+<li><code>identifier</code>. A unique identifier for a touch pointer.</li>
+<li><code>pageX</code>. The X coordinate of the touch pointer relative to the left edge of the document.</li>
+<li><code>pageY</code>. The Y coordinate of the touch pointer relative to the top of the document.</li>
+<li><code>screenX</code>. The X coordinate of the touch point relative to the left edge of the screen.</li>
+<li><code>screenY</code>. The Y coordinate of the touch point relative to the top edge of the screen.</li>
+<li><code>force</code>. A float value that represents the amount of pressure the user is applying to the touch surface. This is a value between 0.0 (no pressure) and 1.0 (the maximum amount of pressure the hardware can recognize).<blockquote>
+<p>iOS only and force is included in iPhone 6S and later models</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="http://dotwe.org/vue/91b6929f4f9f97a099a30c516dc2db06" target="_blank" rel="noopener">have a try</a></p>
+<h2 class="article-heading"><span id="constrain">Constrain</span><a href="#constrain" class="header-anchor">#</a></h2><p>Currently, Weex Android do not support listening to gesture on <code>scroller</code>, <code>list</code> and <code>webview</code>, as it would lead a large amount of event conflicting.</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/wiki/gestures.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

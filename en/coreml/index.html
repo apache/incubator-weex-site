@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex ❤️ iOS 11 系列之一：Core ML 初探 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景#WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weex ❤️ iOS 11 系列之一：Core ML 初探">
+<meta property="og:url" content="https://weex.apache.org/en/coreml/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="背景#WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1AmqgRVXXXXcmXFXXXXXXXXXX-240-427.gif">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1nZ8_RVXXXXczXVXXXXXXXXXX-240-427.gif">
+<meta property="og:image" content="https://gw.alicdn.com/tfs/TB1lN0_RVXXXXa_XVXXXXXXXXXX-240-427.gif">
+<meta property="og:updated_time" content="2018-01-03T12:51:51.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex ❤️ iOS 11 系列之一：Core ML 初探">
+<meta name="twitter:description" content="背景#WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现">
+<meta name="twitter:image" content="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="blog" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "blog";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/coreml/" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/coreml/" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="main-content">
+  <div class="wrapper article-wrapper post-layout">
+    
+
+<article class="article article-type-blog">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Weex ❤️ iOS 11 系列之一：Core ML 初探
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2017-06-21T07:46:44.000Z">Updated time: 21/06/2017</time> -->
+</header>
+
+    <html><head></head><body><h2 class="article-heading"><span id="bei-jing">&#x80CC;&#x666F;</span><a href="#bei-jing" class="header-anchor">#</a></h2><p>WWDC 2017 &#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x660E;&#x786E;&#x7684;&#x4FE1;&#x53F7;&#xFF1A;<strong>&#x7AEF;&#x4E0A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5C06;&#x4F1A;&#x662F;&#x672A;&#x6765;&#x82F9;&#x679C;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x53D1;&#x529B;&#x70B9;&#xFF0C;&#x540C;&#x65F6;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x5728;&#x4E0D;&#x65AD;&#x964D;&#x4F4E;</strong>&#x3002;</p>
+<p>Core ML &#x662F;&#x4ECA;&#x5E74; WWDC &#x4E0A;&#x82F9;&#x679C;&#x53D1;&#x5E03;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x5F00;&#x53D1;&#x7684; app &#x4E0A;&#x4F7F;&#x7528;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x540C;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x6536;&#x96C6;&#x7528;&#x6237;&#x6570;&#x636E;&#x3002; &#x6709;&#x4E86; Core ML&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x5DF1;&#x8BAD;&#x7EC3;&#x5F97;&#x5230;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x501F;&#x52A9;&#x82F9;&#x679C;&#x63D0;&#x4F9B;&#x7684;&#x8F6C;&#x6362;&#x5DE5;&#x5177;&#xFF0C;&#x8F6C;&#x5316;&#x6210; Core ML &#x7C7B;&#x578B;&#x7684;&#x6A21;&#x578B;&#x6587;&#x4EF6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x8F7B;&#x677E;&#x5730;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#x6A21;&#x578B;&#x548C; app &#x6570;&#x636E;&#x7684;&#x4E92;&#x901A;&#x3002;</p>
+<p>WWDC &#x4E0A;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x5F20;&#x7B80;&#x5355;&#x7684;&#x67B6;&#x6784;&#x56FE;&#xFF1A;</p>
+<p><img src="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png" alt="&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-06-20 &#x4E0B;&#x5348;8.50.21"></p>
+<p>&#x6700;&#x5E95;&#x5C42;&#x7684; Accelerate &#x548C; MPS&#xFF0C;&#x5176;&#x5B9E;&#x662F;&#x82F9;&#x679C;&#x53BB;&#x5E74;&#x63A8;&#x51FA;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x524D;&#x8005;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528; CPU&#xFF0C;&#x540E;&#x8005;&#x5219;&#x76F4;&#x63A5;&#x8C03;&#x7528; GPU&#x3002; Core ML &#x4F1A;&#x81EA;&#x884C;&#x51B3;&#x5B9A;&#x5230;&#x5E95;&#x4F7F;&#x7528; CPU &#x8FD8;&#x662F; GPU &#x6765;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#xFF0C;&#x53EF;&#x4EE5;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x5730;&#x5229;&#x7528;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x6765;&#x5904;&#x7406;&#x6A21;&#x578B;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x800C; Core ML &#x5F80;&#x4E0A;&#x4E00;&#x5C42;&#x5219;&#x662F;&#x5E94;&#x7528;&#x5C42;&#x3002;Vision &#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x56FE;&#x50CF;&#x76F8;&#x5173;&#x7684;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#x3001;&#x9762;&#x90E8;&#x8FFD;&#x8E2A;&#x3001;&#x6587;&#x5B57;&#x8BC6;&#x522B;&#x7B49;&#x7B49;&#xFF1B;NLP &#x5219;&#x63D0;&#x4F9B;&#x8BED;&#x4E49;&#x5206;&#x6790;&#x76F8;&#x5173; API&#x3002;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x5728;&#x4EE5;&#x524D;&#x7248;&#x672C;&#x7684; SDK &#x4E2D;&#x4E5F;&#x5B58;&#x5728;&#xFF0C;&#x8FD9;&#x6B21;&#x88AB;&#x96C6;&#x6210;&#x5230;&#x4E86;&#x65B0;&#x6846;&#x67B6;&#x5F53;&#x4E2D;&#x3002;&#x597D;&#x5904;&#x5728;&#x4E8E;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x62E5;&#x6709;&#x4E86;&#x66F4;&#x5927;&#x7684;&#x81EA;&#x7531;&#x5EA6;&#x3002;&#x5728;&#x4EE5;&#x524D;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x7684; app &#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x9AD8;&#x7EA7;&#x63A5;&#x53E3;&#xFF0C;&#x5BF9;&#x5E95;&#x5C42;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x7684;&#x638C;&#x63A7;&#x529B;&#x5EA6;&#x975E;&#x5E38;&#x5C0F;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;&#x5E95;&#x5C42;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x66F4;&#x4E2A;&#x6027;&#x5316;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<h2 class="article-heading"><span id="weex-ml">Weex-ML</span><a href="#weex-ml" class="header-anchor">#</a></h2><p>Weex &#x4EA4;&#x4E92;&#x89C6;&#x89C9;&#x80FD;&#x529B;&#x5C0F;&#x7ED3;&#x4E2D;&#x63D0;&#x5230;&#xFF0C;<strong>Weex &#x6700;&#x5927;&#x7684;&#x7279;&#x522B;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5176; native &#x7684;&#x80FD;&#x529B;&#xFF0C; &#x6211;&#x4EEC;&#x8981;&#x6700;&#x5927;&#x5316;&#x5229;&#x7528; native &#x7684;&#x7279;&#x6027;&#xFF0C; &#x800C;&#x4E0D;&#x662F;&#x53BB;&#x6A21;&#x4EFF;&#x5B83;</strong>&#x3002;</p>
+<p>&#x4F5C;&#x4E3A;&#x672C;&#x6B21; iOS 11 &#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981; native &#x80FD;&#x529B;&#xFF0C;&#x6211;&#x4E5F;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x5C1D;&#x8BD5;&#x5C06; Core ML &#x900F;&#x4F20;&#x5230;&#x4E86; Weex &#x4E0A;&#x3002;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x548C; Demo &#x90FD;&#x5DF2;&#x5F00;&#x6E90;&#x5230; <a href="https://github.com/cxfeng1/Weex-ML" target="_blank" rel="noopener">Github</a>&#xFF0C;&#x540E;&#x7EED;&#x4E5F;&#x4F1A;&#x5C06;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x76F8;&#x5173;&#x7684;Weex &#x6A21;&#x5757;&#x7EDF;&#x4E00;&#x653E;&#x5230; Weex Market &#x4E0A;&#x3002;</p>
+<p>&#x5F97;&#x76CA;&#x4E8E; Core ML API &#x7684;&#x7B80;&#x6D01;&#xFF0C;&#x5728; Weex &#x4E0A;&#x4F7F;&#x7528; Core ML &#x76F8;&#x5173;&#x80FD;&#x529B;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x7B80;&#x5355;:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> imageRecognition = weex.requireModule(<span class="string">&apos;imageRecognition&apos;</span>)</span><br><span class="line">imageRecognition.predictWithImage(<span class="keyword">this</span>.$refs.image.ref, (results)=&gt;{</span><br><span class="line">  <span class="keyword">this</span>.results = results.slice(<span class="number">0</span>,<span class="number">5</span>);</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x900F;&#x4F20;&#x7684; module <code>imageRecognition</code> , &#x5E76;&#x4F20;&#x5165; image &#x7EC4;&#x4EF6;&#x7684; ref &#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x56FE;&#x7247;&#x8BC6;&#x522B;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6700;&#x540E;&#x63D0;&#x53D6;&#x51FA;&#x8BC6;&#x522B;&#x7ED3;&#x679C;&#x4E2D; confidence &#x6700;&#x9AD8;&#x7684; 5 &#x4E2A;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 class="article-heading"><span id="demo">Demo</span><a href="#demo" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="imagerecognition">imageRecognition</span><a href="#imagerecognition" class="header-anchor">#</a></h3><p><img src="https://gw.alicdn.com/tfs/TB1AmqgRVXXXXcmXFXXXXXXXXXX-240-427.gif" alt=""></p>
+<p>&#x4F7F;&#x7528; <a href="https://github.com/fchollet/keras/blob/0bb4e0fad5b4bb3743c8a7d03c260b62a35e7045/keras/applications/inception_v3.py" target="_blank" rel="noopener">Inceptionv3</a> &#x4F5C;&#x4E3A;&#x6A21;&#x578B;&#xFF0C;&#x80FD;&#x591F;&#x9AD8;&#x6548;&#x8BC6;&#x522B;&#xFF0C; &#x8BE5;&#x6A21;&#x578B;&#x5DF2;&#x7ECF;&#x5728; <a href="https://github.com/fchollet/keras" target="_blank" rel="noopener">keras</a> &#x4E2D;&#x88AB;&#x8BAD;&#x7EC3;&#x597D;&#x5E76;&#x901A;&#x8FC7;&#x82F9;&#x679C;&#x63D0;&#x4F9B;&#x7684;&#x5DE5;&#x5177;&#x8F6C;&#x6362;&#x6210; <strong>mlmodel</strong> &#x6587;&#x4EF6;&#xFF0C; &#x53EA;&#x9700;&#x62D6;&#x62FD;&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x53EF;&#x4EE5;&#x96C6;&#x6210;&#x5230; iOS &#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E2D;&#xFF0C; &#x4E0A;&#x8FF0; demo &#x8F93;&#x51FA;&#x4E86;&#x5BF9;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5206;&#x7C7B;&#x6700;&#x5927;&#x53EF;&#x80FD;&#x7684;5&#x4E2A;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#xFF0C; &#x5BF9;&#x4E8E; Weex &#x6765;&#x8BF4;&#xFF0C;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x80FD;&#x641E;&#x5B9A;&#x3002;</p>
+<h3 class="article-heading"><span id="digitdetect">digitDetect</span><a href="#digitdetect" class="header-anchor">#</a></h3><p><img src="https://gw.alicdn.com/tfs/TB1nZ8_RVXXXXczXVXXXXXXXXXX-240-427.gif" alt=""></p>
+<p>&#x4E0A;&#x8FF0; demo &#x9996;&#x5148;&#x4F7F;&#x7528; <a href="http://market.dotwe.org/ext/list.htm#6" target="_blank" rel="noopener">weex-gcanvas</a> &#x63D2;&#x4EF6;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7ED8;&#x5236;&#x677F;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; MNIST model &#x5B8C;&#x6210;&#x4E86;&#x5BF9;&#x624B;&#x5199;&#x6570;&#x5B57;&#x7684;&#x8BC6;&#x522B;&#x3002;</p>
+<h3 class="article-heading"><span id="facedetect">faceDetect</span><a href="#facedetect" class="header-anchor">#</a></h3><p><img src="https://gw.alicdn.com/tfs/TB1lN0_RVXXXXa_XVXXXXXXXXXX-240-427.gif" alt=""></p>
+<p>&#x8FD9;&#x4E2A; demo &#x6CA1;&#x6709;&#x52A0;&#x8F7D;&#x4EFB;&#x4F55; model&#xFF0C;&#x4F7F;&#x7528;&#x4E86; iOS 11 &#x5185;&#x7F6E;&#x7684; Vision Framework&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;Vision &#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x8FD0;&#x884C;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x76F8;&#x5173;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5B83;&#x76F8;&#x5F53;&#x4E8E; Core ML &#x7684; High-Level Solution&#xFF0C; &#x5B83;&#x53EF;&#x4EE5;&#x505A;&#x5F88;&#x591A;&#x4E8B;&#x60C5;:</p>
+<ul>
+<li>&#x8138;&#x90E8;&#x8BC6;&#x522B;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x6570;&#x7EC4;&#x6765;&#x8868;&#x793A;&#x6BCF;&#x4E00;&#x4E2A;&#x8138;&#x90E8;</li>
+<li>&#x8138;&#x90E8;&#x66F4;&#x7CBE;&#x7EC6;&#x8BC6;&#x522B;&#xFF0C;&#x6BD4;&#x5982;&#x773C;&#x775B;&#x548C;&#x9F3B;&#x5B50;&#x7684;&#x5177;&#x4F53;&#x4F4D;&#x7F6E;&#x3001;&#x5934;&#x90E8;&#x7684;&#x5F62;&#x72B6;&#x7B49;&#xFF0C;&#x4E0A;&#x8FF0; demo &#x5C31;&#x662F;&#x62FF;&#x5230;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x4EE5;&#x540E;&#x4F7F;&#x7528; gcanvas &#x7ED8;&#x5236;&#x51FA;&#x4E86;&#x9762;&#x90E8;&#x7CBE;&#x7EC6;&#x8F6E;&#x5ED3;</li>
+<li>&#x56FE;&#x7247;&#x4E2D;&#x7684;&#x77E9;&#x5F62;&#x63A2;&#x6D4B;</li>
+<li>&#x56FE;&#x7247;&#x4E2D;&#x7684;&#x6587;&#x5B57;&#x63A2;&#x6D4B;</li>
+<li>&#x4E8C;&#x7EF4;&#x7801;/&#x6761;&#x5F62;&#x7801;&#x63A2;&#x6D4B;</li>
+<li>&#x89C6;&#x9891;&#x4E2D;&#x8DDF;&#x8E2A;&#x79FB;&#x52A8;&#x7684;&#x7269;&#x4F53;</li>
+</ul>
+<h2 class="article-heading"><span id="zong-jie">&#x603B;&#x7ED3;</span><a href="#zong-jie" class="header-anchor">#</a></h2><p>&#x8FD9;&#x6B21; Core ML &#x7684;&#x63A8;&#x51FA;&#xFF0C;&#x540C;&#x65F6;&#x5F97;&#x76CA;&#x4E8E;&#x82F9;&#x679C;&#x5BF9;&#x8F6F;&#x786C;&#x4EF6;&#x7684;&#x5168;&#x9762;&#x638C;&#x63A7;&#xFF0C;&#x4F7F;&#x5F97;&#x4ECE;&#x7CFB;&#x7EDF;&#x7EA7;&#x5230;&#x7B2C;&#x4E09;&#x65B9;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x90FD;&#x5177;&#x5907;&#x4E86;&#x5728;&#x7AEF;&#x4E0A;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x5904;&#x7406;&#x7684;&#x80FD;&#x529B;&#x3002;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x548C; Demo &#x90FD;&#x5DF2;&#x4E0A;&#x4F20;&#x5230; <a href="https://github.com/cxfeng1/Weex-ML" target="_blank" rel="noopener">Github</a>&#xFF0C;&#x6B22;&#x8FCE;&#x8D21;&#x732E;&#x548C;&#x4EA4;&#x6D41;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x5728;&#x5B9E;&#x9645;&#x7814;&#x7A76;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E5F;&#x53D1;&#x73B0;&#x4E86; Core ML &#x7684;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF1A;</p>
+<ul>
+<li>&#x65E0;&#x6CD5;&#x5728;&#x7AEF;&#x4E0A;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x7684;&#x8BAD;&#x7EC3;&#xFF0C;&#x6240;&#x6709;&#x6A21;&#x578B;&#x5FC5;&#x987B;&#x63D0;&#x524D;&#x8BAD;&#x7EC3;&#x597D;&#x518D;&#x8F6C;&#x6362;&#x6210; Core ML &#x7684;&#x683C;&#x5F0F;</li>
+<li>&#x65E0;&#x6CD5;&#x52A8;&#x6001;&#x4E0B;&#x8F7D;&#x548C;&#x66F4;&#x65B0;&#x6A21;&#x578B;&#xFF0C;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x7ECF;&#x5E38;&#x91CD;&#x65B0;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x4E0D;&#x592A;&#x53CB;&#x597D;</li>
+<li>&#x76EE;&#x524D;&#x770B;&#x53EA;&#x652F;&#x6301;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x975E;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x3002;</li>
+</ul>
+<p>Weex &#x672A;&#x6765;&#x5728;&#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x529F;&#x80FD;&#x900F;&#x4F20;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x7EE7;&#x7EED;&#x63A2;&#x7D22;&#x66F4;&#x6DF1;&#x5C42;&#x6B21;&#x7684;&#x7ED3;&#x5408;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x672C;&#x6587;&#x662F; Weex &#x548C; iOS 11 &#x7ED3;&#x5408;&#x7CFB;&#x5217;&#x7684;&#x7B2C;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x540E;&#x7EED;&#x5C06;&#x4F1A;&#x6709;&#x66F4;&#x591A;&#x6709;&#x610F;&#x601D;&#x7684;iOS 11 feature (&#x5982; ARKit&#x3001; drag &amp; drop &#x7B49;) &#x548C;&#x5927;&#x5BB6;&#x4E00;&#x8D77;&#x63A2;&#x8BA8;&#x3002;</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/_posts/coreml.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

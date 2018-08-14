@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android APIs | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android APIs#WXSDKEngine# Register the module and component Set up various adapters  Module &amp;amp; Component#Component#One can register a component using the following function: public static boolean r">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Android APIs">
+<meta property="og:url" content="https://weex.apache.org/references/android-apis.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Android APIs#WXSDKEngine# Register the module and component Set up various adapters  Module &amp;amp; Component#Component#One can register a component using the following function: public static boolean r">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-14T05:59:45.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android APIs">
+<meta name="twitter:description" content="Android APIs#WXSDKEngine# Register the module and component Set up various adapters  Module &amp;amp; Component#Component#One can register a component using the following function: public static boolean r">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="current">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/android-apis.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/android-apis.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/references/android-apis.html" class="sidebar-link current ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/components/index.html">Build-in Components</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (deprecated)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/modules/index.html">Build-in Modules</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/references/android-apis.html" class="sidebar-link current ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/components/index.html">Build-in Components</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (deprecated)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/modules/index.html">Build-in Modules</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Android APIs
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-05-14T05:59:45.201Z">Updated time: 14/05/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="android-apis">Android APIs</span><a href="#android-apis" class="header-anchor">#</a></h1><h2 class="article-heading"><span id="wxsdkengine">WXSDKEngine</span><a href="#wxsdkengine" class="header-anchor">#</a></h2><ol>
+<li>Register the module and component</li>
+<li>Set up various adapters</li>
+</ol>
+<h3 class="article-heading"><span id="module-amp-component">Module &amp; Component</span><a href="#module-amp-component" class="header-anchor">#</a></h3><h4 class="article-heading"><span id="component">Component</span><a href="#component" class="header-anchor">#</a></h4><p>One can register a component using the following function:</p>
+<pre><code>public static boolean registerComponent(IFComponentHolder holder, boolean appendTree, String ... names)
+</code></pre><ul>
+<li>holder is a abstract factory designed for create Component, and SimpleComponentHolder is the a simple way to achieve IFComponentHolder.</li>
+<li>appendTree is an additional flag which is unused now.</li>
+<li>names is the component&#x2019;s name in front end template file. A Android component could be mapped into multiple names.</li>
+</ul>
+<h4 class="article-heading"><span id="module">Module</span><a href="#module" class="header-anchor">#</a></h4><p>One can register a module using the following way:</p>
+<pre><code>public static &lt;T extends WXModule&gt; boolean registerModule(String moduleName, Class&lt;T&gt; moduleClass,boolean global) throws WXException
+</code></pre><ul>
+<li>moduleName is the name in front end template.</li>
+<li>moduleClass is the Java class of the module, which provide a constructor with an empty parameter.</li>
+<li>global is a flag, true for singleton in the whole app, false for creating an object for each WXSDKIntance.</li>
+</ul>
+<h3 class="article-heading"><span id="adapter">Adapter</span><a href="#adapter" class="header-anchor">#</a></h3><h4 class="article-heading"><span id="imageadapter">ImageAdapter</span><a href="#imageadapter" class="header-anchor">#</a></h4><p>Image adapter is responsible for loading images according to URLs. There are two types of image adapter:</p>
+<ol>
+<li>Loading a image to a view according to URL.</li>
+<li>Loading a image to a specified object according to URL.</li>
+</ol>
+<p>In order to use image component, one must implement the first adapter, while the second adapter is optional.</p>
+<h5 class="article-heading"><span id="iwximgloaderadapter">IWXImgLoaderAdapter</span><a href="#iwximgloaderadapter" class="header-anchor">#</a></h5><pre><code>public interface IWXImgLoaderAdapter {
+  void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy);
+}
+</code></pre><ul>
+<li><code>WXImageQuality</code> that the quality of the picture variables, take the following values <code>LOW</code>, <code>NORMAL</code>, <code>HIGH</code>, <code>ORIGINAL</code> picture quality in turn higher. The default is <code>LOW</code>.</li>
+<li><code>WXImageStrategy</code> is an extension class that indicates whether the image can be cut (isClipping) sharpening (isSharpen) placeholder (placeHolder) and so on.</li>
+</ul>
+<h5 class="article-heading"><span id="idrawableloaderadapter">IDrawableLoaderAdapter</span><a href="#idrawableloaderadapter" class="header-anchor">#</a></h5><p>This adapter is optional.</p>
+<pre><code>void setDrawable(String url, DrawableTarget drawableTarget, DrawableStrategy drawableStrategy);
+</code></pre><ul>
+<li><code>DrawableTarget</code> is a object into where will load an image. <code>DrawableTarget</code> is one of <code>StaticTarget</code> or <code>AnimatedTarget</code>.</li>
+</ul>
+<h4 class="article-heading"><span id="iwxhttpadapter">IWXHttpAdapter</span><a href="#iwxhttpadapter" class="header-anchor">#</a></h4><p>Weex custom <code>WXRequest</code> and <code>OnHttpListener</code>, Native reload interface can be obtained from the Request URL, Header and other parameters, the network request can be completed through <code>OnHttpListener</code> callback notification. Weex provides the default network request: <code>DefaultWXHttpAdapter</code>, using <code>HttpURLConnection</code> for network requests.</p>
+<p>The interface is defined as follows:</p>
+<pre><code>public interface IWXHttpAdapter {
+  void sendRequest(WXRequest request, OnHttpListener listener);
+}
+</code></pre><ul>
+<li><p><code>WXRequest</code> defines the parameters related to the network request, the request method, the request body, and the timeout time. Weex default timeout is 3000.</p>
+</li>
+<li><p><code>OnHttpListener</code> defines the corresponding method after the network request ends. Defined as follows:</p>
+<pre><code>interface OnHttpListener {
+
+  /**
+  * start request
+  */
+  void onHttpStart();
+
+  /**
+  * headers received
+  */
+  void onHeadersReceived(int statusCode,Map&lt;String,List&lt;String&gt;&gt; headers);
+
+  /**
+  * post progress
+  * @param uploadProgress
+  */
+  void onHttpUploadProgress(int uploadProgress);
+
+  /**
+  * response loaded length (bytes), full length should read from headers (content-length)
+  * @param loadedLength
+  */
+  void onHttpResponseProgress(int loadedLength);
+
+  /**
+  * http response finish
+  * @param response
+  */
+  void onHttpFinish(WXResponse response);
+}
+</code></pre></li>
+</ul>
+<h4 class="article-heading"><span id="iwxusertrackadapter">IWXUserTrackAdapter</span><a href="#iwxusertrackadapter" class="header-anchor">#</a></h4><p>Weex related performance data (first screen loading time, JS-Native communication time, dom update time, etc.) and other general information (JSLib file size, Weex SDK version number, etc.).</p>
+<pre><code>public interface IWXUserTrackAdapter {
+  void commit(Context context, String eventId, String type, WXPerformance perf, Map&lt;String, Serializable&gt; params);
+}
+</code></pre><p>Native implementation interface can be obtained through <code>WXPerformance</code> and <code>params</code> corresponding information.</p>
+<h4 class="article-heading"><span id="iactivitynavbarsetter">IActivityNavBarSetter</span><a href="#iactivitynavbarsetter" class="header-anchor">#</a></h4><p>Weex provided the ability of navigation through <code>WXNavigatorModule</code> which relys on IActivityNavBarSetter.</p>
+<p>Usage:</p>
+<pre><code>WXSDKEngine.setActivityNavBarSetter(new IActivityNavBarSetter(){});    
+</code></pre><h4 class="article-heading"><span id="iwxstorageadapter">IWXStorageAdapter</span><a href="#iwxstorageadapter" class="header-anchor">#</a></h4><p>Weex provided the ability of local storage through <code>WXStorageModule</code> which depends on IWXStorageAdapter. One can use <code>DefaultWXStorage</code> as the default implementation of IWXStorageAdapter.</p>
+<h4 class="article-heading"><span id="iwxjsexceptionadapter">IWXJSExceptionAdapter</span><a href="#iwxjsexceptionadapter" class="header-anchor">#</a></h4><p>IWXJSExceptionAdapter is used to handle JavaScript exception.</p>
+<h2 class="article-heading"><span id="wxsdkinstace">WXSDKInstace</span><a href="#wxsdkinstace" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="weex-native-and-javascript-communication">Weex Native and JavaScript communication.</span><a href="#weex-native-and-javascript-communication" class="header-anchor">#</a></h3><h4 class="article-heading"><span id="custom-events">Custom events</span><a href="#custom-events" class="header-anchor">#</a></h4><p>Used for a custom control for event notifications, such as custom click events, response drop events, and so on.</p>
+<p><code>WXSDKInstance.java</code></p>
+<pre><code>public void fireEvent(String elementRef,final String type, final Map&lt;String, Object&gt; data,final Map&lt;String, Object&gt; domChanges){  }
+
+public void fireEvent(String elementRef,final String type, final Map&lt;String, Object&gt; data){
+  fireEvent(elementRef,type,data,null);
+}
+
+public void fireEvent(String elementRef, String type){
+  fireEvent(ref,type,new HashMap&lt;String, Object&gt;());
+}
+</code></pre><ul>
+<li><p><code>elementRef</code>&#xFF1A;The event occurred for the control ID&#x3002;</p>
+</li>
+<li><p><code>type</code>: Custom events, Weex defaults to a custom event starting with onXxxxx. OnPullDown (drop-down event)</p>
+</li>
+<li><p><code>data</code>: Need to reveal the parameters, such as the current control of the size, coordinates and other information&#x3002;</p>
+</li>
+<li><p><code>domChanges</code>&#xFF1A;Update ref for the control&#x2019;s Attribute and Style</p>
+</li>
+</ul>
+<h4 class="article-heading"><span id="event-callback">Event callback</span><a href="#event-callback" class="header-anchor">#</a></h4><p>Used for Module callback, for example, after the completion of positioning Module need to notify JS. Use as follows:</p>
+<pre><code>public class WXLocation extends WXModule {
+
+  @JSMethod
+  public void getLocation(JSCallback callback){
+  //Get the code for the location information .....
+  Map&lt;String,String&gt; data=new HashMap&lt;&gt;();
+  data.put(&quot;x&quot;,&quot;x&quot;);
+  data.put(&quot;y&quot;,&quot;y&quot;);
+  //notify once
+  callback.invoke(data);
+  //Continuous connection
+  callback.invokeAndKeepAlive(data);
+  //Invoke method and invokeAndKeepAlive two methods of choice  }
+}
+</code></pre><h3 class="article-heading"><span id="weex-native-and-other-native-code-communication">Weex Native and other Native code communication</span><a href="#weex-native-and-other-native-code-communication" class="header-anchor">#</a></h3><h4 class="article-heading"><span id="onwxscrolllistener">OnWXScrollListener</span><a href="#onwxscrolllistener" class="header-anchor">#</a></h4><p>Weex gets the scroll event You can register <code>registerOnWXScrollListener</code> via <code>WXSDKInstance</code><br>The interface is defined as follows:</p>
+<pre><code>public interface OnWXScrollListener {
+
+  /**
+  * The  view is not currently scrolling.
+  */
+  int IDLE = RecyclerView.SCROLL_STATE_IDLE;
+  /**
+  * The view is currently being dragged by outside input such as user touch input.
+  */
+  int DRAGGING = RecyclerView.SCROLL_STATE_DRAGGING;
+  /**
+  * The view is currently animating to a final position while not under
+  * outside control.
+  */
+  int SETTLING = RecyclerView.SCROLL_STATE_SETTLING;
+
+  /**
+  * Callback method to be invoked when the view has been scrolled. This will be
+  * called after the scroll has completed.
+  * &lt;p&gt;
+  * This callback will also be called if visible item range changes after a layout
+  * calculation. In that case, dx and dy will be 0.
+  *
+  */
+  void onScrolled(View view, int x, int y);
+
+  /**
+  * Callback method to be invoked when view&apos;s scroll state changes.
+  *
+  */
+  void onScrollStateChanged(View view, int x, int y, int newState);
+}
+</code></pre><h2 class="article-heading"><span id="other-introduction">Other Introduction</span><a href="#other-introduction" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="setsize">setSize</span><a href="#setsize" class="header-anchor">#</a></h3><p>You can use the <code>mWXSDKInstance.setSize()</code> method to change the size of the Weex container.</p>
+<h3 class="article-heading"><span id="downgrade">Downgrade</span><a href="#downgrade" class="header-anchor">#</a></h3><p>Weex in the development stage will add some new features and new methods, but these new features and functions must be upgraded to achieve the SDK, for the application should not be upgraded how to deal with it? You can use the downgrade feature.</p>
+<p>Native can be handled by the <code>onException</code> method in interface <code>IWXRenderListener</code>, and if it is an active demoulding errCode is a character that is divided by &#x201C;|&#x201D;. &#x201C;|&#x201D; The preceding character is 1 for active demotion, and the Native side can jump to the corresponding H5 page. Or otherwise prompted the user&#x2019;s current environment does not support Weex.</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/references/android-apis.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

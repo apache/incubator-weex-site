@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Common Styles | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Box Model Notes Example   Flexbox Flex container Flex item   Examples Position Examples   transform Example   transition v0.17.0+ Property Example   Pseudo class v0.9.5+ Rule Example   linear-grad">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Common Styles">
+<meta property="og:url" content="https://weex.apache.org/wiki/common-styles.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Box Model Notes Example   Flexbox Flex container Flex item   Examples Position Examples   transform Example   transition v0.17.0+ Property Example   Pseudo class v0.9.5+ Rule Example   linear-grad">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://weex.apache.org/wiki/images/css-boxmodel.png">
+<meta property="og:image" content="https://weex.apache.org/wiki/images/css-flexbox-justify.svg">
+<meta property="og:image" content="https://weex.apache.org/wiki/images/css-flexbox-align.jpg">
+<meta property="og:image" content="https://weex.apache.org/wiki/images/css-flexbox-sample.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.396Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Common Styles">
+<meta name="twitter:description" content="Box Model Notes Example   Flexbox Flex container Flex item   Examples Position Examples   transform Example   transition v0.17.0+ Property Example   Pseudo class v0.9.5+ Rule Example   linear-grad">
+<meta name="twitter:image" content="https://weex.apache.org/wiki/images/css-boxmodel.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="current">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/common-styles.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/common-styles.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/index.html" class="sidebar-link  ">How it works</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/platform-difference.html" class="sidebar-link  ">Platform Differences with Web</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/design-principles.html" class="sidebar-link  ">Design Principles</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Style</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-styles.html" class="sidebar-link current ">Common Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/text-styles.html" class="sidebar-link  ">Text Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/css-units.html" class="sidebar-link  ">CSS Units</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/color-names.html" class="sidebar-link  ">Color name</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Event</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-events.html" class="sidebar-link  ">Common Events</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/event-bubble.html" class="sidebar-link  ">Event Bubble</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/gestures.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">concept</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/wiki/faq.html">FAQ</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Common Styles
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.396Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#box-model">Box Model</a><ul>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
+<li><a href="#flexbox">Flexbox</a><ul>
+<li><a href="#flex-container">Flex container</a></li>
+<li><a href="#flex-item">Flex item</a></li>
+</ul>
+</li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#position">Position</a><ul>
+<li><a href="#examples-1">Examples</a></li>
+</ul>
+</li>
+<li><a href="#transform">transform</a><ul>
+<li><a href="#example-1">Example</a></li>
+</ul>
+</li>
+<li><a href="#transition-span-class-api-version-v0-17-0-span">transition <span class="api-version">v0.17.0+</span></a><ul>
+<li><a href="#property">Property</a></li>
+<li><a href="#example-2">Example</a></li>
+</ul>
+</li>
+<li><a href="#pseudo-class-span-class-api-version-v0-9-5-span">Pseudo class <span class="api-version">v0.9.5+</span></a><ul>
+<li><a href="#rule">Rule</a></li>
+<li><a href="#example-3">Example</a></li>
+</ul>
+</li>
+<li><a href="#linear-gradient-span-class-api-version-v0-10-span">linear-gradient <span class="api-version">v0.10+</span></a><ul>
+<li><a href="#supported-components">Supported components</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#note">Note</a></li>
+<li><a href="#example-4">Example</a></li>
+</ul>
+</li>
+<li><a href="#box-shadow-span-class-api-version-v0-11-span">box-shadow <span class="api-version">v0.11+</span></a><ul>
+<li><a href="#note-1">Note</a></li>
+<li><a href="#example-5">Example</a></li>
+</ul>
+</li>
+<li><a href="#other-common-style">Other Common Style</a></li>
+<li><a href="#type-of-style-value">Type of Style Value</a></li>
+<li><a href="#simple-step">Simple Step</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>All of weex tags share some common style rules</p>
+<h2 class="article-heading"><span id="box-model">Box Model</span><a href="#box-model" class="header-anchor">#</a></h2><p><img src="./images/css-boxmodel.png" alt="box model"></p>
+<p>Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term &#x201C;box model&#x201D; is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.</p>
+<p>you can use the definition below in weex box model.</p>
+<ul>
+<li><code>width</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>height</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding</code>: <code>length</code> type, default value <code>0</code>, (space around content, between element content and the element border)<ul>
+<li><code>padding-left</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-right</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-top</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>padding-bottom</code>: <code>length</code> type, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>margin</code>: <code>length</code> type, default value <code>0</code>, (space around elements, outside the border)<ul>
+<li><code>margin-left</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-right</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-top</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>margin-bottom</code>: <code>length</code> type, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>border</code><ul>
+<li><code>border-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code><ul>
+<li><code>border-left-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-top-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-right-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+<li><code>border-bottom-style</code>: values <code>solid</code> | <code>dashed</code> | <code>dotted</code>, default value <code>solid</code></li>
+</ul>
+</li>
+<li><code>border-width</code>: <code>length</code> type, non-negative, default value <code>0</code><ul>
+<li><code>border-left-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-right-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-bottom-width</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+</ul>
+</li>
+<li><code>border-color</code>: <code>color</code> type, default value <code>#000000</code><ul>
+<li><code>border-left-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-top-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-right-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+<li><code>border-bottom-color</code>: <code>color</code> type, default value <code>#000000</code></li>
+</ul>
+</li>
+<li><code>border-radius</code>: <code>length</code> type, default value <code>0</code>, (rounded borders to elements , default value is 0 meaning right angle )<ul>
+<li><code>border-bottom-left-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-bottom-right-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-left-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+<li><code>border-top-right-radius</code>: <code>length</code> type, non-negative, default value <code>0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="notes">Notes</span><a href="#notes" class="header-anchor">#</a></h3><p>Weex box model uses <code>border-box</code> as the default value of <code>box-sizing</code>, meaning the width and height properties includes content, padding and border, but not the margin.</p>
+<p>The rule of border-radius for a specific corner such as <code>border-top-left-radius</code> is not currently supported for component <code>&lt;image&gt;</code>in iOS. This only happens to iOS, it works fine on Android.</p>
+<p>Although <code>overflow:hidden</code> is default on android, a view <strong>will not</strong> clip its children according to <code>border-radius</code> unless all the following condtions met. This only happens on Android, it works fine on iOS.</p>
+<ul>
+<li>The view type is <code>div</code>, <code>a</code>, <code>cell</code>, <code>refresh</code> or <code>loading</code>.</li>
+<li>OS version is Android 4.3 or higher.</li>
+<li>OS version is <strong>not</strong> Andorid 7.0</li>
+<li>A view <strong>does not</strong> have <code>background-image</code> property nor OS version is Android 5.0 or higher.</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 400; height: 200; margin-left: 20;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="flexbox">Flexbox</span><a href="#flexbox" class="header-anchor">#</a></h2><p>Weex box style model based on the CSS flexbox, ensures that elements behave predictably and the page layout can accommodates to different screen sizes and different display devices.</p>
+<p>Flexbox consists of flex containers and flex items. If a weex element can containing other elements, it is a flex container.</p>
+<p>Notice that the old version of flexbox specification has differences with the new ones, such as whether or not to support wrapping. This is described at w3c&#x2019;s working drafts, and you should notice the differences among them. Also notice that the old version is only supported below the 4.4 version of android.</p>
+<h3 class="article-heading"><span id="flex-container">Flex container</span><a href="#flex-container" class="header-anchor">#</a></h3><p>Flexbox is the default and only style model in Weex, so you don&#x2019;t have to add <code>display: flex;</code> in a container.</p>
+<ul>
+<li><code>flex-direction</code>: values <code>row</code> | <code>column</code>, default value <code>column</code></li>
+</ul>
+<p>The flex-direction property specifies the direction of the flexible items inside the flex container. Default value is <code>column</code> (top-to-bottom).</p>
+<ul>
+<li><code>justify-content</code>: values <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code>, default value <code>flex-start</code></li>
+</ul>
+<p>The justify-content property horizontally aligns the flexible container&#x2019;s items when the items do not use all available space on the main-axis. Default value is <code>flex-start</code> meaning the flex items are positioned at the beginning of the container. <code>flex-end</code> means the items are positioned at the end of the container. <code>center</code> means the items are positioned at the center of the container. <code>space-between</code> means the items are positioned with space between the lines.</p>
+<p><img src="./images/css-flexbox-justify.svg" alt="justify-content"></p>
+<ul>
+<li><code>align-items</code>: values <code>stretch</code> | <code>flex-start</code> | <code>center</code> | <code>flex-end</code>, default value <code>stretch</code></li>
+</ul>
+<p>The align-items property vertically aligns the flexible container&#x2019;s items when the items do not use all available space on the cross-axis. Default value is <code>stretch</code> meaning the items are stretched to fit the container. <code>flex-start</code> means the items are positioned at the top of the container; <code>flex-end</code> means the items are positioned at the bottom of the container; <code>center</code> means items are positioned at the center of the container (vertically).</p>
+<p><img src="./images/css-flexbox-align.jpg" alt="align-items"></p>
+<h3 class="article-heading"><span id="flex-item">Flex item</span><a href="#flex-item" class="header-anchor">#</a></h3><ul>
+<li><code>flex</code>: <code>number</code> type, default value <code>0</code></li>
+</ul>
+<p>the flex property specifies the length of the flex item, relative to the rest of the flex items inside the same container.  If all of the flex items set <code>flex: 1</code>, they will have equal width or height on direction of flex container&#x2019;s <code>flex-direction</code>. If there are two flex items, with one setting <code>flex: 1</code>, and the other setting <code>flex: 2</code>, the first one will take 1/3 container space, and the second one will take 2/3 container space. If all of flex items don&#x2019;t set <code>flex</code>, they will be aligned depending on the container&#x2019;s <code>justify-content</code> property.</p>
+<h2 class="article-heading"><span id="examples">Examples</span><a href="#examples" class="header-anchor">#</a></h2><p>a list of images with equal scales align at the vertical axis:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width: 300; height: 100;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;flex: 1;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;flex: 1;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;flex: 1;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>a image with fixed width aligns with a stretched text:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width: 300; height: 100;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100; height: 100;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;flex: 1;&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>mixed direction alignment:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width: 100;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100; height: 100;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;flex-direction: row;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;flex: 2; font-size: 32;&quot;</span>&gt;</span>title<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;flex: 1; font-size: 16;&quot;</span>&gt;</span>$100<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>one text align left , the other float right:</p>
+<p><img src="./images/css-flexbox-sample.png" alt="one text align left , the other float right"></p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;flex-direction: row; justify-content: space-between;&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">text</span>&gt;</span>WEEX<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">text</span>&gt;</span>2016-05-08<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="position">Position</span><a href="#position" class="header-anchor">#</a></h2><p>we can use properties below to control placement of weex tag</p>
+<ul>
+<li><code>position</code>: values <code>relative</code> | <code>absolute</code> | <code>fixed</code> | <code>sticky</code>, default value <code>relative</code></li>
+</ul>
+<p><code>relative</code> means the item is positioned relative to its normal position. <code>absolute</code> means the item is positioned relative to its container. <code>fixed</code> keeps the elements position fixed when the page is scrolling. <code>sticky</code> keeps elements positioned inside the viewport as &#x201C;stuck&#x201D; at the top or &#x201C;relative&#x201D; at its original place depending on whether does it about to scroll out of the view.</p>
+<ul>
+<li><code>top</code>: <code>number</code> type, default value <code>0</code>, upward offset value</li>
+<li><code>bottom</code>: <code>number</code> type, default value <code>0</code>, downward offset value</li>
+<li><code>left</code>: <code>number</code> type, default value <code>0</code>, leftward offset value</li>
+<li><code>right</code>: <code>number</code> type, default value <code>0</code>, rightward offset value</li>
+</ul>
+<h3 class="article-heading"><span id="examples">Examples</span><a href="#examples" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;flex-direction: column;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;height: 3000;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;top: 50px; left: 50px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;height: 3000;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: sticky;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;height: 3000;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; top: 50px; left: 50px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="transform">transform</span><a href="#transform" class="header-anchor">#</a></h2><p>The CSS <strong>transform</strong> property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated and scaled.</p>
+<p>Currently supported format:</p>
+<ul>
+<li>translate( &lt;number/percentage&gt; [, &lt;number/percentage&gt;]?)</li>
+<li>translateX( &lt;number/percentage&gt; )</li>
+<li>translateY( &lt;number/percentage&gt; )</li>
+<li>scale( <number>)</number></li>
+<li>scaleX( <number> )</number></li>
+<li>scaleY( <number> )</number></li>
+<li>rotate( &lt;angle/degree&gt; )</li>
+<li>rotateX( &lt;angle/degree&gt; ) <span class="api-version">v0.14+</span></li>
+<li>rotateY( &lt;angle/degree&gt; ) <span class="api-version">v0.14+</span></li>
+<li>perspective( <number> ), supported for Android 4.1 and above. <span class="api-version">v0.16+</span></number></li>
+<li>transform-origin: number/percentage/keyword(top/left/right/bottom)</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;transform&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>Transformed element<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.transform</span> {</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    transform: translate(150px,200px) rotate(20deg);</span></span><br><span class="line"><span class="undefined">    transform-origin: 0 -250px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-width</span><span class="selector-pseudo">:2px</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.title</span> {<span class="attribute">font-size</span>: <span class="number">48px</span>;}</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="transition-v0-17-0">transition <span class="api-version">v0.17.0+</span></span><a href="#transition-v0-17-0" class="header-anchor">#</a></h2><p>Now you can use the transition attribute in CSS to enhance the interactivity and visual experience of your application. The transition includes the layout animation, that is, LayoutAnimation, which now changes the layout and uses the fluent animation of the transition. Transition allows the CSS attribute values to transition smoothly over a certain time interval.</p>
+<h3 class="article-heading"><span id="property">Property</span><a href="#property" class="header-anchor">#</a></h3><ul>
+<li><code>transition-property</code>:Allows the name of the transitional animation to set the value of the different styles transition effect, the default value is empty, that does not perform any transition, the following table lists all the legitimate parameters of the property:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>The transition is performed when the width of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>height</td>
+<td>The transition is performed when the height of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>top</td>
+<td>The transition is performed when the top of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>The transition is performed when the bottom of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>left</td>
+<td>The transition is performed when the left of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>right</td>
+<td>The transition is performed when the right of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>The transition is performed when the backgroundColor of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>The transition is performed when the opacity of the component is involved in the animation</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>The transition is performed when the transform of the component is involved in the animation</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>transition-duration</code>:Specifies the duration of the transition transition (in milliseconds). The default value is 0, indicating that there is no animation.</p>
+</li>
+<li><p><code>transition-delay</code>:Specifies the time interval (in milliseconds or seconds) between the request transition transition and the transition transition. The default value is 0, indicating that there is no delay, and the transition transition is performed immediately after the request.</p>
+</li>
+<li><p><code>transition-timing-function</code>:Describes the velocity curve of the transition transition, which is used to make the transition transition smoother. The default is ease. The following table lists all the valid attributes:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ease</td>
+<td>The transition gradually slow down the transition effect</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>The transition starts slowly and then becomes faster for the transition effect</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>The transition starts quickly and then slows the transition effect</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>The transition starts slowly, then goes fast and then slowly ends the transition effect</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>The transition changes at constant speed</td>
+</tr>
+<tr>
+<td>cubic-bezier(x1, y1, x2, y2)</td>
+<td>Using the custom transition in the third-order Bessel function, the parameter values of the function must be between 0 and 1. For more information on three times Bessel, see <a href="http://cubic-bezier.com/" target="_blank" rel="noopener">cubic-bezier</a> and <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank" rel="noopener">B&#xE9;zier curve</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.panel</span> {</span></span><br><span class="line"><span class="undefined">        margin: 10px;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="undefined">        align-items: center;</span></span><br><span class="line"><span class="undefined">        justify-content: center;</span></span><br><span class="line"><span class="undefined">        border: solid;</span></span><br><span class="line"><span class="undefined">        border-radius: 10px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        transition-property: width,height,backgroundColor;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transition-duration</span>: 0<span class="selector-class">.3s</span>;</span></span><br><span class="line"><span class="undefined">        transition-delay: 0s;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transition-timing-function</span>: <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.25</span>, 0<span class="selector-class">.1</span>, 0<span class="selector-class">.25</span>, 1<span class="selector-class">.0</span>);</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="pseudo-class-v0-9-5">Pseudo class <span class="api-version">v0.9.5+</span></span><a href="#pseudo-class-v0-9-5" class="header-anchor">#</a></h2><p>Weex support four pseudo-classes: <code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled</code></p>
+<p>All components support <code>active</code>, but only the input component and the textarea component support <code>focus</code>, <code>enabled</code>, <code>diabled</code>.</p>
+<h3 class="article-heading"><span id="rule">Rule</span><a href="#rule" class="header-anchor">#</a></h3><ul>
+<li><p>the high priority override low priority when rules take effect at the same time</p>
+<ul>
+<li>such as: &#x201C;input:active:enabled&#x201D; will override &#x201C;input:active&#x201D;</li>
+</ul>
+</li>
+<li><p>the interconnection rule as follow</p>
+<p><img src="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png" alt="rule"></p>
+</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">:src</span>=<span class="string">&quot;logoUrl&quot;</span> <span class="attr">class</span>=<span class="string">&quot;logo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.wrapper</span> {</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    margin-top: 120px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.title</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 48px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.logo</span> {</span></span><br><span class="line"><span class="undefined">    width: 360px;</span></span><br><span class="line"><span class="undefined">    height: 82px;</span></span><br><span class="line"><span class="undefined">    background-color: red;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.logo</span><span class="selector-pseudo">:active</span> {</span></span><br><span class="line"><span class="undefined">    width: 180px;</span></span><br><span class="line"><span class="undefined">    height: 82px;</span></span><br><span class="line"><span class="undefined">    background-color: green;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    props: {</span></span><br><span class="line"><span class="undefined">      logoUrl: {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">default</span>: <span class="string">&apos;https://alibaba.github.io/weex/img/weex_logo_blue@3x.png&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      target: {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">default</span>: <span class="string">&apos;World&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="undefined">    methods: {</span></span><br><span class="line"><span class="undefined">      update (e) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.target = <span class="string">&apos;Weex&apos;</span>;</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  };</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><a href="http://dotwe.org/vue/df2c8f254620d6d30d0906ee75fe5b99" target="_blank" rel="noopener">Try it</a></p>
+<h2 class="article-heading"><span id="linear-gradient-v0-10">linear-gradient <span class="api-version">v0.10+</span></span><a href="#linear-gradient-v0-10" class="header-anchor">#</a></h2><p>Weex support linear-gradient background, You can see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients" target="_blank" rel="noopener">W3C description of the gradient</a>.</p>
+<h3 class="article-heading"><span id="supported-components">Supported components</span><a href="#supported-components" class="header-anchor">#</a></h3><p>All components in Weex support gradients</p>
+<h3 class="article-heading"><span id="usage">Usage</span><a href="#usage" class="header-anchor">#</a></h3><p>You can use linear gradient by <code>background-image</code> property.</p>
+<figure class="highlight css"><table><tbody><tr><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>,<span class="selector-id">#a80077</span>,<span class="selector-id">#66ff00</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p><code>radial-gradient</code> is not currently supported, do not use it.</p>
+<p>Weex currently supports two color gradients. The direction of the gradient is as follows:</p>
+<ul>
+<li>to right<br>From left to right</li>
+<li>to left<br>From right to left</li>
+<li>to bottom<br>From top to bottom</li>
+<li>to top<br>From bottom to top</li>
+<li>to bottom right<br>From the upper left corner to the lower right corner</li>
+<li>to top left<br>From the lower right corner to the upper left corner</li>
+</ul>
+<h3 class="article-heading"><span id="note">Note</span><a href="#note" class="header-anchor">#</a></h3><ul>
+<li><code>background-image</code> and <code>background-color</code> are set at the same time, <code>background-image</code> precedes <code>background-color</code>.</li>
+<li>Do not use shorthand property such as <code>background</code>.</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #3a3a3a&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to right,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to left,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to bottom,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to bottom<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to top,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;flex-direction: row;align-items: center;justify-content: center&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container2&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to bottom right,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to bottom right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container2&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to top left,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to top left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container1</span> {</span></span><br><span class="line"><span class="undefined">    margin: 10px;</span></span><br><span class="line"><span class="undefined">    width: 730px;</span></span><br><span class="line"><span class="undefined">    height: 200px;</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    justify-content: center;</span></span><br><span class="line"><span class="undefined">    border: solid;</span></span><br><span class="line"><span class="undefined">    border-radius: 10px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container2</span> {</span></span><br><span class="line"><span class="undefined">    margin: 10px;</span></span><br><span class="line"><span class="undefined">    width: 300px;</span></span><br><span class="line"><span class="undefined">    height: 300px;</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    justify-content: center;</span></span><br><span class="line"><span class="undefined">    border: solid;</span></span><br><span class="line"><span class="undefined">    border-radius: 10px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.direction</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    color: white;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="box-shadow-v0-11">box-shadow <span class="api-version">v0.11+</span></span><a href="#box-shadow-v0-11" class="header-anchor">#</a></h2><p>Weex supports box-shadow in iOS&#xFF1A; <code>inset</code>,<code>offset-x</code>,<code>offset-y</code>, <code>blur-radius</code>,<code>color</code></p>
+<h3 class="article-heading"><span id="note">Note</span><a href="#note" class="header-anchor">#</a></h3><ul>
+<li>box-shadow takes effect in iOS</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px rgb(255, 69, 0);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow: 20px  10px 5px rgba(255, 69, 0, 0.8);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgba(255, 69, 0, 0.8);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgb(255, 69, 0);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px black;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px #008B00;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.wrapper</span> {<span class="attribute">align-items</span>: center; <span class="attribute">margin-top</span>: <span class="number">120px</span>;}</span></span><br><span class="line"><span class="css">  <span class="selector-class">.title</span> {<span class="attribute">font-size</span>: <span class="number">48px</span>;}</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="javascript">        logoUrl: <span class="string">&apos;https://alibaba.github.io/weex/img/weex_logo_blue@3x.png&apos;</span>,</span></span><br><span class="line"><span class="javascript">        target: <span class="string">&apos;World&apos;</span></span></span><br><span class="line"><span class="undefined">      };</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  };</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="other-common-style">Other Common Style</span><a href="#other-common-style" class="header-anchor">#</a></h2><ul>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<h2 class="article-heading"><span id="type-of-style-value">Type of Style Value</span><a href="#type-of-style-value" class="header-anchor">#</a></h2><ul>
+<li><code>length</code> type</li>
+<li><code>number</code> type</li>
+<li><code>color</code> type (<em><a href="./color-names.html">The list of color keywords.</a></em>)</li>
+<li>enumerated type</li>
+</ul>
+<h2 class="article-heading"><span id="simple-step">Simple Step</span><a href="#simple-step" class="header-anchor">#</a></h2><p>These up-to-down steps may help you to plan the whole style of weex pages.</p>
+<ol>
+<li>overall style: divide the whole page to different parts</li>
+<li>flex alignment: align boxes in every part of page</li>
+<li>position box: place box, set offset</li>
+<li>element specific style: set styles for certain element if needed</li>
+</ol>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/wiki/common-styles.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

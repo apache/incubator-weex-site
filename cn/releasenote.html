@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Release Note | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="v0.18.0# feature Android/iOS TemplateList support lifecycle and statefull component #1019 #1023 feature Android Support real time format to input component, support disable copy paste to input compone">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Release Note">
+<meta property="og:url" content="https://weex.apache.org/cn/releasenote.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="v0.18.0# feature Android/iOS TemplateList support lifecycle and statefull component #1019 #1023 feature Android Support real time format to input component, support disable copy paste to input compone">
+<meta property="og:locale" content="cn">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/115201/21414801/e6341b36-c83d-11e6-9e5a-3acdabb592ee.png">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.339Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Release Note">
+<meta name="twitter:description" content="v0.18.0# feature Android/iOS TemplateList support lifecycle and statefull component #1019 #1023 feature Android Support real time format to input component, support disable copy paste to input compone">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="releasenote" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "releasenote";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/releasenote.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/releasenote.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  <div class="main-content">
+  <div class="wrapper article-wrapper post-layout">
+    
+
+<article class="article article-type-releasenote">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Release Note
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.339Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><h2 class="article-heading"><span id="v0-18-0">v0.18.0</span><a href="#v0-18-0" class="header-anchor">#</a></h2><ul>
+<li><code>feature</code> <code>Android/iOS</code> TemplateList support lifecycle and statefull component <a href="https://github.com/apache/incubator-weex/pull/1019" target="_blank" rel="noopener">#1019</a> <a href="https://github.com/apache/incubator-weex/pull/1023" target="_blank" rel="noopener">#1023</a></li>
+<li><code>feature</code> <code>Android</code> Support real time format to input component, support disable copy paste to input component <a href="https://github.com/apache/incubator-weex/pull/1013" target="_blank" rel="noopener">#1013</a></li>
+<li><code>feature</code> <code>Android</code> Support use base64 to import fontface <a href="https://github.com/apache/incubator-weex/pull/1006" target="_blank" rel="noopener">#1006</a></li>
+<li><code>feature</code> <code>Android</code> High performance binary Wson supported <a href="https://github.com/apache/incubator-weex/pull/974" target="_blank" rel="noopener">#974</a></li>
+<li><code>feature</code> <code>Android</code> New touch dispatch mechanism and bubble sync method call for android touch event <a href="https://github.com/apache/incubator-weex/pull/961" target="_blank" rel="noopener">#961</a></li>
+<li><code>feature</code> <code>Android</code> Support set global font to text component <a href="https://github.com/apache/incubator-weex/pull/952" target="_blank" rel="noopener">#952</a></li>
+<li><code>feature</code> <code>Android</code> List component supported show scrollbar options <a href="https://github.com/apache/incubator-weex/pull/951" target="_blank" rel="noopener">#951</a></li>
+<li><code>feature</code> <code>Android</code> box-shadow support multi shadows declaration <a href="https://github.com/apache/incubator-weex/pull/915" target="_blank" rel="noopener">#915</a></li>
+<li><code>feature</code> <code>Android</code> Support <code>role</code> property to accessibility <a href="https://github.com/apache/incubator-weex/pull/911" target="_blank" rel="noopener">#911</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix network operation on main thread by WebSocket <a href="https://github.com/apache/incubator-weex/pull/1015" target="_blank" rel="noopener">#1015</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix font not rendered right when font is first downloaded <a href="https://github.com/apache/incubator-weex/pull/972" target="_blank" rel="noopener">#972</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix the <code>background-color</code> can not be set to <code>transparent</code> <a href="https://github.com/apache/incubator-weex/pull/959" target="_blank" rel="noopener">#959</a></li>
+<li><code>bugfix</code> <code>Android</code> Improve JSService usage, support mutil type params <a href="https://github.com/apache/incubator-weex/pull/941" target="_blank" rel="noopener">#941</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix fix security weaknesses on libweex*.so <a href="https://github.com/apache/incubator-weex/pull/934" target="_blank" rel="noopener">#934</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix long-running operation on WXThread.scure() <a href="https://github.com/apache/incubator-weex/pull/919" target="_blank" rel="noopener">#919</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix status of pseudo class can not restore after touch <a href="https://github.com/apache/incubator-weex/pull/907" target="_blank" rel="noopener">#907</a></li>
+<li><code>bugfix</code> <code>Android</code> Fix parallax component not reseted to right position when scrollToElement with animated:false option <a href="https://github.com/apache/incubator-weex/pull/906" target="_blank" rel="noopener">#906</a></li>
+<li><code>feature</code> <code>weex-js-framework</code> Upgrade weex-vue-framework to <a href="https://github.com/vuejs/vue/releases/tag/v2.5.13" target="_blank" rel="noopener">v2.5.13</a>, which implemented the <code>&lt;recycle-list&gt;</code>.</li>
+<li>Only update batched and mutated attributes and styles in js framework (<a href="https://github.com/apache/incubator-weex/pull/953" target="_blank" rel="noopener">#953</a>)</li>
+<li><code>feature</code> <code>weex-js-framework</code> Support append as tree on root element (<a href="https://github.com/apache/incubator-weex/pull/954" target="_blank" rel="noopener">#954</a>)</li>
+<li><code>improvement</code> <code>weex-js-framework</code> Enhance the multi-instance isolation (sandbox) (<a href="https://github.com/apache/incubator-weex/pull/960" target="_blank" rel="noopener">#960</a>)</li>
+<li><code>improvement</code> <code>weex-js-framework</code> Refactor the file structure and build scripts of js framework (<a href="https://github.com/apache/incubator-weex/pull/964" target="_blank" rel="noopener">#964</a> | <a href="https://github.com/apache/incubator-weex/pull/1010" target="_blank" rel="noopener">#1010</a>)</li>
+<li><code>improvement</code> <code>weex-js-framework</code> Stop using ES6 Proxy to require a module (<a href="https://github.com/apache/incubator-weex/pull/1017" target="_blank" rel="noopener">#1017</a>)</li>
+<li><code>bugfix</code> <code>iOS</code> bugfix about longpress and pangesture innner waterfall component invalid<a href="https://github.com/apache/incubator-weex/pull/1007" target="_blank" rel="noopener">#1007</a></li>
+<li><code>improvemnet</code> <code>iOS</code> improve for threadSafe dictionary <a href="https://github.com/apache/incubator-weex/pull/1005" target="_blank" rel="noopener">1005</a></li>
+<li><code>feature</code> <code>iOS</code> deprecate WXCallback and WXModuleCallback, use WXKeepAliveCallback and WXModuleKeepAliveCallback <a href="https://github.com/apache/incubator-weex/pull/1000" target="_blank" rel="noopener">1000</a></li>
+<li><code>bugfix</code> <code>iOS</code> bugfix about iconfont draw failed on occasion <a href="https://github.com/apache/incubator-weex/pull/997" target="_blank" rel="noopener">#997</a></li>
+<li><code>improvement</code> <code>iOS</code> <a href="https://github.com/apache/incubator-weex/pull/973" target="_blank" rel="noopener">remove redundant implementation of slider</a></li>
+<li><code>feature</code> <code>iOS</code> support css value for safe-area-inset-left, safe-area-inset-right, safe-area-inset-top, and safe-area-inset-bottom like <a href="https://webkit.org/blog/7929/designing-websites-for-iphone-x/" target="_blank" rel="noopener">iPhone X design</a><a href="https://github.com/apache/incubator-weex/pull/916" target="_blank" rel="noopener">#916</a></li>
+<li><code>feature</code> <code>iOS</code> support word-wrap on iOS when drawing text <a href="https://github.com/apache/incubator-weex/pull/887" target="_blank" rel="noopener">#887</a></li>
+<li><code>improvement</code> <code>web</code> refactor appear watcher, image lazyloading, components implementation, some APIs, and the event triggering and handling system.</li>
+<li><code>improvement</code> <code>web</code> significantly improved runtime performance.</li>
+<li><code>bugfix</code> <code>web</code> fix event binding.</li>
+<li><code>bugfix</code> <code>web</code> fix indicator item styles.</li>
+<li><code>bugfix</code> <code>web</code> fix slider&#x2019;s overflow style.</li>
+<li><code>feature</code> <code>web</code> support create weex components through render function.</li>
+<li><code>feature</code> <code>web</code> support binding native events for custom components with .native modifier.</li>
+<li><code>feature</code> <code>web</code> all weex native events should be dispatched through dom elements.</li>
+<li><code>improvement</code> <code>web</code> refactor test procedure flow and increase test cases&#x2019; total number to 96.</li>
+<li><code>bugfix</code> <code>web</code> fix two way binding for <code>&lt;input&gt;</code> component.</li>
+<li><code>bugfix</code> <code>web</code> fix return event for <code>&lt;input&gt;</code> component.</li>
+<li><code>bugfix</code> <code>web</code> fix errors relative to createEventMap.</li>
+<li><code>feature</code> <code>web</code> now you can use &#x2018;wx&#x2019; unit.</li>
+<li><code>improvement</code> <code>web</code> remove weex.createEventMap method.</li>
+<li><code>bugfix</code> <code>web</code> fix <switch> component&#x2019;s styles.</switch></li>
+<li><code>bugfix</code> <code>web</code> fix test cases for <code>&lt;switch&gt;</code> and <code>&lt;input&gt;</code>.</li>
+<li><code>bugfix</code> <code>web</code> webview.reload for <code>&lt;web&gt;</code> component always throws a error.</li>
+<li><code>bugfix</code> <code>web</code> should trigger error event when a cross origin issue arises.</li>
+<li><code>bugfix</code> <code>web</code> always trigger a error event when loaded a cross origin page.</li>
+<li><code>bugfix</code> <code>web</code> trigger duplicated appear/disappear events when there&#x2019;re more than one list.</li>
+</ul>
+<h2 class="article-heading"><span id="v0-17">v0.17</span><a href="#v0-17" class="header-anchor">#</a></h2><ul>
+<li><code>feature</code> <code>Android/iOS</code> Support <code>writing direction style:direction=rtl</code>(<a href="https://github.com/apache/incubator-weex/pull/782" target="_blank" rel="noopener">#782</a><a href="https://github.com/apache/incubator-weex/pull/886" target="_blank" rel="noopener">#886</a>)</li>
+<li><code>feature</code> <code>Android/iOS</code> Support scroll start and scroll end event on scroller and list (<a href="https://github.com/apache/incubator-weex/pull/858" target="_blank" rel="noopener">#858</a><a href="https://github.com/apache/incubator-weex/pull/856" target="_blank" rel="noopener">856</a>)</li>
+<li><code>feature</code> <code>iOS</code> support text max-width &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/834" target="_blank" rel="noopener">#834</a>&#xFF09;</li>
+<li><code>feature</code> <code>Android</code> CSS Transiton Animation Supported component (<a href="https://github.com/apache/incubator-weex/pull/851" target="_blank" rel="noopener">#851</a>)</li>
+<li><code>feature</code> <code>Android</code> New <code>local</code> module (<a href="https://github.com/apache/incubator-weex/pull/781" target="_blank" rel="noopener">#781</a>)</li>
+<li><code>feature</code> <code>Android</code> Support ripple background on Android 5.0 and higher (<a href="https://github.com/apache/incubator-weex/pull/792" target="_blank" rel="noopener">#792</a>)</li>
+<li><code>feature</code> <code>Android</code> Support multi language on dialog (<a href="https://github.com/apache/incubator-weex/pull/831" target="_blank" rel="noopener">#831</a>)</li>
+<li><code>feature</code> <code>H5</code> Support lazyload and appear watcher when body height set to 100% (<a href="https://github.com/apache/incubator-weex/pull/827" target="_blank" rel="noopener">#827</a>).</li>
+<li><code>feature</code> <code>H5</code> Add try catch for storage accessing incase user disabled the related function in a browser (<a href="https://github.com/apache/incubator-weex/pull/827" target="_blank" rel="noopener">#827</a>).</li>
+<li><code>feature</code> <code>H5</code> image support css sprite (sprite-src, sprite-position, sprite-width) (<a href="https://github.com/apache/incubator-weex/pull/827" target="_blank" rel="noopener">#827</a>).</li>
+<li><code>feature</code> <code>JSFM</code> Support batch update styles and attributes in Vue.js (<a href="https://github.com/apache/incubator-weex/pull/819" target="_blank" rel="noopener">#819</a> <a href="https://github.com/vuejs/vue/pull/7046" target="_blank" rel="noopener">#7046</a>)</li>
+<li><code>feature</code> <code>JSFM</code> Stop trimming CSS units in richtext component. (<a href="https://github.com/vuejs/vue/pull/6927" target="_blank" rel="noopener">#6927</a>)</li>
+<li><code>feature</code> <code>JSFM</code> Stop rethrow the captured error on Weex platform. (<a href="https://github.com/vuejs/vue/pull/7024" target="_blank" rel="noopener">#7024</a>)</li>
+<li><code>feature</code> <code>JSFM</code> Upgrade weex-vue-framework to 2.5.3 (<a href="https://github.com/vuejs/vue/releases/tag/v2.5.3" target="_blank" rel="noopener">release nodes</a>)</li>
+<li><code>feature</code> <code>JSFM</code> Adjust the behavior of <code>nextTick</code> to improve compatibility.</li>
+<li><code>bugfix</code> <code>iOS</code> bugfix boxshadow render abnormal &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/791" target="_blank" rel="noopener">#791</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>iOS</code> bugfix timer exposed on JSContxt &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/839" target="_blank" rel="noopener">#839</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>iOS</code> fix iOS8 scrollview&#x2019;s assign delegate crash &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/838" target="_blank" rel="noopener">#838</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>iOS</code> fix setViewport&#xFF1A;sometimes doesn&#x2019;t work&#xFF08;<a href="https://github.com/apache/incubator-weex/pull/843" target="_blank" rel="noopener">#843</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>iOS</code> fix addEvent lead to generate a new view while it as been recycled &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/837" target="_blank" rel="noopener">#837</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>iOS</code> fix about setting nan frame crash &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/853" target="_blank" rel="noopener">#853</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>iOS</code> disable tableview estimation row or section height which make list component behavior abnormal &#xFF08;<a href="https://github.com/apache/incubator-weex/pull/867" target="_blank" rel="noopener">#867</a>&#xFF09;</li>
+<li><code>bugfix</code> <code>Android</code> Fix that moveElement doesn&#x2019;t work when parent is not a list (<a href="https://github.com/apache/incubator-weex/pull/805" target="_blank" rel="noopener">#805</a>)</li>
+<li><code>bugfix</code> <code>Android</code> Fix flicker caused by coexistence of box-shadow and border-radius (#<a href="https://github.com/apache/incubator-weex/pull/780" target="_blank" rel="noopener">780</a>)</li>
+<li><code>bugfix</code> <code>Android</code> Fix android new Date() cannot get accuracy time (<a href="https://github.com/apache/incubator-weex/pull/753" target="_blank" rel="noopener">#753</a>)</li>
+<li><code>bugfix</code> <code>H5</code> Fix scroll event listenning and scrollToElement on chrome for the latest version (<a href="https://github.com/apache/incubator-weex/pull/827" target="_blank" rel="noopener">#827</a>).</li>
+</ul>
+<h2 class="article-heading"><span id="v0-16">v0.16</span><a href="#v0-16" class="header-anchor">#</a></h2><ul>
+<li>support 3d rotate (<a href="https://github.com/apache/incubator-weex/pull/532" target="_blank" rel="noopener">#532</a> <a href="https://github.com/apache/incubator-weex/pull/418" target="_blank" rel="noopener">#418</a>)</li>
+<li>new feature support perspective function in transform (<a href="https://github.com/apache/incubator-weex/pull/551" target="_blank" rel="noopener">#551</a><a href="https://github.com/apache/incubator-weex/pull/532" target="_blank" rel="noopener">#532</a>)</li>
+<li>new feature support save image to photo album (<a href="https://github.com/apache/incubator-weex/pull/547" target="_blank" rel="noopener">547</a> <a href="https://github.com/apache/incubator-weex/pull/575" target="_blank" rel="noopener">575</a> <a href="https://github.com/apache/incubator-weex/pull/544" target="_blank" rel="noopener">544</a>)</li>
+<li>support <code>image.save</code> (<a href="https://github.com/apache/incubator-weex/pull/575" target="_blank" rel="noopener">#575</a>).</li>
+<li>optimize event binding and support mobile firefox, and also fix a lot of other things (<a href="https://github.com/apache/incubator-weex/pull/606" target="_blank" rel="noopener">#606</a>).</li>
+<li>Support js service in Rax DSL.</li>
+<li>Partial support of sending <code>ArrayBuffer</code> between js and native.</li>
+<li>Add basic support of <code>&lt;recycle-list&gt;</code>, both in Vue and Rax DSL.</li>
+<li>Support saving image to photo alubm in <code>image</code> <a href="https://github.com/apache/incubator-weex/pull/547" target="_blank" rel="noopener">#547</a></li>
+<li>Support perspective features <a href="https://github.com/apache/incubator-weex/pull/551" target="_blank" rel="noopener">#551</a></li>
+<li>New interface to performance tracing <a href="https://github.com/apache/incubator-weex/pull/586" target="_blank" rel="noopener">#586</a></li>
+<li>Add the ability of FlatGUI, it can reduce the view hierarchy in <code>cell</code> <a href="https://github.com/apache/incubator-weex/pull/643" target="_blank" rel="noopener">#643</a></li>
+<li>Support the <code>box-shadow</code> style for Android 4.3 and higher <a href="https://github.com/apache/incubator-weex/pull/685" target="_blank" rel="noopener">#685</a></li>
+<li>Support float interval/delay in timer <a href="https://github.com/apache/incubator-weex/pull/699" target="_blank" rel="noopener">#699</a></li>
+<li>New <code>recycle-list</code> compoent with hight performance and low memory cost <a href="https://github.com/apache/incubator-weex/pull/726" target="_blank" rel="noopener">#726</a></li>
+<li>remove dependency about socketRocket dependency in iOS.</li>
+<li>fix coretext crash in iOS.</li>
+<li>fix toast view still pop while the page was destroyed in iOS.</li>
+<li>separate weex-vue-render into two parts: render core and plugins (<a href="https://github.com/apache/incubator-weex/pull/533" target="_blank" rel="noopener">#533</a>).</li>
+<li>Fix Jni crash due to emoji <a href="https://github.com/apache/incubator-weex/pull/574" target="_blank" rel="noopener">#574</a></li>
+<li>Fix the lost refresh header of <code>list</code> in viewpager <a href="https://github.com/apache/incubator-weex/pull/601" target="_blank" rel="noopener">#601</a></li>
+<li>Fix draw iconfont fail when first download iconfont <a href="https://github.com/apache/incubator-weex/pull/625" target="_blank" rel="noopener">#625</a></li>
+<li>Fix the problem of &#x2018;text-overflow:clip&#x2019; <a href="https://github.com/apache/incubator-weex/pull/718" target="_blank" rel="noopener">#718</a></li>
+<li>Fix android new Date() cannot get accuracy time <a href="https://github.com/apache/incubator-weex/pull/753" target="_blank" rel="noopener">#753</a></li>
+</ul>
+<h2 class="article-heading"><span id="v0-15">v0.15</span><a href="#v0-15" class="header-anchor">#</a></h2><hr>
+<ul>
+<li>support fast click and hairlines border <a href="https://github.com/apache/incubator-weex/pull/507" target="_blank" rel="noopener">#507</a>.</li>
+<li>Add <code>weex.supports</code> api for feature detections. <a href="https://github.com/vuejs/vue/pull/6053" target="_blank" rel="noopener">#6053</a></li>
+<li>Change default image quality to <code>WXImageQuality.AUTO</code> <a href="https://github.com/apache/incubator-weex/pull/478" target="_blank" rel="noopener">#478</a></li>
+<li>Support the <code>scroll</code> event on horizontal scroller<a href="https://github.com/apache/incubator-weex/pull/494" target="_blank" rel="noopener">#494</a></li>
+<li>Fix the console API to adapt JSC on Android. <a href="https://github.com/apache/incubator-weex/pull/470" target="_blank" rel="noopener">#470</a></li>
+<li>Fix invalid call scrollToElement when has not option param <a href="https://github.com/apache/incubator-weex/pull/491" target="_blank" rel="noopener">#491</a></li>
+<li>Fix the lines of <code>text</code> cannot be reset <a href="https://github.com/apache/incubator-weex/pull/493" target="_blank" rel="noopener">#493</a></li>
+<li>Fix invalid init index on <code>slider</code> <a href="https://github.com/apache/incubator-weex/pull/510" target="_blank" rel="noopener">#510</a></li>
+<li>Fix Memory optimization for <code>list</code> <a href="https://github.com/apache/incubator-weex/pull/512" target="_blank" rel="noopener">#512</a></li>
+</ul>
+<h2 class="article-heading"><span id="v0-14">v0.14</span><a href="#v0-14" class="header-anchor">#</a></h2><hr>
+<ul>
+<li>support <code>waterfall</code> component (<a href="https://github.com/apache/incubator-weex/pull/438" target="_blank" rel="noopener">#438</a>).</li>
+<li>support pseudo-class (<a href="https://github.com/apache/incubator-weex/pull/474" target="_blank" rel="noopener">#474</a>).</li>
+<li>Support component method in Vue DSL. (<a href="https://github.com/alibaba/weex/issues/969" target="_blank" rel="noopener">proposal</a>)</li>
+<li>Support returning value synchronously for module methods. (<a href="https://github.com/alibaba/weex/issues/1677" target="_blank" rel="noopener">proposal</a>)</li>
+<li>Support drag-drop on <code>list</code> <a href="https://github.com/apache/incubator-weex/pull/416" target="_blank" rel="noopener">#416</a></li>
+<li>Support rotateX and rotateY, optimize animation as well <a href="https://github.com/apache/incubator-weex/pull/418" target="_blank" rel="noopener">#418</a></li>
+<li>Fix wrong vertical offset in scroll event on <code>waterfall</code> <a href="https://github.com/apache/incubator-weex/pull/424" target="_blank" rel="noopener">#424</a></li>
+<li>Fix <code>clearTimeout</code> and <code>clearInterval</code> doesn&#x2019;t work when funId is greater than 127 <a href="https://github.com/apache/incubator-weex/pull/439" target="_blank" rel="noopener">#439</a></li>
+</ul>
+<h2 class="article-heading"><span id="v0-13-0">v0.13.0</span><a href="#v0-13-0" class="header-anchor">#</a></h2><ul>
+<li>Slider implemention is refactored <a href="https://github.com/apache/incubator-weex/pull/414" target="_blank" rel="noopener">Pull Request#414</a></li>
+<li>Improve integration test. We are working with macaca team, to write better test code.<a href="https://github.com/apache/incubator-weex/pull/411" target="_blank" rel="noopener">Pull Request#411</a> <a href="https://github.com/apache/incubator-weex/pull/397" target="_blank" rel="noopener">Pull Request#397</a> <a href="https://github.com/apache/incubator-weex/pull/402" target="_blank" rel="noopener">Pull Request#402</a> <a href="https://github.com/apache/incubator-weex/pull/413" target="_blank" rel="noopener">Pull Request#413</a> <a href="https://github.com/apache/incubator-weex/pull/390" target="_blank" rel="noopener">Pull Request#390</a> <a href="https://github.com/apache/incubator-weex/pull/346" target="_blank" rel="noopener">Pull Request#346</a> <a href="https://github.com/apache/incubator-weex/pull/319" target="_blank" rel="noopener">Pull Request#319</a> <a href="https://github.com/apache/incubator-weex/pull/304" target="_blank" rel="noopener">Pull Request#304</a> <a href="https://github.com/apache/incubator-weex/pull/295" target="_blank" rel="noopener">Pull Request#295</a></li>
+<li><code>scroller</code> now has <code>pagingEnabled</code> attribute, which can enable <code>paging</code> feature in native <a href="https://github.com/apache/incubator-weex/pull/393" target="_blank" rel="noopener">Pull Request#393</a></li>
+<li>New &#x2018;prerender&#x2019; mechanism, which will support rendering a page in background. <a href="https://github.com/apache/incubator-weex/pull/342" target="_blank" rel="noopener">Pull Request#343](https://github.com/apache/incubator-weex/pull/343) Pull Request#342</a></li>
+<li>Fix <code>line-height</code> feature in iOS. <a href="https://github.com/apache/incubator-weex/pull/377" target="_blank" rel="noopener">Pull Request#377</a> <a href="https://github.com/apache/incubator-weex/pull/305" target="_blank" rel="noopener">Pull Request#305</a></li>
+<li>Add <code>needLayout</code> option in animation module operation after animation finished <a href="https://github.com/apache/incubator-weex/pull/337" target="_blank" rel="noopener">Pull Request#337</a> <a href="https://github.com/apache/incubator-weex/pull/336" target="_blank" rel="noopener">Pull Request#336</a></li>
+<li><code>list</code> component has new type of event for <code>sticky</code> feature <a href="https://github.com/apache/incubator-weex/pull/332" target="_blank" rel="noopener">Pull Request#332</a></li>
+<li>Support bota and atob <a href="https://github.com/apache/incubator-weex/pull/315" target="_blank" rel="noopener">Pull Request#315</a></li>
+<li>Fix mixing background-color and border-color(rgba) in android <a href="https://github.com/apache/incubator-weex/pull/359" target="_blank" rel="noopener">Pull Request#359</a></li>
+<li>Beside these, lots of crashes and bugs are fixed.<ul>
+<li><a href="https://github.com/apache/incubator-weex/pull/441" target="_blank" rel="noopener">Pull Request#441</a></li>
+<li><a href="https://github.com/apache/incubator-weex/pull/413" target="_blank" rel="noopener">Pull Request#413</a></li>
+<li><a href="https://github.com/apache/incubator-weex/pull/403" target="_blank" rel="noopener">Pull Request#403</a></li>
+<li><a href="https://github.com/apache/incubator-weex/pull/373" target="_blank" rel="noopener">Pull Request#373</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="v0-12-0-first-offical-release">v0.12.0 (First Offical Release)</span><a href="#v0-12-0-first-offical-release" class="header-anchor">#</a></h2><ul>
+<li>C++ timer by lycool<ul>
+<li>Discussed in <a href="https://lists.apache.org/thread.html/567c9b19d68ccf3e0d24c1467298ebcd4316ffa524c557a34c6c087f@%3Cdev.weex.apache.org%3E" target="_blank" rel="noopener">https://lists.apache.org/thread.html/567c9b19d68ccf3e0d24c1467298ebcd4316ffa524c557a34c6c087f@%3Cdev.weex.apache.org%3E</a></li>
+<li>relate pull requests:[apache/incubator-weex/pull/228|<a href="https://github.com/apache/incubator-weex/pull/228]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/228]</a>, [apache/incubator-weex/pull/232|<a href="https://github.com/apache/incubator-weex/pull/232]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/232]</a>, [apache/incubator-weex/pull/221|<a href="https://github.com/apache/incubator-weex/pull/221]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/221]</a></li>
+</ul>
+</li>
+<li>Add scroller/list scroll event in html5 render android&amp;iOS already have this feature in v0.11 <a href="https://github.com/apache/incubator-weex/commit/f50fba8647c8bb6ac522b1a4569a2a2269da1953" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/commit/f50fba8647c8bb6ac522b1a4569a2a2269da1953</a></li>
+<li>Enhance accessibility, new <code>aria-label</code> &amp; <code>role</code> support [apache/incubator-weex/pull/149|<a href="https://github.com/apache/incubator-weex/pull/149]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/149]</a></li>
+<li>Native input/textarea enhancement by kfeagle &amp;  misakuo support <code>number</code> data type; support soft keyboard event</li>
+<li>Picker module enhancement More picker options to customize picker dialog style(background color etc.). Related pull requests: [apache/incubator-weex/pull/234|<a href="https://github.com/apache/incubator-weex/pull/234]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/234]</a>, [apache/incubator-weex/pull/233|<a href="https://github.com/apache/incubator-weex/pull/233]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/233]</a></li>
+<li>Android DOM module refactor Seperate module code by action, increasing the maintainability. [apache/incubator-weex/pull/104|<a href="https://github.com/apache/incubator-weex/pull/104]" target="_blank" rel="noopener">https://github.com/apache/incubator-weex/pull/104]</a></li>
+</ul>
+<h2 class="article-heading"><span id="v0-10-0">v0.10.0</span><a href="#v0-10-0" class="header-anchor">#</a></h2><ul>
+<li><p>New Feature</p>
+<ul>
+<li>Support Vue.js<br>The Vue.js 2.1.8 (<a href="https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build" target="_blank" rel="noopener">runtime-only build</a>) is in WeexSDK now. You can use Vue.js to build native app by WeexSDK 0.10.0.<br>We reused the original native render engine and developed a new renderer (<a href="https://www.npmjs.com/package/weex-vue-render" target="_blank" rel="noopener">weex-vue-render</a>) for the web platform, which is based on Vue 2.0.<br>The former front-end framework (commonly known as <code>.we</code>), which is inspired by Vue 1.0, is deprecated. Although it still works well in this release, we suggest to migrate it to Vue 2.0.</li>
+<li><p>SDK</p>
+<ul>
+<li><p>New CSS support</p>
+<ul>
+<li><a href="https://weex.apache.org/wiki/text-styles.html">text <code>font-weight</code></a><br><code>font-weight</code> can set to [<code>normal</code>|<code>bold</code>] or 100-900.</li>
+<li><p>gradient<br>like CSS3, now you can use gradient in Weex. For example:</p>
+<figure class="highlight css"><table><tbody><tr><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>, <span class="selector-tag">blue</span>, <span class="selector-tag">white</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg" alt="img_1695"><br><a href="https://weex.apache.org/wiki/common-styles.html#linear-gradient-v0-10">Read more about gradient</a>.</p>
+</li>
+<li>Pseudo class<br>Currently, Weex supports 4 pseudo classes:<code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled</code>.</li>
+</ul>
+</li>
+<li><p>New BroadcastChannel API<br>Developers can use <code>BroadcastChannel</code> API to implement inter-instance communication.</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Stack = <span class="keyword">new</span> BroadcastChannel(<span class="string">&apos;Avengers&apos;</span>)</span><br><span class="line">Stack.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(event.data) <span class="comment">// in this case, it&apos;s &quot;Hulk Smash !!!&quot;</span></span><br><span class="line">}</span><br><span class="line"><span class="comment">// in another instance</span></span><br><span class="line"><span class="keyword">const</span> Hulk = <span class="keyword">new</span> BroadcastChannel(<span class="string">&apos;Avengers&apos;</span>)</span><br><span class="line">Hulk.postMessage(<span class="string">&quot;Hulk Smash !!!&quot;</span>)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Image&#x2019;s <code>onload</code> event add <a href="https://weex-project.io/references/components/image.html" target="_blank" rel="noopener"><code>naturalHeight</code> and <code>naturalWidthimage</code></a> to get the original size of image file.</p>
+</li>
+<li>Websocket Support<br>WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user&#x2019;s h5/iOS/android and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.<br><a href="https://weex-project.io/cn/references/modules/websocket.html" target="_blank" rel="noopener">Read more about Weex&#x2019;s websocket.</a></li>
+<li>Support synchronous method call<br>Both module and component method can defined synchronous method exposed to JS runtime now. Means native will invoke these method in JS thread directly.</li>
+<li><p>Support <code>viewport</code> configuration<br>Similar to <a href="https://drafts.csswg.org/css-device-adapt/#viewport-meta" target="_blank" rel="noopener">W3C specification</a>, Weex support set define <code>viewport</code> in script tag:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;config&quot;</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  {</span></span><br><span class="line"><span class="javascript">    <span class="string">&quot;viewport&quot;</span>: {</span></span><br><span class="line"><span class="javascript">        <span class="string">&quot;width&quot;</span>: <span class="string">&quot;device-width&quot;</span></span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Tools</p>
+<ul>
+<li><a href="https://github.com/weexteam/weex-devtool" target="_blank" rel="noopener">Devtools</a><ul>
+<li>Support Vue 2.0 debugging.</li>
+<li>Add network switch for network inspector.</li>
+<li>Make application capable to decide which bundle is &#x2018;un-debuggable&#x2019;, which means page&#x2019;s source code is unreadable in debug mode.</li>
+</ul>
+</li>
+<li><a href="https://github.com/weexteam/weex-pack" target="_blank" rel="noopener">Weexpack</a><ul>
+<li>Has full set of commands for developers to setup android/ios application with his .we/.vue files.</li>
+<li>Developers could easily pack/install his application with simple command.</li>
+<li>Has full set of commands for developers to manage weex plugins, including create plugin template, add plugin to his project etc.</li>
+<li><a href="https://market.dotwe.org" target="_blank" rel="noopener">Plugin market</a> was formally used for developers to publish/download weex plugins.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="v0-9-4">v0.9.4</span><a href="#v0-9-4" class="header-anchor">#</a></h2><ul>
+<li><p>New features</p>
+<ul>
+<li><p>SDK</p>
+<ul>
+<li><p>New API to get Component&#x2019;s size and position:<br>Now you can get these data through <code>getComponentRect</code>:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">require</span>(<span class="string">&apos;@weex-module/dom&apos;</span>);</span><br><span class="line">dom.getComponentRect(<span class="keyword">this</span>.$el(<span class="string">&apos;comp_id&apos;</span>), <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>{</span><br><span class="line">  <span class="keyword">if</span>(data.result)</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>The <code>data</code> callback parameter contains a <code>result</code> to tell if operation is success. And <code>size</code> tell you the true data(<code>bottom</code>/<code>top</code>/<code>left</code>/<code>right</code>/<code>width</code>/<code>height</code>) of component.</p>
+</li>
+<li>A brand new <code>picker</code> module. We have &#x2018;single-picker&#x2019;,&#x2019;date-picker&#x2019; and &#x2018;time-picker&#x2019; currently, and more common pickers are on the way.<br><img src="https://cloud.githubusercontent.com/assets/115201/21414801/e6341b36-c83d-11e6-9e5a-3acdabb592ee.png" alt="img_1282"><br>There are two ways to use <code>picker</code></li>
+<li><p>Use <code>picker</code> module directly:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> picker = <span class="built_in">require</span>(<span class="string">&apos;@weex-module/picker&apos;</span>);</span><br><span class="line"><span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">picker.pickDate({</span><br><span class="line">    <span class="string">&apos;value&apos;</span>:<span class="string">&apos;2016-11-28&apos;</span>,</span><br><span class="line">    <span class="string">&apos;max&apos;</span>:<span class="string">&apos;2029-11-28&apos;</span>,</span><br><span class="line">    <span class="string">&apos;min&apos;</span>:<span class="string">&apos;2015-11-28&apos;</span></span><br><span class="line">},<span class="function"><span class="keyword">function</span> (<span class="params">ret</span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> result = ret.result;</span><br><span class="line">    <span class="keyword">if</span>(result == <span class="string">&apos;success&apos;</span>)</span><br><span class="line">    {</span><br><span class="line">        self.value = ret.data;</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><code>input</code> component also add &#x2018;date&#x2019; and &#x2018;time<code>type to work with</code>picker` module internally:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">&quot;date&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">placeholder</span>=<span class="string">&quot;select date&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">&quot;input&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">autofocus</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">value</span>=<span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">onchange</span>=<span class="string">&quot;onchange&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">max</span> = <span class="string">&quot;2029-11-28&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">min</span> = <span class="string">&quot;2015-11-28&quot;</span></span></span><br><span class="line"><span class="tag">          &gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Support animation with <code>width</code> and <code>height</code> property.</p>
+</li>
+<li>Support use empty value to reset css property to default value.</li>
+<li>Components can expose methods too, like modules do. Developers use the same way as create module method to achieve that.</li>
+<li>Add <code>blur</code> and <code>focus</code> method to manually control <code>input</code> component to lose or get focus.</li>
+<li>Support relative URL, which will resolve real URL by bundle&#x2019;s URL.</li>
+<li>Core javascript framework&#x2019;s unit test coverage is 100% now. we&#x2019;ll pay more attention to quality.</li>
+<li>DevTool<ul>
+<li>Support to check the node hierarchy in <a href="https://github.com/weexteam/weex-devtool-extension" target="_blank" rel="noopener">weex-devtool-extension</a> and highlight the node if it exceeds an specified level.</li>
+<li>Support different refresh mode in devtools to reload the page or SDK automatically when source file updated.</li>
+<li>Improve quality in <a href="https://github.com/weexteam/weex-devtools-android" target="_blank" rel="noopener">weex-devtools-android</a> module<ul>
+<li>Remove explicit dependency on okhttp and okhttp3 by reflection and proxy</li>
+<li>Improve demo application with less and refactored code</li>
+<li>Fix some crash caused by class up cast</li>
+<li>Fix reflection crash caused by complier optimization</li>
+<li>Fix &#x201C;network on main thread&#x201D; and stop screencast when disconnect</li>
+</ul>
+</li>
+<li>Add <a href="https://github.com/weexteam/weex-analyzer-android" target="_blank" rel="noopener">weex-analyzer-android</a> and <a href="https://github.com/weexteam/weex-analyzer-ios" target="_blank" rel="noopener">weex-analyzer-ios</a> which support the following on device directly:<ul>
+<li>Inspect FPS/CPU/memory</li>
+<li>Inspect storage</li>
+<li>Display log information</li>
+<li>3D viewer of the weex page</li>
+<li>Javascript error prompt</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="v0-8-0">v0.8.0</span><a href="#v0-8-0" class="header-anchor">#</a></h2><ul>
+<li>New Features<ul>
+<li>Add <a href="https://github.com/alibaba/weex/blob/doc/doc/modules/globalevent.md" target="_blank" rel="noopener">globalEvent module</a></li>
+<li>Support <code>width/height</code> animation in transition</li>
+<li>Refactor the default js framework code, hide almost all the private APIs #777</li>
+<li>iOS 10 compatibility</li>
+</ul>
+</li>
+<li>Performance<ul>
+<li>Support <code>callAddElement</code> low-level API to make rendering faster</li>
+<li>Improve SDK initialization performance, for minimise invoke thread impact.</li>
+<li>Use native <code>Set</code> polyfill to fix iOS7 memory leak</li>
+<li>Use <code>setProperty</code> replace reflection for better performance</li>
+<li>Add <code>static</code> directive in default js framework to avoid unnecessary data-binding and take down the memory use</li>
+</ul>
+</li>
+<li>Tools<ul>
+<li>Add <a href="https://github.com/weexteam/weex-pack" target="_blank" rel="noopener">weex-pack</a>, our next generation of engineering development kits. It allows developers to create weex projects with simple commands and run the project on different development platforms.</li>
+<li>Add <a href="https://github.com/weexteam/weex-devtool-extension" target="_blank" rel="noopener">weex-devtool-extension</a>, a extension for Weex devtool to improve your debug experience&#xFF0C;which equivalent an element tag for debugger page.</li>
+<li>Move devtool to separate <a href="https://github.com/weexteam/weex-devtool-iOS" target="_blank" rel="noopener">iOS</a> and <a href="https://github.com/weexteam/weex_devtools_android" target="_blank" rel="noopener">Android</a> repos.<ul>
+<li>Add &#x201C;screencast&#x201D; which enable the screen of the device(or monitor) to appear on the &#x201C;Inspector&#x201D; page;</li>
+<li>Add &#x201C;remote control&#x201D; function, in Android user could control remote device(or monitor) when he moves mouse on screencast;</li>
+<li>Add &#x201C;select element&#x201D; function which enable the user to find the exact node in &#x201C;Elements&#x201D; inspector Tab when he click the mouse on screencast;</li>
+<li>Add &#x201C;vdom inspector&#x201D;, so user can choose to see the details of native dom or vdom in &#x201C;Elements&#x201D; Tab at his preference;</li>
+<li>Adjust interfaces with weex SDK to support &#x201C;callAddElement&#x201D;;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="v0-7-0">v0.7.0</span><a href="#v0-7-0" class="header-anchor">#</a></h2><ul>
+<li>New Features<ul>
+<li><a href="https://github.com/alibaba/weex/blob/doc/doc/modules/timer.md" target="_blank" rel="noopener">Timer Module</a></li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/modules/storage.md" target="_blank" rel="noopener">Storage Module</a></li>
+<li>Unify the <code>image</code> component&#x2019;s error page when src is invalid</li>
+<li>Unify the <code>border</code>,<code>padding</code>,<code>background-color</code> style</li>
+<li>Horizontal-scroller support  <code>scrollto</code>  api</li>
+<li>Fix the issue that component with  <code>position:fixed</code> style can not be closed</li>
+<li>Module callback support <code>object</code> params</li>
+<li>Slider suppport  <code>setIndex</code> api</li>
+</ul>
+</li>
+<li>Performance<ul>
+<li>Use <code>callNative</code> signal to stop JSFM render after instance been destroyed</li>
+<li>Lazily initialize JSFM When device is in low-memory status, improve SDK stability</li>
+</ul>
+</li>
+<li><a href="http://alibaba.github.io/weex/doc/tools/devtools.html" target="_blank" rel="noopener">Tools</a><ul>
+<li>Support debugging  weex(.we) and  react(.jsx) source</li>
+<li>Support apps debugging on the same device</li>
+<li>Support &#x201C;watch&#x201D; feature</li>
+<li>Solve the dependency on Debugger, user could start &#x201C;Inspector&#x201D; first or &#x201C;Debugger&#x201D; at will</li>
+<li>Add &#x201C;refresh&#x201D; function in sdk, user could inspect new file by scanning its QR code in playground;</li>
+<li>Android/ios inspect module split from weex sdk,  and will deliver in separate repo in future; support inspect in windows system</li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="v0-6-1">v0.6.1</span><a href="#v0-6-1" class="header-anchor">#</a></h2><ul>
+<li>New Features<ol>
+<li><a href="https://github.com/alibaba/weex/tree/dev/ios" target="_blank" rel="noopener">iOS has been open sourced</a></li>
+<li><a href="https://github.com/alibaba/weex/blob/v0.6.1/doc/references/common-event.md#page-event" target="_blank" rel="noopener">Lifecycle Page Event</a>: viewappear, viewdisappear</li>
+<li><a href="https://github.com/alibaba/weex/blob/v0.6.1/doc/modules/stream.md#fetchoptions-callbackprogresscallback" target="_blank" rel="noopener">fetch</a></li>
+<li><a href="https://github.com/alibaba/weex/blob/v0.6.1/doc/components/text.md#styles" target="_blank" rel="noopener">line-height</a></li>
+<li><a href="https://github.com/alibaba/weex/blob/v0.6.1/doc/components/list.md" target="_blank" rel="noopener">list component</a><ul>
+<li>support sticky header</li>
+<li>support scrollToElement API</li>
+<li>support nested horizontal scroller</li>
+<li>support cell children nodes event: appear/disappear</li>
+</ul>
+</li>
+<li><a href="https://github.com/alibaba/weex/blob/v0.6.1/doc/references/gesture.md" target="_blank" rel="noopener">Gesture</a>: panstart/panmove/panend, swipe, longpress</li>
+<li>Improve Android text compatibility</li>
+</ol>
+</li>
+<li>Performance<ol>
+<li>iOS, iPhone 5c, rendering frame rate ascends from 45FPS to 52FPS</li>
+<li>Android, Redmi Note 1, loading time of the first screen  descends from 602ms to 480ms</li>
+<li>Improve Android animation performance</li>
+</ol>
+</li>
+<li><p>Tools</p>
+<ol>
+<li><a href="https://www.npmjs.com/package/weex-toolkit" target="_blank" rel="noopener">weex-toolkit</a> supports require and generator</li>
+<li>Playground supports runtime performance viewer</li>
+<li><p><a href="https://github.com/alibaba/weex/blob/v0.6.1/doc/tools/devtools.md" target="_blank" rel="noopener">Weex DevTools</a></p>
+<p><img src="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png" width="600"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 class="article-heading"><span id="v0-5-0">v0.5.0</span><a href="#v0-5-0" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="new-features">New Features</span><a href="#new-features" class="header-anchor">#</a></h3><ol>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/components/wxc-tabbar.md" target="_blank" rel="noopener">TabBar</a> is a specialized component corresponding to the radio-style selection.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/components/wxc-navpage.md" target="_blank" rel="noopener">NavPage</a> contains a navbar at the top of the window and an embed content page.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/examples/showcase/new-fashion/index.we" target="_blank" rel="noopener">Activity Showcase</a> is built by composing TabBar and NavPage.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/components/web.md" target="_blank" rel="noopener">Web</a> displays web content in the weex page.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/components/a.md" target="_blank" rel="noopener">A</a>  defines a hyperlink to a page in the web.</li>
+<li><code>Text</code> supports style <a href="https://github.com/alibaba/weex/blob/dev/doc/references/text-style.md#properties" target="_blank" rel="noopener">text-overflow</a>.</li>
+<li><code>Image</code> supports attribute <a href="https://github.com/alibaba/weex/blob/dev/doc/components/image.md#styles" target="_blank" rel="noopener">resize</a>.</li>
+<li><code>List</code> supports <a href="https://github.com/alibaba/weex/blob/dev/doc/components/list.md#events" target="_blank" rel="noopener">events <code>appear</code>, <code>disappear</code>, <code>loadmore</code></a> and <a href="https://github.com/alibaba/weex/blob/dev/doc/components/list.md#child-components" target="_blank" rel="noopener">refresh</a>.</li>
+<li>New Syntax<ol>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/syntax/events.md#inline-handler" target="_blank" rel="noopener">Inline event</a> supports a expression of calling event handler in template.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/modules#how-to-use" target="_blank" rel="noopener">Require Native Module</a> requires a native module by <code>require(&apos;@weex-module/moduleName&apos;)</code>.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/syntax/data-binding.md#computed-properties" target="_blank" rel="noopener">Computed Property</a> supports complicated logic in data bindings.</li>
+<li><a href="https://github.com/alibaba/weex/blob/dev/doc/syntax/display-logic.md#a-extension-of-repeat-syntax" target="_blank" rel="noopener">New Repeat Syntax</a> is easy to access the key or value of repeated object.</li>
+</ol>
+</li>
+</ol>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/releasenote.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

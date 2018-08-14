@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Common Events | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Click event event object   Longpress event event object   Appear event event object   Disappear event event object   Page event event object   Example     Weex provide the ability to let events tr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Common Events">
+<meta property="og:url" content="https://weex.apache.org/wiki/common-events.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Click event event object   Longpress event event object   Appear event event object   Disappear event event object   Page event event object   Example     Weex provide the ability to let events tr">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-06-19T02:20:22.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Common Events">
+<meta name="twitter:description" content="Click event event object   Longpress event event object   Appear event event object   Disappear event event object   Page event event object   Example     Weex provide the ability to let events tr">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="current">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/common-events.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/common-events.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/index.html" class="sidebar-link  ">How it works</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/platform-difference.html" class="sidebar-link  ">Platform Differences with Web</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/design-principles.html" class="sidebar-link  ">Design Principles</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Style</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-styles.html" class="sidebar-link  ">Common Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/text-styles.html" class="sidebar-link  ">Text Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/css-units.html" class="sidebar-link  ">CSS Units</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/color-names.html" class="sidebar-link  ">Color name</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Event</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-events.html" class="sidebar-link current ">Common Events</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/event-bubble.html" class="sidebar-link  ">Event Bubble</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/gestures.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">concept</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/wiki/faq.html">FAQ</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Common Events
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-06-19T02:20:22.496Z">Updated time: 19/06/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#click-event">Click event</a><ul>
+<li><a href="#event-object">event object</a></li>
+</ul>
+</li>
+<li><a href="#longpress-event">Longpress event</a><ul>
+<li><a href="#event-object-1">event object</a></li>
+</ul>
+</li>
+<li><a href="#appear-event">Appear event</a><ul>
+<li><a href="#event-object-2">event object</a></li>
+</ul>
+</li>
+<li><a href="#disappear-event">Disappear event</a><ul>
+<li><a href="#event-object-3">event object</a></li>
+</ul>
+</li>
+<li><a href="#page-event">Page event</a><ul>
+<li><a href="#event-object-4">event object</a></li>
+</ul>
+</li>
+<li><a href="#example">Example</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>Weex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Below are the common event attributes that can be added to weex components to define event actions.</p>
+<h2 class="article-heading"><span id="click-event">Click event</span><a href="#click-event" class="header-anchor">#</a></h2><p>The onclick attribute fires on a click gesture on the element.<br><strong>Notes: </strong> The <code>input</code> and <code>switch</code> component does not currently support the <code>click</code> event, please use <code>change</code> or <code>input</code> event instead.</p>
+<h3 class="article-heading"><span id="event-object">event object</span><a href="#event-object" class="header-anchor">#</a></h3><ul>
+<li><code>type</code> : <code>click</code></li>
+<li><code>target</code> : The target component where the event is triggered</li>
+<li><code>timestamp</code> : Timestamp when event is triggered</li>
+</ul>
+<h2 class="article-heading"><span id="longpress-event">Longpress event</span><a href="#longpress-event" class="header-anchor">#</a></h2><p>If a <code>longpress</code> event is bound to a component, the event will be triggered when user long press on it.<br><strong>Notes: </strong> The <code>input</code> and <code>switch</code> component does not currently support the <code>click</code> event, please use <code>change</code> or <code>input</code> event instead.</p>
+<h3 class="article-heading"><span id="event-object">event object</span><a href="#event-object" class="header-anchor">#</a></h3><ul>
+<li><code>type</code> : <code>longpress</code></li>
+<li><code>target</code> : The target component where the event is triggered</li>
+<li><code>timestamp</code> : Timestamp when event is triggered</li>
+</ul>
+<h2 class="article-heading"><span id="appear-event">Appear event</span><a href="#appear-event" class="header-anchor">#</a></h2><p>If a appear event is bound to a component inside a scrollable container, the event will be triggered when the component comes to be visible.</p>
+<h3 class="article-heading"><span id="event-object">event object</span><a href="#event-object" class="header-anchor">#</a></h3><ul>
+<li><code>type</code> : <code>appear</code></li>
+<li><code>target</code> : The target component where the event is triggered</li>
+<li><code>timestamp</code> : Timestamp when event is triggered</li>
+<li><code>direction</code> : The direction in which the scroller is scrolling. Could be <code>up</code> or <code>down</code>.</li>
+</ul>
+<h2 class="article-heading"><span id="disappear-event">Disappear event</span><a href="#disappear-event" class="header-anchor">#</a></h2><p>If a <code>disappear</code> event is bound to a component inside a scrollable container, the event will be triggered when the component scrolls out of viewport and disappears from your sight.</p>
+<h3 class="article-heading"><span id="event-object">event object</span><a href="#event-object" class="header-anchor">#</a></h3><ul>
+<li><code>type</code> : <code>disappear</code></li>
+<li><code>target</code> : The target component where the event is triggered</li>
+<li><code>timestamp</code> : Timestamp when event is triggered</li>
+<li><code>direction</code> : The direction in which the scroller is scrolling. Could be <code>up</code> or <code>down</code>.</li>
+</ul>
+<h2 class="article-heading"><span id="page-event">Page event</span><a href="#page-event" class="header-anchor">#</a></h2><p>Weex provides you with simple management of page status, such as <code>viewappear</code> and <code>viewdisappear</code>.<br>The <code>viewappear</code> event will be triggered when page is about to show or before any animations are configured for showing. For example, when calling <code>push</code> method in <code>navigator</code> module, this event will be trigged in new page.<br>The <code>viewdisappear</code> event will be triggeded when page is about to dismiss.<br>Different from <code>appear</code> and <code>disappear</code> of component, these two events focus on the status of whole page, so <strong>they must be bound to the root component</strong>.<br>In addititon, these events also can be bound to body component which is not root actually such as <code>wxc-navpage</code>.</p>
+<h3 class="article-heading"><span id="event-object">event object</span><a href="#event-object" class="header-anchor">#</a></h3><ul>
+<li><code>type</code> : <code>viewappear</code> or <code>viewdisappear</code></li>
+<li><code>target</code> : The target component where the event is triggered</li>
+<li><code>timestamp</code> : Timestamp when event is triggered</li>
+</ul>
+<h2 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h2><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;onclick&quot;</span> @<span class="attr">longpress</span>=<span class="string">&quot;onlongpress&quot;</span> @<span class="attr">appear</span>=<span class="string">&quot;onappear&quot;</span>  @<span class="attr">disappear</span>=<span class="string">&quot;ondisappear&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    methods: {</span></span><br><span class="line"><span class="undefined">      onclick (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;onclick:&apos;</span>, event)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">&apos;onclick&apos;</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onlongpress (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;onlongpress:&apos;</span>, event)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">&apos;onlongpress&apos;</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onappear (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;onappear:&apos;</span>, event)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">&apos;onappear&apos;</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      ondisappear (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;ondisappear:&apos;</span>, event)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">&apos;ondisappear&apos;</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> {</span></span><br><span class="line"><span class="undefined">    border-width: 2px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#BBB</span>;</span></span><br><span class="line"><span class="undefined">    width: 250px;</span></span><br><span class="line"><span class="undefined">    height: 250px;</span></span><br><span class="line"><span class="undefined">    margin-top: 250px;</span></span><br><span class="line"><span class="undefined">    margin-left: 250px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#EEE</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/wiki/common-events.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

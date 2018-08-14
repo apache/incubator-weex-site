@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Use Vue.js on Weex | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Runtime-only Build Platform Differences Context DOM Styles Events   The Web Renderer Single File Component Compile Targets Use weex-loader   Supported Features Global Config Global API Options Lif">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Use Vue.js on Weex">
+<meta property="og:url" content="https://weex.apache.org/guide/use-vue.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Runtime-only Build Platform Differences Context DOM Styles Events   The Web Renderer Single File Component Compile Targets Use weex-loader   Supported Features Global Config Global API Options Lif">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Use Vue.js on Weex">
+<meta name="twitter:description" content="Runtime-only Build Platform Differences Context DOM Styles Events   The Web Renderer Single File Component Compile Targets Use weex-loader   Supported Features Global Config Global API Options Lif">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/use-vue.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/use-vue.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link current ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link current ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Use Vue.js on Weex
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.368Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#runtime-only-build">Runtime-only Build</a></li>
+<li><a href="#platform-differences">Platform Differences</a><ul>
+<li><a href="#context">Context</a></li>
+<li><a href="#dom">DOM</a></li>
+<li><a href="#styles">Styles</a></li>
+<li><a href="#events">Events</a></li>
+</ul>
+</li>
+<li><a href="#the-web-renderer">The Web Renderer</a></li>
+<li><a href="#single-file-component">Single File Component</a><ul>
+<li><a href="#compile-targets">Compile Targets</a></li>
+<li><a href="#use-weex-loader">Use weex-loader</a></li>
+</ul>
+</li>
+<li><a href="#supported-features">Supported Features</a><ul>
+<li><a href="#global-config">Global Config</a></li>
+<li><a href="#global-api">Global API</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#lifecycle-hooks">Lifecycle Hooks</a></li>
+<li><a href="#instance-properties">Instance Properties</a></li>
+<li><a href="#instance-methods">Instance Methods</a></li>
+<li><a href="#directives">Directives</a></li>
+<li><a href="#special-attributes">Special Attributes</a></li>
+<li><a href="#built-in-components">Built-In Components</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>Weex integrated the v2 version of Vue.js since WeexSDK <a href="https://github.com/alibaba/weex/releases/tag/v0.10.0" target="_blank" rel="noopener">v0.10.0</a> is released at 2016/02/17. Vue (pronounced /vju&#x2D0;/, like view) is a progressive front-end framework for building user interfaces. Please refer to its <a href="https://vuejs.org/" target="_blank" rel="noopener">official website</a> for more information.</p>
+<blockquote>
+<p>If there is no special instructions, the &#x201C;Vue.js&#x201D; or &#x201C;Vue&#x201D; in this article all refers to the v2 version of Vue.js.</p>
+</blockquote>
+<h2 class="article-heading"><span id="runtime-only-build">Runtime-only Build</span><a href="#runtime-only-build" class="header-anchor">#</a></h2><p>If you are familiar with Vue.js, you should know that there are two available builds of Vue.js: <a href="https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build" target="_blank" rel="noopener">the <strong>Runtime + Compiler</strong> build and the <strong>Runtime-only</strong> build</a>. The difference between them is whether to include the compiler which is able to compile the <code>template</code> option at runtime.</p>
+<p>Since the runtime-only builds are roughly 30% lighter-weight than their full-build counterparts, Weex is using the runtime-only build of Vue.js for better performance and less code size.</p>
+<p>Specifically, the differences are as follows:</p>
+<ul>
+<li>The <a href="https://vuejs.org/v2/api/#template" target="_blank" rel="noopener"><code>template</code></a> option is not supported when defining a component.</li>
+<li>Does not support using <a href="https://vuejs.org/v2/guide/components.html#X-Templates" target="_blank" rel="noopener"><code>x-templates</code></a>.</li>
+<li>Does not support using <a href="https://vuejs.org/v2/api/#Vue-compile" target="_blank" rel="noopener"><code>Vue.compile</code></a>.</li>
+</ul>
+<h2 class="article-heading"><span id="platform-differences">Platform Differences</span><a href="#platform-differences" class="header-anchor">#</a></h2><p>Vue.js was designed for the Web platform at the beginning. Although it can be based on Weex to develop native applications, there are still many <a href="../wiki/platform-difference.html">platform differences between Weex and web</a>.</p>
+<p>The key platform differences are context, DOM, styles and events.</p>
+<h3 class="article-heading"><span id="context">Context</span><a href="#context" class="header-anchor">#</a></h3><p>Weex is mostly used to write multi-page applications, each page is a native <em>View</em> or <em>Activity</em> on mobile, and has its own context. In particular, the <code>Vue</code> instances are different in each pages, and even the &#x201C;global&#x201D; config of Vue (<code>Vue.config.xxx</code>) only affect the single page on Weex.</p>
+<p>On this basis, some SPA (single-page application) technologies of Vue, such as <a href="https://vuex.vuejs.org/en/" target="_blank" rel="noopener">Vuex</a> and <a href="https://router.vuejs.org/en/" target="_blank" rel="noopener">vue-router</a> will also take effect within the single page. More colloquially, the &#x201C;page&#x201D; concept is virtual in SPA technologies, but it is real on Weex.</p>
+<p>However, Vuex and vue-router are standalone libraries, they all have their own concept and usage scenario, you can still <a href="./advanced/use-vuex-and-vue-router.html">use Vuex and vue-router</a> on Weex.</p>
+<h3 class="article-heading"><span id="dom">DOM</span><a href="#dom" class="header-anchor">#</a></h3><p>Because there is no DOM (document object model) on Android and iOS, if you are manipulating and generating DOM elements manually, it may have some compatibility issues. It is a good practice to manipulate data and components instead of generated elements when you are using modern front-end frameworks.</p>
+<p>Some DOM-related features, such as <code>v-html</code>, <code>vm.$el</code>, <code>template</code> option, may not have the same behavior on different platforms.</p>
+<p>To be more specific, the type of <a href="https://vuejs.org/v2/api/#vm-el" target="_blank" rel="noopener"><code>vm.$el</code></a> property is <code>HTMLElement</code> on the web, but it is not that type on mobile environments. Actually it&#x2019;s a special data structure defined by <em>Weex document object model</em>.</p>
+<h3 class="article-heading"><span id="styles">Styles</span><a href="#styles" class="header-anchor">#</a></h3><p>The style sheet and CSS rules in managed by Weex js framework and native render engines. It would be very difficult and unnecessary to implement the whole CSSOM spec and support all CSS rules.</p>
+<p>For performance reasons, <strong>Weex only support single class selector currently, and only support a subset of CSS Rules</strong>. Please refer to <em><a href="../wiki/common-styles.html">common styles</a></em> and <em><a href="../wiki/text-styles.html">text styles</a></em> for more details.</p>
+<p>On Weex, styles are <em><a href="https://vue-loader.vuejs.org/en/features/scoped-css.html" target="_blank" rel="noopener">scoped</a></em> by force for each Vue component.</p>
+<h3 class="article-heading"><span id="events">Events</span><a href="#events" class="header-anchor">#</a></h3><p>Event bubbling and capturing are not supported in Weex currently, therefore, <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers" target="_blank" rel="noopener">event modifiers</a> such as <code>.prevent</code>, <code>.capture</code>, <code>.stop</code>, <code>.self</code> are not supported on Weex native components.</p>
+<p>Moreover, the <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers" target="_blank" rel="noopener">keyboard event modifiers</a> and <a href="https://vuejs.org/v2/guide/events.html#System-Modifier-Keys" target="_blank" rel="noopener">system modifier keys</a>, such as <code>.enter</code>, <code>.tab</code>, <code>.ctrl</code>, <code>.shift</code> mostly are meaningless on mobile device, which are also not supported in Weex.</p>
+<h2 class="article-heading"><span id="the-web-renderer">The Web Renderer</span><a href="#the-web-renderer" class="header-anchor">#</a></h2><p>If you want to render your page on the web, you need to require the <a href="https://github.com/weexteam/weex-vue-render" target="_blank" rel="noopener">weex-vue-render</a> to achieve it.</p>
+<p><code>weex-vue-render</code> is a web renderer for Vue DSL, it implemented the built-in components and built-in modules of Weex on the web. Please refer to <a href="https://github.com/weexteam/weex-vue-render" target="_blank" rel="noopener">its repo</a> for more details.</p>
+<h2 class="article-heading"><span id="single-file-component">Single File Component</span><a href="#single-file-component" class="header-anchor">#</a></h2><p><a href="https://vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Single file component</a> (as known as the <code>*.vue</code> files) of Vue is a special file format with a <code>.vue</code> extension. The template inside will be compiled into the <code>render</code> function at build time.</p>
+<p>Moreover, there are a good deals of <a href="https://github.com/vuejs/awesome-vue#source-code-editing" target="_blank" rel="noopener">syntax highlight plugins</a> for all kind of editors.</p>
+<blockquote>
+<p>It&#x2019;s a good practice to use single file component syntax in Weex.</p>
+</blockquote>
+<h3 class="article-heading"><span id="compile-targets">Compile Targets</span><a href="#compile-targets" class="header-anchor">#</a></h3><p>Because of the platform difference and to improve the performance on the web, the <code>*.vue</code> file should be compiled in two different ways:</p>
+<ul>
+<li>For the web platform, you can compile source files in any official way, such as <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack</a> + <a href="https://vue-loader.vuejs.org/en/" target="_blank" rel="noopener">vue-loader</a> or Browserify + vueify.</li>
+<li>For Android and iOS platforms, you should use <a href="https://github.com/weexteam/weex-loader" target="_blank" rel="noopener">weex-loader</a> to compile the <code>*.vue</code> files.</li>
+</ul>
+<p>Use different bundles for different platforms is to make good use of the platform original features and reduce compatibility code at build time. But the source code is still the same, the only difference is the way to compile it.</p>
+<h3 class="article-heading"><span id="use-weex-loader">Use weex-loader</span><a href="#use-weex-loader" class="header-anchor">#</a></h3><p><a href="https://github.com/weexteam/weex-loader" target="_blank" rel="noopener">weex-loader</a> is a <a href="https://webpack.js.org/concepts/loaders/#using-loaders" target="_blank" rel="noopener">loader</a> for webpack that can transform <code>*.vue</code> file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with <a href="https://vue-loader.vuejs.org/en/" target="_blank" rel="noopener">vue-loader</a>.</p>
+<p>One thing should be noted that if the <em>entry</em> option of your Webpack config is a <code>*.vue</code> file, you also need to pass an additional <code>entry</code> parameter.</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = {</span><br><span class="line">&#xA0;&#xA0;<span class="comment">// Add the entry parameter for the .vue file</span></span><br><span class="line">&#xA0;&#xA0;entry: <span class="string">&apos;./path/to/App.vue?entry=true&apos;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line"></span><br><span class="line">  use: {</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;loaders: [{</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">// matches the .vue file path which contains the entry parameter</span></span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;test: <span class="regexp">/\.vue(\?^^]+)?$/</span>,</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;loaders: [<span class="string">&apos;weex-loader&apos;</span>]</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;}]</span><br><span class="line">&#xA0;&#xA0;}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>You don&#x2019;t need to write those additional parameters if you are using <code>.js</code> file as entry file.</strong> It&#x2019;s a good practice to using javascript file as the entry file of webpack config.</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">&#xA0;&#xA0;entry: <span class="string">&apos;./path/to/entry.js&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="supported-features">Supported Features</span><a href="#supported-features" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="global-config">Global Config</span><a href="#global-config" class="header-anchor">#</a></h3><blockquote>
+<p>The Vue &#x201C;Global&#x201D; config only affect the single page on Weex, the configuration will not be shared between different Weex pages.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Vue Global Config</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#silent" target="_blank" rel="noopener">Vue.config.silent</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#optionMergeStrategies" target="_blank" rel="noopener">Vue.config.optionMergeStrategies</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#devtools" target="_blank" rel="noopener">Vue.config.devtools</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Only supported on the web.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#errorHandler" target="_blank" rel="noopener">Vue.config.errorHandler</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#warnHandler" target="_blank" rel="noopener">Vue.config.warnHandler</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#ignoredElements" target="_blank" rel="noopener">Vue.config.ignoredElements</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not Recommended.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#keyCodes" target="_blank" rel="noopener">Vue.config.keyCodes</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Useless on the mobile.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#performance" target="_blank" rel="noopener">Vue.config.performance</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Same with <em>devtools</em>.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#productionTip" target="_blank" rel="noopener">Vue.config.productionTip</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="global-api">Global API</span><a href="#global-api" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Global API</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-extend" target="_blank" rel="noopener">Vue.extend</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-nextTick" target="_blank" rel="noopener">Vue.nextTick</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-set" target="_blank" rel="noopener">Vue.set</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-delete" target="_blank" rel="noopener">Vue.delete</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-directive" target="_blank" rel="noopener">Vue.directive</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-filter" target="_blank" rel="noopener">Vue.filter</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-component" target="_blank" rel="noopener">Vue.component</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-use" target="_blank" rel="noopener">Vue.use</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-mixin" target="_blank" rel="noopener">Vue.mixin</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-version" target="_blank" rel="noopener">Vue.version</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#Vue-compile" target="_blank" rel="noopener">Vue.compile</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Weex is using the <a href="https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only" target="_blank" rel="noopener">runtime-only build</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="options">Options</span><a href="#options" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Option</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#data" target="_blank" rel="noopener">data</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#props" target="_blank" rel="noopener">props</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#propsData" target="_blank" rel="noopener">propsData</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#computed" target="_blank" rel="noopener">computed</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#methods" target="_blank" rel="noopener">methods</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#watch" target="_blank" rel="noopener">watch</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#el" target="_blank" rel="noopener">el</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>The value of <code>el</code> is meaningless on the mobile.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#template" target="_blank" rel="noopener">template</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Weex is using the <a href="https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only" target="_blank" rel="noopener">runtime-only build</a>.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#render" target="_blank" rel="noopener">render</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not Recommended.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#renderError" target="_blank" rel="noopener">renderError</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#directives" target="_blank" rel="noopener">directives</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#filters" target="_blank" rel="noopener">filters</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#components" target="_blank" rel="noopener">components</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#parent" target="_blank" rel="noopener">parent</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not Recommended.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#mixins" target="_blank" rel="noopener">mixins</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#extends" target="_blank" rel="noopener">extends</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#provide-inject" target="_blank" rel="noopener">provide/inject</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not Recommended.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#name" target="_blank" rel="noopener">name</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#delimiters" target="_blank" rel="noopener">delimiters</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not Recommended.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#functional" target="_blank" rel="noopener">functional</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#model" target="_blank" rel="noopener">model</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#inheritAttrs" target="_blank" rel="noopener">inheritAttrs</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#comments" target="_blank" rel="noopener">comments</a></td>
+<td><b class="tag-no">No</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="lifecycle-hooks">Lifecycle Hooks</span><a href="#lifecycle-hooks" class="header-anchor">#</a></h3><p>Instance lifecycle hooks of Vue components will be emitted at particular stages, refer to the <a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram" target="_blank" rel="noopener">lifecycle diagram</a> of Vue component for more details.</p>
+<table>
+<thead>
+<tr>
+<th>Vue Lifecycle Hook</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#beforeCreate" target="_blank" rel="noopener">beforeCreate</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#created" target="_blank" rel="noopener">created</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#beforeMount" target="_blank" rel="noopener">beforeMount</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#mounted" target="_blank" rel="noopener">mounted</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not exactly the same with web.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#beforeUpdate" target="_blank" rel="noopener">beforeUpdate</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#updated" target="_blank" rel="noopener">updated</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#activated" target="_blank" rel="noopener">activated</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Not support <code>&lt;keep-alive&gt;</code> yet.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#deactivated" target="_blank" rel="noopener">deactivated</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Not support <code>&lt;keep-alive&gt;</code> yet.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#beforeDestroy" target="_blank" rel="noopener">beforeDestroy</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#destroyed" target="_blank" rel="noopener">destroyed</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#errorCaptured" target="_blank" rel="noopener">errorCaptured</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>New in Vue 2.5.0+, Weex SDK 0.18+</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="instance-properties">Instance Properties</span><a href="#instance-properties" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Instance Property</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-data" target="_blank" rel="noopener">vm.$data</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-props" target="_blank" rel="noopener">vm.$props</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-el" target="_blank" rel="noopener">vm.$el</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>The value is not <code>HTMLElement</code> on the mobile.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-options" target="_blank" rel="noopener">vm.$options</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-parent" target="_blank" rel="noopener">vm.$parent</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-root" target="_blank" rel="noopener">vm.$root</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-children" target="_blank" rel="noopener">vm.$children</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-slots" target="_blank" rel="noopener">vm.$slots</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-scopedSlots" target="_blank" rel="noopener">vm.$scopedSlots</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-refs" target="_blank" rel="noopener">vm.$refs</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-isServer" target="_blank" rel="noopener">vm.$isServer</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Always <code>false</code>.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-attrs" target="_blank" rel="noopener">vm.$attrs</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-listeners" target="_blank" rel="noopener">vm.$listeners</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="instance-methods">Instance Methods</span><a href="#instance-methods" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Instance Method</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-watch" target="_blank" rel="noopener">vm.$watch()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener">vm.$set()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-delete" target="_blank" rel="noopener">vm.$delete()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-on" target="_blank" rel="noopener">vm.$on()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-once" target="_blank" rel="noopener">vm.$once()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-off" target="_blank" rel="noopener">vm.$off()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-emit" target="_blank" rel="noopener">vm.$emit()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-mount" target="_blank" rel="noopener">vm.$mount()</a></td>
+<td><b class="tag-no">No</b></td>
+<td>You don&#x2019;t need to mount Vue instance manually.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-forceUpdate" target="_blank" rel="noopener">vm.$forceUpdate()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-nextTick" target="_blank" rel="noopener">vm.$nextTick()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#vm-destroy" target="_blank" rel="noopener">vm.$destroy()</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="directives">Directives</span><a href="#directives" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Directive</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-text" target="_blank" rel="noopener">v-text</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-html" target="_blank" rel="noopener">v-html</a></td>
+<td><b class="tag-no">No</b></td>
+<td>No HTML parser in Weex, and it is not good practice.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-show" target="_blank" rel="noopener">v-show</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Not support <code>display: none;</code> yet.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-if" target="_blank" rel="noopener">v-if</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-else" target="_blank" rel="noopener">v-else</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-else-if" target="_blank" rel="noopener">v-else-if</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-for" target="_blank" rel="noopener">v-for</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-on" target="_blank" rel="noopener">v-on</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not support <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers" target="_blank" rel="noopener">event modifiers</a>.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-bind" target="_blank" rel="noopener">v-bind</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-model" target="_blank" rel="noopener">v-model</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-pre" target="_blank" rel="noopener">v-pre</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-cloak" target="_blank" rel="noopener">v-cloak</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Only support single class selector.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#v-once" target="_blank" rel="noopener">v-once</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="special-attributes">Special Attributes</span><a href="#special-attributes" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Special Attribute</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#key" target="_blank" rel="noopener">key</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#ref" target="_blank" rel="noopener">ref</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#slot" target="_blank" rel="noopener">slot</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#slot-scope" target="_blank" rel="noopener">slot-scope</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>New in Vue 2.5.0+, Weex SDK 0.18+</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#scope" target="_blank" rel="noopener">scope</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>Not Recommended.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#is" target="_blank" rel="noopener">is</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="built-in-components">Built-In Components</span><a href="#built-in-components" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue Built-In Component</th>
+<th>Supported</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#component" target="_blank" rel="noopener">component</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#transition" target="_blank" rel="noopener">transition</a></td>
+<td><b class="tag-no">No</b></td>
+<td>The concept of <em>enter</em> and <em>leave</em> maybe different on the mobile, and Weex does not support <code>display: none;</code> yet.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#transition-group" target="_blank" rel="noopener">transition-group</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Same with <em>transition</em>.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">keep-alive</a></td>
+<td><b class="tag-no">No</b></td>
+<td>Native components on the mobile can not be cached at front-end.</td>
+</tr>
+<tr>
+<td><a href="https://vuejs.org/v2/api/#slot" target="_blank" rel="noopener">slot</a></td>
+<td><b class="tag-yes">Yes</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/guide/use-vue.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

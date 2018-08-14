@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webSocket | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="webSocket#v0.12+ Summary#WebSockets 是一种先进的技术, 这使得在用户的 H5/iOS/Android 和一个服务器之间打开一个的交互式通信会话成为可能, 有了这个 API，你可以向服务器发送消息, 并接收事件驱动的响应, 无需轮询服务器的响应 注意：# iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter">
+<meta property="og:type" content="website">
+<meta property="og:title" content="webSocket">
+<meta property="og:url" content="https://weex.apache.org/cn/references/modules/websocket.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="webSocket#v0.12+ Summary#WebSockets 是一种先进的技术, 这使得在用户的 H5/iOS/Android 和一个服务器之间打开一个的交互式通信会话成为可能, 有了这个 API，你可以向服务器发送消息, 并接收事件驱动的响应, 无需轮询服务器的响应 注意：# iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.337Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webSocket">
+<meta name="twitter:description" content="webSocket#v0.12+ Summary#WebSockets 是一种先进的技术, 这使得在用户的 H5/iOS/Android 和一个服务器之间打开一个的交互式通信会话成为可能, 有了这个 API，你可以向服务器发送消息, 并接收事件驱动的响应, 无需轮询服务器的响应 注意：# iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="current">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/modules/websocket.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/modules/websocket.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link current ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link current ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        webSocket
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.337Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="websocket">webSocket</span><a href="#websocket" class="header-anchor">#</a></h1><p><span class="weex-version">v0.12+</span></p>
+<h2 class="article-heading"><span id="summary">Summary</span><a href="#summary" class="header-anchor">#</a></h2><p>WebSockets &#x662F;&#x4E00;&#x79CD;&#x5148;&#x8FDB;&#x7684;&#x6280;&#x672F;, &#x8FD9;&#x4F7F;&#x5F97;&#x5728;&#x7528;&#x6237;&#x7684; H5/iOS/Android &#x548C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x7684;&#x4EA4;&#x4E92;&#x5F0F;&#x901A;&#x4FE1;&#x4F1A;&#x8BDD;&#x6210;&#x4E3A;&#x53EF;&#x80FD;, &#x6709;&#x4E86;&#x8FD9;&#x4E2A; API&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x6D88;&#x606F;, &#x5E76;&#x63A5;&#x6536;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7684;&#x54CD;&#x5E94;, &#x65E0;&#x9700;&#x8F6E;&#x8BE2;&#x670D;&#x52A1;&#x5668;&#x7684;&#x54CD;&#x5E94;</p>
+<h2 class="article-heading"><span id="zhu-yi"><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></span><a href="#zhu-yi" class="header-anchor">#</a></h2><ul>
+<li>iOS&#x548C;h5&#x63D0;&#x4F9B; WebSockets &#x7684; protocol &#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF0C;&#x5B89;&#x5353;&#x4F7F;&#x7528;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49; adapter &#x5B9E;&#x73B0;&#xFF0C;source:<ul>
+<li><a href="https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java" target="_blank" rel="noopener">DefaultWebSocketAdapter.java</a>;</li>
+<li><a href="https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java" target="_blank" rel="noopener">DefaultWebSocketAdapterFactory.java</a>;</li>
+<li>&#x96C6;&#x6210;&#x4F8B;&#x5B50;&#x53C2;&#x8003;weex <a href="https://github.com/apache/incubator-weex/tree/master/android/playground" target="_blank" rel="noopener">playground</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="api">API</span><a href="#api" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="websocket-url-protocol"><code>WebSocket(url, protocol)</code></span><a href="#websocket-url-protocol" class="header-anchor">#</a></h3><p>&#x521B;&#x5EFA; WebSockets&#xFF0C;&#x5E76;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>url {string}</code>: &#x8868;&#x793A;&#x8981;&#x8FDE;&#x63A5;&#x7684; URL;</li>
+<li><code>protocol {string}</code>: WebSockets &#x534F;&#x8BAE;</li>
+</ul>
+<h3 class="article-heading"><span id="send-data"><code>send(data)</code></span><a href="#send-data" class="header-anchor">#</a></h3><p>&#x901A;&#x8FC7;WebSocket&#x8FDE;&#x63A5;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x6570;&#x636E;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>data{string}</code>:&#x8981;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6570;&#x636E;</li>
+</ul>
+<h3 class="article-heading"><span id="close-code-reason"><code>close(code,reason)</code></span><a href="#close-code-reason" class="header-anchor">#</a></h3><p>&#x5173;&#x95ED; WebSockets &#x7684;&#x94FE;&#x63A5;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>code {number}</code>: &#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x7684;&#x72B6;&#x6001;&#x53F7;.</li>
+<li><code>reason {string}</code>: &#x5173;&#x95ED;&#x7684;&#x539F;&#x56E0;</li>
+</ul>
+<h3 class="article-heading"><span id="onopen-options"><code>onopen(options)</code></span><a href="#onopen-options" class="header-anchor">#</a></h3><p>&#x94FE;&#x63A5;&#x6253;&#x5F00;&#x7684;&#x76D1;&#x542C;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>options {object}</code>: &#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x5BF9;&#x8C61;</li>
+</ul>
+<h3 class="article-heading"><span id="onmessage-options"><code>onmessage(options)</code></span><a href="#onmessage-options" class="header-anchor">#</a></h3><p>&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x5668;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>options {object}</code>: &#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;&#x5BF9;&#x8C61;<ul>
+<li><code>data {string}</code>: &#x76D1;&#x542C;&#x5668;&#x63A5;&#x6536;&#x7684;&#x5230;&#x7684;&#x6D88;&#x606F;</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="onclose-options"><code>onclose(options)</code></span><a href="#onclose-options" class="header-anchor">#</a></h3><p>&#x5173;&#x95ED;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x5668;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>options {object}</code>: &#x76D1;&#x542C;&#x5668;&#x63A5;&#x6536;&#x5230;&#x7684;&#x5BF9;&#x8C61;<ul>
+<li><code>code {number}</code>: &#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x5173;&#x95ED;&#x7684;&#x72B6;&#x6001;&#x7801;</li>
+<li><code>reason {string}</code>: &#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x5173;&#x95ED;&#x539F;&#x56E0;</li>
+<li><code>wasClean {boolen}</code>: &#x662F;&#x5426;&#x5B8C;&#x5168;&#x5173;&#x95ED;.</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="onerror-options"><code>onerror(options)</code></span><a href="#onerror-options" class="header-anchor">#</a></h3><p>&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x5668;</p>
+<h4 class="article-heading"><span id="arguments">Arguments</span><a href="#arguments" class="header-anchor">#</a></h4><ul>
+<li><code>options {object}</code>: &#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x7684;&#x4E8B;&#x4EF6;<ul>
+<li><code>data {string}</code>: &#x76D1;&#x542C;&#x5668;&#x63A5;&#x6536;&#x5230;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scroller</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #286090&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: white&quot;</span>&gt;</span>websocket<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;please input message to send&quot;</span> <span class="attr">class</span>=<span class="string">&quot;input&quot;</span> <span class="attr">autofocus</span>=<span class="string">&quot;false&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> @<span class="attr">change</span>=<span class="string">&quot;onchange&quot;</span> @<span class="attr">input</span>=<span class="string">&quot;oninput&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;input&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;flex-direction: row; justify-content: center;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;connect&quot;</span>&gt;</span>connect<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;send&quot;</span>&gt;</span>send<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;button&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;close&quot;</span>&gt;</span>close<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: lightgray&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: black&quot;</span>&gt;</span>method = send<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;color: black;height: 80px&quot;</span>&gt;</span>{{sendinfo}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: lightgray&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: black&quot;</span>&gt;</span>method = onopen<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;color: black;height: 80px&quot;</span>&gt;</span>{{onopeninfo}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: lightgray&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: black&quot;</span>&gt;</span>method = onmessage<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;color: black;height: 400px&quot;</span>&gt;</span>{{onmessage}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: lightgray&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: black&quot;</span>&gt;</span>method = onclose<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;color: black;height: 80px&quot;</span>&gt;</span>{{oncloseinfo}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: lightgray&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: black&quot;</span>&gt;</span>method = onerror<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;color: black;height: 80px&quot;</span>&gt;</span>{{onerrorinfo}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: lightgray&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 80px ;padding: 20px;color: black&quot;</span>&gt;</span>method = close<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;color: black;height: 80px&quot;</span>&gt;</span>{{closeinfo}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.input</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    height: 80px;</span></span><br><span class="line"><span class="undefined">    width: 600px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.button</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 36px;</span></span><br><span class="line"><span class="undefined">    width: 150px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#41B883</span>;</span></span><br><span class="line"><span class="undefined">    text-align: center;</span></span><br><span class="line"><span class="undefined">    padding-top: 25px;</span></span><br><span class="line"><span class="undefined">    padding-bottom: 25px;</span></span><br><span class="line"><span class="undefined">    border-width: 2px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="undefined">    margin-right: 20px;</span></span><br><span class="line"><span class="undefined">    border-color: rgb(162, 217, 192);</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(162, 217, 192, 0<span class="selector-class">.2</span>);</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> websocket = weex.requireModule(<span class="string">&apos;webSocket&apos;</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    data () {</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="javascript">        connectinfo: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        sendinfo: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        onopeninfo: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        onmessage: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        oncloseinfo: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        onerrorinfo: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        closeinfo: <span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="javascript">        txtInput:<span class="string">&apos;&apos;</span>,</span></span><br><span class="line"><span class="undefined">        navBarHeight: 88,</span></span><br><span class="line"><span class="javascript">        title: <span class="string">&apos;Navigator&apos;</span>,</span></span><br><span class="line"><span class="javascript">        dir: <span class="string">&apos;examples&apos;</span>,</span></span><br><span class="line"><span class="javascript">        baseURL: <span class="string">&apos;&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="undefined">    methods: {</span></span><br><span class="line"><span class="javascript">      connect:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">        websocket.WebSocket(<span class="string">&apos;ws://echo.websocket.org&apos;</span>,<span class="string">&apos;&apos;</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="javascript">        self.onopeninfo = <span class="string">&apos;connecting...&apos;</span></span></span><br><span class="line"><span class="javascript">        websocket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span></span></span><br><span class="line"><span class="undefined">        {</span></span><br><span class="line"><span class="javascript">          self.onopeninfo = <span class="string">&apos;websocket open&apos;</span>;</span></span><br><span class="line"><span class="undefined">        }</span></span><br><span class="line"><span class="javascript">        websocket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span></span></span><br><span class="line"><span class="undefined">        {</span></span><br><span class="line"><span class="undefined">          self.onmessage = e.data;</span></span><br><span class="line"><span class="undefined">        }</span></span><br><span class="line"><span class="javascript">        websocket.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span></span></span><br><span class="line"><span class="undefined">        {</span></span><br><span class="line"><span class="undefined">          self.onerrorinfo = e.data;</span></span><br><span class="line"><span class="undefined">        }</span></span><br><span class="line"><span class="javascript">        websocket.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span></span></span><br><span class="line"><span class="undefined">        {</span></span><br><span class="line"><span class="javascript">          self.onopeninfo = <span class="string">&apos;&apos;</span>;</span></span><br><span class="line"><span class="undefined">          self.onerrorinfo = e.code;</span></span><br><span class="line"><span class="undefined">        }</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="javascript">      send:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> input = <span class="keyword">this</span>.$refs.input;</span></span><br><span class="line"><span class="undefined">        input.blur();</span></span><br><span class="line"><span class="javascript">        websocket.send(<span class="keyword">this</span>.txtInput);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.sendinfo = <span class="keyword">this</span>.txtInput;</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="javascript">      oninput: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.txtInput = event.value;</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="javascript">      close:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{</span></span><br><span class="line"><span class="undefined">        websocket.close();</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><a href="http://dotwe.org/vue/6d8bdfe66f24fda1a2dc6158b0182573" target="_blank" rel="noopener">Have a try</a></p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/references/modules/websocket.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Integrate Devtool to Android | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Integrate Devtool to Android Integrate to Android Installing Dependencies Adding Debug mode switch Example   Known Issues       Integrate Devtool to Android#Weex devtools is a custom devtools for">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Integrate Devtool to Android">
+<meta property="og:url" content="https://weex.apache.org/guide/integrate-devtool-to-android.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Integrate Devtool to Android Integrate to Android Installing Dependencies Adding Debug mode switch Example   Known Issues       Integrate Devtool to Android#Weex devtools is a custom devtools for">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-21T05:41:16.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Integrate Devtool to Android">
+<meta name="twitter:description" content="Integrate Devtool to Android Integrate to Android Installing Dependencies Adding Debug mode switch Example   Known Issues       Integrate Devtool to Android#Weex devtools is a custom devtools for">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/integrate-devtool-to-android.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/integrate-devtool-to-android.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link current ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link current ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Integrate Devtool to Android
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-05-21T05:41:16.044Z">Updated time: 21/05/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#integrate-devtool-to-android">Integrate Devtool to Android</a><ul>
+<li><a href="#integrate-to-android">Integrate to Android</a><ul>
+<li><a href="#installing-dependencies">Installing Dependencies</a></li>
+<li><a href="#adding-debug-mode-switch">Adding Debug mode switch</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
+<li><a href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h1 class="article-heading"><span id="integrate-devtool-to-android">Integrate Devtool to Android</span><a href="#integrate-devtool-to-android" class="header-anchor">#</a></h1><p>Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page. To make it work, at first you must integrate devtool to your App. This page will help you integrate devtool to your Android App.</p>
+<h2 class="article-heading"><span id="integrate-to-android">Integrate to Android</span><a href="#integrate-to-android" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="installing-dependencies">Installing Dependencies</span><a href="#installing-dependencies" class="header-anchor">#</a></h3><p>Weex Devtools depend on <code>weex_inspector</code>. I strongly recommend you use the latest version since both Weex SDK and devtools are developed iteratively and rapidly. See the release version list <a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="noopener">here</a>. All the release version will publish to the <a href="https://bintray.com/alibabaweex/maven/weex_inspector" target="_blank" rel="noopener">jcenter repo</a>. There are two choices to install it:</p>
+<ul>
+<li><p>From Gradle</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">  <span class="keyword">compile</span> <span class="string">&apos;com.taobao.android:weex_inspector:0.13.2&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>From source code</p>
+<p>you need to copy the dir of inspector to the same dir of your app and add <code>include &quot;:inspector&quot;</code>in your project&#x2019;s <code>settings.gradle</code> file just like playground have done, then add dependency in your app&#x2019;s <code>build.gralde</code>.</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">  <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">&apos;:inspector&apos;</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h4 class="article-heading"><span id="version-compatibility">Version compatibility</span><a href="#version-compatibility" class="header-anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>weex sdk</th>
+<th>weex inspector</th>
+<th>Debugger Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.8.0.1+</td>
+<td>0.0.8.1+</td>
+<td>0.2.39+</td>
+</tr>
+<tr>
+<td>0.7.0+</td>
+<td>0.0.7.13</td>
+<td>0.2.38</td>
+</tr>
+<tr>
+<td>0.6.0+</td>
+<td>0.0.2.2</td>
+<td>-</td>
+</tr>
+<tr>
+<td>0.16.0+</td>
+<td>0.12.1</td>
+<td>-</td>
+</tr>
+<tr>
+<td>0.17.0+</td>
+<td>0.13.2</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="adding-debug-mode-switch">Adding Debug mode switch</span><a href="#adding-debug-mode-switch" class="header-anchor">#</a></h3><p>The key to control the opening and closing of the debug mode can be summarized as three rules:</p>
+<p><strong>No.1: Set the switch and Debugger Server addresses via <code>sRemoteDebugMode</code> and <code>sRemoteDebugProxyUrl</code>.</strong></p>
+<p><code>WXEnvironment</code> class has a pair of static variables mark Weex current debug mode:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> sRemoteDebugMode; <span class="comment">// default close</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String sRemoteDebugProxyUrl; <span class="comment">// Debugger Server addresses</span></span><br></pre></td></tr></tbody></table></figure>
+<p>You have to set <code>WXEnvironment.sRemoteDebugMode</code> and <code>WXEnvironment.sRemoteDebugProxyUrl</code> at the right time, for example:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initDebugEnvironment</span><span class="params">(<span class="keyword">boolean</span> enable, String host)</span> </span>{</span><br><span class="line">  WXEnvironment.sRemoteDebugMode = enable;</span><br><span class="line">  WXEnvironment.sRemoteDebugProxyUrl = <span class="string">&quot;ws://&quot;</span> + host + <span class="string">&quot;:8088/debugProxy/native&quot;</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>You can find detail and suitable way of initialize inspector in <code>Playground</code>.</p>
+<p><strong>No.2: You must call <code>WXSDKEngine.reload()</code> method when <code>sRemoteDebugMode</code> was changed.</strong></p>
+<p>You can control a state of debug mode via the <code>WXEnvironment.sRemoteDebugMode</code>, but you need reset Weex runtime if you changed a state of debug mode.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initWXBridge</span><span class="params">(<span class="keyword">boolean</span> remoteDebug)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (remoteDebug &amp;&amp; WXEnvironment.isApkDebugable()) {</span><br><span class="line">      WXEnvironment.sDebugServerConnectable = <span class="keyword">true</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) {</span><br><span class="line">      mWxDebugProxy.stop(<span class="keyword">false</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (WXEnvironment.sDebugServerConnectable &amp;&amp; (WXEnvironment.isApkDebugable() || WXEnvironment.sForceEnableDevTool)) {</span><br><span class="line">      <span class="keyword">if</span> (WXEnvironment.getApplication() != <span class="keyword">null</span>) {</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">          Class clazz = Class.forName(<span class="string">&quot;com.taobao.weex.devtools.debug.DebugServerProxy&quot;</span>);</span><br><span class="line">          <span class="keyword">if</span> (clazz != <span class="keyword">null</span>) {</span><br><span class="line">            Constructor constructor = clazz.getConstructor(Context.class, WXBridgeManager.class);</span><br><span class="line">            <span class="keyword">if</span> (constructor != <span class="keyword">null</span>) {</span><br><span class="line">              mWxDebugProxy = (IWXDebugProxy) constructor.newInstance(</span><br><span class="line">                      WXEnvironment.getApplication(), WXBridgeManager.<span class="keyword">this</span>);</span><br><span class="line">              <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) {</span><br><span class="line">                mWxDebugProxy.start(<span class="keyword">new</span> WXJsFunctions());</span><br><span class="line">              }</span><br><span class="line">            }</span><br><span class="line">          }</span><br><span class="line">        } <span class="keyword">catch</span> (Throwable e) {</span><br><span class="line">          <span class="comment">//Ignore, It will throw Exception on Release environment</span></span><br><span class="line">        }</span><br><span class="line">        WXServiceManager.execAllCacheJsService();</span><br><span class="line">      } <span class="keyword">else</span> {</span><br><span class="line">        WXLogUtils.e(<span class="string">&quot;WXBridgeManager&quot;</span>, <span class="string">&quot;WXEnvironment.sApplication is null, skip init Inspector&quot;</span>);</span><br><span class="line">        WXLogUtils.w(<span class="string">&quot;WXBridgeManager&quot;</span>, <span class="keyword">new</span> Throwable(<span class="string">&quot;WXEnvironment.sApplication is null when init Inspector&quot;</span>));</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (remoteDebug &amp;&amp; mWxDebugProxy != <span class="keyword">null</span>) {</span><br><span class="line">      mWXBridge = mWxDebugProxy.getWXBridge();</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      mWXBridge = <span class="keyword">new</span> WXBridge();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>In this way, You can control the debug mode flexibly.</p>
+<p><strong>No.3: Auto refresh page via <code>ACTION_DEBUG_INSTANCE_REFRESH</code> broadcast</strong></p>
+<p><code>ACTION_DEBUG_INSTANCE_REFRESH</code> can be broadcast messages when the debug mode is switched or Chrome page refresh. You can use this mechanism to inform the current page to refresh in time.</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefreshBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>{</span><br><span class="line">      <span class="keyword">if</span> (IWXDebugProxy.ACTION_INSTANCE_RELOAD.equals(intent.getAction()) ||</span><br><span class="line">              IWXDebugProxy.ACTION_DEBUG_INSTANCE_REFRESH.equals(intent.getAction())) {</span><br><span class="line">        Log.v(TAG, <span class="string">&quot;connect to debug server success&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (mUri != <span class="keyword">null</span>) {</span><br><span class="line">          <span class="keyword">if</span> (TextUtils.equals(mUri.getScheme(), <span class="string">&quot;http&quot;</span>) || TextUtils.equals(mUri.getScheme(), <span class="string">&quot;https&quot;</span>)) {</span><br><span class="line">            String weexTpl = mUri.getQueryParameter(Constants.WEEX_TPL_KEY);</span><br><span class="line">            String url = TextUtils.isEmpty(weexTpl) ? mUri.toString() : weexTpl;</span><br><span class="line">            loadWXfromService(url);</span><br><span class="line">          } <span class="keyword">else</span> {</span><br><span class="line">            loadWXfromLocal(<span class="keyword">true</span>);</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><p>The easiest way is reuse the code of playground. On the other hand QR code is not necessary, if you review the source code you can draw a conclusion that QR CODE is just a way to set devtools server address. There are two examples of how to open debug modes in the Playground App:</p>
+<ul>
+<li><p>Set the debug mode via <code>XXXApplication</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>{</span><br><span class="line">  <span class="keyword">super</span>.onCreate();</span><br><span class="line">  initDebugEnvironment(<span class="keyword">true</span>, <span class="string">&quot;xxx.xxx.xxx.xxx&quot;</span><span class="comment">/*&quot;DEBUG_SERVER_HOST&quot;*/</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Set the debug mode by scan QR code</p>
+<p>You review the source code of playground.</p>
+<ul>
+<li>Debug mode switch control: <a href="https://github.com/weexteam/weex_devtools_android/blob/master/playground/app/src/main/java/com/alibaba/weex/WXApplication.java" target="_blank" rel="noopener"><code>WXApplication.java</code></a></li>
+<li>Refresh control <a href="https://github.com/weexteam/weex_devtools_android/blob/master/playground/app/src/main/java/com/alibaba/weex/WXPageActivity.java" target="_blank" rel="noopener"><code>WXPageActivity.java</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="known-issues">Known Issues</span><a href="#known-issues" class="header-anchor">#</a></h2><p>You can report issues and bugs <a href="https://github.com/weexteam/weex_devtools_android/issues" target="_blank" rel="noopener">here</a>. We will reply as soon as possible.</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/guide/integrate-devtool-to-android.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

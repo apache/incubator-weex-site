@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Handler | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是 handler# hanlder(Android 中称为 adapter，以下称 handler) 是 WeexSDK engine 中一个 service 的概念，它可以被 component、module 和其他的 handler 实现中调用。 handler 调用细节# handler 提供了不同 App 和客户端解耦的能力，上层通过 interface(Android) 和 pro">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Handler">
+<meta property="og:url" content="https://weex.apache.org/cn/wiki/handler-introduction.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="什么是 handler# hanlder(Android 中称为 adapter，以下称 handler) 是 WeexSDK engine 中一个 service 的概念，它可以被 component、module 和其他的 handler 实现中调用。 handler 调用细节# handler 提供了不同 App 和客户端解耦的能力，上层通过 interface(Android) 和 pro">
+<meta property="og:locale" content="cn">
+<meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/f027878afe0f3ff96444a32c3a92b230.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Handler">
+<meta name="twitter:description" content="什么是 handler# hanlder(Android 中称为 adapter，以下称 handler) 是 WeexSDK engine 中一个 service 的概念，它可以被 component、module 和其他的 handler 实现中调用。 handler 调用细节# handler 提供了不同 App 和客户端解耦的能力，上层通过 interface(Android) 和 pro">
+<meta name="twitter:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/f027878afe0f3ff96444a32c3a92b230.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="current">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/handler-introduction.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/handler-introduction.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/design-principles.html" class="sidebar-link  ">设计理念</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/platform-difference.html" class="sidebar-link  ">与 Web 平台的差异</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">样式</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-styles.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/text-styles.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/css-units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/color-names.html" class="sidebar-link  ">支持的颜色名称列表</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">事件</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-events.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/event-bubble.html" class="sidebar-link  ">事件冒泡</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/gestures.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">概念</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/handler-introduction.html" class="sidebar-link current ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">FAQ</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/faq.html" class="sidebar-link  ">常见问题</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Handler
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.349Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><h3 class="article-heading"><span id="shi-me-shi-handler">&#x4EC0;&#x4E48;&#x662F; handler</span><a href="#shi-me-shi-handler" class="header-anchor">#</a></h3><p> hanlder(Android &#x4E2D;&#x79F0;&#x4E3A; adapter&#xFF0C;&#x4EE5;&#x4E0B;&#x79F0; handler) &#x662F; WeexSDK engine &#x4E2D;&#x4E00;&#x4E2A; service &#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x88AB; component&#x3001;module &#x548C;&#x5176;&#x4ED6;&#x7684; handler &#x5B9E;&#x73B0;&#x4E2D;&#x8C03;&#x7528;&#x3002;</p>
+<h3 class="article-heading"><span id="handler-diao-yong-xi-jie">handler &#x8C03;&#x7528;&#x7EC6;&#x8282;</span><a href="#handler-diao-yong-xi-jie" class="header-anchor">#</a></h3><p> handler &#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C; App &#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x89E3;&#x8026;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4E0A;&#x5C42;&#x901A;&#x8FC7; interface(Android) &#x548C; protocol(iOS) &#x7EA6;&#x675F;&#x65B9;&#x6CD5;&#xFF0C;handler &#x7684;&#x5B9E;&#x73B0;&#x8005;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8BE5; handler &#x5BF9;&#x5E94;&#x7684;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x7684;&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x4E0D;&#x5173;&#x6CE8; handler &#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x83B7;&#x5F97;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x6216;&#x8005;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684; handler &#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x4E2A; protocol(interface) &#x5BF9;&#x5E94;&#x7684; handler &#x5728; app &#x751F;&#x547D;&#x5468;&#x671F;&#x671F;&#x95F4;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
+<h3 class="article-heading"><span id="handler-he-module-de-qu-bie">handler &#x548C; module &#x7684;&#x533A;&#x522B;</span><a href="#handler-he-module-de-qu-bie" class="header-anchor">#</a></h3><ul>
+<li><p>&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</p>
+<p> <img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/f027878afe0f3ff96444a32c3a92b230.png" alt="image.png"><br>&#x4E0A;&#x56FE;&#x5047;&#x8BBE;&#x5F53;&#x524D;APP &#x4E2D;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#x4E86;&#x4E09;&#x4E2A; Weex &#x7684;&#x9875;&#x9762;&#xFF0C;&#x4E09;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x90FD;&#x5DF2;&#x7ECF;&#x8C03;&#x7528;&#x8FC7; fetch module &#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x90FD;&#x4F1A;&#x52A8;&#x6001;&#x7684;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; fetch module class &#x7684; Object&#xFF0C;&#x968F;&#x7740;&#x9875;&#x9762;&#x7684;&#x9500;&#x6BC1;&#xFF0C;&#x9875;&#x9762;&#x6301;&#x6709;&#x7684; module &#x4E5F;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#x3002;handler class &#x5BF9;&#x5E94;&#x7684; Object &#x53EA;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x3002;</p>
+</li>
+<li><p>&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528;<br>handler &#x66F4;&#x591A;&#x7684;&#x662F;&#x9488;&#x5BF9; native &#x5F00;&#x53D1;&#x540C;&#x5B66;&#x6765;&#x5F00;&#x53D1;&#x548C;&#x4F7F;&#x7528;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x7684; component &#x548C; module &#x4E2D;&#x88AB;&#x8C03;&#x7528;&#x3002;module &#x662F;&#x7531; native &#x5F00;&#x53D1;&#x540C;&#x5B66;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x63D0;&#x4F9B;&#x7ED9;&#x524D;&#x7AEF;&#x540C;&#x5B66;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x66B4;&#x9732;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x5B9A;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+</li>
+</ul>
+<h3 class="article-heading"><span id="nei-zhi-handler">&#x5185;&#x7F6E; handler</span><a href="#nei-zhi-handler" class="header-anchor">#</a></h3><p>WeexSDK &#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E9B; handler &#x573A;&#x666F;&#x63CF;&#x8FF0;</p>
+<ul>
+<li><p>navigationHandler</p>
+<p> WeexSDK &#x5185;&#x90E8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684; navigation &#x7684; handler&#xFF0C;&#x8BE5; handler &#x662F;&#x5728; navigation Module &#x4E2D;&#x8C03;&#x7528; push &#x548C; pop &#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x65F6;&#x5019;&#x88AB;&#x8C03;&#x7528;&#x3002;<br> SDK &#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;&#x5BFC;&#x822A;&#x64CD;&#x4F5C;Handler</p>
+</li>
+<li><p>imageLoaderHandler</p>
+<p> WeexSDK &#x56FE;&#x7247;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x4ECE;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684; URI &#x4E2D;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#xFF0C;&#x8FD9;&#x4E2A;&#x52A0;&#x8F7D;&#x884C;&#x4E3A;&#x4E5F;&#x88AB;&#x5C01;&#x88C5;&#x5230; image &#x7684; handler &#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x63A5;&#x5165; WeexSDK &#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x5B9A;&#x5F97;&#x63D0;&#x4F9B;&#x56FE;&#x7247; load &#x7684;handler&#x3002;<br> SDK &#x4E2D;&#x672A;&#x63D0;&#x4F9B; load &#x56FE;&#x7247; Handler</p>
+</li>
+<li><p>AppMonitorHandler</p>
+<p> &#x8BE5; handler &#x662F; WeexSDK &#x5728;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x4E2D;&#x6027;&#x80FD;&#x7EDF;&#x8BA1;&#xFF0C;module &#x8C03;&#x7528;&#x7EDF;&#x8BA1;&#x65F6;&#x5019;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x8BE5; handler &#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8BE5; handler &#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x4E0A;&#x4F20;&#x5230;&#x76D1;&#x63A7;&#x5E73;&#x53F0;&#x505A;&#x6027;&#x80FD;&#x7684;&#x76D1;&#x63A7;&#x3002;<br> SDK &#x672A;&#x63D0;&#x4F9B; &#x76D1;&#x63A7; Handler</p>
+</li>
+<li><p>JSEXceptionHandler</p>
+<p> JavaScript &#x5728; runtime &#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x4E00;&#x4E9B;&#x9519;&#x8BEF;&#xFF0C;&#x9996;&#x5148;&#x7531; JavaScript Engine &#x6355;&#x6349;&#xFF0C;&#x7136;&#x540E;&#x629B;&#x51FA;&#x5230; WeexSDK&#xFF0C; WeexSDK &#x4F1A;&#x901A;&#x8FC7; JSExceptionHandler &#x901A;&#x77E5;&#x5230;&#x5916;&#x90E8;&#x8C03;&#x7528;&#x3002;<br> SDK &#x4E2D;&#x672A;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x63A5;&#x53D7; JSException &#x7684; Handler</p>
+</li>
+<li><p>URLRewriteHandler</p>
+<p> image&#x3001;video&#x3001;web&#x7EC4;&#x4EF6;&#x90FD;&#x5728;&#x52A0;&#x8F7D; URL &#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8FDB;&#x884C; URL &#x7684;&#x91CD;&#x5199;&#xFF0C;&#x91CD;&#x5199;&#x7684;&#x89C4;&#x5219;&#x5C31;&#x662F;&#x7531; URLRewriteHandler &#x63D0;&#x4F9B;&#xFF0C;&#x5728;&#x8FD9;&#x91CC; Handler &#x91CC;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x7279;&#x5B9A;&#x7684; URL&#xFF0C;&#x91CD;&#x5199;&#x4E3A;&#x672C;&#x5730; URL &#x6216;&#x8005;&#x5176;&#x4ED6;&#x8DEF;&#x5F84;&#x3002;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x9ED8;&#x8BA4;&#x91CD;&#x5199;&#x89C4;&#x5219; <a href="../guide/advanced/path.html">path</a><br> WeexSDK &#x9ED8;&#x8BA4;&#x63D0;&#x4F9B;&#x91CD;&#x5199;&#x89C4;&#x5219;</p>
+</li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/wiki/handler-introduction.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

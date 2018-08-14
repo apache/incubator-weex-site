@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Extend iOS | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="extend custom module extend custom component Component Method custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Extend iOS">
+<meta property="og:url" content="https://weex.apache.org/guide/extend-ios.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="extend custom module extend custom component Component Method custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do a">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png">
+<meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/8079e55e74f098eb42e074f696537de1.png">
+<meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/dd6b2a43132c0bfa724f5c1e56f300b4.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extend iOS">
+<meta name="twitter:description" content="extend custom module extend custom component Component Method custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do a">
+<meta name="twitter:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/extend-ios.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/extend-ios.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link current ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link current ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Extend iOS
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.361Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#extend-custom-module">extend custom module</a></li>
+<li><a href="#extend-custom-component">extend custom component</a></li>
+<li><a href="#component-method">Component Method</a></li>
+<li><a href="#custom-your-handlers">custom your handlers</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<blockquote>
+<p><strong>NOTICE</strong>: <strong>All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do any system hacks at runtime,  neither can they change the primary purpose of the Application</strong>.</p>
+<p><strong>If you are extending your custom modules/components,  be sure NOT to export the ability of Objective-C runtime, be sure NOT to export  dynamic and uncontrolled methods such as <code>dlopen()</code>, <code>dlsym()</code>, <code>respondsToSelector:</code>, <code>performSelector:</code>, <code>method_exchangeImplementations()</code>, be sure NOT to export any private methods. </strong></p>
+</blockquote>
+<p>Weex SDK provides only rendering capabilities, rather than have other capabilities. There are some internal <a href="../wiki/component-introduction.html">components</a>, <a href="../wiki/module-introduction.html">modules</a> and <a href="../wiki/handler-introduction.html">handlers</a>. If you want these features which weexSDK doesn&#x2019;t provide, you can to extend.</p>
+<blockquote>
+<p>The following section we will extend iOS using Objective-C and here is <a href="./extend-module-using-swift.html">swift</a>.</p>
+</blockquote>
+<h3 class="article-heading"><span id="extend-custom-module">extend custom module</span><a href="#extend-custom-module" class="header-anchor">#</a></h3><p> To extend your custom weex modules in iOS, you must make your class conform to <code>WXModuleProtocol</code> protocol, and then exports your method to javaScript using macro <code>WX_EXPORT_METHOD</code>,finally register your module with your class and a self-define module name.</p>
+<ul>
+<li><p>basic<br>we will custom a module to print params that javaScript give.</p>
+<ol>
+<li><p>new a class derived from <code>NSObject</code> conforming <code>WXModuleProtocol</code> protocol</p>
+<p><img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png" alt="image.png"></p>
+</li>
+<li><p>add your module method and then exports using macro <code>WX_EXPORT_METHOD</code></p>
+<p><img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/8079e55e74f098eb42e074f696537de1.png" alt="image.png"></p>
+</li>
+<li><p>register module after WeexSDK&#x2019;s initialization</p>
+<p><img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/dd6b2a43132c0bfa724f5c1e56f300b4.png" alt="image.png"></p>
+</li>
+</ol>
+<p>by far, we&#x2019;ve finished a basic custom module, and you may understand how to custom a weex module in iOS using Objective-C.</p>
+<p>We can use it in javaScript code like this: </p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">weex.requireModule(<span class="string">&quot;event&quot;</span>).showParams(<span class="string">&quot;hello Weex)</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>advanced extendibility</p>
+<p>you must understand more in <code>WXModuleProtocol</code> protocol, we&#x2019;ll talk more about blueprint methods and properties in this protocol.</p>
+<ol>
+<li><p><code>weexInstance</code><br>The instance of <code>WXSDKInstance</code> holds the references of all modules created in a single page. if you add <code>@synthesize weexInstance</code> in your module class, your module will hold a reference to the instance of <code>WXSDKInstance</code> who create and initialize your module, or you get nothing. You can get more details by <code>weexInstance</code> such as pageName.</p>
+</li>
+<li><p><code>targetExecuteThread</code><br>We will schedule your module method to main thread(UI thread), we highly recommend that you can not do much works here, if must, you can add implementation for this method. You can provide a thread so that we can schedule to.</p>
+</li>
+<li><p><code>WXModuleKeepAliveCallback</code><br>Sometimes you can return your result to your caller, callback is important in this scene,the params for callback can be string or dictionary. You must specify a second params to keep your callback function id in js after used. We&#x2019;ll create a new function id every time callback, <code>NO</code> will be a better choice for memory.</p>
+</li>
+<li><p><code>WX_EXPORT_METHOD_SYNC</code></p>
+<blockquote>
+<p>This feature only works on WeexSDK 0.10 and later. Synchronous method only works in JavaScript thread, you cannot do much works here.<br>exports asynchronous method using <code>WX_EXPORT_METHOD</code>, you may get result in callback function.<br><code>WX_EXPORT_METHOD_SYNC</code> to export synchronous method. You can get result on the left of operand <code>=</code>.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 class="article-heading"><span id="extend-custom-component">extend custom component</span><a href="#extend-custom-component" class="header-anchor">#</a></h3><ul>
+<li><p>new a class derived from <code>WXComponent</code> class<br>if we do nothing in this class and then register to WeexSDK engine, its functionality is just like <code>div</code>.</p>
+</li>
+<li><p>override the lifecycle of <code>WXComponent</code></p>
+<ul>
+<li><p><code>loadView</code><br>We will load a view for a component default, if you didn&#x2019;t override this method, supperclass will provide a <code>WXView</code> derived from <code>UIView</code>. If we want to load html or just to show a map, override <code>loadView</code> and provide a custom view is a good choice.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (UIView *)loadView {</span><br><span class="line">    return [MKMapView new];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><code>viewDidLoad</code><br>If you want to make some configurations for your custom view like set delegate, you can finish here.<br>You don&#x2019;t need to set frame for your custom view if it doesn&#x2019;t has any subview, weexSDK will set it&#x2019;s frame according to style.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (void)viewDidLoad {</span><br><span class="line">       ((MKMapView*)self.view).delegate = self;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>register component</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[WXSDKEngine registerComponent:@&quot;map&quot; withClass:[WXMapComponent class]];</span><br></pre></td></tr></tbody></table></figure>
+<p>by far you can use your custom component in front-end</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">map</span> <span class="attr">style</span>=<span class="string">&quot;width:200px;height:200px&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<p>Weex engine has done some works to support common events and other attributes, if you want support your own attributes, let&#x2019;s continue.</p>
+<ul>
+<li><p>custom events for your component<br>Our target is that support <code>mapLoaded</code> event for the component we just implement, and then we can use in front-end directyly. The front-end code can be like this.</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">map</span> <span class="attr">style</span>=<span class="string">&quot;width:200px;height:200px&quot;</span> @<span class="attr">mapLoaded</span>=<span class="string">&quot;onMapLoaded&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    methods: {</span></span><br><span class="line"><span class="javascript">        onMapLoaded:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">&quot;map loaded&quot;</span>+<span class="built_in">JSON</span>.stringify(e))</span></span><br><span class="line"><span class="undefined">        }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">}</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<p>we must save status for event added or not, so we add a <code>BOOL</code> member named <code>mapLoaded</code> for the component class to make it record, and when event map loaded, we can fire event according to this record.</p>
+<ul>
+<li><p>custom event</p>
+<ul>
+<li><p>override method add/remove event</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (void)addEvent:(NSString *)eventName {</span><br><span class="line">    if ([eventName isEqualToString:@&quot;mapLoaded&quot;]) {</span><br><span class="line">        _mapLoaded = YES;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">- (void)removeEvent:(NSString *)eventName</span><br><span class="line">{</span><br><span class="line">    if ([eventName isEqualToString:@&quot;mapLoaded&quot;]) {</span><br><span class="line">        _mapLoaded = NO;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>fire event to front-end<br>we&#x2019;ll fire <code>mapLoaded</code> event when map loaded finish according to our record.</p>
+<blockquote>
+<p>do not forget to set delegate for MKMapView.</p>
+</blockquote>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {</span><br><span class="line">    if (_mapLoaded) {</span><br><span class="line">        [self fireEvent:@&quot;mapLoaded&quot; params:@{@&quot;customKey&quot;:@&quot;customValue&quot;} domChanges:nil]</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>We have finish our custom event, so what about custom attributes? this is the same important as custom events.</p>
+<ul>
+<li>custom attributes<br>The next target is that we add a custom attribute <code>showTraffic</code>, we can display real time traffic or not according to this attribute. The front-end code can be like the following.</li>
+</ul>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">map</span> <span class="attr">style</span>=<span class="string">&quot;width:200px;height:200px&quot;</span> <span class="attr">showTraffic</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>override component init method <code>initWithRef...</code><br>add a <code>BOOL</code> member <code>showsTraffic</code> to make the status whether front-end user use the attribute or not record. We can get all the attribute for this component by override init method of component.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {</span><br><span class="line">    if(self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {</span><br><span class="line">        </span><br><span class="line">        if (attributes[@&quot;showsTraffic&quot;]) {</span><br><span class="line">            _showsTraffic = [WXConvert BOOL: attributes[@&quot;showsTraffic&quot;]];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return self;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>set property for custom view.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (void)viewDidLoad {</span><br><span class="line">((MKMapView*)self.view).showsTraffic = _showsTraffic;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>support attribute updates</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (void)updateAttributes:(NSDictionary *)attributes</span><br><span class="line">{</span><br><span class="line">    if (attributes[@&quot;showsTraffic&quot;]) {</span><br><span class="line">        _showsTraffic = [WXConvert BOOL: attributes[@&quot;showsTraffic&quot;]];</span><br><span class="line">        ((MKMapView*)self.view).showsTraffic = _showsTraffic;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ul>
+<li>more life cycle for component</li>
+</ul>
+<p>A Native Component has a life cycle managed by Weex. Weex creates it, layout it, renders it and destroys it.</p>
+<p>Weex offers component life cycle hooks that give you visibility into these key moments and the ability to act when they occur.</p>
+<pre><code>|        method        | description                              |
+| :------------------: | ---------------------------------------- |
+| initWithRef:type:... | Initializes a new component using the specified  properties. |
+|   layoutDidFinish    | Called when the component has just laid out. |
+|       loadView       | Creates the view that the component manages. |
+|     viewWillLoad     | Called before the load of component&apos;s view . |
+|     viewDidLoad      | Called after the component&apos;s view is loaded and set. |
+|    viewWillUnload    | Called just before releasing the component&apos;s view. |
+|    viewDidUnload     | Called when the component&apos;s view is released. |
+|    updateStyles:     | Called when component&apos;s style are updated. |
+|  updateAttributes:   | Called when component&apos;s attributes are updated. |
+|      addEvent:       | Called when adding an event to the component. |
+|     removeEvent:     | Called when removing an event frome the component. |
+</code></pre><h3 class="article-heading"><span id="component-method">Component Method</span><a href="#component-method" class="header-anchor">#</a></h3><p>from WeexSDK <code>0.9.5</code>, you can define your component method by macro <code>WX_EXPORT_METHOD</code><br>for example:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@implementation WXMyComponent</span><br><span class="line"> +WX_EXPORT_METHOD(@selector(focus))</span><br><span class="line"> +- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</span><br><span class="line"> {</span><br><span class="line">     if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {</span><br><span class="line">         // handle your attributes</span><br><span class="line">         // handle your styles</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     return self;</span><br><span class="line"> }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> - (void)focus</span><br><span class="line">   {</span><br><span class="line">   		NSLog(@&quot;you got it&quot;);</span><br><span class="line">   }</span><br><span class="line">@end</span><br></pre></td></tr></tbody></table></figure>
+<p>after your registration for your own custom component, now you can call it in your js file.</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">ref</span>=<span class="string">&apos;mycomponent&apos;</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.mycomponent.focus();</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="custom-your-handlers">custom your handlers</span><a href="#custom-your-handlers" class="header-anchor">#</a></h3><p>We don&#x2019;t provide functionality for downloading image but defines a blueprint of methods in <code>WXImgLoaderProtocol</code> for loading image, and image component get image content from these methods. You must implement methods in <code>WXImgLoaderProtocol</code> except the <code>optional</code> methods to display image from specified url.<br>You can also define your own <code>protocol</code> and implement its handler.</p>
+<ul>
+<li>new a class derived from <code>NSObject</code> conforming <code>WXImgLoaderProtocol</code> and then add implementation for methods in <code>WXImgLoaderProtocol</code>.</li>
+</ul>
+<blockquote>
+<p>the flowing code may require SDWebImage as dependency, you can download remote url image by your own way without SDWebImage. </p>
+</blockquote>
+ <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@implementation WXImgLoaderDefaultImpl</span><br><span class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock</span><br><span class="line">{</span><br><span class="line">    if ([url hasPrefix:@&quot;//&quot;]) {</span><br><span class="line">        url = [@&quot;http:&quot; stringByAppendingString:url];</span><br><span class="line">    }</span><br><span class="line">    return (id&lt;WXImageOperationProtocol&gt;)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {</span><br><span class="line">    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {</span><br><span class="line">    if (completedBlock) {</span><br><span class="line">        completedBlock(image, error, finished);</span><br><span class="line">    }</span><br><span class="line">    }];</span><br><span class="line">}</span><br><span class="line">@end</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>register handler<br>register handler by the method <code>registerHandler:withProtocol</code> in WXSDKEngine</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">WXSDKEngine.h</span><br><span class="line">/**</span><br><span class="line">* @abstract Registers a handler for a given handler instance and specific protocol</span><br><span class="line">* @param handler The handler instance to register</span><br><span class="line">* @param protocol The protocol to confirm</span><br><span class="line">*/</span><br><span class="line">+ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;</span><br><span class="line"></span><br><span class="line">[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>use handler<br>you can use your handle in any native code including <code>component</code>, <code>module</code> and other <code>handlers</code></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">id&lt;WXImgLoaderProtocol&gt; imageLoader = [WXSDKEngine handlerForProtocol:@protocol(WXImgLoaderProtocol)];</span><br><span class="line">[iamgeLoader downloadImageWithURL:imageURl imageFrame:frame userInfo:customParam completed:^(UIImage *image, NSError *error, BOOL finished){</span><br><span class="line">}];</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/guide/extend-ios.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

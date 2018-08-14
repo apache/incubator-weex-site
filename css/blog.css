@@ -1,0 +1,28 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.blog-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 120px auto 90px;
+  max-width: 850px;
+  min-height: 100%; }
+  .blog-wrapper .article-excerpt.article {
+    margin: 0; }
+  .blog-wrapper .article-excerpt > h1 {
+    display: none; }
+  .blog-wrapper .article-excerpt .weex-version {
+    display: none; }
+  .blog-wrapper .blog-article-inner {
+    padding: 0 1.45em;
+    margin-bottom: 50px; }
+    .blog-wrapper .blog-article-inner a {
+      line-height: 120%; }
+  .blog-wrapper .more-link {
+    display: block;
+    color: #999; }
+    .blog-wrapper .more-link:hover {
+      color: #777; }

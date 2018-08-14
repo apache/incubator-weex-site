@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>文本样式 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="属性 其它参考     v0.5+ 文本类组件共享一些通用样式, 这类组件目前包括 &amp;lt;text&amp;gt; 和 &amp;lt;input&amp;gt;。 属性# color {color}：文字颜色。 可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（ #f00 ）；色值关键字">
+<meta property="og:type" content="website">
+<meta property="og:title" content="文本样式">
+<meta property="og:url" content="https://weex.apache.org/cn/wiki/text-styles.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="属性 其它参考     v0.5+ 文本类组件共享一些通用样式, 这类组件目前包括 &amp;lt;text&amp;gt; 和 &amp;lt;input&amp;gt;。 属性# color {color}：文字颜色。 可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（ #f00 ）；色值关键字">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.355Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文本样式">
+<meta name="twitter:description" content="属性 其它参考     v0.5+ 文本类组件共享一些通用样式, 这类组件目前包括 &amp;lt;text&amp;gt; 和 &amp;lt;input&amp;gt;。 属性# color {color}：文字颜色。 可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（ #f00 ）；色值关键字">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="current">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/text-styles.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/text-styles.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/design-principles.html" class="sidebar-link  ">设计理念</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/platform-difference.html" class="sidebar-link  ">与 Web 平台的差异</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">样式</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-styles.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/text-styles.html" class="sidebar-link current ">文本样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/css-units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/color-names.html" class="sidebar-link  ">支持的颜色名称列表</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">事件</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-events.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/event-bubble.html" class="sidebar-link  ">事件冒泡</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/gestures.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">概念</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">FAQ</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/faq.html" class="sidebar-link  ">常见问题</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        文本样式
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.355Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#shu-xing">&#x5C5E;&#x6027;</a></li>
+<li><a href="#qi-ta-can-kao">&#x5176;&#x5B83;&#x53C2;&#x8003;</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p><span class="weex-version">v0.5+</span></p>
+<p>&#x6587;&#x672C;&#x7C7B;&#x7EC4;&#x4EF6;&#x5171;&#x4EAB;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x6837;&#x5F0F;, &#x8FD9;&#x7C7B;&#x7EC4;&#x4EF6;&#x76EE;&#x524D;&#x5305;&#x62EC; <a href="/cn/references/components/text.html"><code>&lt;text&gt;</code></a> &#x548C; <a href="/cn/references/components/input.html"><code>&lt;input&gt;</code></a>&#x3002;</p>
+<h2 class="article-heading"><span id="shu-xing">&#x5C5E;&#x6027;</span><a href="#shu-xing" class="header-anchor">#</a></h2><ul>
+<li><p><code>color {color}</code>&#xFF1A;&#x6587;&#x5B57;&#x989C;&#x8272;&#x3002;</p>
+<p>&#x53EF;&#x9009;&#x503C;&#x4E3A;&#x8272;&#x503C;&#xFF0C;&#x652F;&#x6301; RGB&#xFF08; <code>rgb(255, 0, 0)</code> &#xFF09;&#xFF1B;RGBA&#xFF08; <code>rgba(255, 0, 0, 0.5)</code> &#xFF09;&#xFF1B;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF08; <code>#ff0000</code> &#xFF09;&#xFF1B;&#x7CBE;&#x7B80;&#x5199;&#x6CD5;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF08; <code>#f00</code> &#xFF09;&#xFF1B;&#x8272;&#x503C;&#x5173;&#x952E;&#x5B57;&#xFF08;<code>red</code>&#xFF09;&#x3002;</p>
+</li>
+<li><p><code>lines {number}</code>: &#x6307;&#x5B9A;&#x6587;&#x672C;&#x884C;&#x6570;&#x3002;&#x4EC5;&#x5728; <code>&lt;text&gt;</code> &#x7EC4;&#x4EF6;&#x4E2D;&#x652F;&#x6301;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>0</code> &#x4EE3;&#x8868;&#x4E0D;&#x9650;&#x5236;&#x884C;&#x6570;&#x3002;</p>
+</li>
+<li><p><code>font-size {number}</code>&#xFF1A;&#x6587;&#x5B57;&#x5927;&#x5C0F;&#x3002;</p>
+</li>
+<li><p><code>font-style {string}</code>&#xFF1A;&#x5B57;&#x4F53;&#x7C7B;&#x522B;&#x3002;&#x53EF;&#x9009;&#x503C; <code>normal</code> | <code>italic</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; <code>normal</code>&#x3002;</p>
+</li>
+<li><p><code>font-weight {string}</code><span class="api-version">v0.9+</span>&#xFF1A;&#x5B57;&#x4F53;&#x7C97;&#x7EC6;&#x7A0B;&#x5EA6;</p>
+<ul>
+<li>&#x53EF;&#x9009;&#x503C;: <code>normal</code>, <code>bold</code>, <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, <code>900</code></li>
+<li>normal &#x7B49;&#x540C;&#x4E8E; 400, bold &#x7B49;&#x540C;&#x4E8E; 700&#xFF1B;</li>
+<li>&#x9ED8;&#x8BA4;&#x503C;: <code>normal</code>&#xFF1B;</li>
+<li>iOS &#x652F;&#x6301; 9 &#x79CD; font-weight&#x503C;&#xFF1B;Android &#x4EC5;&#x652F;&#x6301; 400 &#x548C; 700, &#x5176;&#x4ED6;&#x503C;&#x4F1A;&#x8BBE;&#x4E3A; 400 &#x6216; 700</li>
+<li>&#x7C7B;&#x4F3C; <code>lighter</code>, <code>bolder</code> &#x8FD9;&#x6837;&#x7684;&#x503C;&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</li>
+</ul>
+</li>
+<li><p><code>text-decoration {string}</code>&#xFF1A;&#x5B57;&#x4F53;&#x88C5;&#x9970;&#xFF0C;&#x53EF;&#x9009;&#x503C; <code>none</code> | <code>underline</code> | <code>line-through</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>none</code>&#x3002;</p>
+</li>
+<li><p><code>text-align {string}</code>&#xFF1A;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x3002;&#x53EF;&#x9009;&#x503C; <code>left</code> | <code>center</code> | <code>right</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>left</code>&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301; <code>justify</code>, <code>justify-all</code>&#x3002;</p>
+</li>
+<li><p><code>font-family {string}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E; <strong>&#x4E0D;&#x4FDD;&#x8BC1;</strong> &#x5728;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#xFF0C;&#x8BBE;&#x5907;&#x95F4;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x5982;&#x6240;&#x9009;&#x8BBE;&#x7F6E;&#x5728;&#x5E73;&#x53F0;&#x4E0A;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x5C06;&#x4F1A;&#x964D;&#x7EA7;&#x5230;&#x5E73;&#x53F0;&#x9ED8;&#x8BA4;&#x5B57;&#x4F53;&#x3002;</p>
+</li>
+<li><p><code>text-overflow {string}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x5185;&#x5BB9;&#x8D85;&#x957F;&#x65F6;&#x7684;&#x7701;&#x7565;&#x6837;&#x5F0F;&#x3002;&#x53EF;&#x9009;&#x503C; <code>clip</code> | <code>ellipsis</code></p>
+</li>
+</ul>
+<h2 class="article-heading"><span id="qi-ta-can-kao">&#x5176;&#x5B83;&#x53C2;&#x8003;</span><a href="#qi-ta-can-kao" class="header-anchor">#</a></h2><ul>
+<li><a href="./color-names.html">&#x989C;&#x8272;&#x5173;&#x952E;&#x5B57;&#x5217;&#x8868;</a>&#x3002;</li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/wiki/text-styles.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

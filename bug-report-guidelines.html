@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bug Report Guidelines | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bug Report Guidelines#This document describes how to write a good Weex bug report. Good bug reports help developers to classify the priority and severity of a bug properly, which helps the bug get fix">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bug Report Guidelines">
+<meta property="og:url" content="https://weex.apache.org/bug-report-guidelines.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Bug Report Guidelines#This document describes how to write a good Weex bug report. Good bug reports help developers to classify the priority and severity of a bug properly, which helps the bug get fix">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-18T03:32:16.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bug Report Guidelines">
+<meta name="twitter:description" content="Bug Report Guidelines#This document describes how to write a good Weex bug report. Good bug reports help developers to classify the priority and severity of a bug properly, which helps the bug get fix">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="community" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "community";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/bug-report-guidelines.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/bug-report-guidelines.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout no-chapter">
+    
+    
+
+<article class="article article-type-community">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Bug Report Guidelines
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-01-18T03:32:16.476Z">Updated time: 18/01/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="bug-report-guidelines">Bug Report Guidelines</span><a href="#bug-report-guidelines" class="header-anchor">#</a></h1><p>This document describes how to write a good Weex bug report. Good bug reports help developers to classify the priority and severity of a bug properly, which helps the bug get fixed as soon as possible. The more specific information you provide, the better your bug gets understood.</p>
+<h2 class="article-heading"><span id="bug-report-general-principles">Bug Report General Principles</span><a href="#bug-report-general-principles" class="header-anchor">#</a></h2><ul>
+<li>Avoid duplicates: Search before you file a new one!</li>
+<li>Always test the latest available version before submitting a bug.</li>
+<li>One bug per report.</li>
+<li>State useful facts, not opinions or complaints.</li>
+</ul>
+<h2 class="article-heading"><span id="how-to-write-a-good-bug-report">How to Write a Good Bug Report</span><a href="#how-to-write-a-good-bug-report" class="header-anchor">#</a></h2><p>A good bug report should include the following information:</p>
+<h3 class="article-heading"><span id="title">Title</span><a href="#title" class="header-anchor">#</a></h3><p>The goal of title is to make the report searchable and uniquely identifiable.</p>
+<p>A bad example: <code>List Crash</code></p>
+<p>A good Example: <code>List Crashes when deleting a header</code></p>
+<h3 class="article-heading"><span id="environment">Environment</span><a href="#environment" class="header-anchor">#</a></h3><p><strong>Weex Version</strong>: Please identify the version of WeexSDK or Weex Playground or weex-toolkit you were using when the bug occurred</p>
+<p><strong>Device environment</strong>: Please identify the device model, platform and OS version. e.g. , iPhone 6, iOS 10.3.</p>
+<h3 class="article-heading"><span id="overview-description">Overview/Description</span><a href="#overview-description" class="header-anchor">#</a></h3><p>The overview or description of a bug report is to explain the bug in detail, including:</p>
+<ul>
+<li>Justifications of why this is a bug</li>
+<li><a href="http://dotwe.org/vue/" target="_blank" rel="noopener">dotwe</a> demo that can reproduce the bug</li>
+<li>Screenshots for visual bugs</li>
+<li>Stack traces for crash bugs</li>
+<li>Console logs or error messages which are relevant in the bug</li>
+</ul>
+<h3 class="article-heading"><span id="steps-to-reproduce">Steps to Reproduce</span><a href="#steps-to-reproduce" class="header-anchor">#</a></h3><p>The aim to provide the reproducible steps is to enable developers to reproduce the bug in their own environment. Here&#x2019;s an example:</p>
+<p><em>Step 1: Load the demo using Weex Playground</em></p>
+<p><em>Step 2: Scroll to the bottom of the list</em></p>
+<p><em>Step 3: Click the red button to delete a header</em></p>
+<h3 class="article-heading"><span id="test-results">Test Results</span><a href="#test-results" class="header-anchor">#</a></h3><p>The test results, including <em>Expected Result</em> and <em>Actual Result</em>, will tell developers what&#x2019;s wrong. <em>Expected Result</em> describes what should happen, and <em>Actual Result</em> describes what actually happens.</p>
+<h2 class="article-heading"><span id="reference">Reference</span><a href="#reference" class="header-anchor">#</a></h2><p>This document is a modified version of [1].</p>
+<p> [1] <a href="http://testthewebforward.org/docs/bugs.html" target="_blank" rel="noopener">http://testthewebforward.org/docs/bugs.html</a></p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/bug-report-guidelines.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

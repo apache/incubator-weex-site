@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;recycle-list&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本用法 &amp;lt;recycle-list&amp;gt; for 属性 switch 属性   &amp;lt;cell-slot&amp;gt; case 属性 default 属性 key 属性 属性的省略   可复用的组件 实例 使用子组件   注意事项 属性和文本的绑定 &amp;lt;slot&amp;gt; 不可用 v-once 不会优化渲染性能 样式功能的限制 双向绑定 子组件的限制   更多例子     &amp;lt">
+<meta property="og:type" content="website">
+<meta property="og:title" content="&lt;recycle-list&gt;">
+<meta property="og:url" content="https://weex.apache.org/cn/references/components/recycle-list.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="基本用法 &amp;lt;recycle-list&amp;gt; for 属性 switch 属性   &amp;lt;cell-slot&amp;gt; case 属性 default 属性 key 属性 属性的省略   可复用的组件 实例 使用子组件   注意事项 属性和文本的绑定 &amp;lt;slot&amp;gt; 不可用 v-once 不会优化渲染性能 样式功能的限制 双向绑定 子组件的限制   更多例子     &amp;lt">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&lt;recycle-list&gt;">
+<meta name="twitter:description" content="基本用法 &amp;lt;recycle-list&amp;gt; for 属性 switch 属性   &amp;lt;cell-slot&amp;gt; case 属性 default 属性 key 属性 属性的省略   可复用的组件 实例 使用子组件   注意事项 属性和文本的绑定 &amp;lt;slot&amp;gt; 不可用 v-once 不会优化渲染性能 样式功能的限制 双向绑定 子组件的限制   更多例子     &amp;lt">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="current">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/recycle-list.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/recycle-list.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link current ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link current ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;recycle-list&gt;
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.322Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#ji-ben-yong-fa">&#x57FA;&#x672C;&#x7528;&#x6CD5;</a></li>
+<li><a href="#recycle-list"><code>&lt;recycle-list&gt;</code></a><ul>
+<li><a href="#for-shu-xing"><code>for</code> &#x5C5E;&#x6027;</a></li>
+<li><a href="#switch-shu-xing"><code>switch</code> &#x5C5E;&#x6027;</a></li>
+</ul>
+</li>
+<li><a href="#cell-slot"><code>&lt;cell-slot&gt;</code></a><ul>
+<li><a href="#case-shu-xing"><code>case</code> &#x5C5E;&#x6027;</a></li>
+<li><a href="#default-shu-xing"><code>default</code> &#x5C5E;&#x6027;</a></li>
+<li><a href="#key-shu-xing"><code>key</code> &#x5C5E;&#x6027;</a></li>
+<li><a href="#shu-xing-de-sheng-lue">&#x5C5E;&#x6027;&#x7684;&#x7701;&#x7565;</a></li>
+</ul>
+</li>
+<li><a href="#ke-fu-yong-de-zu-jian">&#x53EF;&#x590D;&#x7528;&#x7684;&#x7EC4;&#x4EF6;</a></li>
+<li><a href="#shi-li">&#x5B9E;&#x4F8B;</a><ul>
+<li><a href="#shi-yong-zi-zu-jian">&#x4F7F;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;</a></li>
+</ul>
+</li>
+<li><a href="#zhu-yi-shi-xiang">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a><ul>
+<li><a href="#shu-xing-he-wen-ben-de-bang-ding">&#x5C5E;&#x6027;&#x548C;&#x6587;&#x672C;&#x7684;&#x7ED1;&#x5B9A;</a></li>
+<li><a href="#slot-bu-ke-yong"><code>&lt;slot&gt;</code> &#x4E0D;&#x53EF;&#x7528;</a></li>
+<li><a href="#v-once-bu-hui-you-hua-xuan-ran-xing-neng">v-once &#x4E0D;&#x4F1A;&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;</a></li>
+<li><a href="#yang-shi-gong-neng-de-xian-zhi">&#x6837;&#x5F0F;&#x529F;&#x80FD;&#x7684;&#x9650;&#x5236;</a></li>
+<li><a href="#shuang-xiang-bang-ding">&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</a></li>
+<li><a href="#zi-zu-jian-de-xian-zhi">&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x9650;&#x5236;</a></li>
+</ul>
+</li>
+<li><a href="#geng-duo-li-zi">&#x66F4;&#x591A;&#x4F8B;&#x5B50;</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p><code>&lt;recycle-list&gt;</code> <span class="api-version">v0.18+</span> &#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5217;&#x8868;&#x5BB9;&#x5668;&#xFF0C;&#x5177;&#x6709;&#x56DE;&#x6536;&#x548C;&#x590D;&#x7528;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x53EF;&#x4EE5;&#x5927;&#x5E45;&#x4F18;&#x5316;&#x5185;&#x5B58;&#x5360;&#x7528;&#x548C;&#x6E32;&#x67D3;&#x6027;&#x80FD;&#x3002;</p>
+<blockquote>
+<p>&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x8BF7;&#x53C2;&#x8003; <a href="https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md" target="_blank" rel="noopener">Design.md</a>&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x8BF7;&#x53C2;&#x8003; <a href="https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md" target="_blank" rel="noopener">Implementation.md</a>&#x3002;</p>
+</blockquote>
+<h2 class="article-heading"><span id="ji-ben-yong-fa">&#x57FA;&#x672C;&#x7528;&#x6CD5;</span><a href="#ji-ben-yong-fa" class="header-anchor">#</a></h2><p>&#x539F;&#x6709; <code>&lt;list&gt;</code> &#x548C; <code>&lt;cell&gt;</code> &#x7EC4;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#xFF0C;&#x9488;&#x5BF9;&#x65B0;&#x529F;&#x80FD;&#x63D0;&#x4F9B;&#x4E86;&#x65B0;&#x7684; <code>&lt;recycle-list&gt;</code> &#x548C; <code>&lt;cell-slot&gt;</code> &#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x60F3;&#x5229;&#x7528;&#x5217;&#x8868;&#x56DE;&#x6536;&#x548C;&#x590D;&#x7528;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x7528;&#x65B0;&#x7EC4;&#x4EF6;&#x5373;&#x53EF;&#x3002;</p>
+<blockquote>
+<p>&#x8BE5;&#x529F;&#x80FD;&#x90E8;&#x5206;&#x4F9D;&#x8D56;&#x4E0E;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD; <code>weex-loader</code> &#x7684;&#x7248;&#x672C;&#x5347;&#x7EA7;&#x5230;&#x6700;&#x65B0;&#xFF08;v0.7.2+&#xFF09;&#x3002;</p>
+</blockquote>
+<h2 class="article-heading"><span id="lt-recycle-list-gt"><code>&lt;recycle-list&gt;</code></span><a href="#lt-recycle-list-gt" class="header-anchor">#</a></h2><p><code>&lt;recycle-list&gt;</code> &#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5217;&#x8868;&#x5BB9;&#x5668;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528; <code>&lt;cell-slot&gt;</code> &#x4F5C;&#x4E3A;&#x5176;&#x76F4;&#x63A5;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x65E0;&#x6548;&#x3002;</p>
+<h3 class="article-heading"><span id="for-shu-xing"><code>for</code> &#x5C5E;&#x6027;</span><a href="#for-shu-xing" class="header-anchor">#</a></h3><p>&#x5728; <code>&lt;recycle-list&gt;</code> &#x6DFB;&#x52A0; <code>for</code> &#x5C5E;&#x6027;&#x5373;&#x53EF;&#x63CF;&#x8FF0;&#x5982;&#x4F55;&#x5FAA;&#x73AF;&#x5C55;&#x5F00;&#x5217;&#x8868;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8BED;&#x6CD5;&#x548C; Vue &#x7684; <code>v-for</code> &#x6307;&#x4EE4;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5FAA;&#x73AF;&#x7684;&#x662F;&#x81EA;&#x5DF1;&#x5185;&#x90E8;&#x7684;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x3002;</p>
+<p><code>for</code> &#x5C5E;&#x6027;&#x652F;&#x6301;&#x5982;&#x4E0B;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>alias in expression</code></li>
+<li><code>(alias, index) in expression</code></li>
+</ul>
+<h3 class="article-heading"><span id="switch-shu-xing"><code>switch</code> &#x5C5E;&#x6027;</span><a href="#switch-shu-xing" class="header-anchor">#</a></h3><p>&#x5728; <code>&lt;recycle-list&gt;</code> &#x6DFB;&#x52A0; <code>switch</code> &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x4E2D;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x5B50;&#x6A21;&#x677F;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x8BED;&#x4E49;&#x548C;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x91CC;&#x7684; <code>switch</code> &#x4E00;&#x81F4;&#xFF0C;&#x914D;&#x5408; <code>&lt;cell-slot&gt;</code> &#x4E2D;&#x7684; <code>case</code> &#x548C; <code>default</code> &#x5C5E;&#x6027;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x7701;&#x7565;&#x4E86; <code>switch</code> &#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x53EA;&#x4F1A;&#x5C06;&#x7B2C;&#x4E00;&#x4E2A; <code>&lt;cell-slot&gt;</code> &#x89C6;&#x4E3A;&#x6A21;&#x677F;&#xFF0C;&#x591A;&#x4F59;&#x7684;&#x6A21;&#x677F;&#x5C06;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+<h2 class="article-heading"><span id="lt-cell-slot-gt"><code>&lt;cell-slot&gt;</code></span><a href="#lt-cell-slot-gt" class="header-anchor">#</a></h2><p><code>&lt;cell-slot&gt;</code> &#x4EE3;&#x8868;&#x7684;&#x662F;&#x5217;&#x8868;&#x6BCF;&#x4E00;&#x9879;&#x7684;<strong>&#x6A21;&#x677F;</strong>&#xFF0C;&#x5B83;&#x53EA;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x6A21;&#x677F;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x4E0D;&#x5BF9;&#x5E94;&#x5B9E;&#x9645;&#x7684;&#x8282;&#x70B9;&#x3002;<code>&lt;cell-slot&gt;</code> &#x7684;&#x4E2A;&#x6570;&#x53EA;&#x8868;&#x793A;&#x6A21;&#x677F;&#x7684;&#x79CD;&#x7C7B;&#x6570;&#xFF0C;&#x771F;&#x5B9E;&#x5217;&#x8868;&#x9879;&#x7684;&#x4E2A;&#x6570;&#x662F;&#x7531;&#x6570;&#x636E;&#x51B3;&#x5B9A;&#x7684;&#x3002;</p>
+<h3 class="article-heading"><span id="case-shu-xing"><code>case</code> &#x5C5E;&#x6027;</span><a href="#case-shu-xing" class="header-anchor">#</a></h3><p>&#x58F0;&#x660E;&#x4E86;&#x5F53;&#x524D;&#x6A21;&#x677F;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x53EA;&#x6709;&#x548C;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x4E0E;&#x5F53;&#x524D;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x65F6;&#x624D;&#x4F1A;&#x6E32;&#x67D3;&#xFF0C;&#x8BED;&#x4E49;&#x548C;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x91CC;&#x7684; <code>case</code> &#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x6A21;&#x677F;&#x4E2D;&#x6700;&#x591A;&#x53EA;&#x4F1A;&#x5339;&#x914D;&#x5230;&#x4E00;&#x9879;&#xFF0C;&#x6309;&#x7167;&#x6A21;&#x677F;&#x7684;&#x987A;&#x5E8F;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x5339;&#x914D;&#xFF0C;&#x4E00;&#x65E6;&#x5339;&#x914D;&#x6210;&#x529F;&#x5C31;&#x4E0D;&#x5728;&#x7EE7;&#x7EED;&#x5339;&#x914D;&#x4E0B;&#x4E00;&#x4E2A;&#x3002;</p>
+<h3 class="article-heading"><span id="default-shu-xing"><code>default</code> &#x5C5E;&#x6027;</span><a href="#default-shu-xing" class="header-anchor">#</a></h3><p>&#x8868;&#x793A;&#x5F53;&#x524D;&#x6A21;&#x677F;&#x4E3A;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x503C;&#x3002;&#x5982;&#x679C;&#x6570;&#x636E;&#x9879;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x5230;&#x4EFB;&#x4F55; <code>case</code> &#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x6E32;&#x67D3;&#x5E26;&#x6709; <code>default</code> &#x6A21;&#x677F;&#x3002;&#x5982;&#x679C;&#x5B58;&#x5728;&#x591A;&#x4E2A; <code>default</code>&#xFF0C;&#x5219;&#x53EA;&#x4F1A;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x3002;</p>
+<h3 class="article-heading"><span id="key-shu-xing"><code>key</code> &#x5C5E;&#x6027;</span><a href="#key-shu-xing" class="header-anchor">#</a></h3><p>&#x53EF;&#x9009;&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5217;&#x8868;&#x6570;&#x636E;&#x4E2D;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7684;&#x952E;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;&#x3002;</p>
+<h3 class="article-heading"><span id="shu-xing-de-sheng-lue">&#x5C5E;&#x6027;&#x7684;&#x7701;&#x7565;</span><a href="#shu-xing-de-sheng-lue" class="header-anchor">#</a></h3><ul>
+<li>&#x5982;&#x679C;&#x6CA1;&#x5199; <code>switch</code>&#xFF0C;&#x65E0;&#x8BBA;&#x6709;&#x6CA1;&#x6709;&#x5199; <code>case</code> &#x6216; <code>default</code>&#xFF0C;&#x90FD;&#x53EA;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x3002;</li>
+<li>&#x5728;&#x5199;&#x4E86; <code>switch</code> &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>case</code> &#x548C; <code>default</code> &#x5FC5;&#x987B;&#x5199;&#x4E00;&#x4E2A;&#xFF0C;&#x5426;&#x5219;&#x8BE5;&#x6A21;&#x677F;&#x5C06;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;</li>
+</ul>
+<h2 class="article-heading"><span id="ke-fu-yong-de-zu-jian">&#x53EF;&#x590D;&#x7528;&#x7684;&#x7EC4;&#x4EF6;</span><a href="#ke-fu-yong-de-zu-jian" class="header-anchor">#</a></h2><p>&#x5728; <code>&lt;recycle-list&gt;</code> &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x4E5F;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x6A21;&#x677F;&#xFF0C;&#x5728;&#x5F00;&#x53D1;&#x7EC4;&#x4EF6;&#x65F6;&#x7ED9; <code>&lt;template&gt;</code> &#x6807;&#x7B7E;&#x6DFB;&#x52A0; <code>recyclable</code> &#x5C5E;&#x6027;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x7528;&#x5728; <code>&lt;recycle-list&gt;</code> &#x4E2D;&#x3002;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">recyclable</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="comment">// ...</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x6DFB;&#x52A0;&#x4E86; <code>recyclable</code> &#x5C5E;&#x6027;&#x5E76;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x7528;&#x5176;&#x4ED6;&#x5728;&#x6B63;&#x5E38;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x3002;</p>
+</blockquote>
+<h2 class="article-heading"><span id="shi-li">&#x5B9E;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h2><p>&#x5728;&#x4E0A;&#x5C42;&#x8BED;&#x6CD5;&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">recycle-list</span> <span class="attr">for</span>=<span class="string">&quot;(item, i) in longList&quot;</span> <span class="attr">switch</span>=<span class="string">&quot;type&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cell-slot</span> <span class="attr">case</span>=<span class="string">&quot;A&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>- A {{i}} -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">cell-slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cell-slot</span> <span class="attr">case</span>=<span class="string">&quot;B&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>- B {{i}} -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">cell-slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">recycle-list</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5982;&#x679C;&#x6709;&#x5982;&#x4E0B;&#x6570;&#x636E;&#xFF1A;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> longList = [</span><br><span class="line">  { <span class="attr">type</span>: <span class="string">&apos;A&apos;</span> },</span><br><span class="line">  { <span class="attr">type</span>: <span class="string">&apos;B&apos;</span> },</span><br><span class="line">  { <span class="attr">type</span>: <span class="string">&apos;B&apos;</span> },</span><br><span class="line">  { <span class="attr">type</span>: <span class="string">&apos;A&apos;</span> },</span><br><span class="line">  { <span class="attr">type</span>: <span class="string">&apos;B&apos;</span> }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5219;&#x4F1A;&#x751F;&#x6210;&#x5982;&#x4E0B;&#x7B49;&#x4EF7;&#x8282;&#x70B9;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span>- A 0 -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span>- B 1 -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span>- B 2 -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span>- A 3 -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span>- B 4 -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5982;&#x679C;&#x5C06;&#x6A21;&#x677F;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7701;&#x7565; <code>switch</code> &#x548C; <code>case</code>&#xFF0C;&#x5C06;&#x4F8B;&#x5B50;&#x8FDB;&#x4E00;&#x6B65;&#x7B80;&#x5316;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">recycle-list</span> <span class="attr">for</span>=<span class="string">&quot;(item, i) in longList&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cell-slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>- {{item.type}} {{i}} -<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">cell-slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">recycle-list</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="shi-yong-zi-zu-jian">&#x4F7F;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;</span><a href="#shi-yong-zi-zu-jian" class="header-anchor">#</a></h3><p>&#x5728; <code>&lt;recycle-list&gt;</code> &#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x7EC4;&#x4EF6; <code>&lt;banner&gt;</code>&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">recycle-list</span> <span class="attr">for</span>=<span class="string">&quot;(item, i) in labels&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cell-slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">banner</span>&gt;</span><span class="tag">&lt;/<span class="name">banner</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">cell-slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">recycle-list</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>&lt;banner&gt;</code> &#x7EC4;&#x4EF6;&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">recyclable</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>BANNER<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x66F4;&#x591A;&#x7EC6;&#x8282;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF1A;<a href="http://dotwe.org/vue/4a7446690e2c87ec0d39d8ee4884fa19" target="_blank" rel="noopener">&#x5B8C;&#x6574;&#x4EE3;&#x7801;</a>&#x3002;</p>
+<h2 class="article-heading"><span id="zhu-yi-shi-xiang">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</span><a href="#zhu-yi-shi-xiang" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="shu-xing-he-wen-ben-de-bang-ding">&#x5C5E;&#x6027;&#x548C;&#x6587;&#x672C;&#x7684;&#x7ED1;&#x5B9A;</span><a href="#shu-xing-he-wen-ben-de-bang-ding" class="header-anchor">#</a></h3><p>&#x7ED1;&#x5B9A;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x6587;&#x672C;&#x65F6;&#xFF0C;&#x4EC5;&#x652F;&#x6301;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x4F7F;&#x7528; filter&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md#%E6%94%AF%E6%8C%81%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F" target="_blank" rel="noopener">Implementation.md#&#x652F;&#x6301;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</a>&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x5217;&#x5199;&#x6CD5;&#x4E0D;&#x53EF;&#x7528;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:prop</span>=<span class="string">&quot;capitalize(card.title)&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">text</span>&gt;</span>{{ card.title | capitalize }}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; <a href="https://vuejs.org/v2/guide/computed.html" target="_blank" rel="noopener"><code>computed</code> &#x5C5E;&#x6027;</a>&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+</blockquote>
+<p>&#x56E0;&#x4E3A;&#x6A21;&#x677F;&#x7684;&#x53D6;&#x503C;&#x662F;&#x7531;&#x5BA2;&#x6237;&#x7AEF;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#x5728;&#x524D;&#x7AEF;&#xFF08;filter &#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x5728;&#x6A21;&#x677F;&#x91CC;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x6BCF;&#x6B21;&#x53D6;&#x503C;&#x90FD;&#x8D70;&#x4E00;&#x6B21;&#x901A;&#x4FE1;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x5927;&#x5E45;&#x964D;&#x4F4E;&#x6E32;&#x67D3;&#x6027;&#x80FD;&#x3002;</p>
+<h3 class="article-heading"><span id="lt-slot-gt-bu-ke-yong"><code>&lt;slot&gt;</code> &#x4E0D;&#x53EF;&#x7528;</span><a href="#lt-slot-gt-bu-ke-yong" class="header-anchor">#</a></h3><p><code>&lt;cell-slot&gt;</code> &#x7684;&#x529F;&#x80FD;&#x548C; <a href="https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots" target="_blank" rel="noopener"><code>&lt;slot&gt;</code></a> &#x6709;&#x90E8;&#x5206;&#x91CD;&#x53E0;&#xFF0C;&#x800C;&#x4E14;&#x66F4;&#x4E3A;&#x6FC0;&#x8FDB;&#xFF0C;&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x5B58;&#x5728;&#x5F88;&#x591A;&#x8FB9;&#x754C;&#x60C5;&#x51B5;&#x65E0;&#x6CD5;&#x5B8C;&#x5168;&#x652F;&#x6301;&#x3002;&#x4E0D;&#x8981;&#x5728; <code>&lt;cell-slot&gt;</code> &#x53CA;&#x5176;&#x5B50;&#x7EC4;&#x4EF6;&#x91CC;&#x4F7F;&#x7528; <code>&lt;slot&gt;</code>&#x3002;</p>
+<h3 class="article-heading"><span id="v-once-bu-hui-you-hua-xuan-ran-xing-neng">v-once &#x4E0D;&#x4F1A;&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;</span><a href="#v-once-bu-hui-you-hua-xuan-ran-xing-neng" class="header-anchor">#</a></h3><p>&#x548C;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#x4E2D;&#x7684;&#x7406;&#x89E3;&#x4E0D;&#x540C;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x91CC;&#x8981;&#x5B9E;&#x73B0;&#x590D;&#x7528;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x4F1A;&#x6807;&#x8BB0;&#x6A21;&#x677F;&#x8282;&#x70B9;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86; <code>v-once</code> &#x80FD;&#x4FDD;&#x8BC1;&#x8282;&#x70B9;&#x53EA;&#x6E32;&#x67D3;&#x4E00;&#x6B21;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x80FD;&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;&#xFF0C;&#x53CD;&#x800C;&#x53EF;&#x80FD;&#x4F1A;&#x62D6;&#x6162;&#x5BA2;&#x6237;&#x7AEF;&#x590D;&#x7528;&#x8282;&#x70B9;&#x65F6;&#x7684;&#x6BD4;&#x5BF9;&#x6548;&#x7387;&#x3002;</p>
+<h3 class="article-heading"><span id="yang-shi-gong-neng-de-xian-zhi">&#x6837;&#x5F0F;&#x529F;&#x80FD;&#x7684;&#x9650;&#x5236;</span><a href="#yang-shi-gong-neng-de-xian-zhi" class="header-anchor">#</a></h3><blockquote>
+<p><strong>&#x8BA1;&#x5212;&#x652F;&#x6301;</strong></p>
+</blockquote>
+<p>&#x76EE;&#x524D;&#x7248;&#x672C;&#x91CC;&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x7ED1;&#x5B9A;&#x6837;&#x5F0F;&#x7C7B;&#x540D;&#xFF08;<code>v-bind:class</code>&#xFF09;&#xFF0C;&#x539F;&#x56E0;&#x548C;&#x8FDB;&#x5C55;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/Hanks10100/weex-native-directive/issues/14" target="_blank" rel="noopener">#14</a>&#x3002;</p>
+<h3 class="article-heading"><span id="shuang-xiang-bang-ding">&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</span><a href="#shuang-xiang-bang-ding" class="header-anchor">#</a></h3><blockquote>
+<p><strong>&#x8BA1;&#x5212;&#x652F;&#x6301;</strong></p>
+</blockquote>
+<p><code>v-model</code> &#x8FD8;&#x672A;&#x8C03;&#x901A;&#xFF0C;&#x6682;&#x65F6;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 class="article-heading"><span id="zi-zu-jian-de-xian-zhi">&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x9650;&#x5236;</span><a href="#zi-zu-jian-de-xian-zhi" class="header-anchor">#</a></h3><h4 class="article-heading"><span id="mei-you-virtual-dom">&#x6CA1;&#x6709; Virtual DOM&#xFF01;</span><a href="#mei-you-virtual-dom" class="header-anchor">#</a></h4><p>&#x4F7F;&#x7528;&#x5728; <code>&lt;recycle-list&gt;</code> &#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709; Virtual DOM&#xFF01;&#x4E0E; Virtual DOM &#x76F8;&#x5173;&#x7684;&#x529F;&#x80FD;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x3002;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C3D;&#x91CF;&#x53EA;&#x5904;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x8981;&#x64CD;&#x4F5C;&#x751F;&#x6210;&#x540E;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x4E0B;&#x5217;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x90FD;&#x4E0D;&#x518D;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x8BF7;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ul>
+<li><code>vm.$el</code></li>
+<li><code>vm.$refs.xxx</code></li>
+<li><code>vm.$vnode</code></li>
+<li><code>vm.#slots</code></li>
+<li><code>vm.#scopedSlots</code></li>
+</ul>
+<p><code>vm.$refs</code> &#x91CC;&#x7684;&#x503C;&#x53EF;&#x80FD;&#x662F;&#x6570;&#x7EC4;&#x3001;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x3001;DOM &#x5143;&#x7D20;&#xFF0C;&#x5728;&#x524D;&#x7AEF;&#x91CC;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x652F;&#x6301;&#x5BF9; Weex &#x91CC;&#x7684; <a href="../modules/dom.html"><code>dom</code> &#x6A21;&#x5757;</a>&#x548C; <a href="../modules/animation.html"><code>animation</code> &#x6A21;&#x5757;</a>&#x7684;&#x529F;&#x80FD;&#x4E5F;&#x6709;&#x5F71;&#x54CD;&#x3002;&#x76EE;&#x524D;&#x6B63;&#x5728;&#x8BA8;&#x8BBA;&#x6280;&#x672F;&#x65B9;&#x6848;&#xFF0C;&#x90E8;&#x5206;&#x63A5;&#x53E3;&#x53EF;&#x80FD;&#x4F1A;&#x91CD;&#x65B0;&#x8BBE;&#x8BA1;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x5728; <code>vm</code> &#x4E0A;&#x900F;&#x51FA;&#x4E13;&#x4E3A; <code>&lt;recycle-list&gt;</code> &#x8BBE;&#x8BA1;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
+<h4 class="article-heading"><span id="zu-jian-de-shu-xing">&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;</span><a href="#zu-jian-de-shu-xing" class="header-anchor">#</a></h4><p>&#x76EE;&#x524D;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x4E0D;&#x652F;&#x6301;&#x51FD;&#x6570;&#x3002;&#xFF08;&#x6B63;&#x5728;&#x8BA8;&#x8BBA;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#xFF09;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sub-component</span> <span class="attr">:prop</span>=<span class="string">&quot;item.xxx&quot;</span> /&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x56E0;&#x4E3A;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x9700;&#x8981;&#x5728;&#x524D;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#xFF0C;&#x6240;&#x4EE5;&#x4EC5;&#x652F;&#x6301;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x503C;&#x3002;<code>item.xxx</code> &#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F;&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5E03;&#x5C14;&#x503C;&#x7B49;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x51FD;&#x6570;&#x3002;</p>
+<h4 class="article-heading"><span id="sheng-ming-zhou-qi-de-xing-wei-chai-yi">&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x884C;&#x4E3A;&#x5DEE;&#x5F02;</span><a href="#sheng-ming-zhou-qi-de-xing-wei-chai-yi" class="header-anchor">#</a></h4><p>&#x7531;&#x4E8E;&#x5217;&#x8868;&#x7684;&#x6E32;&#x67D3;&#x5B58;&#x5728;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF0C;&#x8282;&#x70B9;&#x6E32;&#x67D3;&#x4E0E;&#x5426;&#x4E5F;&#x4E0E;&#x7528;&#x6237;&#x7684;&#x6EDA;&#x52A8;&#x884C;&#x4E3A;&#x6709;&#x5173;&#xFF0C;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x884C;&#x4E3A;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x4E0D;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x53EF;&#x56DE;&#x6536;&#x957F;&#x5217;&#x8868;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x6E32;&#x67D3;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF0C;&#x53EA;&#x6709;&#x5373;&#x5C06;&#x6EDA;&#x52A8;&#x5230;&#x53EF;&#x89C6;&#x533A;&#x57DF;&#xFF08;&#x4EE5;&#x53CA;&#x53EF;&#x6EDA;&#x52A8;&#x7684;&#x5B89;&#x5168;&#x533A;&#x57DF;&#xFF09;&#x5185;&#x65F6;&#x624D;&#x5F00;&#x59CB;&#x6E32;&#x67D3;&#xFF0C;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x8BED;&#x4E49;&#x6CA1;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x5EF6;&#x8FDF;&#x89E6;&#x53D1;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x6709; 100 &#x6761;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x6761;&#x6570;&#x636E;&#x4E86;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;&#x6E32;&#x67D3;&#x9996;&#x5C4F;&#x65F6;&#x53EA;&#x80FD;&#x5C55;&#x793A; 8 &#x6761;&#x6570;&#x636E;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x90A3;&#x5C31;&#x53EA;&#x6709;&#x524D; 8 &#x4E2A;&#x7EC4;&#x4EF6;&#x88AB;&#x521B;&#x5EFA;&#x4E86;&#xFF0C;&#x4E5F;&#x53EA;&#x6709;&#x524D; 8 &#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x7684; <code>beforeCreate</code> &#x548C; <code>created</code> &#x4E5F;&#x53EA;&#x6709;&#x5728;&#x7EC4;&#x4EF6;<em>&#x5373;&#x5C06;&#x521B;&#x5EFA;</em>&#x548C;<em>&#x521B;&#x5EFA;&#x5B8C;&#x6210;</em>&#x65F6;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x3002;</li>
+<li>&#x540C;&#x7406;&#xFF0C;&#x7EC4;&#x4EF6;&#x7684; <code>beforeMount</code> &#x548C; <code>mounted</code> &#x4E5F;&#x53EA;&#x6709;&#x9875;&#x9762;&#x771F;&#x6B63;&#x6E32;&#x67D3;&#x5230;&#x4E86;&#x8BE5;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;<em>&#x5373;&#x5C06;&#x6302;&#x8F7D;</em>&#x548C;<em>&#x5DF2;&#x7ECF;&#x6302;&#x8F7D;</em>&#x65F6;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x3002;</li>
+<li>&#x4FEE;&#x6539;&#x5904;&#x4E8E;&#x5C4F;&#x5E55;&#x5916;&#x7684;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x89E6;&#x53D1; <code>beforeUpdate</code> &#x548C; <code>updated</code> &#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#xFF08;&#x884C;&#x4E3A;&#x672A;&#x5B9A;&#x4E49;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x6392;&#x67E5;&#xFF09;</li>
+</ul>
+<h4 class="article-heading"><span id="zu-jian-de-zi-ding-yi-shi-jian">&#x7EC4;&#x4EF6;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;</span><a href="#zu-jian-de-zi-ding-yi-shi-jian" class="header-anchor">#</a></h4><blockquote>
+<p><strong>&#x8BA1;&#x5212;&#x652F;&#x6301;</strong></p>
+</blockquote>
+<p><code>vm.$on</code>, <code>vm.$once</code>, <code>vm.$emit</code>, <code>vm.$off</code> &#x7B49;&#x529F;&#x80FD;&#x8FD8;&#x672A;&#x5B8C;&#x5168;&#x8C03;&#x901A;&#xFF0C;&#x63A5;&#x53E3;&#x53EF;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x884C;&#x4E3A;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x5DEE;&#x5F02;&#xFF08;&#x53C2;&#x6570;&#x4E22;&#x5931;&#xFF09;&#xFF0C;&#x6682;&#x65F6;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 class="article-heading"><span id="geng-duo-li-zi">&#x66F4;&#x591A;&#x4F8B;&#x5B50;</span><a href="#geng-duo-li-zi" class="header-anchor">#</a></h2><blockquote>
+<p>Web &#x7248;&#x672C;&#x7684; <code>&lt;recycle-list&gt;</code> &#x8FD8;&#x6B63;&#x5728;&#x5F00;&#x53D1;&#xFF0C;online playground &#x4E0A;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x9884;&#x89C8;&#x6548;&#x679C;&#xFF0C;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7248;&#x7684; playground app&#xFF08;SDK &#x7248;&#x672C; 0.18.0 &#x53CA;&#x4EE5;&#x4E0A;&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x626B;&#x7801;&#x67E5;&#x770B;&#x539F;&#x751F;&#x6548;&#x679C;&#x3002;</p>
+</blockquote>
+<p><strong>&#x6A21;&#x677F;&#x8BED;&#x6CD5;</strong></p>
+<ul>
+<li><a href="http://dotwe.org/vue/5b25755d7371d16b3d000e0d173a5cab" target="_blank" rel="noopener">&#x7ED1;&#x5B9A;&#x6587;&#x672C;</a> (<a href="http://dotwe.org/vue/0f7f1c1f0a3271ed30a0c5adb6938976" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/6455e2e8c1a717f9c09363ec9be663d1" target="_blank" rel="noopener">&#x7ED1;&#x5B9A;&#x5C5E;&#x6027; <code>v-bind</code></a> (<a href="http://dotwe.org/vue/f6a37fbeb5d7abf2d8c4875862b49ebc" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/966e644a4cbbbc401ab431889dc48677" target="_blank" rel="noopener">&#x5FAA;&#x73AF; <code>v-for</code></a> (<a href="http://dotwe.org/vue/89921581f43493e6bbb617e63be267b6" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/20a9681f9201ef1b7a68962fd9cb5eb5" target="_blank" rel="noopener">&#x591A;&#x5C42;&#x5FAA;&#x73AF;</a> (<a href="http://dotwe.org/vue/8a961f87c6db8e0aa221748d037b6428" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/a645db4b73bd7c1cde669f91c7f70f3a" target="_blank" rel="noopener">&#x6761;&#x4EF6;&#x6E32;&#x67D3; <code>v-if</code>/<code>v-else</code>/<code>v-else-if</code></a> (<a href="http://dotwe.org/vue/01a1ce5b9b868de7b0e4d193110471c8" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/34bb833828861bf37e9d0574241d7c82" target="_blank" rel="noopener">&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6; <code>v-on</code></a> (<a href="http://dotwe.org/vue/7cdb9f7819f31ea38219b8b61dc87a3f" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/d515a48f5a4112bbe8d5ac80c315bb44" target="_blank" rel="noopener">&#x4E00;&#x6B21;&#x6027;&#x6E32;&#x67D3; <code>v-once</code></a> (<a href="http://dotwe.org/vue/502bbd141010d3d1019dd8cbcc538d71" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/d093c67d49c4e4388994fead4d1649d1" target="_blank" rel="noopener">&#x7ED1;&#x5B9A;&#x6837;&#x5F0F;</a> (<a href="http://dotwe.org/vue/fe129e413d8a7ea5c90fcf2b5e5894a8" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/89c51e90246286ad921b2fd20ccae339" target="_blank" rel="noopener">loadmore</a> (<a href="http://dotwe.org/vue/16a6ea76882bc4802874131cc48fa82b" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/593bb4f3fa7ac1d5da5b2906fa4c8bb0" target="_blank" rel="noopener">&#x590D;&#x6742;&#x538B;&#x6D4B;&#x4F8B;&#x5B50;</a> (<a href="http://dotwe.org/vue/07734d19b15e3528c2f7b68ba870126f" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/720573134b13f1164fe38df867dd2835" target="_blank" rel="noopener">&#x65E0;&#x9650;&#x5217;&#x8868;</a> (<a href="http://dotwe.org/vue/d1a5ab3ca315d4aae782af8b3032dc42" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+</ul>
+<p><strong>&#x4F7F;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;</strong></p>
+<ul>
+<li><a href="http://dotwe.org/vue/4a7446690e2c87ec0d39d8ee4884fa19" target="_blank" rel="noopener">&#x7EAF;&#x9759;&#x6001;&#x5B50;&#x7EC4;&#x4EF6;</a> (<a href="http://dotwe.org/vue/1ab67bd0f19d5cf17fc358d73801f238" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/f716dfc90f7ec0f2ec142c45d814b76f" target="_blank" rel="noopener">&#x65E0;&#x72B6;&#x6001;&#xFF0C;&#x6709; props</a> (<a href="http://dotwe.org/vue/42039b1ed8484c98051cc2fd1ee542bc" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/3e4ba91f5333caa531a75cbdc54a8b70" target="_blank" rel="noopener">props &#x66F4;&#x65B0;</a> (<a href="http://dotwe.org/vue/8cdc3565e66c86190c8f6cd6d0e4c20d" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/8b068a890470a8cbc737966d9e82d23a" target="_blank" rel="noopener">&#x6709;&#x5185;&#x90E8;&#x72B6;&#x6001;</a> (<a href="http://dotwe.org/vue/46076bc2bdd90d3e0b028994b053ef6d" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/56ae40a63d7b02bb7e55a1fbfbefeb76" target="_blank" rel="noopener">computed &amp; watch</a> (<a href="http://dotwe.org/vue/c96218775a65b405368025fa81be0609" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+<li><a href="http://dotwe.org/vue/769285a865b9d2f4e8d8cb7e5340012c" target="_blank" rel="noopener">&#x79FB;&#x9664;&#x7EC4;&#x4EF6;</a> (<a href="http://dotwe.org/vue/b217c818532cf2b1b488be8987d60efa" target="_blank" rel="noopener">&#x666E;&#x901A; list</a>)</li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/references/components/recycle-list.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Setup Develop Environment | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Setup Develop Environment Generate a new Weex project Usage Folder Structure       Setup Develop Environment#Using dotWe is a good choice, but if you want to develop locally on your own machine, y">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Setup Develop Environment">
+<meta property="og:url" content="https://weex.apache.org/guide/set-up-env.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Setup Develop Environment Generate a new Weex project Usage Folder Structure       Setup Develop Environment#Using dotWe is a good choice, but if you want to develop locally on your own machine, y">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1NzyNmY_I8KJjy1XaXXbsxpXa-631-270.png">
+<meta property="og:updated_time" content="2018-05-21T05:12:33.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Setup Develop Environment">
+<meta name="twitter:description" content="Setup Develop Environment Generate a new Weex project Usage Folder Structure       Setup Develop Environment#Using dotWe is a good choice, but if you want to develop locally on your own machine, y">
+<meta name="twitter:image" content="https://img.alicdn.com/tfs/TB1NzyNmY_I8KJjy1XaXXbsxpXa-631-270.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/set-up-env.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/set-up-env.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link current ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link current ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Setup Develop Environment
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-05-21T05:12:33.799Z">Updated time: 21/05/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#setup-develop-environment">Setup Develop Environment</a><ul>
+<li><a href="#generate-a-new-weex-project">Generate a new Weex project</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#folder-structure">Folder Structure</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h1 class="article-heading"><span id="setup-develop-environment">Setup Develop Environment</span><a href="#setup-develop-environment" class="header-anchor">#</a></h1><p>Using <a href="http://dotwe.org/vue" target="_blank" rel="noopener">dotWe</a> is a good choice, but if you want to develop locally on your own machine, you will need to set up your develop environment.</p>
+<p>You will need Node.js and the <a href="https://github.com/weexteam/weex-toolkit" target="_blank" rel="noopener">Weex CLI</a>.</p>
+<p>Install Node.js using <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> (Simple bash script to manage multiple active Node.js versions). Run the following commands in a terminal after installing nvm:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ nvm install 6.10.0</span><br><span class="line">$ nvm use 6.10.0</span><br></pre></td></tr></tbody></table></figure>
+<p>And <code>npm</code> comes with Node.js, with which you can install the Weex command line tools.</p>
+<blockquote>
+<p><strong>NOTE: </strong> After upgrading the <code>weex-toolkit</code> to v1.0.8, the <code>npm-shrinkwrap.json</code> npm 5 specification has been added to lock the package dependencies, it is needed to upgrade your npm version to 5 above by command: <code>npm install npm@latest -g</code> if your version is lower than this, please check your npm version before using it.</p>
+</blockquote>
+<p>Run the following commands in a terminal:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install -g weex-toolkit</span><br><span class="line">$ weex -v</span><br></pre></td></tr></tbody></table></figure>
+<p>You can use &#x2018;weex update <component>@x.x.x&#x2019; to update weex-devtool, weex-previewer, weex-builder and weexpack to a specific version.<br></component></p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">weex update weex-devtool@latest // Here latest means to install the latest version</span><br></pre></td></tr></tbody></table></figure><p></p>
+<blockquote>
+<p><strong>NOTE: </strong> If you receive an error like <code>permission error</code>, check out where permission problems occur, please delete the corresponding file and reinstall or run the <code>chmod -R 777 [path]</code> command to authorize.</p>
+</blockquote>
+<p>Then you can use the Weex command to verify if the installation is successful:</p>
+<p><img src="https://img.alicdn.com/tfs/TB1NzyNmY_I8KJjy1XaXXbsxpXa-631-270.png" alt="success-setup-weex-toolkit"></p>
+<h3 class="article-heading"><span id="generate-a-new-weex-project">Generate a new Weex project</span><a href="#generate-a-new-weex-project" class="header-anchor">#</a></h3><p>Use the command line tool to generate a Weex project called &#x201C;awesome-project&#x201D;. Run the following command in a terminal:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ weex create awesome-project</span><br></pre></td></tr></tbody></table></figure>
+<p>Then enter the awesome-project folder, you will see a standard project skeleton has been generated.</p>
+<h3 class="article-heading"><span id="usage">Usage</span><a href="#usage" class="header-anchor">#</a></h3><p>The <code>weex-toolkit</code> will prompt you whether to automatically run <code>npm install</code>, if not running, manually <code>cd</code> into the folder and run <code>npm install</code>.</p>
+<p>In the <code>awesome-project</code> folder, install dependencies with the following command:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></tbody></table></figure>
+<p>It will open the preview server automaticly, if you just want to see the web site, you can visite <code>/index.html</code>, like <code>localhost:8081/index.html</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> When the port number is occupied, the port number may change, please pay attention to the console output.</p>
+</blockquote>
+<h3 class="article-heading"><span id="folder-structure">Folder Structure</span><a href="#folder-structure" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">| &#x2014;&#x2014; configs</span><br><span class="line">  | &#x2014;&#x2014; config.js                  global config of webpack</span><br><span class="line">  | &#x2014;&#x2014; helper.js                  helper functions</span><br><span class="line">  | &#x2014;&#x2014; logo.png</span><br><span class="line">  | &#x2014;&#x2014; plugin.js                  script for compile plugins</span><br><span class="line">  | &#x2014;&#x2014; utils.js                   tool functions</span><br><span class="line">  | &#x2014;&#x2014; vue-loader.conf.js         loader config of weex</span><br><span class="line">  | &#x2014;&#x2014; webpack.common.conf.js     webpack configuration for common environment</span><br><span class="line">  | &#x2014;&#x2014; webpack.dev.conf.js        webpack configuration for develop environment</span><br><span class="line">  | &#x2014;&#x2014; webpack.prod.conf.js       webpack configuration for production environment</span><br><span class="line">  | &#x2014;&#x2014; webpack.test.conf.js       webpack configuration for test environment</span><br><span class="line">| &#x2014;&#x2014; platforms</span><br><span class="line">  | &#x2014;&#x2014; platforms.json             platform meta data</span><br><span class="line">| &#x2014;&#x2014; plugins</span><br><span class="line">  | &#x2014;&#x2014; plugins.json               plugin data</span><br><span class="line">| &#x2014;&#x2014; src</span><br><span class="line">  | &#x2014;&#x2014; entry.js                   the entry file of whole bundle</span><br><span class="line">  | &#x2014;&#x2014; index.vue                  vue file source</span><br><span class="line">| &#x2014;&#x2014; test</span><br><span class="line">  | &#x2014;&#x2014; unit</span><br><span class="line">    | &#x2014;&#x2014; specs                    test scripts</span><br><span class="line">    | &#x2014;&#x2014; index.js                 source code and config test environment</span><br><span class="line">    | &#x2014;&#x2014; karma.conf.js            configuration for karma</span><br><span class="line">| &#x2014;&#x2014; web                          static source</span><br><span class="line">| &#x2014;&#x2014; .babelrc                     configuration for babel-loader</span><br><span class="line">| &#x2014;&#x2014; android.config.json          configuration for packing android project</span><br><span class="line">| &#x2014;&#x2014; ios.config.json              configuration for packing ios project</span><br><span class="line">| &#x2014;&#x2014; npm-shrinkwrap.json          npm dependence lock file</span><br><span class="line">| &#x2014;&#x2014; package.json</span><br><span class="line">| &#x2014;&#x2014; README.md</span><br><span class="line">| &#x2014;&#x2014; webpack.config.js            entry file of the webpack command</span><br></pre></td></tr></tbody></table></figure>
+<p>For more technical details, please continue to read the next section. And don&#x2019;t forget to write and preview your codes at <a href="http://dotwe.org/vue" target="_blank" rel="noopener">dotWe</a>.</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/guide/set-up-env.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

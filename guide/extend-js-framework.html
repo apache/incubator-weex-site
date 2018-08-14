@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Extend JS framework | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Extend JS framework Weex JS engine features support Adapt to Weex’s initial entry and multi-instance management mechanism Framework initialization Register available native components and modules">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Extend JS framework">
+<meta property="og:url" content="https://weex.apache.org/guide/extend-js-framework.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Extend JS framework Weex JS engine features support Adapt to Weex’s initial entry and multi-instance management mechanism Framework initialization Register available native components and modules">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extend JS framework">
+<meta name="twitter:description" content="Extend JS framework Weex JS engine features support Adapt to Weex’s initial entry and multi-instance management mechanism Framework initialization Register available native components and modules">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/extend-js-framework.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/extend-js-framework.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link current ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link current ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link  ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Extend JS framework
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.362Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#extend-js-framework">Extend JS framework</a><ul>
+<li><a href="#weex-js-engine-features-support">Weex JS engine features support</a></li>
+<li><a href="#adapt-to-weex-s-initial-entry-and-multi-instance-management-mechanism">Adapt to Weex&#x2019;s initial entry and multi-instance management mechanism</a><ul>
+<li><a href="#framework-initialization">Framework initialization</a></li>
+<li><a href="#register-available-native-components-and-modules">Register available native components and modules</a></li>
+<li><a href="#multi-instance-lifecycle-management">Multi - instance lifecycle management</a></li>
+<li><a href="#native-communication">Native communication</a></li>
+</ul>
+</li>
+<li><a href="#configure-the-js-framework-in-weexsdk">Configure the JS Framework in WeexSDK</a><ul>
+<li><a href="#prepare-your-js-framework-code">Prepare your JS Framework code</a></li>
+<li><a href="#register-a-js-framework">Register a JS Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h1 class="article-heading"><span id="extend-js-framework">Extend JS framework</span><a href="#extend-js-framework" class="header-anchor">#</a></h1><p>This part of the extension of JS framework is still in the discussion, may be adjusted at any time, please pay attention.</p>
+<p>Weex wants to be able to respect as many developer development habits as possible.So, in addition to Weex official support Vue 2.0, the developer can also customize and horizontally extension their own or their favorite JS Framework.The steps to customize the JS Framework are as follows:</p>
+<ul>
+<li>First you have a complete set of JS Framework.</li>
+<li>Learn about Weex&#x2019;s JS engine feature support.</li>
+<li>Adapting Weex&#x2019;s native DOM APIs.</li>
+<li>Adapting Weex&#x2019;s initialization portal and multi-instance management mechanism.</li>
+<li>Add your own JS Framework to the framework configuration of the Weex JS runtime. Then pack it.</li>
+<li>Build JS bundles based on the JS Framework. You need to add a specific prefix comment so that the Weex JS runtime can recognize it.</li>
+</ul>
+<h2 class="article-heading"><span id="weex-js-engine-features-support">Weex JS engine features support</span><a href="#weex-js-engine-features-support" class="header-anchor">#</a></h2><ul>
+<li><p>Under iOS, Weex uses the JavaScriptCore that comes with the system, so the ES support depends on the version of the operating system.<br>The current conservative judgments, ES5 features on the market mainstream iOS devices are perfectly supported, but some of the features of ES6 + is not supported.</p>
+</li>
+<li><p>Under Android, Weex uses the v8 kernel provided by UC. For performance and stability considerations, we are not using the latest version of the v8 kernel.The same conservative judgment, the ES5 feature can all support, including strict mode <code>Object.freeze</code> and so on.</p>
+</li>
+<li><p>The Weex JS engine does not support HTML DOM APIs and HTML5 JS APIs, including <code>document</code>, <code>set</code>Timeout`, and so on.</p>
+</li>
+<li><p>We added <code>Promise</code>&#x2018;s polyfill, as well as the <code>console</code>&#x2018;s polyfill.</p>
+</li>
+<li><p>In addition, in order to ensure that the JS engine can manage memory as much as possible, we have a generic global object for the <code>Object.freeze ()</code> freeze operation, which includes:</p>
+<ul>
+<li><code>Object</code><ul>
+<li><code>Object.prototype</code></li>
+<li><code>Array</code></li>
+<li><code>Array.prototype</code></li>
+<li><code>String.prototype</code></li>
+<li><code>Number.prototype</code></li>
+<li><code>Boolean.prototype</code></li>
+<li><code>Error.prototype</code></li>
+<li><code>Date.prototype</code></li>
+<li><code>RegExp.prototype</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="article-heading"><span id="adapt-to-weex-s-initial-entry-and-multi-instance-management-mechanism">Adapt to Weex&#x2019;s initial entry and multi-instance management mechanism</span><a href="#adapt-to-weex-s-initial-entry-and-multi-instance-management-mechanism" class="header-anchor">#</a></h2><p>The JS Framework provided by the developer needs to be packaged as a <strong>CommonJS</strong> package, and the package needs to be extension to the following methods:</p>
+<h3 class="article-heading"><span id="framework-initialization">Framework initialization</span><a href="#framework-initialization" class="header-anchor">#</a></h3><ul>
+<li><code>init(config)</code><ul>
+<li><code>config</code><ul>
+<li><code>Document</code></li>
+<li><code>Element</code></li>
+<li><code>Comment</code></li>
+<li><code>TaskSender</code></li>
+<li><code>CallbackManager</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This method places the Native DOM class and two auxiliary classes provided by Weex in the <code>config</code> parameter and allows the framework itself to be initialized.</p>
+<p>Tip: At the same time, the author can pass in a different <code>config</code> in the framework of the initialization time. This allows for framework testing or environmental simulation.</p>
+<h4 class="article-heading"><span id="introduction-to-parameter-format">Introduction to parameter format</span><a href="#introduction-to-parameter-format" class="header-anchor">#</a></h4><ul>
+<li><code>TaskSender</code>: wip&#x2026;</li>
+<li><code>CallbackManager</code>: wip&#x2026;</li>
+</ul>
+<h3 class="article-heading"><span id="register-available-native-components-and-modules">Register available native components and modules</span><a href="#register-available-native-components-and-modules" class="header-anchor">#</a></h3><ul>
+<li><code>registerComponents(components)</code></li>
+<li><code>registerModules(modules)</code></li>
+</ul>
+<p>These two methods are called immediately after the frame is initialized. This framework will be able to know which components and modules the current client supports.</p>
+<h4 class="article-heading"><span id="introduction-to-parameter-format">Introduction to parameter format</span><a href="#introduction-to-parameter-format" class="header-anchor">#</a></h4><ul>
+<li><code>components: Array</code>: Describe the array of components, each of which includes:<ul>
+<li><code>type: string</code>: Component name, for example <code>div</code>&#x3002;</li>
+<li><code>methods: string[]</code>: Optional, a list of method names supported by this component. These methods can follow the native DOM APIs call.</li>
+</ul>
+</li>
+<li><code>modules: Object</code>: Describe the hash table of a series of modules. Key is the module name, the value is an array. The elements of the array describe a method in the module. The information of the method includes:<ul>
+<li><code>name: string</code>: Method name</li>
+<li><code>args: string[]</code>: Parameter number and type description</li>
+</ul>
+</li>
+</ul>
+<p><strong>E.g:</strong></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">registerComponents([</span><br><span class="line">  { <span class="attr">type</span>: <span class="string">&apos;web&apos;</span>, <span class="attr">methods</span>: [<span class="string">&apos;goBack&apos;</span>, <span class="string">&apos;goForward&apos;</span>, <span class="string">&apos;refresh&apos;</span>]}</span><br><span class="line">])</span><br><span class="line">registerModules({</span><br><span class="line">  event: [</span><br><span class="line">    {<span class="attr">name</span>: <span class="string">&apos;openURL&apos;</span>, <span class="attr">args</span>: [<span class="string">&apos;string&apos;</span>]}</span><br><span class="line">  ]</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="multi-instance-lifecycle-management">Multi - instance lifecycle management</span><a href="#multi-instance-lifecycle-management" class="header-anchor">#</a></h3><ul>
+<li><code>createInstance(instanceId, code, config, data, env)</code></li>
+<li><code>refreshInstance(instanceId, data)</code></li>
+<li><code>destroyInstance(instanceId)</code></li>
+</ul>
+<p>Each Weex page has two stages: created and destroyed. At the same time in the Weex page running process, native can send messages to the Weex page. Different frameworks can follow their own ideas to achieve the message.</p>
+<h4 class="article-heading"><span id="introduction-to-parameter-format">Introduction to parameter format</span><a href="#introduction-to-parameter-format" class="header-anchor">#</a></h4><ul>
+<li><code>instanceId: string</code>: The unique id of the Weex page is generated by native.</li>
+<li><code>code: string</code>:The Wex page&#x2019;s JS bundle&#x2019;s code is passed through native.</li>
+<li><code>config: Object?</code>: The configuration information for the Wex page, such as the bundleUrl representing the bundle address, is generated by the native configuration. It has nothing to do with the contents of the JS bundle itself.</li>
+<li><code>data: Object?</code>: Native can import an external data when creating a Weex page. The JS framework can also generate different page content for the same JS bundle with different data.</li>
+<li><code>env: Object?</code>:The current environment information about the Weex page, the meaning of each field:<ul>
+<li><code>info: Object</code>: Framework information, see the &#x201C;JS Bundle format requirements&#x201D; later.</li>
+<li><code>config: Object</code>:Equivalent to the third parameter of the method <code>config</code></li>
+<li><code>callbacks: CallbackManager</code>:  only <code>CallbackManager</code>instance of Weex page.</li>
+<li><code>created: number</code>:The number of seconds that the Wex page was created.</li>
+<li><code>framework: string</code>:The name of the framework used by the Wex page. Equivalent to <code>info.framework</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="native-communication">Native communication</span><a href="#native-communication" class="header-anchor">#</a></h3><ul>
+<li><code>receiveTasks(instanceId, tasks)</code></li>
+</ul>
+<p>Native can use the <code>refreshInstance</code> method to send a message to the JS framework layer. But in many cases will use <code>receiveTasks</code> to send user events or methods callback to the JS framework.</p>
+<p>For example, if the user clicks on a button, native will send a <code>fireEvent</code> type of task to the JS framework, and then the JS framework will handle the corresponding event logic. This part of the working mechanism is related to the design of the <code>addEvent</code> in the native DOM interface.</p>
+<p>Another example is the user using fetch to send network requests. When the request is done at the native end, it will be sent to the JS framework with a callback type of task. Since native can not pass the function in JavaScript, it actually only sends a callbackId to the JS framework. This part of the working mechanism is related to the design of CallbackManager.</p>
+<h4 class="article-heading"><span id="auxiliary-method">Auxiliary method</span><a href="#auxiliary-method" class="header-anchor">#</a></h4><ul>
+<li><code>getRoot(instanceId): JSON</code></li>
+</ul>
+<p>This method returns the full JSON description of the document body node. Developers can view the full native DOM tree as a result. The format of the specific return value is the same as the return method of the toJSON () method in the native DOM interface. This feature is used extensively as a developer tool extension.</p>
+<h2 class="article-heading"><span id="configure-the-js-framework-in-weexsdk">Configure the JS Framework in WeexSDK</span><a href="#configure-the-js-framework-in-weexsdk" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="prepare-your-js-framework-code">Prepare your JS Framework code</span><a href="#prepare-your-js-framework-code" class="header-anchor">#</a></h3><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// your-own-js-framework.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">init</span> (<span class="params">config</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">registerComponents</span> (<span class="params">components</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">registerModules</span> (<span class="params">modules</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createInstance</span> (<span class="params">id, code, config, data, env</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">destroyInstance</span> (<span class="params">id</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">refreshInstance</span> (<span class="params">id, data</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">recieveTasks</span> (<span class="params">id, tasks</span>) </span>{ ... }</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRoot</span> (<span class="params">id</span>) </span>{ ... }</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="register-a-js-framework">Register a JS Framework</span><a href="#register-a-js-framework" class="header-anchor">#</a></h3><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Vue <span class="keyword">from</span> <span class="string">&apos;...&apos;</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">&apos;...&apos;</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Angular <span class="keyword">from</span> <span class="string">&apos;...&apos;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> { Vue, React, Angular };</span><br></pre></td></tr></tbody></table></figure>
+<p>And then packaged JS runtime, integrated into WeexSDK.</p>
+<h4 class="article-heading"><span id="js-bundle-format-requirements">JS Bundle format requirements</span><a href="#js-bundle-format-requirements" class="header-anchor">#</a></h4><p><strong>Framework info</strong><br>The note(alias framework info) at the beginning of the JS Bundle file is very important. The format is as follows:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// { &quot;framework&quot;: &quot;Vue&quot; }</span></span><br></pre></td></tr></tbody></table></figure>
+<p>So that the Weex JS engine will know that the JS bundle needs to use the Vue framework to resolve.Similarly, Weex supports multiple frameworks.It will be based on js bundle notes to select the corresponding framework resolution.</p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/guide/extend-js-framework.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在 Weex 中使用 Vue.js | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="只含有运行时的构建版本 平台的差异 上下文 DOM 样式 事件   Web 渲染器 单文件组件 编译目标 使用weex-loader   支持的功能 全局配置 全局 API 选项 生命周期钩子 实例属性 实例方法 模板指令 特殊属性 内置组件       自2016年2月17日发布 WeexSDK v0.10.0 后， Weex 集成了 v2 版本的 Vue。Vue（读音 /vjuː/，类">
+<meta property="og:type" content="website">
+<meta property="og:title" content="在 Weex 中使用 Vue.js">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/use-vue.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="只含有运行时的构建版本 平台的差异 上下文 DOM 样式 事件   Web 渲染器 单文件组件 编译目标 使用weex-loader   支持的功能 全局配置 全局 API 选项 生命周期钩子 实例属性 实例方法 模板指令 特殊属性 内置组件       自2016年2月17日发布 WeexSDK v0.10.0 后， Weex 集成了 v2 版本的 Vue。Vue（读音 /vjuː/，类">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Weex 中使用 Vue.js">
+<meta name="twitter:description" content="只含有运行时的构建版本 平台的差异 上下文 DOM 样式 事件   Web 渲染器 单文件组件 编译目标 使用weex-loader   支持的功能 全局配置 全局 API 选项 生命周期钩子 实例属性 实例方法 模板指令 特殊属性 内置组件       自2016年2月17日发布 WeexSDK v0.10.0 后， Weex 集成了 v2 版本的 Vue。Vue（读音 /vjuː/，类">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/use-vue.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/use-vue.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/front-end-frameworks.html" class="sidebar-link  ">前端框架</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/use-vue.html" class="sidebar-link current ">在 Weex 中使用 Vue.js</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">开发</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">扩展</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-web-render.html" class="sidebar-link  ">扩展 HTML5 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-android.html" class="sidebar-link  ">扩展 Android 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-ios.html" class="sidebar-link  ">扩展 iOS 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-module-using-swift.html" class="sidebar-link  ">使用 swift 扩展 iOS 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-js-framework.html" class="sidebar-link  ">扩展前端框架</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">高阶特性</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/path.html" class="sidebar-link  ">资源路径</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/downgrade.html" class="sidebar-link  ">降级方案</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">使用 Vuex 和 vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/app-architecture.html" class="sidebar-link  ">构建完整移动应用</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/front-end-frameworks.html" class="sidebar-link  ">前端框架</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/use-vue.html" class="sidebar-link current ">在 Weex 中使用 Vue.js</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">开发</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">扩展</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-web-render.html" class="sidebar-link  ">扩展 HTML5 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-android.html" class="sidebar-link  ">扩展 Android 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-ios.html" class="sidebar-link  ">扩展 iOS 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-module-using-swift.html" class="sidebar-link  ">使用 swift 扩展 iOS 的功能</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/extend-js-framework.html" class="sidebar-link  ">扩展前端框架</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">高阶特性</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/path.html" class="sidebar-link  ">资源路径</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/downgrade.html" class="sidebar-link  ">降级方案</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">使用 Vuex 和 vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/guide/advanced/app-architecture.html" class="sidebar-link  ">构建完整移动应用</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        在 Weex 中使用 Vue.js
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.317Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#zhi-han-you-yun-xing-shi-de-gou-jian-ban-ben">&#x53EA;&#x542B;&#x6709;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6784;&#x5EFA;&#x7248;&#x672C;</a></li>
+<li><a href="#ping-tai-de-chai-yi">&#x5E73;&#x53F0;&#x7684;&#x5DEE;&#x5F02;</a><ul>
+<li><a href="#shang-xia-wen">&#x4E0A;&#x4E0B;&#x6587;</a></li>
+<li><a href="#dom">DOM</a></li>
+<li><a href="#yang-shi">&#x6837;&#x5F0F;</a></li>
+<li><a href="#shi-jian">&#x4E8B;&#x4EF6;</a></li>
+</ul>
+</li>
+<li><a href="#web-xuan-ran-qi">Web &#x6E32;&#x67D3;&#x5668;</a></li>
+<li><a href="#dan-wen-jian-zu-jian">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</a><ul>
+<li><a href="#bian-yi-mu-biao">&#x7F16;&#x8BD1;&#x76EE;&#x6807;</a></li>
+<li><a href="#shi-yong-weex-loader">&#x4F7F;&#x7528;weex-loader</a></li>
+</ul>
+</li>
+<li><a href="#zhi-chi-de-gong-neng">&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;</a><ul>
+<li><a href="#quan-ju-pei-zhi">&#x5168;&#x5C40;&#x914D;&#x7F6E;</a></li>
+<li><a href="#quan-ju-api">&#x5168;&#x5C40; API</a></li>
+<li><a href="#xuan-xiang">&#x9009;&#x9879;</a></li>
+<li><a href="#sheng-ming-zhou-qi-gou-zi">&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</a></li>
+<li><a href="#shi-li-shu-xing">&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;</a></li>
+<li><a href="#shi-li-fang-fa">&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#mo-ban-zhi-ling">&#x6A21;&#x677F;&#x6307;&#x4EE4;</a></li>
+<li><a href="#te-shu-shu-xing">&#x7279;&#x6B8A;&#x5C5E;&#x6027;</a></li>
+<li><a href="#nei-zhi-zu-jian">&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>&#x81EA;2016&#x5E74;2&#x6708;17&#x65E5;&#x53D1;&#x5E03; WeexSDK <a href="https://github.com/alibaba/weex/releases/tag/v0.10.0" target="_blank" rel="noopener">v0.10.0</a> &#x540E;&#xFF0C; Weex &#x96C6;&#x6210;&#x4E86; v2 &#x7248;&#x672C;&#x7684; Vue&#x3002;Vue&#xFF08;&#x8BFB;&#x97F3; /vju&#x2D0;/&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; view &#x7684;&#x8BFB;&#x97F3;&#xFF09;&#x662F;&#x4E00;&#x5957;&#x6784;&#x5EFA;&#x7528;&#x6237;&#x754C;&#x9762;&#x7684;&#x6E10;&#x8FDB;&#x5F0F;&#x6846;&#x67B6;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x9605;&#x5176;<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a>&#x3002;</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7279;&#x522B;&#x6307;&#x793A;&#xFF0C;&#x6587;&#x7AE0;&#x4E2D;&#x7684; &#x201C;Vue.js&#x201D; &#x6216;&#x8005; &#x201C;Vue&#x201D; &#x90FD;&#x6307;&#x7684;&#x662F; v2 &#x7248;&#x672C;&#x7684; Vue&#x3002;</p>
+</blockquote>
+<h2 class="article-heading"><span id="zhi-han-you-yun-xing-shi-de-gou-jian-ban-ben">&#x53EA;&#x542B;&#x6709;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6784;&#x5EFA;&#x7248;&#x672C;</span><a href="#zhi-han-you-yun-xing-shi-de-gou-jian-ban-ben" class="header-anchor">#</a></h2><p>&#x5982;&#x679C;&#x4F60;&#x719F;&#x6089; Vue.js&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x77E5;&#x9053; Vue.js &#x6709;&#x4E24;&#x79CD;&#x6784;&#x5EFA;&#x7248;&#x672C;: <a href="https://cn.vuejs.org/v2/guide/installation.html#%E8%BF%90%E8%A1%8C%E6%97%B6-%E7%BC%96%E8%AF%91%E5%99%A8-vs-%E5%8F%AA%E5%8C%85%E5%90%AB%E8%BF%90%E8%A1%8C%E6%97%B6" target="_blank" rel="noopener"><strong>&#x8FD0;&#x884C;&#x65F6; + &#x7F16;&#x8BD1;&#x5668;</strong> &#x4E0E; <strong>&#x53EA;&#x5305;&#x542B;&#x8FD0;&#x884C;&#x65F6;</strong></a>&#x3002;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x5426;&#x9700;&#x8981;&#x80FD;&#x591F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x7F16;&#x8BD1;<code>template</code>&#x9009;&#x9879;&#x3002;&#x7531;&#x4E8E;&#x8FD0;&#x884C;&#x65F6;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x6BD4;&#x5B8C;&#x6574;&#x7248;&#x672C;&#x7684;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x8F7B;&#x7EA6;30%&#xFF0C;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x548C;&#x66F4;&#x5C11;&#x7684;&#x4EE3;&#x7801;&#x5C3A;&#x5BF8;&#xFF0C;Weex&#x7528;&#x7684;&#x662F;&#x53EA;&#x5305;&#x542B;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;Vue&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x5DEE;&#x5F02;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x65F6;&#x4E0D;&#x652F;&#x6301;<a href="https://cn.vuejs.org/v2/api/#template" target="_blank" rel="noopener"><code>template</code></a>&#x9009;&#x9879;&#x3002;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x4F7F;&#x7528;<a href="https://cn.vuejs.org/v2/guide/components.html#X-Templates" target="_blank" rel="noopener"><code>x-templates</code></a>&#x3002;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x4F7F;&#x7528;<a href="https://cn.vuejs.org/v2/api/#Vue-compile" target="_blank" rel="noopener"><code>Vue.compile</code></a>&#x3002;</li>
+</ul>
+<h2 class="article-heading"><span id="ping-tai-de-chai-yi">&#x5E73;&#x53F0;&#x7684;&#x5DEE;&#x5F02;</span><a href="#ping-tai-de-chai-yi" class="header-anchor">#</a></h2><p>Vue.js&#x6700;&#x521D;&#x662F;&#x4E3A;Web&#x5E73;&#x53F0;&#x8BBE;&#x8BA1;&#x7684;&#x3002;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;Weex&#x5F00;&#x53D1;&#x539F;&#x751F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x662F;&#x4ECD;&#x7136;&#x5B58;&#x5728;&#x8BB8;&#x591A;<a href="../wiki/platform-difference.html">Weex &#x4E0E; Web &#x5E73;&#x53F0;&#x7684;&#x5DEE;&#x5F02;</a>&#x3002;</p>
+<p>&#x4E0E; Web &#x5E73;&#x53F0;&#x7684;&#x4E3B;&#x8981;&#x5DEE;&#x5F02;&#x662F;: &#x4E0A;&#x4E0B;&#x6587;&#x3001;DOM&#x3001;&#x6837;&#x5F0F;&#x548C;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 class="article-heading"><span id="shang-xia-wen">&#x4E0A;&#x4E0B;&#x6587;</span><a href="#shang-xia-wen" class="header-anchor">#</a></h3><p>Weex &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x7F16;&#x5199;&#x591A;&#x9875;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x6BCF;&#x4E00;&#x9875;&#x76F8;&#x5F53;&#x4E8E;&#x539F;&#x751F;&#x5F00;&#x53D1;&#x4E2D;&#x7684; <em>View</em> &#x6216;&#x8005; <em>Activity</em>&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x6709;&#x7740;&#x81EA;&#x5DF1;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x5C24;&#x5176;<code>Vue</code>&#x5B9E;&#x4F8B;&#x5728;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x90FD;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x751A;&#x81F3; Vue &#x7684;&#x201D;&#x5168;&#x5C40;&#x201D;&#x914D;&#x7F6E;&#xFF08;<code>Vue.config.xxx</code>&#xFF09;&#x4E5F;&#x53EA;&#x4F1A;&#x5F71;&#x54CD; Weex &#x4E0A;&#x7684;&#x5355;&#x4E2A;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x4E00;&#x4E9B; Vue &#x7684; SPA &#xFF08;&#x5355;&#x9875;&#x9762;&#x5E94;&#x7528;&#xFF09;&#x6280;&#x672F;&#xFF0C;&#x5982; <a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="noopener">Vuex</a> &#x548C; <a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="noopener">vue-router</a> &#x4E5F;&#x5C06;&#x5355;&#x9875;&#x5185;&#x751F;&#x6548;&#x3002;&#x66F4;&#x901A;&#x4FD7;&#x5730;&#x8BF4;&#xFF0C;&#x201C;&#x9875;&#x9762;&#x201D;&#x6982;&#x5FF5;&#x5728; SPA &#x6280;&#x672F;&#x4E2D;&#x662F;&#x865A;&#x62DF;&#x7684;&#xFF0C;&#x4F46;&#x5728; Weex &#x4E0A;&#x5374;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#xFF0C;Vuex &#x548C; vue-router &#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x5E93;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF0C;&#x4F60;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5728; Weex &#x91CC;<a href="./advanced/use-vuex-and-vue-router.html">&#x4F7F;&#x7528; Vuex &#x548C; vue-router</a>&#x3002;</p>
+<h3 class="article-heading"><span id="dom">DOM</span><a href="#dom" class="header-anchor">#</a></h3><p>&#x56E0;&#x4E3A;&#x5728; Android &#x548C; iOS &#x4E0A;&#x6CA1;&#x6709; DOM&#xFF08;Document Object Model&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8981;&#x624B;&#x52A8;&#x64CD;&#x4F5C;&#x548C;&#x751F;&#x6210; DOM &#x5143;&#x7D20;&#x7684;&#x8BDD;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E9B;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#x3002;&#x5728;&#x4F60;&#x4F7F;&#x7528;&#x73B0;&#x4EE3;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x4E0E;&#x7EC4;&#x4EF6;&#x800C;&#x4E0D;&#x662F;&#x751F;&#x6210;&#x7684;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x3002;</p>
+<p>&#x4E00;&#x4E9B;&#x4E0E; DOM &#x76F8;&#x5173;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x6BD4;&#x5982; <code>v-html</code>&#xFF0C;<code>vm.$el</code>&#xFF0C;<code>template</code> &#x9009;&#x9879;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x4E0A;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x76F8;&#x540C;&#x7684;&#x53CD;&#x5E94;&#x3002;</p>
+<p>&#x51C6;&#x786E;&#x6765;&#x8BF4;&#xFF0C;<a href="https://cn.vuejs.org/v2/api/#vm-el" target="_blank" rel="noopener"><code>vm.$el</code></a>&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x5728;web&#x73AF;&#x5883;&#x4E0B;&#x662F;<code>HTMLElement</code>&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x5E76;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7531; <em>Weex &#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;</em> &#x5B9A;&#x4E49;&#x7684;&#x7279;&#x6B8A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</p>
+<h3 class="article-heading"><span id="yang-shi">&#x6837;&#x5F0F;</span><a href="#yang-shi" class="header-anchor">#</a></h3><p>&#x6837;&#x5F0F;&#x8868;&#x548C; CSS &#x89C4;&#x5219;&#x662F;&#x7531; Weex js &#x6846;&#x67B6;&#x548C;&#x539F;&#x751F;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x7BA1;&#x7406;&#x7684;&#x3002;&#x8981;&#x5B9E;&#x73B0;&#x5B8C;&#x6574;&#x7684; CSS &#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF08;CSSOM&#xFF1A;CSS Object Model&#xFF09;&#x5E76;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684; CSS &#x89C4;&#x5219;&#x662F;&#x975E;&#x5E38;&#x56F0;&#x96BE;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x5FC5;&#x8981;&#x3002;</p>
+<p>&#x51FA;&#x73B0;&#x6027;&#x80FD;&#x8003;&#x8651;&#xFF0C;<strong>Weex &#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x5355;&#x4E2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x652F;&#x6301; CSS &#x89C4;&#x5219;&#x7684;&#x5B50;&#x96C6;</strong>&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x9605; <em><a href="../wiki/common-styles.html">&#x901A;&#x7528;&#x6837;&#x5F0F;</a></em> &#x4E0E; <em><a href="../wiki/text-styles.html">&#x6587;&#x672C;&#x6837;&#x5F0F;</a></em>&#x3002;</p>
+<p>&#x5728; Weex &#x91CC;&#xFF0C; &#x6BCF;&#x4E00;&#x4E2A; Vue &#x7EC4;&#x4EF6;&#x7684;&#x6837;&#x5F0F;&#x90FD;&#x662F; <em><a href="https://vue-loader.vuejs.org/zh-cn/features/scoped-css.html" target="_blank" rel="noopener">scoped</a></em>&#x3002;</p>
+<h3 class="article-heading"><span id="shi-jian">&#x4E8B;&#x4EF6;</span><a href="#shi-jian" class="header-anchor">#</a></h3><p>&#x76EE;&#x524D;&#x5728; Weex &#x91CC;&#x4E0D;&#x652F;&#x6301;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x548C;&#x6355;&#x83B7;&#xFF0C;&#x56E0;&#x6B64; Weex &#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x4E0D;&#x652F;&#x6301;<a href="https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6" target="_blank" rel="noopener">&#x4E8B;&#x4EF6;&#x4FEE;&#x9970;&#x7B26;</a>&#xFF0C;&#x4F8B;&#x5982;<code>.prevent</code>&#xFF0C;<code>.capture</code>&#xFF0C;<code>.stop</code>&#xFF0C;<code>.self</code> &#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;<a href="https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6" target="_blank" rel="noopener">&#x6309;&#x952E;&#x4FEE;&#x9970;&#x7B26;</a>&#x4EE5;&#x53CA;<a href="https://cn.vuejs.org/v2/guide/events.html#%E7%B3%BB%E7%BB%9F%E4%BF%AE%E9%A5%B0%E9%94%AE" target="_blank" rel="noopener">&#x7CFB;&#x7EDF;&#x4FEE;&#x9970;&#x952E;</a> &#x4F8B;&#x5982; <code>.enter</code>&#xFF0C;<code>.tab</code>&#xFF0C;<code>.ctrl</code>&#xFF0C;<code>.shift</code> &#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x57FA;&#x672C;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x5728; Weex &#x4E2D;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+<h2 class="article-heading"><span id="web-xuan-ran-qi">Web &#x6E32;&#x67D3;&#x5668;</span><a href="#web-xuan-ran-qi" class="header-anchor">#</a></h2><p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x5448;&#x73B0;&#x4F60;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x4F60;&#x9700;&#x8981; <a href="https://github.com/weexteam/weex-vue-render" target="_blank" rel="noopener">weex-vue-render</a> &#x6765;&#x5B9E;&#x73B0;&#x5B83;&#x3002;</p>
+<p><code>weex-vue-render</code>&#x662F; Vue DSL &#x7684; Web &#x6E32;&#x67D3;&#x5668;&#xFF0C; &#x5B83;&#x5728; Web &#x4E0A;&#x5B9E;&#x73B0;&#x4E86; Weex &#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#x548C;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x9605;<a href="https://github.com/weexteam/weex-vue-render" target="_blank" rel="noopener">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<h2 class="article-heading"><span id="dan-wen-jian-zu-jian">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</span><a href="#dan-wen-jian-zu-jian" class="header-anchor">#</a></h2><p>Vue &#x4E2D;&#x7684;<a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</a>&#xFF08;&#x5373;<code>*.vue</code>&#x6587;&#x4EF6;&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF0C;&#x6269;&#x5C55;&#x540D;&#x4E3A;<code>.vue</code>&#x3002;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x4F1A;&#x5728;&#x6784;&#x5EFA;&#x65F6;&#x4FBF;&#x4E8E;&#x5230;<code>render</code>&#x51FD;&#x6570;&#x91CC;&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x91CC;&#x90FD;&#x652F;&#x6301;&#x4E00;&#x4E2A;&#x597D;&#x7684;<a href="https://github.com/vuejs/awesome-vue#source-code-editing" target="_blank" rel="noopener">&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;</a>&#x3002;</p>
+<blockquote>
+<p>&#x5728; Weex &#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x8BED;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x3002;</p>
+</blockquote>
+<h3 class="article-heading"><span id="bian-yi-mu-biao">&#x7F16;&#x8BD1;&#x76EE;&#x6807;</span><a href="#bian-yi-mu-biao" class="header-anchor">#</a></h3><p>&#x56E0;&#x4E3A;&#x5E73;&#x53F0;&#x7684;&#x5DEE;&#x5F02;&#x4EE5;&#x53CA;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x7F51;&#x7EDC;&#x6027;&#x80FD;&#xFF0C;<code>*.vue</code>&#x6587;&#x4EF6;&#x9700;&#x8981;&#x7528;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7F16;&#x8BD1;&#xFF1A;</p>
+<ul>
+<li>&#x5BF9;&#x4E8E; Web &#x5E73;&#x53F0;&#x6765;&#x8BF4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x4EFB;&#x4F55;&#x6B63;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7F16;&#x8BD1;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982; &#x4F7F;&#x7528; <strong><a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack</a> + <a href="https://vue-loader.vuejs.org/en/" target="_blank" rel="noopener">vue-loader</a></strong> &#x6216;&#x8005; <strong>Browserify + vueify</strong> &#x6765;&#x7F16;&#x8BD1;<code>*.vue</code>&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x5B89;&#x5353;&#x4E0E; iOS &#x5E73;&#x53F0;&#x6765;&#x8BF4;&#xFF0C; &#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528; <a href="https://github.com/weexteam/weex-loader" target="_blank" rel="noopener">weex-loader</a> &#x6765;&#x7F16;&#x8BD1;<code>*.vue</code>&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+<p>&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;<code>bundles</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5145;&#x5206;&#x5229;&#x7528;&#x5E73;&#x53F0;&#x539F;&#x6709;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x51CF;&#x5C11;&#x6784;&#x5EFA;&#x65F6;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x4EE3;&#x7801;&#x3002;&#x4F46;&#x662F;&#x6E90;&#x4EE3;&#x7801;&#x4ECD;&#x7136;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x662F;&#x7F16;&#x8BD1;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 class="article-heading"><span id="shi-yong-weex-loader">&#x4F7F;&#x7528;weex-loader</span><a href="#shi-yong-weex-loader" class="header-anchor">#</a></h3><p><a href="https://github.com/weexteam/weex-loader" target="_blank" rel="noopener">weex-loader</a> &#x662F;&#x4E00;&#x4E2A; webpack &#x7684; <a href="https://webpack.js.org/concepts/loaders/#using-loaders" target="_blank" rel="noopener">loader</a>&#xFF0C;&#x5B83;&#x80FD;&#x628A;<code>*.vue</code>&#x6587;&#x4EF6;&#x8F6C;&#x5316;&#x4E3A;&#x7B80;&#x5355;&#x7684;javascript &#x6A21;&#x5757;&#x7528;&#x4E8E;&#x5B89;&#x5353;&#x4EE5;&#x53CA; iOS &#x5E73;&#x53F0;&#x3002;&#x6240;&#x6709;&#x7684;&#x7279;&#x6027;&#x548C;&#x914D;&#x7F6E;&#x90FD;&#x662F;&#x8DDF; <a href="https://vue-loader.vuejs.org/en/" target="_blank" rel="noopener">vue-loader</a> &#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x7684;Webpack&#x914D;&#x7F6E;&#x7684;<em>entry</em>&#x9009;&#x9879;&#x662F;&#x4E00;&#x4E2A;<code>*.vue</code>&#x6587;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4ECD;&#x9700;&#x8981;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;<code>entry</code>&#x53C2;&#x6570;&#x3002;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = {</span><br><span class="line">&#xA0;&#xA0;<span class="comment">// Add the entry parameter for the .vue file</span></span><br><span class="line">&#xA0;&#xA0;entry: <span class="string">&apos;./path/to/App.vue?entry=true&apos;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line"></span><br><span class="line">  use: {</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;loaders: [{</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">// matches the .vue file path which contains the entry parameter</span></span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;test: <span class="regexp">/\.vue(\?^^]+)?$/</span>,</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;loaders: [<span class="string">&apos;weex-loader&apos;</span>]</span><br><span class="line">&#xA0;&#xA0;&#xA0;&#xA0;}]</span><br><span class="line">&#xA0;&#xA0;}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x5982;&#x679C;&#x4F60;&#x73B0;&#x5728;&#x7528;&#x7684;&#x662F;<code>.js</code>&#x6587;&#x4EF6;&#x505A;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x90A3;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x3002;</strong>&#x63A8;&#x8350; webpack &#x914D;&#x7F6E;&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x4F7F;&#x7528; javascript &#x6587;&#x4EF6;&#x3002;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">&#xA0;&#xA0;entry: <span class="string">&apos;./path/to/entry.js&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="zhi-chi-de-gong-neng">&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;</span><a href="#zhi-chi-de-gong-neng" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="quan-ju-pei-zhi">&#x5168;&#x5C40;&#x914D;&#x7F6E;</span><a href="#quan-ju-pei-zhi" class="header-anchor">#</a></h3><blockquote>
+<p>Vue &#x201C;&#x5168;&#x5C40;&#x201D;&#x914D;&#x7F6E;&#x53EA;&#x4F1A;&#x5F71;&#x54CD; Weex &#x4E0A;&#x7684;&#x5355;&#x4E00;&#x9875;&#x9762;&#xFF0C;&#x914D;&#x7F6E;&#x4E0D;&#x4F1A;&#x5728;&#x4E0D;&#x540C;&#x7684; Weex &#x9875;&#x9762;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x3002;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Vue &#x5168;&#x5C40;&#x914D;&#x7F6E;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#silent" target="_blank" rel="noopener">Vue.config.silent</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#optionMergeStrategies" target="_blank" rel="noopener">Vue.config.optionMergeStrategies</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#devtools" target="_blank" rel="noopener">Vue.config.devtools</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x53EA;&#x5728; Web &#x73AF;&#x5883;&#x4E0B;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#errorHandler" target="_blank" rel="noopener">Vue.config.errorHandler</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#warnHandler" target="_blank" rel="noopener">Vue.config.warnHandler</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#ignoredElements" target="_blank" rel="noopener">Vue.config.ignoredElements</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#keyCodes" target="_blank" rel="noopener">Vue.config.keyCodes</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x65E0;&#x7528;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#performance" target="_blank" rel="noopener">Vue.config.performance</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x4E0E; <em>devtools</em> &#x4E00;&#x6837;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#productionTip" target="_blank" rel="noopener">Vue.config.productionTip</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="quan-ju-api">&#x5168;&#x5C40; API</span><a href="#quan-ju-api" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x5168;&#x5C40; API</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-extend" target="_blank" rel="noopener">Vue.extend</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-nextTick" target="_blank" rel="noopener">Vue.nextTick</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-set" target="_blank" rel="noopener">Vue.set</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-delete" target="_blank" rel="noopener">Vue.delete</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-directive" target="_blank" rel="noopener">Vue.directive</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-filter" target="_blank" rel="noopener">Vue.filter</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-component" target="_blank" rel="noopener">Vue.component</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-use" target="_blank" rel="noopener">Vue.use</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-mixin" target="_blank" rel="noopener">Vue.mixin</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-version" target="_blank" rel="noopener">Vue.version</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-compile" target="_blank" rel="noopener">Vue.compile</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>Weex &#x7528;&#x7684;&#x662F; <a href="https://cn.vuejs.org/v2/guide/installation.html#%E8%BF%90%E8%A1%8C%E6%97%B6-%E7%BC%96%E8%AF%91%E5%99%A8-vs-%E5%8F%AA%E5%8C%85%E5%90%AB%E8%BF%90%E8%A1%8C%E6%97%B6" target="_blank" rel="noopener">&#x53EA;&#x5305;&#x542B;&#x8FD0;&#x884C;&#x65F6;&#x6784;&#x5EFA;</a></td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="xuan-xiang">&#x9009;&#x9879;</span><a href="#xuan-xiang" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x9009;&#x9879;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#data" target="_blank" rel="noopener">data</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#props" target="_blank" rel="noopener">props</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#propsData" target="_blank" rel="noopener">propsData</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#computed" target="_blank" rel="noopener">computed</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#methods" target="_blank" rel="noopener">methods</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#watch" target="_blank" rel="noopener">watch</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#el" target="_blank" rel="noopener">el</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x5728;&#x79FB;&#x52A8;&#x7AEF;<code>el</code>&#x7684;&#x503C;&#x662F;&#x65E0;&#x610F;&#x4E49;&#x7684;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#template" target="_blank" rel="noopener">template</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>Weex &#x7528;&#x7684;&#x662F; <a href="https://cn.vuejs.org/v2/guide/installation.html#%E8%BF%90%E8%A1%8C%E6%97%B6-%E7%BC%96%E8%AF%91%E5%99%A8-vs-%E5%8F%AA%E5%8C%85%E5%90%AB%E8%BF%90%E8%A1%8C%E6%97%B6" target="_blank" rel="noopener">&#x53EA;&#x5305;&#x542B;&#x8FD0;&#x884C;&#x65F6;&#x6784;&#x5EFA;</a></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#render" target="_blank" rel="noopener">render</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#renderError" target="_blank" rel="noopener">renderError</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#directives" target="_blank" rel="noopener">directives</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#filters" target="_blank" rel="noopener">filters</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#components" target="_blank" rel="noopener">components</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#parent" target="_blank" rel="noopener">parent</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#mixins" target="_blank" rel="noopener">mixins</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#extends" target="_blank" rel="noopener">extends</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#provide-inject" target="_blank" rel="noopener">provide/inject</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#name" target="_blank" rel="noopener">name</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#delimiters" target="_blank" rel="noopener">delimiters</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#functional" target="_blank" rel="noopener">functional</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#model" target="_blank" rel="noopener">model</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#inheritAttrs" target="_blank" rel="noopener">inheritAttrs</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#comments" target="_blank" rel="noopener">comments</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="sheng-ming-zhou-qi-gou-zi">&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</span><a href="#sheng-ming-zhou-qi-gou-zi" class="header-anchor">#</a></h3><p>Vue &#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x5C06;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x9636;&#x6BB5;&#x53D1;&#x51FA;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x8003; Vue &#x7EC4;&#x4EF6;&#x7684;<a href="https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA" target="_blank" rel="noopener">&#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;</a>&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>Vue &#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeCreate" target="_blank" rel="noopener">beforeCreate</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#created" target="_blank" rel="noopener">created</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeMount" target="_blank" rel="noopener">beforeMount</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#mounted" target="_blank" rel="noopener">mounted</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x8DDF; Web &#x7AEF;&#x5B8C;&#x5168;&#x4E0D;&#x4E00;&#x6837;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeUpdate" target="_blank" rel="noopener">beforeUpdate</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#updated" target="_blank" rel="noopener">updated</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#activated" target="_blank" rel="noopener">activated</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x652F;&#x6301;<code>&lt;keep-alive&gt;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#deactivated" target="_blank" rel="noopener">deactivated</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x652F;&#x6301;<code>&lt;keep-alive&gt;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeDestroy" target="_blank" rel="noopener">beforeDestroy</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#destroyed" target="_blank" rel="noopener">destroyed</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#errorCaptured" target="_blank" rel="noopener">errorCaptured</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x5728; Vue 2.5.0+&#xFF0C; Weex SDK 0.18+ &#x4E2D;&#x65B0;&#x589E;</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="shi-li-shu-xing">&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;</span><a href="#shi-li-shu-xing" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x5B9E;&#x4F8B;&#x5C5E;&#x6027;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-data" target="_blank" rel="noopener">vm.$data</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-props" target="_blank" rel="noopener">vm.$props</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-el" target="_blank" rel="noopener">vm.$el</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x79FB;&#x52A8;&#x7AEF;&#x6CA1;&#x6709;<code>HTMLElement</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-options" target="_blank" rel="noopener">vm.$options</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-parent" target="_blank" rel="noopener">vm.$parent</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-root" target="_blank" rel="noopener">vm.$root</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-children" target="_blank" rel="noopener">vm.$children</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-slots" target="_blank" rel="noopener">vm.$slots</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-scopedSlots" target="_blank" rel="noopener">vm.$scopedSlots</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-refs" target="_blank" rel="noopener">vm.$refs</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-isServer" target="_blank" rel="noopener">vm.$isServer</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x6C38;&#x8FDC;&#x662F;<code>false</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-attrs" target="_blank" rel="noopener">vm.$attrs</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-listeners" target="_blank" rel="noopener">vm.$listeners</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="shi-li-fang-fa">&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</span><a href="#shi-li-fang-fa" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-watch" target="_blank" rel="noopener">vm.$watch()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener">vm.$set()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-delete" target="_blank" rel="noopener">vm.$delete()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-on" target="_blank" rel="noopener">vm.$on()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-once" target="_blank" rel="noopener">vm.$once()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-off" target="_blank" rel="noopener">vm.$off()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-emit" target="_blank" rel="noopener">vm.$emit()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-mount" target="_blank" rel="noopener">vm.$mount()</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5B89;&#x88C5; Vue &#x5B9E;&#x4F8B;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-forceUpdate" target="_blank" rel="noopener">vm.$forceUpdate()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-nextTick" target="_blank" rel="noopener">vm.$nextTick()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-destroy" target="_blank" rel="noopener">vm.$destroy()</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="mo-ban-zhi-ling">&#x6A21;&#x677F;&#x6307;&#x4EE4;</span><a href="#mo-ban-zhi-ling" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x6307;&#x4EE4;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-text" target="_blank" rel="noopener">v-text</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-html" target="_blank" rel="noopener">v-html</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>Weex &#x4E2D;&#x6CA1;&#x6709; HTML &#x89E3;&#x6790;&#x5668;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x5F88;&#x597D;&#x7684;&#x5B9E;&#x73B0;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-show" target="_blank" rel="noopener">v-show</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x652F;&#x6301; <code>display: none;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-if" target="_blank" rel="noopener">v-if</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-else" target="_blank" rel="noopener">v-else</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-else-if" target="_blank" rel="noopener">v-else-if</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-for" target="_blank" rel="noopener">v-for</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-on" target="_blank" rel="noopener">v-on</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x652F;&#x6301;<a href="https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6" target="_blank" rel="noopener">&#x4E8B;&#x4EF6;&#x4FEE;&#x9970;&#x7B26;</a></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-bind" target="_blank" rel="noopener">v-bind</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-model" target="_blank" rel="noopener">v-model</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-pre" target="_blank" rel="noopener">v-pre</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-cloak" target="_blank" rel="noopener">v-cloak</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x53EA;&#x652F;&#x6301;&#x5355;&#x7C7B;&#x540D;&#x9009;&#x62E9;&#x5668;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-once" target="_blank" rel="noopener">v-once</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="te-shu-shu-xing">&#x7279;&#x6B8A;&#x5C5E;&#x6027;</span><a href="#te-shu-shu-xing" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x7279;&#x6B8A;&#x5C5E;&#x6027;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#key" target="_blank" rel="noopener">key</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#ref" target="_blank" rel="noopener">ref</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#slot" target="_blank" rel="noopener">slot</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#slot-scope" target="_blank" rel="noopener">slot-scope</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x5728; Vue 2.5.0+&#xFF0C; Weex SDK 0.18+ &#x4E2D;&#x65B0;&#x589E;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#scope" target="_blank" rel="noopener">scope</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>&#x4E0D;&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#is" target="_blank" rel="noopener">is</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="nei-zhi-zu-jian">&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;</span><a href="#nei-zhi-zu-jian" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Vue &#x5185;&#x7F6E;&#x7EC4;&#x4EF6;</th>
+<th>&#x662F;&#x5426;&#x652F;&#x6301;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#component" target="_blank" rel="noopener">component</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#transition" target="_blank" rel="noopener">transition</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x5728;&#x79FB;&#x52A8;&#x7AEF; <em>enter</em> &#x4E0E; <em>leave</em> &#x7684;&#x6982;&#x5FF5;&#x53EF;&#x80FD;&#x6709;&#x70B9;&#x4E0D;&#x540C;&#xFF0C; &#x5E76;&#x4E14; Weex &#x4E0D;&#x652F;&#x6301;<code>display: none;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#transition-group" target="_blank" rel="noopener">transition-group</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x8DDF; <em>transition</em> &#x4E00;&#x6837;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">keep-alive</a></td>
+<td><b class="tag-no">&#x4E0D;&#x652F;&#x6301;</b></td>
+<td>&#x79FB;&#x52A8;&#x7AEF;&#x7684;&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x4E0D;&#x80FD;&#x88AB;&#x524D;&#x7AEF;&#x7F13;&#x5B58;</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#slot" target="_blank" rel="noopener">slot</a></td>
+<td><b class="tag-yes">&#x652F;&#x6301;</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/guide/use-vue.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

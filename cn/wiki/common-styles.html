@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>通用样式 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="盒模型 注意： 示例：   Flexbox Flex 容器 Flex 成员项 示例   定位 示例   transform 示例   transition v0.16.0+ 参数 示例   伪类 v0.9.5+ 规则 示例   线性渐变 v0.10+ 使用 Note 示例   阴影(box-shadow) v0.11+ 注意 示例   其他基本样式 上手样式     所有 Weex 组件都">
+<meta property="og:type" content="website">
+<meta property="og:title" content="通用样式">
+<meta property="og:url" content="https://weex.apache.org/cn/wiki/common-styles.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="盒模型 注意： 示例：   Flexbox Flex 容器 Flex 成员项 示例   定位 示例   transform 示例   transition v0.16.0+ 参数 示例   伪类 v0.9.5+ 规则 示例   线性渐变 v0.10+ 使用 Note 示例   阴影(box-shadow) v0.11+ 注意 示例   其他基本样式 上手样式     所有 Weex 组件都">
+<meta property="og:locale" content="cn">
+<meta property="og:image" content="https://weex.apache.org/cn/wiki/images/css-boxmodel.png">
+<meta property="og:image" content="https://weex.apache.org/cn/wiki/images/css-flexbox-justify.svg">
+<meta property="og:image" content="https://weex.apache.org/cn/wiki/images/css-flexbox-align.jpg">
+<meta property="og:image" content="https://weex.apache.org/cn/wiki/images/style_1.jpg">
+<meta property="og:image" content="https://weex.apache.org/cn/wiki/images/style_2.jpg">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.345Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通用样式">
+<meta name="twitter:description" content="盒模型 注意： 示例：   Flexbox Flex 容器 Flex 成员项 示例   定位 示例   transform 示例   transition v0.16.0+ 参数 示例   伪类 v0.9.5+ 规则 示例   线性渐变 v0.10+ 使用 Note 示例   阴影(box-shadow) v0.11+ 注意 示例   其他基本样式 上手样式     所有 Weex 组件都">
+<meta name="twitter:image" content="https://weex.apache.org/cn/wiki/images/css-boxmodel.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="current">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/common-styles.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/common-styles.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/design-principles.html" class="sidebar-link  ">设计理念</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/platform-difference.html" class="sidebar-link  ">与 Web 平台的差异</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">样式</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-styles.html" class="sidebar-link current ">通用样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/text-styles.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/css-units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/color-names.html" class="sidebar-link  ">支持的颜色名称列表</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">事件</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-events.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/event-bubble.html" class="sidebar-link  ">事件冒泡</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/gestures.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">概念</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">FAQ</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/faq.html" class="sidebar-link  ">常见问题</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        通用样式
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.345Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#he-mo-xing">&#x76D2;&#x6A21;&#x578B;</a><ul>
+<li><a href="#zhu-yi">&#x6CE8;&#x610F;&#xFF1A;</a></li>
+<li><a href="#shi-li">&#x793A;&#x4F8B;&#xFF1A;</a></li>
+</ul>
+</li>
+<li><a href="#flexbox">Flexbox</a><ul>
+<li><a href="#flex-rong-qi">Flex &#x5BB9;&#x5668;</a></li>
+<li><a href="#flex-cheng-yuan-xiang">Flex &#x6210;&#x5458;&#x9879;</a></li>
+<li><a href="#shi-li">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#ding-wei">&#x5B9A;&#x4F4D;</a><ul>
+<li><a href="#shi-li-1">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#transform">transform</a><ul>
+<li><a href="#shi-li-2">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#transition-span-class-api-version-v0-16-0-span">transition <span class="api-version">v0.16.0+</span></a><ul>
+<li><a href="#can-shu">&#x53C2;&#x6570;</a></li>
+<li><a href="#shi-li-3">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#wei-lei-span-class-api-version-v0-9-5-span">&#x4F2A;&#x7C7B; <span class="api-version">v0.9.5+</span></a><ul>
+<li><a href="#gui-ze">&#x89C4;&#x5219;</a></li>
+<li><a href="#shi-li-4">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#xian-xing-jian-bian-span-class-api-version-v0-10-span">&#x7EBF;&#x6027;&#x6E10;&#x53D8; <span class="api-version">v0.10+</span></a><ul>
+<li><a href="#shi-yong">&#x4F7F;&#x7528;</a></li>
+<li><a href="#note">Note</a></li>
+<li><a href="#shi-li-5">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#yin-ying-box-shadow-span-class-api-version-v0-11-span">&#x9634;&#x5F71;(box-shadow) <span class="api-version">v0.11+</span></a><ul>
+<li><a href="#zhu-yi">&#x6CE8;&#x610F;</a></li>
+<li><a href="#shi-li-6">&#x793A;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#qi-ta-ji-ben-yang-shi">&#x5176;&#x4ED6;&#x57FA;&#x672C;&#x6837;&#x5F0F;</a></li>
+<li><a href="#shang-shou-yang-shi">&#x4E0A;&#x624B;&#x6837;&#x5F0F;</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>&#x6240;&#x6709; Weex &#x7EC4;&#x4EF6;&#x90FD;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x901A;&#x7528;&#x6837;&#x5F0F;&#x89C4;&#x5219;&#x3002;</p>
+<h2 class="article-heading"><span id="he-mo-xing">&#x76D2;&#x6A21;&#x578B;</span><a href="#he-mo-xing" class="header-anchor">#</a></h2><p><img src="./images/css-boxmodel.png" alt="box model @300*"></p>
+<p>Weex &#x76D2;&#x6A21;&#x578B;&#x57FA;&#x4E8E; <a href="https://www.w3.org/TR/css3-box/" target="_blank" rel="noopener">CSS &#x76D2;&#x6A21;&#x578B;</a>&#xFF0C;&#x6BCF;&#x4E2A; Weex &#x5143;&#x7D20;&#x90FD;&#x53EF;&#x89C6;&#x4F5C;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x3002;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x5728;&#x8BA8;&#x8BBA;&#x8BBE;&#x8BA1;&#x6216;&#x5E03;&#x5C40;&#x65F6;&#xFF0C;&#x4F1A;&#x63D0;&#x5230;&#x300C;&#x76D2;&#x6A21;&#x578B;&#x300D;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</p>
+<p>&#x76D2;&#x6A21;&#x578B;&#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6240;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x6709;&#x56DB;&#x6761;&#x8FB9;&#x754C;&#xFF1A;&#x5916;&#x8FB9;&#x8DDD;&#x8FB9;&#x754C; margin edge, &#x8FB9;&#x6846;&#x8FB9;&#x754C; border edge, &#x5185;&#x8FB9;&#x8DDD;&#x8FB9;&#x754C; padding edge &#x4E0E;&#x5185;&#x5BB9;&#x8FB9;&#x754C; content edge&#x3002;&#x8FD9;&#x56DB;&#x5C42;&#x8FB9;&#x754C;&#xFF0C;&#x5F62;&#x6210;&#x4E00;&#x5C42;&#x5C42;&#x7684;&#x76D2;&#x5B50;&#x5305;&#x88F9;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x76D2;&#x6A21;&#x578B;&#x5927;&#x4F53;&#x4E0A;&#x7684;&#x542B;&#x4E49;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong><br>Weex &#x5BF9;&#x4E8E;&#x957F;&#x5EA6;&#x503C;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;<em>&#x50CF;&#x7D20;</em>&#x503C;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#xFF08;<code>em</code>&#x3001;<code>rem</code>&#xFF09;&#x3002;</p>
+<ul>
+<li><code>width {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>height {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><p><code>padding {length}</code>&#xFF1A;&#x5185;&#x8FB9;&#x8DDD;&#xFF0C;&#x5185;&#x5BB9;&#x548C;&#x8FB9;&#x6846;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x3002;&#x9ED8;&#x8BA4;&#x503C; 0</p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>padding-left {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>padding-right {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>padding-top {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>padding-bottom {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+</ul>
+</li>
+<li><p><code>margin</code>&#xFF1A;</p>
+<p>&#x5916;&#x8FB9;&#x8DDD;&#xFF0C;&#x5143;&#x7D20;&#x548C;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x767D;&#x8DDD;&#x79BB;&#x3002;&#x503C;&#x7C7B;&#x578B;&#x4E3A; length&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>margin-left {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>margin-right {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>margin-top {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>margin-bottom {length}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</li>
+</ul>
+</li>
+<li><p>border&#xFF1A;</p>
+<p>&#x8BBE;&#x5B9A;&#x8FB9;&#x6846;&#xFF0C;<code>border</code> &#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837; <code>border: 1 solid #ff0000;</code> &#x7684;&#x7EC4;&#x5408;&#x5199;&#x6CD5;&#x3002;</p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><p><code>border-style</code>&#xFF1A;</p>
+<p>&#x8BBE;&#x5B9A;&#x8FB9;&#x6846;&#x6837;&#x5F0F;&#xFF0C;&#x503C;&#x7C7B;&#x578B;&#x4E3A; string&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>solid</code> | <code>dashed</code> | <code>dotted</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>solid</code></p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>border-left-style {string}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>solid</code> | <code>dashed</code> | <code>dotted</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>solid</code></li>
+<li><code>border-top-style {string}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>solid</code> | <code>dashed</code> | <code>dotted</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>solid</code></li>
+<li><code>border-right-style {string}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>solid</code> | <code>dashed</code> | <code>dotted</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>solid</code></li>
+<li><code>border-bottom-style {string}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>solid</code> | <code>dashed</code> | <code>dotted</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>solid</code></li>
+</ul>
+</li>
+<li><p><code>border-width {length}</code>&#xFF1A;</p>
+<p>&#x8BBE;&#x5B9A;&#x8FB9;&#x6846;&#x5BBD;&#x5EA6;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>border-left-width {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>border-top-width {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>border-right-width {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>border-bottom-width {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+</ul>
+</li>
+<li><p><code>border-color {color}</code>&#xFF1A;</p>
+<p>&#x8BBE;&#x5B9A;&#x8FB9;&#x6846;&#x989C;&#x8272;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>#000000</code></p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>border-left-color {color}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>#000000</code></li>
+<li><code>border-top-color {color}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>#000000</code></li>
+<li><code>border-right-color {color}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>#000000</code></li>
+<li><code>border-bottom-color {color}</code>&#xFF1A;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>#000000</code></li>
+</ul>
+</li>
+<li><p><code>border-radius {length}</code>&#xFF1A;</p>
+<p>&#x8BBE;&#x5B9A;&#x5706;&#x89D2;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 0</p>
+<p>&#x53EF;&#x6709;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><code>border-bottom-left-radius {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>border-bottom-right-radius {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>border-top-left-radius {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+<li><code>border-top-right-radius {length}</code>&#xFF1A;&#xFF0C;&#x975E;&#x8D1F;&#x503C;, &#x9ED8;&#x8BA4;&#x503C; 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="zhu-yi">&#x6CE8;&#x610F;&#xFF1A;</span><a href="#zhu-yi" class="header-anchor">#</a></h3><p>Weex &#x76D2;&#x6A21;&#x578B;&#x7684; <code>box-sizing</code> &#x9ED8;&#x8BA4;&#x4E3A; <code>border-box</code>&#xFF0C;&#x5373;&#x76D2;&#x5B50;&#x7684;&#x5BBD;&#x9AD8;&#x5305;&#x542B;&#x5185;&#x5BB9;&#x3001;&#x5185;&#x8FB9;&#x8DDD;&#x548C;&#x8FB9;&#x6846;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x5916;&#x8FB9;&#x8DDD;&#x7684;&#x5BBD;&#x5EA6;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x5728; <code>&lt;image&gt;</code> &#x7EC4;&#x4EF6;&#x4E0A;&#x5C1A;&#x65E0;&#x6CD5;&#x53EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6216;&#x51E0;&#x4E2A;&#x89D2;&#x7684; <code>border-radius</code>&#x3002;&#x6BD4;&#x5982;&#x4F60;&#x65E0;&#x6CD5;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E0A;&#x4F7F;&#x7528; <code>border-top-left-radius</code>&#x3002;&#x8BE5;&#x7EA6;&#x675F;&#x53EA;&#x5BF9; iOS &#x751F;&#x6548;&#xFF0C;Android &#x5E76;&#x4E0D;&#x53D7;&#x6B64;&#x9650;&#x5236;&#x3002;</p>
+<p>&#x5C3D;&#x7BA1; <code>overflow:hidden</code> &#x5728; Android &#x4E0A;&#x662F;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x4E0B;&#x5217;&#x6761;&#x4EF6;&#x90FD;&#x6EE1;&#x8DB3;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x7236; view &#x624D;&#x4F1A;&#x53BB; clip &#x5B83;&#x7684;&#x5B50; view&#x3002;&#x8FD9;&#x4E2A;&#x9650;&#x5236;&#x53EA;&#x5BF9; Android &#x751F;&#x6548;&#xFF0C;iOS &#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#x3002;</p>
+<ul>
+<li>&#x7236;view&#x662F;<code>div</code>, <code>a</code>, <code>cell</code>, <code>refresh</code> &#x6216; <code>loading</code>&#x3002;</li>
+<li>&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x662F; Android 4.3 &#x6216;&#x66F4;&#x9AD8;&#x3002;</li>
+<li>&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x4E0D;&#x662F; Andorid 7.0&#x3002;</li>
+<li>&#x7236; view &#x6CA1;&#x6709; <code>background-image</code> &#x5C5E;&#x6027;&#x6216;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x662F; Android 5.0 &#x6216;&#x66F4;&#x9AD8;&#x3002;</li>
+</ul>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;&#xFF1A;</span><a href="#shi-li" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span>  <span class="attr">style</span>=<span class="string">&quot;width: 400px; height: 200px; margin-left: 20px;&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://g.alicdn.com/mtb/lab-zikuan/0.0.18/weex/weex_logo_blue@3x.png&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="flexbox">Flexbox</span><a href="#flexbox" class="header-anchor">#</a></h2><p>Weex &#x5E03;&#x5C40;&#x6A21;&#x578B;&#x57FA;&#x4E8E; CSS <a href="http://www.w3.org/TR/css3-flexbox/" target="_blank" rel="noopener"><code>Flexbox</code></a>&#xFF0C;&#x4EE5;&#x4FBF;&#x6240;&#x6709;&#x9875;&#x9762;&#x5143;&#x7D20;&#x7684;&#x6392;&#x7248;&#x80FD;&#x591F;&#x4E00;&#x81F4;&#x53EF;&#x9884;&#x6D4B;&#xFF0C;&#x540C;&#x65F6;&#x9875;&#x9762;&#x5E03;&#x5C40;&#x80FD;&#x9002;&#x5E94;&#x5404;&#x79CD;&#x8BBE;&#x5907;&#x6216;&#x8005;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;&#x3002;</p>
+<p>Flexbox &#x5305;&#x542B; flex &#x5BB9;&#x5668;&#x548C; flex &#x6210;&#x5458;&#x9879;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A; Weex &#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x5BB9;&#x7EB3;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x6210;&#x4E3A; flex &#x5BB9;&#x5668;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;flexbox &#x7684;&#x8001;&#x7248;&#x89C4;&#x8303;&#x76F8;&#x8F83;&#x65B0;&#x7248;&#x6709;&#x4E9B;&#x51FA;&#x5165;&#xFF0C;&#x6BD4;&#x5982;&#x662F;&#x5426;&#x80FD;&#x652F;&#x6301; wrapping&#x3002;&#x8FD9;&#x4E9B;&#x90FD;&#x63CF;&#x8FF0;&#x5728; W3C &#x7684;&#x5DE5;&#x4F5C;&#x8349;&#x6848;&#x4E2D;&#x4E86;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E0B;&#x65B0;&#x8001;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x540C;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x8001;&#x7248;&#x672C;&#x53EA;&#x5728;&#x5B89;&#x5353; 4.4 &#x7248;&#x4EE5;&#x4E0B;&#x5F97;&#x5230;&#x652F;&#x6301;&#x3002;</p>
+<h3 class="article-heading"><span id="flex-rong-qi">Flex &#x5BB9;&#x5668;</span><a href="#flex-rong-qi" class="header-anchor">#</a></h3><p>&#x5728; Weex &#x4E2D;&#xFF0C;Flexbox &#x662F;&#x9ED8;&#x8BA4;&#x4E14;&#x552F;&#x4E00;&#x7684;&#x5E03;&#x5C40;&#x6A21;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x4E3A;&#x5143;&#x7D20;&#x6DFB;&#x52A0; <code>display: flex;</code> &#x5C5E;&#x6027;&#x3002;</p>
+<ul>
+<li><p><code>flex-direction</code>&#xFF1A;</p>
+<p>&#x5B9A;&#x4E49;&#x4E86; flex &#x5BB9;&#x5668;&#x4E2D; flex &#x6210;&#x5458;&#x9879;&#x7684;&#x6392;&#x5217;&#x65B9;&#x5411;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>row</code> | <code>column</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>column</code></p>
+<ul>
+<li><code>column</code>&#xFF1A;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x6392;&#x5217;&#x3002;</li>
+<li><code>row</code>&#xFF1A;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x6392;&#x5217;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>justify-content</code>&#xFF1A;</p>
+<p>&#x5B9A;&#x4E49;&#x4E86; flex &#x5BB9;&#x5668;&#x4E2D; flex &#x6210;&#x5458;&#x9879;&#x5728;&#x4E3B;&#x8F74;&#x65B9;&#x5411;&#x4E0A;&#x5982;&#x4F55;&#x6392;&#x5217;&#x4EE5;&#x5904;&#x7406;&#x7A7A;&#x767D;&#x90E8;&#x5206;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>flex-start</code>&#x3002;</p>
+<ul>
+<li><code>flex-start</code>&#xFF1A;&#x662F;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6240;&#x6709;&#x7684; flex &#x6210;&#x5458;&#x9879;&#x90FD;&#x6392;&#x5217;&#x5728;&#x5BB9;&#x5668;&#x7684;&#x524D;&#x90E8;&#xFF1B;</li>
+<li><code>flex-end</code>&#xFF1A;&#x5219;&#x610F;&#x5473;&#x7740;&#x6210;&#x5458;&#x9879;&#x6392;&#x5217;&#x5728;&#x5BB9;&#x5668;&#x7684;&#x540E;&#x90E8;&#xFF1B;</li>
+<li><code>center</code>&#xFF1A;&#x5373;&#x4E2D;&#x95F4;&#x5BF9;&#x9F50;&#xFF0C;&#x6210;&#x5458;&#x9879;&#x6392;&#x5217;&#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x95F4;&#x3001;&#x4E24;&#x8FB9;&#x7559;&#x767D;&#xFF1B;</li>
+<li><code>space-between</code>&#xFF1A;&#x8868;&#x793A;&#x4E24;&#x7AEF;&#x5BF9;&#x9F50;&#xFF0C;&#x7A7A;&#x767D;&#x5747;&#x5300;&#x5730;&#x586B;&#x5145;&#x5230; flex &#x6210;&#x5458;&#x9879;&#x4E4B;&#x95F4;&#x3002;</li>
+</ul>
+<p><img src="./images/css-flexbox-justify.svg" alt="justify-content @400*"></p>
+</li>
+<li><p><code>align-items</code>&#xFF1A;</p>
+<p>&#x5B9A;&#x4E49;&#x4E86; flex &#x5BB9;&#x5668;&#x4E2D; flex &#x6210;&#x5458;&#x9879;&#x5728;&#x7EB5;&#x8F74;&#x65B9;&#x5411;&#x4E0A;&#x5982;&#x4F55;&#x6392;&#x5217;&#x4EE5;&#x5904;&#x7406;&#x7A7A;&#x767D;&#x90E8;&#x5206;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>stretch</code> | <code>flex-start</code> | <code>center</code> | <code>flex-end</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>stretch</code>&#x3002;</p>
+<ul>
+<li><code>stretch</code> &#x662F;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5373;&#x62C9;&#x4F38;&#x9AD8;&#x5EA6;&#x81F3; flex &#x5BB9;&#x5668;&#x7684;&#x5927;&#x5C0F;&#xFF1B;</li>
+<li><code>flex-start</code> &#x5219;&#x662F;&#x4E0A;&#x5BF9;&#x9F50;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6210;&#x5458;&#x9879;&#x6392;&#x5217;&#x5728;&#x5BB9;&#x5668;&#x9876;&#x90E8;&#xFF1B;</li>
+<li><code>flex-end</code> &#x662F;&#x4E0B;&#x5BF9;&#x9F50;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6210;&#x5458;&#x9879;&#x6392;&#x5217;&#x5728;&#x5BB9;&#x5668;&#x5E95;&#x90E8;&#xFF1B;</li>
+<li><code>center</code> &#x662F;&#x4E2D;&#x95F4;&#x5BF9;&#x9F50;&#xFF0C;&#x6240;&#x6709;&#x6210;&#x5458;&#x9879;&#x90FD;&#x5782;&#x76F4;&#x5730;&#x5C45;&#x4E2D;&#x663E;&#x793A;&#x3002;</li>
+</ul>
+<p><img src="./images/css-flexbox-align.jpg" alt="align-items @400*"></p>
+</li>
+</ul>
+<h3 class="article-heading"><span id="flex-cheng-yuan-xiang">Flex &#x6210;&#x5458;&#x9879;</span><a href="#flex-cheng-yuan-xiang" class="header-anchor">#</a></h3><p>flex &#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x4E86; flex &#x6210;&#x5458;&#x9879;&#x53EF;&#x4EE5;&#x5360;&#x7528;&#x5BB9;&#x5668;&#x4E2D;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;&#x6210;&#x5458;&#x9879;&#x8BBE;&#x7F6E;&#x76F8;&#x540C;&#x7684;&#x503C; <code>flex: 1</code>&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x5E73;&#x5747;&#x5206;&#x914D;&#x5269;&#x4F59;&#x7A7A;&#x95F4;. &#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x9879;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#x4E3A; <code>flex: 2</code>&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x6210;&#x5458;&#x9879;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#x4E3A; <code>flex: 1</code>&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x6210;&#x5458;&#x9879;&#x6240;&#x5360;&#x7528;&#x7684;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x662F;&#x5176;&#x5B83;&#x6210;&#x5458;&#x9879;&#x7684;2&#x500D;&#x3002;</p>
+<ul>
+<li><code>flex {number}</code>&#xFF1A;&#x503C;&#x4E3A; number &#x7C7B;&#x578B;&#x3002;</li>
+</ul>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x3002;</p>
+<p><img src="images/style_1.jpg" alt="mobile_preview"></p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;(v, i) in list&quot;</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;(text, k) in v&quot;</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">text</span>&gt;</span>{{text}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item</span>{</span></span><br><span class="line"><span class="css">    <span class="selector-tag">flex</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line"><span class="undefined">    justify-content: center;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">align-items</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-width</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.row</span>{</span></span><br><span class="line"><span class="undefined">    flex-direction: row;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:80px</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="undefined">        list:[</span></span><br><span class="line"><span class="javascript">          [<span class="string">&apos;A&apos;</span>, <span class="string">&apos;B&apos;</span>, <span class="string">&apos;C&apos;</span>],</span></span><br><span class="line"><span class="javascript">          [<span class="string">&apos;D&apos;</span>, <span class="string">&apos;E&apos;</span>, <span class="string">&apos;F&apos;</span>],</span></span><br><span class="line"><span class="javascript">          [<span class="string">&apos;G&apos;</span>, <span class="string">&apos;H&apos;</span>, <span class="string">&apos;I&apos;</span>]</span></span><br><span class="line"><span class="undefined">        ]</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x4E00;&#x4E2A;&#x5728;&#x76F8;&#x5BF9;&#x4E8E;&#x5C4F;&#x5E55;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF0C;&#x5168;&#x5C4F;&#x5C45;&#x4E2D;&#x7684; <code>&lt;div&gt;</code>&#x3002;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.wrapper</span> {</span></span><br><span class="line"><span class="undefined">    position: absolute;</span></span><br><span class="line"><span class="undefined">    top: 0;</span></span><br><span class="line"><span class="undefined">    right: 0;</span></span><br><span class="line"><span class="undefined">    bottom: 0;</span></span><br><span class="line"><span class="undefined">    left: 0;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">    justify-content: center;</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> {</span></span><br><span class="line"><span class="undefined">    width: 200px;</span></span><br><span class="line"><span class="undefined">    height: 200px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#fc0000</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="ding-wei">&#x5B9A;&#x4F4D;</span><a href="#ding-wei" class="header-anchor">#</a></h2><p>Weex &#x652F;&#x6301; <code>position</code> &#x5B9A;&#x4F4D;&#xFF0C;&#x7528;&#x6CD5;&#x4E0E; CSS position &#x7C7B;&#x4F3C;&#x3002;&#x4E3A;&#x5143;&#x7D20;&#x8BBE;&#x7F6E; <code>position</code> &#x540E;&#xFF0C;&#x53EF;&#x901A;&#x8FC7; <code>top</code>&#x3001;<code>right</code>&#x3001;<code>bottom</code>&#x3001;<code>left</code> &#x56DB;&#x4E2A;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x5750;&#x6807;&#x3002;</p>
+<ul>
+<li><p><code>position {string}</code>&#xFF1A;</p>
+<p>&#x8BBE;&#x7F6E;&#x5B9A;&#x4F4D;&#x7C7B;&#x578B;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>relative</code> | <code>absolute</code> | <code>fixed</code> | <code>sticky</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>relative</code>&#x3002;</p>
+<ul>
+<li><code>relative</code> &#x662F;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x76F8;&#x5BF9;&#x5B9A;&#x4F4D;&#xFF1B;</li>
+<li><code>absolute</code> &#x662F;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#xFF0C;&#x4EE5;&#x5143;&#x7D20;&#x7684;&#x5BB9;&#x5668;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x7CFB;&#xFF1B;</li>
+<li><code>fixed</code> &#x4FDD;&#x8BC1;&#x5143;&#x7D20;&#x5728;&#x9875;&#x9762;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#x663E;&#x793A;&#xFF1B;</li>
+<li><code>sticky</code> &#x6307;&#x7684;&#x662F;&#x4EC5;&#x5F53;&#x5143;&#x7D20;&#x6EDA;&#x52A8;&#x5230;&#x9875;&#x9762;&#x4E4B;&#x5916;&#x65F6;&#xFF0C;&#x5143;&#x7D20;&#x4F1A;&#x56FA;&#x5B9A;&#x5728;&#x9875;&#x9762;&#x7A97;&#x53E3;&#x7684;&#x9876;&#x90E8;&#x3002;</li>
+</ul>
+</li>
+<li><code>top {number}</code>&#xFF1A;&#x8DDD;&#x79BB;&#x4E0A;&#x65B9;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 0&#x3002;</li>
+<li><code>bottom {number}</code>&#xFF1A;&#x8DDD;&#x79BB;&#x4E0B;&#x65B9;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 0&#x3002;</li>
+<li><code>left {number}</code>&#xFF1A;&#x8DDD;&#x79BB;&#x5DE6;&#x65B9;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 0&#x3002;</li>
+<li><code>right {number}</code>&#xFF1A;&#x8DDD;&#x79BB;&#x53F3;&#x65B9;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 0&#x3002;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<ol>
+<li>Weex &#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301; <code>z-index</code> &#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x5C42;&#x7EA7;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x9760;&#x540E;&#x7684;&#x5143;&#x7D20;&#x5C42;&#x7EA7;&#x66F4;&#x9AD8;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;&#x5C42;&#x7EA7;&#x9AD8;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x53EF;&#x5C06;&#x5176;&#x6392;&#x5217;&#x5728;&#x540E;&#x9762;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;&#x8D85;&#x8FC7;&#x5BB9;&#x5668;&#x8FB9;&#x754C;&#xFF0C;&#x5728; Android &#x4E0B;&#xFF0C;&#x8D85;&#x51FA;&#x90E8;&#x5206;&#x5C06;<strong>&#x4E0D;&#x53EF;&#x89C1;</strong>&#xFF0C;&#x539F;&#x56E0;&#x5728;&#x4E8E; Android &#x7AEF;&#x5143;&#x7D20; <code>overflow</code> &#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>hidden</code>&#xFF0C;&#x4F46;&#x76EE;&#x524D; Android &#x6682;&#x4E0D;&#x652F;&#x6301;&#x8BBE;&#x7F6E; <code>overflow: visible</code>&#x3002;</li>
+</ol>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><p><img src="images/style_2.jpg" alt="mobile_preview"></p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box box2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box box3&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.wrapper</span> {</span></span><br><span class="line"><span class="undefined">    position: absolute;</span></span><br><span class="line"><span class="undefined">    top: 0;</span></span><br><span class="line"><span class="undefined">    right: 0;</span></span><br><span class="line"><span class="undefined">    bottom: 0;</span></span><br><span class="line"><span class="undefined">    left: 0;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> {</span></span><br><span class="line"><span class="undefined">    width: 400px;</span></span><br><span class="line"><span class="undefined">    height: 400px;</span></span><br><span class="line"><span class="undefined">    position: absolute;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box1</span> {</span></span><br><span class="line"><span class="undefined">    top: 0;</span></span><br><span class="line"><span class="undefined">    left: 0;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#ff0000</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box2</span> {</span></span><br><span class="line"><span class="undefined">    top: 150px;</span></span><br><span class="line"><span class="undefined">    left: 150px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#0055dd</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box3</span> {</span></span><br><span class="line"><span class="undefined">    top: 300px;</span></span><br><span class="line"><span class="undefined">    left: 300px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#00ff49</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="transform">transform</span><a href="#transform" class="header-anchor">#</a></h2><p>transform &#x5C5E;&#x6027;&#x5411;&#x5143;&#x7D20;&#x5E94;&#x7528; 2D &#x8F6C;&#x6362;&#x3002;&#x8BE5;&#x5C5E;&#x6027;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;&#x3001;&#x7F29;&#x653E;&#x3001;&#x79FB;&#x52A8;&#x6216;&#x503E;&#x659C;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x652F;&#x6301;&#x7684; transform &#x58F0;&#x660E;&#x683C;&#x5F0F;:</p>
+<ul>
+<li>translate( &lt;number/percentage&gt; [, &lt;number/percentage&gt;]?)</li>
+<li>translateX( &lt;number/percentage&gt; )</li>
+<li>translateY( &lt;number/percentage&gt; )</li>
+<li>scale( <number>)</number></li>
+<li>scaleX( <number> )</number></li>
+<li>scaleY( <number> )</number></li>
+<li>rotate( &lt;angle/degree&gt; )</li>
+<li>rotateX( &lt;angle/degree&gt; ) <span class="api-version">v0.14+</span></li>
+<li>rotateY( &lt;angle/degree&gt; ) <span class="api-version">v0.14+</span></li>
+<li>perspective( <number> ) Android 4.1&#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x652F;&#x6301; <span class="api-version">v0.16+</span></number></li>
+<li>transform-origin: number/percentage/keyword(top/left/right/bottom)</li>
+</ul>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;transform&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>Transformed element<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.transform</span> {</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    transform: translate(150px,200px) rotate(20deg);</span></span><br><span class="line"><span class="undefined">    transform-origin: 0 -250px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-width</span><span class="selector-pseudo">:2px</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.title</span> {<span class="attribute">font-size</span>: <span class="number">48px</span>;}</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="transition-v0-16-0">transition <span class="api-version">v0.16.0+</span></span><a href="#transition-v0-16-0" class="header-anchor">#</a></h2><p>&#x73B0;&#x5728;&#x60A8;&#x53EF;&#x4EE5;&#x5728;CSS&#x4E2D;&#x4F7F;&#x7528;transition&#x5C5E;&#x6027;&#x6765;&#x63D0;&#x5347;&#x60A8;&#x5E94;&#x7528;&#x7684;&#x4EA4;&#x4E92;&#x6027;&#x4E0E;&#x89C6;&#x89C9;&#x611F;&#x53D7;&#xFF0C;transition&#x4E2D;&#x5305;&#x62EC;&#x5E03;&#x5C40;&#x52A8;&#x753B;&#xFF0C;&#x5373;LayoutAnimation&#xFF0C;&#x73B0;&#x5728;&#x5E03;&#x5C40;&#x4EA7;&#x751F;&#x53D8;&#x5316;&#x7684;&#x540C;&#x65F6;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;transition&#x5E26;&#x6765;&#x7684;&#x6D41;&#x7545;&#x52A8;&#x753B;&#x3002;transition&#x5141;&#x8BB8;CSS&#x7684;&#x5C5E;&#x6027;&#x503C;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x533A;&#x95F4;&#x5185;&#x5E73;&#x6ED1;&#x5730;&#x8FC7;&#x6E21;&#x3002;</p>
+<h3 class="article-heading"><span id="can-shu">&#x53C2;&#x6570;</span><a href="#can-shu" class="header-anchor">#</a></h3><ul>
+<li><code>transition-property</code>:&#x5141;&#x8BB8;&#x8FC7;&#x6E21;&#x52A8;&#x753B;&#x7684;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x6837;&#x5F0F;transition&#x6548;&#x679C;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x7A7A;&#xFF0C;&#x8868;&#x793A;&#x4E0D;&#x6267;&#x884C;&#x4EFB;&#x4F55;transition&#xFF0C;&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x6240;&#x6709;&#x5408;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x5C5E;&#x6027;&#xFF1A;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x5BBD;&#x5EA6;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>height</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x9AD8;&#x5EA6;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>top</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x9876;&#x90E8;&#x8DDD;&#x79BB;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x5E95;&#x90E8;&#x8DDD;&#x79BB;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>left</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x5DE6;&#x4FA7;&#x8DDD;&#x79BB;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>right</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x53F3;&#x4FA7;&#x8DDD;&#x79BB;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x4E0D;&#x900F;&#x660E;&#x5EA6;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x7EC4;&#x4EF6;&#x7684;&#x53D8;&#x6362;&#x7C7B;&#x578B;&#x53C2;&#x4E0E;&#x52A8;&#x753B;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>transition-duration</code>:&#x6307;&#x5B9A;transition&#x8FC7;&#x6E21;&#x7684;&#x6301;&#x7EED;&#x65F6;&#x95F4; (&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;)&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>0</code>&#xFF0C;&#x8868;&#x793A;&#x6CA1;&#x6709;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;</p>
+</li>
+<li><p><code>transition-delay</code>:&#x6307;&#x5B9A;&#x8BF7;&#x6C42;transition&#x8FC7;&#x6E21;&#x64CD;&#x4F5C;&#x5230;&#x6267;&#x884C;transition&#x8FC7;&#x6E21;&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694; (&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x6216;&#x8005;&#x79D2;)&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>0</code>&#xFF0C;&#x8868;&#x793A;&#x6CA1;&#x6709;&#x5EF6;&#x8FDF;&#xFF0C;&#x5728;&#x8BF7;&#x6C42;&#x540E;&#x7ACB;&#x5373;&#x6267;&#x884C;transition&#x8FC7;&#x6E21;&#x3002;</p>
+</li>
+<li><p><code>transition-timing-function</code>:&#x63CF;&#x8FF0;transition&#x8FC7;&#x6E21;&#x6267;&#x884C;&#x7684;&#x901F;&#x5EA6;&#x66F2;&#x7EBF;&#xFF0C;&#x7528;&#x4E8E;&#x4F7F;transition&#x8FC7;&#x6E21;&#x66F4;&#x4E3A;&#x5E73;&#x6ED1;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>ease</code>&#x3002;&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x6240;&#x6709;&#x5408;&#x6CD5;&#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ease</td>
+<td>transition&#x8FC7;&#x6E21;&#x9010;&#x6E10;&#x53D8;&#x6162;&#x7684;&#x8FC7;&#x6E21;&#x6548;&#x679C;</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>transition&#x8FC7;&#x6E21;&#x6162;&#x901F;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x53D8;&#x5FEB;&#x7684;&#x8FC7;&#x6E21;&#x6548;&#x679C;</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>transition&#x8FC7;&#x6E21;&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x53D8;&#x6162;&#x7684;&#x8FC7;&#x6E21;&#x6548;&#x679C;</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>transition&#x8FC7;&#x6E21;&#x6162;&#x901F;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x53D8;&#x5FEB;&#xFF0C;&#x7136;&#x540E;&#x6162;&#x901F;&#x7ED3;&#x675F;&#x7684;&#x8FC7;&#x6E21;&#x6548;&#x679C;</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>transition&#x8FC7;&#x6E21;&#x4EE5;&#x5300;&#x901F;&#x53D8;&#x5316;</td>
+</tr>
+<tr>
+<td>cubic-bezier(x1, y1, x2, y2)</td>
+<td>&#x4F7F;&#x7528;&#x4E09;&#x9636;&#x8D1D;&#x585E;&#x5C14;&#x51FD;&#x6570;&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;transition&#x53D8;&#x5316;&#x8FC7;&#x7A0B;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x503C;&#x5FC5;&#x987B;&#x5904;&#x4E8E; 0 &#x5230; 1 &#x4E4B;&#x95F4;&#x3002;&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x7684;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x9605; <a href="http://cubic-bezier.com/" target="_blank" rel="noopener">cubic-bezier</a> &#x548C; <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank" rel="noopener">B&#xE9;zier curve</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.panel</span> {</span></span><br><span class="line"><span class="undefined">        margin: 10px;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="undefined">        align-items: center;</span></span><br><span class="line"><span class="undefined">        justify-content: center;</span></span><br><span class="line"><span class="undefined">        border: solid;</span></span><br><span class="line"><span class="undefined">        border-radius: 10px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        transition-property: width,height,backgroundColor;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transition-duration</span>: 0<span class="selector-class">.3s</span>;</span></span><br><span class="line"><span class="undefined">        transition-delay: 0s;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transition-timing-function</span>: <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.25</span>, 0<span class="selector-class">.1</span>, 0<span class="selector-class">.25</span>, 1<span class="selector-class">.0</span>);</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="wei-lei-v0-9-5">&#x4F2A;&#x7C7B; <span class="api-version">v0.9.5+</span></span><a href="#wei-lei-v0-9-5" class="header-anchor">#</a></h2><p>Weex &#x652F;&#x6301;&#x56DB;&#x79CD;&#x4F2A;&#x7C7B;&#xFF1A;<code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled</code></p>
+<p>&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x90FD;&#x652F;&#x6301; <code>active</code>, &#x4F46;&#x53EA;&#x6709; <code>input</code> &#x7EC4;&#x4EF6;&#x548C; <code>textarea</code> &#x7EC4;&#x4EF6;&#x652F;&#x6301; <code>focus</code>, <code>enabled</code>, <code>disabled</code>&#x3002;</p>
+<h3 class="article-heading"><span id="gui-ze">&#x89C4;&#x5219;</span><a href="#gui-ze" class="header-anchor">#</a></h3><ul>
+<li><p>&#x540C;&#x65F6;&#x751F;&#x6548;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x8986;&#x76D6;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;</p>
+<ul>
+<li>&#x4F8B;&#x5982;&#xFF1A;<code>input:active:enabled</code> &#x548C; <code>input:active</code> &#x540C;&#x65F6;&#x751F;&#x6548;&#xFF0C;&#x524D;&#x8005;&#x8986;&#x76D6;&#x540E;&#x8005;</li>
+</ul>
+</li>
+<li><p>&#x4E92;&#x8054;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<p><img src="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png" alt="rule"></p>
+</li>
+</ul>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">:src</span>=<span class="string">&quot;logoUrl&quot;</span> <span class="attr">class</span>=<span class="string">&quot;logo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.wrapper</span> {</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    margin-top: 120px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.title</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 48px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.logo</span> {</span></span><br><span class="line"><span class="undefined">    width: 360px;</span></span><br><span class="line"><span class="undefined">    height: 82px;</span></span><br><span class="line"><span class="undefined">    background-color: red;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.logo</span><span class="selector-pseudo">:active</span> {</span></span><br><span class="line"><span class="undefined">    width: 180px;</span></span><br><span class="line"><span class="undefined">    height: 82px;</span></span><br><span class="line"><span class="undefined">    background-color: green;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    props: {</span></span><br><span class="line"><span class="undefined">      logoUrl: {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">default</span>: <span class="string">&apos;https://alibaba.github.io/weex/img/weex_logo_blue@3x.png&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      target: {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">default</span>: <span class="string">&apos;World&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="undefined">    methods: {</span></span><br><span class="line"><span class="undefined">      update (e) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.target = <span class="string">&apos;Weex&apos;</span>;</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  };</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><a href="http://dotwe.org/vue/df2c8f254620d6d30d0906ee75fe5b99" target="_blank" rel="noopener">&#x8BD5;&#x4E00;&#x4E0B;</a></p>
+<h2 class="article-heading"><span id="xian-xing-jian-bian-v0-10">&#x7EBF;&#x6027;&#x6E10;&#x53D8; <span class="api-version">v0.10+</span></span><a href="#xian-xing-jian-bian-v0-10" class="header-anchor">#</a></h2><p>Weex &#x652F;&#x6301;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x80CC;&#x666F;&#xFF0C;&#x5177;&#x4F53;&#x4ECB;&#x7ECD;&#x53EF;&#x53C2;&#x8003; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients" target="_blank" rel="noopener">W3C description of the gradient</a>&#x3002;</p>
+<p>&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x5747;&#x652F;&#x6301;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x3002;</p>
+<h3 class="article-heading"><span id="shi-yong">&#x4F7F;&#x7528;</span><a href="#shi-yong" class="header-anchor">#</a></h3><p> &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>background-image</code> &#x5C5E;&#x6027;&#x521B;&#x5EFA;&#x7EBF;&#x6027;&#x6E10;&#x53D8;&#x3002;</p>
+<figure class="highlight css"><table><tbody><tr><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>,<span class="selector-id">#a80077</span>,<span class="selector-id">#66ff00</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301; <code>radial-gradient</code>&#xFF08;&#x5F84;&#x5411;&#x6E10;&#x53D8;&#xFF09;&#x3002;</p>
+<p>Weex &#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x989C;&#x8272;&#x7684;&#x6E10;&#x53D8;&#xFF0C;&#x6E10;&#x53D8;&#x65B9;&#x5411;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>to right<br>&#x4ECE;&#x5DE6;&#x5411;&#x53F3;&#x6E10;&#x53D8;</li>
+<li>to left<br>&#x4ECE;&#x53F3;&#x5411;&#x5DE6;&#x6E10;&#x53D8;</li>
+<li>to bottom<br>&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x6E10;&#x53D8;</li>
+<li>to top<br>&#x4ECE;&#x4E0B;&#x5230;&#x4E0A;&#x6E10;&#x53D8;</li>
+<li>to bottom right<br>&#x4ECE;&#x5DE6;&#x4E0A;&#x89D2;&#x5230;&#x53F3;&#x4E0B;&#x89D2;</li>
+<li>to top left<br>&#x4ECE;&#x53F3;&#x4E0B;&#x89D2;&#x5230;&#x5DE6;&#x4E0A;&#x89D2;</li>
+</ul>
+<h3 class="article-heading"><span id="note">Note</span><a href="#note" class="header-anchor">#</a></h3><ul>
+<li><code>background-image</code> &#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E; <code>background-color</code>&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x540C;&#x65F6;&#x8BBE;&#x7F6E; <code>background-image</code> &#x548C; <code>background-color</code>&#xFF0C;<code>background-color</code> &#x88AB;&#x8986;&#x76D6;&#x3002;</li>
+<li>&#x4E0D;&#x8981;&#x4F7F;&#x7528; <code>background</code> &#x7B80;&#x5199;.</li>
+</ul>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #3a3a3a&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to right,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to left,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to bottom,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to bottom<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to top,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;flex-direction: row;align-items: center;justify-content: center&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container2&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to bottom right,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to bottom right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container2&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-image:linear-gradient(to top left,#a80077,#66ff00);&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;direction&quot;</span>&gt;</span>to top left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container1</span> {</span></span><br><span class="line"><span class="undefined">    margin: 10px;</span></span><br><span class="line"><span class="undefined">    width: 730px;</span></span><br><span class="line"><span class="undefined">    height: 200px;</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    justify-content: center;</span></span><br><span class="line"><span class="undefined">    border: solid;</span></span><br><span class="line"><span class="undefined">    border-radius: 10px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container2</span> {</span></span><br><span class="line"><span class="undefined">    margin: 10px;</span></span><br><span class="line"><span class="undefined">    width: 300px;</span></span><br><span class="line"><span class="undefined">    height: 300px;</span></span><br><span class="line"><span class="undefined">    align-items: center;</span></span><br><span class="line"><span class="undefined">    justify-content: center;</span></span><br><span class="line"><span class="undefined">    border: solid;</span></span><br><span class="line"><span class="undefined">    border-radius: 10px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.direction</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    color: white;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="yin-ying-box-shadow-v0-11">&#x9634;&#x5F71;(box-shadow) <span class="api-version">v0.11+</span></span><a href="#yin-ying-box-shadow-v0-11" class="header-anchor">#</a></h2><p>Weex &#x652F;&#x6301;&#x9634;&#x5F71;&#x5C5E;&#x6027;&#xFF1A;<code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled</code> <code>inset(&#x53EF;&#x9009;)</code>,<code>offset-x</code>,<code>offset-y</code>, <code>blur-radius</code>,<code>color</code></p>
+<h3 class="article-heading"><span id="zhu-yi">&#x6CE8;&#x610F;</span><a href="#zhu-yi" class="header-anchor">#</a></h3><ul>
+<li>box-shadow&#x4EC5;&#x4EC5;&#x652F;&#x6301;iOS</li>
+</ul>
+<h3 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px rgb(255, 69, 0);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow: 20px  10px 5px rgba(255, 69, 0, 0.8);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgba(255, 69, 0, 0.8);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgb(255, 69, 0);&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px black;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px #008B00;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>&gt;</span>Hello {{target}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.wrapper</span> {<span class="attribute">align-items</span>: center; <span class="attribute">margin-top</span>: <span class="number">120px</span>;}</span></span><br><span class="line"><span class="css">  <span class="selector-class">.title</span> {<span class="attribute">font-size</span>: <span class="number">48px</span>;}</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="javascript">        logoUrl: <span class="string">&apos;https://alibaba.github.io/weex/img/weex_logo_blue@3x.png&apos;</span>,</span></span><br><span class="line"><span class="javascript">        target: <span class="string">&apos;World&apos;</span></span></span><br><span class="line"><span class="undefined">      };</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  };</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="qi-ta-ji-ben-yang-shi">&#x5176;&#x4ED6;&#x57FA;&#x672C;&#x6837;&#x5F0F;</span><a href="#qi-ta-ji-ben-yang-shi" class="header-anchor">#</a></h2><ul>
+<li><code>opacity {number}</code>&#xFF1A;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A; [0, 1] &#x533A;&#x95F4;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 1&#xFF0C;&#x5373;&#x5B8C;&#x5168;&#x4E0D;&#x900F;&#x660E;&#xFF1B;0 &#x662F;&#x5B8C;&#x5168;&#x900F;&#x660E;&#xFF1B;0.5 &#x662F; 50% &#x7684;&#x900F;&#x660E;&#x5EA6;&#x3002;</li>
+<li><code>background-color {color}</code>&#xFF1A;&#x8BBE;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x80CC;&#x666F;&#x8272;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A;&#x8272;&#x503C;&#xFF0C;&#x652F;&#x6301;RGB&#xFF08; <code>rgb(255, 0, 0)</code> &#xFF09;&#xFF1B;RGBA&#xFF08; <code>rgba(255, 0, 0, 0.5)</code> &#xFF09;&#xFF1B;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF08; <code>#ff0000</code> &#xFF09;&#xFF1B;&#x7CBE;&#x7B80;&#x5199;&#x6CD5;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF08; <code>#f00</code> &#xFF09;&#xFF1B;&#x8272;&#x503C;&#x5173;&#x952E;&#x5B57;&#xFF08;<code>red</code>&#xFF09;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>transparent</code> &#x3002;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> <a href="./color-names.html">&#x8272;&#x503C;&#x7684;&#x5173;&#x952E;&#x5B57;&#x5217;&#x8868;</a>&#x3002;</p>
+<h2 class="article-heading"><span id="shang-shou-yang-shi">&#x4E0A;&#x624B;&#x6837;&#x5F0F;</span><a href="#shang-shou-yang-shi" class="header-anchor">#</a></h2><p>&#x5982;&#x679C;&#x5BF9;&#x4E8E;&#x6837;&#x5F0F;&#x5199;&#x6CD5;&#x9700;&#x8981;&#x66F4;&#x591A;&#x4E0A;&#x624B;&#x53C2;&#x8003;&#xFF0C;&#x53EF;&#x53C2;&#x8003;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x90FD;&#x6709;&#x5E38;&#x89C1;&#x7684;&#x4F8B;&#x5B50;&#x53EF;&#x4F9B;&#x53C2;&#x8003;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x6765;&#x89C4;&#x5212; Weex &#x9875;&#x9762;&#x7684;&#x6837;&#x5F0F;&#x3002;</p>
+<ol>
+<li>&#x5168;&#x5C40;&#x6837;&#x5F0F;&#x89C4;&#x5212;&#xFF1A;&#x5C06;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x5206;&#x5272;&#x6210;&#x5408;&#x9002;&#x7684;&#x6A21;&#x5757;&#x3002;</li>
+<li>flex &#x5E03;&#x5C40;&#xFF1A;&#x6392;&#x5217;&#x548C;&#x5BF9;&#x9F50;&#x9875;&#x9762;&#x6A21;&#x5757;&#x3002;</li>
+<li>&#x5B9A;&#x4F4D;&#x76D2;&#x5B50;&#xFF1A;&#x5B9A;&#x4F4D;&#x5E76;&#x8BBE;&#x7F6E;&#x504F;&#x79FB;&#x91CF;&#x3002;</li>
+<li>&#x7EC6;&#x8282;&#x6837;&#x5F0F;&#x5904;&#x7406;&#xFF1A;&#x589E;&#x52A0;&#x7279;&#x5B9A;&#x7684;&#x5177;&#x4F53;&#x6837;&#x5F0F;&#x3002;</li>
+</ol>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/wiki/common-styles.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

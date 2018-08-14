@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex 实例变量 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="属性和方法 weex.config Weex 环境变量   weex.document weex.requireModule 使用原生模块   weex.supports 使用范例   weex.isRegisteredModule weex.isRegisteredComponent     每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，它可以像全局变量一样使">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weex 实例变量">
+<meta property="og:url" content="https://weex.apache.org/cn/references/weex-variable.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="属性和方法 weex.config Weex 环境变量   weex.document weex.requireModule 使用原生模块   weex.supports 使用范例   weex.isRegisteredModule weex.isRegisteredComponent     每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，它可以像全局变量一样使">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-04-18T03:51:53.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex 实例变量">
+<meta name="twitter:description" content="属性和方法 weex.config Weex 环境变量   weex.document weex.requireModule 使用原生模块   weex.supports 使用范例   weex.isRegisteredModule weex.isRegisteredComponent     每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，它可以像全局变量一样使">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="references" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="current">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/weex-variable.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/weex-variable.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link current ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/weex-variable.html" class="sidebar-link current ">Weex 实例变量</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/components/index.html">内置组件</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (已废弃)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/cn/references/modules/index.html">内置模块</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Weex 实例变量
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-04-18T03:51:53.743Z">Updated time: 18/04/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#shu-xing-he-fang-fa">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#weex-config"><code>weex.config</code></a><ul>
+<li><a href="#weex-huan-jing-bian-liang">Weex &#x73AF;&#x5883;&#x53D8;&#x91CF;</a></li>
+</ul>
+</li>
+<li><a href="#weex-document"><code>weex.document</code></a></li>
+<li><a href="#weex-requiremodule"><code>weex.requireModule</code></a><ul>
+<li><a href="#shi-yong-yuan-sheng-mo-kuai">&#x4F7F;&#x7528;&#x539F;&#x751F;&#x6A21;&#x5757;</a></li>
+</ul>
+</li>
+<li><a href="#weex-supports"><code>weex.supports</code></a><ul>
+<li><a href="#shi-yong-fan-li">&#x4F7F;&#x7528;&#x8303;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#weex-isregisteredmodule"><code>weex.isRegisteredModule</code></a></li>
+<li><a href="#weex-isregisteredcomponent"><code>weex.isRegisteredComponent</code></a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>&#x6BCF;&#x4E2A; Weex &#x9875;&#x9762;&#x7684; JS &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684; <code>weex</code> &#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x50CF;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x8FC7;&#x5B83;&#x5728;&#x4E0D;&#x540C;&#x9875;&#x9762;&#x4E2D;&#x662F;&#x9694;&#x79BB;&#x800C;&#x4E14;<em>&#x53EA;&#x8BFB;</em>&#x7684;&#x3002;</p>
+<blockquote>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A; <code>weex</code> &#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x53EA;&#x5728; Vue &#x6846;&#x67B6;&#x4E2D;&#x66B4;&#x9732;&#x4E86;&#xFF0C;&#x76EE;&#x524D;&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x5728; Rax &#x6846;&#x67B6;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</strong></p>
+</blockquote>
+<h2 class="article-heading"><span id="shu-xing-he-fang-fa">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</span><a href="#shu-xing-he-fang-fa" class="header-anchor">#</a></h2><p>Weex &#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">type</span> Weex = {</span><br><span class="line">  config: WeexConfigAPI;</span><br><span class="line">  <span class="built_in">document</span>: WeexDocument;</span><br><span class="line">  requireModule: <span class="function">(<span class="params">name: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">Object</span> | <span class="built_in">void</span>;</span><br><span class="line">  supports: <span class="function">(<span class="params">condition: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">boolean</span> | <span class="built_in">void</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="weex-config"><code>weex.config</code></span><a href="#weex-config" class="header-anchor">#</a></h2><p>&#x8BE5;&#x53D8;&#x91CF;&#x5305;&#x542B;&#x4E86;&#x5F53;&#x524D; Weex &#x9875;&#x9762;&#x7684;&#x6240;&#x6709;&#x73AF;&#x5883;&#x4FE1;&#x606F;&#x3002;</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">type</span> WeexConfigAPI = {</span><br><span class="line">  bundleUrl: <span class="built_in">string</span>;</span><br><span class="line">  bundleType?: <span class="built_in">string</span>;</span><br><span class="line">  env: WeexEnvironment;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>bundleUrl</code>: &#x5F53;&#x524D;&#x9875;&#x9762; js bundle &#x7684; URL &#x5730;&#x5740;&#x3002;</li>
+<li><code>bundleType</code>: <span class="api-version">v0.17+</span> &#x9875;&#x9762; js bundle &#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x7684;&#x662F;&#x5F53;&#x524D;&#x9875;&#x9762;&#x662F;&#x7528;&#x90A3;&#x79CD;&#x6846;&#x67B6;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; <code>&quot;Vue&quot;</code> &#x6216;&#x8005; <code>&quot;Rax&quot;</code>&#x3002;</li>
+<li><code>env</code>: Weex &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;</li>
+</ul>
+<h3 class="article-heading"><span id="weex-huan-jing-bian-liang">Weex &#x73AF;&#x5883;&#x53D8;&#x91CF;</span><a href="#weex-huan-jing-bian-liang" class="header-anchor">#</a></h3><p>&#x6709;&#x65F6;&#x5019;&#x4E3A;&#x4E86;&#x517C;&#x5BB9;&#x6027;&#x6216;&#x8005;&#x4E3A;&#x4E86;&#x589E;&#x5F3A;&#x67D0;&#x4E2A;&#x7AEF;&#x4E0A;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x9700;&#x8981;&#x7F16;&#x5199;&#x5E73;&#x53F0;&#x7279;&#x5F02;&#x7684;&#x4EE3;&#x7801;&#x3002; Weex &#x63D0;&#x4F9B;&#x4E86; <code>weex.config.env</code> &#x548C;&#x5168;&#x5C40;&#x7684; <code>WXEnvironment</code> &#x53D8;&#x91CF;&#xFF08;&#x5B83;&#x4EEC;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF09;&#x6765;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.config.env === WXEnvironment</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Weex &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>platform</code></td>
+<td>String</td>
+<td>Current running platform, could be &#x201C;Android&#x201D;, &#x201C;iOS&#x201D; or &#x201C;Web&#x201D;.</td>
+</tr>
+<tr>
+<td><code>weexVersion</code></td>
+<td>String</td>
+<td>The version of Weex SDK.</td>
+</tr>
+<tr>
+<td><code>appName</code></td>
+<td>String</td>
+<td>Mobile app name or browser name.</td>
+</tr>
+<tr>
+<td><code>appVersion</code></td>
+<td>String</td>
+<td>The version of current app.</td>
+</tr>
+<tr>
+<td><code>osName</code></td>
+<td>String</td>
+<td>The OS name, could be &#x201C;Android&#x201D; or &#x201C;iOS&#x201D;.</td>
+</tr>
+<tr>
+<td><code>osVersion</code></td>
+<td>String</td>
+<td>The version of current OS.</td>
+</tr>
+<tr>
+<td><code>deviceModel</code></td>
+<td>String</td>
+<td>Mobile phone device model. (native only)</td>
+</tr>
+<tr>
+<td><code>deviceWidth</code></td>
+<td>Number</td>
+<td>Screen resolution width.</td>
+</tr>
+<tr>
+<td><code>deviceHeight</code></td>
+<td>Number</td>
+<td>Screen resolution height.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://dotwe.org/vue/ea2cff9039f3b0e406f8f7da10e874af" target="_blank" rel="noopener">&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;</a> &#x6253;&#x5370;&#x51FA;&#x4E86; Weex &#x73AF;&#x5883;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x503C;&#x3002;</p>
+<h2 class="article-heading"><span id="weex-document"><code>weex.document</code></span><a href="#weex-document" class="header-anchor">#</a></h2><p><code>weex.document</code> &#x662F;&#x5F53;&#x524D;&#x9875;&#x9762;&#x7684;&#x6587;&#x6863;&#x6A21;&#x578B;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x548C;&#x64CD;&#x4F5C; DOM &#x6811;&#x4E2D;&#x5143;&#x7D20;&#x3002;&#x5B83;&#x662F; Weex DOM API &#x89C4;&#x8303;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x548C; <a href="https://www.w3.org/DOM/" target="_blank" rel="noopener">W3C &#x7684; DOM &#x89C4;&#x8303;</a>&#x4E2D;&#x7684; <code>document</code> &#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;</p>
+<p>&#x800C;&#x4E14;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x4E86;&#x73B0;&#x4EE3;&#x5316;&#x7684;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#xFF08;&#x5982; Vue &#x548C; Rax&#xFF09;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76F4;&#x63A5;&#x64CD;&#x4F5C; DOM &#x5E76;&#x4E0D;&#x662F;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x3002;&#x66F4;&#x4F55;&#x51B5;<strong>&#x5728; Weex &#x5E73;&#x53F0;&#x91CC;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x6709;&#x771F;&#x5B9E;&#x7684; DOM</strong>&#xFF0C;&#x5728; Android &#x548C; iOS &#x7AEF;&#x4E0A;&#x90FD;&#x662F;&#x6A21;&#x62DF;&#x51FA;&#x6765;&#x7684;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x5728; Vue &#x548C; Rax &#x6846;&#x67B6;&#x5185;&#x90E8;&#xFF0C;&#x7528;&#x4E8E;&#x5C06; virtual-dom &#x8F6C;&#x6362;&#x6210;&#x6E32;&#x67D3;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x53D1;&#x9001;&#x7ED9; Weex &#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x3002;&#x4E0D;&#x5EFA;&#x8BAE;&#x5728;&#x5F00;&#x53D1;&#x9875;&#x9762;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 class="article-heading"><span id="weex-requiremodule"><code>weex.requireModule</code></span><a href="#weex-requiremodule" class="header-anchor">#</a></h2><p>&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x4E0D;&#x4F9D;&#x8D56; UI &#x4EA4;&#x4E92;&#x7684;&#x539F;&#x751F;&#x529F;&#x80FD;&#xFF0C;Weex &#x5C06;&#x5176;&#x5C01;&#x88C5;&#x6210;<strong>&#x6A21;&#x5757;</strong>&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x8FC7; javascript &#x8C03;&#x7528;&#x539F;&#x751F;&#x80FD;&#x529B;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x9664;&#x4E86;<a href="./modules/">&#x5185;&#x7F6E;&#x6A21;&#x5757;</a>&#x4EE5;&#x5916;&#xFF0C;&#x5C06;&#x5DF2;&#x6709;&#x7684;&#x539F;&#x751F;&#x6A21;&#x5757;&#x79FB;&#x690D;&#x5230; Weex &#x5E73;&#x53F0;&#x4E5F;&#x5F88;&#x65B9;&#x4FBF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>weex.requireModule</code> &#x63A5;&#x53E3;&#x5F15;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6216;&#x8005;&#x5185;&#x7F6E;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line">weex.requireModule(name: <span class="built_in">string</span>): <span class="built_in">Object</span> | <span class="built_in">void</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x53C2;&#x6570;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#x7684;&#x6A21;&#x5757;&#x540D;&#x3002;</li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x6A21;&#x5757;&#x5DF2;&#x7ECF;&#x6CE8;&#x518C;&#x4E86;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>Proxy</code> &#x5BF9;&#x8C61;&#xFF08;&#x5982;&#x679C;&#x73AF;&#x5883;&#x4E0D;&#x652F;&#x6301; <code>Proxy</code> &#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x5BA2;&#x6237;&#x7AEF;&#x6CE8;&#x518C;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6A21;&#x5757;&#x672A;&#x6CE8;&#x518C;&#xFF0C;&#x8FD4;&#x56DE; <code>undefined</code>&#x3002;</li>
+</ul>
+<h3 class="article-heading"><span id="shi-yong-yuan-sheng-mo-kuai">&#x4F7F;&#x7528;&#x539F;&#x751F;&#x6A21;&#x5757;</span><a href="#shi-yong-yuan-sheng-mo-kuai" class="header-anchor">#</a></h3><p>&#x4F60;&#x53EF;&#x4EE5;&#x50CF;&#x4F7F;&#x7528;&#x4E0D;&#x540C; javascript &#x51FD;&#x6570;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#x539F;&#x751F;&#x6CE8;&#x518C;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x8FD9;&#x91CC;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;<a href="http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828" target="_blank" rel="noopener">&#x4F7F;&#x7528; modal &#x6A21;&#x5757;&#x7684;&#x4F8B;&#x5B50;</a>&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>Toast<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span></span><br><span class="line"><span class="undefined">  modal.toast({</span></span><br><span class="line"><span class="javascript">    message: <span class="string">&apos;I am a toast.&apos;</span>,</span></span><br><span class="line"><span class="undefined">    duration: 3</span></span><br><span class="line"><span class="undefined">  })</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="weex-supports"><code>weex.supports</code></span><a href="#weex-supports" class="header-anchor">#</a></h2><blockquote>
+<p>&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x53EA;&#x5728; <span class="api-version">v0.15+</span> &#x6216;&#x4EE5;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x53EF;&#x7528;&#x3002;</p>
+</blockquote>
+<p>&#x4F60;&#x5E94;&#x8BE5;&#x4E86;&#x89E3; Weex &#x7684;&#x7EC4;&#x4EF6;&#x548C;&#x6A21;&#x5757;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x548C;&#x914D;&#x7F6E;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x5BFC;&#x81F4;&#x4E86;&#x5728;&#x4E0D;&#x540C;&#x73AF;&#x5883;&#x4E2D;&#x7EC4;&#x4EF6;&#x548C;&#x6A21;&#x5757;&#x7684;&#x652F;&#x6301;&#x60C5;&#x51B5;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>weex.supports</code> &#x63A5;&#x53E3;&#x5728;&#x8FD0;&#x884C;&#x671F;&#x68C0;&#x6D4B;&#x67D0;&#x4E2A;&#x529F;&#x80FD;&#x5728;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x4E2D;&#x662F;&#x5426;&#x53EF;&#x7528;&#x3002;</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line">weex.supports(condition: <span class="built_in">string</span>): <span class="built_in">boolean</span> | <span class="built_in">void</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>&#x53C2;&#x6570;&#xFF1A;</strong></p>
+<ul>
+<li>&#x7279;&#x5B9A;&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;<code>@{type}/{name}</code>&#x3002;</li>
+</ul>
+<p><code>type</code> &#x5FC5;&#x987B;&#x662F; <code>&quot;component&quot;</code> &#x548C; <code>&quot;module&quot;</code> &#x4E4B;&#x4E00;&#x3002;<code>name</code> &#x53EF;&#x4EE5;&#x662F;&#x6807;&#x7B7E;&#x540D;&#x3001;&#x6A21;&#x5757;&#x540D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#x540D;&#xFF08;&#x548C;&#x6A21;&#x5757;&#x540D;&#x7528; <code>.</code> &#x9694;&#x5F00;&#xFF09;&#x3002;</p>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;</strong></p>
+<ul>
+<li>&#x652F;&#x6301;&#x8BE5;&#x7279;&#x6027;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; <code>true</code>&#x3002;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x8BE5;&#x7279;&#x6027;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; <code>false</code>&#x3002;</li>
+<li>&#x53C2;&#x6570;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x6216;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x652F;&#x6301;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; <code>null</code>&#x3002;</li>
+</ul>
+<h3 class="article-heading"><span id="shi-yong-fan-li">&#x4F7F;&#x7528;&#x8303;&#x4F8B;</span><a href="#shi-yong-fan-li" class="header-anchor">#</a></h3><p>&#x68C0;&#x6D4B;&#x67D0;&#x4E2A;&#x7EC4;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF1A;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.supports(<span class="string">&apos;@component/slider&apos;</span>) <span class="comment">// true</span></span><br><span class="line">weex.supports(<span class="string">&apos;@component/my-tab&apos;</span>) <span class="comment">// false</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x68C0;&#x6D4B;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF1A;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.supports(<span class="string">&apos;@module/stream&apos;</span>)  <span class="comment">// true</span></span><br><span class="line">weex.supports(<span class="string">&apos;@module/abcdef&apos;</span>)  <span class="comment">// false</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x68C0;&#x6D4B;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#x662F;&#x5426;&#x5305;&#x542B;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.supports(<span class="string">&apos;@module/dom.getComponentRect&apos;</span>) <span class="comment">// true</span></span><br><span class="line">weex.supports(<span class="string">&apos;@module/navigator.jumpToPage&apos;</span>) <span class="comment">// false</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x65E0;&#x6548;&#x7684;&#x8F93;&#x5165;&#xFF1A;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.supports(<span class="string">&apos;div&apos;</span>) <span class="comment">// null</span></span><br><span class="line">weex.supports(<span class="string">&apos;module/*&apos;</span>) <span class="comment">// null</span></span><br><span class="line">weex.supports(<span class="string">&apos;@stream/fetch&apos;</span>) <span class="comment">// null</span></span><br><span class="line">weex.supports(<span class="string">&apos;getComponentRect&apos;</span>) <span class="comment">// null</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="weex-isregisteredmodule"><code>weex.isRegisteredModule</code></span><a href="#weex-isregisteredmodule" class="header-anchor">#</a></h2><p>&#x68C0;&#x6D4B;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x6A21;&#x5757;&#x6216;&#x8005;&#x63A5;&#x53E3;&#x662F;&#x5426;&#x53EF;&#x7528;&#x3002;</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line">weex.isRegisteredModule(moduleName: <span class="built_in">string</span>, methodName: <span class="built_in">string</span>): <span class="built_in">boolean</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x7279;&#x5B9A;&#x6A21;&#x5757;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x68C0;&#x6D4B;&#x7EC4;&#x4EF6;&#x3002;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.isRegisteredModule(<span class="string">&apos;stream&apos;</span>) <span class="comment">// true</span></span><br><span class="line">weex.isRegisteredModule(<span class="string">&apos;stream&apos;</span>, <span class="string">&apos;fetch&apos;</span>) <span class="comment">// true</span></span><br><span class="line">weex.isRegisteredModule(<span class="string">&apos;whatever&apos;</span>, <span class="string">&apos;- unknown -&apos;</span>) <span class="comment">// false</span></span><br><span class="line">weex.isRegisteredModule(<span class="string">&apos;div&apos;</span>) <span class="comment">// false, not support components</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="weex-isregisteredcomponent"><code>weex.isRegisteredComponent</code></span><a href="#weex-isregisteredcomponent" class="header-anchor">#</a></h2><p>&#x68C0;&#x6D4B;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x7EC4;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x7528;&#x3002;</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line">weex.isRegisteredComponent(componentName: <span class="built_in">string</span>): <span class="built_in">boolean</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x7EC4;&#x4EF6;&#x7684;&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x68C0;&#x6D4B;&#x6A21;&#x5757;&#x3002;</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line">weex.isRegisteredComponent(<span class="string">&apos;div&apos;</span>) <span class="comment">// true</span></span><br><span class="line">weex.isRegisteredComponent(<span class="string">&apos;- unknown -&apos;</span>) <span class="comment">// false</span></span><br><span class="line">weex.isRegisteredComponent(<span class="string">&apos;navigator&apos;</span>) <span class="comment">// false, not support modules</span></span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/references/weex-variable.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

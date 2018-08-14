@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>常见问题 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何查阅旧文档？ Windows 指令错误 Android Studio 中 Gradle 错误 使用本地图片 Windows 错误 The header content contains invalid characters （头中包含非法字符） Playground 应用在扫码后什么都没有显示（白屏） 关于 ECMAScript 版本问题 前端依赖 iOS 文本 line-height">
+<meta property="og:type" content="website">
+<meta property="og:title" content="常见问题">
+<meta property="og:url" content="https://weex.apache.org/cn/wiki/faq.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="如何查阅旧文档？ Windows 指令错误 Android Studio 中 Gradle 错误 使用本地图片 Windows 错误 The header content contains invalid characters （头中包含非法字符） Playground 应用在扫码后什么都没有显示（白屏） 关于 ECMAScript 版本问题 前端依赖 iOS 文本 line-height">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2018-06-01T05:53:43.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常见问题">
+<meta name="twitter:description" content="如何查阅旧文档？ Windows 指令错误 Android Studio 中 Gradle 错误 使用本地图片 Windows 错误 The header content contains invalid characters （头中包含非法字符） Playground 应用在扫码后什么都没有显示（白屏） 关于 ECMAScript 版本问题 前端依赖 iOS 文本 line-height">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-cn">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/cn/guide">教程</a>
+        </li>
+        <li class="">
+          <a href="/cn/references">手册</a>
+        </li>
+        <li class="current">
+          <a href="/cn/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>工具</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">在线编写代码</a>
+            </li>
+            <li>
+              <a href="/cn/tools/playground.html">Playground 应用</a>
+            </li>
+            <li>
+              <a href="/cn/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">社区</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/cn/contributing.html">如何参与贡献</a>
+            </li>
+            <li>
+              <a href="/cn/bug-report-guidelines.html">bug 报告指南</a>
+            </li>
+            <li>
+              <a href="/cn/development-process.html">开发流程</a>
+            </li>
+            <li>
+              <a href="/cn/resources.html">资源</a>
+            </li>
+            <li>
+              <a href="/cn/releasenote.html">版本发布历史</a>
+            </li>
+            <li>
+              <a href="/cn/who-is-using-weex.html">谁在使用 Weex</a>
+            </li>
+            <li>
+              <a href="/cn/examples.html">例子</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/faq.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/faq.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/cn/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/cn/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>工具</p>
+            <ul class="subnav">
+              <li>
+                <a href="/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/cn/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/design-principles.html" class="sidebar-link  ">设计理念</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/platform-difference.html" class="sidebar-link  ">与 Web 平台的差异</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">样式</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-styles.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/text-styles.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/css-units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/color-names.html" class="sidebar-link  ">支持的颜色名称列表</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">事件</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/common-events.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/event-bubble.html" class="sidebar-link  ">事件冒泡</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/gestures.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">概念</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/cn/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">FAQ</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/cn/wiki/faq.html" class="sidebar-link current ">常见问题</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        常见问题
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-06-01T05:53:43.486Z">Updated time: 01/06/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#ru-he-cha-yue-jiu-wen-dang">&#x5982;&#x4F55;&#x67E5;&#x9605;&#x65E7;&#x6587;&#x6863;&#xFF1F;</a></li>
+<li><a href="#windows-zhi-ling-cuo-wu">Windows &#x6307;&#x4EE4;&#x9519;&#x8BEF;</a></li>
+<li><a href="#android-studio-zhong-gradle-cuo-wu">Android Studio &#x4E2D; Gradle &#x9519;&#x8BEF;</a></li>
+<li><a href="#shi-yong-ben-di-tu-pian">&#x4F7F;&#x7528;&#x672C;&#x5730;&#x56FE;&#x7247;</a></li>
+<li><a href="#windows-cuo-wu-the-header-content-contains-invalid-characters-tou-zhong-bao-han-fei-fa-zi-fu">Windows &#x9519;&#x8BEF; <code>The header content contains invalid characters</code> &#xFF08;&#x5934;&#x4E2D;&#x5305;&#x542B;&#x975E;&#x6CD5;&#x5B57;&#x7B26;&#xFF09;</a></li>
+<li><a href="#playground-ying-yong-zai-sao-ma-hou-shi-me-du-mei-you-xian-shi-bai-ping">Playground &#x5E94;&#x7528;&#x5728;&#x626B;&#x7801;&#x540E;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#x663E;&#x793A;&#xFF08;&#x767D;&#x5C4F;&#xFF09;</a></li>
+<li><a href="#guan-yu-ecmascript-ban-ben-wen-ti">&#x5173;&#x4E8E; ECMAScript &#x7248;&#x672C;&#x95EE;&#x9898;</a></li>
+<li><a href="#qian-duan-yi-lai">&#x524D;&#x7AEF;&#x4F9D;&#x8D56;</a></li>
+<li><a href="#ios-wen-ben-line-height-yang-shi-bu-zheng-chang">iOS &#x6587;&#x672C; <code>line-height</code> &#x6837;&#x5F0F;&#x4E0D;&#x6B63;&#x5E38;</a></li>
+<li><a href="#android-zhi-zhi-chi-overflow-hidden">Android &#x53EA;&#x652F;&#x6301; <code>overflow:hidden</code></a></li>
+<li><a href="#ru-he-qu-xiao-750-xiang-su-zi-gua-ying-bing-yi-kuan-gao-bi-ji-suan-zhen-shi-xiang-su">&#x5982;&#x4F55;&#x53D6;&#x6D88; 750 &#x50CF;&#x7D20;&#x81EA;&#x9002;&#x5E94;&#x5E76;&#x4EE5;&#x5BBD;&#x9AD8;&#x6BD4;&#x8BA1;&#x7B97;&#x771F;&#x5B9E;&#x50CF;&#x7D20;&#xFF1F;</a></li>
+<li><a href="#ru-he-zai-javascript-zhong-jian-ce-shi-fou-zhi-chi-mou-ge-yuan-sheng-de-module-component">&#x5982;&#x4F55;&#x5728; JavaScript &#x4E2D;&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x652F;&#x6301;&#x67D0;&#x4E2A;&#x539F;&#x751F;&#x7684; module/component</a><ul>
+<li><a href="#jian-ce-yuan-sheng-module">&#x68C0;&#x6D4B;&#x539F;&#x751F; module</a></li>
+<li><a href="#jian-ce-yuan-sheng-component">&#x68C0;&#x6D4B;&#x539F;&#x751F; component</a></li>
+</ul>
+</li>
+<li><a href="#ru-he-zai-pages-zhi-jian-chuan-di-shu-ju">&#x5982;&#x4F55;&#x5728; pages &#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x6570;&#x636E;</a></li>
+<li><a href="#fu-zi-zu-jian-zhi-jian-jin-xing-repeat-cao-zuo">&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x8FDB;&#x884C; repeat &#x64CD;&#x4F5C;</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h2 class="article-heading"><span id="ru-he-cha-yue-jiu-wen-dang">&#x5982;&#x4F55;&#x67E5;&#x9605;&#x65E7;&#x6587;&#x6863;&#xFF1F;</span><a href="#ru-he-cha-yue-jiu-wen-dang" class="header-anchor">#</a></h2><p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6587;&#x6863;&#x5DE6;&#x4FA7;&#x76EE;&#x5F55;&#x6700;&#x540E;&#x4E00;&#x9879; &#x201C;&#x65E7;&#x6587;&#x6863;&#x201D; &#x8FDB;&#x5165;&#x5BF9;&#x4E8E;&#x7684;&#x5386;&#x53F2;&#x6587;&#x6863;&#x9875;&#x9762;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x4EE5;&#x4E0B;&#x94FE;&#x63A5;&#x8BBF;&#x95EE;&#xFF1A;</p>
+<ul>
+<li><a href="./v-0.10/guide/index.html">Guide</a></li>
+<li><a href="./v-0.10/references/index.html">&#x624B;&#x518C;</a></li>
+<li><a href="./v-0.10/advanced/index.html">&#x9AD8;&#x9636;&#x77E5;&#x8BC6;</a></li>
+<li><a href="./v-0.10/tools/index.html">&#x5DE5;&#x5177;</a></li>
+</ul>
+<h2 class="article-heading"><span id="windows-zhi-ling-cuo-wu">Windows &#x6307;&#x4EE4;&#x9519;&#x8BEF;</span><a href="#windows-zhi-ling-cuo-wu" class="header-anchor">#</a></h2><p>&#x8BF7;&#x5148;&#x5B89;&#x88C5; <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a>&#xFF0C;&#x5728; <a href="https://github.com/apache/incubator-weex/tree/master#for-windows" target="_blank" rel="noopener">For Windows</a> &#x4E2D;&#x67E5;&#x770B;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 class="article-heading"><span id="android-studio-zhong-gradle-cuo-wu">Android Studio &#x4E2D; Gradle &#x9519;&#x8BEF;</span><a href="#android-studio-zhong-gradle-cuo-wu" class="header-anchor">#</a></h2><p>&#x4E0B;&#x8F7D; <code>license-gradle-plugin.jar</code> &#x53EF;&#x80FD;&#x5F15;&#x53D1;&#x4E00;&#x4E9B;&#x9519;&#x8BEF;&#xFF0C;&#x6BD4;&#x5982; <code>&#x94FE;&#x63A5;&#x88AB;&#x91CD;&#x7F6E;&#xFF08;Connection reset&#xFF09;</code> &#x548C; <code>&#x8BC1;&#x4E66;&#x65E0;&#x6548;&#xFF08;peer not authenticated&#xFF09;</code> &#x3002;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x95EE;&#x9898;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x8BF7;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x6216;VPN&#x3002;</p>
+<h2 class="article-heading"><span id="shi-yong-ben-di-tu-pian">&#x4F7F;&#x7528;&#x672C;&#x5730;&#x56FE;&#x7247;</span><a href="#shi-yong-ben-di-tu-pian" class="header-anchor">#</a></h2><p>Weex &#x7684;&#x539F;&#x751F;&#x8FD0;&#x884C;&#x673A;&#x5236;&#x652F;&#x6301;&#x4ECE;&#x8BBE;&#x5907;&#x4E2D;&#x52A0;&#x8F7D;&#x56FE;&#x7247;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6; url&#xFF0C;&#x4F8B;&#x5982; <code>file:///sdcard/image_new0.png</code> &#x8FD9;&#x6837;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x4F46;&#x662F; Weex &#x6682;&#x65F6;&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x52A0;&#x8F7D;&#x4F60;&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 class="article-heading"><span id="windows-cuo-wu-the-header-content-contains-invalid-characters-tou-zhong-bao-han-fei-fa-zi-fu">Windows &#x9519;&#x8BEF; <code>The header content contains invalid characters</code> &#xFF08;&#x5934;&#x4E2D;&#x5305;&#x542B;&#x975E;&#x6CD5;&#x5B57;&#x7B26;&#xFF09;</span><a href="#windows-cuo-wu-the-header-content-contains-invalid-characters-tou-zhong-bao-han-fei-fa-zi-fu" class="header-anchor">#</a></h2><p>&#x8FD9;&#x662F;&#x7531;&#x4E8E; weex-toolkit &#x7684;&#x4F9D;&#x8D56; http-server &#x5BFC;&#x81F4;&#x7684;&#xFF0C;http-server &#x7684;&#x8001;&#x7248;&#x672C;&#x5728;&#x4E2D;&#x6587; windows &#x4E2D;&#x7684;&#x652F;&#x6301;&#x4E0D;&#x662F;&#x5F88;&#x597D;&#x3002;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4FEE;&#x590D;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x5728;&#x4F7F;&#x7528;&#x524D;&#x5347;&#x7EA7; weex-toolkit &#x7248;&#x672C;&#x3002;</p>
+<h2 class="article-heading"><span id="playground-ying-yong-zai-sao-ma-hou-shi-me-du-mei-you-xian-shi-bai-ping">Playground &#x5E94;&#x7528;&#x5728;&#x626B;&#x7801;&#x540E;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#x663E;&#x793A;&#xFF08;&#x767D;&#x5C4F;&#xFF09;</span><a href="#playground-ying-yong-zai-sao-ma-hou-shi-me-du-mei-you-xian-shi-bai-ping" class="header-anchor">#</a></h2><p>&#x6700;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x67E5;&#x770B; debug &#x65E5;&#x5FD7;&#x6765;&#x67E5;&#x627E;&#x539F;&#x56E0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6309;&#x7167; <a href="./guide/how-to/debug-with-devtools.html">&#x8FD9;&#x7BC7;&#x6587;&#x6863;</a> &#x4E2D;&#x7684;&#x8BF4;&#x660E;&#x6765;&#x67E5;&#x660E;&#x5BFC;&#x81F4;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<h2 class="article-heading"><span id="guan-yu-ecmascript-ban-ben-wen-ti">&#x5173;&#x4E8E; ECMAScript &#x7248;&#x672C;&#x95EE;&#x9898;</span><a href="#guan-yu-ecmascript-ban-ben-wen-ti" class="header-anchor">#</a></h2><p>Weex &#x5728; iOS &#x4E2D;&#x4F7F;&#x7528; JSCore &#xFF0C;&#x5728; Android &#x4E2D;&#x4F7F;&#x7528; v8&#xFF0C;&#x56E0;&#x6B64;&#x4ED6;&#x4EEC;&#x90FD;&#x652F;&#x6301; ECMAScript 5&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5728;&#x539F;&#x751F;&#x73AF;&#x5883;&#x4E2D;&#x52A0;&#x4E86;&#x4E00;&#x4E9B; polyfills&#xFF1A;</p>
+<ul>
+<li><code>Promise</code> in iOS/Android</li>
+<li><code>Timer APIs</code> (setTimeout/clearTimeout/setInterval/clearInterval`) in iOS/Android</li>
+<li><code>console</code> in iOS/Android</li>
+</ul>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6211;&#x4EEC;&#x6682;&#x65F6;&#x662F;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A; <code>Promise</code> &#x7684; polyfill&#x3002;</p>
+<p>&#x5728;&#x672A;&#x6765;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x662F;&#x5426;&#x901A;&#x8FC7; configurations &#x6765;&#x5BFC;&#x5165;&#x4E00;&#x4E2A; polyfill&#x3002;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5E26;&#x6709; <code>webpack</code> &#x7684; <code>babel</code> &#x6765;&#x5199; ES6&#xFF0C;&#x8FD9;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x80FD;&#x591F;&#x81EA;&#x52A8;&#x5C06; ES6 &#x8F6C;&#x6362;&#x4E3A; ES5&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x60F3;&#x8981;&#x66F4;&#x591A;&#x7684; ES6 polyfills&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x4ED6;&#x4EEC;&#x5F15;&#x5165;&#x5230; JS Bundle &#x4E2D;&#x3002;</p>
+<h2 class="article-heading"><span id="qian-duan-yi-lai">&#x524D;&#x7AEF;&#x4F9D;&#x8D56;</span><a href="#qian-duan-yi-lai" class="header-anchor">#</a></h2><p>&#x5728; Weex &#x4E2D;&#x4F60;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#x6765; import/require &#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6216;&#x8005;&#x4E00;&#x4E2A; JS &#x6A21;&#x5757;&#x3002;&#x4EE5; ES5 &#x4E3A;&#x4F8B;&#xFF1A;</p>
+<ul>
+<li><code>require(&apos;xxx.js&apos;)</code> : &#x4F9D;&#x8D56;&#x4E00;&#x4E2A; JS &#x6587;&#x4EF6;</li>
+<li><code>require(&apos;npm-module-name&apos;)</code> : &#x4F9D;&#x8D56;&#x4E00;&#x4E2A; NPM &#x6A21;&#x5757;</li>
+<li><code>require(&apos;xxx.we&apos;)</code> : &#x5305;&#x542B;&#x4E00;&#x4E2A; <code>.we</code> &#x6587;&#x4EF6;&#x6765;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; Weex &#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</li>
+<li><code>require(&apos;@weex-module/xxx&apos;)</code> : &#x4F9D;&#x8D56;&#x4E00;&#x4E2A; Weex &#x539F;&#x751F;&#x6A21;&#x5757;&#x3002;&#x6CE8;&#x610F;&#x8FD9;&#x53EA;&#x652F;&#x6301; <code>*.we</code> &#x6587;&#x4EF6;&#x800C;&#x4E0D;&#x652F;&#x6301; <code>*.js</code> &#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x5728;&#x4E00;&#x4E2A; <code>*.js</code> &#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; Weex &#x539F;&#x751F;&#x6A21;&#x5757;&#xFF0C;&#x6682;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// use this piece of code below to get Weex native module &quot;modal&quot;</span></span><br><span class="line"><span class="keyword">var</span> modal</span><br><span class="line">__weex_define__(<span class="string">&apos;@weex-temp/x&apos;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">__weex_require__</span>) </span>{</span><br><span class="line">  modal = __weex_require__(<span class="string">&apos;@weex-module/modal&apos;</span>)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">// use APIs in &quot;modal&quot; module</span></span><br><span class="line">modal.toast({<span class="attr">message</span>: <span class="string">&apos;hello&apos;</span>})</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x4EE5;&#x540E;&#x6211;&#x4EEC;&#x4F1A;&#x7ED9;&#x5927;&#x5BB6;&#x5E26;&#x6765;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x8BBE;&#x8BA1;&#x3002;</p>
+<h2 class="article-heading"><span id="ios-wen-ben-line-height-yang-shi-bu-zheng-chang">iOS &#x6587;&#x672C; <code>line-height</code> &#x6837;&#x5F0F;&#x4E0D;&#x6B63;&#x5E38;</span><a href="#ios-wen-ben-line-height-yang-shi-bu-zheng-chang" class="header-anchor">#</a></h2><p><code>line-height</code>  &#x6837;&#x5F0F;&#x5728; <code>&lt;text&gt;</code> &#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x8868;&#x73B0;&#x4E0E; H5 &#x548C; Android &#x4E0D;&#x540C;&#xFF0C;&#x6587;&#x672C;&#x4E0D;&#x4F1A;&#x5728;&#x884C;&#x5185;&#x5C45;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x8D34;&#x8FD1;&#x884C;&#x5E95;&#x90E8;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684; iOS &#x539F;&#x751F; API&#x3002;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x52AA;&#x529B;&#x4F18;&#x5316;&#xFF0C;&#x4E0E;&#x5176;&#x4ED6;&#x4E24;&#x7AEF;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<h2 class="article-heading"><span id="android-zhi-zhi-chi-overflow-hidden">Android &#x53EA;&#x652F;&#x6301; <code>overflow:hidden</code></span><a href="#android-zhi-zhi-chi-overflow-hidden" class="header-anchor">#</a></h2><p><code>overflow</code> &#x6837;&#x5F0F;&#x5728; Android &#x9ED8;&#x8BA4;&#x4E3A; <code>hidden</code> &#x5E76;&#x4E14;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#xFF0C;&#x539F;&#x56E0;&#x662F; Android View framework &#x9650;&#x5236;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x53EA;&#x51FA;&#x73B0;&#x5728; Android &#x7AEF;&#xFF0C;iOS &#x7AEF;&#x548C; H5 &#x6B63;&#x5E38;&#x3002;</p>
+<h2 class="article-heading"><span id="ru-he-qu-xiao-750-xiang-su-zi-gua-ying-bing-yi-kuan-gao-bi-ji-suan-zhen-shi-xiang-su">&#x5982;&#x4F55;&#x53D6;&#x6D88; 750 &#x50CF;&#x7D20;&#x81EA;&#x9002;&#x5E94;&#x5E76;&#x4EE5;&#x5BBD;&#x9AD8;&#x6BD4;&#x8BA1;&#x7B97;&#x771F;&#x5B9E;&#x50CF;&#x7D20;&#xFF1F;</span><a href="#ru-he-qu-xiao-750-xiang-su-zi-gua-ying-bing-yi-kuan-gao-bi-ji-suan-zhen-shi-xiang-su" class="header-anchor">#</a></h2><p><code>this.$getConfig()</code> &#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684; <code>deviceHeight</code> &#x548C; <code>deviceWidth</code> &#x5C5E;&#x6027;&#x5373;&#x5B9E;&#x9645;&#x8BBE;&#x5907;&#x5BBD;&#x5EA6;/&#x9AD8;&#x5EA6;&#xFF08;&#x4EE5;&#x50CF;&#x7D20;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4EE5; 750 &#x9002;&#x914D;&#x7684;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x6765;&#x8BA1;&#x7B97;&#x5B9E;&#x9645;&#x50CF;&#x7D20;&#x7684;&#x5BBD;&#x5EA6;/&#x9AD8;&#x5EA6;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x60A8;&#x9700;&#x8981;&#x663E;&#x793A;&#x56FA;&#x5B9A;&#x4E3A; 88 px &#x7684;&#x5BFC;&#x822A;&#x680F;&#xFF0C;&#x8BE5;&#x5BFC;&#x822A;&#x680F;&#x7684;&#x9AD8;&#x5EA6;&#x5C06;&#x662F;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> height = <span class="number">88</span> * <span class="number">750</span> / env.deviceWidth</span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="ru-he-zai-javascript-zhong-jian-ce-shi-fou-zhi-chi-mou-ge-yuan-sheng-de-module-component">&#x5982;&#x4F55;&#x5728; JavaScript &#x4E2D;&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x652F;&#x6301;&#x67D0;&#x4E2A;&#x539F;&#x751F;&#x7684; module/component</span><a href="#ru-he-zai-javascript-zhong-jian-ce-shi-fou-zhi-chi-mou-ge-yuan-sheng-de-module-component" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="jian-ce-yuan-sheng-module">&#x68C0;&#x6D4B;&#x539F;&#x751F; module</span><a href="#jian-ce-yuan-sheng-module" class="header-anchor">#</a></h3><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xxx = <span class="built_in">require</span>(<span class="string">&apos;@weex-module/xxx&apos;</span>)</span><br><span class="line"><span class="keyword">if</span> (xxx) {</span><br><span class="line">  <span class="comment">// todo: use this module</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">else</span> {</span><br><span class="line">  <span class="comment">// todo: handle the exception</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="jian-ce-yuan-sheng-component">&#x68C0;&#x6D4B;&#x539F;&#x751F; component</span><a href="#jian-ce-yuan-sheng-component" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">is</span>=<span class="string">&quot;{{type}}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> type = <span class="string">&apos;xxx&apos;</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> xxx = <span class="built_in">require</span>(<span class="string">&apos;@weex-component/xxx&apos;</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span> (!xxx) {</span></span><br><span class="line"><span class="javascript">    type = <span class="string">&apos;div&apos;</span> <span class="comment">// downgrade to &lt;div&gt;</span></span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="undefined">        type: type</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="ru-he-zai-pages-zhi-jian-chuan-di-shu-ju">&#x5982;&#x4F55;&#x5728; pages &#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x6570;&#x636E;</span><a href="#ru-he-zai-pages-zhi-jian-chuan-di-shu-ju" class="header-anchor">#</a></h2><p>&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E24;&#x4E2A;&#x9875;&#x9762;&#xFF0C;A &#x9875;&#x9762;&#x548C; B &#x9875;&#x9762;</p>
+<ol>
+<li>A -&gt; B&#xFF0C;&#x4F7F;&#x7528; <a href="/references/api.md#getconfig">getConfig api</a> or <a href="/cn/references/modules/storage.html">storage module</a> &#x4F20;&#x9012;&#x6570;&#x636E;&#xFF1B;</li>
+<li>B -&gt; A&#xFF0C;&#x4F7F;&#x7528; <a href="/cn/references/modules/storage.html">storage module</a> &#x4F20;&#x9012;&#x6570;&#x636E;&#x3002;</li>
+</ol>
+<h2 class="article-heading"><span id="fu-zi-zu-jian-zhi-jian-jin-xing-repeat-cao-zuo">&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x8FDB;&#x884C; repeat &#x64CD;&#x4F5C;</span><a href="#fu-zi-zu-jian-zhi-jian-jin-xing-repeat-cao-zuo" class="header-anchor">#</a></h2><p>&#x5982;&#x679C;&#x4F60;&#x6709;&#x9700;&#x6C42;&#xFF0C;&#x5728;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x8FDB;&#x884C; repeat &#x64CD;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5FC5;&#x987B;&#x4E25;&#x683C;&#x6309;&#x7167;&#x5B98;&#x7F51;&#x6587;&#x6863;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x4E66;&#x5199;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x7F3A;&#x5C11;&#x5B50;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49; data &#x6570;&#x636E;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x9700;&#x8981;&#x5411;&#x4E0B;&#x4F20;&#x9012;&#x7684; props&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x9875;&#x9762;&#x4E0D;&#x6B63;&#x5E38;&#x6E32;&#x67D3;&#x3002;</p>
+<p>&#x9519;&#x8BEF;&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">&quot;child&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;font-size:100&quot;</span>&gt;</span>{{title}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">repeat</span>=<span class="string">&quot;item in lists&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="undefined">    data: {</span></span><br><span class="line"><span class="undefined">      lists: [</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;A&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;B&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;C&apos;</span> }</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="javascript">    ready: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.lists.splice(<span class="number">0</span>, <span class="number">1</span>)</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x4EE5;&#x4E0A;&#x793A;&#x4F8B;&#x7684;&#x7406;&#x60F3;&#x6267;&#x884C;&#x60C5;&#x51B5;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x9875;&#x9762;&#x4E0A;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20; A &#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5269;&#x4E0B; B&#x3001;C &#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x3002;<br>&#x4F46;&#x662F;&#xFF0C;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x5BFC;&#x81F4;&#x5217;&#x8868;&#x6267;&#x884C; splice &#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#xFF0C;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#x7684;&#x66F4;&#x65B0;&#x60C5;&#x51B5;&#xFF1A;&#x9875;&#x9762;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20; C &#x88AB;&#x5220;&#x9664;&#x3002;</p>
+<p>&#x6B63;&#x786E;&#x7684;&#x5199;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">&quot;child&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;font-size:100&quot;</span>&gt;</span>{{title}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="undefined">      data: {</span></span><br><span class="line"><span class="javascript">        title: <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">repeat</span>=<span class="string">&quot;item in lists&quot;</span> <span class="attr">title</span>=<span class="string">&quot;{{ item.title }}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="undefined">    data: {</span></span><br><span class="line"><span class="undefined">      lists: [</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;A&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;B&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;C&apos;</span> }</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="javascript">    ready: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.lists.splice(<span class="number">0</span>, <span class="number">1</span>)</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5728;&#x7EBF;&#x793A;&#x4F8B;&#x8BF7;&#x89C1;&#xFF1A;</p>
+<ul>
+<li><a href="http://dotwe.org/de97cf2c1b7ec09a53728edc9c27ad2a" target="_blank" rel="noopener">&#x9519;&#x8BEF;&#x793A;&#x4F8B;</a></li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/cn/wiki/faq.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "db5b2379e5ffbc33509585c35ccabba8",
+      indexName: "weex_cn",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

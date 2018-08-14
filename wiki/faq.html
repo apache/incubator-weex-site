@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FAQ | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Where are legacy docs? Command errors in MS Windows Gradle errors in Android Studio Use local image Error（The header content contains invalid characters) in windows Playground app display nothing">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FAQ">
+<meta property="og:url" content="https://weex.apache.org/wiki/faq.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Where are legacy docs? Command errors in MS Windows Gradle errors in Android Studio Use local image Error（The header content contains invalid characters) in windows Playground app display nothing">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FAQ">
+<meta name="twitter:description" content="Where are legacy docs? Command errors in MS Windows Gradle errors in Android Studio Use local image Error（The header content contains invalid characters) in windows Playground app display nothing">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="current">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/faq.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/faq.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/index.html" class="sidebar-link  ">How it works</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/platform-difference.html" class="sidebar-link  ">Platform Differences with Web</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/design-principles.html" class="sidebar-link  ">Design Principles</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Style</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-styles.html" class="sidebar-link  ">Common Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/text-styles.html" class="sidebar-link  ">Text Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/css-units.html" class="sidebar-link  ">CSS Units</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/color-names.html" class="sidebar-link  ">Color name</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Event</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-events.html" class="sidebar-link  ">Common Events</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/event-bubble.html" class="sidebar-link  ">Event Bubble</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/gestures.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">concept</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/wiki/faq.html">FAQ</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        FAQ
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.399Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#where-are-legacy-docs">Where are legacy docs?</a></li>
+<li><a href="#command-errors-in-ms-windows">Command errors in MS Windows</a></li>
+<li><a href="#gradle-errors-in-android-studio">Gradle errors in Android Studio</a></li>
+<li><a href="#use-local-image">Use local image</a></li>
+<li><a href="#error-the-header-content-contains-invalid-characters-in-windows">Error&#xFF08;<code>The header content contains invalid characters</code>) in windows</a></li>
+<li><a href="#playground-app-display-nothing-white-screen-after-scan">Playground app display nothing (white screen) after scan</a></li>
+<li><a href="#about-ecmascript-version">About ECMAScript Version</a></li>
+<li><a href="#dependencies-in-frontend">Dependencies in frontend</a></li>
+<li><a href="#ios-text-line-height-style-is-abnormal">iOS text line-height style is abnormal</a></li>
+<li><a href="#android-only-support-overflow-hidden">Android only support <code>overflow:hidden</code></a></li>
+<li><a href="#how-to-get-rid-of-750-adaption-and-calculate-width-height-in-real-pixels">How to get rid of 750 adaption and calculate width/height in real pixels&#xFF1F;</a></li>
+<li><a href="#how-to-detect-an-native-module-component-supported-in-javascript">How to detect an native module/component supported in JavaScript?</a><ul>
+<li><a href="#detect-native-module">Detect native module</a></li>
+<li><a href="#detect-native-component">Detect native component</a></li>
+</ul>
+</li>
+<li><a href="#how-to-transfer-data-between-pages">How to transfer data between pages</a></li>
+<li><a href="#how-to-use-repeat-in-parent-child-components">How to use <code>repeat</code> in Parent-Child components</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h2 class="article-heading"><span id="where-are-legacy-docs">Where are legacy docs?</span><a href="#where-are-legacy-docs" class="header-anchor">#</a></h2><ul>
+<li><a href="./v-0.10/guide/index.html">Guide</a></li>
+<li><a href="./v-0.10/references/index.html">References</a></li>
+<li><a href="./v-0.10/advanced/index.html">Advanced</a></li>
+<li><a href="./v-0.10/tools/index.html">Tools</a></li>
+</ul>
+<h2 class="article-heading"><span id="command-errors-in-ms-windows">Command errors in MS Windows</span><a href="#command-errors-in-ms-windows" class="header-anchor">#</a></h2><p>Please install <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a> first, see <a href="https://github.com/apache/incubator-weex/tree/master#for-windows" target="_blank" rel="noopener">For Windows</a> for more information.</p>
+<h2 class="article-heading"><span id="gradle-errors-in-android-studio">Gradle errors in Android Studio</span><a href="#gradle-errors-in-android-studio" class="header-anchor">#</a></h2><p>Downloading <code>license-gradle-plugin.jar</code> may trigger errors, like <code>Connection reset</code> or <code>peer not authenticated</code>.<br>Maybe a network problem, try a proxy or VPN.</p>
+<h2 class="article-heading"><span id="use-local-image">Use local image</span><a href="#use-local-image" class="header-anchor">#</a></h2><p>Weex&#x2019;s native runtime support load image file from device&#x2019;s disk, all you have to do set the file url like <code>file:///sdcard/image_new0.png</code>. As to load image file in your project, Weex is not support yet.</p>
+<h2 class="article-heading"><span id="error-the-header-content-contains-invalid-characters-in-windows">Error&#xFF08;<code>The header content contains invalid characters</code>) in windows</span><a href="#error-the-header-content-contains-invalid-characters-in-windows" class="header-anchor">#</a></h2><p>This&#x2019;s is caused by weex-toolkit&#x2019;s dependency &#x2018;http-server&#x2019;, whose old version is not working well in chinese windows environment. We have fixed that, you should upgrade weex-toolkit before use that.</p>
+<h2 class="article-heading"><span id="playground-app-display-nothing-white-screen-after-scan">Playground app display nothing (white screen) after scan</span><a href="#playground-app-display-nothing-white-screen-after-scan" class="header-anchor">#</a></h2><p>Best way to find out what&#x2019;s happening is read debug log, you can follow <a href="/guide/index.html">this document</a> to firgure out how to do that.</p>
+<h2 class="article-heading"><span id="about-ecmascript-version">About ECMAScript Version</span><a href="#about-ecmascript-version" class="header-anchor">#</a></h2><p>Weex uses JSCore in iOS and uses v8 in Android. So they both support ECMAScript 5 spec. Additionally, we do some polyfills in native environment:</p>
+<ul>
+<li><code>Promise</code> in iOS/Android</li>
+<li>Timer APIs (<code>setTimeout</code> / <code>clearTimeout</code> / <code>setInterval</code> / <code>clearInterval</code>) in iOS/Android</li>
+<li><code>console</code> in iOS/Android</li>
+</ul>
+<p>In Browser we contains a polyfill of <code>Promise</code> temporarily. In the future developers can choose whether to import a polyfill by configurations.</p>
+<p>You can also write ES6 syntax by <code>babel</code> with <code>webpack</code>. The loader will convert ES6 syntax into ES5 automatically.</p>
+<p>If you want more ES6 polyfills you can import them into the JS Bundle as you like.</p>
+<h2 class="article-heading"><span id="dependencies-in-frontend">Dependencies in frontend</span><a href="#dependencies-in-frontend" class="header-anchor">#</a></h2><p>In Weex you may have some ways to import/require a component or a JS module. Take ES5 syntax for example:</p>
+<ul>
+<li><code>require(&apos;xxx.js&apos;)</code>: depends on a JS file</li>
+<li><code>require(&apos;npm-module-name&apos;)</code>: depends on a NPM module</li>
+<li><code>require(&apos;xxx.we&apos;)</code>: include a <code>we</code> file to register a Weex custom component</li>
+<li><code>require(&apos;@weex-module/xxx&apos;)</code>: depends on a Weex native module. Notice that it is supported only in <code>*.we</code> file not <code>*.js</code> file. If you want to use Weex native module in a <code>*.js</code> file, temporarily you may write like this:</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// use this piece of code below to get Weex native module &quot;modal&quot;</span></span><br><span class="line"><span class="keyword">var</span> modal</span><br><span class="line">__weex_define__(<span class="string">&apos;@weex-temp/x&apos;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">__weex_require__</span>) </span>{</span><br><span class="line">  modal = __weex_require__(<span class="string">&apos;@weex-module/modal&apos;</span>)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">// use APIs in &quot;modal&quot; module</span></span><br><span class="line">modal.toast({<span class="attr">message</span>: <span class="string">&apos;hello&apos;</span>})</span><br></pre></td></tr></tbody></table></figure>
+<p>We will bring a better syntax design in the future.</p>
+<h2 class="article-heading"><span id="ios-text-line-height-style-is-abnormal">iOS text line-height style is abnormal</span><a href="#ios-text-line-height-style-is-abnormal" class="header-anchor">#</a></h2><p><code>line-height</code> style in text component is different from h5 and Android,  text value will be placed at bottom of line box because of iOS native api. We are trying to optimize it.</p>
+<h2 class="article-heading"><span id="android-only-support-overflow-hidden">Android only support <code>overflow:hidden</code></span><a href="#android-only-support-overflow-hidden" class="header-anchor">#</a></h2><p>The <code>overflow</code> style in android is <code>hidden</code> and cannot be changed. This is the result of Android View framework. This only happens on Android, iOS will work as expected.</p>
+<h2 class="article-heading"><span id="how-to-get-rid-of-750-adaption-and-calculate-width-height-in-real-pixels">How to get rid of 750 adaption and calculate width/height in real pixels&#xFF1F;</span><a href="#how-to-get-rid-of-750-adaption-and-calculate-width-height-in-real-pixels" class="header-anchor">#</a></h2><p>The deviceHeight and deviceWidth got in <code>this.$getConfig()</code> is the real device width/height in pixels, not the ones with 750-adapted.</p>
+<p>So you can use them to calculate width/height in real pixels.</p>
+<p>Suppose you need to display a navigation bar of fixed 88 pixels, the bar&#x2019;s height will be:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">var height = 88 * 750 / env.deviceWidth</span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="how-to-detect-an-native-module-component-supported-in-javascript">How to detect an native module/component supported in JavaScript?</span><a href="#how-to-detect-an-native-module-component-supported-in-javascript" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="detect-native-module">Detect native module</span><a href="#detect-native-module" class="header-anchor">#</a></h3><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xxx = <span class="built_in">require</span>(<span class="string">&apos;@weex-module/xxx&apos;</span>)</span><br><span class="line"><span class="keyword">if</span> (xxx) {</span><br><span class="line">  <span class="comment">// todo: use this module</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">else</span> {</span><br><span class="line">  <span class="comment">// todo: handle the exception</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="detect-native-component">Detect native component</span><a href="#detect-native-component" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">is</span>=<span class="string">&quot;{{type}}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> type = <span class="string">&apos;xxx&apos;</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> xxx = <span class="built_in">require</span>(<span class="string">&apos;@weex-component/xxx&apos;</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span> (!xxx) {</span></span><br><span class="line"><span class="javascript">    type = <span class="string">&apos;div&apos;</span> <span class="comment">// downgrade to &lt;div&gt;</span></span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="undefined">        type: type</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="how-to-transfer-data-between-pages">How to transfer data between pages</span><a href="#how-to-transfer-data-between-pages" class="header-anchor">#</a></h2><p>If you have 2 pages, A and B.</p>
+<ol start="0">
+<li>A -&gt; B, use <a href="/references/modules/storage.html">storage module</a> to transfer data</li>
+<li>B -&gt; A, use <a href="/references/modules/storage.html">storage module</a> to transfer data</li>
+</ol>
+<h2 class="article-heading"><span id="how-to-use-repeat-in-parent-child-components">How to use <code>repeat</code> in Parent-Child components</span><a href="#how-to-use-repeat-in-parent-child-components" class="header-anchor">#</a></h2><p>If you want, You can make a <code>repeat</code> operation between Parent-Child components. But you must be strictly in accordance with the document syntax to write code. If there is no child component defined data, or there is no specify <code>props</code> that need to be passed down. It will lead to the page does not render properly.</p>
+<p>A correct example:</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">&quot;child&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;font-size:100&quot;</span>&gt;</span>{{title}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="undefined">      data: {</span></span><br><span class="line"><span class="javascript">        title: <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">repeat</span>=<span class="string">&quot;item in lists&quot;</span> <span class="attr">title</span>=<span class="string">&quot;{{ item.title }}&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="undefined">    data: {</span></span><br><span class="line"><span class="undefined">      lists: [</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;A&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;B&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;C&apos;</span> }</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="javascript">    ready: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.lists.splice(<span class="number">0</span>, <span class="number">1</span>)</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p>A wrong example&#xFF1A;</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">&quot;child&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">&quot;font-size:100&quot;</span>&gt;</span>{{title}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">repeat</span>=<span class="string">&quot;item in lists&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="undefined">    data: {</span></span><br><span class="line"><span class="undefined">      lists: [</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;A&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;B&apos;</span> },</span></span><br><span class="line"><span class="javascript">        { <span class="attr">title</span>: <span class="string">&apos;C&apos;</span> }</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="javascript">    ready: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.lists.splice(<span class="number">0</span>, <span class="number">1</span>)</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/wiki/faq.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

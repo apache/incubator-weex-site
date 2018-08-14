@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How it works | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Overall Structure Local Development Environment Cloud Deployment &amp;amp; Distribution Client-side JavaScript Engine Client Rendering Layer In the Browser     Overall Structure#Weex is a client-side">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How it works">
+<meta property="og:url" content="https://weex.apache.org/wiki/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Overall Structure Local Development Environment Cloud Deployment &amp;amp; Distribution Client-side JavaScript Engine Client Rendering Layer In the Browser     Overall Structure#Weex is a client-side">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://weex.apache.org/guide/images/flow.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How it works">
+<meta name="twitter:description" content="Overall Structure Local Development Environment Cloud Deployment &amp;amp; Distribution Client-side JavaScript Engine Client Rendering Layer In the Browser     Overall Structure#Weex is a client-side">
+<meta name="twitter:image" content="https://weex.apache.org/guide/images/flow.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="wiki" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "wiki";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="current">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/wiki/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/wiki/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Design</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/index.html" class="sidebar-link current ">How it works</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/platform-difference.html" class="sidebar-link  ">Platform Differences with Web</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/design-principles.html" class="sidebar-link  ">Design Principles</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Style</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-styles.html" class="sidebar-link  ">Common Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/text-styles.html" class="sidebar-link  ">Text Styles</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/css-units.html" class="sidebar-link  ">CSS Units</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/color-names.html" class="sidebar-link  ">Color name</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Event</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/common-events.html" class="sidebar-link  ">Common Events</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/event-bubble.html" class="sidebar-link  ">Event Bubble</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/gestures.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">concept</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/wiki/component-introduction.html" class="sidebar-link  ">Component</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/handler-introduction.html" class="sidebar-link  ">Handler</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/wiki/module-introduction.html" class="sidebar-link  ">Module</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/wiki/faq.html">FAQ</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-wiki">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        How it works
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.403Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><div class="article-toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#overall-structure">Overall Structure</a></li>
+<li><a href="#local-development-environment">Local Development Environment</a></li>
+<li><a href="#cloud-deployment-distribution">Cloud Deployment &amp; Distribution</a></li>
+<li><a href="#client-side-javascript-engine">Client-side JavaScript Engine</a></li>
+<li><a href="#client-rendering-layer">Client Rendering Layer</a></li>
+<li><a href="#in-the-browser">In the Browser</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h2 class="article-heading"><span id="overall-structure">Overall Structure</span><a href="#overall-structure" class="header-anchor">#</a></h2><p>Weex is a client-side technology on the surface, but in fact it connects the whole way from the local development environment to the cloud deployment and distribution.</p>
+<p>Developers can first write an app page just like writing a web page, and then compile the app page into a piece of JavaScript which is called Weex JS bundle.</p>
+<p>In the cloud, developers can deploy the generated JS bundle. And then it can be requested or pre-fetched from a mobile app with WeexSDK.</p>
+<p>The WeexSDK would prepare a JavaScript engine to run corresponding JS bundle when user opens a Weex page anytime. Usually the JS bundle will make some calls to native-side through Weex JS bridge. They let native-side render the user interface or handle user interactions, storage data, make network communications, call device powers and so on.</p>
+<p>Even if a user does not install the App, he can still open a same web page in the browser, using the same source code.</p>
+<p><img src="/guide/images/flow.png" alt="How it works"></p>
+<h2 class="article-heading"><span id="local-development-environment">Local Development Environment</span><a href="#local-development-environment" class="header-anchor">#</a></h2><p>The design of local development environment of Weex is based on the web development experience. It help web developers writing mobile app UI with their familiar HTML / CSS / JavaScript. At the same time Weex also do the official support to <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a>, a very great front-end framework.</p>
+<p>In addition, the management of a Weex project is also very familiar with a web project. First, web developers can use npm packages to manage dependencies. Second, web developers can refer to all best practices from every process of a web project such as scaffolding, development, preview, debugging, test etc.</p>
+<p>Also same as the best practice of web development, each Weex page will be built into a JS bundle. In the browser, we put JS bundle into the web page as a <code>&lt;script&gt;</code> tag. In the client, we put JS bundle into the local, and execute it in WeexSDK.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="/wiki/platform-difference.html">Platform differences between Weex and web</a></li>
+<li><a href="/wiki/platform-difference.html">Differences of using Vue between Weex with web</a></li>
+<li><a href="../index.html">Get Started</a></li>
+<li><a href="./devtools.html">Using Devtools</a></li>
+</ul>
+<h2 class="article-heading"><span id="cloud-deployment-amp-distribution">Cloud Deployment &amp; Distribution</span><a href="#cloud-deployment-amp-distribution" class="header-anchor">#</a></h2><p>Weex JS bundle can be deployed and distributed as a static resource. Almost all current web development system and best practice can be applied to Weex directly such as generating JS bundle through CMS system or deploying JS bundle to static CDN, monitoring JS bundle traffic through server log, caching or pre-fetching JS bundle to reduce networking cost etc.</p>
+<h2 class="article-heading"><span id="client-side-javascript-engine">Client-side JavaScript Engine</span><a href="#client-side-javascript-engine" class="header-anchor">#</a></h2><p>Both iOS and Android client-side of Weex run a JavaScript engine to execute JS bundles and send well defined instructions to the native render layers. We choose JavaScriptCore in iOS and v8 in Android which provide strong performance and stability.</p>
+<p>In order to make the mobile resources better utilized, we just run only one instance of JavaScript for all Weex pages. That is, all JS bundles share the same JavaScript instance, but each JS bundle context also isolated well by default in the runtime. We also put Vue 2.0 as a built-in JS Framework, developers do not have to pack it in each JS bundle, which save the size and time of networking.</p>
+<h2 class="article-heading"><span id="client-rendering-layer">Client Rendering Layer</span><a href="#client-rendering-layer" class="header-anchor">#</a></h2><p>Weex offers both iOS and Android native rendering layers. Each of them are based on the Native DOM model and exposed to JavaScript APIs. At the same time we provide a set of native components and modules to use. Also Weex has high performance especially on first-screen loading time, memory cost and re-reuse of long list, etc.</p>
+<p>Although Weex has provided a group of most commonly used components and modules officially. But we definitely know they couldn&#x2019;t satisfy everyone. So we design our native render as extendable as possible. You can extend more components and modules on your own. We can build and share an Weex eco-system together.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="../../references/web-standards.html">Differences between Weex and web standard</a></li>
+<li><a href="/references/ios-apis.html">Using Weex in iOS</a></li>
+<li><a href="/references/android-apis.html">Using Weex in Android</a></li>
+<li><a href="/guide/extend-ios.html">Extend to iOS</a></li>
+<li><a href="/guide/extend-android.html">Extend to Android</a></li>
+</ul>
+<h2 class="article-heading"><span id="in-the-browser">In the Browser</span><a href="#in-the-browser" class="header-anchor">#</a></h2><p>Besides iOS and Android client, Weex also has a web version based on Vue 2.0. Developers can just use Vue 2.0 to build the same page in browsers.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="../../references/html5-apis.html">Using Weex in HTML5</a></li>
+<li><a href="../../references/advanced/extend-to-html5.html">Extend to HTML5</a></li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/wiki/index.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>

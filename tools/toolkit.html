@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Use weex-toolkit | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="weex-toolkit#weex-toolkit is an official command line tool to help developers to create, debug and build their Weex project. Install#$ npm install -g weex-toolkit You can use the weex -v command to co">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Use weex-toolkit">
+<meta property="og:url" content="https://weex.apache.org/tools/toolkit.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="weex-toolkit#weex-toolkit is an official command line tool to help developers to create, debug and build their Weex project. Install#$ npm install -g weex-toolkit You can use the weex -v command to co">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1j3DIbntYBeNjy1XdXXXXyVXa-1915-1001.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB166B8bhGYBuNjy0FnXXX5lpXa-2876-1652.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB11kN2beuSBuNjy1XcXXcYjFXa-2872-1636.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1b5J2beuSBuNjy1XcXXcYjFXa-2880-1648.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB126JNbbGYBuNjy0FoXXciBFXa-2868-1642.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1qzrObntYBeNjy1XdXXXXyVXa-2872-1636.png">
+<meta property="og:image" content="https://img.alicdn.com/tfs/TB1E4rObntYBeNjy1XdXXXXyVXa-2852-1626.png">
+<meta property="og:updated_time" content="2018-03-27T11:35:42.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Use weex-toolkit">
+<meta name="twitter:description" content="weex-toolkit#weex-toolkit is an official command line tool to help developers to create, debug and build their Weex project. Install#$ npm install -g weex-toolkit You can use the weex -v command to co">
+<meta name="twitter:image" content="https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="tools" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "tools";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown current">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/tools/toolkit.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/tools/toolkit.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/faq.html">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/guide/tools/devtools.html">Devtools</a>
+              </li>
+              <li>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+              <li>
+                <a href="https://market.dotwe.org" target="_blank">Market</a>
+              </li>
+              <li>
+                <a href="/guide/tools/plugin.html">Weex Language Plugin</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link"></span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/tools/index.html" class="sidebar-link  ">Develop Tools</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/tools/toolkit.html" class="sidebar-link current ">Use weex-toolkit</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/tools/helpers.html" class="sidebar-link  ">Helpers</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-tools">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Use weex-toolkit
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.392Z">Updated time: 27/03/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="weex-toolkit">weex-toolkit</span><a href="#weex-toolkit" class="header-anchor">#</a></h1><p><a href="https://github.com/weexteam/weex-toolkit" target="_blank" rel="noopener">weex-toolkit</a> is an official command line tool to help developers to create, debug and build their Weex project.</p>
+<h2 class="article-heading"><span id="install">Install</span><a href="#install" class="header-anchor">#</a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install -g weex-toolkit</span><br></pre></td></tr></tbody></table></figure>
+<p>You can use the <code>weex -v</code> command to confirm that the installation is successful.</p>
+<blockquote>
+<p>If you have never installed node.js, you should go <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js.org</a> to download and install it. The node version needs to be upper 6.0. You can try <a href="https://github.com/tj/n" target="_blank" rel="noopener">n</a> to manage your node versions.</p>
+</blockquote>
+<p>If you meet some errors when installing, please go <a href="https://github.com/weexteam/weex-toolkit/issues" target="_blank" rel="noopener">weex-toolkit issues</a> or <a href="https://github.com/weexteam/weex-toolkit#faq" target="_blank" rel="noopener">weex-toolkit faq</a> to find some solution or have a discuss with us.</p>
+<h2 class="article-heading"><span id="commands">Commands</span><a href="#commands" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="create">create</span><a href="#create" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># create a new project with an official template</span></span><br><span class="line">$ weex create my-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># create a new project straight from a github template</span></span><br><span class="line">$ weex create username/repo my-project</span><br></pre></td></tr></tbody></table></figure>
+<p>Create a new project with an official template or from other remote, also you can create your own weex template, more detail you can see <a href="https://github.com/weex-templates/How-to-create-your-own-template" target="_blank" rel="noopener">How-to-create-your-own-template</a>.</p>
+<h3 class="article-heading"><span id="preview">preview</span><a href="#preview" class="header-anchor">#</a></h3><p>weex-toolkit supports previewing your Weex file(<code>.vue</code>) in a watch mode. You only need specify your file path.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ weex preview src/foo.vue</span><br></pre></td></tr></tbody></table></figure>
+<p>The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a <a href="/tools/playground.html">Playground App</a> in your mobile devices, you can scan the QR code at the opened page.</p>
+<p>Try the command below, you&#x2019;ll preview the whole directory files.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ weex preview src --entry src/foo.vue</span><br></pre></td></tr></tbody></table></figure>
+<p>You need to specify the folder path to preview and the entry file (passed in via <code>--entry</code>).</p>
+<h3 class="article-heading"><span id="compile">compile</span><a href="#compile" class="header-anchor">#</a></h3><p>Use <code>weex compile</code> o compile a single weex file or a weex file in an entire folder.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ weex compile [<span class="built_in">source</span>] [dist]  [options]</span><br></pre></td></tr></tbody></table></figure>
+<h4 class="article-heading"><span id="options">options</span><a href="#options" class="header-anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Option</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-w, --watch</code></td>
+<td style="text-align:left">watch we file changes auto build them and refresh debugger page! [default <code>true</code>]</td>
+</tr>
+<tr>
+<td><code>-d,--devtool [devtool]</code></td>
+<td style="text-align:left">set webpack devtool mode</td>
+</tr>
+<tr>
+<td><code>-e,--ext [ext]</code></td>
+<td style="text-align:left">set enabled extname for compiler default is vue</td>
+</tr>
+<tr>
+<td><code>-m, --min</code></td>
+<td style="text-align:left">set jsbundle uglify or not. [default <code>false</code>]</td>
+</tr>
+</tbody>
+</table>
+<p>You can use like this:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ weex compile src dest --devtool <span class="built_in">source</span>-map -m</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="platform">platform</span><a href="#platform" class="header-anchor">#</a></h3><p>Use <code>weex platform [add|remove|update] [ios|android]</code> to add, remove or update your ios / android project templates.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># add weex platform</span></span><br><span class="line">$ weex platform add [ios|android]</span><br><span class="line"></span><br><span class="line"><span class="comment"># remove weex platform</span></span><br><span class="line">$ weex platform remove [ios|android]</span><br><span class="line"></span><br><span class="line"><span class="comment"># update weex platform</span></span><br><span class="line">$ weex platform update [ios|android]</span><br><span class="line"></span><br><span class="line"><span class="comment"># list weex platform</span></span><br><span class="line">$ weex platform list</span><br></pre></td></tr></tbody></table></figure>
+<p>Use <code>weex platform list</code> to show what platforms your application supported.</p>
+<h3 class="article-heading"><span id="run">run</span><a href="#run" class="header-anchor">#</a></h3><p>You can use <code>weex-toolkit</code> to run project on android/ios/web.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># run weex Android project</span></span><br><span class="line">$ weex run android</span><br><span class="line"></span><br><span class="line"><span class="comment"># run weex iOS project</span></span><br><span class="line">$ weex run ios</span><br><span class="line"></span><br><span class="line"><span class="comment"># run weex web</span></span><br><span class="line">$ weex run web</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="debug">debug</span><a href="#debug" class="header-anchor">#</a></h3><p><strong> <a href="https://github.com/weexteam/weex-devtool" target="_blank" rel="noopener">Weex devtools</a> </strong> is a custom devtools for Weex that implements <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="noopener">Chrome Debugging Protocol</a>, it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page, both android and iOS platform are supported. So you can use weex-devtools feature by weex-toolkit.</p>
+<h4 class="article-heading"><span id="usage">usage</span><a href="#usage" class="header-anchor">#</a></h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">weex debug [we_file|bundles_dir] [options]</span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-V, --verbose</code></td>
+<td style="text-align:left">display logs of debugger server</td>
+</tr>
+<tr>
+<td><code>-v, --version</code></td>
+<td style="text-align:left">display version</td>
+</tr>
+<tr>
+<td><code>-p, --port [port]</code></td>
+<td style="text-align:left">set debugger server port</td>
+</tr>
+<tr>
+<td><code>-e, --entry [entry]</code></td>
+<td style="text-align:left">set the entry bundlejs path when you specific the bundle server root path</td>
+</tr>
+<tr>
+<td><code>-m, --mode [mode]</code></td>
+<td style="text-align:left">set build mode [transformer or loader]</td>
+</tr>
+<tr>
+<td><code>-w, --watch</code></td>
+<td style="text-align:left">watch we file changes auto build them and refresh debugger page [default <code>true</code>]</td>
+</tr>
+<tr>
+<td><code>--ip [ip]</code></td>
+<td style="text-align:left">set the host ip of debugger server</td>
+</tr>
+<tr>
+<td><code>--loglevel [loglevel]</code></td>
+<td style="text-align:left">set log level</td>
+</tr>
+<tr>
+<td><code>--min</code></td>
+<td style="text-align:left">set jsbundle uglify or not. [default <code>false</code>]</td>
+</tr>
+<tr>
+<td><code>--remotedebugport [remotedebugport]</code></td>
+<td style="text-align:left">set the remote debug port,default 9222</td>
+</tr>
+</tbody>
+</table>
+<h4 class="article-heading"><span id="features">Features</span><a href="#features" class="header-anchor">#</a></h4><h5 class="article-heading"><span id="connect-devices">Connect devices</span><a href="#connect-devices" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ weex debug</span><br></pre></td></tr></tbody></table></figure>
+<p>This command will start debug server and launch a chrome opening <code>DeviceList</code> page.<br>this page will display a QR code, you can use <a href="/tools/playground.html">Playground</a> scan it for starting debug or integrate <a href="#Integrate devtool">Weex devtools</a> into your application.</p>
+<p><img src="https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png" alt="devtools-main"></p>
+<h5 class="article-heading"><span id="debug-with-vue-file">Debug with <code>.vue</code> file</span><a href="#debug-with-vue-file" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ weex debug your_weex.vue</span><br></pre></td></tr></tbody></table></figure>
+<p>Click the button you can use your app or <a href="/tools/playground.html">weex playground app</a> to preview your pages.</p>
+<p><img src="https://img.alicdn.com/tfs/TB1j3DIbntYBeNjy1XdXXXXyVXa-1915-1001.png" alt="devtools-entry"></p>
+<h5 class="article-heading"><span id="inspector">Inspector</span><a href="#inspector" class="header-anchor">#</a></h5><blockquote>
+<p>Inspector feature to view the page&#x2019;s VDOM / Native Tree structure</p>
+</blockquote>
+<p>Note: If you do not need this feature as far as possible to maintain the closed state, open the browser Inspector interface will increase the page communication, more affect performance.</p>
+<p><img src="https://img.alicdn.com/tfs/TB166B8bhGYBuNjy0FnXXX5lpXa-2876-1652.png" alt="inspectors-one"></p>
+<p><img src="https://img.alicdn.com/tfs/TB11kN2beuSBuNjy1XcXXcYjFXa-2872-1636.png" alt="inspectors-two"></p>
+<h5 class="article-heading"><span id="breakpoint">Breakpoint</span><a href="#breakpoint" class="header-anchor">#</a></h5><blockquote>
+<p>JS Debug feature support you to set breakpoint on your jsbundle and debugging with it.</p>
+</blockquote>
+<p>You can find your jsbundle in the <code>source</code> folder of the <code>Runtime.js</code> directory. If you do not see the <code>Runtime.js</code> directory, check if the weex-debugger tool is completely installed or try to restart the debug tool.</p>
+<p><img src="https://img.alicdn.com/tfs/TB1b5J2beuSBuNjy1XcXXcYjFXa-2880-1648.png" alt="js-debug"></p>
+<h5 class="article-heading"><span id="network">NetWork</span><a href="#network" class="header-anchor">#</a></h5><blockquote>
+<p>The Network feature collects network request information from weex applications.</p>
+</blockquote>
+<p><img src="https://img.alicdn.com/tfs/TB126JNbbGYBuNjy0FoXXciBFXa-2868-1642.png" alt="network"></p>
+<h5 class="article-heading"><span id="loglevel-amp-elementmode">Loglevel &amp; ElementMode</span><a href="#loglevel-amp-elementmode" class="header-anchor">#</a></h5><blockquote>
+<p>The LogLevel and ElementMode feature are used to adjust the output configuration of the debugger.</p>
+</blockquote>
+<p><img src="https://img.alicdn.com/tfs/TB1qzrObntYBeNjy1XdXXXXyVXa-2872-1636.png" alt="loglevel-elementMode"></p>
+<h5 class="article-heading"><span id="prophet">Prophet</span><a href="#prophet" class="header-anchor">#</a></h5><blockquote>
+<p>The Prophet feature is used to view weex&#x2019;s load timing diagram and page performance metrics.</p>
+</blockquote>
+<p>Click on the upper right corner of the Prophet to view the timing diagram (iOS is not supported, the performance data can be viewed in the log performance), as follows:<br><img src="https://img.alicdn.com/tfs/TB1E4rObntYBeNjy1XdXXXXyVXa-2852-1626.png" alt="prophet"></p>
+<h4 class="article-heading"><span id="integrate-devtool">Integrate devtool</span><a href="#integrate-devtool" class="header-anchor">#</a></h4><ul>
+<li>Android<ul>
+<li>See the doc <a href="/guide/integrate-devtool-to-android.html">Weex devtools (Android)</a>, it will lead you to config and use it step by step.</li>
+</ul>
+</li>
+<li>iOS<ul>
+<li>See the doc <a href="/guide/integrate-devtool-to-ios.html">Weex devtools (iOS)</a>, it will lead you to config and use it step by step.</li>
+</ul>
+</li>
+</ul>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/tools/toolkit.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>
