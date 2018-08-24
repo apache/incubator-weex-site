@@ -23,7 +23,7 @@ version: 2.1
   ...
 </list>
 ```
- - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
+ - 查看 [完整示例](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
 ## 子组件
 
@@ -40,7 +40,7 @@ version: 2.1
   ...
 </refresh>
 ```
- - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
+ - 查看 [完整示例](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
 ## 属性
 
@@ -80,7 +80,7 @@ version: 2.1
   }
 </script>
 ```
- - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
+ - 查看 [完整示例](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
  - 支持所有通用属性。查看 [组件通用属性](../common-attrs.html)
 
@@ -130,8 +130,8 @@ version: 2.1
   }
 </script>
 ```
- - 查看 [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
+ - 查看 [完整示例](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
 ## 示例
 
- - [完整示例](http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7)
+ - [完整示例](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)

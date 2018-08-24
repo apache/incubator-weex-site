@@ -24,7 +24,7 @@ version: 2.1
   </loading>
 </list>
 ```
- - 查看 [完整示例](http://dotwe.org/vue/d1f0283206f66fec6549f7896e6c6164)
+ - 查看 [完整示例](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
 ## 子组件
 
@@ -41,7 +41,7 @@ version: 2.1
   ...
 </loading>
 ```
- - 查看 [完整示例](http://dotwe.org/vue/d1f0283206f66fec6549f7896e6c6164)
+ - 查看 [完整示例](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
 ## 属性
 
@@ -83,7 +83,7 @@ version: 2.1
    }
  </script>
  ```
- - 查看 [完整示例](http://dotwe.org/vue/d1f0283206f66fec6549f7896e6c6164)
+ - 查看 [完整示例](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
  - 支持所有通用属性。查看 [组件通用属性](../common-attrs.html)
 
@@ -97,8 +97,8 @@ version: 2.1
 
  - 当 `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>` 被上拉时触发。
 
- - 查看 [完整示例](http://dotwe.org/vue/d1f0283206f66fec6549f7896e6c6164)
+ - 查看 [完整示例](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
 ## 示例
 
- - [完整示例](http://dotwe.org/vue/d1f0283206f66fec6549f7896e6c6164)
+ - [完整示例](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
