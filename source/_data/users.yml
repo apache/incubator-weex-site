@@ -183,3 +183,8 @@ kaishiba:
   icon: 'http://images.kaishiba.com/pc_download_logo.png'
   iOS: 'https://itunes.apple.com/cn/app/%E5%BC%80%E5%A7%8B%E5%90%A72017/id1142943932?mt=8'
   android: 'https://www.kaishiba.com/special/sys/down'
+dakacard:
+  name: '达卡'
+  icon: 'http://cdn1.showjoy.com/images/16/167ed4b6ba7d4d56a7e29cf7df3b839d.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1406461453?mt=8'
+  android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.showjoy.card'
