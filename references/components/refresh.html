@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;refresh&amp;gt;#v0.6.1+#The &amp;lt;refresh&amp;gt; Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the &amp;lt;loading&amp;gt; Component.  Note： To">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-27T11:35:42.374Z">
+<meta property="og:updated_time" content="2018-08-31T02:14:50.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;refresh&gt;">
 <meta name="twitter:description" content="&amp;lt;refresh&amp;gt;#v0.6.1+#The &amp;lt;refresh&amp;gt; Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the &amp;lt;loading&amp;gt; Component.  Note： To">
@@ -1130,7 +1130,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.374Z">Updated time: 27/03/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-08-31T02:14:50.535Z">Updated time: 31/08/2018</time> -->
 </header>
 
     <html><head></head><body><h1 class="article-heading"><span id="lt-refresh-gt">&lt;refresh&gt;</span><a href="#lt-refresh-gt" class="header-anchor">#</a></h1><h3 class="article-heading"><span id="v0-6-1"><span class="weex-version">v0.6.1+</span></span><a href="#v0-6-1" class="header-anchor">#</a></h3><p>The <code>&lt;refresh&gt;</code> Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the <code>&lt;loading&gt;</code> Component.</p>
@@ -1142,7 +1142,7 @@
 </ul>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;list&gt;</span><br><span class="line">  &lt;refresh&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/refresh&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/list&gt;</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>Complete example goes <a href="http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7" target="_blank" rel="noopener">here</a></li>
+<li>Complete example goes <a href="http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539" target="_blank" rel="noopener">here</a></li>
 </ul>
 <h2 class="article-heading"><span id="child-components">Child Components</span><a href="#child-components" class="header-anchor">#</a></h2><ul>
 <li><p>Any other components, like the <code>&lt;text&gt;</code> and <code>&lt;image&gt;</code> components, can be put inside the refresh component.</p>
@@ -1154,7 +1154,7 @@
 </ul>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;refresh&gt;</span><br><span class="line">  &lt;text&gt;Refreshing&lt;/text&gt;</span><br><span class="line">  &lt;loading-indicator&gt;&lt;/loading-indicator&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/refresh&gt;</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>Complete example goes <a href="http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7" target="_blank" rel="noopener">here</a></li>
+<li>Complete example goes <a href="http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539" target="_blank" rel="noopener">here</a></li>
 </ul>
 <h2 class="article-heading"><span id="attributes">Attributes</span><a href="#attributes" class="header-anchor">#</a></h2><ul>
 <li>Support all common attributes, check out <a href="../common/common-attrs">common attributes</a></li>
@@ -1191,7 +1191,7 @@
 </ul>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;list&gt;</span><br><span class="line">    &lt;refresh @refresh=&quot;onrefresh&quot; :display=&quot;refreshing ? &apos;show&apos; : &apos;hide&apos;&quot;&gt;</span><br><span class="line">      ...</span><br><span class="line">    &lt;/refresh&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/list&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  ...</span><br><span class="line">  methods: {</span><br><span class="line">    onrefresh (event) {</span><br><span class="line">      this.refreshing = true</span><br><span class="line">      setTimeout(() =&gt; {</span><br><span class="line">        this.refreshing = false</span><br><span class="line">      }, 2000)</span><br><span class="line">    },</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>Complete example goes <a href="http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7" target="_blank" rel="noopener">here</a></li>
+<li>Complete example goes <a href="http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539" target="_blank" rel="noopener">here</a></li>
 </ul>
 <h2 class="article-heading"><span id="styles">Styles</span><a href="#styles" class="header-anchor">#</a></h2><ul>
 <li>Please check out the <a href="/wiki/common-styles.html">common styles</a></li>
@@ -1214,10 +1214,10 @@
 </ul>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;scroller&gt;</span><br><span class="line">  &lt;refresh @refresh=&quot;onrefresh&quot; @pullingdown=&quot;onpullingdown&quot;&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/refresh&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/scroller&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default {</span><br><span class="line">    methods: {</span><br><span class="line">      onrefresh (event) {</span><br><span class="line">        ...</span><br><span class="line">      },</span><br><span class="line">      onpullingdown (event) {</span><br><span class="line">        console.log(&quot;dy: &quot; + event.dy)</span><br><span class="line">        console.log(&quot;pullingDistance: &quot; + event.pullingDistance)</span><br><span class="line">        console.log(&quot;viewHeight: &quot; + event.viewHeight)</span><br><span class="line">        console.log(&quot;type: &quot; + type)</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>Complete example goes <a href="http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7" target="_blank" rel="noopener">here</a></li>
+<li>Complete example goes <a href="http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539" target="_blank" rel="noopener">here</a></li>
 </ul>
 <h2 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h2><ul>
-<li>Complete example goes <a href="http://dotwe.org/vue/26937c1c74022e79608af118b21bfbc7" target="_blank" rel="noopener">here</a></li>
+<li>Complete example goes <a href="http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539" target="_blank" rel="noopener">here</a></li>
 </ul>
 </body></html>
     <div class="article-tips">
