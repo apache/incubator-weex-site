@@ -75,16 +75,16 @@ const Hulk = new BroadcastChannel('Avengers')
 在页面 C 中：
 
 ```js
-const Stack = new BroadcastChannel('Avengers')
-Stack.onmessage = function (event) {
+const Stark = new BroadcastChannel('Avengers')
+Stark.onmessage = function (event) {
   console.log(event.data) // Assemble!
-  Stack.postMessage('I am Tony and I am leaving now.')
+  Stark.postMessage('I am Tony and I am leaving now.')
 }
 ```
 
 页面 A 、B 、C 都创建一个监听了 `'Avengers'` 频道的 BroadcastChannel 对象，它们可以用这个对象实现互相通信。
 
-当 Steve 发布了 `'Assemble!'` 消息时，Stack 将收到一个消息事件，其 `data` 字段等于 `'Assemble!'`，然后也向频道中回复一条消息。但是 Hulk 并不会收到这些消息，因为他没有实现`onmessage` 方法，相当于没有接收频道中的消息，所以他实际上不是一个订阅者。
+当 Steve 发布了 `'Assemble!'` 消息时，Stark 将收到一个消息事件，其 `data` 字段等于 `'Assemble!'`，然后也向频道中回复一条消息。但是 Hulk 并不会收到这些消息，因为他没有实现`onmessage` 方法，相当于没有接收频道中的消息，所以他实际上不是一个订阅者。
 
 ## 注意事项
 
