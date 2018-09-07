@@ -35,7 +35,7 @@ Weex 提供  **DOM.addRule** 以加载自定义字体。开发者可以通过指
 
 > **Note:** 如果你使用 http://www.iconfont.cn/ 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
 
-> **Note:** 调用`addRule` 在 `beforeCreate` 中是被推荐的。
+> **Note:** 调用`addRule` 在 `beforeCreate` 中是被推荐的。如果封装为组件时不建议放在beforeCreate中，会导致卡顿，空白页面等现象。
 
 ## Example
 [示例](http://dotwe.org/vue/7e328ee2ac9b7205c9ee37f4e509263d)。
