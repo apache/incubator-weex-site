@@ -207,7 +207,7 @@ Native WXSample地址
 `https://github.com/apache/incubator-weex/tree/master/ios/playground`
 
 Vue WXSample地址：
-`https://hanks10100.github.io/weex-vue-examples/`
+`https://github.com/Hanks10100/weex-vue-examples`
 
 ## 集成到 iOS
 
