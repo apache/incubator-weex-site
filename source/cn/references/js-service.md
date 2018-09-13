@@ -46,7 +46,7 @@ boolean result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, opti
 ## 编写一个 JS service
 
 ```javascript
-service.register(SERVICE_NAME /* same with native */, {
+service.register(SERVICE_NAME /* same string with native */, {
   /**
     * JS Service lifecycle. JS Service `create` will before then each instance lifecycle `create`. The return param `instance` is Weex protected param. This object will return to instance global. Other params will in the `services` at instance.
     *
