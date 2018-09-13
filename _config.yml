@@ -55,7 +55,7 @@ jsonContent:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://git-wip-us.apache.org/repos/asf/incubator-weex-site.git
+  repo: https://github.com/apache/incubator-weex-site.git
   branch: asf-site
   target_dir: content
 
