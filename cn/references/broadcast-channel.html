@@ -13,7 +13,7 @@
 <meta property="og:description" content="API 通信过程 使用范例 注意事项      BroadcastChannel 接口在 v0.9+ 及以上的版本中可用。  在 JS 执行环境中提到过，不同的 Weex 页面使用的是不同的执行环境，即使全局变量也是互相隔离的，然而使用 BroadcastChannel 是可以实现跨页面通信的。 API# BroadcastChannel 是 W3C 规范中的一部分，其中依赖的 Messa">
 <meta property="og:locale" content="cn">
 <meta property="og:image" content="https://weex.apache.org/references/images/BroadcastChannel.png">
-<meta property="og:updated_time" content="2018-03-27T11:35:42.317Z">
+<meta property="og:updated_time" content="2018-09-13T05:11:18.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BroadcastChannel">
 <meta name="twitter:description" content="API 通信过程 使用范例 注意事项      BroadcastChannel 接口在 v0.9+ 及以上的版本中可用。  在 JS 执行环境中提到过，不同的 Weex 页面使用的是不同的执行环境，即使全局变量也是互相隔离的，然而使用 BroadcastChannel 是可以实现跨页面通信的。 API# BroadcastChannel 是 W3C 规范中的一部分，其中依赖的 Messa">
@@ -1132,7 +1132,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.317Z">Updated time: 27/03/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-09-13T05:11:18.408Z">Updated time: 13/09/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -1175,9 +1175,9 @@
 <p>&#x5728;&#x9875;&#x9762; B &#x4E2D;&#xFF1A;</p>
 <figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Hulk = <span class="keyword">new</span> BroadcastChannel(<span class="string">&apos;Avengers&apos;</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>&#x5728;&#x9875;&#x9762; C &#x4E2D;&#xFF1A;</p>
-<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Stack = <span class="keyword">new</span> BroadcastChannel(<span class="string">&apos;Avengers&apos;</span>)</span><br><span class="line">Stack.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(event.data) <span class="comment">// Assemble!</span></span><br><span class="line">  Stack.postMessage(<span class="string">&apos;I am Tony and I am leaving now.&apos;</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Stark = <span class="keyword">new</span> BroadcastChannel(<span class="string">&apos;Avengers&apos;</span>)</span><br><span class="line">Stark.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(event.data) <span class="comment">// Assemble!</span></span><br><span class="line">  Stark.postMessage(<span class="string">&apos;I am Tony and I am leaving now.&apos;</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>&#x9875;&#x9762; A &#x3001;B &#x3001;C &#x90FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x4E86; <code>&apos;Avengers&apos;</code> &#x9891;&#x9053;&#x7684; BroadcastChannel &#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#x4E92;&#x76F8;&#x901A;&#x4FE1;&#x3002;</p>
-<p>&#x5F53; Steve &#x53D1;&#x5E03;&#x4E86; <code>&apos;Assemble!&apos;</code> &#x6D88;&#x606F;&#x65F6;&#xFF0C;Stack &#x5C06;&#x6536;&#x5230;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#xFF0C;&#x5176; <code>data</code> &#x5B57;&#x6BB5;&#x7B49;&#x4E8E; <code>&apos;Assemble!&apos;</code>&#xFF0C;&#x7136;&#x540E;&#x4E5F;&#x5411;&#x9891;&#x9053;&#x4E2D;&#x56DE;&#x590D;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x3002;&#x4F46;&#x662F; Hulk &#x5E76;&#x4E0D;&#x4F1A;&#x6536;&#x5230;&#x8FD9;&#x4E9B;&#x6D88;&#x606F;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;<code>onmessage</code> &#x65B9;&#x6CD5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6CA1;&#x6709;&#x63A5;&#x6536;&#x9891;&#x9053;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x6240;&#x4EE5;&#x4ED6;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#x3002;</p>
+<p>&#x5F53; Steve &#x53D1;&#x5E03;&#x4E86; <code>&apos;Assemble!&apos;</code> &#x6D88;&#x606F;&#x65F6;&#xFF0C;Stark &#x5C06;&#x6536;&#x5230;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#xFF0C;&#x5176; <code>data</code> &#x5B57;&#x6BB5;&#x7B49;&#x4E8E; <code>&apos;Assemble!&apos;</code>&#xFF0C;&#x7136;&#x540E;&#x4E5F;&#x5411;&#x9891;&#x9053;&#x4E2D;&#x56DE;&#x590D;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x3002;&#x4F46;&#x662F; Hulk &#x5E76;&#x4E0D;&#x4F1A;&#x6536;&#x5230;&#x8FD9;&#x4E9B;&#x6D88;&#x606F;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;<code>onmessage</code> &#x65B9;&#x6CD5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6CA1;&#x6709;&#x63A5;&#x6536;&#x9891;&#x9053;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x6240;&#x4EE5;&#x4ED6;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#x3002;</p>
 <h2 class="article-heading"><span id="zhu-yi-shi-xiang">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</span><a href="#zhu-yi-shi-xiang" class="header-anchor">#</a></h2><blockquote>
 <p><strong>&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x5E76;&#x6CA1;&#x6709;&#x6DF1;&#x5EA6;&#x590D;&#x5236;&#x3002;</strong>&#xFF08;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x53EF;&#x80FD;&#x4F1A;&#x4FEE;&#x6539;&#xFF09;</p>
 </blockquote>

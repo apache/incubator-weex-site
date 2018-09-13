@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="JS Service#v0.9.5+ JS service and Weex instance are parallel in js runtime. Weex instance lifecycle will invoke JS service lifecycle. Currently provide create, refresh, destroy of lifecycle. !!!Import">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-14T06:53:43.445Z">
+<meta property="og:updated_time" content="2018-09-13T05:11:18.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS Service">
 <meta name="twitter:description" content="JS Service#v0.9.5+ JS service and Weex instance are parallel in js runtime. Weex instance lifecycle will invoke JS service lifecycle. Currently provide create, refresh, destroy of lifecycle. !!!Import">
@@ -456,13 +456,13 @@
             
               
                 <li>
-                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
                 </li>
               
             
@@ -552,13 +552,13 @@
             
               
                 <li>
-                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
@@ -943,13 +943,13 @@
             
               
                 <li>
-                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
                 </li>
               
             
@@ -1039,13 +1039,13 @@
             
               
                 <li>
-                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
@@ -1130,7 +1130,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-08-14T06:53:43.445Z">Updated time: 14/08/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-09-13T05:11:18.413Z">Updated time: 13/09/2018</time> -->
 </header>
 
     <html><head></head><body><h1 class="article-heading"><span id="js-service">JS Service</span><a href="#js-service" class="header-anchor">#</a></h1><p><span class="weex-version">v0.9.5+</span></p>
@@ -1138,8 +1138,8 @@
 <p>!!!Important: JS Service is very powerful. Please be careful to use.</p>
 <h2 class="article-heading"><span id="register-js-service">Register JS Service</span><a href="#register-js-service" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="ios">iOS</span><a href="#ios" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[WXSDKEngine registerService:@&quot;SERVICE_NAME&quot; withScript: @&quot;SERVICE_JS_CODE&quot; withOptions: @{}];</span><br><span class="line">// or</span><br><span class="line">[WXSDKEngine registerService:@&quot;SERVICE_NAME&quot; serviceScriptUrl: @&quot;SERVICE_JS_URL&quot; withOptions: @{}];</span><br></pre></td></tr></tbody></table></figure>
 <h3 class="article-heading"><span id="android">Android</span><a href="#android" class="header-anchor">#</a></h3><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">HashMap&lt;String, String&gt; options = <span class="keyword">new</span> HashMap&lt;&gt;()</span><br><span class="line">options.put(<span class="string">&quot;k1&quot;</span>, <span class="string">&quot;v1&quot;</span>)</span><br><span class="line">String SERVICE_NAME = <span class="string">&quot;SERVICE_NAME&quot;</span></span><br><span class="line">String SERVICE_JS_CODE = <span class="string">&quot;SERVICE_JS_CODE&quot;</span></span><br><span class="line"><span class="keyword">boolean</span> result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, options)</span><br></pre></td></tr></tbody></table></figure>
-<h3 class="article-heading"><span id="web">Web</span><a href="#web" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Should be loaded after then jsfm --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;SERVICE_JS_CODE_URL&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 class="article-heading"><span id="write-a-js-service">Write a JS Service</span><a href="#write-a-js-service" class="header-anchor">#</a></h2><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// options: native inject options</span></span><br><span class="line"><span class="comment">// options.serviceName is native options name</span></span><br><span class="line">service.register(options.serviceName, {</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * JS Service lifecycle. JS Service `create` will before then each instance lifecycle `create`. The return param `instance` is Weex protected param. This object will return to instance global. Other params will in the `services` at instance.</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * @param  {String} id  instance id</span></span><br><span class="line"><span class="comment">    * @param  {Object} env device environment</span></span><br><span class="line"><span class="comment">    * @return {Object}</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  create: <span class="function"><span class="keyword">function</span>(<span class="params">id, env, config</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> {</span><br><span class="line">      instance: {</span><br><span class="line">        InstanceService: <span class="function"><span class="keyword">function</span>(<span class="params">weex</span>) </span>{</span><br><span class="line">          <span class="keyword">var</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span><br><span class="line">          <span class="keyword">return</span> {</span><br><span class="line">            toast: <span class="function"><span class="keyword">function</span>(<span class="params">title</span>) </span>{</span><br><span class="line">              modal.toast({ <span class="attr">message</span>: title })</span><br><span class="line">            }</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      NormalService: <span class="function"><span class="keyword">function</span>(<span class="params">weex</span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span><br><span class="line">        <span class="keyword">return</span> {</span><br><span class="line">          toast: <span class="function"><span class="keyword">function</span>(<span class="params">title</span>) </span>{</span><br><span class="line">            modal.toast({ <span class="attr">message</span>: title })</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * JS Service lifecycle. JS Service `refresh` will before then each instance lifecycle `refresh`. If you want to reset variable or something on instance refresh.</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * @param  {String} id  instance id</span></span><br><span class="line"><span class="comment">    * @param  {Object} env device environment</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  refresh: <span class="function"><span class="keyword">function</span>(<span class="params">id, env, config</span>)</span>{</span><br><span class="line"></span><br><span class="line">  },</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * JS Service lifecycle. JS Service `destroy` will before then each instance lifecycle `destroy`. You can deleted variable here. If you doesn&apos;t detete variable define in JS Service. The variable will always in the js runtime. It&apos;s would be memory leak risk.</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * @param  {String} id  instance id</span></span><br><span class="line"><span class="comment">    * @param  {Object} env device environment</span></span><br><span class="line"><span class="comment">    * @return {Object}</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  destroy: <span class="function"><span class="keyword">function</span>(<span class="params">id, env</span>) </span>{</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="web">Web</span><a href="#web" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;SERVICE_JS_CODE_URL&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="write-a-js-service">Write a JS Service</span><a href="#write-a-js-service" class="header-anchor">#</a></h2><figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line">service.register(SERVICE_NAME <span class="comment">/* same string with native */</span>, {</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * JS Service lifecycle. JS Service `create` will before then each instance lifecycle `create`. The return param `instance` is Weex protected param. This object will return to instance global. Other params will in the `services` at instance.</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * @param  {String} id  instance id</span></span><br><span class="line"><span class="comment">    * @param  {Object} env device environment</span></span><br><span class="line"><span class="comment">    * @return {Object}</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  create: <span class="function"><span class="keyword">function</span>(<span class="params">id, env, config</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> {</span><br><span class="line">      instance: {</span><br><span class="line">        InstanceService: <span class="function"><span class="keyword">function</span>(<span class="params">weex</span>) </span>{</span><br><span class="line">          <span class="keyword">var</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span><br><span class="line">          <span class="keyword">return</span> {</span><br><span class="line">            toast: <span class="function"><span class="keyword">function</span>(<span class="params">title</span>) </span>{</span><br><span class="line">              modal.toast({ <span class="attr">message</span>: title })</span><br><span class="line">            }</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      NormalService: <span class="function"><span class="keyword">function</span>(<span class="params">weex</span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span><br><span class="line">        <span class="keyword">return</span> {</span><br><span class="line">          toast: <span class="function"><span class="keyword">function</span>(<span class="params">title</span>) </span>{</span><br><span class="line">            modal.toast({ <span class="attr">message</span>: title })</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * JS Service lifecycle. JS Service `refresh` will before then each instance lifecycle `refresh`. If you want to reset variable or something on instance refresh.</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * @param  {String} id  instance id</span></span><br><span class="line"><span class="comment">    * @param  {Object} env device environment</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  refresh: <span class="function"><span class="keyword">function</span>(<span class="params">id, env, config</span>)</span>{</span><br><span class="line"></span><br><span class="line">  },</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * JS Service lifecycle. JS Service `destroy` will before then each instance lifecycle `destroy`. You can deleted variable here. If you doesn&apos;t detete variable define in JS Service. The variable will always in the js runtime. It&apos;s would be memory leak risk.</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * @param  {String} id  instance id</span></span><br><span class="line"><span class="comment">    * @param  {Object} env device environment</span></span><br><span class="line"><span class="comment">    * @return {Object}</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  destroy: <span class="function"><span class="keyword">function</span>(<span class="params">id, env</span>) </span>{</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
 <h2 class="article-heading"><span id="using-js-service-vuejs">Using JS Service (vuejs)</span><a href="#using-js-service-vuejs" class="header-anchor">#</a></h2><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> _InstanceService = <span class="keyword">new</span> InstanceService(weex)</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> _NormalService = <span class="keyword">new</span> service.normalService(weex)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">  created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">    <span class="comment">// called modal module to toast something</span></span></span><br><span class="line"><span class="javascript">    _InstanceService.toast(<span class="string">&apos;Instance JS Service&apos;</span>)</span></span><br><span class="line"><span class="javascript">    _NormalService.toast(<span class="string">&apos;Normal JS Service&apos;</span>)</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined">}</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 </body></html>
     <div class="article-tips">
