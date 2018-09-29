@@ -38,7 +38,6 @@ boolean result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, opti
 
 ### Web
 ```html
-<!-- 必须在 JSFM 之后加载 -->
 <script src="SERVICE_JS_CODE_URL"></script>
 ```
 
@@ -47,9 +46,7 @@ boolean result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, opti
 ## 编写一个 JS service
 
 ```javascript
-// options: native inject options
-// options.serviceName is native options name
-service.register(options.serviceName, {
+service.register(SERVICE_NAME /* same string with native */, {
   /**
     * JS Service lifecycle. JS Service `create` will before then each instance lifecycle `create`. The return param `instance` is Weex protected param. This object will return to instance global. Other params will in the `services` at instance.
     *
