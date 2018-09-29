@@ -122,7 +122,7 @@ youzan:
   name: '有赞零售'
   icon: 'https://img.yzcdn.cn/public_files/2018/02/13/2e34b39ef45295e47919d34dc84b4cb5.png'
   iOS: 'https://itunes.apple.com/cn/app/%E6%9C%89%E8%B5%9E%E9%9B%B6%E5%94%AE/id1248696859?mt=8'
-  android: ''
+  android: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.youzan.retail'
 qiang100:
   name: '百强排行'
   icon: 'https://www.qiang100.com/public/images/appicon-v2/512-512.png'
@@ -188,3 +188,8 @@ dakacard:
   icon: 'http://cdn1.showjoy.com/images/16/167ed4b6ba7d4d56a7e29cf7df3b839d.png'
   iOS: 'https://itunes.apple.com/cn/app/id1406461453?mt=8'
   android: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.showjoy.card'
+youzan_kdt:
+  name: '有赞微商城'
+  icon: 'https://img.yzcdn.cn/public_files/2018/09/20/da60472b1c0bdc0b1ee1fc4f0380fa41.png'
+  iOS: 'https://itunes.apple.com/cn/app/%E6%9C%89%E8%B5%9E%E5%BE%AE%E5%95%86%E5%9F%8E-%E6%89%8B%E6%9C%BA%E5%BF%AB%E9%80%9F%E5%BC%80%E5%BE%AE%E5%BA%97/id880579403?mt=8'
+  android: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.qima.kdt'
