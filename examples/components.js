@@ -402,7 +402,7 @@ module.exports = {
       title: { zh: '文本绑定', en: 'Text Binding' },
       screenshot: 'https://gw.alicdn.com/tfs/TB1LeVoovDH8KJjy1XcXXcpdXXa-540-844.png'
     }, {
-      hash: '56d434a1641b96df58c8f3d02d082f08',
+      hash: 'c85fb6128ff0fa33c2b7c13ca0c40d06',
       title: { zh: '属性绑定', en: 'Attribute Binding' },
       screenshot: 'https://gw.alicdn.com/tfs/TB1_pLKolfH8KJjy1XbXXbLdXXa-540-844.png'
     }, {
