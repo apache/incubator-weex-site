@@ -235,7 +235,7 @@ const longList = [
 **模板语法**
 
 + [绑定文本](http://dotwe.org/vue/5b25755d7371d16b3d000e0d173a5cab) ([普通 list](http://dotwe.org/vue/0f7f1c1f0a3271ed30a0c5adb6938976))
-+ [绑定属性 `v-bind`](http://dotwe.org/vue/6455e2e8c1a717f9c09363ec9be663d1) ([普通 list](http://dotwe.org/vue/f6a37fbeb5d7abf2d8c4875862b49ebc))
++ [绑定属性 `v-bind`](http://dotwe.org/vue/c85fb6128ff0fa33c2b7c13ca0c40d06) ([普通 list](http://dotwe.org/vue/f6a37fbeb5d7abf2d8c4875862b49ebc))
 + [循环 `v-for`](http://dotwe.org/vue/966e644a4cbbbc401ab431889dc48677) ([普通 list](http://dotwe.org/vue/89921581f43493e6bbb617e63be267b6))
 + [多层循环](http://dotwe.org/vue/20a9681f9201ef1b7a68962fd9cb5eb5) ([普通 list](http://dotwe.org/vue/8a961f87c6db8e0aa221748d037b6428))
 + [条件渲染 `v-if`/`v-else`/`v-else-if`](http://dotwe.org/vue/a645db4b73bd7c1cde669f91c7f70f3a) ([普通 list](http://dotwe.org/vue/01a1ce5b9b868de7b0e4d193110471c8))
