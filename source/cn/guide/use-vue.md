@@ -182,7 +182,7 @@ Vue 组件的实例生命周期钩子将在特定的阶段发出，详情请参�
 | [beforeCreate](https://cn.vuejs.org/v2/api/#beforeCreate)   | <b class="tag-yes">支持</b> | - |
 | [created](https://cn.vuejs.org/v2/api/#created)             | <b class="tag-yes">支持</b> | - |
 | [beforeMount](https://cn.vuejs.org/v2/api/#beforeMount)     | <b class="tag-yes">支持</b> | - |
-| [mounted](https://cn.vuejs.org/v2/api/#mounted)             | <b class="tag-yes">支持</b> | 跟 Web 端完全不一样 |
+| [mounted](https://cn.vuejs.org/v2/api/#mounted)             | <b class="tag-yes">支持</b> | 和 Web 端不完全一样（Weex 里并没有真实 DOM） |
 | [beforeUpdate](https://cn.vuejs.org/v2/api/#beforeUpdate)   | <b class="tag-yes">支持</b> | - |
 | [updated](https://cn.vuejs.org/v2/api/#updated)             | <b class="tag-yes">支持</b> | - |
 | [activated](https://cn.vuejs.org/v2/api/#activated)         | <b class="tag-no">不支持</b>   | 不支持`<keep-alive>` |
