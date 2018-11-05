@@ -5,20 +5,20 @@
   
   <title>Release Note | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="v0.18.0# feature Android/iOS TemplateList support lifecycle and statefull component #1019 #1023 feature Android Support real time format to input component, support disable copy paste to input compone">
+  <meta name="description" content="v0.19.0# [WEEX-219][Android] support copy action for text component #1037 [WEEX-228][Android] ShouldStopPropagation Use ShortName StopPropagation #1042 [WEEX-222][Android] Sticky header in waterfall i">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Release Note">
 <meta property="og:url" content="https://weex.apache.org/cn/releasenote.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="v0.18.0# feature Android/iOS TemplateList support lifecycle and statefull component #1019 #1023 feature Android Support real time format to input component, support disable copy paste to input compone">
+<meta property="og:description" content="v0.19.0# [WEEX-219][Android] support copy action for text component #1037 [WEEX-228][Android] ShouldStopPropagation Use ShortName StopPropagation #1042 [WEEX-222][Android] Sticky header in waterfall i">
 <meta property="og:locale" content="cn">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/115201/21414801/e6341b36-c83d-11e6-9e5a-3acdabb592ee.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1O.nwKFXXXXX8XpXXXXXXXXXX-1436-811.png">
-<meta property="og:updated_time" content="2018-03-27T11:35:42.339Z">
+<meta property="og:updated_time" content="2018-11-05T04:24:15.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Release Note">
-<meta name="twitter:description" content="v0.18.0# feature Android/iOS TemplateList support lifecycle and statefull component #1019 #1023 feature Android Support real time format to input component, support disable copy paste to input compone">
+<meta name="twitter:description" content="v0.19.0# [WEEX-219][Android] support copy action for text component #1037 [WEEX-228][Android] ShouldStopPropagation Use ShortName StopPropagation #1042 [WEEX-222][Android] Sticky header in waterfall i">
 <meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/115201/23015955/ba075876-f46f-11e6-9d88-2ca3096551b9.jpeg">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
@@ -217,10 +217,95 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.339Z">Updated time: 27/03/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-05T04:24:15.772Z">Updated time: 05/11/2018</time> -->
 </header>
 
-    <html><head></head><body><h2 class="article-heading"><span id="v0-18-0">v0.18.0</span><a href="#v0-18-0" class="header-anchor">#</a></h2><ul>
+    <html><head></head><body><h2 class="article-heading"><span id="v0-19-0">v0.19.0</span><a href="#v0-19-0" class="header-anchor">#</a></h2><ul>
+<li>[WEEX-219][Android] support copy action for text component <a href="https://github.com/apache/incubator-weex/pull/1037" target="_blank" rel="noopener">#1037</a></li>
+<li>[WEEX-228][Android] ShouldStopPropagation Use ShortName StopPropagation <a href="https://github.com/apache/incubator-weex/pull/1042" target="_blank" rel="noopener">#1042</a></li>
+<li>[WEEX-222][Android] Sticky header in waterfall is not sticky <a href="https://github.com/apache/incubator-weex/pull/1041" target="_blank" rel="noopener">#1041</a></li>
+<li>[WEEX-210][Android] Weex Auto Scan Component And Module Discover  <a href="https://github.com/apache/incubator-weex/pull/1032" target="_blank" rel="noopener">#1032</a></li>
+<li>[WEEX-216][Android] WXAnimation Fix Memory Leak and performance improve <a href="https://github.com/apache/incubator-weex/pull/1026" target="_blank" rel="noopener">#1026</a></li>
+<li>[WEEX-368][Android] Turn single process switch on for jsEngine <a href="https://github.com/apache/incubator-weex/pull/1178" target="_blank" rel="noopener">#1178</a></li>
+<li>[WEEX-380][Android] Fix weex show abnormally in single process <a href="https://github.com/apache/incubator-weex/pull/1188" target="_blank" rel="noopener">#1188</a></li>
+<li>[WEEX-281][Android] Auto Startup Time Quick <a href="https://github.com/apache/incubator-weex/pull/1141" target="_blank" rel="noopener">#1141</a></li>
+<li>[WEEX-325][Android] Some MeiZhu Mobole throw NoClassDefFoundError: android/support/design/widget/AppBarLayout$OnOffsetChangedListener <a href="https://github.com/apache/incubator-weex/pull/1140" target="_blank" rel="noopener">#1140</a></li>
+<li>[WEEX-299][Android] Touch event will transmit to next layer, requestDisallowInterceptTouchEvent should be reset for every touch event <a href="https://github.com/apache/incubator-weex/pull/1138" target="_blank" rel="noopener">#1138</a></li>
+<li>[WEEX-303][Android] fix nullPoint <a href="https://github.com/apache/incubator-weex/pull/1106" target="_blank" rel="noopener">#1106</a></li>
+<li>[WEEX-218][Android] support leftGap and rightGap for waterfall recycle-list&#x2019;s orientation support update attrs <a href="https://github.com/apache/incubator-weex/pull/1031" target="_blank" rel="noopener">#1031</a></li>
+<li>[Weex-260][Android] switch supports setting color <a href="https://github.com/apache/incubator-weex/pull/1085" target="_blank" rel="noopener">#1085</a></li>
+<li>[WEEX-224][Android] WXDomObject Destory Method Should Be Called avoid Memory Leak <a href="https://github.com/apache/incubator-weex/pull/1086" target="_blank" rel="noopener">#1086</a></li>
+<li>[WEEX-378][Android] wson support for weex-core new architecture and remove rapidjson <a href="https://github.com/apache/incubator-weex/pull/1187" target="_blank" rel="noopener">#1187</a></li>
+<li>[WEEX-399][Android] remove extra api js <a href="https://github.com/apache/incubator-weex/pull/1203" target="_blank" rel="noopener">#1203</a></li>
+<li>[WEEX-376][Android] Fix div layeroverflow event <a href="https://github.com/apache/incubator-weex/pull/1191" target="_blank" rel="noopener">#1191</a></li>
+<li>[WEEX-244][Android] Weex Android Support W3c Force Api <a href="https://github.com/apache/incubator-weex/pull/1060" target="_blank" rel="noopener">#1060</a></li>
+<li>[WEEX-240][Android] feature update for weexsandbox <a href="https://github.com/apache/incubator-weex/pull/1088" target="_blank" rel="noopener">#1088</a></li>
+<li>[WEEX-261][Android] Flat GUI NullPointerException fix <a href="https://github.com/apache/incubator-weex/pull/1081" target="_blank" rel="noopener">#1081</a></li>
+<li>[WEEX-288][Android] bug fix, fix on some case cannot get bundle type <a href="https://github.com/apache/incubator-weex/pull/1110" target="_blank" rel="noopener">#1110</a></li>
+<li>[WEEX-342][Android] when animation module or transition parser properties, some propers may be not right, so add try catch to handle the exceptions <a href="https://github.com/apache/incubator-weex/pull/1275" target="_blank" rel="noopener">#1275</a></li>
+<li>[WEEX-465][Android] fix performance point interactionTime record bug <a href="https://github.com/apache/incubator-weex/pull/1278" target="_blank" rel="noopener">#1278</a></li>
+<li>[WEEX-342][Android] ava.util.ConcurrentModificationException  at java util.ArrayList$ArrayListIterator.next(ArrayList.java:573)at com.taobao.weex.ui.component.WXComponent.applyEvents(WXComponent.java:290) <a href="https://github.com/apache/incubator-weex/pull/1273" target="_blank" rel="noopener">#1273</a></li>
+<li>[WEEX-565][Android] do not set view&#x2019;s id if there is a id in this view <a href="https://github.com/apache/incubator-weex/pull/1436" target="_blank" rel="noopener">#1436</a></li>
+<li>[WEEX-564][Android] fix check screen empty logic <a href="https://github.com/apache/incubator-weex/pull/1435" target="_blank" rel="noopener">#1435</a></li>
+<li>[WEEX-562][Android] task may be null ,should be check ,not try/catch <a href="https://github.com/apache/incubator-weex/pull/1425" target="_blank" rel="noopener">#1425</a></li>
+<li>[WEEX-560][Android] fix null point of apm &amp;&amp; report initJSFM fail info <a href="https://github.com/apache/incubator-weex/pull/1422" target="_blank" rel="noopener">#1422</a></li>
+<li>[WEEX-342][Android] ava.util.ConcurrentModificationException  at java.util.ArrayList$ArrayListIterator.next(ArrayList.java:573)at  <a href="https://github.com/apache/incubator-weex/pull/1268" target="_blank" rel="noopener">#1268</a></li>
+<li>[WEEX-457][Android] add back performance point of  maxVDomDeep &amp;&amp; int&#x2026; <a href="https://github.com/apache/incubator-weex/pull/1262" target="_blank" rel="noopener">#1262</a></li>
+<li>[WEEX-454][Android] fix can&#x2019;t find libweexjss when deploy <a href="https://github.com/apache/incubator-weex/pull/1259" target="_blank" rel="noopener">#1259</a></li>
+<li>[WEEX-360][Android] Fix crash when reinit framework <a href="https://github.com/apache/incubator-weex/pull/1171" target="_blank" rel="noopener">#1171</a></li>
+<li>[WEEX-430][Android] Delete arm-v7a and x86 so before the program is run. <a href="https://github.com/apache/incubator-weex/pull/1235" target="_blank" rel="noopener">#1235</a></li>
+<li>[WEEX-412][Android] support multi vm <a href="https://github.com/apache/incubator-weex/pull/1217" target="_blank" rel="noopener">#1217</a></li>
+<li>[WEEX-419][Android] weeks bugfix for weexcore appear <a href="https://github.com/apache/incubator-weex/pull/1246" target="_blank" rel="noopener">#1246</a></li>
+<li>[WEEX-498][Android] fix report url is bundleUrlDefault <a href="https://github.com/apache/incubator-weex/pull/1313" target="_blank" rel="noopener">#1313</a></li>
+<li>[WEEX-506][Android] try fix report defaultUrl in mutilThread case <a href="https://github.com/apache/incubator-weex/pull/1331" target="_blank" rel="noopener">#1331</a></li>
+<li>[WEEX-453][iOS] transform/transformOrigin conflict when updateStyles <a href="https://github.com/apache/incubator-weex/pull/1260" target="_blank" rel="noopener">#1260</a></li>
+<li>[WEEX-262][iOS] Add new interface of Instance,which will terminate re&#x2026; <a href="https://github.com/apache/incubator-weex/pull/1079" target="_blank" rel="noopener">#1079</a></li>
+<li>[WEEX-245][iOS] fix CTFont crash on iOS10 <a href="https://github.com/apache/incubator-weex/pull/1062" target="_blank" rel="noopener">#1062</a></li>
+<li>[WEEX-241][iOS] add WXVideoComponent &#x201C;poster&#x201D; attribute <a href="https://github.com/apache/incubator-weex/pull/1051" target="_blank" rel="noopener">#1051</a></li>
+<li>[WEEX-218][iOS] support leftGap and rightGap for waterfall component <a href="https://github.com/apache/incubator-weex/pull/1029" target="_blank" rel="noopener">#1029</a></li>
+<li>[WEEX-219][iOS] support copy action for text component <a href="https://github.com/apache/incubator-weex/pull/1030" target="_blank" rel="noopener">#1030</a></li>
+<li>[WEEX-215][iOS] recycle-list scroll orientation support <a href="https://github.com/apache/incubator-weex/pull/1027" target="_blank" rel="noopener">#1027</a></li>
+<li>[WEEX-375][iOS] add Protocol for PageEventNotifyEvent <a href="https://github.com/apache/incubator-weex/pull/1183" target="_blank" rel="noopener">#1183</a></li>
+<li>[WEEX-373][iOS] try to fix the issue about _remove_assocations <a href="https://github.com/apache/incubator-weex/pull/1182" target="_blank" rel="noopener">#1182</a></li>
+<li>[WEEX-345][iOS] fix animationModule with needLayout bug with nil propery <a href="https://github.com/apache/incubator-weex/pull/1165" target="_blank" rel="noopener">#1165</a></li>
+<li>[WEEX-339][iOS] add componentTime/Count monitor <a href="https://github.com/apache/incubator-weex/pull/1150" target="_blank" rel="noopener">#1150</a></li>
+<li>[WEEX-350][iOS] fix anim crash caused by problem that [WXConvert CGFl&#x2026; <a href="https://github.com/apache/incubator-weex/pull/1163" target="_blank" rel="noopener">#1163</a></li>
+<li>[WEEX-343][iOS] Failure of &#x201C;scaleY&#x201D; on animationModule <a href="https://github.com/apache/incubator-weex/pull/1154" target="_blank" rel="noopener">#1154</a></li>
+<li>[WEEX-313][iOS] fix RTL issue <a href="https://github.com/apache/incubator-weex/pull/1134" target="_blank" rel="noopener">#1134</a></li>
+<li>[WEEX-297][iOS] fix iOS 11 save image permission <a href="https://github.com/apache/incubator-weex/pull/1119" target="_blank" rel="noopener">#1119</a></li>
+<li>[WEEX-282][iOS] update layout system to support rtl direction <a href="https://github.com/apache/incubator-weex/pull/1105" target="_blank" rel="noopener">#1105</a></li>
+<li>[WEEX-270][iOS] WXListComponent should add reload type of data update <a href="https://github.com/apache/incubator-weex/pull/1095" target="_blank" rel="noopener">#1095</a></li>
+<li>[WEEX-489][iOS] Fix resource not loaded when using dynamic framework &#x2026; <a href="https://github.com/apache/incubator-weex/pull/1305" target="_blank" rel="noopener">#1305</a></li>
+<li>[WEEX-484][iOS] Failure of parsing transform parameter when in third-party environment <a href="https://github.com/apache/incubator-weex/pull/1298" target="_blank" rel="noopener">#1298</a></li>
+<li>[WEEX-468][iOS] Try to fix Fixed component related crash. <a href="https://github.com/apache/incubator-weex/pull/1281" target="_blank" rel="noopener">#1281</a></li>
+<li>[WEEX-548][iOS] Weex devtool can not debug recycle list <a href="https://github.com/apache/incubator-weex/pull/1395" target="_blank" rel="noopener">#1395</a></li>
+<li>[WEEX-563][iOS] fix the attribute of linear-gradient on iOS <a href="https://github.com/apache/incubator-weex/pull/1434" target="_blank" rel="noopener">#1434</a></li>
+<li>[WEEX-559][iOS] Fix issue that handleAppear should be resent for lazil&#x2026; <a href="https://github.com/apache/incubator-weex/pull/1420" target="_blank" rel="noopener">#1420</a></li>
+<li>[WEEX-556][iOS] Fix video play state is not &#x2018;play&#x2019; while set autoplay&#x2026; <a href="https://github.com/apache/incubator-weex/pull/1418" target="_blank" rel="noopener">#1418</a></li>
+<li>[WEEX-555][iOS] fix layout engin bug <a href="https://github.com/apache/incubator-weex/pull/1414" target="_blank" rel="noopener">#1414</a></li>
+<li>[WEEX-552][iOS] apm for ios <a href="https://github.com/apache/incubator-weex/pull/1412" target="_blank" rel="noopener">#1412</a></li>
+<li>[WEEX-413][iOS] Fix when main thread parse transform cause deadlock <a href="https://github.com/apache/incubator-weex/pull/1218" target="_blank" rel="noopener">#1218</a></li>
+<li>[WEEX-513][iOS] Fix build issue <a href="https://github.com/apache/incubator-weex/pull/1338" target="_blank" rel="noopener">#1338</a></li>
+<li>[WEEX-513][iOS] Improve WeexSDK project file <a href="https://github.com/apache/incubator-weex/pull/1337" target="_blank" rel="noopener">#1337</a></li>
+<li>[WEEX-511][iOS] Fix debug log may crash when there is a retain cycle &#x2026; <a href="https://github.com/apache/incubator-weex/pull/1335" target="_blank" rel="noopener">#1335</a></li>
+<li>[WEEX-501][iOS] Try to fix insert table view cell exception abort on iOS <a href="https://github.com/apache/incubator-weex/pull/1322" target="_blank" rel="noopener">#1322</a></li>
+<li>[WEEX-496][iOS] In CoreText mode, origin of first line is incorret un&#x2026; <a href="https://github.com/apache/incubator-weex/pull/1312" target="_blank" rel="noopener">#1312</a></li>
+<li>[WEEX-353][iOS] Add weex-polyfill.js <a href="https://github.com/apache/incubator-weex/pull/1164" target="_blank" rel="noopener">#1164</a></li>
+<li>[WEEX-442][Core] Fix compile error <a href="https://github.com/apache/incubator-weex/pull/1272" target="_blank" rel="noopener">#1272</a></li>
+<li>[WEEX-442][Core] Fix setViewport <a href="https://github.com/apache/incubator-weex/pull/1271" target="_blank" rel="noopener">#1271</a></li>
+<li>[WEEX-458][Core] remove coremanager setxxx returntype <a href="https://github.com/apache/incubator-weex/pull/1263" target="_blank" rel="noopener">#1263</a></li>
+<li>[WEEX-433][Core] rm jni code from weexcore <a href="https://github.com/apache/incubator-weex/pull/1238" target="_blank" rel="noopener">#1238</a></li>
+<li>[WEEX-386][Core] Fix apply default style <a href="https://github.com/apache/incubator-weex/pull/1220" target="_blank" rel="noopener">#1220</a></li>
+<li>[WEEX-405][Core] make wson compilation modular <a href="https://github.com/apache/incubator-weex/pull/1210" target="_blank" rel="noopener">#1210</a></li>
+<li>[WEEX-411][Core] Fix memory leak due to return render time <a href="https://github.com/apache/incubator-weex/pull/1214" target="_blank" rel="noopener">#1214</a></li>
+<li>[WEEX-370][Core] Use GNU C++ Runtime <a href="https://github.com/apache/incubator-weex/pull/1180" target="_blank" rel="noopener">#1180</a></li>
+<li>[WEEX-376][Core] Support layeroverflow event <a href="https://github.com/apache/incubator-weex/pull/1186" target="_blank" rel="noopener">#1186</a></li>
+<li>[WEEX-445][jsfm] export requireModule to global <a href="https://github.com/apache/incubator-weex/pull/1254" target="_blank" rel="noopener">#1254</a></li>
+<li>[WEEX-397][jsfm] update build script of js framework <a href="https://github.com/apache/incubator-weex/pull/1342" target="_blank" rel="noopener">#1342</a></li>
+<li>[WEEX-547][jsfm] Remove module proxy cache of weex.requireModule <a href="https://github.com/apache/incubator-weex/pull/1389" target="_blank" rel="noopener">#1389</a></li>
+<li>[WEEX-461][jsfm] Remove useless trace function in js framework <a href="https://github.com/apache/incubator-weex/pull/1358" target="_blank" rel="noopener">#1358</a></li>
+</ul>
+<h2 class="article-heading"><span id="v0-18-0">v0.18.0</span><a href="#v0-18-0" class="header-anchor">#</a></h2><ul>
 <li><code>feature</code> <code>Android/iOS</code> TemplateList support lifecycle and statefull component <a href="https://github.com/apache/incubator-weex/pull/1019" target="_blank" rel="noopener">#1019</a> <a href="https://github.com/apache/incubator-weex/pull/1023" target="_blank" rel="noopener">#1023</a></li>
 <li><code>feature</code> <code>Android</code> Support real time format to input component, support disable copy paste to input component <a href="https://github.com/apache/incubator-weex/pull/1013" target="_blank" rel="noopener">#1013</a></li>
 <li><code>feature</code> <code>Android</code> Support use base64 to import fontface <a href="https://github.com/apache/incubator-weex/pull/1006" target="_blank" rel="noopener">#1006</a></li>
