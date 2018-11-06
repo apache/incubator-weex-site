@@ -1,0 +1,32 @@
+# Editor directories and files
+.DS_Store
+.idea
+.vscode
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.pid.lock
+*.apk
+*.ap_
+*.class
+*.dex
+*.seed
+*.tgz
+
+# Node and yarn files
+.npm
+.eslintcache
+.yarn-integrity
+node_modules/
+jspm_packages/
+package-lock.json
