@@ -201,4 +201,3 @@ ElementMode可以切换Element标签中Domtree显示模式，下图为vdom显示
     * 查看文档 [Weex devtools (Android)](/cn/guide/integrate-devtool-to-android.html), 它会引导你一步一步配置和使用它。
 * iOS
     * 查看文档 [Weex devtools (iOS)](/cn/guide/integrate-devtool-to-ios.html), 它会引导你一步一步配置和使用它。
-和使用它。
