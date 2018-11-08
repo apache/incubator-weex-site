@@ -21,118 +21,150 @@ module.exports = {
       '/': {
         selectText: 'Languages',
         label: 'English',
-        nav: [{ text: 'Tutorial', link: '/guide/' }, { text: 'Docs', link: '/docs/' }],
+        nav: [
+          { text: 'Tutorial', link: '/guide/' },
+          { text: 'Docs', link: '/docs/api/android-apis' }
+        ],
         sidebar: {
           '/guide/': [
             {
               title: 'Getting Started',
               collapsable: false,
               children: [
-                ['', 'Install'],
-                ['weex', 'Overview'],
-                ['dsl', 'DSL'],
-                ['vue-in-weex', 'Use Vue.js on Weex']
+                ['getting-started/install', 'Install'],
+                ['getting-started/integrate-to-your-app', 'Integrate to Your App']
               ]
             },
             {
-              title: 'Style',
+              title: 'Basic',
               collapsable: false,
               children: [
-                ['common-styles', 'Common Styles'],
-                ['text-styles', 'Text Styles'],
-                ['css-units', 'CSS Units'],
-                ['color-list', 'Color name']
+                ['basic/front-end-frameworks', 'Front-End Frameworks'],
+                ['basic/platform-difference', 'Platform Difference'],
+                ['basic/use-vue-in-weex', 'Use Vue.js on Weex']
               ]
             },
             {
-              title: 'Event',
+              title: 'Develop',
               collapsable: false,
               children: [
-                ['common-events', 'Common Events'],
-                ['event-bubbling', 'Event Bubble'],
-                ['gesture', 'Gesture']
+                ['develop/setup-develop-environment', 'Setup Develop Environment'],
+                ['develop/integrate-devtool-to-android', 'Integrate Devtool to Android'],
+                ['develop/integrate-devtool-to-ios', 'Integrate Devtool to iOS']
               ]
             },
             {
-              title: 'Integrate to Your App',
+              title: 'Debug',
               collapsable: false,
-              children: [
-                ['integrate-android', 'Integrate to Android'],
-                ['android-api', 'Android APIs'],
-                ['integrate-ios', 'Integrate to iOS'],
-                ['ios-api', 'iOS API']
-              ]
+              children: [['debug/debug', 'Debug']]
             },
             {
               title: 'Extend',
               collapsable: false,
               children: [
-                ['extend-android', 'Extend Android'],
-                ['extend-ios', 'Extend iOS'],
-                ['extend-ios-with-swift', 'Extend iOS with swift'],
-                ['extend-web', 'Extend Web Renderer'],
-                ['extend-framework', 'Extend JS framework']
+                ['extend/extend-android', 'Extend Android'],
+                ['extend/extend-ios', 'Extend iOS'],
+                ['extend/extend-ios-with-swift', 'Extend iOS with swift'],
+                ['extend/extend-web', 'Extend Web Renderer'],
+                ['extend/extend-framework', 'Extend JS framework']
+              ]
+            },
+            {
+              title: 'Advanced',
+              collapsable: false,
+              children: [
+                ['advanced/asset-path', 'Asset Path'],
+                ['advanced/downgrade', 'Downgrade'],
+                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router'],
+                ['advanced/mobile-app-architecture', 'Mobile App Architecture'],
+                ['advanced/weex-page-architecture', 'Weex Page Architecture']
+              ]
+            },
+            {
+              title: 'Contribute',
+              collapsable: false,
+              children: [
+                ['contribute/how-to-contribute', 'How To Contribute'],
+                ['contribute/development-process', 'Development Process'],
+                ['contribute/bug-report-guidelines', 'Bug Report Guidelines']
               ]
             }
           ],
           '/docs/': [
             {
-              title: 'Build-in Components',
-              collapsable: false,
+              title: 'API',
+              collapsable: true,
               children: [
-                ['a', '<a>'],
-                ['div', '<div>'],
-                ['text', '<text>'],
-                ['image', '<image>'],
-                ['list', '<list>'],
-                ['cell', '<cell>'],
-                ['loading', '<loading>'],
-                ['refresh', '<refresh>'],
-                ['recycle-list', '<recycle-list>'],
-                ['scroller', '<scroller>'],
-                ['slider', '<slider>'],
-                ['textarea', '<textarea>'],
-                ['input', '<input>'],
-                ['waterfall', '<waterfall>'],
-                ['video', '<video>'],
-                ['web', '<web>']
+                ['api/android-apis', 'Android APIs'],
+                ['api/ios-apis', 'iOS APIs'],
+                ['api/weex-variable', 'Weex Variable'],
+                ['api/js-service', 'JS Service'],
+                ['api/broadcastchannel', 'BroadcastChannel']
               ]
             },
             {
-              title: 'Open Source Components',
-              collapsable: false,
-              children: [['weex-ui', 'Weex Ui']]
+              title: 'Build-in Components',
+              collapsable: true,
+              children: [
+                ['components/a', '<a>'],
+                ['components/div', '<div>'],
+                ['components/text', '<text>'],
+                ['components/image', '<image>'],
+                ['components/list', '<list>'],
+                ['components/cell', '<cell>'],
+                ['components/loading', '<loading>'],
+                ['components/refresh', '<refresh>'],
+                ['components/recycle-list', '<recycle-list>'],
+                ['components/scroller', '<scroller>'],
+                ['components/slider', '<slider>'],
+                ['components/textarea', '<textarea>'],
+                ['components/input', '<input>'],
+                ['components/waterfall', '<waterfall>'],
+                ['components/video', '<video>'],
+                ['components/web', '<web>']
+              ]
             },
             {
               title: 'Build-in Modules',
-              collapsable: false,
+              collapsable: true,
               children: [
-                ['animation', 'animation'],
-                ['clipboard', 'clipboard'],
-                ['dom', 'dom'],
-                ['globalEvent', 'globalEvent'],
-                ['meta', 'meta'],
-                ['modal', 'modal'],
-                ['navigator', 'navigator'],
-                ['picker', 'picker'],
-                ['storage', 'storage'],
-                ['stream', 'stream'],
-                ['webview', 'webview'],
-                ['websockets', 'webSockets']
+                ['modules/animation', 'animation'],
+                ['modules/clipboard', 'clipboard'],
+                ['modules/dom', 'dom'],
+                ['modules/globalEvent', 'globalEvent'],
+                ['modules/meta', 'meta'],
+                ['modules/modal', 'modal'],
+                ['modules/navigator', 'navigator'],
+                ['modules/picker', 'picker'],
+                ['modules/storage', 'storage'],
+                ['modules/stream', 'stream'],
+                ['modules/webview', 'webview'],
+                ['modules/websockets', 'webSockets']
               ]
             },
             {
-              title: 'Weex Variable',
-              collapsable: false,
+              title: 'Style',
+              collapsable: true,
               children: [
-                ['variable.html#说明', '说明'],
-                ['variable.html#weex-config', 'weex.config'],
-                ['variable.html#weex-document', 'weex.document'],
-                ['variable.html#weex-requiremodule', 'weex.requireModule()'],
-                ['variable.html#weex-supports', 'weex.supports()'],
-                ['variable.html#weex-isregisteredmodule', 'weex.isRegisteredModule()'],
-                ['variable.html#weex-isregisteredcomponent', 'weex.isRegisteredComponent()']
+                ['styles/common-styles', 'Common Styles'],
+                ['styles/text-styles', 'Text Styles'],
+                ['styles/css-units', 'CSS Units'],
+                ['styles/color-name', 'Color name']
               ]
+            },
+            {
+              title: 'Event',
+              collapsable: true,
+              children: [
+                ['events/common-events', 'Common Events'],
+                ['events/event-bubbling', 'Event Bubble'],
+                ['events/gesture', 'Gesture']
+              ]
+            },
+            {
+              title: 'Compatibility',
+              collapsable: true,
+              children: [['compatibility/compatibility', 'Compatibility']]
             }
           ]
         }
@@ -140,118 +172,150 @@ module.exports = {
       '/zh/': {
         selectText: '选择语言',
         label: '简体中文',
-        nav: [{ text: '教程', link: '/zh/guide/' }, { text: '文档', link: '/zh/docs/' }],
+        nav: [
+          { text: '教程', link: '/zh/guide/' },
+          { text: '文档', link: '/zh/docs/api/android-apis' }
+        ],
         sidebar: {
           '/zh/guide/': [
             {
-              title: '快速开始',
+              title: 'Getting Started',
               collapsable: false,
               children: [
-                ['', '安装'],
-                ['weex', '概述'],
-                ['dsl', 'DSL'],
-                ['vue-in-weex', '使用 Vue.js']
+                ['getting-started/install', 'Install'],
+                ['getting-started/integrate-to-your-app', 'Integrate to Your App']
               ]
             },
             {
-              title: '支持的样式',
+              title: 'Basic',
               collapsable: false,
               children: [
-                ['common-styles', '通用样式'],
-                ['text-styles', '文本样式'],
-                ['css-units', 'CSS 单位'],
-                ['color-list', '颜色列表']
+                ['basic/front-end-frameworks', 'Front-End Frameworks'],
+                ['basic/platform-difference', 'Platform Difference'],
+                ['basic/use-vue-in-weex', 'Use Vue.js on Weex']
               ]
             },
             {
-              title: '支持的事件',
+              title: 'Develop',
               collapsable: false,
               children: [
-                ['common-events', '通用事件'],
-                ['event-bubbling', '事件冒泡'],
-                ['gesture', '手势']
+                ['develop/setup-develop-environment', 'Setup Develop Environment'],
+                ['develop/integrate-devtool-to-android', 'Integrate Devtool to Android'],
+                ['develop/integrate-devtool-to-ios', 'Integrate Devtool to iOS']
               ]
             },
             {
-              title: '集成 Weex',
+              title: 'Debug',
+              collapsable: false,
+              children: [['debug/debug', 'Debug']]
+            },
+            {
+              title: 'Extend',
               collapsable: false,
               children: [
-                ['integrate-android', '集成到 Android'],
-                ['android-api', '高级 Android API'],
-                ['integrate-ios', '集成到 iOS'],
-                ['ios-api', '高级 iOS API']
+                ['extend/extend-android', 'Extend Android'],
+                ['extend/extend-ios', 'Extend iOS'],
+                ['extend/extend-ios-with-swift', 'Extend iOS with swift'],
+                ['extend/extend-web', 'Extend Web Renderer'],
+                ['extend/extend-framework', 'Extend JS framework']
               ]
             },
             {
-              title: '扩展 Weex',
+              title: 'Advanced',
               collapsable: false,
               children: [
-                ['extend-android', '扩展 Android'],
-                ['extend-ios', '扩展 iOS'],
-                ['extend-ios-with-swift', '使用 swift 扩展 iOS'],
-                ['extend-web', '扩展 HTML5'],
-                ['extend-framework', '扩展前端框架']
+                ['advanced/asset-path', 'Asset Path'],
+                ['advanced/downgrade', 'Downgrade'],
+                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router'],
+                ['advanced/mobile-app-architecture', 'Mobile App Architecture'],
+                ['advanced/weex-page-architecture', 'Weex Page Architecture']
+              ]
+            },
+            {
+              title: 'Contribute',
+              collapsable: false,
+              children: [
+                ['contribute/how-to-contribute', 'How To Contribute'],
+                ['contribute/development-process', 'Development Process'],
+                ['contribute/bug-report-guidelines', 'Bug Report Guidelines']
               ]
             }
           ],
           '/zh/docs/': [
             {
-              title: '内置组件',
-              collapsable: false,
+              title: 'API',
+              collapsable: true,
               children: [
-                ['a', '<a>'],
-                ['div', '<div>'],
-                ['text', '<text>'],
-                ['image', '<image>'],
-                ['list', '<list>'],
-                ['cell', '<cell>'],
-                ['loading', '<loading>'],
-                ['refresh', '<refresh>'],
-                ['recycle-list', '<recycle-list>'],
-                ['scroller', '<scroller>'],
-                ['slider', '<slider>'],
-                ['textarea', '<textarea>'],
-                ['input', '<input>'],
-                ['waterfall', '<waterfall>'],
-                ['video', '<video>'],
-                ['web', '<web>']
+                ['api/android-apis', 'Android APIs'],
+                ['api/ios-apis', 'iOS APIs'],
+                ['api/weex-variable', 'Weex Variable'],
+                ['api/js-service', 'JS Service'],
+                ['api/broadcastchannel', 'BroadcastChannel']
               ]
             },
             {
-              title: '开源组件',
-              collapsable: false,
-              children: [['weex-ui', 'Weex Ui']]
-            },
-            {
-              title: '内置模块',
-              collapsable: false,
+              title: 'Build-in Components',
+              collapsable: true,
               children: [
-                ['animation', 'animation'],
-                ['clipboard', 'clipboard'],
-                ['dom', 'dom'],
-                ['globalEvent', 'globalEvent'],
-                ['meta', 'meta'],
-                ['modal', 'modal'],
-                ['navigator', 'navigator'],
-                ['picker', 'picker'],
-                ['storage', 'storage'],
-                ['stream', 'stream'],
-                ['webview', 'webview'],
-                ['websockets', 'webSockets']
+                ['components/a', '<a>'],
+                ['components/div', '<div>'],
+                ['components/text', '<text>'],
+                ['components/image', '<image>'],
+                ['components/list', '<list>'],
+                ['components/cell', '<cell>'],
+                ['components/loading', '<loading>'],
+                ['components/refresh', '<refresh>'],
+                ['components/recycle-list', '<recycle-list>'],
+                ['components/scroller', '<scroller>'],
+                ['components/slider', '<slider>'],
+                ['components/textarea', '<textarea>'],
+                ['components/input', '<input>'],
+                ['components/waterfall', '<waterfall>'],
+                ['components/video', '<video>'],
+                ['components/web', '<web>']
               ]
             },
             {
-              title: '实例变量',
-              collapsable: false,
+              title: 'Build-in Modules',
+              collapsable: true,
               children: [
-                ['variable.html#说明', '说明'],
-                ['variable.html#weex-config', 'weex.config'],
-                ['variable.html#weex-document', 'weex.document'],
-                ['variable.html#weex-requiremodule', 'weex.requireModule()'],
-                ['variable.html#weex-supports', 'weex.supports()'],
-                ['variable.html#weex-isregisteredmodule', 'weex.isRegisteredModule()'],
-                ['variable.html#weex-isregisteredcomponent', 'weex.isRegisteredComponent()']
+                ['modules/animation', 'animation'],
+                ['modules/clipboard', 'clipboard'],
+                ['modules/dom', 'dom'],
+                ['modules/globalEvent', 'globalEvent'],
+                ['modules/meta', 'meta'],
+                ['modules/modal', 'modal'],
+                ['modules/navigator', 'navigator'],
+                ['modules/picker', 'picker'],
+                ['modules/storage', 'storage'],
+                ['modules/stream', 'stream'],
+                ['modules/webview', 'webview'],
+                ['modules/websockets', 'webSockets']
               ]
+            },
+            {
+              title: 'Style',
+              collapsable: true,
+              children: [
+                ['styles/common-styles', 'Common Styles'],
+                ['styles/text-styles', 'Text Styles'],
+                ['styles/css-units', 'CSS Units'],
+                ['styles/color-name', 'Color name']
+              ]
+            },
+            {
+              title: 'Event',
+              collapsable: true,
+              children: [
+                ['events/common-events', 'Common Events'],
+                ['events/event-bubbling', 'Event Bubble'],
+                ['events/gesture', 'Gesture']
+              ]
+            },
+            {
+              title: 'Compatibility',
+              collapsable: true,
+              children: [['compatibility/compatibility', 'Compatibility']]
             }
           ]
         }
