@@ -33,3 +33,6 @@ jspm_packages/
 # Scripts
 bin/
 /*.sh
+
+# Vue Press
+docs/.vuepress/dist/

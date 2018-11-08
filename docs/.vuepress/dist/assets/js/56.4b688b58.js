@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[56],{274:function(e,t,n){"use strict";n.r(t);var s=n(0),u=Object(s.a)({},function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"content"})},[],!1,null,null,null);u.options.__file="use-vuex-and-vue-router.md";t.default=u.exports}}]);
