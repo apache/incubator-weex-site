@@ -1,7 +1,7 @@
 <script>
 module.exports = {
   created(){
-    this.$router.push('/guide/getting-started/install.html')
+    this.$router.push('/guide/index.html')
   }
 }
 </script>

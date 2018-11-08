@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[121],{195:function(e,t,n){"use strict";n.r(t);var s=n(0),c=Object(s.a)({},function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"content"})},[],!1,null,null,null);c.options.__file="weex-page-architecture.md";t.default=c.exports}}]);

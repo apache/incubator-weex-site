@@ -22,8 +22,8 @@ module.exports = {
         selectText: 'Languages',
         label: 'English',
         nav: [
-          { text: 'Tutorial', link: '/guide/' },
-          { text: 'Docs', link: '/docs/api/android-apis' }
+          { text: 'Guide', link: '/guide/introduction' },
+          { text: 'Docs', link: '/docs/api/weex-variable' }
         ],
         sidebar: {
           '/guide/': [
@@ -31,17 +31,11 @@ module.exports = {
               title: 'Getting Started',
               collapsable: false,
               children: [
-                ['getting-started/install', 'Install'],
-                ['getting-started/integrate-to-your-app', 'Integrate to Your App']
-              ]
-            },
-            {
-              title: 'Basic',
-              collapsable: false,
-              children: [
-                ['basic/front-end-frameworks', 'Front-End Frameworks'],
-                ['basic/platform-difference', 'Platform Difference'],
-                ['basic/use-vue-in-weex', 'Use Vue.js on Weex']
+                ['introduction', 'Introduction'],
+                ['front-end-frameworks', 'Front-End Frameworks'],
+                ['platform-difference', 'Platform Difference'],
+                ['use-vue-in-weex', 'Use Vue in Weex'],
+                ['use-rax-in-weex', 'Use Rax in Weex']
               ]
             },
             {
@@ -49,14 +43,18 @@ module.exports = {
               collapsable: false,
               children: [
                 ['develop/setup-develop-environment', 'Setup Develop Environment'],
-                ['develop/integrate-devtool-to-android', 'Integrate Devtool to Android'],
-                ['develop/integrate-devtool-to-ios', 'Integrate Devtool to iOS']
+                ['develop/create-a-new-app', 'Create a New App'],
+                ['develop/integrate-to-your-app', 'Integrate to Your App']
               ]
             },
             {
               title: 'Debug',
               collapsable: false,
-              children: [['debug/debug', 'Debug']]
+              children: [
+                ['debug/integrate-devtool-to-android', 'Integrate Devtool to Android'],
+                ['debug/integrate-devtool-to-ios', 'Integrate Devtool to iOS'],
+                ['debug/debug', 'Debug']
+              ]
             },
             {
               title: 'Extend',
@@ -75,9 +73,7 @@ module.exports = {
               children: [
                 ['advanced/asset-path', 'Asset Path'],
                 ['advanced/downgrade', 'Downgrade'],
-                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router'],
-                ['advanced/mobile-app-architecture', 'Mobile App Architecture'],
-                ['advanced/weex-page-architecture', 'Weex Page Architecture']
+                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router']
               ]
             },
             {
@@ -93,18 +89,18 @@ module.exports = {
           '/docs/': [
             {
               title: 'API',
-              collapsable: true,
+              collapsable: false,
               children: [
+                ['api/weex-variable', 'Weex Variable'],
                 ['api/android-apis', 'Android APIs'],
                 ['api/ios-apis', 'iOS APIs'],
-                ['api/weex-variable', 'Weex Variable'],
                 ['api/js-service', 'JS Service'],
-                ['api/broadcastchannel', 'BroadcastChannel']
+                ['api/broadcast-channel', 'BroadcastChannel']
               ]
             },
             {
-              title: 'Build-in Components',
-              collapsable: true,
+              title: 'Built-in Components',
+              collapsable: false,
               children: [
                 ['components/a', '<a>'],
                 ['components/div', '<div>'],
@@ -125,8 +121,8 @@ module.exports = {
               ]
             },
             {
-              title: 'Build-in Modules',
-              collapsable: true,
+              title: 'Built-in Modules',
+              collapsable: false,
               children: [
                 ['modules/animation', 'animation'],
                 ['modules/clipboard', 'clipboard'],
@@ -143,8 +139,8 @@ module.exports = {
               ]
             },
             {
-              title: 'Style',
-              collapsable: true,
+              title: 'Styles',
+              collapsable: false,
               children: [
                 ['styles/common-styles', 'Common Styles'],
                 ['styles/text-styles', 'Text Styles'],
@@ -153,8 +149,8 @@ module.exports = {
               ]
             },
             {
-              title: 'Event',
-              collapsable: true,
+              title: 'Events',
+              collapsable: false,
               children: [
                 ['events/common-events', 'Common Events'],
                 ['events/event-bubbling', 'Event Bubble'],
@@ -163,8 +159,13 @@ module.exports = {
             },
             {
               title: 'Compatibility',
-              collapsable: true,
-              children: [['compatibility/compatibility', 'Compatibility']]
+              collapsable: false,
+              children: [
+                ['compatibility/components', 'Components'],
+                ['compatibility/modules', 'Modules'],
+                ['compatibility/styles', 'Styles'],
+                ['compatibility/events', 'Events']
+              ]
             }
           ]
         }

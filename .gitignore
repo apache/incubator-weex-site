@@ -29,3 +29,7 @@ pids
 .yarn-integrity
 node_modules/
 jspm_packages/
+
+# Scripts
+bin/
+/*.sh
