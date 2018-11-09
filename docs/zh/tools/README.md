@@ -1,7 +1,7 @@
 <script>
 module.exports = {
   created(){
-    this.$router.push('/zh/docs/components/a.html')
+    this.$router.push('/zh/tools/toolkit.html')
   }
 }
 </script>

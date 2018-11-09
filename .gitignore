@@ -27,6 +27,7 @@ pids
 .npm
 .eslintcache
 .yarn-integrity
+package-lock.json
 node_modules/
 jspm_packages/
 
