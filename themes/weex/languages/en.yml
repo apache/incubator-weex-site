@@ -109,6 +109,7 @@ menu:
   toolkit: Weex Toolkit
   market: Weex Market
   helpers: Helpers
+  vscodeExtension: VSCode Extension
 playground:
   content: Weex Native Runtime showcase & Weex we file preview.
 categories: Categories
