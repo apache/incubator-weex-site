@@ -1,7 +1,7 @@
 <script>
 module.exports = {
   created(){
-    this.$router.push('/guide/index.html')
+    this.$router.push('/guide/introduction.html')
   }
 }
 </script>
