@@ -13,7 +13,7 @@
 <meta property="og:description" content="Swift In Weex#Swift和Objective-C 混编 参考完整 例子 使用 Swift 进行 module 扩展#因为 module 暴露 method 是通过Objective-C宏来做的，调用的时候是通过反射，所以Swift扩展 module 通过extension Objective-C的类。  新建 WXSwiftTestModule.h/m 和 WXSwiftTestMo">
 <meta property="og:locale" content="cn">
 <meta property="og:image" content="http://img3.tbcdn.cn/L1/461/1/b2ed3ee4a966953c0f98a17f34f6f05e7c91cc6b">
-<meta property="og:updated_time" content="2018-03-27T11:35:42.313Z">
+<meta property="og:updated_time" content="2018-11-10T08:17:30.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 swift 扩展 iOS 的功能">
 <meta name="twitter:description" content="Swift In Weex#Swift和Objective-C 混编 参考完整 例子 使用 Swift 进行 module 扩展#因为 module 暴露 method 是通过Objective-C宏来做的，调用的时候是通过反射，所以Swift扩展 module 通过extension Objective-C的类。  新建 WXSwiftTestModule.h/m 和 WXSwiftTestMo">
@@ -39,7 +39,7 @@
   <header id="header">
   <div class="navbar">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
     </a>
     <div class="main-nav">
       <ul class="links">
@@ -66,6 +66,9 @@
             </li>
             <li>
               <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+            <li>
+              <a href="https://github.com/weex-cli/vscode-weex" target="_blank">VSCode 插件</a>
             </li>
           </ul>
         </li>
@@ -100,7 +103,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -132,7 +135,7 @@
   </div>
   <div id="mobile-nav">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
     </a>
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
@@ -143,7 +146,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -686,10 +689,10 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.313Z">Updated time: 27/03/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-10T08:17:30.834Z">Updated time: 10/11/2018</time> -->
 </header>
 
-    <html><head></head><body><h2 class="article-heading"><span id="swift-in-weex">Swift In Weex</span><a href="#swift-in-weex" class="header-anchor">#</a></h2><p><a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-ID122" target="_blank" rel="noopener">Swift&#x548C;Objective-C</a> &#x6DF7;&#x7F16;</p>
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><h2 class="article-heading"><span id="swift-in-weex">Swift In Weex</span><a href="#swift-in-weex" class="header-anchor">#</a></h2><p><a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-ID122" target="_blank" rel="noopener">Swift&#x548C;Objective-C</a> &#x6DF7;&#x7F16;</p>
 <p>&#x53C2;&#x8003;&#x5B8C;&#x6574; <a href="https://github.com/acton393/WeexSwiftSample.git" target="_blank" rel="noopener">&#x4F8B;&#x5B50;</a></p>
 <h3 class="article-heading"><span id="shi-yong-swift-jin-xing-module-kuo-zhan">&#x4F7F;&#x7528; Swift &#x8FDB;&#x884C; module &#x6269;&#x5C55;</span><a href="#shi-yong-swift-jin-xing-module-kuo-zhan" class="header-anchor">#</a></h3><p>&#x56E0;&#x4E3A; module &#x66B4;&#x9732; method &#x662F;&#x901A;&#x8FC7;<code>Objective-C</code>&#x5B8F;&#x6765;&#x505A;&#x7684;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x662F;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#xFF0C;&#x6240;&#x4EE5;Swift&#x6269;&#x5C55; module &#x901A;&#x8FC7;<code>extension</code> <code>Objective-C</code>&#x7684;&#x7C7B;&#x3002;</p>
 <ul>
@@ -750,7 +753,7 @@
       <p>
         <span class="title">Disclaimer:</span>
         <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
-    </div>
+    </p></div>
     <p class="copyright">
       <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
       <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>

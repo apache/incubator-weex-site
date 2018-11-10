@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/ae71160e726421cd96b49353a740252b.png">
 <meta property="og:image" content="http://img3.tbcdn.cn/L1/461/1/430ae522f5031ff728c95efea49219a11e6852b3">
 <meta property="og:image" content="http://img1.tbcdn.cn/L1/461/1/bb3998595bafe9c9336411160c0b6bd3eeb843ef">
-<meta property="og:updated_time" content="2018-03-27T11:35:42.316Z">
+<meta property="og:updated_time" content="2018-11-10T08:17:30.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成 Weex 到已有应用">
 <meta name="twitter:description" content="集成到 Android Android 集成有两种方式 前期准备 快速接入 源码依赖(IDE Android Studio)   集成到 iOS 通过 CocoaPods 或者 Carthage 集成 Weex iOS SDK到你的项目 导入 Weex SDK framework 到工程       集成到 Android#注：以下文档都是假设您已经具备一定的Android开发经验。 An">
@@ -43,7 +43,7 @@
   <header id="header">
   <div class="navbar">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
     </a>
     <div class="main-nav">
       <ul class="links">
@@ -70,6 +70,9 @@
             </li>
             <li>
               <a href="/cn/tools/helpers.html">辅助工具</a>
+            </li>
+            <li>
+              <a href="https://github.com/weex-cli/vscode-weex" target="_blank">VSCode 插件</a>
             </li>
           </ul>
         </li>
@@ -104,7 +107,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -136,7 +139,7 @@
   </div>
   <div id="mobile-nav">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
     </a>
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
@@ -147,7 +150,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -690,10 +693,10 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-03-27T11:35:42.316Z">Updated time: 27/03/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-10T08:17:30.842Z">Updated time: 10/11/2018</time> -->
 </header>
 
-    <html><head></head><body><div class="article-toc">
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><div class="article-toc">
 
 <!-- toc -->
 <ul>
@@ -754,7 +757,7 @@
 <li>&#x5176;&#x4ED6;&#x8BBE;&#x7F6E;&#x8BF7;&#x53C2;&#x8003;&#x4E0A;&#x9762;&#x5FEB;&#x901F;&#x63A5;&#x5165;</li>
 </ol>
 <h4 class="article-heading"><span id="fu-lu">&#x9644;&#x5F55;</span><a href="#fu-lu" class="header-anchor">#</a></h4><p>Native WXSample&#x5730;&#x5740;<br><code>https://github.com/apache/incubator-weex/tree/master/android/playground/app</code><br><code>https://github.com/apache/incubator-weex/tree/master/ios/playground</code></p>
-<p>Vue WXSample&#x5730;&#x5740;&#xFF1A;<br><code>https://hanks10100.github.io/weex-vue-examples/</code></p>
+<p>Vue Examples &#x5730;&#x5740;&#xFF1A;<br><a href="http://weex-project.io/examples.html" target="_blank" rel="noopener"><code>http://weex-project.io/examples.html</code></a></p>
 <h2 class="article-heading"><span id="ji-cheng-dao-ios">&#x96C6;&#x6210;&#x5230; iOS</span><a href="#ji-cheng-dao-ios" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="tong-guo-cocoapods-huo-zhe-carthage-ji-cheng-weex-ios-sdk-dao-ni-de-xiang-mu">&#x901A;&#x8FC7;  &#x6216;&#x8005;  &#x96C6;&#x6210; Weex iOS SDK&#x5230;&#x4F60;&#x7684;&#x9879;&#x76EE;</span><a href="#tong-guo-cocoapods-huo-zhe-carthage-ji-cheng-weex-ios-sdk-dao-ni-de-xiang-mu" class="header-anchor">#</a></h3><p>&#x9996;&#x5148;&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x5B89;&#x88C5; <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="noopener">iOS &#x5F00;&#x53D1;&#x73AF;&#x5883;</a> &#x548C; <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="noopener">CocoaPods</a>(&#x6216;&#x8005;<a href="https://github.com/Carthage/Carthage#installing-carthage" target="_blank" rel="noopener">Carthage</a>)</p>
 <h4 class="article-heading"><span id="di-yi-bu-tian-jia-yi-lai">&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;</span><a href="#di-yi-bu-tian-jia-yi-lai" class="header-anchor">#</a></h4><p>&#x5BFC;&#x5165; Weex iOS SDK &#x5230;&#x4F60;&#x5DF2;&#x6709;&#x7684;&#x9879;&#x76EE;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x53EF;&#x4EE5;<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="noopener">&#x53C2;&#x8003;</a>&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#x3002;<br>&#x5728;&#x7EE7;&#x7EED;&#x4E0B;&#x9762;&#x5185;&#x5BB9;&#x4E4B;&#x524D;&#xFF0C;&#x786E;&#x4FDD;&#x4F60;&#x5DF2;&#x6709;&#x7684;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x6709;&#x540D;&#x79F0;&#x4E3A; <code>Podfile</code> &#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#xFF0C;&#x7528;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x6253;&#x5F00;(&#x5982;&#x679C;&#x4F7F;&#x7528; Carthage &#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x5DF2;&#x6709;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x5B58;&#x5728; <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile" target="_blank" rel="noopener"><code>Cartfile</code></a>)&#x3002;&#x9009;&#x62E9;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x96C6;&#x6210;&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x3002;</p>
 <ul>
@@ -818,7 +821,7 @@
       <p>
         <span class="title">Disclaimer:</span>
         <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
-    </div>
+    </p></div>
     <p class="copyright">
       <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
       <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>

@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://gw.alicdn.com/tfs/TB1AmqgRVXXXXcmXFXXXXXXXXXX-240-427.gif">
 <meta property="og:image" content="https://gw.alicdn.com/tfs/TB1nZ8_RVXXXXczXVXXXXXXXXXX-240-427.gif">
 <meta property="og:image" content="https://gw.alicdn.com/tfs/TB1lN0_RVXXXXa_XVXXXXXXXXXX-240-427.gif">
-<meta property="og:updated_time" content="2018-01-03T12:51:51.376Z">
+<meta property="og:updated_time" content="2018-11-10T08:17:30.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex ❤️ iOS 11 系列之一：Core ML 初探">
 <meta name="twitter:description" content="背景#WWDC 2017 有一个非常明确的信号：端上机器学习将会是未来苹果的一个重要发力点，同时开发者的使用门槛在不断降低。 Core ML 是今年 WWDC 上苹果发布的机器学习框架。它允许开发者在自己开发的 app 上使用机器学习，同时不需要收集用户数据。 有了 Core ML，你可以将自己训练得到的模型，借助苹果提供的转换工具，转化成 Core ML 类型的模型文件，你可以非常轻松地直接实现">
@@ -42,7 +42,7 @@
   <header id="header">
   <div class="navbar">
     <a id="logo" href="/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
     </a>
     <div class="main-nav">
       <ul class="links">
@@ -69,6 +69,9 @@
             </li>
             <li>
               <a href="/tools/helpers.html">Helpers</a>
+            </li>
+            <li>
+              <a href="https://github.com/weex-cli/vscode-weex" target="_blank">VSCode Extension</a>
             </li>
           </ul>
         </li>
@@ -103,7 +106,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -135,7 +138,7 @@
   </div>
   <div id="mobile-nav">
     <a id="logo" href="/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
     </a>
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
@@ -148,7 +151,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -221,7 +224,7 @@
   <!-- <time class="article-date" datetime="2017-06-21T07:46:44.000Z">Updated time: 21/06/2017</time> -->
 </header>
 
-    <html><head></head><body><h2 class="article-heading"><span id="bei-jing">&#x80CC;&#x666F;</span><a href="#bei-jing" class="header-anchor">#</a></h2><p>WWDC 2017 &#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x660E;&#x786E;&#x7684;&#x4FE1;&#x53F7;&#xFF1A;<strong>&#x7AEF;&#x4E0A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5C06;&#x4F1A;&#x662F;&#x672A;&#x6765;&#x82F9;&#x679C;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x53D1;&#x529B;&#x70B9;&#xFF0C;&#x540C;&#x65F6;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x5728;&#x4E0D;&#x65AD;&#x964D;&#x4F4E;</strong>&#x3002;</p>
+    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><h2 class="article-heading"><span id="bei-jing">&#x80CC;&#x666F;</span><a href="#bei-jing" class="header-anchor">#</a></h2><p>WWDC 2017 &#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x660E;&#x786E;&#x7684;&#x4FE1;&#x53F7;&#xFF1A;<strong>&#x7AEF;&#x4E0A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5C06;&#x4F1A;&#x662F;&#x672A;&#x6765;&#x82F9;&#x679C;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x53D1;&#x529B;&#x70B9;&#xFF0C;&#x540C;&#x65F6;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x5728;&#x4E0D;&#x65AD;&#x964D;&#x4F4E;</strong>&#x3002;</p>
 <p>Core ML &#x662F;&#x4ECA;&#x5E74; WWDC &#x4E0A;&#x82F9;&#x679C;&#x53D1;&#x5E03;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x5F00;&#x53D1;&#x7684; app &#x4E0A;&#x4F7F;&#x7528;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x540C;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x6536;&#x96C6;&#x7528;&#x6237;&#x6570;&#x636E;&#x3002; &#x6709;&#x4E86; Core ML&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x5DF1;&#x8BAD;&#x7EC3;&#x5F97;&#x5230;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x501F;&#x52A9;&#x82F9;&#x679C;&#x63D0;&#x4F9B;&#x7684;&#x8F6C;&#x6362;&#x5DE5;&#x5177;&#xFF0C;&#x8F6C;&#x5316;&#x6210; Core ML &#x7C7B;&#x578B;&#x7684;&#x6A21;&#x578B;&#x6587;&#x4EF6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x8F7B;&#x677E;&#x5730;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#x6A21;&#x578B;&#x548C; app &#x6570;&#x636E;&#x7684;&#x4E92;&#x901A;&#x3002;</p>
 <p>WWDC &#x4E0A;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x5F20;&#x7B80;&#x5355;&#x7684;&#x67B6;&#x6784;&#x56FE;&#xFF1A;</p>
 <p><img src="https://gw.alicdn.com/tfs/TB1YT5dRVXXXXc1XFXXXXXXXXXX-498-392.png" alt="&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-06-20 &#x4E0B;&#x5348;8.50.21"></p>
@@ -272,7 +275,7 @@
       <p>
         <span class="title">Disclaimer:</span>
         <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
-    </div>
+    </p></div>
     <p class="copyright">
       <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
       <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
