@@ -27,6 +27,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 - `autofocus {boolean}`：布尔类型的数据，表示是否在页面加载时控件自动获得输入焦点。
 - `maxlength {nubmer}`：<sup class="wx-v">v0.7</sup>一个数值类型的值，表示输入的最大长度。
 - `return-key-type {string}`：<sup class="wx-v">v0.11</sup>键盘返回键的类型,支持 defalut;go;next;search;send,done。
+- `auto-capitalization-type {string}`：键盘自动大小写类型,支持 none;words;sentences;allCharacters
 - `singleline {boolean}`：控制内容是否只允许单行
 - `max-length {number}`：控制输入内容的最大长度
 - `lines`：控制输入内容的最大行数

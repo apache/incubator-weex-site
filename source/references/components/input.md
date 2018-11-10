@@ -42,6 +42,9 @@ This component does not support any child component.
 
 * `return-key-type`：<sup class="wx-v">v0.11</sup>the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
 
+* `auto-capitalization-type`：the keybord auto capitalization type support `none`, `words`, `sentences`, `allCharacters`.
+
+
 ## Styles
 
 * placeholder-color: the color of placeholder. Default value is '#999999'.
