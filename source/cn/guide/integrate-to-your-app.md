@@ -206,8 +206,8 @@ Native WXSample地址
 `https://github.com/apache/incubator-weex/tree/master/android/playground/app`
 `https://github.com/apache/incubator-weex/tree/master/ios/playground`
 
-Vue WXSample地址：
-`https://hanks10100.github.io/weex-vue-examples/`
+Vue Examples 地址：
+[`http://weex-project.io/examples.html`](http://weex-project.io/examples.html)
 
 ## 集成到 iOS
 
