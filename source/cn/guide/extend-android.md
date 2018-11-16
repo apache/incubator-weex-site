@@ -71,24 +71,24 @@ JS 调用如下：
 ## 0.19.+ Component 扩展适配文档
 
 ### 1. 变更说明
-DomObject 和 Layout 引擎被下沉到 WeexCore 中使用 C++ 实现，移除 Java 层的 DomObject。此次变更涉及 Component 和 DomObject 的接口改造。
+WXDomObject 和 Layout 引擎被下沉到 WeexCore 中使用 C++ 实现，移除 Java 代码中的 WXDomObject。此次变更涉及 WXComponent 和 WXDomObject 的适配。
 
 #### （1）setMeasureFunction 迁移
-Dom 层的 setMeasureFunction() 方法需要迁移至 Component 中：
+WXDomObject 中的 setMeasureFunction() 方法迁移至 WXComponent 中：
 ```java
 protected void setMeasureFunction(final ContentBoxMeasurement contentBoxMeasurement);
 ```
 详见：com.taobao.weex.layout.ContentBoxMeasurement.java
 
-ContentBoxMeasurement 示例请参考：WXText.java 中 setMeasureFunction()
+ContentBoxMeasurement 示例请参考：WXText.java / setMeasureFunction()
 注意：ContentBoxMeasurement 只支持叶子节点。
 
 #### （2）WXComponent 接口变更
 ##### getDomObject [移除]
-由于 DomObject 下沉至 C++ 层，getDomObject() 方法已移除。
+由于 WXDomObject 下沉至 WeexCore 中，所以 getDomObject() 方法已被删除。
 
 ##### 构造方法 [参数变更]
-WXComponent 构造方法删除了 DomObject 参数，新增 BasicComponentData 参数，其余参数的保持不变：
+WXComponent 的构造方法删除了类型为 WXDomObject 的参数，新增了类型为 BasicComponentData 的参数，其余参数保持不变：
 ```java
 public WXComponent(WXSDKInstance instance, WXVContainer parent, int type, BasicComponentData basicComponentData);
 
@@ -96,22 +96,13 @@ public WXComponent(WXSDKInstance instance, WXVContainer parent, BasicComponentDa
 
 ```
 
-
-BasicComponentData 用于存放构建 Component Tree 必要的属性：
-
-```java
-public String mRef;
-public String mComponentType;
-public String mParentRef;
-```
-
 #### （3）WXDomObject 接口变更
-WXDomObject 下沉至 C++ 层，Java层无权限访问/操作和继承 WXDomObject，（ ImmutableDomObject 接口也已被删除，接口已全部移动到 WXComponent）
+你无法在Java代码中访问和继承 WXDomObject，（ ImmutableDomObject 接口也已被删除）
 
-WXDomObject 的部分方法被迁移至 Component，如需使用，如下：
+WXDomObject 的部分方法被迁移至 WXComponent中，如需使用，如下：
 
-##### DomObject.getType() -> Component.getComponentType() [迁移]
-WXDomObject 中 的 getType() 方法用于获取组件类型（如：list、div、text、img...），迁移到 Component 后，更名为：
+##### WXDomObject.getType() -> WXComponent.getComponentType() [迁移]
+WXDomObject 中 的 getType() 方法用于获取组件类型（如：list、div、text、img...），迁移到 WXComponent 后，更名为：
 ```java
 public String getComponentType();
 ```
