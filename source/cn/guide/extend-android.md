@@ -15,6 +15,7 @@ Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功
 - Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
 - Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。
 
+
 ## Module 扩展
 
 1. Module 扩展必须继承 WXModule 类。
@@ -66,7 +67,74 @@ JS 调用如下：
   }
 </script>
 ```
-## Component 扩展
+
+## 0.19.+ Component 扩展适配文档
+
+### 1. 变更说明
+DomObject 和 Layout 引擎被下沉到 WeexCore 中使用 C++ 实现，移除 Java 层的 DomObject。此次变更涉及 Component 和 DomObject 的接口改造。
+
+#### （1）setMeasureFunction 迁移
+Dom 层的 setMeasureFunction() 方法需要迁移至 Component 中：
+```java
+protected void setMeasureFunction(final ContentBoxMeasurement contentBoxMeasurement);
+```
+详见：com.taobao.weex.layout.ContentBoxMeasurement.java
+
+ContentBoxMeasurement 示例请参考：WXText.java 中 setMeasureFunction()
+注意：ContentBoxMeasurement 只支持叶子节点。
+
+#### （2）WXComponent 接口变更
+##### getDomObject [移除]
+由于 DomObject 下沉至 C++ 层，getDomObject() 方法已移除。
+
+##### 构造方法 [参数变更]
+WXComponent 构造方法删除了 DomObject 参数，新增 BasicComponentData 参数，其余参数的保持不变：
+```java
+public WXComponent(WXSDKInstance instance, WXVContainer parent, int type, BasicComponentData basicComponentData);
+
+public WXComponent(WXSDKInstance instance, WXVContainer parent, BasicComponentData basicComponentData);
+
+```
+
+
+BasicComponentData 用于存放构建 Component Tree 必要的属性：
+
+```java
+public String mRef;
+public String mComponentType;
+public String mParentRef;
+```
+
+#### （3）WXDomObject 接口变更
+WXDomObject 下沉至 C++ 层，Java层无权限访问/操作和继承 WXDomObject，（ ImmutableDomObject 接口也已被删除，接口已全部移动到 WXComponent）
+
+WXDomObject 的部分方法被迁移至 Component，如需使用，如下：
+
+##### DomObject.getType() -> Component.getComponentType() [迁移]
+WXDomObject 中 的 getType() 方法用于获取组件类型（如：list、div、text、img...），迁移到 Component 后，更名为：
+```java
+public String getComponentType();
+```
+
+##### 获取 Layout 结果的相关方法 [迁移]
+获取 Layout 结果的6个方法从 WXDomObject 迁移至 WXComponent：
+```java
+public float getCSSLayoutTop();
+public float getCSSLayoutBottom();
+public float getCSSLayoutLeft();
+public float getCSSLayoutRight();
+public float getLayoutWidth();
+public float getLayoutHeight();
+```
+
+移除两个废弃接口：
+```java
+public float getLayoutY();
+public float getLayoutX();
+```
+
+
+## 低于0.19版本的 Component 扩展
 
 1. Component 扩展类必须继承 WXComponent.
 2. Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))
