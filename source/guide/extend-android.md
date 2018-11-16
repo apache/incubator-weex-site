@@ -85,7 +85,7 @@ event.openURL("http://www.github.com",function(resp){ console.log(resp.result); 
 
 ## Component extension adaptation document（v0.19+）
 
-### 1.Description of change
+### 1. Description of change
 The WXDomObject and Layout engines are sunk into WeexCore using C++, and the WXDomObject in Java code has been removed. The 0.19 version of the upgrade involves interface changes to WXComponent and WXDomObject.
 
 #### (1) setMeasureFunction migrate
@@ -111,8 +111,10 @@ public WXComponent(WXSDKInstance instance, WXVContainer parent, int type, BasicC
 public WXComponent(WXSDKInstance instance, WXVContainer parent, BasicComponentData basicComponentData);
 ```
 
+
 #### （3）WXDomObject Interface change
 You can't access and inherit WXDomObject using Java code, (the ImmutableDomObject.java has also been removed), some of the methods in WXDomObject have been migrated to WXComponent if you need to use them:
+
 
 ##### WXDomObject.getType() -> WXComponent.getComponentType() [Migrate]
 The getType() method in WXDomObject is used to get the type of Component (for example: list, div, text, img...). After migrating to WXComponent, it is renamed to:
