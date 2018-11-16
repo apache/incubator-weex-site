@@ -83,7 +83,63 @@ At the javascript side, call the module with javascript function to receive call
 event.openURL("http://www.github.com",function(resp){ console.log(resp.result); });
 ```
 
-## Component extend
+## Component extension adaptation document（v0.19+）
+
+### 1. Description of change
+The WXDomObject and Layout engines are sunk into WeexCore using C++, and the WXDomObject in Java code has been removed. The 0.19 version of the upgrade involves interface changes to WXComponent and WXDomObject.
+
+#### (1) setMeasureFunction migrate
+The setMeasureFunction() method in WXDomObject was migrated to WXComponent:
+```java
+protected void setMeasureFunction(final ContentBoxMeasurement contentBoxMeasurement);
+```
+See: com.taobao.weex.layout.ContentBoxMeasurement.java
+
+Demo: WXText.java / setMeasureFunction()
+
+Note：ContentBoxMeasurement only supports leaf nodes.
+
+#### (2) WXComponent Interface change
+##### getDomObject [Delete]
+Since the WXDomObject sinks to WeexCore, the WXComponent's getDomObject() method has been removed.
+
+##### Constructor [Parameter change]
+The constructor of WXComponent removes the parameter of type WXDomObject, adds a parameter of type BasicComponentData, and the remaining parameters remain unchanged:
+
+```java
+public WXComponent(WXSDKInstance instance, WXVContainer parent, int type, BasicComponentData basicComponentData);
+public WXComponent(WXSDKInstance instance, WXVContainer parent, BasicComponentData basicComponentData);
+```
+
+
+#### （3）WXDomObject Interface change
+You can't access and inherit WXDomObject using Java code, (the ImmutableDomObject.java has also been removed), some of the methods in WXDomObject have been migrated to WXComponent if you need to use them:
+
+
+##### WXDomObject.getType() -> WXComponent.getComponentType() [Migrate]
+The getType() method in WXDomObject is used to get the type of Component (for example: list, div, text, img...). After migrating to WXComponent, it is renamed to:
+
+```java
+public String getComponentType();
+```
+
+##### Some methods for Layout results [Migrate]
+Migrating from WXDomObject to WXComponent:
+```java
+public float getCSSLayoutTop();
+public float getCSSLayoutBottom();
+public float getCSSLayoutLeft();
+public float getCSSLayoutRight();
+public float getLayoutWidth();
+public float getLayoutHeight();
+```
+Remove two obsolete interfaces:
+```java
+public float getLayoutY();
+public float getLayoutX();
+```
+
+## Component extend (< v0.19)
 
 1. Customize components must extend from WXComponent
 2. Use the `@WXComponentProp(name = value(value is attr or style))` annotation to let the update of attribute or style be recognized automatically.
