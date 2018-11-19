@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="什么是 component# 简单来讲，component 就类似 Weex 渲染引擎上的 Widget, 符合一定的规则的 Widget, 可以被 Weex engine 在初始化的时候正确的加载，开发者在 DSL 书写对应的标签名字(在注册的时提供的注册名字)， 比如内置的一些组件 div，image 和 text。它可以读取特定的属性，展示用户数据，承载和触发事件，如果 Weex 内置的组件">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2018-11-10T08:17:30.880Z">
+<meta property="og:updated_time" content="2018-11-11T13:54:10.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Component">
 <meta name="twitter:description" content="什么是 component# 简单来讲，component 就类似 Weex 渲染引擎上的 Widget, 符合一定的规则的 Widget, 可以被 Weex engine 在初始化的时候正确的加载，开发者在 DSL 书写对应的标签名字(在注册的时提供的注册名字)， 比如内置的一些组件 div，image 和 text。它可以读取特定的属性，展示用户数据，承载和触发事件，如果 Weex 内置的组件">
@@ -37,7 +37,7 @@
   <header id="header">
   <div class="navbar">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
     </a>
     <div class="main-nav">
       <ul class="links">
@@ -101,7 +101,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -133,7 +133,7 @@
   </div>
   <div id="mobile-nav">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
     </a>
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
@@ -146,7 +146,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -475,10 +475,10 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-10T08:17:30.880Z">Updated time: 10/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.669Z">Updated time: 11/11/2018</time> -->
 </header>
 
-    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><h3 class="article-heading"><span id="shi-me-shi-component">&#x4EC0;&#x4E48;&#x662F; component</span><a href="#shi-me-shi-component" class="header-anchor">#</a></h3><p> &#x7B80;&#x5355;&#x6765;&#x8BB2;&#xFF0C;<code>component</code> &#x5C31;&#x7C7B;&#x4F3C; <code>Weex</code> &#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x4E0A;&#x7684; <code>Widget</code>, &#x7B26;&#x5408;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x7684; <code>Widget</code>, &#x53EF;&#x4EE5;&#x88AB; Weex engine &#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x6B63;&#x786E;&#x7684;&#x52A0;&#x8F7D;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x5728; <code>DSL</code> &#x4E66;&#x5199;&#x5BF9;&#x5E94;&#x7684;&#x6807;&#x7B7E;&#x540D;&#x5B57;(&#x5728;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x63D0;&#x4F9B;&#x7684;&#x6CE8;&#x518C;&#x540D;&#x5B57;)&#xFF0C; &#x6BD4;&#x5982;&#x5185;&#x7F6E;&#x7684;&#x4E00;&#x4E9B;&#x7EC4;&#x4EF6; <code>div</code>&#xFF0C;<code>image</code> &#x548C; <code>text</code>&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x7279;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5C55;&#x793A;&#x7528;&#x6237;&#x6570;&#x636E;&#xFF0C;&#x627F;&#x8F7D;&#x548C;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C; Weex &#x5185;&#x7F6E;&#x7684;&#x7EC4;&#x4EF6;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x5F00;&#x53D1;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4F60;&#x81EA;&#x5DF1;&#x7684; component&#x3002;</p>
+    <html><head></head><body><h3 class="article-heading"><span id="shi-me-shi-component">&#x4EC0;&#x4E48;&#x662F; component</span><a href="#shi-me-shi-component" class="header-anchor">#</a></h3><p> &#x7B80;&#x5355;&#x6765;&#x8BB2;&#xFF0C;<code>component</code> &#x5C31;&#x7C7B;&#x4F3C; <code>Weex</code> &#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x4E0A;&#x7684; <code>Widget</code>, &#x7B26;&#x5408;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x7684; <code>Widget</code>, &#x53EF;&#x4EE5;&#x88AB; Weex engine &#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x6B63;&#x786E;&#x7684;&#x52A0;&#x8F7D;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x5728; <code>DSL</code> &#x4E66;&#x5199;&#x5BF9;&#x5E94;&#x7684;&#x6807;&#x7B7E;&#x540D;&#x5B57;(&#x5728;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x63D0;&#x4F9B;&#x7684;&#x6CE8;&#x518C;&#x540D;&#x5B57;)&#xFF0C; &#x6BD4;&#x5982;&#x5185;&#x7F6E;&#x7684;&#x4E00;&#x4E9B;&#x7EC4;&#x4EF6; <code>div</code>&#xFF0C;<code>image</code> &#x548C; <code>text</code>&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x7279;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5C55;&#x793A;&#x7528;&#x6237;&#x6570;&#x636E;&#xFF0C;&#x627F;&#x8F7D;&#x548C;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C; Weex &#x5185;&#x7F6E;&#x7684;&#x7EC4;&#x4EF6;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x5F00;&#x53D1;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4F60;&#x81EA;&#x5DF1;&#x7684; component&#x3002;</p>
 <h3 class="article-heading"><span id="component-fang-fa">component &#x65B9;&#x6CD5;</span><a href="#component-fang-fa" class="header-anchor">#</a></h3><p> component &#x65B9;&#x6CD5;&#x662F;&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;JavaScript &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5BF9;&#x5BF9;&#x5E94;&#x6807;&#x7B7E;&#x58F0;&#x660E; <code>ref</code> &#x5C5E;&#x6027;&#x4E4B;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x3002;</p>
  <figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">ref</span>=<span class="string">&apos;mycomponent&apos;</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    created:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.mycomponent.focus();</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 </body></html>
@@ -498,7 +498,7 @@
       <p>
         <span class="title">Disclaimer:</span>
         <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
-    </p></div>
+    </div>
     <p class="copyright">
       <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
       <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>

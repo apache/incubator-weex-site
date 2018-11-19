@@ -13,7 +13,7 @@
 <meta property="og:description" content="什么是 handler# hanlder(Android 中称为 adapter，以下称 handler) 是 WeexSDK engine 中一个 service 的概念，它可以被 component、module 和其他的 handler 实现中调用。 handler 调用细节# handler 提供了不同 App 和客户端解耦的能力，上层通过 interface(Android) 和 pro">
 <meta property="og:locale" content="cn">
 <meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/f027878afe0f3ff96444a32c3a92b230.png">
-<meta property="og:updated_time" content="2018-11-10T08:17:30.883Z">
+<meta property="og:updated_time" content="2018-11-11T13:54:10.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Handler">
 <meta name="twitter:description" content="什么是 handler# hanlder(Android 中称为 adapter，以下称 handler) 是 WeexSDK engine 中一个 service 的概念，它可以被 component、module 和其他的 handler 实现中调用。 handler 调用细节# handler 提供了不同 App 和客户端解耦的能力，上层通过 interface(Android) 和 pro">
@@ -39,7 +39,7 @@
   <header id="header">
   <div class="navbar">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
     </a>
     <div class="main-nav">
       <ul class="links">
@@ -103,7 +103,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -135,7 +135,7 @@
   </div>
   <div id="mobile-nav">
     <a id="logo" href="/cn/">
-      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
     </a>
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
@@ -148,7 +148,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off">
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -477,10 +477,10 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-10T08:17:30.883Z">Updated time: 10/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.671Z">Updated time: 11/11/2018</time> -->
 </header>
 
-    <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><h3 class="article-heading"><span id="shi-me-shi-handler">&#x4EC0;&#x4E48;&#x662F; handler</span><a href="#shi-me-shi-handler" class="header-anchor">#</a></h3><p> hanlder(Android &#x4E2D;&#x79F0;&#x4E3A; adapter&#xFF0C;&#x4EE5;&#x4E0B;&#x79F0; handler) &#x662F; WeexSDK engine &#x4E2D;&#x4E00;&#x4E2A; service &#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x88AB; component&#x3001;module &#x548C;&#x5176;&#x4ED6;&#x7684; handler &#x5B9E;&#x73B0;&#x4E2D;&#x8C03;&#x7528;&#x3002;</p>
+    <html><head></head><body><h3 class="article-heading"><span id="shi-me-shi-handler">&#x4EC0;&#x4E48;&#x662F; handler</span><a href="#shi-me-shi-handler" class="header-anchor">#</a></h3><p> hanlder(Android &#x4E2D;&#x79F0;&#x4E3A; adapter&#xFF0C;&#x4EE5;&#x4E0B;&#x79F0; handler) &#x662F; WeexSDK engine &#x4E2D;&#x4E00;&#x4E2A; service &#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x88AB; component&#x3001;module &#x548C;&#x5176;&#x4ED6;&#x7684; handler &#x5B9E;&#x73B0;&#x4E2D;&#x8C03;&#x7528;&#x3002;</p>
 <h3 class="article-heading"><span id="handler-diao-yong-xi-jie">handler &#x8C03;&#x7528;&#x7EC6;&#x8282;</span><a href="#handler-diao-yong-xi-jie" class="header-anchor">#</a></h3><p> handler &#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C; App &#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x89E3;&#x8026;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4E0A;&#x5C42;&#x901A;&#x8FC7; interface(Android) &#x548C; protocol(iOS) &#x7EA6;&#x675F;&#x65B9;&#x6CD5;&#xFF0C;handler &#x7684;&#x5B9E;&#x73B0;&#x8005;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8BE5; handler &#x5BF9;&#x5E94;&#x7684;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x7684;&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x4E0D;&#x5173;&#x6CE8; handler &#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x83B7;&#x5F97;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x6216;&#x8005;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684; handler &#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x4E2A; protocol(interface) &#x5BF9;&#x5E94;&#x7684; handler &#x5728; app &#x751F;&#x547D;&#x5468;&#x671F;&#x671F;&#x95F4;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
 <h3 class="article-heading"><span id="handler-he-module-de-qu-bie">handler &#x548C; module &#x7684;&#x533A;&#x522B;</span><a href="#handler-he-module-de-qu-bie" class="header-anchor">#</a></h3><ul>
 <li><p>&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</p>
@@ -524,7 +524,7 @@
       <p>
         <span class="title">Disclaimer:</span>
         <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
-    </p></div>
+    </div>
     <p class="copyright">
       <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
       <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
