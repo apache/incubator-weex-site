@@ -19,7 +19,7 @@ For now, there are four types of gestures:
 	* `touchstart` will be fired when a touch point is placed on the touch surface.
 	* `touchmove` will be fired when a touch point is moved along the touch surface.
 	* `touchend` will be fired when a touch point is removed from the touch surface.
-	* `shouldStopPropagation`  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)
+	* `stopPropagation`  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)
 * **Pan**. Pan gesture also report motion of touch point on the touch surface, which is similar to touch gesture. But Pan gesture is sampled and faster than the touch event. As consequence, it is less accuracy than touch gesture. There are also three types of Pan gesture, and the meaning of these types is very close to types of Touch.
 	* `panstart`
 	* `panmove`
