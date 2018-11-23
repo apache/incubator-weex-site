@@ -5,20 +5,20 @@
   
   <title>Extend iOS | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="extend custom module extend custom component Component Method custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do a">
+  <meta name="description" content="extend custom module extend custom component Component Method Fetch CSS styles of a WXComponent custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they c">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Extend iOS">
 <meta property="og:url" content="https://weex.apache.org/guide/extend-ios.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="extend custom module extend custom component Component Method custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do a">
+<meta property="og:description" content="extend custom module extend custom component Component Method Fetch CSS styles of a WXComponent custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they c">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png">
 <meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/8079e55e74f098eb42e074f696537de1.png">
 <meta property="og:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/dd6b2a43132c0bfa724f5c1e56f300b4.png">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.686Z">
+<meta property="og:updated_time" content="2018-11-23T05:54:36.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extend iOS">
-<meta name="twitter:description" content="extend custom module extend custom component Component Method custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do a">
+<meta name="twitter:description" content="extend custom module extend custom component Component Method Fetch CSS styles of a WXComponent custom your handlers      NOTICE: All of the exported APIs in Weex are controllable and safe, they c">
 <meta name="twitter:image" content="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
@@ -360,13 +360,13 @@
             
               
                 <li>
-                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                  <a href="/guide/extend-ios.html" class="sidebar-link current ">Extend iOS</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/guide/extend-ios.html" class="sidebar-link current ">Extend iOS</a>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
                 </li>
               
             
@@ -646,13 +646,13 @@
             
               
                 <li>
-                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                  <a href="/guide/extend-ios.html" class="sidebar-link current ">Extend iOS</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/guide/extend-ios.html" class="sidebar-link current ">Extend iOS</a>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
                 </li>
               
             
@@ -735,7 +735,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.686Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-23T05:54:36.851Z">Updated time: 23/11/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -745,6 +745,7 @@
 <li><a href="#extend-custom-module">extend custom module</a></li>
 <li><a href="#extend-custom-component">extend custom component</a></li>
 <li><a href="#component-method">Component Method</a></li>
+<li><a href="#fetch-css-styles-of-a-wxcomponent">Fetch CSS styles of a WXComponent</a></li>
 <li><a href="#custom-your-handlers">custom your handlers</a></li>
 </ul>
 <!-- tocstop -->
@@ -872,6 +873,16 @@
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@implementation WXMyComponent</span><br><span class="line"> +WX_EXPORT_METHOD(@selector(focus))</span><br><span class="line"> +- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</span><br><span class="line"> {</span><br><span class="line">     if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {</span><br><span class="line">         // handle your attributes</span><br><span class="line">         // handle your styles</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     return self;</span><br><span class="line"> }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> - (void)focus</span><br><span class="line">   {</span><br><span class="line">   		NSLog(@&quot;you got it&quot;);</span><br><span class="line">   }</span><br><span class="line">@end</span><br></pre></td></tr></tbody></table></figure>
 <p>after your registration for your own custom component, now you can call it in your js file.</p>
 <figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">ref</span>=<span class="string">&apos;mycomponent&apos;</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">module</span>.exports = {</span></span><br><span class="line"><span class="javascript">    created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$refs.mycomponent.focus();</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 class="article-heading"><span id="fetch-css-styles-of-a-wxcomponent">Fetch CSS styles of a WXComponent</span><a href="#fetch-css-styles-of-a-wxcomponent" class="header-anchor">#</a></h3><ul>
+<li><p>Before v0.19, Weex used Yoga layout engine. You can access css styles via cssNode of WXCompoent. Such as</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">self.cssNode-&gt;style.flex = 1.0;</span><br><span class="line">float height = self.cssNode-&gt;style.dimensions[CSS_HEIGHT]);</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>From v0.19, Weex replaced layout engine which is C++ codes. You can get css styles from styles dictionary of a WXComponent. You can also access flexCssNode property which is of type WeexCore::WXCoreLayoutNode, but must in .mm files.</p>
+</li>
+<li><p>From v0.20, WeexCore is imported to iOS, and css styles is never uploaded to WXComponent. The styles dictionary only contains non-css styles. We think that upper UI components should only care about final layout results generated by layout engine. If you still want to access css styles, you may use flexCssNode in .mm files or by extension methods provided in WXComponent+Layout.h.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @abstract Get css style value for key. The key should be of CSS standard form.</span><br><span class="line"> *  This method is for convenience use in C/ObjC environment. And if you want to</span><br><span class="line"> *  retrieve all style values or in C++, you could use flexCssNode directly.</span><br><span class="line"> *</span><br><span class="line"> *  Thread usage:</span><br><span class="line"> *      This method should be invoked in component thread by WXPerformBlockOnComponentThread.</span><br><span class="line"> *      Note that all initWithRef methods of WXComponent and its subclasses are performed in</span><br><span class="line"> *      component thread by default. Therefore you can call this method directly in initWithRef.</span><br><span class="line"> *</span><br><span class="line"> *  Supported keys:</span><br><span class="line"> *      width, height, min-width, min-height, max-width, max-height,</span><br><span class="line"> *      margin-(left/right/top/bottom)</span><br><span class="line"> *      padding-(left/right/top/bottom)</span><br><span class="line"> *      border-(left/right/top/bottom)-width</span><br><span class="line"> *      left, right, top, bottom</span><br><span class="line"> *      flex-grow</span><br><span class="line"> */</span><br><span class="line">- (float)getCssStyleValueForKey:(NSString *)key;</span><br><span class="line"></span><br><span class="line">// Other methods which should also be used in component thread.</span><br><span class="line">- (WXCoreFlexDirection)getCssStyleFlexDirection;</span><br><span class="line">- (WXCoreFlexWrap)getCssStyleFlexWrap;</span><br><span class="line">- (WXCoreJustifyContent)getCssStyleJustifyContent;</span><br><span class="line">- (WXCoreAlignItems)getCssStyleAlignItems;</span><br><span class="line">- (WXCoreAlignSelf)getCssStyleAlignSelf;</span><br><span class="line">- (WXCorePositionType)getCssStylePositionType;</span><br><span class="line">- (NSString*)convertLayoutValueToStyleValue:(NSString*)valueName;</span><br><span class="line">- (CGFloat)safeContainerStyleWidth;</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
 <h3 class="article-heading"><span id="custom-your-handlers">custom your handlers</span><a href="#custom-your-handlers" class="header-anchor">#</a></h3><p>We don&#x2019;t provide functionality for downloading image but defines a blueprint of methods in <code>WXImgLoaderProtocol</code> for loading image, and image component get image content from these methods. You must implement methods in <code>WXImgLoaderProtocol</code> except the <code>optional</code> methods to display image from specified url.<br>You can also define your own <code>protocol</code> and implement its handler.</p>
 <ul>
 <li>new a class derived from <code>NSObject</code> conforming <code>WXImgLoaderProtocol</code> and then add implementation for methods in <code>WXImgLoaderProtocol</code>.</li>
