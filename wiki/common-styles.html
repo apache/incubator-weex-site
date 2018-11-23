@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://weex.apache.org/wiki/images/css-flexbox-align.jpg">
 <meta property="og:image" content="https://weex.apache.org/wiki/images/css-flexbox-sample.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.720Z">
+<meta property="og:updated_time" content="2018-11-23T03:36:01.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Common Styles">
 <meta name="twitter:description" content="Box Model Notes Example   Flexbox Flex container Flex item   Examples Position Examples   transform Example   transition v0.17.0+ Property Example   Pseudo class v0.9.5+ Rule Example   linear-grad">
@@ -477,7 +477,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.720Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-23T03:36:01.268Z">Updated time: 23/11/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -537,8 +537,9 @@
 <p>Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term &#x201C;box model&#x201D; is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.</p>
 <p>you can use the definition below in weex box model.</p>
 <ul>
-<li><code>width</code>: <code>length</code> type, default value <code>0</code></li>
-<li><code>height</code>: <code>length</code> type, default value <code>0</code></li>
+<li><code>width</code>: <code>length</code> type, default value <code>auto</code></li>
+<li><code>height</code>: <code>length</code> type, default value <code>auto</code></li>
+<li><code>direction</code>: values <code>rtl</code> | <code>ltr</code>, default value <code>ltr</code></li>
 <li><code>padding</code>: <code>length</code> type, default value <code>0</code>, (space around content, between element content and the element border)<ul>
 <li><code>padding-left</code>: <code>length</code> type, default value <code>0</code></li>
 <li><code>padding-right</code>: <code>length</code> type, default value <code>0</code></li>
@@ -586,14 +587,15 @@
 </li>
 </ul>
 <h3 class="article-heading"><span id="notes">Notes</span><a href="#notes" class="header-anchor">#</a></h3><p>Weex box model uses <code>border-box</code> as the default value of <code>box-sizing</code>, meaning the width and height properties includes content, padding and border, but not the margin.</p>
-<p>The rule of border-radius for a specific corner such as <code>border-top-left-radius</code> is not currently supported for component <code>&lt;image&gt;</code>in iOS. This only happens to iOS, it works fine on Android.</p>
-<p>Although <code>overflow:hidden</code> is default on android, a view <strong>will not</strong> clip its children according to <code>border-radius</code> unless all the following condtions met. This only happens on Android, it works fine on iOS.</p>
+<blockquote>
+<p><strong>Waring</strong> Although <code>overflow:hidden</code> is default on android, a view <strong>will not</strong> clip its children according to <code>border-radius</code> unless all the following condtions met. This only happens on Android, it works fine on iOS.</p>
 <ul>
 <li>The view type is <code>div</code>, <code>a</code>, <code>cell</code>, <code>refresh</code> or <code>loading</code>.</li>
 <li>OS version is Android 4.3 or higher.</li>
 <li>OS version is <strong>not</strong> Andorid 7.0</li>
 <li>A view <strong>does not</strong> have <code>background-image</code> property nor OS version is Android 5.0 or higher.</li>
 </ul>
+</blockquote>
 <h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 400; height: 200; margin-left: 20;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 class="article-heading"><span id="flexbox">Flexbox</span><a href="#flexbox" class="header-anchor">#</a></h2><p>Weex box style model based on the CSS flexbox, ensures that elements behave predictably and the page layout can accommodates to different screen sizes and different display devices.</p>
 <p>Flexbox consists of flex containers and flex items. If a weex element can containing other elements, it is a flex container.</p>

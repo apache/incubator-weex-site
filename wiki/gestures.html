@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Type Properties changedTouches   Constrain      Experiment Feature  Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Type#For now,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.721Z">
+<meta property="og:updated_time" content="2018-11-23T03:10:58.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gesture">
 <meta name="twitter:description" content="Type Properties changedTouches   Constrain      Experiment Feature  Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Type#For now,">
@@ -471,7 +471,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.721Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-23T03:10:58.665Z">Updated time: 23/11/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -498,7 +498,7 @@
 <li><code>touchstart</code> will be fired when a touch point is placed on the touch surface.</li>
 <li><code>touchmove</code> will be fired when a touch point is moved along the touch surface.</li>
 <li><code>touchend</code> will be fired when a touch point is removed from the touch surface.</li>
-<li><code>shouldStopPropagation</code>  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)</li>
+<li><code>stopPropagation</code>  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)</li>
 </ul>
 </li>
 <li><strong>Pan</strong>. Pan gesture also report motion of touch point on the touch surface, which is similar to touch gesture. But Pan gesture is sampled and faster than the touch event. As consequence, it is less accuracy than touch gesture. There are also three types of Pan gesture, and the meaning of these types is very close to types of Touch.<ul>

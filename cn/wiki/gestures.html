@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="手势类型 属性 changedTouches   约束     注：该功能属于实验性功能 Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于在 Weex 中使用事件，只需在节点上监听手势即可。 手势类型#目前，仅支持以下四种手势类型：  Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手势。触摸手势很精准，它会返回所有详细的事件信息。所以，监听 touch 手势">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.671Z">
+<meta property="og:updated_time" content="2018-11-23T03:10:58.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手势">
 <meta name="twitter:description" content="手势类型 属性 changedTouches   约束     注：该功能属于实验性功能 Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于在 Weex 中使用事件，只需在节点上监听手势即可。 手势类型#目前，仅支持以下四种手势类型：  Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手势。触摸手势很精准，它会返回所有详细的事件信息。所以，监听 touch 手势">
@@ -475,7 +475,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.671Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-23T03:10:58.664Z">Updated time: 23/11/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -501,7 +501,7 @@
 <li><code>touchstart</code> &#x5C06;&#x5728;&#x89E6;&#x6478;&#x5230;&#x89E6;&#x6478;&#x9762;&#x4E0A;&#x65F6;&#x89E6;&#x53D1;&#x3002;</li>
 <li><code>touchmove</code> &#x5C06;&#x5728;&#x89E6;&#x6478;&#x70B9;&#x5728;&#x89E6;&#x6478;&#x9762;&#x79FB;&#x52A8;&#x65F6;&#x88AB;&#x89E6;&#x53D1;&#x3002;</li>
 <li><code>touchend</code> &#x5C06;&#x5728;&#x4ECE;&#x89E6;&#x6478;&#x9762;&#x79BB;&#x5F00;&#x65F6;&#x88AB;&#x89E6;&#x53D1;&#x3002;</li>
-<li><code>shouldStopPropagation</code>   &#x6BCF;&#x4E2A;touch&#x4E8B;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x4F20;&#x9012;&#x8FC7;&#x6765;, &#x53EF;&#x63A7;&#x5236;touch&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x5192;&#x6CE1;&#xFF08;&#x8FD4;&#x56DE;true&#xFF09;&#x6216;&#x8005;&#x505C;&#x6B62;&#xFF08;&#x8FD4;&#x56DE;false&#xFF09;&#xFF1B;&#x7528;&#x4E8E;&#x89E3;&#x51B3;&#x4E8B;&#x4EF6;&#x51B2;&#x7A81;&#x6216;&#x8005;&#x81EA;&#x5B9A;&#x4E49;&#x624B;&#x52BF;&#x3002;<span class="api-version">v0.18+</span></li>
+<li><code>stopPropagation</code>   &#x6BCF;&#x4E2A;touch&#x4E8B;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x4F20;&#x9012;&#x8FC7;&#x6765;, &#x53EF;&#x63A7;&#x5236;touch&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x5192;&#x6CE1;&#xFF08;&#x8FD4;&#x56DE;true&#xFF09;&#x6216;&#x8005;&#x505C;&#x6B62;&#xFF08;&#x8FD4;&#x56DE;false&#xFF09;&#xFF1B;&#x7528;&#x4E8E;&#x89E3;&#x51B3;&#x4E8B;&#x4EF6;&#x51B2;&#x7A81;&#x6216;&#x8005;&#x81EA;&#x5B9A;&#x4E49;&#x624B;&#x52BF;&#x3002;<span class="api-version">v0.18+</span></li>
 </ul>
 </li>
 <li><p><strong>Pan</strong>&#xFF1A;<code>pan</code> &#x624B;&#x52BF;&#x4E5F;&#x4F1A;&#x8FD4;&#x56DE;&#x89E6;&#x6478;&#x70B9;&#x5728;&#x89E6;&#x6478;&#x9762;&#x7684;&#x79FB;&#x52A8;&#x4FE1;&#x606F;&#xFF0C;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x4E8E; <code>touch</code> &#x624B;&#x52BF;&#x3002;&#x4F46;&#x662F; <code>pan</code> &#x624B;&#x52BF;&#x53EA;&#x4F1A;&#x91C7;&#x6837;&#x6536;&#x96C6;&#x90E8;&#x5206;&#x4E8B;&#x4EF6;&#x4FE1;&#x606F;&#x56E0;&#x6B64;&#x6BD4; <code>touch</code> &#x4E8B;&#x4EF6;&#x8981;&#x5FEB;&#x5F97;&#x591A;&#xFF0C;&#x5F53;&#x7136;&#x7CBE;&#x51C6;&#x6027;&#x5DEE;&#x4E8E; <code>touch</code>&#x3002;<code>pan</code> &#x4E5F;&#x6709;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x624B;&#x52BF;&#xFF0C;&#x8FD9;&#x4E9B;&#x624B;&#x52BF;&#x7684;&#x610F;&#x4E49;&#x4E0E; <code>touch</code> &#x5B8C;&#x5168;&#x4E00;&#x6837;&#xFF1A;</p>
