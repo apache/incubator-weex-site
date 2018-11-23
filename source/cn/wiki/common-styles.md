@@ -21,8 +21,9 @@ Weex 盒模型基于 [CSS 盒模型](https://www.w3.org/TR/css3-box/)，每个 W
 **注意：**
 Weex 对于长度值目前只支持*像素*值，不支持相对单位（`em`、`rem`）。
 
-- `width {length}`：，默认值 0
-- `height {length}`：，默认值 0
+- `width {length}`：，默认值 `auto`
+- `height {length}`：，默认值 `auto`
+- `direction {string}`: 可选值为 `rtl` | `ltr`，默认值为`ltr`
 - `padding {length}`：内边距，内容和边框之间的距离。默认值 0
 
   可有如下写法：
@@ -95,13 +96,11 @@ Weex 对于长度值目前只支持*像素*值，不支持相对单位（`em`、
 
 Weex 盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
 
-目前在 `<image>` 组件上尚无法只定义一个或几个角的 `border-radius`。比如你无法在这两个组件上使用 `border-top-left-radius`。该约束只对 iOS 生效，Android 并不受此限制。
-
-尽管 `overflow:hidden` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去 clip 它的子 view。这个限制只对 Android 生效，iOS 不受影响。
-* 父view是`div`, `a`, `cell`, `refresh` 或 `loading`。
-* 系统版本是 Android 4.3 或更高。
-* 系统版本不是 Andorid 7.0。
-* 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
+> **警告** 尽管 `overflow:hidden` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去 clip 它的子 view。这个限制只对 Android 生效，iOS 不受影响。
+> * 父view是`div`, `a`, `cell`, `refresh` 或 `loading`。
+> * 系统版本是 Android 4.3 或更高。
+> * 系统版本不是 Andorid 7.0。
+> * 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
 
 ### 示例：
 

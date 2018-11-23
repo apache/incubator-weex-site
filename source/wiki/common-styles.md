@@ -18,8 +18,9 @@ Weex box model based on the CSS box model, all of weex elements can be considere
 
 you can use the definition below in weex box model.
 
-- `width`: `length` type, default value `0`
-- `height`: `length` type, default value `0`
+- `width`: `length` type, default value `auto`
+- `height`: `length` type, default value `auto`
+- `direction`: values `rtl` | `ltr`, default value `ltr`
 - `padding`: `length` type, default value `0`, (space around content, between element content and the element border)
   - `padding-left`: `length` type, default value `0`
   - `padding-right`: `length` type, default value `0`
@@ -55,13 +56,11 @@ you can use the definition below in weex box model.
 ### Notes
 Weex box model uses `border-box` as the default value of `box-sizing`, meaning the width and height properties includes content, padding and border, but not the margin.
 
-The rule of border-radius for a specific corner such as `border-top-left-radius` is not currently supported for component `<image>`in iOS. This only happens to iOS, it works fine on Android.
-
-Although `overflow:hidden` is default on android, a view **will not** clip its children according to `border-radius` unless all the following condtions met. This only happens on Android, it works fine on iOS.
-* The view type is `div`, `a`, `cell`, `refresh` or `loading`.
-* OS version is Android 4.3 or higher.
-* OS version is **not** Andorid 7.0
-* A view **does not** have `background-image` property nor OS version is Android 5.0 or higher.
+> **Waring** Although `overflow:hidden` is default on android, a view **will not** clip its children according to `border-radius` unless all the following condtions met. This only happens on Android, it works fine on iOS.
+> * The view type is `div`, `a`, `cell`, `refresh` or `loading`.
+> * OS version is Android 4.3 or higher.
+> * OS version is **not** Andorid 7.0
+> * A view **does not** have `background-image` property nor OS version is Android 5.0 or higher.
 
 ### Example
 
