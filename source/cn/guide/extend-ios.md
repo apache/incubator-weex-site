@@ -8,22 +8,22 @@ version: 2.1
 
 <!-- toc -->
 
-> **注意**：**Weex 所有暴露给  JS 的内置 module 或 component API 都是安全和可控的， 它们不会去访问系统的私有 API ，也不会去做任何 runtime 上的 hack 更不会去改变应用原有的功能定位。**
+> **注意**：**Weex 所有暴露给 JS 的内置 module 或 component API 都是安全和可控的，它们不会去访问系统的私有 API ，也不会去做任何 runtime 上的 hack 更不会去改变应用原有的功能定位。**
 >
-> **如果需要扩展自定义的 module 或者 component ，一定注意不要将 OC 的 runtime 暴露给 JS ， 不要将一些诸如 `dlopen()`， `dlsym()`， `respondsToSelector:`，`performSelector:`，`method_exchangeImplementations()` 的动态和不可控的方法暴露给JS， 也不要将系统的私有API暴露给JS**
+> **如果需要扩展自定义的 module 或者 component ，一定注意不要将 OC 的 runtime 暴露给 JS ， 不要将一些诸如 `dlopen()`， `dlsym()`， `respondsToSelector:`，`performSelector:`，`method_exchangeImplementations()` 的动态和不可控的方法暴露给JS，也不要将系统的私有API暴露给JS**
 
 Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你需要一些特性但 Weex 并未提供，可以通过扩展自定义的一些插件来实现，通过 WeexSDK 加载。这些插件包括 [component](../wiki/component-introduction.html), [module](../wiki/module-introduction.html) 和 [handler](../wiki/handler-introduction.html)。
 > 本文都以 Objective-C 为例子书写，如果需要 swift 请参考 [使用 swift 扩展 Weex](./extend-module-using-swift.html)
 
 ## 自定义 module
 
-自定义 module, 需要让自己的 class 遵循 `WXModuleProtocol` 这个protocol, 通过 `WX_EXPORT_METHOD` 这个宏暴露出需要透出到 `JavaScript` 调用的方法，注册 module , 就可以完成一个简单 module 的自定义。
+自定义 module, 需要让自己的 class 遵循 `WXModuleProtocol` 这个protocol, 通过 `WX_EXPORT_METHOD` 这个宏暴露出需要透出到 `JavaScript` 调用的方法，注册 module，就可以完成一个简单 module 的自定义。
 
 - module 自定义初阶 
 
   下面完成一个 `module`, 该 `module` 暴露一个打印输入参数的方法
 
-  1. 新建一个 基类为 NSObject 的 class `WXCustomEventModule`, 让该类遵循 `WXModuleProtocol` 的协议
+  1. 新建一个 基类为 NSObject 的 class `WXCustomEventModule`，让该类遵循 `WXModuleProtocol` 的协议
     ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png)
 
   2. 添加打印的方法，通过 `WX_EXPORT_METHOD` 暴露该方法
@@ -53,7 +53,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
 ## Component 扩展
 
-可能 WeexSDK 内置提供的组件并不能满足你的开发需求，比如需要期望使用地图这样一个复杂的组件，可以通过自定义一个组件，注册到 WeexSDK engine 中， 可以很方便的使用起来。
+可能 WeexSDK 内置提供的组件并不能满足你的开发需求，比如需要期望使用地图这样一个复杂的组件，可以通过自定义一个组件，注册到 WeexSDK engine 中，可以很方便的使用起来。
 
 ### component 基础生命周期
 
@@ -63,8 +63,8 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 - 覆盖 `WXComponent` 中的生命周期方法
  
   - `loadView`  
-    一个 component 默认对应于一个 view，如果未覆盖 `loadView` 提供自定义 `view`, 会使用 `WXComponent` 基类中的 `WXView`, `WXView` 是继承自 UIView 的一个派生 view。
-    要实现地图功能，我们需要对应的地图 view, 比如系统的 `MKMapView`
+    一个 component 默认对应于一个 view，如果未覆盖 `loadView` 提供自定义 `view`，会使用 `WXComponent` 基类中的 `WXView`，`WXView` 是继承自 UIView 的一个派生 view。
+    要实现地图功能，我们需要对应的地图 view，比如系统的 `MKMapView`。
     
 	    ```
 	     - (UIView *)loadView {
@@ -72,7 +72,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 	     }
     	```
   - `viewDidLoad`  
-     对组件 view 需要做一些配置，比如设置 delegate, 可以在 `viewDidLoad` 生命周期做，如果当前 view 没有添加 subview 的话，不要设置 view 的 frame，WeexSDK 会根据 style 设置。
+     对组件 view 需要做一些配置，比如设置 delegate，可以在 `viewDidLoad` 生命周期做，如果当前 view 没有添加 subview 的话，不要设置 view 的 frame，WeexSDK 会根据 style 设置。
     
 	    ```
 	    - (void)viewDidLoad {
@@ -115,7 +115,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
     }
     </script>
     ```
-   给当前组件添加 `BOOL` 成员 mapLoaded,记录当前事件是否被添加，当地图加载完成时候，我们可以根据这个判断是否应该发送事件。
+   给当前组件添加 `BOOL` 成员 mapLoaded，记录当前事件是否被添加，当地图加载完成时候，我们可以根据这个判断是否应该发送事件。
    
    - 覆盖组件生命周期方法添加和移除事件
     
@@ -198,7 +198,6 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
 
     ```
 
-
 ### 更多 component 生命周期
 
 native 的 component 是由 Weex 管理的，Weex 创建，布局，渲染，销毁。Weex 的 component 生命周期都是可以 hook 的，你可以在这些生命周期中去做自己的事情。
@@ -262,9 +261,47 @@ WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，自定
   </script>
   ```
 
+### 获取组件的 CSS 样式信息
+
+- 在 0.19 版本之前，Weex 使用 Yoga 排版引擎，可以通过访问 WXComponent 的 cssNode 属性获取。例如：
+  ```
+  self.cssNode->style.flex = 1.0;
+  float height = self.cssNode->style.dimensions[CSS_HEIGHT]);
+  ```
+
+- 从 0.19 版本开始，Weex 使用自已的排版引擎，是 C++ 代码。获取 CSS 属性可以从 WXComponent 的 styles 字典（NSDictionary）里获取，也可以访问 WXComponent 的 flexCssNode 属性，其类型为 C++ 类 WeexCore::WXCoreLayoutNode。注意，需要源文件为 .mm 类型。
+
+- 从 0.20 版本开始，iOS 接入 WeexCore，排版引擎也沉入 WeexCore层，并且 CSS 相关属性不再上传给 WXComponent 对象，WXComponent 对象的 styles 字典里只有非 CSS 样式。我们的目的是上层 UI 组件只需要关心排版引擎生成的最终坐标即可，不需要关心前端标记的 CSS 属性。如果仍然需要获取 CSS 样式，可以在 .mm 文件中直接访问 flexCssNode，或通过 WXComponent+Layout.h 文件中提供的扩展方法。
+
+ ```
+ /* 通过 key 获取 CSS 样式，可以在 ObjC 文件中调用。这个方法在 Component 线程调用是最安全的，
+ 比如通过WXPerformBlockOnComponentThread调用。不过 WXComponent 的 init 方法总是在 Component 线程执行的，
+ 所以在 init 方法里完成 CSS 样式获取，可以直接调用。
+
+ 当前支持的 Key 如下：
+    width, height, min-width, min-height, max-width, max-height,
+    margin-(left/right/top/bottom)
+    padding-(left/right/top/bottom)
+    border-(left/right/top/bottom)-width
+    left, right, top, bottom
+    flex-grow
+ */
+- (float)getCssStyleValueForKey:(NSString *)key;
+
+// 其它方法，功能如其名，也需要在 Component 线程调用
+- (WXCoreFlexDirection)getCssStyleFlexDirection;
+- (WXCoreFlexWrap)getCssStyleFlexWrap;
+- (WXCoreJustifyContent)getCssStyleJustifyContent;
+- (WXCoreAlignItems)getCssStyleAlignItems;
+- (WXCoreAlignSelf)getCssStyleAlignSelf;
+- (WXCorePositionType)getCssStylePositionType;
+- (NSString*)convertLayoutValueToStyleValue:(NSString*)valueName;
+- (CGFloat)safeContainerStyleWidth;
+ ```
+
 ## 自定义 handler 
 
-   weexSDK 目前没有提供图片下载的能力，在`WXImgLoaderProtocol` 定义了一些获取图片的接口, image 组件正是通过 `WXImgLoaderProtocol` 获得并展示图片，开发者可以实现该 protocol 中的接口方法，这样 `image` 标签才能正常展示图片。 
+   weexSDK 目前没有提供图片下载的能力，在`WXImgLoaderProtocol` 定义了一些获取图片的接口，image 组件正是通过 `WXImgLoaderProtocol` 获得并展示图片，开发者可以实现该 protocol 中的接口方法，这样 `image` 标签才能正常展示图片。 
    
   开发者也可以定义自己的 `protocol` 和对应的实现来使用 `handler` 机制
 
