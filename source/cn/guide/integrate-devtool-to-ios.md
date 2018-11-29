@@ -91,7 +91,7 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 [WXDevTool launchDevToolDebugWithUrl:@"ws://30.30.31.7:8088/debugProxy/native"];
 ```
 
-其中的 ws 地址正是 `Weex debug` 控制台中出现的地址，直接 copy 到 `launchDevToolDebugWithUrl` 接口中。
+其中的 ws 地址正是 `Weex debug` 控制台中出现的地址，如果不是通过扫码链接的方式，你可以通过`weex debug --port 8888 --channelid 1` 去指定端口号及`channelid`, 随后可以将链接填写到 `launchDevToolDebugWithUrl` 接口中。
 
 如果程序一启动就开启 Weex 调试，**需要在 WeexSDK 引擎初始化之前**添加代码：
 
@@ -173,63 +173,6 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 
 *说明：目前版本需要注册的通知名称为固定的 “RefreshInstance”，下个版本会添加用户自定义 name 。*
 
-# 和DebugServer配合使用
+# 功能使用
 
-# 环境准备
-
-首先，需要安装 Debugger Server,详情请查看 [《Get started》](../../guide/index.html)
-
-```
-npm install -g weex-toolkit
-```
-运行命令启动 DebugServer
-
-```
-weex debug
-```  
-
-页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接
-
-## 部分功能展示
-
-
-1. 日志级别控制
-
-  ![_](http://img.alicdn.com/tps/TB1F8WONXXXXXa_apXXXXXXXXXX-1706-674.png)
-  日志级别可以控制native端关于weex的日志。
-
-  日记级别描述如下：
-
-  ```
-  Off       = 0,
-  Error     = Error
-  Warning   = Error | Warning,
-  Info      = Warning | Info,
-  Log       = Log | Info,
-  Debug     = Log | Debug,
-  All       = NSUIntegerMax
-  ```
-
-  解释：off 关闭日志，Warning 包含 Error、Warning，Info 包含 Warning、Info，Log 包含 Info、Log，Debug 包含 Log、Debug，All 包含所有。
-
-2. Vdom/Native tree选择
-
-  ![](http://img.alicdn.com/tps/TB19Yq5NXXXXXXVXVXXXXXXXXXX-343-344.png)
-
-  *图一*
-
-  ![图二](http://img.alicdn.com/tps/TB1vomVNXXXXXcXaXXXXXXXXXXX-2072-1202.png)
-
-  *图二*
-
-  点击图一所示native选项会打开图二，方便查看native tree以及view property
-
-  ![vdom](http://img.alicdn.com/tps/TB116y0NXXXXXXNaXXXXXXXXXXX-1448-668.png)
-
-  *图三*
-
-  ![vdom_tree](http://img.alicdn.com/tps/TB16frmNXXXXXa7XXXXXXXXXXXX-2106-1254.png)
-
-  *图四*
-
-  点击图三所示 vdom 选项会打开图四，方便查看 vdom tree 以及 component property。
+文档见 [Weex Debugger 使用文档](../tools/toolkit.html#debug)。
