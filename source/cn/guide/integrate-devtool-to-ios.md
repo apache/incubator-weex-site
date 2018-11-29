@@ -88,10 +88,10 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 在你自己的程序中添加如下代码：
 
 ```object-c
-[WXDevTool launchDevToolDebugWithUrl:@"ws://30.30.31.7:8088/debugProxy/native"];
+[WXDevTool launchDevToolDebugWithUrl:@"ws://30.30.31.7:{port}/debugProxy/native/{channelid}"];
 ```
 
-其中的 ws 地址正是 `Weex debug` 控制台中出现的地址，直接 copy 到 `launchDevToolDebugWithUrl` 接口中。
+其中的 ws 地址正是 `Weex debug` 控制台中出现的地址，如果不是通过扫码链接的方式，你可以通过`weex debug --port 8888 --channelid 1` 去指定端口号及`channelid`, 随后可以将链接填写到 `launchDevToolDebugWithUrl` 接口中。
 
 如果程序一启动就开启 Weex 调试，**需要在 WeexSDK 引擎初始化之前**添加代码：
 
