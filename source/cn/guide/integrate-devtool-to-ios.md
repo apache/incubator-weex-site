@@ -103,10 +103,10 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 2. 添加如下代码到你的应用中，注意替换对应的`{ip}`,`{port}`,`{channelid}`为你本地的值。
 
 ```object-c
-[WXDevTool setDebug:YES];
+[WXDevTool setDebug:NO];
 [WXDevTool launchDevToolDebugWithUrl:@"ws://{ip}:{port}/debugProxy/native/{channelid}"];
 ```
-如果程序一启动就开启 Weex 调试，**需要在 WeexSDK 引擎初始化之前**添加代码：
+如果程序一启动就开启 Weex 调试，**需要在 WeexSDK 引擎初始化之前**添加代码，同时需要将Debug开关设置为`NO`，进入调试界面后再打开`JS Debug`开关（服务链接时对于纯weex项目会丢失首屏Weex页面的消息导致白屏）。
 
 ### 附加页面刷新功能
 
@@ -118,8 +118,7 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 
 - 什么场景下需要添加页面刷新功能?
 
-  - 点击 debugger 按钮调试
-  - 切换 RemoteDebug 开关
+  - 切换 JSDebug 开关时刷新页面
   - 刷新 Chrome 页面（command+R）
 
 - 如何添加刷新  
