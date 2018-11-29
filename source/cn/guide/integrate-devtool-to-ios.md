@@ -83,22 +83,30 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
 @end
 ```
 
-`setDebug`：参数为 `YES` 时，直接开启 debug 模式，反之关闭，使用场景如下所述
+`setDebug`：参数为 `YES` 时，直接开启调试模式，反之关闭，使用场景如下所述
 
-在你自己的程序中添加如下代码：
+#### 扫码调试
+
+如果你的应用中存在扫码功能或即将集成扫码功能，推荐使用该方式进行集成，Demo 地址见: [Playground App](https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/Scanner/WXScannerVC.m)
+
+核心代码为获取扫码链接中的`_wx_devtool`参数，并将调试工具与调试服务器链接：
 
 ```object-c
-[WXDevTool launchDevToolDebugWithUrl:@"ws://30.30.31.7:8088/debugProxy/native"];
+[WXDevTool launchDevToolDebugWithUrl:@"ws://{ip}:{port}/debugProxy/native/{channelid}"];
 ```
 
-其中的 ws 地址正是 `Weex debug` 控制台中出现的地址，如果不是通过扫码链接的方式，你可以通过`weex debug --port 8888 --channelid 1` 去指定端口号及`channelid`, 随后可以将链接填写到 `launchDevToolDebugWithUrl` 接口中。
+#### 直接链接
 
-如果程序一启动就开启 Weex 调试，**需要在 WeexSDK 引擎初始化之前**添加代码：
+如果你需要直接让你的应用链接上Weex调试工具，你需要通过如下方式进行集成：
+
+1. 命令行运行`weex debug --port 8888 --channelid 1` 去指定端口号及调试进程ID.
+2. 添加如下代码到你的应用中，注意替换对应的`{ip}`,`{port}`,`{channelid}`为你本地的值。
 
 ```object-c
 [WXDevTool setDebug:YES];
-[WXDevTool launchDevToolDebugWithUrl:@"ws://30.30.31.7:8088/debugProxy/native"];
+[WXDevTool launchDevToolDebugWithUrl:@"ws://{ip}:{port}/debugProxy/native/{channelid}"];
 ```
+如果程序一启动就开启 Weex 调试，**需要在 WeexSDK 引擎初始化之前**添加代码：
 
 ### 附加页面刷新功能
 
@@ -115,7 +123,7 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
   - 刷新 Chrome 页面（command+R）
 
 - 如何添加刷新  
-	- 具体实现可参考 [playground](https://github.com/weexteam/weex-devtool-iOS/blob/master/Devtools/playground/WeexDemo/WXDemoViewController.m)  `WXDemoViewController.m` 文件 
+  - 具体实现可参考 [Playground App](https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/WXDemoViewController.m)  `WXDemoViewController.m` 例子 
 
   在 Weex 页面初始化或 `viewDidLoad` 方法时添加注册通知，举例如下：
 
@@ -153,7 +161,6 @@ pod  'WXDevtool', '0.15.3', :configurations => ['Debug']，
       _instance.onFailed = ^(NSError *error) {
 
       };
-
       _instance.renderFinish = ^(UIView *view) {
           [weakSelf updateInstanceState:WeexInstanceAppear];
       };
