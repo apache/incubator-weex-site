@@ -21,11 +21,12 @@ It supports all kinds of weex components as its slides, especially the `indicato
 - `auto-play`: &lt;boolean&gt; `true` | `false`. This value determines whether the slides plays automatically after the page rendering finished. The default value is `false`.
 - `interval`: &lt;number&gt; millisecond. This value determines time interval for each page displayed in slider.
 - `index`: <number> . This value determines the  index of current shown slide. The default value is `0`.
-- `offset-x-accuracy {float}`：set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
-- `show-indicators {boolean}`：set whether to display indicator
-- `infinite {boolean}`：set whether the page in the slider can be scrolled
-- `scrollable {boolean}`：set whether slider pages can be switched by sliding gestures
-- `keep-index {boolean}`：set whether to maintain the index of the page after the data changes
+- `offset-x-accuracy {float}`: set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
+- `show-indicators {boolean}`: set whether to display indicator
+- `infinite {boolean}`: set whether the page in the slider can be scrolled
+- `scrollable {boolean}`: set whether slider pages can be switched by sliding gestures
+- `keep-index {boolean}`: set whether to maintain the index of the page after the data changes
+- `forbid-slide-animation {boolean}`: {iOS Only}. On iOS animation is enabled by default, and here we provide this attribute to shutdown animation on iOS.
 
 - `index {number}`: specify current page index of slider
   [try in dotWe](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
