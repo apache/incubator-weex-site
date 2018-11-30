@@ -47,6 +47,8 @@ I strongly recommend you use the latest version since both Weex SDK and devtools
 
 ## Integrate
 
+You can see the demo here [Playground App](https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/WXDemoViewController.m).
+
 ### Step 1. Add header file in `AppDelegate.m`
 
 ```
@@ -72,7 +74,9 @@ You can see the WXDevtool header file as follows:
 @end
 ```
 
-**Note: The inspector API must be called before weex is initialized**
+**Note: The inspector API must be called before weex is initialized **
+
+**if your application is a pure weex project, you need to ensure that the initial value of setDebug is `NO`, otherwise it may be white screen on the first page of the weex page**
 
 - `setDebug`
 
@@ -80,9 +84,8 @@ You can see the WXDevtool header file as follows:
 
 - `(void)launchDevToolDebugWithUrl:(NSString *)url;`
 
-  wssip was the wss address showing in the chrome address bar.
 
-open debug model and inspector model
+You can fix the link address by command `weex debug --port 8888 --channelid 1`, and connect debug server like below:
 
 eg：
 
@@ -90,21 +93,9 @@ eg：
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  
-  [WXDevTool setDebug:YES]; 
-  [WXDevTool launchDevToolDebugWithUrl:@"ws://wssip/debugProxy/native"]; 
+  [WXDevTool setDebug:NO]; 
+  [WXDevTool launchDevToolDebugWithUrl:@"ws://{ip}:{port}/debugProxy/native/{channelid}"]; 
  }
-```
-
-open inspect model, remove the `@selector
-(setDebug:)` or add `[WXDevTool setDebug:NO]`
-
-eg：
-
-```object-c
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
-
-	[WXDevTool launchDevToolDebugWithUrl:@"ws://wssip/debugProxy/native"]; 
-}
 ```
 
 ### Step 3. Auto refresh
