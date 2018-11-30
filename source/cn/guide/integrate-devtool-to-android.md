@@ -78,6 +78,11 @@ public class MyApplication extends Application {
   //WXSDKEngine.reload();
   }
 }
+
+private void initDebugEnvironment(boolean enable, String host) {
+  WXEnvironment.sRemoteDebugMode = enable;
+  WXEnvironment.sRemoteDebugProxyUrl = "ws://" + host + ":8088/debugProxy/native";
+}
 ```
 这种方式最直接, 在代码中直接hardcode了开启调试模式, 如果在SDK初始化之前调用甚至连`WXSDKEngine.reload()`都不需要调用, 接入方如果需要更灵活的策略可以将`initDebugEnvironment(boolean enable, String host)`和`WXSDKEngine.reload()`组合在一起在合适的位置和时机调用即可.（如果不是初始化之前调用，n那么每次调用initDebugEnvironment后必须调用WXSDKEngine.reload()刷新Weex引擎）
 
@@ -97,7 +102,7 @@ if (WXEnvironment.isApkDebugable()) {
 ````
 
 * 可选：调试刷新协议 <br>
-广播WXSDKInstance.ACTION_DEBUG_INSTANCE_REFRESH在调试模式切换和Chrome调试页面刷新时发出, 如有需要可以监听
+广播 ACTION_DEBUG_INSTANCE_REFRESH 在调试模式切换和 Chrome 调试页面刷新时发出，主要用来通知当前的 Weex容器以 Debug 模式重新加载当前页。在 playground 中的处理过程如下：
 ```
   public class RefreshBroadcastReceiver extends BroadcastReceiver {
     @Override
