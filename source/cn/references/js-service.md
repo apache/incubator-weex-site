@@ -105,7 +105,7 @@ service.register(SERVICE_NAME /* same string with native */, {
 ```html
 <script>
 var _InstanceService = new InstanceService(weex)
-var _NormalService = new service.normalService(weex)
+var _NormalService = new service.NormalService(weex)
 
 module.exports = {
   created: fucntion() {
