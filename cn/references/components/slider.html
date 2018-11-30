@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;slider&amp;gt;#&amp;lt;slider&amp;gt; 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。 子组件#支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：  &amp;lt;indicator&amp;gt;：用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。  特性# auto-play {boolean}">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.640Z">
+<meta property="og:updated_time" content="2018-11-30T10:07:38.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;slider&gt;">
 <meta name="twitter:description" content="&amp;lt;slider&amp;gt;#&amp;lt;slider&amp;gt; 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。 子组件#支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：  &amp;lt;indicator&amp;gt;：用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。  特性# auto-play {boolean}">
@@ -566,13 +566,13 @@
             
               
                 <li>
-                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
@@ -1064,13 +1064,13 @@
             
               
                 <li>
-                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
@@ -1155,7 +1155,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.640Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-30T10:07:38.884Z">Updated time: 30/11/2018</time> -->
 </header>
 
     <html><head></head><body><h1 class="article-heading"><span id="lt-slider-gt">&lt;slider&gt;</span><a href="#lt-slider-gt" class="header-anchor">#</a></h1><p><code>&lt;slider&gt;</code> &#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x5728;&#x524D;&#x7AEF;&#xFF0C;&#x8FD9;&#x79CD;&#x6548;&#x679C;&#x88AB;&#x79F0;&#x4E3A; <code>&#x8F6E;&#x64AD;&#x56FE;</code>&#x3002;</p>
@@ -1174,7 +1174,8 @@
 <li><code>show-indicators {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x663E;&#x793A;indicator</li>
 <li><code>index {number}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x663E;&#x793A;slider&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x9875;&#x9762;</li>
 <li><code>scrollable {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6ED1;&#x52A8;&#x624B;&#x52BF;&#x6765;&#x5207;&#x6362;slider&#x9875;&#x9762;</li>
-<li><p><code>keep-index {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;slider&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x540E;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x53D8;&#x5316;&#x524D;&#x7684;&#x9875;&#x9762;index</p>
+<li><code>keep-index {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;slider&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x540E;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x53D8;&#x5316;&#x524D;&#x7684;&#x9875;&#x9762;index</li>
+<li><p><code>forbid-slide-animation {boolean}</code>&#xFF1A;{iOS Only}. &#x5728; iOS &#x4E0A;&#xFF0C;slider &#x7EC4;&#x4EF6;&#x9ED8;&#x8BA4;&#x6709;&#x52A8;&#x753B;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x8BE5;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x5C06;&#x52A8;&#x753B;&#x5173;&#x6389;&#x3002;</p>
 </li>
 <li><p><code>index {number}</code>: &#x6307;&#x5B9A;&#x5F53;&#x524D;&#x5C55;&#x793A;&#x9875;&#x9762;&#x7684;&#x7D22;&#x5F15;<br><a href="http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082" target="_blank" rel="noopener">&#x4F53;&#x9A8C;&#x4E00;&#x4E0B;</a></p>
 </li>

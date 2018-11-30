@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://img.alicdn.com/tps/TB1vomVNXXXXXcXaXXXXXXXXXXX-2072-1202.png">
 <meta property="og:image" content="http://img.alicdn.com/tps/TB116y0NXXXXXXNaXXXXXXXXXXX-1448-668.png">
 <meta property="og:image" content="http://img.alicdn.com/tps/TB16frmNXXXXXa7XXXXXXXXXXXX-2106-1254.png">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.695Z">
+<meta property="og:updated_time" content="2018-11-30T10:07:38.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integrate Devtool to iOS">
 <meta name="twitter:description" content="Guide Integrate Devtool to iOS Installing Dependencies Integrate Step 1. Add header file in AppDelegate.m Step 3. Auto refresh     Usage with Debugger Server Envirenment       Guide#Weex devtools">
@@ -364,13 +364,13 @@
             
               
                 <li>
-                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
                 </li>
               
             
@@ -650,13 +650,13 @@
             
               
                 <li>
-                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
                 </li>
               
             
@@ -739,7 +739,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.695Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-30T10:07:38.886Z">Updated time: 30/11/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -781,26 +781,23 @@
 <p><img src="http://img.alicdn.com/tps/TB1A518NXXXXXbZXFXXXXXXXXXX-642-154.png" alt="_"></p>
 </li>
 </ol>
-<h2 class="article-heading"><span id="integrate">Integrate</span><a href="#integrate" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="step-1-add-header-file-in-appdelegate-m">Step 1. Add header file in <code>AppDelegate.m</code></span><a href="#step-1-add-header-file-in-appdelegate-m" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//1. From cocoapods</span><br><span class="line">#import &lt;TBWXDevtool/WXDevtool.h&gt;</span><br><span class="line"></span><br><span class="line">//2. From source code</span><br><span class="line">#import &quot;WXDevtool.h&quot;</span><br></pre></td></tr></tbody></table></figure>
+<h2 class="article-heading"><span id="integrate">Integrate</span><a href="#integrate" class="header-anchor">#</a></h2><p>You can see the demo here <a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/WXDemoViewController.m" target="_blank" rel="noopener">Playground App</a>.</p>
+<h3 class="article-heading"><span id="step-1-add-header-file-in-appdelegate-m">Step 1. Add header file in <code>AppDelegate.m</code></span><a href="#step-1-add-header-file-in-appdelegate-m" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//1. From cocoapods</span><br><span class="line">#import &lt;TBWXDevtool/WXDevtool.h&gt;</span><br><span class="line"></span><br><span class="line">//2. From source code</span><br><span class="line">#import &quot;WXDevtool.h&quot;</span><br></pre></td></tr></tbody></table></figure>
 <p>###Step 2. Initialize inspector when the APP launched</p>
 <p>You can see the WXDevtool header file as follows:</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">+ (void)setDebug:(BOOL)isDebug;</span><br><span class="line"></span><br><span class="line">+ (BOOL)isDebug;</span><br><span class="line"></span><br><span class="line">+ (void)launchDevToolDebugWithUrl:(NSString *)url;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>Note: The inspector API must be called before weex is initialized</strong></p>
+<p><strong>Note: The inspector API must be called before weex is initialized </strong></p>
+<p><strong>if your application is a pure weex project, you need to ensure that the initial value of setDebug is <code>NO</code>, otherwise it may be white screen on the first page of the weex page</strong></p>
 <ul>
 <li><p><code>setDebug</code></p>
 <p><code>setDebug</code> is used to control the state of debug mode, when its value is <code>YES</code>, open the debug mode, otherwise closed.</p>
 </li>
 <li><p><code>(void)launchDevToolDebugWithUrl:(NSString *)url;</code></p>
-<p>wssip was the wss address showing in the chrome address bar.</p>
 </li>
 </ul>
-<p>open debug model and inspector model</p>
+<p>You can fix the link address by command <code>weex debug --port 8888 --channelid 1</code>, and connect debug server like below:</p>
 <p>eg&#xFF1A;</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {</span><br><span class="line"> </span><br><span class="line">  [WXDevTool setDebug:YES]; </span><br><span class="line">  [WXDevTool launchDevToolDebugWithUrl:@&quot;ws://wssip/debugProxy/native&quot;]; </span><br><span class="line"> }</span><br></pre></td></tr></tbody></table></figure>
-<p>open inspect model, remove the <code>@selector
-(setDebug:)</code> or add <code>[WXDevTool setDebug:NO]</code></p>
-<p>eg&#xFF1A;</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { </span><br><span class="line"></span><br><span class="line">	[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://wssip/debugProxy/native&quot;]; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {</span><br><span class="line"> </span><br><span class="line">  [WXDevTool setDebug:NO]; </span><br><span class="line">  [WXDevTool launchDevToolDebugWithUrl:@&quot;ws://{ip}:{port}/debugProxy/native/{channelid}&quot;]; </span><br><span class="line"> }</span><br></pre></td></tr></tbody></table></figure>
 <h3 class="article-heading"><span id="step-3-auto-refresh">Step 3. Auto refresh</span><a href="#step-3-auto-refresh" class="header-anchor">#</a></h3><p>Q: Why do we need auto refresh feature?</p>
 <p>A: As shown in future, when you click the debugger button, Javascript runtime environment will change from the phone (JavaScriptCore) to PC (Chrome V8), then Weex need to re-initialize the Weex environment, re-render the page. Page rendering is required for the developer to add on its own page.</p>
 <p><img src="http://img.alicdn.com/tps/TB1xRHhNXXXXXakXpXXXXXXXXXX-1498-668.png" alt="_debug"></p>

@@ -5,24 +5,20 @@
   
   <title>集成 Devtools 到 iOS | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概要 iOS 应用接入DevTool 添加依赖 方法1: cocoapods 依赖 方法二：github 源码依赖 集成功能 附加页面刷新功能     和DebugServer配合使用 环境准备      概要#Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入">
+  <meta name="description" content="概要 iOS 应用接入DevTool 添加依赖 方法1: cocoapods 依赖 方法二：github 源码依赖 集成功能 附加页面刷新功能     功能使用      概要#Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="集成 Devtools 到 iOS">
 <meta property="og:url" content="https://weex.apache.org/cn/guide/integrate-devtool-to-ios.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="概要 iOS 应用接入DevTool 添加依赖 方法1: cocoapods 依赖 方法二：github 源码依赖 集成功能 附加页面刷新功能     和DebugServer配合使用 环境准备      概要#Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入">
+<meta property="og:description" content="概要 iOS 应用接入DevTool 添加依赖 方法1: cocoapods 依赖 方法二：github 源码依赖 集成功能 附加页面刷新功能     功能使用      概要#Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。">
 <meta property="og:locale" content="cn">
 <meta property="og:image" content="http://img.alicdn.com/tps/TB1MXjjNXXXXXXlXpXXXXXXXXXX-795-326.png">
 <meta property="og:image" content="http://img.alicdn.com/tps/TB1A518NXXXXXbZXFXXXXXXXXXX-642-154.png">
 <meta property="og:image" content="http://img.alicdn.com/tps/TB1xRHhNXXXXXakXpXXXXXXXXXX-1498-668.png">
-<meta property="og:image" content="http://img.alicdn.com/tps/TB19Yq5NXXXXXXVXVXXXXXXXXXX-343-344.png">
-<meta property="og:image" content="http://img.alicdn.com/tps/TB1vomVNXXXXXcXaXXXXXXXXXXX-2072-1202.png">
-<meta property="og:image" content="http://img.alicdn.com/tps/TB116y0NXXXXXXNaXXXXXXXXXXX-1448-668.png">
-<meta property="og:image" content="http://img.alicdn.com/tps/TB16frmNXXXXXa7XXXXXXXXXXXX-2106-1254.png">
-<meta property="og:updated_time" content="2018-11-11T13:54:10.634Z">
+<meta property="og:updated_time" content="2018-11-30T10:07:38.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成 Devtools 到 iOS">
-<meta name="twitter:description" content="概要 iOS 应用接入DevTool 添加依赖 方法1: cocoapods 依赖 方法二：github 源码依赖 集成功能 附加页面刷新功能     和DebugServer配合使用 环境准备      概要#Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入">
+<meta name="twitter:description" content="概要 iOS 应用接入DevTool 添加依赖 方法1: cocoapods 依赖 方法二：github 源码依赖 集成功能 附加页面刷新功能     功能使用      概要#Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 iOS 端如何接入 Weex Devtools。">
 <meta name="twitter:image" content="http://img.alicdn.com/tps/TB1MXjjNXXXXXXlXpXXXXXXXXXX-795-326.png">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
@@ -241,11 +237,6 @@
         
       
     
-      
-      
-        
-      
-    
 
     
       <li>
@@ -303,12 +294,6 @@
               
                 <li>
                   <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
-                </li>
-              
-            
-              
-                <li>
-                  <a href="/cn/guide/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
                 </li>
               
             
@@ -505,11 +490,6 @@
         
       
     
-      
-      
-        
-      
-    
 
     
       <li>
@@ -567,12 +547,6 @@
               
                 <li>
                   <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
-                </li>
-              
-            
-              
-                <li>
-                  <a href="/cn/guide/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
                 </li>
               
             
@@ -695,7 +669,7 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-11-11T13:54:10.634Z">Updated time: 11/11/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-11-30T10:07:38.883Z">Updated time: 30/11/2018</time> -->
 </header>
 
     <html><head></head><body><div class="article-toc">
@@ -713,8 +687,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#he-debugserver-pei-he-shi-yong">&#x548C;DebugServer&#x914D;&#x5408;&#x4F7F;&#x7528;</a></li>
-<li><a href="#huan-jing-zhun-bei">&#x73AF;&#x5883;&#x51C6;&#x5907;</a></li>
+<li><a href="#gong-neng-shi-yong">&#x529F;&#x80FD;&#x4F7F;&#x7528;</a></li>
 </ul>
 <!-- tocstop -->
 </div>
@@ -744,12 +717,17 @@
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//&#x65B9;&#x6CD5;1 pod&#x4F9D;&#x8D56;&#x65B9;&#x5F0F;</span><br><span class="line">#import &lt;TBWXDevtool/WXDevtool.h&gt;</span><br><span class="line"></span><br><span class="line">//&#x65B9;&#x6CD5;2 &#x6E90;&#x7801;&#x4F9D;&#x8D56;&#x65B9;&#x5F0F;</span><br><span class="line">#import &quot;WXDevtool.h&quot;</span><br></pre></td></tr></tbody></table></figure>
 <p>&#x67E5;&#x770B; WXDevtool &#x5934;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@interface WXDevTool : NSObject</span><br><span class="line"></span><br><span class="line">+ (void)setDebug:(BOOL)isDebug;</span><br><span class="line"></span><br><span class="line">+ (BOOL)isDebug;</span><br><span class="line"></span><br><span class="line">+ (void)launchDevToolDebugWithUrl:(NSString *)url;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></tbody></table></figure>
-<p><code>setDebug</code>&#xFF1A;&#x53C2;&#x6570;&#x4E3A; <code>YES</code> &#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5F00;&#x542F; debug &#x6A21;&#x5F0F;&#xFF0C;&#x53CD;&#x4E4B;&#x5173;&#x95ED;&#xFF0C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x5982;&#x4E0B;&#x6240;&#x8FF0;</p>
-<p>&#x5728;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://30.30.31.7:8088/debugProxy/native&quot;];</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x5176;&#x4E2D;&#x7684; ws &#x5730;&#x5740;&#x6B63;&#x662F; <code>Weex debug</code> &#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x76F4;&#x63A5; copy &#x5230; <code>launchDevToolDebugWithUrl</code> &#x63A5;&#x53E3;&#x4E2D;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x7A0B;&#x5E8F;&#x4E00;&#x542F;&#x52A8;&#x5C31;&#x5F00;&#x542F; Weex &#x8C03;&#x8BD5;&#xFF0C;<strong>&#x9700;&#x8981;&#x5728; WeexSDK &#x5F15;&#x64CE;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x524D;</strong>&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[WXDevTool setDebug:YES];</span><br><span class="line">[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://30.30.31.7:8088/debugProxy/native&quot;];</span><br></pre></td></tr></tbody></table></figure>
+<p><code>setDebug</code>&#xFF1A;&#x53C2;&#x6570;&#x4E3A; <code>YES</code> &#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5F00;&#x542F;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#xFF0C;&#x53CD;&#x4E4B;&#x5173;&#x95ED;&#xFF0C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x5982;&#x4E0B;&#x6240;&#x8FF0;</p>
+<h4 class="article-heading"><span id="sao-ma-diao-shi">&#x626B;&#x7801;&#x8C03;&#x8BD5;</span><a href="#sao-ma-diao-shi" class="header-anchor">#</a></h4><p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x5B58;&#x5728;&#x626B;&#x7801;&#x529F;&#x80FD;&#x6216;&#x5373;&#x5C06;&#x96C6;&#x6210;&#x626B;&#x7801;&#x529F;&#x80FD;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x96C6;&#x6210;&#xFF0C;Demo &#x5730;&#x5740;&#x89C1;: <a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/Scanner/WXScannerVC.m" target="_blank" rel="noopener">Playground App</a></p>
+<p>&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x4E3A;&#x83B7;&#x53D6;&#x626B;&#x7801;&#x94FE;&#x63A5;&#x4E2D;&#x7684;<code>_wx_devtool</code>&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x5C06;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#x4E0E;&#x8C03;&#x8BD5;&#x670D;&#x52A1;&#x5668;&#x94FE;&#x63A5;&#xFF1A;</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://{ip}:{port}/debugProxy/native/{channelid}&quot;];</span><br></pre></td></tr></tbody></table></figure>
+<h4 class="article-heading"><span id="zhi-jie-lian-jie">&#x76F4;&#x63A5;&#x94FE;&#x63A5;</span><a href="#zhi-jie-lian-jie" class="header-anchor">#</a></h4><p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x8BA9;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x94FE;&#x63A5;&#x4E0A;Weex&#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x96C6;&#x6210;&#xFF1A;</p>
+<ol>
+<li>&#x547D;&#x4EE4;&#x884C;&#x8FD0;&#x884C;<code>weex debug --port 8888 --channelid 1</code> &#x53BB;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x53F7;&#x53CA;&#x8C03;&#x8BD5;&#x8FDB;&#x7A0B;ID.</li>
+<li>&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5230;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x6CE8;&#x610F;&#x66FF;&#x6362;&#x5BF9;&#x5E94;&#x7684;<code>{ip}</code>,<code>{port}</code>,<code>{channelid}</code>&#x4E3A;&#x4F60;&#x672C;&#x5730;&#x7684;&#x503C;&#x3002;</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[WXDevTool setDebug:NO];</span><br><span class="line">[WXDevTool launchDevToolDebugWithUrl:@&quot;ws://{ip}:{port}/debugProxy/native/{channelid}&quot;];</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5982;&#x679C;&#x7A0B;&#x5E8F;&#x4E00;&#x542F;&#x52A8;&#x5C31;&#x5F00;&#x542F; Weex &#x8C03;&#x8BD5;&#xFF0C;<strong>&#x9700;&#x8981;&#x5728; WeexSDK &#x5F15;&#x64CE;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x524D;</strong>&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#xFF0C;&#x540C;&#x65F6;&#x9700;&#x8981;&#x5C06;Debug&#x5F00;&#x5173;&#x8BBE;&#x7F6E;&#x4E3A;<code>NO</code>&#xFF0C;&#x8FDB;&#x5165;&#x8C03;&#x8BD5;&#x754C;&#x9762;&#x540E;&#x518D;&#x6253;&#x5F00;<code>JS Debug</code>&#x5F00;&#x5173;&#xFF08;&#x670D;&#x52A1;&#x94FE;&#x63A5;&#x65F6;&#x5BF9;&#x4E8E;&#x7EAF;weex&#x9879;&#x76EE;&#x4F1A;&#x4E22;&#x5931;&#x9996;&#x5C4F;Weex&#x9875;&#x9762;&#x7684;&#x6D88;&#x606F;&#x5BFC;&#x81F4;&#x767D;&#x5C4F;&#xFF09;&#x3002;</p>
 <h3 class="article-heading"><span id="fu-jia-ye-mian-shua-xin-gong-neng">&#x9644;&#x52A0;&#x9875;&#x9762;&#x5237;&#x65B0;&#x529F;&#x80FD;</span><a href="#fu-jia-ye-mian-shua-xin-gong-neng" class="header-anchor">#</a></h3><ul>
 <li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x9875;&#x9762;&#x5237;&#x65B0;&#x529F;&#x80FD;&#xFF1F;</p>
 <p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5F53;&#x70B9;&#x51FB; debugger &#x6309;&#x94AE;&#x65F6;&#xFF0C;js &#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4F1A;&#x4ECE;&#x624B;&#x673A;&#x7AEF;&#xFF08;JavaScriptCore&#xFF09;&#x5207;&#x6362;&#x5230; Chrome&#xFF08;V8&#xFF09;&#xFF0C;&#x8FD9;&#x65F6;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316; Weex &#x73AF;&#x5883;&#xFF0C;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x9875;&#x9762;&#x3002;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x662F;&#x9700;&#x8981;&#x63A5;&#x5165;&#x65B9;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9875;&#x9762;&#x6DFB;&#x52A0;&#x3002;</p>
@@ -757,44 +735,24 @@
 </li>
 <li><p>&#x4EC0;&#x4E48;&#x573A;&#x666F;&#x4E0B;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x9875;&#x9762;&#x5237;&#x65B0;&#x529F;&#x80FD;?</p>
 <ul>
-<li>&#x70B9;&#x51FB; debugger &#x6309;&#x94AE;&#x8C03;&#x8BD5;</li>
-<li>&#x5207;&#x6362; RemoteDebug &#x5F00;&#x5173;</li>
+<li>&#x5207;&#x6362; JSDebug &#x5F00;&#x5173;&#x65F6;&#x5237;&#x65B0;&#x9875;&#x9762;</li>
 <li>&#x5237;&#x65B0; Chrome &#x9875;&#x9762;&#xFF08;command+R&#xFF09;</li>
 </ul>
 </li>
 <li><p>&#x5982;&#x4F55;&#x6DFB;&#x52A0;&#x5237;&#x65B0;  </p>
 <ul>
-<li>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x53EF;&#x53C2;&#x8003; <a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/Devtools/playground/WeexDemo/WXDemoViewController.m" target="_blank" rel="noopener">playground</a>  <code>WXDemoViewController.m</code> &#x6587;&#x4EF6; </li>
+<li>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x53EF;&#x53C2;&#x8003; <a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/WXDemoViewController.m" target="_blank" rel="noopener">Playground App</a>  <code>WXDemoViewController.m</code> &#x4F8B;&#x5B50; </li>
 </ul>
 <p>&#x5728; Weex &#x9875;&#x9762;&#x521D;&#x59CB;&#x5316;&#x6216; <code>viewDidLoad</code> &#x65B9;&#x6CD5;&#x65F6;&#x6DFB;&#x52A0;&#x6CE8;&#x518C;&#x901A;&#x77E5;&#xFF0C;&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[[NSNotificationCenter defaultCenter] addObserver:self selector:notificationRefreshInstance: name:@&quot;RefreshInstance&quot; object:nil];</span><br></pre></td></tr></tbody></table></figure>
 <p>&#x6700;&#x540E;<strong>&#x5343;&#x4E07;&#x8BB0;&#x5F97;</strong>&#x5728; <code>dealloc</code> &#x65B9;&#x6CD5;&#x4E2D;&#x53D6;&#x6D88;&#x901A;&#x77E5;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- (void)dealloc</span><br><span class="line">{</span><br><span class="line">    [[NSNotificationCenter defaultCenter] removeObserver:self];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>&#x9875;&#x9762;&#x5237;&#x65B0;&#x5B9E;&#x73B0;&#xFF0C;&#x5148;&#x9500;&#x6BC1;&#x5F53;&#x524D; instance&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x521B;&#x5EFA; instance&#xFF0C;&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> - (void)render</span><br><span class="line">  {</span><br><span class="line">    CGFloat width = self.view.frame.size.width;</span><br><span class="line">    [_instance destroyInstance];</span><br><span class="line">    _instance = [[WXSDKInstance alloc] init];</span><br><span class="line">    _instance.viewController = self;</span><br><span class="line">    _instance.frame = CGRectMake(self.view.frame.size.width-width, 0, width, _weexHeight);</span><br><span class="line"></span><br><span class="line">    __weak typeof(self) weakSelf = self;</span><br><span class="line">    _instance.onCreate = ^(UIView *view) {</span><br><span class="line">        [weakSelf.weexView removeFromSuperview];</span><br><span class="line">        weakSelf.weexView = view;</span><br><span class="line">        [weakSelf.view addSubview:weakSelf.weexView];</span><br><span class="line">        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification,  weakSelf.weexView);</span><br><span class="line">    };</span><br><span class="line">    _instance.onFailed = ^(NSError *error) {</span><br><span class="line"></span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    _instance.renderFinish = ^(UIView *view) {</span><br><span class="line">        [weakSelf updateInstanceState:WeexInstanceAppear];</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    _instance.updateFinish = ^(UIView *view) {</span><br><span class="line">    };</span><br><span class="line">    if (!self.url) {</span><br><span class="line">        return;</span><br><span class="line">    }</span><br><span class="line">    NSURL *URL = [self testURL: [self.url absoluteString]];</span><br><span class="line">    NSString *randomURL = [NSString stringWithFormat:@&quot;%@?random=%d&quot;,URL.absoluteString,arc4random()];</span><br><span class="line">    [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@{@&quot;bundleUrl&quot;:URL.absoluteString} data:nil];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"> - (void)render</span><br><span class="line">  {</span><br><span class="line">    CGFloat width = self.view.frame.size.width;</span><br><span class="line">    [_instance destroyInstance];</span><br><span class="line">    _instance = [[WXSDKInstance alloc] init];</span><br><span class="line">    _instance.viewController = self;</span><br><span class="line">    _instance.frame = CGRectMake(self.view.frame.size.width-width, 0, width, _weexHeight);</span><br><span class="line"></span><br><span class="line">    __weak typeof(self) weakSelf = self;</span><br><span class="line">    _instance.onCreate = ^(UIView *view) {</span><br><span class="line">        [weakSelf.weexView removeFromSuperview];</span><br><span class="line">        weakSelf.weexView = view;</span><br><span class="line">        [weakSelf.view addSubview:weakSelf.weexView];</span><br><span class="line">        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification,  weakSelf.weexView);</span><br><span class="line">    };</span><br><span class="line">    _instance.onFailed = ^(NSError *error) {</span><br><span class="line"></span><br><span class="line">    };</span><br><span class="line">    _instance.renderFinish = ^(UIView *view) {</span><br><span class="line">        [weakSelf updateInstanceState:WeexInstanceAppear];</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    _instance.updateFinish = ^(UIView *view) {</span><br><span class="line">    };</span><br><span class="line">    if (!self.url) {</span><br><span class="line">        return;</span><br><span class="line">    }</span><br><span class="line">    NSURL *URL = [self testURL: [self.url absoluteString]];</span><br><span class="line">    NSString *randomURL = [NSString stringWithFormat:@&quot;%@?random=%d&quot;,URL.absoluteString,arc4random()];</span><br><span class="line">    [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@{@&quot;bundleUrl&quot;:URL.absoluteString} data:nil];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <p><em>&#x8BF4;&#x660E;&#xFF1A;&#x76EE;&#x524D;&#x7248;&#x672C;&#x9700;&#x8981;&#x6CE8;&#x518C;&#x7684;&#x901A;&#x77E5;&#x540D;&#x79F0;&#x4E3A;&#x56FA;&#x5B9A;&#x7684; &#x201C;RefreshInstance&#x201D;&#xFF0C;&#x4E0B;&#x4E2A;&#x7248;&#x672C;&#x4F1A;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49; name &#x3002;</em></p>
-<h1 class="article-heading"><span id="he-debugserver-pei-he-shi-yong">&#x548C;DebugServer&#x914D;&#x5408;&#x4F7F;&#x7528;</span><a href="#he-debugserver-pei-he-shi-yong" class="header-anchor">#</a></h1><h1 class="article-heading"><span id="huan-jing-zhun-bei">&#x73AF;&#x5883;&#x51C6;&#x5907;</span><a href="#huan-jing-zhun-bei" class="header-anchor">#</a></h1><p>&#x9996;&#x5148;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5; Debugger Server,&#x8BE6;&#x60C5;&#x8BF7;&#x67E5;&#x770B; <a href="../../guide/index.html">&#x300A;Get started&#x300B;</a></p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">npm install -g weex-toolkit</span><br></pre></td></tr></tbody></table></figure>
-<p>&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x542F;&#x52A8; DebugServer</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">weex debug</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">&#x9875;&#x9762;&#x4E0B;&#x65B9;&#x4F1A;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E8C;&#x7EF4;&#x7801;&#x7528;&#x4E8E;&#x5411; App &#x4F20;&#x9012; Server &#x7AEF;&#x7684;&#x5730;&#x5740;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</span><br><span class="line"></span><br><span class="line">## &#x90E8;&#x5206;&#x529F;&#x80FD;&#x5C55;&#x793A;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1. &#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x63A7;&#x5236;</span><br><span class="line"></span><br><span class="line">  ![_](http://img.alicdn.com/tps/TB1F8WONXXXXXa_apXXXXXXXXXX-1706-674.png)</span><br><span class="line">  &#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x53EF;&#x4EE5;&#x63A7;&#x5236;native&#x7AEF;&#x5173;&#x4E8E;weex&#x7684;&#x65E5;&#x5FD7;&#x3002;</span><br><span class="line"></span><br><span class="line">  &#x65E5;&#x8BB0;&#x7EA7;&#x522B;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</span><br></pre></td></tr></tbody></table></figure>
-<p>  Off       = 0,<br>  Error     = Error<br>  Warning   = Error | Warning,<br>  Info      = Warning | Info,<br>  Log       = Log | Info,<br>  Debug     = Log | Debug,<br>  All       = NSUIntegerMax<br>  <code>`</code></p>
-<p>  &#x89E3;&#x91CA;&#xFF1A;off &#x5173;&#x95ED;&#x65E5;&#x5FD7;&#xFF0C;Warning &#x5305;&#x542B; Error&#x3001;Warning&#xFF0C;Info &#x5305;&#x542B; Warning&#x3001;Info&#xFF0C;Log &#x5305;&#x542B; Info&#x3001;Log&#xFF0C;Debug &#x5305;&#x542B; Log&#x3001;Debug&#xFF0C;All &#x5305;&#x542B;&#x6240;&#x6709;&#x3002;</p>
-<ol start="2">
-<li><p>Vdom/Native tree&#x9009;&#x62E9;</p>
-<p><img src="http://img.alicdn.com/tps/TB19Yq5NXXXXXXVXVXXXXXXXXXX-343-344.png" alt=""></p>
-<p><em>&#x56FE;&#x4E00;</em></p>
-<p><img src="http://img.alicdn.com/tps/TB1vomVNXXXXXcXaXXXXXXXXXXX-2072-1202.png" alt="&#x56FE;&#x4E8C;"></p>
-<p><em>&#x56FE;&#x4E8C;</em></p>
-<p>&#x70B9;&#x51FB;&#x56FE;&#x4E00;&#x6240;&#x793A;native&#x9009;&#x9879;&#x4F1A;&#x6253;&#x5F00;&#x56FE;&#x4E8C;&#xFF0C;&#x65B9;&#x4FBF;&#x67E5;&#x770B;native tree&#x4EE5;&#x53CA;view property</p>
-<p><img src="http://img.alicdn.com/tps/TB116y0NXXXXXXNaXXXXXXXXXXX-1448-668.png" alt="vdom"></p>
-<p><em>&#x56FE;&#x4E09;</em></p>
-<p><img src="http://img.alicdn.com/tps/TB16frmNXXXXXa7XXXXXXXXXXXX-2106-1254.png" alt="vdom_tree"></p>
-<p><em>&#x56FE;&#x56DB;</em></p>
-<p>&#x70B9;&#x51FB;&#x56FE;&#x4E09;&#x6240;&#x793A; vdom &#x9009;&#x9879;&#x4F1A;&#x6253;&#x5F00;&#x56FE;&#x56DB;&#xFF0C;&#x65B9;&#x4FBF;&#x67E5;&#x770B; vdom tree &#x4EE5;&#x53CA; component property&#x3002;</p>
-</li>
-</ol>
+<h1 class="article-heading"><span id="gong-neng-shi-yong">&#x529F;&#x80FD;&#x4F7F;&#x7528;</span><a href="#gong-neng-shi-yong" class="header-anchor">#</a></h1><p>&#x6587;&#x6863;&#x89C1; <a href="../tools/toolkit.html#debug">Weex Debugger &#x4F7F;&#x7528;&#x6587;&#x6863;</a>&#x3002;</p>
 </body></html>
     <div class="article-tips">
       <p class="tips-text">
