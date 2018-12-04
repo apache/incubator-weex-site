@@ -66,6 +66,12 @@
       <td>number</td>
       <td>10</td>
     </tr>
+    <tr>
+      <td>scrollable</td>
+      <td>控制list是否可以滚动</td>
+      <td>boolean</td>
+      <td>true/false</td>
+    </tr>
   </tbody>
 </table>
 
