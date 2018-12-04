@@ -45,6 +45,7 @@ version: 2.1
 - `loadmoreoffset {number}`：默认值为 0，触发 `loadmore` 事件所需要的垂直偏移距离（设备屏幕底部与 `<list>` 底部之间的距离）。当 `<list>` 的滚动条滚动到足够接近 `<list>` 底部时将会触发 `loadmore` 这个事件。
 - `offset-accuracy {number}` <sup class="wx-v">0.11+</sup>：控制`onscroll`事件触发的频率，默认值为10，表示两次`onscroll`事件之间列表至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。
 -  `pagingEnabled {boolean}`：可选值为 true/ false，默认值为 false。控制是否每次滚动一个cell，并最终定位在元素中心位置，类似垂直的viewpage交互。则对应 `0`<span class="api-version">v0.20+</span>.[pagingEnabled示例]（http://dotwe.org/vue/1323c218072f17f10e14a5c336dac3c4）
+-  `scrollable {boolean}`：可选值为 true/ false，默认值为 true。控制list是否可以滚动
 
   ![mobile_preview](../images/list_4.jpg)
   
