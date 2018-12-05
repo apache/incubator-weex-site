@@ -21,6 +21,8 @@ version: 2.1
 - `src {string}`：内嵌的视频指向的URL
 - `play-status {string}`：可选值为 `play` | `pause`，用来控制视频的播放状态，`play` 或者 `pause`，默认值是 `pause`。
 - `auto-play {boolean}`：可选值为  `true` | `false`，当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 `false`。
+- `poster {string}` <span class="weex-version">v0.18+ & iOS only</span>：指定视频首图的图片链接。
+- `controls {string}` <span class="weex-version">v0.19+</span>：可选值为  `controls` | `nocontrols`，控制视频播放组件是否显示回放控制面板，默认会显示，当指定为 `nocontrols` 时不显示回放控制面板。
 
 ## 样式
 
