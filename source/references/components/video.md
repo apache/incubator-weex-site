@@ -19,6 +19,8 @@ The video component can be used to embed video content in a weex page.
 * src: &lt;string&gt; The URL of the video to embed.
 * play-status: &lt;boolean&gt; play | pause. Use it to control video's play/pause status. Default value is pause.
 * auto-play: &lt;boolean&gt; true | false. Use it to control whether it is playing when the page initialization finished. Defalut value is false.
+* poster: &lt;string&gt; <span class="weex-version">v0.18+ & iOS only</span> Post image URL of this video if any.
+* controls: &lt;string&gt; <span class="weex-version">v0.19+</span> If set to 'nocontrols', native video component will hide its play-back control panel.
 
 ## Styles
 common styles: check out [common styles for components](/wiki/common-styles.html)
