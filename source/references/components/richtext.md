@@ -79,4 +79,4 @@ Weex [common events](https://weex-project.io/references/common-event.html) are s
 
 ## Example
 
-[richtext 示例](http://dotwe.org/vue/f60fa4323e8248c91ed88d53af2ce9fc)
+[richtext example](http://dotwe.org/vue/f60fa4323e8248c91ed88d53af2ce9fc)
