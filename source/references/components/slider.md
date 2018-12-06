@@ -26,7 +26,7 @@ It supports all kinds of weex components as its slides, especially the `indicato
 - `infinite {boolean}`: set whether the page in the slider can be scrolled
 - `scrollable {boolean}`: set whether slider pages can be switched by sliding gestures
 - `keep-index {boolean}`: set whether to maintain the index of the page after the data changes
-- `forbid-slide-animation {boolean}`: {iOS Only}. On iOS animation is enabled by default, and here we provide this attribute to shutdown animation on iOS.
+- `forbid-slide-animation {boolean}`: <sup class="wx-v">0.21+ & iOS only</sup>. On iOS animation is enabled by default, and here we provide this attribute to shutdown animation on iOS.
 
 - `index {number}`: specify current page index of slider
   [try in dotWe](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
