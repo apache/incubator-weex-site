@@ -29,7 +29,7 @@ version: 2.1
 - `index {number}`：设置显示slider的第几个页面
 - `scrollable {boolean}`：设置是否可以通过滑动手势来切换slider页面
 - `keep-index {boolean}`：设置slider中的数据发生变化后是否保持变化前的页面index
-- `forbid-slide-animation {boolean}`：{iOS Only}. 在 iOS 上，slider 组件默认有动画，这里提供该属性可以将动画关掉。
+- `forbid-slide-animation {boolean}`：<sup class="wx-v">0.21+ & iOS only</sup>. 在 iOS 上，slider 组件默认有动画，这里提供该属性可以将动画关掉。
 
 - `index {number}`: 指定当前展示页面的索引
   [体验一下](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
