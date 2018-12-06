@@ -296,7 +296,6 @@ WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，自定
 - (WXCoreAlignSelf)getCssStyleAlignSelf;
 - (WXCorePositionType)getCssStylePositionType;
 - (NSString*)convertLayoutValueToStyleValue:(NSString*)valueName;
-- (CGFloat)safeContainerStyleWidth;
  ```
 
 ## 自定义 handler 
