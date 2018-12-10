@@ -5,36 +5,41 @@ storage 常用在一些被用户经常查询，但是又不频繁更新的数据
 ## API
 ### storage.setItem(key, value, callback)
 该方法可以通过键值对的形式将数据存储到本地。同时可以通过该方法，更新已有的数据。
-| 参数        | 说明                | 类型   |
-| ---------- | -------------      | -----  | ----- |
+
+|参数|说明 |类型|
+|-----|-----|-----|
 | key    | 要存储的键，不允许是 `""` 或 `null` | string |
 | value   | 要存储的值，不允许是 `""` 或 `null` | string |
 | callback   | 执行操作成功后的回调<br>`e.result`：表示设置是否成功，如果成功返回 `"success"`<br>`e.data`：`undefined` 表示设置成功，`invalid_param` 表示 key/value 为 `""` 或者 `null` | function(e)  |
 
 ### storage.getItem(key, callback)
 传入键名返回对应的键值。
-| 参数        | 说明                | 类型   |
-| ---------- | -------------      | -----  | ----- |
+
+|参数|说明 |类型|
+|-----|-----|-----|
 | key    | 要获取的值的名称，不允许是 `""` 或 `null` | string |
 | callback   | 执行操作成功后的回调<br>`e.result`：表示操作是否成功，如果成功返回 `"success"`<br>`e.data`：获取对应的键值字符串，如果没有找到则返回 `undefined` | function(e)  |
 
 ### storage.removeItem(key, callback)
 传入一个键名将会删除本地存储中对应的键值。
-| 参数        | 说明                | 类型   |
-| ---------- | -------------      | -----  | ----- |
+
+|参数|说明 |类型|
+|-----|-----|-----|
 | key    | 要删除的值的名称，不允许是 `""` 或 `null` | string |
 | callback   | 执行操作成功后的回调<br>`e.result`：表示删除是否成功，如果成功返回 `"success"`<br>`e.data`：`undefined` 表示删除成功| function(e)  |
 
 ### storage.length(callback)
 返回本地存储的数据中所有存储项数量的整数。
-| 参数        | 说明                | 类型   |
-| ---------- | -------------      | -----  | ----- |
+
+|参数|说明 |类型|
+|-----|-----|-----|
 | callback   | 执行操作成功后的回调<br>`e.result`：表示操作是否成功，如果成功返回 `"success"`<br>`e.data`：当前已存储项的数量| function(e)  |
 
 ### storage.getAllKeys(callback)
 返回一个包含全部已存储项键名的数组。
-| 参数        | 说明                | 类型   |
-| ---------- | -------------      | -----  | ----- |
+
+|参数|说明 |类型|
+|-----|-----|-----|
 | callback   | 执行操作成功后的回调<br>`e.result`：表示操作是否成功，如果成功返回 `"success"`<br>`e.data`：所有键名组成的数组| function(e)  |
 
 ## Demo
