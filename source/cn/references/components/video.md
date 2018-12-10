@@ -5,43 +5,31 @@ group: 内置组件
 order: 8.25
 version: 2.1
 ---
-
-# &lt;video&gt;
-
-<span class="weex-version">v0.6.1+</span>
-
-`<video>` 组件可以让我们在 Weex 页面中嵌入视频内容。
+  
+Video 组件用于在页面中嵌入视频内容。
 
 ## 子组件
 
-- `<text>` 是唯一合法的子组件。
+`text` 是唯一合法的子组件。
 
-### 特性
+## 属性
 
-- `src {string}`：内嵌的视频指向的URL
-- `play-status {string}`：可选值为 `play` | `pause`，用来控制视频的播放状态，`play` 或者 `pause`，默认值是 `pause`。
-- `auto-play {boolean}`：可选值为  `true` | `false`，当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 `false`。
-- `poster {string}` <span class="weex-version">v0.18+ & iOS only</span>：指定视频首图的图片链接。
-- `controls {string}` <span class="weex-version">v0.19+</span>：可选值为  `controls` | `nocontrols`，控制视频播放组件是否显示回放控制面板，默认会显示，当指定为 `nocontrols` 时不显示回放控制面板。
+* **src**, string. 内嵌的视频指向的URL。
+* **play-status**, string. 可选值为 `play` | `pause`，用来控制视频的播放状态，`play` 或者 `pause`，默认值是 `pause`。
+* **auto-play**, boolean. 当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 `false`。
+* **poster**, string, <span class="weex-version">v0.18+ & iOS</span>. 指定视频首图的图片链接。
+* **controls**, string. 可选值为  `controls` | `nocontrols`，控制视频播放组件是否显示回放控制面板，默认会显示，当指定为 `nocontrols` 时不显示回放控制面板。
 
 ## 样式
 
-- 通用样式：支持所有通用样式
-
-  - 盒模型
-  - `flexbox` 布局
-  - `position`
-  - `opacity`
-  - `background-color`
-
-  查看 [组件通用样式](/cn/wiki/common-styles.html)
+* **通用样式** 该组件支持所有[通用样式](/cn/wiki/common-styles.html)。
 
 ## 事件
 
-- `start`：当 playback 的状态是 Playing 时触发
-- `pause`：当 playback 的状态是 Paused 时触发
-- `finish`：当 playback 的状态是 Finished 时触发
-- `fail`：当 playback 状态是 Failed 时触发
+* **start** 当 playback 的状态是 Playing 时触发。
+* **pause** 当 playback 的状态是 Paused 时触发。
+* **finish** 当 playback 的状态是 Finished 时触发。
+* **fail** 当 playback 状态是 Failed 时触发。
 
 ## 示例
 
@@ -93,5 +81,4 @@ version: 2.1
   }
 </script>
 ```
-
 [try it](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
