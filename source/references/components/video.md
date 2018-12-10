@@ -6,35 +6,30 @@ order: 8.25
 version: 2.1
 ---
 
-# &lt;video&gt;
-<span class="weex-version">v0.6.1+</span>
-
-The video component can be used to embed video content in a weex page.
+The video component can be used to embed video content in a Weex page.
 
 ## Child Components
-* text is the only valid type of child component.
+
+A `text` is the only valid type of child component.
 
 ## Attributes
 
-* src: &lt;string&gt; The URL of the video to embed.
-* play-status: &lt;boolean&gt; play | pause. Use it to control video's play/pause status. Default value is pause.
-* auto-play: &lt;boolean&gt; true | false. Use it to control whether it is playing when the page initialization finished. Defalut value is false.
-* poster: &lt;string&gt; <span class="weex-version">v0.18+ & iOS only</span> Post image URL of this video if any.
-* controls: &lt;string&gt; <span class="weex-version">v0.19+</span> If set to 'nocontrols', native video component will hide its play-back control panel.
+* **src**, string. The URL of the video to embed.
+* **play-status**, string. Valid options are 'play' | 'pause'. Use it to control video's play status. Default value is `pause`。
+* **auto-play**, boolean. Use it to control whether it is playing when the page initialization finished. Defalut value is false.
+* **poster**, string, <span class="weex-version">v0.18+ & iOS</span>. Post image URL of this video if any.
+* **controls**, string, <span class="weex-version">v0.19+</span>. If set to `nocontrols`, native video component will hide its play-back control panel.
 
 ## Styles
-common styles: check out [common styles for components](/wiki/common-styles.html)
 
-* support flexbox related styles
-* support box model related styles
-* support position related styles
-* support opacity, background-color etc.
+* **common styles**. Check out [common styles for components](/wiki/common-styles.html).
 
 ## Events
-* onstart: triggered when playback state is Playing.
-* onpause: triggered when playback state is Paused.
-* onfinish: triggered when playback state is Finished.
-* onfail: triggered when playback state is Failed.
+
+* **start** Triggered when playback state is Playing.
+* **pause** Triggered when playback state is Paused.
+* **finish** Triggered when playback state is Finished.
+* **fail** Triggered when playback state is Failed.
 
 ## example
 
@@ -86,5 +81,4 @@ common styles: check out [common styles for components](/wiki/common-styles.html
   }
 </script>
 ```
-
 [try it](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
