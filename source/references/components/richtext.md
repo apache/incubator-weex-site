@@ -30,7 +30,7 @@ Supported attributes of children of a `richtext`.
 #### image
 
 * **src**. Image source.
-* **pseudo-ref**. A ref assigned by developers and passed to the callback function of **onitemclick**.
+* **pseudo-ref**. A ref assigned by developers and passed to the callback function of **itemclick**.
 
 #### a
 
