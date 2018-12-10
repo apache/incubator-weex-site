@@ -20,11 +20,10 @@ It supports all kinds of weex components as its slides. The `indicator` componen
 * **index**, number. This value determines the  index of current shown slide. The default value is 0.
 * **offset-x-accuracy**, number. Set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
 * **show-indicators**, boolean. Set whether to display indicator.
-* **infinite**, boolean. Set whether the page in the slider can be scrolled.
-* **scrollable**, boolean. Set whether slider pages can be switched by sliding gestures.
-* **keep-index**, boolean, Set whether to maintain the index of the page after the data changes.
+* **infinite**, boolean. Set whether the page in the slider can be scrolled. The default value is true.
+* **scrollable**, boolean. Set whether slider pages can be switched by sliding gestures. The default value is true.
+* **keep-index**, boolean, <span class="api-version">Android</span>. Set whether to maintain the index of the page after the data changes.
 * **forbid-slide-animation**, boolean, <span class="api-version">v0.7+ & iOS</span>. On iOS animation is enabled by default, and here we provide this attribute to shutdown animation on iOS.
-* **index**, number. Specify current page index of slider.
 
 ## Styles
 
