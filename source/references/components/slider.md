@@ -6,52 +6,36 @@ order: 8.21
 version: 2.1
 ---
 
-# &lt;slider&gt;
-
 ## Summary
 
-A slide's player to show slides (mostly as pictures) one page by another. The default interval between two slides is 3 seconds.
+A slide's player to show slides (mostly pictures) one page by another. The default interval between two slides is 3 seconds.
 
 ## Child Components
 
-It supports all kinds of weex components as its slides, especially the `indicator` component which can be used only as a child component of `slider`.
+It supports all kinds of weex components as its slides. The `indicator` component should be only used as a child component of `slider`.
 
 ## Attributes
-
-- `auto-play`: &lt;boolean&gt; `true` | `false`. This value determines whether the slides plays automatically after the page rendering finished. The default value is `false`.
-- `interval`: &lt;number&gt; millisecond. This value determines time interval for each page displayed in slider.
-- `index`: <number> . This value determines the  index of current shown slide. The default value is `0`.
-- `offset-x-accuracy {float}`: set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
-- `show-indicators {boolean}`: set whether to display indicator
-- `infinite {boolean}`: set whether the page in the slider can be scrolled
-- `scrollable {boolean}`: set whether slider pages can be switched by sliding gestures
-- `keep-index {boolean}`: set whether to maintain the index of the page after the data changes
-- `forbid-slide-animation {boolean}`: <sup class="wx-v">0.21+ & iOS only</sup>. On iOS animation is enabled by default, and here we provide this attribute to shutdown animation on iOS.
-
-- `index {number}`: specify current page index of slider
-  [try in dotWe](http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082)
+* **auto-play**, boolean. This value determines whether the slides plays automatically after the page rendering finished. The default value is false.
+* **interval**, number in millisecond. This value determines time interval for each page displayed in slider.
+* **index**, number. This value determines the  index of current shown slide. The default value is 0.
+* **offset-x-accuracy**, number. Set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
+* **show-indicators**, boolean. Set whether to display indicator.
+* **infinite**, boolean. Set whether the page in the slider can be scrolled.
+* **scrollable**, boolean. Set whether slider pages can be switched by sliding gestures.
+* **keep-index**, boolean, Set whether to maintain the index of the page after the data changes.
+* **forbid-slide-animation**, boolean, <span class="api-version">v0.7+ & iOS</span>. On iOS animation is enabled by default, and here we provide this attribute to shutdown animation on iOS.
+* **index**, number. Specify current page index of slider.
 
 ## Styles
 
-**common styles**: check out [common styles for components](/wiki/common-styles.html)
-
-- support flexbox related styles
-- support box model related styles
-- support ``position`` related styles
-- support ``opacity``, ``background-color`` etc.
+* **common styles**. Check out [common styles for components](/wiki/common-styles.html).
 
 ## Events
+* **common events**. Check out the [common events](/wiki/common-events.html).
+* **change**. Triggerd when the slide's index is changed. The event object contains the attribute of `index`, which is the index number of the currently shown slide.
+* **scroll**, <span class="api-version">v0.11+</span>. This event is fired when scrolling. The current `offsetXRatio` value is given in this event callback.
 
-- `change`: triggerd when the slide's index is changed. The event object contains the attribute of `index`, which is the index number of the currently shown slide.
-- `scroll` <sup class="wx-v">0.11+</sup>：this event is fired when scrolling. The current offsetXRatio value is given in this event callback.
-
-**common events**: check out the [common events](/wiki/common-events.html)
-
-- support `click` event. Check out [common events](/wiki/common-events.html)
-- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
-
-### Example
-
+## Example
 ```html
 <template>
   <div>
@@ -98,5 +82,4 @@ It supports all kinds of weex components as its slides, especially the `indicato
   }
 </script>
 ```
-
 [try it](http://dotwe.org/vue/0c43ffd743c90b3bd9f5371062652e60)
