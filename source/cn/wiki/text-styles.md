@@ -34,6 +34,7 @@ version: 2.1
 * `text-overflow {string}`：设置内容超长时的省略样式。可选值 `clip` | `ellipsis`
     >> 只有 `<text>`和`<richtext>`组件支持。
 * `lines {number}`: 正整数，指定最大文本行数，默认值为0，表示不限制最大行数。如果文本不够长，实际展示行数会小于指定行数。
+* `line-height {length}`：正整数，每行文字高度。`line-height`是 top 至 bottom 的距离。![line-height](http://i.stack.imgur.com/LwZJF.png)`line-height`与`font-size`没有关系，因为`line-height`被 top 和 bottom 所限制，`font-size` 被 glyph 所解析。`line-height`和`font-size`相等一般会导致文字被截断。
 
 ## 其它参考
 - [颜色关键字列表](./color-names.html)。
