@@ -39,6 +39,7 @@ Text alike components share some common style rules. The text alike components c
 - `text-overflow`:&lt;enum&gt; `clip` | `ellipsis`. This property determines how overflowed content that is not displayed is signaled to users. It can be clipped, display an ellipsis.
    >> Only support for `<text>` and `<ricthext>`
 - `lines`: &lt;number&gt; positive number. This is the max lines of text that would be displayed, the default value is 0 which means there is no restriction on text lines. If the text is not enough, the actual number of line may be shorter than the specified value.
+- `line-height`: &lt;length&gt; The line height of every line in the text. `line-height` is the space between top and bottom.![line-height](http://i.stack.imgur.com/LwZJF.png) There is no relationship between `line-height` and `font-size`, as `line-height` is restricted by top and bottom, `font-size` is interpreted by glyph. Usually but not always, `line-height` and `font-size` with the same value will cause the text clipped.
 
 ## Note
 * [The list of color keywords.](./color-names.html)
