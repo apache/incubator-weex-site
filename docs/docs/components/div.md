@@ -1,27 +1,46 @@
----
-sidebarDepth: 0
----
-# &lt;div&gt;
+# Introduction
 
-`<div>` 组件是用于包装其它组件的最基本容器。支持所有的通用样式、特性、flexbox 布局。其类似于 HTML 的 `<div>` 容器，但不能直接在里面添加文本（字符串），如果要展示文本，应该使用 `<text>` 组件。
+`<div>` is a base container component.support all 
 
-``` vue{2}
-<template>
-  <div>
-    <text>Hello World!</text>
-  </div>
-</template>
-```
+- [common attributes](/wiki/common-attributes.html).
+- [common styles](/wiki/common-styles.html)
+- [common events](/wiki/common-events.html)
+- flexbox layout
 
-::: warning 注意
-* 不能直接在 `<div>` 中添加文本。
-* `<div>` 在 native 中不可滚动，即使显式设置高度也一样。
-* `<div>` 嵌套层级不可过深，否则容易引起性能问题，建议控制在 10 层以内。
-:::
+similar to `div` in `html`
 
-## 子组件
-`<div>` 是基本容器组件，支持包括 `<div>` 在内的任何组件作为自己的子组件。
+## Child Components
 
-## Demo
-[&lt;div&gt; 在native中不可滚动](http://dotwe.org/vue/57cc2dd8955b0ead3e5b46e3df2f58b9)  
-滚动页面，需要使用 [&lt;list&gt;](/docs/list.html)、[&lt;scroller&gt;](/docs/scroller.html) 组件实现。
+`<div>` is base container component ，support all compenents as child (include `div` self)
+
+## Attributes
+
+* **common attributes**. Check out [common attributes](/wiki/common-attributes.html).
+
+## Styles
+
+* **common styles**. Check out [common styles](/wiki/common-styles.html).
+
+## Events
+* **common events**. Check out the [common events](/wiki/common-events.html).
+
+## Other
+
+* don't add text in `<div>`directly。if need show text, use `<text>`,see Example
+* `<div>` can't scroll automatic in native. even component's height above screen's height
+* `<div>` for good performance,depth level don't be too deep, suggest __depth level < 14__
+
+## Example
+
+
+- code 
+
+	``` vue{2}
+	<template>
+  	<div>
+    	<text>Hello World!</text>
+  	</div>
+	</template>
+	```
+
+- [try it](http://dotwe.org/vue/57cc2dd8955b0ead3e5b46e3df2f58b9) （naitve can't scroll automatic）you scan use [&lt;list&gt;](/docs/list.html)、[&lt;scroller&gt;](/docs/scroller.html) for scroll
