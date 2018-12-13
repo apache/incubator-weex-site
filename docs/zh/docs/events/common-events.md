@@ -64,6 +64,16 @@ Weex 提供了通过事件触发动作的能力，例如在用户点击组件时
 
 [示例](http://dotwe.org/vue/ad62b385c6b3cb7d038539f137be79ad)
 
+## stopPropagation
+
+用于内嵌处理Native滑动冲突的情况，阻止Native事件进行冒泡传递。可结合shouldStopPropagationInterval和shouldStopPropagationInitResult属性来控制。
+shouldStopPropagationInitResult默认初始化false/true的结果。
+shouldStopPropagationInterval控制touch频率，减少JS和Native通信次数，提升流畅性。
+
+### 事件对象无
+
+[Scroller内嵌List示例](http://dotwe.org/vue/48ddb2f7339d1fb116135900a2dbc8e5)
+
 ## Page
 
 ::: warning 注意
@@ -85,6 +95,8 @@ Weex 通过 `viewappear` 和 `viewdisappear` 事件提供了简单的页面状�
 | type      | `viewappear` 或 `viewdisappear` |                      |
 | target    |                                 | 触发事件的组件对象   |
 | timestamp |                                 | 事件被触发时的时间戳 |
+
+
 
 ## Demo
 
