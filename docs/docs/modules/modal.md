@@ -1,92 +1,118 @@
 ---
-pageClass: page-module-modal
+title: modal
+type: references
+group: Build-in Modules
+order: 9.06
+version: 2.1
 ---
+
 # modal
-`modal` 模块提供了以下展示消息框的 API：`toast`、`alert`、`confirm` 和 `prompt`。
+
+Weex provides a series of message boxes: `toast`, `alert`, `confirm` and `prompt`.
 
 ## API
-### modal.toast(options)
-`toast()` 会在一个小浮层里展示关于某个操作的简单反馈。例如，在邮件发送前离开邮件编辑界面，可以触发一个“草稿已保存”的 toast，告知用户以后可以继续编辑。toast 会在显示一段时间之后自动消失。
+### toast(options)
 
-``` js{2}
+A toast provides simple feedback about an operation in a small popup. For example, navigating away from an email before you send it triggers a "Draft saved" toast to let you know that you can continue editing later. Toasts automatically disappear after a timeout.
+
+#### Arguments
+- `options` (object): toast options.
+ - `message` (string): the text message that the toast shows.
+ - `duration` (number): the duration(seconds) that the toast shows.
+   - For Android: If the duration is longer than 3, it will use a system defined variable called **LONG**, otherwise it will use another variable called **SHORT**
+   - For iOS: It will show the toast during the specified time.
+
+#### Basic Usage
+```
 var modal = weex.requireModule('modal')
 modal.toast({
-  message: 'This is a toast',
-  duration: 0.3
+    message: 'This is a toast',
+    duration: 0.3
 })
 ```
 
-| 参数        | 说明                | 类型   | 默认值  |
-| ---------- | -------------      | -----  | ----- |
-| options.message    | 展示的内容           | string | -     |
-| options.duration   | 持续时间（以秒为单位） | number | 0.8   |
-::: warning 参数duration
-* Android: 如果时间长度大于3s，将使用一个被称为**LONG**的系统变量，否则使用**SHORT**这个系统变量
-* iOS: 持续的时间与duration相同
-:::
 
-### modal.alert(options, callback)
-警告框经常用于确保用户可以得到某些信息。当警告框出现后，用户需要点击确定按钮才能继续进行操作。
+### alert(options, callback)
 
-``` js{2}
+An alert box is often used if you want to make sure information comes through to the user.
+When an alert box pops up, the user will have to click "OK" to proceed.
+
+#### Arguments
+
+- `options` (object): alert box options.
+ - `message` (string): the text message that the alert shows.
+ - `okTitle` (string): the text of positive button, default is 'OK'.
+ - `callback` (function): callback when complete.
+  This method has a callback function whose arguments will be:
+- `result` (string): the title text of the confirm button that clicked by user.
+
+#### Basic Usage
+```
 var modal = weex.requireModule('modal')
 modal.alert({
-  message: 'This is a alert',
-  okTitle: '确认'
-}, function () {
-  console.log('alert callback')
+    message: 'This is a alert',
+    duration: 0.3
+}, function (value) {
+    console.log('alert callback', value)
 })
 ```
 
 
-| 参数        | 说明                | 类型   | 默认值  |
-| ---------- | -------------      | -----  | ----- |
-| options.message    | 警告框内显示的文字信息 | string | -     |
-| options.okTitle   | 确认按钮上显示的文字信息 | string | OK   |
-| callback   | 用户操作完成后的回调 | function | -   |
+### confirm(options, callback)
+A confirm box is often used if you want the user to verify or accept something.
 
-### modal.confirm(options, callback)
-确认框用于使用户可以验证或者接受某些信息。当确认框出现后，用户需要点击确定或者取消按钮才能继续进行操作。
+When a confirm box pops up, the user will have to click either confirm or cancel button to proceed.
 
-``` js{2}
+#### Arguments
+- `options` (object): confirm box options.
+  - `message` (string): the message that the confirm shows.
+  - `okTitle` (string): the title of confirm button, default is 'OK'.
+  - `cancelTitle` (string): the title of cancel button, default is 'Cancel'.
+- `callback` (function): callback when complete.
+
+This method has a callback function whose arguments will be:
+- `result`(string): the title text of the button that clicked by user.
+
+#### Basic Usage
+```
 var modal = weex.requireModule('modal')
 modal.confirm({
-  message: 'Do you confirm ?',
-  okTitle: '确认',
-  cancelTitle: '取消'
+    message: 'Do you confirm ?',
+    duration: 0.3
 }, function (value) {
-  console.log('confirm callback', value)
+    console.log('confirm callback', value)
 })
 ```
 
-| 参数        | 说明                | 类型   | 默认值  |
-| ---------- | -------------      | -----  | ----- |
-| options.message    | 警告框内显示的文字信息 | string | -     |
-| options.okTitle   | 确认按钮上显示的文字信息 | string | OK   |
-| options.cancelTitle | 取消按钮上显示的文字信息 | string | Cancel |
-| callback   | 用户操作完成后的回调，参数 `res` 是按下按钮上的文字信息 | function(res)  |  -  |
 
-### modal.prompt(options, callback)
-提示框经常用于提示用户在进入页面前输入某个值。当提示框出现后，用户需要输入某个值，然后点击确认或取消按钮才能继续操作。
+### prompt(options, callback)
 
-``` js{2}
+A prompt box is often used if you want the user to input a value before entering a page.
+When a prompt box pops up, the user will have to click either confirm or cancel button to proceed after entering an input value.
+
+#### Arguments
+- `options` (object): some options.
+  - `message` (string): the message that the prompt shows.
+  - `okTitle` (string): the title text of confirm button, default is 'OK'.
+  - `cancelTitle` (string): the title text of cancel button, default is 'Cancel'.
+- `callback` (function): callback when complete.
+  This method has a callback function whose arguments will be:
+- `ret` (object): the argument will be a object, which has attributes `result` and `data`,  like `{ result: 'OK', data: 'hello world' }`
+  - `result` (string): the title of the button that clicked by user.
+  - `data` (string): the value of the text that entered by user.
+
+#### Basic Usage
+```
 var modal = weex.requireModule('modal')
-modal.confirm({
-  message: 'Do you confirm ?',
-  okTitle: '确认',
-  cancelTitle: '取消'
+modal.prompt({
+    message: 'This is a prompt',
+    duration: 0.3
 }, function (value) {
-  console.log('confirm callback', value)
+    console.log('prompt callback', value)
 })
 ```
 
-| 参数        | 说明                | 类型   | 默认值  |
-| ---------- | -------------      | -----  | ----- |
-| options.message    | 警告框内显示的文字信息 | string | -     |
-| options.okTitle   | 确认按钮上显示的文字信息 | string | OK   |
-| options.cancelTitle | 取消按钮上显示的文字信息 | string | Cancel |
-| callback   | 用户操作完成后的回调<ul><li>`res.result`：用户按下的按钮上的文字信息</li><li>`res.data`：用户输入的文字信息</li></ul>| function(res)  |  -  |
 
-## Demo
-[基本用法](http://dotwe.org/vue/4be1c3b956fe0b5628388c34c2ca6320)
-<IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1lR8cogHqK1RjSZFkXXX.WFXa-544-960.gif" />
+## Example
+
+[Modal demo](http://dotwe.org/vue/a7dddfb24edb72be947fc4eec3803f1d)
