@@ -1,35 +1,42 @@
-# Introduction 
+---
+title: <a>
+type: references
+group: Build-in Components
+order: 8.01
+version: 2.1
+---
 
-&lt;a&gt;  used to implement jumps between pages.
-## Attributes
+`<a>` is mainly used for navigation between weex pages。
 
-* **href** string. target url of jump，target page must be a weex page.
-it is a undefined behavior if target page is a `html`
+> **Note:** The behavior of `<a>` is similar to [`<div>`](./div.html) except for the aspect mentioned in current page.
 
+> **Note:** It's forbidden to add text directly to `<a>`, use [`<text>`](./text.html) to wrap your text instead.
 
-## Styles
+## Basic Usage
+Wrap the element navigating from with `<a>`
 
-* **common styles**. Check out [common styles](/wiki/common-styles.html).
+    <a href="http://dotwe.org/raw/dist/a5e3760925ac3b9d68a3aa0cc0298857.bundle.wx">
+      <text>Jump</text>
+    </a> 
+
+Refer the [demo](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955).
+
+## Attributes:
+| Attribute       | Type    |Value| Default Value|
+| -------------   | ------  | --- | ------------ |
+| `href` | String | {URL}   | -   | -            |
+
+### `href`
+`href` defines the URL that current page will navigate. `href` **must** point to a weex page, the behavior of other case is **undefined**.
+
+## Style
+Support [common styles](../../wiki/common-styles.html).
 
 ## Events
+Support [common events](../../wiki/common-events.html)
 
-* **common events**. Check out the [common events](/wiki/common-events.html).
+### `click`
+> **Notes:** The execution order of callback function of click and href is **undefined**. Do **not** use click event to do the preprocessing of `href`.
 
-## Other
-
-- don't add text in `<a>` directly
-
--  the order of event (`click` and `href`) is unpredictable , so don't do the logic which before `herf` jumps in `click`
-
-
-## Example
-
-
-```
-<a href="http://emas-ha-remote-log-poc.oss-cn-beijing.aliyuncs.com/eweex/app/biz-docs-com-mod/upload/271ccdca-db41-423d-981c-c7c6751ba479/show_1.js">
-  <text>main page</text>
-</a> 
-```
-
-[try it](http://dotwe.org/vue/3b789771e48be92a70bd682f084b84b5)
-
+## Examples
+* [Basic usage for `<a>`](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955) .
