@@ -1,175 +1,347 @@
-# &lt;input&gt;
+---
+title: <input>
+type: references
+group: Build-in Components
+order: 8.06
+version: 2.1
+---
 
-Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组件。 `<input>` 组件的工作方式因 `type` 属性的值而异，比如 `text`， `password`，`url`，`email`，`tel` 等。
+# input
 
-::: warning 注意
-此组件不支持 `click` 事件。请监听 `input` 或 `change` 来代替 `click` 事件。
-:::
+The weex builtin component `input` is used to create input controls to receive the user's input characters. How a `input` component works varies considerably depending on the value of its `type` attribute, such as `text`, `password`, `url`, `email`, `tel` etc.
 
-## 子组件
+**Notes:** does not support the common-event `click`. Please listen to the `input` or `change` event instead.
 
-不支持子组件。
+## Child Components
 
-## 属性
+This component does not support any child component.
 
-<style>
-table td:first-child {
-  white-space: nowrap;
-}
-.badge {
-  margin-top: 10px;
-}
+## Attributes
+
+* `type`: the type of controls to display. The default value is `text`, if this attribute is not specified. Possible values are `text`, `date`, `datetime`, `email`, `password`, `tel`, `time`, `url`, `number`. each of which has the same meaning with W3C standard.
+
+* `value`: the default value(text) of the control.
+
+* `placeholder`: a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.
+
+* `disabled`: a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.
+
+* `autofocus`: a boolean attribute lets you specify that a form control should have input focus when the page loads.
+
+* `singleline`: a boolean sttribute sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
+
+* `lines`: makes the input exactly this many lines tall.
+
+* `max-length`: constrain edits not to make the length of the text greater than the specified length.
+
+* `max` constrain the max date when `type` is `date`, format is `yyyy-MM-dd`
+
+* `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
+
+* `maxlength`: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.
+
+* `return-key-type`：<sup class="wx-v">v0.11</sup>the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
+
+* `auto-capitalization-type`：the keybord auto capitalization type support `none`, `words`, `sentences`, `allCharacters`.
+
+
+## Styles
+
+* placeholder-color: the color of placeholder. Default value is '#999999'.
+
+* Pseudo-class<span class="api-version">v0.9.5+</span>: `input` component support the following pseudo-classes:
+
+  * `active`
+  * `focus`
+  * `disabled`
+  * `enabled`
+
+* text styles: checkout [text styles](/wiki/text-styles.html)
+
+  * support `color` style.
+  * support `font-size` style.
+  * support `font-style` style.
+  * support `font-weight` style.
+  * support `text-align` style.
+
+### common styles
+check out [common styles for components](/wiki/common-styles.html)
+
+* support flexbox related styles.
+* support box model related styles.
+* support `position` related styles.
+* support `opacity`, `background-color` etc.
+
+## Events
+
+* `input`: the input evenr is fired when input content changes.
+* `change`: the change event is fired when a change to the component's value is commited by the user. It always come after a `blur` event.
+* `focus`: a component has received focus.
+* `blur`: a component has lost focus.
+* `return`: the return key clicked.
+
+     the object property of event:
+
+    - `returnKeyType`: return key Type  of component
+    - `value`: component text value
+
+### common events
+check out [common events](/wiki/common-events.html)
+
+* support `appear` / `disappear` event.
+
+
+### Methods
+
+ - `focus()` <span class="api-version">v0.9+</span>
+
+  The `focus()` method is used to give focus to an input component and tigger soft keybord(if it can be focused).
+
+ - `blur()`<span class="api-version">v0.9+</span>
+
+  The `blur()` method is used to remove focus from an input component and close soft keybord(if it has focus).
+
+- `setSelectionRange(selectionStart,selectionEnd)`  <span class="api-version">v0.11+</span>set text selection range of input or textarea
+
+  - `selectionStart {number}`:set starting location text selection range
+  - `selectionEnd {number}`:set end location text selection range
+
+- `getSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>get text selection range of input or textarea
+    - `selectionStart {number}`:get starting location text selection range
+    - `selectionEnd {number}`: get end location text selection range
+
+- `setTextFormatter(params)`<span class="api-version">v0.18+</span>: This is a very useful feature,can be used to set a set of rules for the input to formatting the input content in real-time.
+    - `params {object}`：formatting rules, contains the following parameters:
+      - `formatRule {regexp}`: Regular expression used to format the match
+      - `formatReplace {string}`: Contents to replace after format matching
+      - `recoverRule {regexp}`: Regular expressions to restore original content from formatted content
+      - `recoverReplace {string}`: Content to replace when restoring original content
+
+For details of `setTextFormatter`, please refer to [sample](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
+### Notes
+input does not support the common-event `click`. Please listen to the `input` or `change` event instead.
+
+### Parameters of events' object
+
+* for `input` and `change` events:
+  - `value`: the value of the component who dispatched this event.
+  - `timestamp`: the time stamp of the event.
+* for `focus` and `blur` events:
+  - `timestamp`: the time stamp of the event.
+
+## Example
+
+```html
+<template>
+  <div>
+    <div>
+      <text style="font-size: 40px">oninput: {{txtInput}}</text>
+      <text style="font-size: 40px">onchange: {{txtChange}}</text>
+      <text style="font-size: 40px">onreturntype: {{txtReturnType}}</text>
+      <text style="font-size: 40px">selection: {{txtSelection}}</text>
+
+    </div>
+    <scroller>
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = text</text>
+        </div>
+        <input type="text" placeholder="Input Text" class="input" :autofocus=true value="" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = password</text>
+        </div>
+        <input type="password" placeholder="Input Password" class="input" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = url</text>
+        </div>
+        <input type="url" placeholder="Input URL" class="input" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = email</text>
+        </div>
+        <input type="email" placeholder="Input Email" class="input" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = tel</text>
+        </div>
+        <input type="tel" placeholder="Input Tel" class="input" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = time</text>
+        </div>
+        <input type="time" placeholder="Input Time" class="input" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = number</text>
+        </div>
+        <input type="number" placeholder="Input number" class="input" @change="onchange" @input="oninput"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = date</text>
+        </div>
+        <input type="date" placeholder="Input Date" class="input" @change="onchange" @input="oninput" max="2017-12-12" min="2015-01-01"/>
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = default</text>
+        </div>
+        <input type="text" placeholder="please input" return-key-type="default" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = go</text>
+        </div>
+        <input type="text" placeholder="please input" return-key-type="go" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = next</text>
+        </div>
+        <input type="text" placeholder="please input" return-key-type="next" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = search</text>
+        </div>
+        <input type="text" placeholder="please input" return-key-type="search" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = send</text>
+        </div>
+        <input type="text" placeholder="please input" return-key-type="send" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
+      </div>
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = done</text>
+        </div>
+        <input type="text" placeholder="please input" return-key-type="done" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
+      </div>
+
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">function focus() & blur()</text>
+        </div>
+        <div style="flex-direction: row;margin-bottom: 16px;justify-content: space-between">
+          <text class="button" value="Focus" type="primary" @click="focus"></text>
+          <text class="button" value="Blur" type="primary" @click="blur"></text>
+        </div>
+
+        <input type="text" placeholder="Input1" class="input" value="" ref="input1"/>
+      </div>
+
+
+      <div>
+        <div style="background-color: #286090">
+          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input selection</text>
+        </div>
+        <div style="flex-direction: row;margin-bottom: 16px;justify-content: space-between">
+          <text class="button" value="setRange" type="primary" @click="setRange"></text>
+          <text class="button" value="getSelectionRange" type="primary" @click="getSelectionRange"></text>
+        </div>
+        <input type="text"  ref="inputselection" placeholder="please input" value="123456789"  class="input" @change="onchange" @return = "onreturn" @input="oninput"/>
+      </div>
+
+
+
+    </scroller>
+  </div>
+</template>
+
+<style scoped>
+  .input {
+    font-size: 60px;
+    height: 80px;
+    width: 750px;
+  }
+  .button {
+    font-size: 36;
+    width: 200;
+    color: #41B883;
+    text-align: center;
+    padding-top: 10;
+    padding-bottom: 10;
+    border-width: 2;
+    border-style: solid;
+    margin-right: 20;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
 </style>
 
-| key                                                                         | 类型    | 描述                                                                                                              | 默认值 | 备注                                                                                                                                                                                                                                       |
-| --------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `type`                                                                      | string  | 控件的类型                                                                                                        | text   | type 值可以是 text，date，datetime，email， password，tel，time，url，number 。每个 type 值都符合 W3C 标准。<br /> 其中，date 和 time 会使用系统默认组件（Android + IOS）[查看示例](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b) |
-| `value`                                                                     | string  | 组件的默认内容                                                                                                    |        |                                                                                                                                                                                                                                            |
-| `placeholder`                                                               | string  | 提示用户可以输入什么。 提示文本不能有回车或换行                                                                   |        |                                                                                                                                                                                                                                            |
-| `autofocus`                                                                 | boolean | 布尔类型的数据，表示是否在页面加载时控件自动获得输入焦点                                                          |        |                                                                                                                                                                                                                                            |
-| `maxlength` <br /><Badge text="v0.7" type="warn" vertical="middle"/>        | nubmer  | 一个数值类型的值，表示输入的最大长度                                                                              |        |                                                                                                                                                                                                                                            |
-| `return-key-type` <br /><Badge text="v0.11" type="warn" vertical="middle"/> | string  | 键盘返回键的类型（即手机输入法右下角回车按钮的地方）<br /><img src="https://img.alicdn.com/tfs/TB1GSs7n9zqK1RjSZFLXXcn2XXa-311-156.png" height="100px" width="200px" /> |        | 支持 defalut;go;next;search;send,done <br /> [查看示例](http://dotwe.org/vue/703c94a1db921df110a11ce33b42c0d7)                                                                                                                             |  |
-| `singleline` <br /><Badge text="only android & ios" type="warning" />       | boolean | 控制内容是否只允许单行                                                                                            | true   |                                                                                                                                                                                                                                            |
-| `max-length`                                                                | number  | 控制输入内容的最大长度                                                                                            |        | 字符串长度，即中英文字符长度都为 1                                                                                                                                                                                                         |
-| `max`                                                                       | string  | 控制当 type 属性为 date 时选择日期的最大时间，格式为 yyyy-MM-dd                                                   |        |                                                                                                                                                                                                                                            |
-| `min`                                                                       | string  | 控制当 type 属性为 date 时选择日期的最小时间，格式为 yyyy-MM-dd                                                   |        |                                                                                                                                                                                                                                            |
+<script>
+  module.exports = {
+    data: function () {
+      return {
+        txtInput: '',
+        txtChange: '',
+        txtReturnType: '',
+        txtSelection:'',
+        autofocus: false
+      };
+    },
+    methods: {
+      ready: function () {
+        var self = this;
+        setTimeout(function () {
+          self.autofocus = true;
+        }, 1000);
+      },
+      onchange: function (event) {
+        this.txtChange = event.value;
+        console.log('onchange', event.value);
+      },
+      onreturn: function (event) {
+        this.txtReturnType = event.returnKeyType;
+        console.log('onreturn', event.type);
+      },
+      oninput: function (event) {
+        this.txtInput = event.value;
+        console.log('oninput', event.value);
+      },
+      focus: function () {
+        this.$refs['input1'].focus();
+      },
+      blur: function () {
+        this.$refs['input1'].blur();
+      },
+      setRange: function() {
+        console.log(this.$refs["inputselection"]);
+        this.$refs["inputselection"].setSelectionRange(2, 6);
+      },
+      getSelectionRange: function() {
+        console.log(this.$refs["inputselection"]);
+        var self = this;
+        this.$refs["inputselection"].getSelectionRange(function(e) {
+          self.txtSelection = e.selectionStart +'-' + e.selectionEnd;
+        });
+      }
+    }
+  };
+</script>
+```
 
-## 样式
-
-#### placeholder-color {color}
-
-placeholder 字符颜色。默认值是 `#999999`
-
-#### 伪类
-
-支持：
-
-- `:active`
-- `:focus`
-- `:disabled`
-- `:enabled`
-
-#### 通用样式
-
-支持所有通用样式
-
-- 盒模型
-- `flexbox` 布局
-- `position`
-- `opacity`
-- `background-color`
-
-查看 [组件通用样式](/guide/common-styles.html)
-
-## 事件
-
-#### input 事件
-
-当输入字符时触发。 事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `value`     | 当前组件的值                         | string |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### change 事件
-
-当用户输入完成时触发。通常在 blur 事件之后。事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `value`     | 当前组件的值                         | string |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### focus 事件
-
-组件获得输入焦点。事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### blur 事件
-
-组件失去输入焦点。事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### return 事件
-
-键盘点击返回键时触发。事件中 `event` 对象有以下属性:
-
-| 属性            | 说明                   | 类型   |
-| --------------- | ---------------------- | ------ |
-| `value`         | 当前组件的值           | string |
-| `returnKeyType` | 事件发生时的返回键类型 | string |
-
-::: warning 注意
-不支持 `click` 事件。 请监听 `input` 或 `change` 事件代替。
-:::
-
-支持以下通用事件：
-
-- longpress
-- appear
-- disappear
-
-查看 [通用事件](/guide/common-events.html)
-
-## 组件方法
-
-#### focus() <Badge text="0.8+" type="warning" />
-
-将 `input` 组件聚焦。
-
-#### blur() <Badge text="0.9+" type="warning" />
-
-从 `input` 组件中移除焦点并关闭软键盘（如果它具有焦点）。
-
-#### setSelectionRange(selectionStart, selectionEnd) <Badge text="0.11+" type="warning" /><Badge text="only support android & ios" type="warning" />
-
-设置文本选区
-
-| key            | 类型   | 描述                 |
-| -------------- | ------ | -------------------- |
-| selectionStart | number | 设置文本选区的起始点 |
-| selectionEnd   | number | 设置文本选区的起终点 |
-
-#### getSelectionRange(function(params){}) <Badge text="0.11+" type="warning" /><Badge text="only support android & ios" type="warning" />
-
-获取文本选区
-
-| key                   | 类型   | 描述             |
-| --------------------- | ------ | ---------------- |
-| params.selectionStart | number | 文本选区的起始点 |
-| params.selectionEnd   | number | 文本选区的起终点 |
-
-#### setTextFormatter(params) <Badge text="0.18+" type="warning" /><Badge text="only support android & ios" type="warning" />
-
-这是一个非常有用的特性，可以对 input 设置一组对输入的内容进行实时格式化的规则
-
-| key                   | 类型   | 描述                                     |
-| --------------------- | ------ | ---------------------------------------- |
-| params.formatRule     | regexp | 格式化匹配的正则表达式                   |
-| params.formatReplace  | regexp | 格式化匹配后用于替换的内容               |
-| params.recoverRule    | regexp | 从格式化后的内容还原原始内容的正则表达式 |
-| params.recoverReplace | regexp | 还原原始内容时用于替换的内容             |
-
-- 详细用法参照 [示例(手机扫码查看)](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
-
-::: warning 约束
-目前不支持 this.$el(id).value = '' 这种方式改写 input value。只支持在 `<input>` 组件的 input、change 事件中改写。
-:::
-
-## Demo
-
-- [date + time 示例(手机扫码查看)](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b)
-
-* [return-key-type 示例(手机扫码查看)](http://dotwe.org/vue/703c94a1db921df110a11ce33b42c0d7)
-
-* [setTextFormatter 示例(手机扫码查看)](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
-
-* [其他示例集合](http://dotwe.org/vue/aec5342b15d3c01b3b427384a71b0874)
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB10jc9nVzqK1RjSZFvXXcB7VXa-297-479.png" />
+[try it](http://dotwe.org/vue/3470e4d0194f3879a72d38e2ab02cc9f)
