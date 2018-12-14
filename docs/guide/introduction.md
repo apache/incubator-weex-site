@@ -1,14 +1,6 @@
----
-title: Getting Started
-type: guide
-group: Overview
-order: 1.1
-version: 2.1
----
+# What is Weex?
 
 <!-- toc -->
-
-## What is Weex?
 
 > **Weex is a framework for building high-performance mobile applications with a modern web development experience.**
 
