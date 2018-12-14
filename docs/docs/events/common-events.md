@@ -54,6 +54,19 @@ If a `disappear` event is bound to a component inside a scrollable container, th
 - `timestamp` : Timestamp when event is triggered
 - `direction` : The direction in which the scroller is scrolling. Could be `up` or `down`.
 
+## stopPropagation
+
+when you want to handler list in list, scroller in list which has touch conflict touch scene. you can use this to control touch dispatch.
+together with the following attr to achive smooth nest scroll.
+
+shouldStopPropagationInitResult : default true/false,
+
+shouldStopPropagationInterval  : control touch call frequency with js. reduce js call with native.
+
+### Example
+
+[Scroller With List](http://dotwe.org/vue/48ddb2f7339d1fb116135900a2dbc8e5)
+
 ## Page event
 
 Weex provides you with simple management of page status, such as `viewappear` and `viewdisappear`.
