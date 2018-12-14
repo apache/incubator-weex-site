@@ -49,7 +49,7 @@ declare interface MessageEvent = {
 
 ## Communication Procedure
 
-![BroadcastChannel](./images/BroadcastChannel.png)
+![BroadcastChannel](../images/BroadcastChannel.png)
 
 Just like using radio, each client joins a specific channel by creating a `BroadcastChannel` object with the same channel name. Then implement the `onmessage` event handler to listen on the underlying channel. Call the `postMessage()` method on the BroadcastChannel object will broadcast a message to every subscriber of the channel.
 
