@@ -2,7 +2,7 @@
 `<recycle-list>` 是一个新的列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。
 > * 设计思路请参考 [Design.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md)，具体的实现细节请参考 [Implementation.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md)
 > * 该功能部分依赖于编译工具，请确保 weex-loader 的版本升级到最新（v0.7.2+）
-> * Web 版本的 `<recycle-list>` 还正在开发，online playground 上暂时无法预览效果，使用最新版的 playground app（SDK 版本 0.18.0 及以上）才可以扫码查看原生效果
+> * 使用最新版的 playground app（SDK 版本 0.18.0 及以上）才可以扫码查看原生效果，也可以直接使用dotwe查看Web预览效果
 
 ## 子组件
 `<recycle-list>` 只能使用 `<cell-slot>` 作为其直接子节点，使用其他节点无效。
@@ -18,11 +18,9 @@
     <tr><td>key</td><td>可选属性，用于指定列表数据中可以作为唯一标识的键值，可以优化渲染性能。</td></tr>
   </tbody>
 </table>
-
-::: warning 属性的省略
-* 如果没写 `switch`，无论有没有写 `case` 或 `default`，都只使用第一个模板
-* 在写了 `switch` 的情况下，`case` 和 `default` 必须写一个，否则该模板将会被忽略
-:::
+- warning 属性的省略
+  - 如果没写 `switch`，无论有没有写 `case` 或 `default`，都只使用第一个模板
+  - 在写了 `switch` 的情况下，`case` 和 `default` 必须写一个，否则该模板将会被忽略
 
 
 ## 属性
@@ -94,23 +92,28 @@
   * `vm.#slots`
   * `vm.#scopedSlots`  
 
-  `vm.$refs` 里的值可能是数组、子组件的实例、DOM 元素，在前端里比较常用，如果不支持，对 Weex 里的 `dom` 模块和 `animation` 模块的功能也有影响。目前正在讨论技术方案，部分接口可能会重新设计，或者是在 `vm` 上透出专为 `<recycle-list>` 设计的接口。
+  `vm.$refs` 里的值可能是数组、子组件的实例、DOM 元素，在前端里比较常用，如果不支持，对 Weex 里的 `dom` 模块和 `animation` 模块的功能也有影响。
+
+  目前正在讨论技术方案，部分接口可能会重新设计，或者是在 `vm` 上透出专为 `<recycle-list>` 设计的接口。
+
 * 组件的属性
   目前子组件的属性不支持函数。（正在讨论实现方案）
+
   ```html
   <sub-component :prop="item.xxx" />
   ```
   因为子组件的属性值需要在前端和客户端之间传递，所以仅支持可序列化的值。`item.xxx` 的类型可以是对象、数组、字符串、数字、布尔值等，不支持函数。
+
 * 生命周期的行为差异
   由于列表的渲染存在回收机制，节点渲染与否也与用户的滚动行为有关，组件的生命周期行为会有一些不一致。
-  
+
   可回收长列表不会立即渲染所有节点，只有即将滚动到可视区域（以及可滚动的安全区域）内时才开始渲染，组件生命周期的语义没变，但是会延迟触发。
-  
+
   假设有 100 条数据，一条数据了对应一个组件。渲染首屏时只能展示 8 条数据的节点，那就只有前 8 个组件被创建了，也只有前 8 个组件的生命周期被触发。
 
   * 组件的 `beforeCreate` 和 `created` 也只有在组件即将创建和创建完成时才会触发
   * 同理，组件的 `beforeMount` 和 `mounted` 也只有页面真正渲染到了该组件，在即将挂载和已经挂载时才会触发
-  * 同理，组件的 `beforeMount` 和 `mounted` 也只有页面真正渲染到了该组件，在即将挂载和已经挂载时才会触发
+
 * 组件的自定义事件  
   *计划支持*。`vm.$on`, `vm.$once`, `vm.$emit`, `vm.$off` 等功能还未完全调通，接口可用，但是行为可能有些差异（参数丢失），暂时不要使用。
 
