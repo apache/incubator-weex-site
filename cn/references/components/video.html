@@ -5,17 +5,17 @@
   
   <title>&lt;video&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;video&amp;gt;#v0.6.1+ &amp;lt;video&amp;gt; 组件可以让我们在 Weex 页面中嵌入视频内容。 子组件# &amp;lt;text&amp;gt; 是唯一合法的子组件。  特性# src {string}：内嵌的视频指向的URL play-status {string}：可选值为 play | pause，用来控制视频的播放状态，play 或者 pause，默认值是 pause。 aut">
+  <meta name="description" content="Video 组件用于在页面中嵌入视频内容。 子组件#text 是唯一合法的子组件。 属性# src, string. 内嵌的视频指向的URL。 play-status, string. 可选值为 play | pause，用来控制视频的播放状态，play 或者 pause，默认值是 pause。 auto-play, boolean. 当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&lt;video&gt;">
 <meta property="og:url" content="https://weex.apache.org/cn/references/components/video.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;video&amp;gt;#v0.6.1+ &amp;lt;video&amp;gt; 组件可以让我们在 Weex 页面中嵌入视频内容。 子组件# &amp;lt;text&amp;gt; 是唯一合法的子组件。  特性# src {string}：内嵌的视频指向的URL play-status {string}：可选值为 play | pause，用来控制视频的播放状态，play 或者 pause，默认值是 pause。 aut">
+<meta property="og:description" content="Video 组件用于在页面中嵌入视频内容。 子组件#text 是唯一合法的子组件。 属性# src, string. 内嵌的视频指向的URL。 play-status, string. 可选值为 play | pause，用来控制视频的播放状态，play 或者 pause，默认值是 pause。 auto-play, boolean. 当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 f">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2018-12-06T02:36:44.639Z">
+<meta property="og:updated_time" content="2018-12-14T07:22:16.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;video&gt;">
-<meta name="twitter:description" content="&amp;lt;video&amp;gt;#v0.6.1+ &amp;lt;video&amp;gt; 组件可以让我们在 Weex 页面中嵌入视频内容。 子组件# &amp;lt;text&amp;gt; 是唯一合法的子组件。  特性# src {string}：内嵌的视频指向的URL play-status {string}：可选值为 play | pause，用来控制视频的播放状态，play 或者 pause，默认值是 pause。 aut">
+<meta name="twitter:description" content="Video 组件用于在页面中嵌入视频内容。 子组件#text 是唯一合法的子组件。 属性# src, string. 内嵌的视频指向的URL。 play-status, string. 可选值为 play | pause，用来控制视频的播放状态，play 或者 pause，默认值是 pause。 auto-play, boolean. 当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 f">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -566,13 +566,13 @@
             
               
                 <li>
-                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
@@ -1064,13 +1064,13 @@
             
               
                 <li>
-                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
@@ -1155,38 +1155,26 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-12-06T02:36:44.639Z">Updated time: 06/12/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-12-14T07:22:16.652Z">Updated time: 14/12/2018</time> -->
 </header>
 
-    <html><head></head><body><h1 class="article-heading"><span id="lt-video-gt">&lt;video&gt;</span><a href="#lt-video-gt" class="header-anchor">#</a></h1><p><span class="weex-version">v0.6.1+</span></p>
-<p><code>&lt;video&gt;</code> &#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x5728; Weex &#x9875;&#x9762;&#x4E2D;&#x5D4C;&#x5165;&#x89C6;&#x9891;&#x5185;&#x5BB9;&#x3002;</p>
-<h2 class="article-heading"><span id="zi-zu-jian">&#x5B50;&#x7EC4;&#x4EF6;</span><a href="#zi-zu-jian" class="header-anchor">#</a></h2><ul>
-<li><code>&lt;text&gt;</code> &#x662F;&#x552F;&#x4E00;&#x5408;&#x6CD5;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</li>
-</ul>
-<h3 class="article-heading"><span id="te-xing">&#x7279;&#x6027;</span><a href="#te-xing" class="header-anchor">#</a></h3><ul>
-<li><code>src {string}</code>&#xFF1A;&#x5185;&#x5D4C;&#x7684;&#x89C6;&#x9891;&#x6307;&#x5411;&#x7684;URL</li>
-<li><code>play-status {string}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>play</code> | <code>pause</code>&#xFF0C;&#x7528;&#x6765;&#x63A7;&#x5236;&#x89C6;&#x9891;&#x7684;&#x64AD;&#x653E;&#x72B6;&#x6001;&#xFF0C;<code>play</code> &#x6216;&#x8005; <code>pause</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>pause</code>&#x3002;</li>
-<li><code>auto-play {boolean}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A;  <code>true</code> | <code>false</code>&#xFF0C;&#x5F53;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x7528;&#x6765;&#x63A7;&#x5236;&#x89C6;&#x9891;&#x662F;&#x5426;&#x7ACB;&#x5373;&#x64AD;&#x653E;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>false</code>&#x3002;</li>
-<li><code>poster {string}</code> <span class="weex-version">v0.18+ &amp; iOS only</span>&#xFF1A;&#x6307;&#x5B9A;&#x89C6;&#x9891;&#x9996;&#x56FE;&#x7684;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x3002;</li>
-<li><code>controls {string}</code> <span class="weex-version">v0.19+</span>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A;  <code>controls</code> | <code>nocontrols</code>&#xFF0C;&#x63A7;&#x5236;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x7EC4;&#x4EF6;&#x662F;&#x5426;&#x663E;&#x793A;&#x56DE;&#x653E;&#x63A7;&#x5236;&#x9762;&#x677F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x663E;&#x793A;&#xFF0C;&#x5F53;&#x6307;&#x5B9A;&#x4E3A; <code>nocontrols</code> &#x65F6;&#x4E0D;&#x663E;&#x793A;&#x56DE;&#x653E;&#x63A7;&#x5236;&#x9762;&#x677F;&#x3002;</li>
+    <html><head></head><body><p>Video &#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x5D4C;&#x5165;&#x89C6;&#x9891;&#x5185;&#x5BB9;&#x3002;</p>
+<h2 class="article-heading"><span id="zi-zu-jian">&#x5B50;&#x7EC4;&#x4EF6;</span><a href="#zi-zu-jian" class="header-anchor">#</a></h2><p><code>text</code> &#x662F;&#x552F;&#x4E00;&#x5408;&#x6CD5;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h2 class="article-heading"><span id="shu-xing">&#x5C5E;&#x6027;</span><a href="#shu-xing" class="header-anchor">#</a></h2><ul>
+<li><strong>src</strong>, string. &#x5185;&#x5D4C;&#x7684;&#x89C6;&#x9891;&#x6307;&#x5411;&#x7684;URL&#x3002;</li>
+<li><strong>play-status</strong>, string. &#x53EF;&#x9009;&#x503C;&#x4E3A; <code>play</code> | <code>pause</code>&#xFF0C;&#x7528;&#x6765;&#x63A7;&#x5236;&#x89C6;&#x9891;&#x7684;&#x64AD;&#x653E;&#x72B6;&#x6001;&#xFF0C;<code>play</code> &#x6216;&#x8005; <code>pause</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>pause</code>&#x3002;</li>
+<li><strong>auto-play</strong>, boolean. &#x5F53;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x7528;&#x6765;&#x63A7;&#x5236;&#x89C6;&#x9891;&#x662F;&#x5426;&#x7ACB;&#x5373;&#x64AD;&#x653E;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>false</code>&#x3002;</li>
+<li><strong>poster</strong>, string, <span class="weex-version">v0.18+ &amp; iOS</span>. &#x6307;&#x5B9A;&#x89C6;&#x9891;&#x9996;&#x56FE;&#x7684;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x3002;</li>
+<li><strong>controls</strong>, string. &#x53EF;&#x9009;&#x503C;&#x4E3A;  <code>controls</code> | <code>nocontrols</code>&#xFF0C;&#x63A7;&#x5236;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x7EC4;&#x4EF6;&#x662F;&#x5426;&#x663E;&#x793A;&#x56DE;&#x653E;&#x63A7;&#x5236;&#x9762;&#x677F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x663E;&#x793A;&#xFF0C;&#x5F53;&#x6307;&#x5B9A;&#x4E3A; <code>nocontrols</code> &#x65F6;&#x4E0D;&#x663E;&#x793A;&#x56DE;&#x653E;&#x63A7;&#x5236;&#x9762;&#x677F;&#x3002;</li>
 </ul>
 <h2 class="article-heading"><span id="yang-shi">&#x6837;&#x5F0F;</span><a href="#yang-shi" class="header-anchor">#</a></h2><ul>
-<li><p>&#x901A;&#x7528;&#x6837;&#x5F0F;&#xFF1A;&#x652F;&#x6301;&#x6240;&#x6709;&#x901A;&#x7528;&#x6837;&#x5F0F;</p>
-<ul>
-<li>&#x76D2;&#x6A21;&#x578B;</li>
-<li><code>flexbox</code> &#x5E03;&#x5C40;</li>
-<li><code>position</code></li>
-<li><code>opacity</code></li>
-<li><code>background-color</code></li>
-</ul>
-<p>&#x67E5;&#x770B; <a href="/cn/wiki/common-styles.html">&#x7EC4;&#x4EF6;&#x901A;&#x7528;&#x6837;&#x5F0F;</a></p>
-</li>
+<li><strong>&#x901A;&#x7528;&#x6837;&#x5F0F;</strong> &#x8BE5;&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x6240;&#x6709;<a href="/cn/wiki/common-styles.html">&#x901A;&#x7528;&#x6837;&#x5F0F;</a>&#x3002;</li>
 </ul>
 <h2 class="article-heading"><span id="shi-jian">&#x4E8B;&#x4EF6;</span><a href="#shi-jian" class="header-anchor">#</a></h2><ul>
-<li><code>start</code>&#xFF1A;&#x5F53; playback &#x7684;&#x72B6;&#x6001;&#x662F; Playing &#x65F6;&#x89E6;&#x53D1;</li>
-<li><code>pause</code>&#xFF1A;&#x5F53; playback &#x7684;&#x72B6;&#x6001;&#x662F; Paused &#x65F6;&#x89E6;&#x53D1;</li>
-<li><code>finish</code>&#xFF1A;&#x5F53; playback &#x7684;&#x72B6;&#x6001;&#x662F; Finished &#x65F6;&#x89E6;&#x53D1;</li>
-<li><code>fail</code>&#xFF1A;&#x5F53; playback &#x72B6;&#x6001;&#x662F; Failed &#x65F6;&#x89E6;&#x53D1;</li>
+<li><strong>start</strong> &#x5F53; playback &#x7684;&#x72B6;&#x6001;&#x662F; Playing &#x65F6;&#x89E6;&#x53D1;&#x3002;</li>
+<li><strong>pause</strong> &#x5F53; playback &#x7684;&#x72B6;&#x6001;&#x662F; Paused &#x65F6;&#x89E6;&#x53D1;&#x3002;</li>
+<li><strong>finish</strong> &#x5F53; playback &#x7684;&#x72B6;&#x6001;&#x662F; Finished &#x65F6;&#x89E6;&#x53D1;&#x3002;</li>
+<li><strong>fail</strong> &#x5F53; playback &#x72B6;&#x6001;&#x662F; Failed &#x65F6;&#x89E6;&#x53D1;&#x3002;</li>
 </ul>
 <h2 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h2><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">class</span>=<span class="string">&quot;video&quot;</span> <span class="attr">:src</span>=<span class="string">&quot;src&quot;</span> <span class="attr">autoplay</span> <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">start</span>=<span class="string">&quot;onstart&quot;</span> @<span class="attr">pause</span>=<span class="string">&quot;onpause&quot;</span> @<span class="attr">finish</span>=<span class="string">&quot;onfinish&quot;</span> @<span class="attr">fail</span>=<span class="string">&quot;onfail&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span>state: {{state}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.video</span> {</span></span><br><span class="line"><span class="undefined">    width: 630px;</span></span><br><span class="line"><span class="undefined">    height: 350px;</span></span><br><span class="line"><span class="undefined">    margin-top: 60px;</span></span><br><span class="line"><span class="undefined">    margin-left: 60px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.info</span> {</span></span><br><span class="line"><span class="undefined">    margin-top: 40px;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    text-align: center;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    data () {</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="javascript">        state: <span class="string">&apos;----&apos;</span>,</span></span><br><span class="line"><span class="javascript">        src:<span class="string">&apos;http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="undefined">    methods:{</span></span><br><span class="line"><span class="undefined">      onstart (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onstart&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onpause (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onpause&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onfinish (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onfinish&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onfail (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onfinish&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <p><a href="http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197" target="_blank" rel="noopener">try it</a></p>

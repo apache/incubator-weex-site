@@ -5,17 +5,17 @@
   
   <title>&lt;video&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;video&amp;gt;#v0.6.1+ The video component can be used to embed video content in a weex page. Child Components# text is the only valid type of child component.  Attributes# src: &amp;lt;string&amp;gt; The URL">
+  <meta name="description" content="The video component can be used to embed video content in a Weex page. Child Components#A text is the only valid type of child component. Attributes# src, string. The URL of the video to embed. play-s">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&lt;video&gt;">
 <meta property="og:url" content="https://weex.apache.org/references/components/video.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;video&amp;gt;#v0.6.1+ The video component can be used to embed video content in a weex page. Child Components# text is the only valid type of child component.  Attributes# src: &amp;lt;string&amp;gt; The URL">
+<meta property="og:description" content="The video component can be used to embed video content in a Weex page. Child Components#A text is the only valid type of child component. Attributes# src, string. The URL of the video to embed. play-s">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-06T02:36:44.643Z">
+<meta property="og:updated_time" content="2018-12-14T07:22:16.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;video&gt;">
-<meta name="twitter:description" content="&amp;lt;video&amp;gt;#v0.6.1+ The video component can be used to embed video content in a weex page. Child Components# text is the only valid type of child component.  Attributes# src: &amp;lt;string&amp;gt; The URL">
+<meta name="twitter:description" content="The video component can be used to embed video content in a Weex page. Child Components#A text is the only valid type of child component. Attributes# src, string. The URL of the video to embed. play-s">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -464,13 +464,13 @@
             
               
                 <li>
-                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
                 </li>
               
             
@@ -962,13 +962,13 @@
             
               
                 <li>
-                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
                 </li>
               
             
@@ -1155,33 +1155,26 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-12-06T02:36:44.643Z">Updated time: 06/12/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-12-14T07:22:16.716Z">Updated time: 14/12/2018</time> -->
 </header>
 
-    <html><head></head><body><h1 class="article-heading"><span id="lt-video-gt">&lt;video&gt;</span><a href="#lt-video-gt" class="header-anchor">#</a></h1><p><span class="weex-version">v0.6.1+</span></p>
-<p>The video component can be used to embed video content in a weex page.</p>
-<h2 class="article-heading"><span id="child-components">Child Components</span><a href="#child-components" class="header-anchor">#</a></h2><ul>
-<li>text is the only valid type of child component.</li>
-</ul>
+    <html><head></head><body><p>The video component can be used to embed video content in a Weex page.</p>
+<h2 class="article-heading"><span id="child-components">Child Components</span><a href="#child-components" class="header-anchor">#</a></h2><p>A <code>text</code> is the only valid type of child component.</p>
 <h2 class="article-heading"><span id="attributes">Attributes</span><a href="#attributes" class="header-anchor">#</a></h2><ul>
-<li>src: &lt;string&gt; The URL of the video to embed.</li>
-<li>play-status: &lt;boolean&gt; play | pause. Use it to control video&#x2019;s play/pause status. Default value is pause.</li>
-<li>auto-play: &lt;boolean&gt; true | false. Use it to control whether it is playing when the page initialization finished. Defalut value is false.</li>
-<li>poster: &lt;string&gt; <span class="weex-version">v0.18+ &amp; iOS only</span> Post image URL of this video if any.</li>
-<li>controls: &lt;string&gt; <span class="weex-version">v0.19+</span> If set to &#x2018;nocontrols&#x2019;, native video component will hide its play-back control panel.</li>
+<li><strong>src</strong>, string. The URL of the video to embed.</li>
+<li><strong>play-status</strong>, string. Valid options are &#x2018;play&#x2019; | &#x2018;pause&#x2019;. Use it to control video&#x2019;s play status. Default value is <code>pause</code>&#x3002;</li>
+<li><strong>auto-play</strong>, boolean. Use it to control whether it is playing when the page initialization finished. Defalut value is false.</li>
+<li><strong>poster</strong>, string, <span class="weex-version">v0.18+ &amp; iOS</span>. Post image URL of this video if any.</li>
+<li><strong>controls</strong>, string, <span class="weex-version">v0.19+</span>. If set to <code>nocontrols</code>, native video component will hide its play-back control panel.</li>
 </ul>
-<h2 class="article-heading"><span id="styles">Styles</span><a href="#styles" class="header-anchor">#</a></h2><p>common styles: check out <a href="/wiki/common-styles.html">common styles for components</a></p>
-<ul>
-<li>support flexbox related styles</li>
-<li>support box model related styles</li>
-<li>support position related styles</li>
-<li>support opacity, background-color etc.</li>
+<h2 class="article-heading"><span id="styles">Styles</span><a href="#styles" class="header-anchor">#</a></h2><ul>
+<li><strong>common styles</strong>. Check out <a href="/wiki/common-styles.html">common styles for components</a>.</li>
 </ul>
 <h2 class="article-heading"><span id="events">Events</span><a href="#events" class="header-anchor">#</a></h2><ul>
-<li>onstart: triggered when playback state is Playing.</li>
-<li>onpause: triggered when playback state is Paused.</li>
-<li>onfinish: triggered when playback state is Finished.</li>
-<li>onfail: triggered when playback state is Failed.</li>
+<li><strong>start</strong> Triggered when playback state is Playing.</li>
+<li><strong>pause</strong> Triggered when playback state is Paused.</li>
+<li><strong>finish</strong> Triggered when playback state is Finished.</li>
+<li><strong>fail</strong> Triggered when playback state is Failed.</li>
 </ul>
 <h2 class="article-heading"><span id="example">example</span><a href="#example" class="header-anchor">#</a></h2><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">class</span>=<span class="string">&quot;video&quot;</span> <span class="attr">:src</span>=<span class="string">&quot;src&quot;</span> <span class="attr">autoplay</span> <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">start</span>=<span class="string">&quot;onstart&quot;</span> @<span class="attr">pause</span>=<span class="string">&quot;onpause&quot;</span> @<span class="attr">finish</span>=<span class="string">&quot;onfinish&quot;</span> @<span class="attr">fail</span>=<span class="string">&quot;onfail&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span>state: {{state}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.video</span> {</span></span><br><span class="line"><span class="undefined">    width: 630px;</span></span><br><span class="line"><span class="undefined">    height: 350px;</span></span><br><span class="line"><span class="undefined">    margin-top: 60px;</span></span><br><span class="line"><span class="undefined">    margin-left: 60px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.info</span> {</span></span><br><span class="line"><span class="undefined">    margin-top: 40px;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    text-align: center;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    data () {</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="javascript">        state: <span class="string">&apos;----&apos;</span>,</span></span><br><span class="line"><span class="javascript">        src:<span class="string">&apos;http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    },</span></span><br><span class="line"><span class="undefined">    methods:{</span></span><br><span class="line"><span class="undefined">      onstart (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onstart&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onpause (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onpause&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onfinish (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onfinish&apos;</span></span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onfail (event) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = <span class="string">&apos;onfinish&apos;</span></span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <p><a href="http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197" target="_blank" rel="noopener">try it</a></p>

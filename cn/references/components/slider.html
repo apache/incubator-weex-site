@@ -5,17 +5,17 @@
   
   <title>&lt;slider&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;slider&amp;gt;#&amp;lt;slider&amp;gt; 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。 子组件#支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：  &amp;lt;indicator&amp;gt;：用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。  特性# auto-play {boolean}">
+  <meta name="description" content="Slider 组件用于在一个页面中展示多个图片，在前端这种效果被称为轮播图。默认的轮播间隔为3秒。 子组件#支持任意类型的 Weex 组件作为其子组件。你也可以放置一个 indicator 组件用于显示轮播指示器。indicator 也只能作为 Slider 的子组件使用。 属性# auto-play, boolean. 组件渲染完成时，是否自动开始播放，默认为 false. interval,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&lt;slider&gt;">
 <meta property="og:url" content="https://weex.apache.org/cn/references/components/slider.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;slider&amp;gt;#&amp;lt;slider&amp;gt; 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。 子组件#支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：  &amp;lt;indicator&amp;gt;：用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。  特性# auto-play {boolean}">
+<meta property="og:description" content="Slider 组件用于在一个页面中展示多个图片，在前端这种效果被称为轮播图。默认的轮播间隔为3秒。 子组件#支持任意类型的 Weex 组件作为其子组件。你也可以放置一个 indicator 组件用于显示轮播指示器。indicator 也只能作为 Slider 的子组件使用。 属性# auto-play, boolean. 组件渲染完成时，是否自动开始播放，默认为 false. interval,">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2018-12-06T02:36:44.638Z">
+<meta property="og:updated_time" content="2018-12-14T07:22:16.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;slider&gt;">
-<meta name="twitter:description" content="&amp;lt;slider&amp;gt;#&amp;lt;slider&amp;gt; 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。 子组件#支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：  &amp;lt;indicator&amp;gt;：用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。  特性# auto-play {boolean}">
+<meta name="twitter:description" content="Slider 组件用于在一个页面中展示多个图片，在前端这种效果被称为轮播图。默认的轮播间隔为3秒。 子组件#支持任意类型的 Weex 组件作为其子组件。你也可以放置一个 indicator 组件用于显示轮播指示器。indicator 也只能作为 Slider 的子组件使用。 属性# auto-play, boolean. 组件渲染完成时，是否自动开始播放，默认为 false. interval,">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -566,13 +566,13 @@
             
               
                 <li>
-                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
@@ -1064,13 +1064,13 @@
             
               
                 <li>
-                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
+                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                  <a href="/cn/references/modules/custom_font.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
@@ -1155,64 +1155,29 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-12-06T02:36:44.638Z">Updated time: 06/12/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-12-14T07:22:16.650Z">Updated time: 14/12/2018</time> -->
 </header>
 
-    <html><head></head><body><h1 class="article-heading"><span id="lt-slider-gt">&lt;slider&gt;</span><a href="#lt-slider-gt" class="header-anchor">#</a></h1><p><code>&lt;slider&gt;</code> &#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x5728;&#x524D;&#x7AEF;&#xFF0C;&#x8FD9;&#x79CD;&#x6548;&#x679C;&#x88AB;&#x79F0;&#x4E3A; <code>&#x8F6E;&#x64AD;&#x56FE;</code>&#x3002;</p>
-<h2 class="article-heading"><span id="zi-zu-jian">&#x5B50;&#x7EC4;&#x4EF6;</span><a href="#zi-zu-jian" class="header-anchor">#</a></h2><p>&#x652F;&#x6301;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684; Weex &#x7EC4;&#x4EF6;&#x4F5C;&#x4E3A;&#x5176;&#x5B50;&#x7EC4;&#x4EF6;&#x3002; &#x5176;&#x4E2D;&#xFF0C;&#x8FD8;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x7EC4;&#x4EF6;&#x4F5C;&#x4E3A;&#x5B50;&#x7EC4;&#x4EF6;&#x5C55;&#x793A;&#x7279;&#x6B8A;&#x6548;&#x679C;&#xFF1A;</p>
-<ul>
-<li><code>&lt;indicator&gt;</code>&#xFF1A;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x8F6E;&#x64AD;&#x56FE;&#x6307;&#x793A;&#x5668;&#x6548;&#x679C;&#xFF0C;&#x5FC5;&#x987B;&#x5145;&#x5F53; <a href="./slider.html"><code>&lt;slider&gt;</code></a> &#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x3002;</li>
-</ul>
-<h2 class="article-heading"><span id="te-xing">&#x7279;&#x6027;</span><a href="#te-xing" class="header-anchor">#</a></h2><ul>
-<li><p><code>auto-play {boolean}</code>&#xFF1A;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>true</code>/<code>false</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x662F; <code>false</code>&#x3002;</p>
-<p>&#x8BE5;&#x503C;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x8F6E;&#x64AD;&#x3002;&#x91CD;&#x7F6E; <code>loadmore</code> &#x76F8;&#x5173;&#x7684; UI&#xFF0C;&#x503C;&#x4E0D;&#x4E00;&#x6837;&#x5C31;&#x4F1A;&#x91CD;&#x7F6E;&#x3002;</p>
-</li>
-<li><p><code>interval {number}</code>&#xFF1A;&#x503C;&#x4E3A;&#x6BEB;&#x79D2;&#x6570;&#xFF0C;&#x6B64;&#x503C;&#x8BBE;&#x5B9A; slider &#x5207;&#x6362;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x3002;&#x5F53; <code>auto-play</code> &#x503C;&#x4E3A; <code>true</code> &#x65F6;&#x751F;&#x6548;&#x3002;</p>
-</li>
-<li><code>infinite {boolean}</code>&#xFF1A;&#x5FAA;&#x73AF;&#x64AD;&#x653E;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A; <code>true</code>/<code>false</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x662F; <code>true</code>&#x3002;</li>
-<li><code>offset-x-accuracy {number}</code><sup class="wx-v">0.11+</sup>&#xFF1A;&#x63A7;&#x5236;<code>onscroll</code>&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;10&#xFF0C;&#x8868;&#x793A;&#x4E24;&#x6B21;<code>onscroll</code>&#x4E8B;&#x4EF6;&#x4E4B;&#x95F4;Slider Page&#x81F3;&#x5C11;&#x6EDA;&#x52A8;&#x4E86;10px&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;&#x4F1A;&#x63D0;&#x9AD8;&#x6EDA;&#x52A8;&#x4E8B;&#x4EF6;&#x91C7;&#x6837;&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x4F46;&#x540C;&#x65F6;&#x4E5F;&#x4F1A;&#x964D;&#x4F4E;&#x9875;&#x9762;&#x7684;&#x6027;&#x80FD;&#x3002;</li>
-<li><code>show-indicators {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x663E;&#x793A;indicator</li>
-<li><code>index {number}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x663E;&#x793A;slider&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x9875;&#x9762;</li>
-<li><code>scrollable {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6ED1;&#x52A8;&#x624B;&#x52BF;&#x6765;&#x5207;&#x6362;slider&#x9875;&#x9762;</li>
-<li><code>keep-index {boolean}</code>&#xFF1A;&#x8BBE;&#x7F6E;slider&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x540E;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x53D8;&#x5316;&#x524D;&#x7684;&#x9875;&#x9762;index</li>
-<li><p><code>forbid-slide-animation {boolean}</code>&#xFF1A;<sup class="wx-v">0.21+ &amp; iOS only</sup>. &#x5728; iOS &#x4E0A;&#xFF0C;slider &#x7EC4;&#x4EF6;&#x9ED8;&#x8BA4;&#x6709;&#x52A8;&#x753B;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x8BE5;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x5C06;&#x52A8;&#x753B;&#x5173;&#x6389;&#x3002;</p>
-</li>
-<li><p><code>index {number}</code>: &#x6307;&#x5B9A;&#x5F53;&#x524D;&#x5C55;&#x793A;&#x9875;&#x9762;&#x7684;&#x7D22;&#x5F15;<br><a href="http://dotwe.org/vue/58a29d38247e7946a6db44e1b616f082" target="_blank" rel="noopener">&#x4F53;&#x9A8C;&#x4E00;&#x4E0B;</a></p>
-</li>
+    <html><head></head><body><p>Slider &#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x56FE;&#x7247;&#xFF0C;&#x5728;&#x524D;&#x7AEF;&#x8FD9;&#x79CD;&#x6548;&#x679C;&#x88AB;&#x79F0;&#x4E3A;&#x8F6E;&#x64AD;&#x56FE;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x8F6E;&#x64AD;&#x95F4;&#x9694;&#x4E3A;3&#x79D2;&#x3002;</p>
+<h2 class="article-heading"><span id="zi-zu-jian">&#x5B50;&#x7EC4;&#x4EF6;</span><a href="#zi-zu-jian" class="header-anchor">#</a></h2><p>&#x652F;&#x6301;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684; Weex &#x7EC4;&#x4EF6;&#x4F5C;&#x4E3A;&#x5176;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x7F6E;&#x4E00;&#x4E2A; <code>indicator</code> &#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x8F6E;&#x64AD;&#x6307;&#x793A;&#x5668;&#x3002;<code>indicator</code> &#x4E5F;&#x53EA;&#x80FD;&#x4F5C;&#x4E3A; <code>Slider</code> &#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 class="article-heading"><span id="shu-xing">&#x5C5E;&#x6027;</span><a href="#shu-xing" class="header-anchor">#</a></h2><ul>
+<li><strong>auto-play</strong>, boolean. &#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; false.</li>
+<li><strong>interval</strong>, number&#xFF08;ms&#xFF09;. &#x8F6E;&#x64AD;&#x95F4;&#x9694;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 3000ms&#x3002;</li>
+<li><strong>index</strong>, number. &#x8BBE;&#x7F6E;&#x663E;&#x793A;slider&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x9875;&#x9762;&#x3002;</li>
+<li><strong>offset-x-accuracy</strong>, number. &#x63A7;&#x5236; <code>onscroll</code> &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;10&#xFF0C;&#x8868;&#x793A;&#x4E24;&#x6B21; <code>onscroll</code> &#x4E8B;&#x4EF6;&#x4E4B;&#x95F4;&#x6EDA;&#x52A8;&#x5BB9;&#x5668;&#x81F3;&#x5C11;&#x6EDA;&#x52A8;&#x4E86;10px&#x3002;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x503C;&#x4F1A;&#x63D0;&#x9AD8;&#x6EDA;&#x52A8;&#x4E8B;&#x4EF6;&#x91C7;&#x6837;&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x4F46;&#x540C;&#x65F6;&#x4E5F;&#x4F1A;&#x964D;&#x4F4E;&#x9875;&#x9762;&#x7684;&#x6027;&#x80FD;&#x3002;</li>
+<li><strong>show-indicators</strong>, boolean. &#x662F;&#x5426;&#x663E;&#x793A;&#x6307;&#x793A;&#x5668;&#x3002;</li>
+<li><strong>infinite</strong>, boolean. &#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x65E0;&#x9650;&#x8F6E;&#x64AD;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; true&#x3002;</li>
+<li><strong>scrollable</strong>, boolean. &#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6ED1;&#x52A8;&#x624B;&#x52BF;&#x6765;&#x5207;&#x6362;&#x9875;&#x9762;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; true&#x3002;</li>
+<li><strong>keep-index</strong>, boolean, <span class="api-version">Android</span>. &#x8BBE;&#x7F6E;&#x8F6E;&#x64AD;&#x5668;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x540E;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x53D8;&#x5316;&#x524D;&#x7684;&#x9875;&#x9762;&#x5E8F;&#x53F7;&#x3002;</li>
+<li><strong>forbid-slide-animation</strong>, boolean, <span class="api-version">v0.7+ &amp; iOS</span>. iOS &#x5E73;&#x53F0;&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x52A8;&#x753B;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x5173;&#x95ED;&#x5207;&#x6362;&#x65F6;&#x7684;&#x52A8;&#x753B;&#x3002;</li>
 </ul>
 <h2 class="article-heading"><span id="yang-shi">&#x6837;&#x5F0F;</span><a href="#yang-shi" class="header-anchor">#</a></h2><ul>
-<li><p>&#x901A;&#x7528;&#x6837;&#x5F0F;&#xFF1A;&#x652F;&#x6301;&#x6240;&#x6709;&#x901A;&#x7528;&#x6837;&#x5F0F;</p>
-<ul>
-<li>&#x76D2;&#x6A21;&#x578B;</li>
-<li><code>flexbox</code> &#x5E03;&#x5C40;</li>
-<li><code>position</code></li>
-<li><code>opacity</code></li>
-<li><code>background-color</code></li>
-</ul>
-<p>&#x67E5;&#x770B; <a href="/cn/wiki/common-styles.html">&#x7EC4;&#x4EF6;&#x901A;&#x7528;&#x6837;&#x5F0F;</a></p>
-</li>
+<li><strong>&#x901A;&#x7528;&#x6837;&#x5F0F;</strong> &#x8BE5;&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x6240;&#x6709;<a href="/cn/wiki/common-styles.html">&#x901A;&#x7528;&#x6837;&#x5F0F;</a>&#x3002;</li>
 </ul>
 <h2 class="article-heading"><span id="shi-jian">&#x4E8B;&#x4EF6;</span><a href="#shi-jian" class="header-anchor">#</a></h2><ul>
-<li><p><code>change</code>: &#x5F53;&#x8F6E;&#x64AD;&#x7D22;&#x5F15;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;&#x8BE5;&#x4E8B;&#x4EF6;&#x3002;</p>
-<p>&#x4E8B;&#x4EF6;&#x4E2D; event &#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#xFF1A;</p>
-<ul>
-<li><code>index</code>&#xFF1A;&#x5C55;&#x793A;&#x7684;&#x56FE;&#x7247;&#x7D22;&#x5F15;</li>
-<li><code>scroll</code> <sup class="wx-v">0.11+</sup>: &#x5217;&#x8868;&#x53D1;&#x751F;&#x6EDA;&#x52A8;&#x65F6;&#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x8BE5;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x62BD;&#x6837;&#x7387;&#x4E3A;10px&#xFF0C;&#x5373;&#x5217;&#x8868;&#x6BCF;&#x6EDA;&#x52A8;10px&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x5C5E;&#x6027;<code>offset-accuracy</code>&#x8BBE;&#x7F6E;&#x62BD;&#x6837;&#x7387;&#x3002;<br><a href="http://dotwe.org/vue/832e8f50cc325975b9d3aba93a9f6c39" target="_blank" rel="noopener">&#x4F53;&#x9A8C;&#x4E00;&#x4E0B;</a><br>&#x4E8B;&#x4EF6;&#x4E2D; event &#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#xFF1A;</li>
-<li><code>offsetXRatio {number}</code>&#xFF1A;&#x8868;&#x793A;&#x5F53;&#x524D;&#x9875;&#x9762;&#x7684;&#x504F;&#x79FB;&#x6BD4;&#x4F8B;&#xFF0C;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A;[-1, 1]&#xFF0C;&#x8D1F;&#x503C;&#x8868;&#x793A;&#x5411;&#x5DE6;&#x4FA7;&#x6EDA;&#x52A8;&#xFF0C;&#x6B63;&#x503C;&#x5411;&#x53F3;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code>-0.2</code>&#x8868;&#x793A;&#x5F53;&#x524D;item&#x6709;20%&#x7684;&#x533A;&#x57DF;&#x88AB;&#x6EDA;&#x52A8;&#x5230;slider&#x5DE6;&#x4FA7;&#x8FB9;&#x754C;&#x4EE5;&#x5916;&#xFF0C;<code>0.3</code>&#x8868;&#x793A;&#x5F53;&#x524D;item&#x6709;30%&#x7684;&#x533A;&#x57DF;&#x88AB;&#x6EDA;&#x52A8;&#x5230;slider&#x53F3;&#x4FA7;&#x8FB9;&#x754C;&#x4EE5;&#x5916;&#x3002;</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>&#x901A;&#x7528;&#x4E8B;&#x4EF6;</p>
-<p>&#x652F;&#x6301;&#x6240;&#x6709;&#x901A;&#x7528;&#x4E8B;&#x4EF6;&#xFF1A;</p>
-<ul>
-<li><code>click</code></li>
-<li><code>longpress</code></li>
-<li><code>appear</code></li>
-<li><code>disappear</code></li>
-</ul>
-<p>&#x67E5;&#x770B; <a href="/cn/wiki/common-events.html">&#x901A;&#x7528;&#x4E8B;&#x4EF6;</a></p>
-</li>
+<li><strong>&#x901A;&#x7528;&#x4E8B;&#x4EF6;</strong> &#x652F;&#x6301;&#x6240;&#x6709;<a href="/cn/wiki/common-events.html">&#x901A;&#x7528;&#x4E8B;&#x4EF6;</a>&#x3002;</li>
+<li><strong>change</strong> &#x5F53;&#x8F6E;&#x64AD;&#x7D22;&#x5F15;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;&#x8BE5;&#x4E8B;&#x4EF6;&#x3002;</li>
+<li><strong>scroll</strong>, <span class="api-version">v0.11+</span> &#x5217;&#x8868;&#x53D1;&#x751F;&#x6EDA;&#x52A8;&#x65F6;&#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x8BE5;&#x4E8B;&#x4EF6;&#x3002;</li>
 </ul>
 <h2 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h2><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">&quot;slider&quot;</span> <span class="attr">interval</span>=<span class="string">&quot;3000&quot;</span> <span class="attr">auto-play</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;frame&quot;</span> <span class="attr">v-for</span>=<span class="string">&quot;img in imageList&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">&quot;image&quot;</span> <span class="attr">resize</span>=<span class="string">&quot;cover&quot;</span> <span class="attr">:src</span>=<span class="string">&quot;img.src&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.image</span> {</span></span><br><span class="line"><span class="undefined">    width: 700px;</span></span><br><span class="line"><span class="undefined">    height: 700px;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.slider</span> {</span></span><br><span class="line"><span class="undefined">    margin-top: 25px;</span></span><br><span class="line"><span class="undefined">    margin-left: 25px;</span></span><br><span class="line"><span class="undefined">    width: 700px;</span></span><br><span class="line"><span class="undefined">    height: 700px;</span></span><br><span class="line"><span class="undefined">    border-width: 2px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="css">  <span class="selector-class">.frame</span> {</span></span><br><span class="line"><span class="undefined">    width: 700px;</span></span><br><span class="line"><span class="undefined">    height: 700px;</span></span><br><span class="line"><span class="undefined">    position: relative;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    data () {</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> {</span></span><br><span class="line"><span class="undefined">        imageList: [</span></span><br><span class="line"><span class="javascript">          { <span class="attr">src</span>: <span class="string">&apos;https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg&apos;</span>},</span></span><br><span class="line"><span class="javascript">          { <span class="attr">src</span>: <span class="string">&apos;https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg&apos;</span>},</span></span><br><span class="line"><span class="javascript">          { <span class="attr">src</span>: <span class="string">&apos;https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg&apos;</span>}</span></span><br><span class="line"><span class="undefined">        ]</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <p><a href="http://dotwe.org/vue/0c43ffd743c90b3bd9f5371062652e60" target="_blank" rel="noopener">try it</a></p>
