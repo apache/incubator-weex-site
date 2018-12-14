@@ -1,4 +1,13 @@
-# Recycle List
+---
+title: <recycle list>
+type: references
+group: Build-in Components
+order: 8.10
+version: 2.1
+---
+# &lt;Recycle List&gt;
+### <span class="weex-version">v0.18.0+</span>
+
 `<recycle-list>`  is a new list container with the ability to recycle and reuse, which can greatly optimize memory usage and rendering performance.
 
 > * Please refer to [Design.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md) for design ideas. For details, please refer to  [Implementation.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md)
@@ -17,13 +26,12 @@
     <tr><td>case</td><td>The type of the current template is declared, and will only be rendered if the type in the data matches the current type. The semantics are consistent with the <code>case</code> in the programming language. Only one item will be matched in all templates, matching from top to bottom in the order of the template. Once the matching is successful, the next one will not be matched.</td></tr>
     <tr><td>default</td><td>Indicates that the current template is the default template type and does not require a value. If the data item does not match any <code>case</code> type, the rendering has a <code>default</code> template. If there are multiple <code>default</code>, only the first default template will be used.</td></tr>
     <tr><td>key</td><td>An optional attribute that specifies the key values in the list data that can be uniquely identified to optimize rendering performance.</td></tr>
-  </tbodyThe
+  </tbody>
 </table>
 
 - warning attribute omission
   - If you don't write a `switch`, use the first template with or without `case` or `default`.
   - In the case of a `switch`, `case` and `default` must be written, otherwise the template will be ignored
-
 
 ## Attributes
 * `for`  
