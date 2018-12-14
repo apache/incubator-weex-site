@@ -36,7 +36,7 @@ Weex 在 iOS 和 Android 上都实现了一个渲染引擎，并提供了一套�
 
 尽管 Weex 中的组件看起来很像 HTML 标签，但你无法使用所有 HTML 标签，只能使用内置组件和自定义组件。
 
-在框架内部，Weex 使用的是原生系统提供的 Widget 来渲染的。尽管 Weex 强调每个跨平台的一致性，但我们仍然接受平台本身的行为和 UI 差异。 例如 [<switch> switch 组件](http://dotwe.org/vue/d96943452b6708422197c47920903823) 在 Android 和 iOS 上看起来是不同的（在 Web 端的外观模拟了 iOS）。
+在框架内部，Weex 使用的是原生系统提供的 Widget 来渲染的。尽管 Weex 强调每个跨平台的一致性，但我们仍然接受平台本身的行为和 UI 差异。 例如 [<switch/> switch 组件](http://dotwe.org/vue/d96943452b6708422197c47920903823) 在 Android 和 iOS 上看起来是不同的（在 Web 端的外观模拟了 iOS）。
 
 ![Different switch](../../guide/images/different-switch.png)
 
