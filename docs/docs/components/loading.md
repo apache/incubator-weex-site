@@ -1,46 +1,106 @@
+---
+title: <loading>
+type: references
+group: Build-in Components
+order: 8.09
+version: 2.1
+---
+
 # &lt;loading&gt;
-`<loading>` 为容器提供上拉加载功能。
 
-::: warning 注意
-* `<loading>` 是 `<scroller>`、`<list>`、`<waterfall>` 的子组件，只能在被它们包含时才能被正确渲染。
-:::
+### <span class="weex-version">v0.6.1+</span>
 
-```vue{5}
-<scroller>
-  <div v-for="num in lists">
-    <text>{{num}}</text>
-  </div>
+The `<loading>` Component provide a pullup to loading function for some special containers, its usage and attributes are similar to the `<refresh>` Component.
+> **Note：** To be rendered properly, the `<loading>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
+
+ - Example:
+
+```
+<list>
+  ...
+  ...
   <loading>
-    <text>Loading</text>
+    ...
   </loading>
-</scroller>
+</list>
 ```
 
-## 子组件
-* 诸如 `<text>`、`<image>` 之类的任何组件，都可以放到 `<loading>` 进行渲染。
-* 特殊子组件 `<loading-indicator>`: 只能作为 `<refresh>` 和 `<loading>` 的子组件使用，拥有默认的动画效果实现。
-  ```vue{3}
-  <loading>
-    <text>Loading</text>
-    <loading-indicator></loading-indicator>
-  </loading>
-  ```
+ - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
-## 属性
-* `display`  
-  控制 `<loading>` 组件显示、隐藏。`display` 的设置必须成对出现，即设置 `display="show"`,必须有对应的 `display="hide"`。可选值为 `show / hide`，默认值为 `show`。
+## Child Components
 
-## 事件
-`loading` 事件：当 `<scroller>`、`<list>`、`<waterfall>` 被上拉完成时触发。
+ - Any other components, like the `<text>` and `<image>` components, can be put inside the loading component.
 
-```vue
-<loading @loading="onloading" :display="loadinging ? 'show' : 'hide'">
-  <text>Loading ...</text>
+ - `<loading-indicator>`: This is a dedicated component which provides a default loading animation effect, can only be used inside the `<refresh>` or the `<loading>` components.
+
+ - Example:
+
+```
+<loading>
+  <text>Loading</text>
   <loading-indicator></loading-indicator>
+  ...
 </loading>
 ```
+ - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
+
+## Attributes
+
+ - Support all common attributes, check out [common attributes](../common/common-attrs)
+
+| Attribute      | Type     | Value            | Default Value     |
+| ------------- | ------ | -------------------------- | ------- |
+| `display` | String | show / hide             | show      |
+
+#### `display`
+
+ - `show`：The loading animation will be started if a `<loading-indicator>` is included in the loading component.
+
+ - `hide`：Collapse the loading view. It also hides the `<loading-indicator>` and stops the loading animation if there's a `<loading-indicator>` included in the loading component.
+
+> **Note：** The visibility of `<loading>` component can be controlled by display attribute with the value show and hide. A `display="show"` should always be paired with a `display="hide"` statement.
+
+ - Example:
+
+```
+<template>
+  <list>
+    ...
+    ...
+    <loading @loading="onloading" :display="loadinging ? 'show' : 'hide'">
+      ...
+    </loading>
+    ...
+  </list>
+</template>
+
+<script>
+  ...
+  methods: {
+    onloading (event) {
+      this.loadinging = true
+      setTimeout(() => {
+        this.loadinging = false
+      }, 2000)
+    },
+  }
+</script>
+```
+ - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
+
+## Styles
+
+ - Please check out the [common styles](/wiki/common-styles.html)
+
+## Events
+
+### `loading`
+
+ - Triggered when the scroller or list is pulled up.
+
+ - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
 
-## Demo
-[基本用法](http://dotwe.org/vue/1c303ff427e3a92fc8ef5846c00b35e5)
-<IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1QYo8n9zqK1RjSZFpXXakSXXa-1242-2208.png" />
+## Example
+
+ - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
