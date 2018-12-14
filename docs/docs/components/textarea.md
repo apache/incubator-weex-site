@@ -1,113 +1,139 @@
-# &lt;textarea&gt;
+---
+title: <textarea>
+type: references
+group: Build-in Components
+order: 8.24
+version: 2.1
+---
 
-`<textarea>` 与 [`<input>`](./input.md) 组件类似，可用于接受用户输入数据，只不过 `<textarea>` 支持多行文本输入。 `<textarea>` 支持 `<input>` 支持的所有的事件。
+# &lt;textarea&gt;
+<span class="weex-version">v0.8+</span>
+
+
+### Summary
+
+The weex builtin component `textarea` is used to create interactive controls to accept data from users. It can be a multi-line [input](./input.html).
+
+**Notes:** `<textarea>` support all event which `<input>` had.
+
+### Child Components
+
+This component supports no child components.
+
+### attributes
+
+The `textarea` component supports all the properties of the `text` component, in addition to the following properties:
+
+- `rows:`&lt;number&gt; a number which can specify the height of textarea, default is `2`.
+
+### Styles
+
+**Pseudo-class**<span class="api-version">v0.9.5+</span>: `textarea` component support the following pseudo-classes:
+
+* `active`
+* `focus`
+* `disabled`
+* `enabled`
+
+**text styles**: checkout [text styles](/wiki/text-styles.html)
+
+- support `color` style.
+- support `font-size` style.
+- support `font-style` style.
+- support `font-weight` style.
+- support `text-align` style.
+
+
+**common styles**: check out [common styles for components](/wiki/common-styles.html)
+
+- support flexbox related styles.
+- support box model related styles.
+- support ``position`` related styles.
+- support ``opacity``, ``background-color`` etc.
+
+### Events
+
+- `input`: the value of an element changes.
+- `change`: the change event is fired when a change to the component's value is commited by the user. It always come after a ``blur`` event.
+- `focus`: a component has received focus.
+- `blur`: a component has lost focus.
+
+**common events**: check out the [common events](/wiki/common-events.html)
+
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html).
+
+**Notes:** `<textarea>` does not support the common-event `click`. Please listen to the `input` or `change` event instead.
+
+### Parameters of events' object
+
+- for ``input`` and ``change`` events:
+  - `value`: the value of the component who dispatched this event.
+  - `timestamp`: the time stamp of the event.
+- for ``focus`` and ``blur`` events:
+  - `timestamp`: the time stamp of the event.
+
+### Example
 
 ```html
 <template>
   <div class="wrapper">
-    <textarea class="textarea" v-model="msg" placeholder="请输入内容."></textarea>
+    <textarea class="textarea" @input="oninput" @change="onchange" @focus="onfocus" @blur="onblur"></textarea>
   </div>
 </template>
 
 <script>
+  const modal = weex.requireModule('modal')
+
   export default {
-    data: function () {
-      return {
-        msg: ''
+    methods: {
+      oninput (event) {
+        console.log('oninput:', event.value)
+        modal.toast({
+          message: `oninput: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onchange (event) {
+        console.log('onchange:', event.value)
+        modal.toast({
+          message: `onchange: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onfocus (event) {
+        console.log('onfocus:', event.value)
+        modal.toast({
+          message: `onfocus: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onblur (event) {
+        console.log('onblur:', event.value)
+        modal.toast({
+          message: `input blur: ${event.value}`,
+          duration: 0.8
+        })
       }
     }
   }
 </script>
+
+<style>
+  .textarea {
+    font-size: 50px;
+    width: 650px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #666666;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #41B883;
+  }
+</style>
 ```
 
-## 子组件
-
-`<textarea>` 不支持子组件。
-
-## 属性
-
-| 参数        | 说明                | 类型   | 默认值 |
-| ---------- | -------------      | -----  | ----- |
-| `value` | 指定 `<textarea>` 的默认值 | string | - |
-| `placeholder` | 指定 `<textarea>` 的默认提示文案 | string | - |
-| `rows` | 指定组件的高度 | number | 2 |
-
-::: warning 注意
-当使用 `v-model` 指令绑定数据时，`value` 属性不生效，你应该通过 JavaScript 在组件的 `data` 选项中声明初始值。详情可参考 [Vue 表单输入绑定](https://cn.vuejs.org/v2/guide/forms.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95)
-:::
-
-## 样式
-
-除通用的样式外，`<textarea>` 还支持文本样式，其表现与 CSS 文本样式相同相同：
-
-- 支持 `color` 样式。
-- 支持 `font-size` 样式，默认值为 32。
-- 支持 `font-style` 样式。
-- 支持 `font-weight` 样式。
-- 支持 `text-align` 样式。
-
-此外，`<textarea>` 还支持以下伪类:
-
-- `active`
-- `focus`
-- `disabled`
-- `enabled`
-
-## 事件
-
-`<textarea>` 支持的事件与 `<input>` 一致：
-
-- input 事件
-
-  当输入字符时触发。 事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `value` | 当前组件的值 | string |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- change 事件
-
-  当用户输入完成时触发。通常在 blur 事件之后。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `value` | 当前组件的值 | string |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- focus 事件
-
-  组件获得输入焦点。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- blur 事件
-
-  组件失去输入焦点。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- return 事件
-
-  键盘点击返回键时触发。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `value` | 当前组件的值 | string |
-  | `returnKeyType` | 事件发生时的返回键类型 | string |
-
-::: warning 注意
-`<textarea>` 不支持 `click` 事件。 请监听 `input` 或 `change` 事件代替。
-:::
-
-## Demo
-
-- [双向绑定](http://dotwe.org/vue/d884b0c18891a05d653253c0f0a94bc1)
-- [事件监听](http://dotwe.org/vue/4e2ba256d993ec2186c388e9d80157ea)
-- [创建文章](http://dotwe.org/vue/6dd65122144d9ad26594c0f900c75cd4)，`<textarea>` 常用于提交大量文本数据。
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1UWA7n4TpK1RjSZFGXXcHqFXa-750-1334.gif" />
+[try it](http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa)
