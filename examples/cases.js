@@ -98,7 +98,7 @@ module.exports = {
     }]
   }, {
     type: 'reprography',
-    scope: 'website',
+    // scope: 'website',
     name: { zh: '简单复刻', en: 'Reprography' },
     examples: [{
       ignore: true,
@@ -107,7 +107,6 @@ module.exports = {
       title: { zh: '朋友圈', en: 'Moment' },
       screenshot: 'https://gw.alicdn.com/tfs/TB1G7LydwMPMeJjy1XdXXasrXXa-540-844.png'
     }, {
-      scope: 'website',
       hash: '013b1e76d2c5419e32bc3e02aa1bef26',
       title: '应用列表',
       screenshot: 'https://gw.alicdn.com/tfs/TB1fSbSA_tYBeNjy1XdXXXXyVXa-540-844.png'

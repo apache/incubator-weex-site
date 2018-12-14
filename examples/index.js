@@ -41,6 +41,7 @@ module.exports = function getExamples (options = {}) {
   if (scope === 'mobile') {
     selected = [components, modules, syntax]
     others.group.unshift(...cases.group)
+    others.group.unshift(...events.group)
     others.group.unshift(...styles.group)
     selected.push(others)
   }
