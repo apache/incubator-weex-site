@@ -1,76 +1,61 @@
-# 手势 <Badge type="warning" text="该功能属于实验性功能" />
+---
+title: Gesture
+type: wiki
+group: Event
+order: 4.3
+version: 2.1
+---
 
-Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于在 Weex 中使用事件，只需在节点上监听手势即可。
+<!-- toc -->
 
-## 手势类型
+> Experiment Feature
 
-目前，仅支持以下四种手势类型：
+Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex.
 
-- touch: 当触摸到一个点，移动或从触摸面移开时触发 `touch` 手势。触摸手势很精准，它会返回所有详细的事件信息。所以，监听 `touch` 手势可能很慢，即使只移动一丁点也需要处理大量事件。有三种类型的 `touch` 手势：
-  |type|描述|
-  |---|---|
-  |`touchstart`|将在触摸到触摸面上时触发|
-  |`touchmove`|将在触摸点在触摸面移动时被触发|
-  |`touchend`|将在从触摸面离开时被触发|
-  |`shouldStopPropagation` <Badge type="info" text="v0.18+" />|每个 touch 事件都会被传递过来, 可控制 touch 事件是否冒泡（返回 true）或者停止（返回 false）；用于解决事件冲突或者自定义手势|
+## Type
+For now, there are four types of gestures:
 
-  ![](https://img.alicdn.com/tfs/TB1rGU6n7voK1RjSZFNXXcxMVXa-251-282.gif)
+* **Touch**. Touch gesture is fired when a touch point is placed, moved or removed from the touch surface. Touch gesture is accuracy as it will report every trivial event. As a result, listening to touch gesture may be slow, a great deal of events needs to be processed even a small move happened. There are three types of Touch gesture:
+	* `touchstart` will be fired when a touch point is placed on the touch surface.
+	* `touchmove` will be fired when a touch point is moved along the touch surface.
+	* `touchend` will be fired when a touch point is removed from the touch surface.
+	* `stopPropagation`  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)
+* **Pan**. Pan gesture also report motion of touch point on the touch surface, which is similar to touch gesture. But Pan gesture is sampled and faster than the touch event. As consequence, it is less accuracy than touch gesture. There are also three types of Pan gesture, and the meaning of these types is very close to types of Touch.
+	* `panstart`
+	* `panmove`
+	* `panend`
+* **Horizontal/Vertical Pan** <span class="api-version">v0.10+</span> . Mainly used for cell swipe gestures before conflict resolving system is completed. start/move/end state of the gesture will be passed by `state` property. **Note**: These gestures are in conflict with click event on Android currently.
+  * `horizontalpan`
+  * `verticalpan`
+* **Swipe**. Swipe is fired when user swipe a touch point on the screen. A serial of motion will only trigger one Swipe gesture.
+* **LongPress**. LongPress is fired when a touch point is held for 500 ms or more.
 
-  [试一下](http://dotwe.org/vue/3f03a4f64fd7e04db82bd42b555346a2)
+The Touch gesture and Pan is very close to each other, with following features hold:
 
-* Pan：`pan` 手势也会返回触摸点在触摸面的移动信息，有点类似于 `touch` 手势。但是 `pan` 手势只会采样收集部分事件信息因此比 `touch` 事件要快得多，当然精准性差于 `touch`。`pan` 也有三种类型的手势，这些手势的意义与 `touch`s 完全一样：
-  |type|描述|
-  |---|---|
-  |`panstart`||
-  |`panmove`||
-  |`panend`||
-  |`horizontalpan` <Badge type="info" text="v0.10+" />|手势的 `start/move/end` 状态保存在 `state` 特性中。目前该手势在 Android 下会与 click 事件冲突|
-  |`verticalpan` <Badge type="info" text="v0.10+" />|手势的 `start/move/end` 状态保存在 `state` 特性中。目前该手势在 Android 下会与 click 事件冲突|
-* Swipe: `swipe` 将会在用户在屏幕上滑动时触发，一次连续的滑动只会触发一次 `swipe` 手势。
+* **Touch**. Not sampled, accuracy, but slow.
+* **Pan**. Sampled, fast, less accuracy.
 
-  [试一下](http://dotwe.org/vue/2693655847d890fe96160cc7a955040b)
+Users may choose their gesture according to their situation.
 
-* LongPress: `LongPress`将会在触摸点连续保持 500 ms 以上时触发
+## Properties
+The following properties can be used in gesture callback:
 
-  [试一下](http://dotwe.org/vue/a077a3cff49b1098f38349fd70f92de9)
-
-`touch` 和 `pan` 非常接近，它们的特点可以总结成这样：
-|type|描述|
-|---|---|
-|`Touch`|完整信息，精准、很慢|
-|`Pan`|抽样信息，很快，不够精准|
-开发者可以根据自己的情况选择合适的手势。
-
-## 属性
-
-以下属性可以在手势的回调中使用：
-
-- `direction`: 仅在 `swipe` 手势中存在，返回滑动方向，返回值可能为 `up`, `left`, `bottom`, `right`
-
-* `changedTouches`: 一个数组，包含了当前手势的触摸点的运动轨迹
+* `direction`. Only exists for **Swipe** gesture. Indicate the direcion of the swipe, choose from `up`, `left`, `bottom`, `right`.
+* `changedTouches`. An array of motion for every touch pointer that has contribute to the current gesture.
 
 ### changedTouches
 
-`changedTouches` 是一个数组，其子元素中包含以下属性：
-|key|描述|
-|---|---|
-|`identifier`|触摸点的唯一标识符|
-|`pageX`|触摸点相对于文档左侧边缘的 X 轴坐标|
-|`pageY`|触摸点相对于文档顶部边缘的 Y 轴坐标|
-|`screenX`|触摸点相对于屏幕左侧边缘的 X 轴坐标|
-|`screenY`|触摸点相对于屏幕顶部边缘的 Y 轴坐标|
-|`force`|屏幕收到的按压力度，值的范围为 0~1|
+`changedTouches` is an array, with the following properties in its children:
 
-::: warning 注意
-force 属性目前在支持 forceTouch iOS 设备才支持, iPhone 6s 及更新的 iOS 设备
-:::
+* `identifier`. A unique identifier for a touch pointer.
+* `pageX`. The X coordinate of the touch pointer relative to the left edge of the document.
+* `pageY`. The Y coordinate of the touch pointer relative to the top of the document.
+* `screenX`. The X coordinate of the touch point relative to the left edge of the screen.
+* `screenY`. The Y coordinate of the touch point relative to the top edge of the screen.
+* `force`. A float value that represents the amount of pressure the user is applying to the touch surface. This is a value between 0.0 (no pressure) and 1.0 (the maximum amount of pressure the hardware can recognize).
+> iOS only and force is included in iPhone 6S and later models
 
-## 约束
+[have a try](http://dotwe.org/vue/91b6929f4f9f97a099a30c516dc2db06)
 
-目前，由于会触发大量事件冲突，Weex Android 还不支持在滚动类型的元素上监听手势，例如 `scroller`, `list` 和 `webview` 这三个组件。
-
-## Demo
-
-- [Touch](http://dotwe.org/vue/3f03a4f64fd7e04db82bd42b555346a2)
-- [Swipe](http://dotwe.org/vue/2693655847d890fe96160cc7a955040b)
-- [LongPress](http://dotwe.org/vue/a077a3cff49b1098f38349fd70f92de9)
+## Constrain
+Currently, Weex Android do not support listening to gesture on `scroller`, `list` and `webview`, as it would lead a large amount of event conflicting.
