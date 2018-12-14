@@ -1,150 +1,219 @@
+---
+title: webSocket
+type: references
+group: Build-in Modules
+order: 9.11
+version: 2.1
+---
+
 # webSocket
+<span class="weex-version">v0.12+</span>
 
-`webSockets` 是一种创建持久性的连接，并进行双向数据传输的 HTTP 通信协议。Weex 提供了 `webSockets` 模块方便用户在 H5/iOS/Android 环境下与服务端创建 webSockets 链接进行通信。
+## Summary
 
-::: warning 注意
-h5 提供 WebSockets 的 protocol 默认实现，iOS 和 Android 需要自定义实现，Android 可参考:
+WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's H5/iOS/android and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply
 
-- [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java)
-- [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java)
-- 集成例子参考 [weex playground](https://github.com/apache/incubator-weex/tree/master/android/playground)
-:::
+## **Notes:**
+- iOS and h5 provide  webSocket default handle. if you use webSocket in android environment . you should provide custom adapter implementation,source:
+  - [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
+  - [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
+  - refer:  [weex playground](https://github.com/apache/incubator-weex/tree/master/android/playground)
 
 ## API
+### `WebSocket(url, protocol)`
 
-### webSocket(url, protocol)
+create websocket
 
-创建 WebSockets，并连接服务器。
+#### Arguments
 
-#### 参数
+- `url {string}`:The URL to which to connect;
+- `protocol {string}`:the websocket protocol
 
-| 属性        | 说明                | 类型   | 是否必选 |
-| ---------- | -------------      | -----  | ----- |
-| `url` | 表示要连接的 URL | string | 必选 |
-| `protocol` | WebSockets 协议名字字符串 | string | 可选 |
+### `send(data)`
 
-```js
-const ws = weex.requireModule('webSocket');
+Transmits data to the server over the WebSocket connection
 
-ws.WebSocket('ws://echo.websocket.org','');
+#### Arguments
+
+- `data {string}`:A text string to send to the server.
+
+### `close(code,reason)`
+
+Closes the WebSocket connection or connection attempt, if any. If the connection is already CLOSED, this method does nothing.
+
+#### Arguments
+
+- `code {number}`: the status code explaining why the connection is being closed.
+- `reason {string}`:a string explaining why the connection is closing
+
+### `onopen(options)`
+
+An event listener to be called when the WebSocket connection's readyState changes to OPEN; this indicates that the connection is ready to send and receive data.
+
+#### Arguments
+
+- `options {object}`:an empty object
+
+### `onmessage(options)`
+
+An event listener to be called when a message is received from the server
+
+#### Arguments
+
+- `options {object}`:the server message options
+  - `data {string}`: The listener received message
+
+### `onclose(options)`
+
+An event listener to be called when the WebSocket connection's readyState changes to CLOSED
+
+#### Arguments
+
+- `options {object}`:the CloseEvent is sent to clients using WebSockets when the connection is closed
+  - `code {number}`: Returns an unsigned short containing the close code send by the server
+  - `reason {string}`: Returns a string indicating the reason the server closed the connection
+  - `wasClean {boolen}`: Returns a Boolean that Indicates whether or not the connection was cleanly closed.
+
+### `onerror(options)`
+
+An event listener to be called when an error occurs.
+
+#### Arguments
+
+- `options {object}`:the error event
+  - `data {string}`: The listener received error data
+
+### Example
+
+```html
+<template>
+  <scroller>
+    <div>
+      <div style="background-color: #286090">
+        <text class="title" style="height: 80px ;padding: 20px;color: white">websocket</text>
+      </div>
+      <input type="text" placeholder="please input message to send" class="input" autofocus="false" value="" @change="onchange" @input="oninput" ref="input"/>
+      <div style="flex-direction: row; justify-content: center;">
+        <text class="button" @click="connect">connect</text>
+        <text class="button" @click="send">send</text>
+        <text class="button" @click="close">close</text>
+      </div>
+
+      <div style="background-color: lightgray">
+        <text class="title" style="height: 80px ;padding: 20px;color: black">method = send</text>
+      </div>
+      <text style="color: black;height: 80px">{{sendinfo}}</text>
+
+
+      <div style="background-color: lightgray">
+        <text class="title" style="height: 80px ;padding: 20px;color: black">method = onopen</text>
+      </div>
+      <text style="color: black;height: 80px">{{onopeninfo}}</text>
+
+      <div style="background-color: lightgray">
+        <text class="title" style="height: 80px ;padding: 20px;color: black">method = onmessage</text>
+      </div>
+      <text style="color: black;height: 400px">{{onmessage}}</text>
+
+      <div style="background-color: lightgray">
+        <text class="title" style="height: 80px ;padding: 20px;color: black">method = onclose</text>
+      </div>
+      <text style="color: black;height: 80px">{{oncloseinfo}}</text>
+
+      <div style="background-color: lightgray">
+        <text class="title" style="height: 80px ;padding: 20px;color: black">method = onerror</text>
+      </div>
+      <text style="color: black;height: 80px">{{onerrorinfo}}</text>
+
+      <div style="background-color: lightgray">
+        <text class="title" style="height: 80px ;padding: 20px;color: black">method = close</text>
+      </div>
+      <text style="color: black;height: 80px">{{closeinfo}}</text>
+
+    </div>
+
+  </scroller>
+</template>
+
+<style scoped>
+  .input {
+    font-size: 40px;
+    height: 80px;
+    width: 600px;
+  }
+  .button {
+    font-size: 36px;
+    width: 150px;
+    color: #41B883;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-width: 2px;
+    border-style: solid;
+    margin-right: 20px;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+</style>
+
+
+<script>
+  var websocket = weex.requireModule('webSocket')
+  export default {
+    data () {
+      return {
+        connectinfo: '',
+        sendinfo: '',
+        onopeninfo: '',
+        onmessage: '',
+        oncloseinfo: '',
+        onerrorinfo: '',
+        closeinfo: '',
+        txtInput:'',
+        navBarHeight: 88,
+        title: 'Navigator',
+        dir: 'examples',
+        baseURL: ''
+      }
+    },
+    methods: {
+      connect:function() {
+        websocket.WebSocket('ws://echo.websocket.org','');
+        var self = this;
+        self.onopeninfo = 'connecting...'
+        websocket.onopen = function(e)
+        {
+          self.onopeninfo = 'websocket open';
+        }
+        websocket.onmessage = function(e)
+        {
+          self.onmessage = e.data;
+        }
+        websocket.onerror = function(e)
+        {
+          self.onerrorinfo = e.data;
+        }
+        websocket.onclose = function(e)
+        {
+          self.onopeninfo = '';
+          self.onerrorinfo = e.code;
+        }
+      },
+      send:function(e) {
+        var input = this.$refs.input;
+        input.blur();
+        websocket.send(this.txtInput);
+        this.sendinfo = this.txtInput;
+      },
+      oninput: function(event) {
+        this.txtInput = event.value;
+      },
+      close:function(e) {
+        websocket.close();
+      },
+    },
+  }
+</script>
 ```
 
-### send(data)
-
-通过 WebSockets 连接向服务器发送数据。
-
-#### 参数
-
-| 属性        | 说明           | 类型   | 是否必选 |
-| ---------- | ------------- | -----  | ----- |
-| `data` | 要发送到服务器的数据 | string | 可选 |
-
-```js
-const ws = weex.requireModule('webSocket');
-ws.WebSocket('ws://echo.websocket.org','');
-
-ws.send('some message.');
-```
-
-### close(code, reason)
-
-关闭 WebSockets 的链接。
-
-#### 参数
-
-| 属性        | 说明           | 类型   | 是否必选 |
-| ---------- | ------------- | -----  | ----- |
-| `code` | 关闭连接的状态号 | number | 可选 |
-| `reason` | 关闭的原因 | string | 可选 |
-
-```js
-const ws = weex.requireModule('webSocket');
-ws.WebSocket('ws://echo.websocket.org','');
-
-ws.close();
-```
-
-## 实例属性
-
-### onopen
-
-一个用于连接打开事件的事件监听器，该事件表明这个连接已经准备好接受和发送数据。`onopen` 接受一个函数作为 EventListener，这个监听器会接受一个 `type` 为 "open" 的事件对象。
-
-#### event 对象
-
-标准 event 对象，无特殊属性。
-
-```js
-const ws = weex.requireModule('webSocket')
-ws.WebSocket('ws://echo.websocket.org','');
-
-ws.onopen = function(event) {
-  console.log('onopen', event);
-}
-```
-
-### onmessage
-
-一个用于消息事件的事件监听器，当有消息到达的时触发。`onmessage` 接受一个函数作为 EventListener，这个监听器会接受一个 `type` 为 "message" 的事件对象。
-
-#### event 对象
-
-| 属性        | 说明           | 类型   |
-| ---------- | ------------- | -----  |
-| `data` | 监听器接收的到的消息 | string |
-
-```js
-const ws = weex.requireModule('webSocket')
-ws.WebSocket('ws://echo.websocket.org','');
-
-ws.onmessage = function(event) {
-  console.log('onmessage', event);
-}
-```
-
-### onclose
-
-一个用于连接关闭事件的事件监听器，当连接关闭时触发。`onclose` 接受一个函数作为 EventListener，这个监听器会接受一个 `type` 为 "close" 的事件对象。
-
-#### event 对象
-
-| 属性        | 说明           | 类型   |
-| ---------- | ------------- | -----  |
-| `code` | 服务器返回关闭的状态码 | number |
-| `reason` | 服务器返回的关闭原因 | string |
-| `wasClean` | 是否完全关闭 | boolen |
-
-```js
-const ws = weex.requireModule('webSocket')
-ws.WebSocket('ws://echo.websocket.org','');
-
-ws.onclose = function(event) {
-  console.log('onclose', event);
-}
-```
-
-### onerror
-
-一个用于 error 事件的事件监听器，当错误发生时触发。`onerror` 接受一个函数作为 EventListener，这个监听器会接受一个 `type` 为 "error" 的事件对象。
-
-#### event 对象
-
-| 属性        | 说明           | 类型   |
-| ---------- | ------------- | -----  |
-| `data` | 监听器接收的到的消息 | string |
-
-```js
-const ws = weex.requireModule('webSocket')
-ws.WebSocket('ws://echo.websocket.org','');
-
-ws.onerror = function(event) {
-  console.log('onerror', event);
-}
-```
-
-## Demo
-
-- [事件示例](http://dotwe.org/vue/6b7d6dc14320e3f04e0f203cb8bcc703)
-- [聊天窗口](http://dotwe.org/vue/21d8b0a79c20e95139353d9cc8b634f5)，webSockets 常用于在线聊天等实时通信场景。
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB11_g_n7voK1RjSZPfXXXPKFXa-264-439.gif" />
+[Have a try](http://dotwe.org/vue/6d8bdfe66f24fda1a2dc6158b0182573)
