@@ -1,4 +1,4 @@
-# &lt;recycle-list&gt; <Badge text="beta" type="tip" vertical="middle"/> <Badge text="0.18+" type="warn" vertical="middle"/>
+# Recycle List
 `<recycle-list>`  is a new list container with the ability to recycle and reuse, which can greatly optimize memory usage and rendering performance.
 
 > * Please refer to [Design.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md) for design ideas. For details, please refer to  [Implementation.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md)

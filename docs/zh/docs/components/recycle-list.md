@@ -1,4 +1,4 @@
-# &lt;recycle-list&gt; <Badge text="beta" type="tip" vertical="middle"/> <Badge text="0.18+" type="warn" vertical="middle"/>
+# Recycle List
 `<recycle-list>` 是一个新的列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。
 > * 设计思路请参考 [Design.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md)，具体的实现细节请参考 [Implementation.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md)
 > * 该功能部分依赖于编译工具，请确保 weex-loader 的版本升级到最新（v0.7.2+）
