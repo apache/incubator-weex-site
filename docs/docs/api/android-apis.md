@@ -6,41 +6,75 @@ order: 2.2
 version: 2.1
 ---
 
-# Android APIs
 
-## WXSDKEngine
 
-1. Register the module and component
-1. Set up various adapters
+# WXSDKEngine
 
-### Module & Component
-#### Component
-One can register a component using the following function:
+1. Register component
+2. Register module
+3. Set up various adapters
 
-    public static boolean registerComponent(IFComponentHolder holder, boolean appendTree, String ... names)
+## Register component
 
-* holder is a abstract factory designed for create Component, and SimpleComponentHolder is the a simple way to achieve IFComponentHolder.
-* appendTree is an additional flag which is unused now.
-* names is the component's name in front end template file. A Android component could be mapped into multiple names.
+### __registerComponent(type,class,appendTree)__
 
-#### Module
-One can register a module using the following way:
+- `return`(_bool_): register success
+- `type`(_String_): component's name,such as `div`
+- `class`(_Class_): ComponentClass，called when init component 
+- `appendTree`(_bool_): render option logic，default false
+	- if true，render compoent tree one-time
+	- if false，render component one by one
 
-    public static <T extends WXModule> boolean registerModule(String moduleName, Class<T> moduleClass,boolean global) throws WXException
+usage:
 
-* moduleName is the name in front end template.
-* moduleClass is the Java class of the module, which provide a constructor with an empty parameter.
-* global is a flag, true for singleton in the whole app, false for creating an object for each WXSDKIntance.
+```
+WXSDKEngine.registerComponent("video", WXVideo.class, false);
+```
 
-### Adapter
-#### ImageAdapter
+### __registerComponent(holder,appendTree，...names)__
+
+- `return`(_bool_): register success
+- `holder`(_IFComponentHolder_): abstract factory designed for create Component, and __SimpleComponentHolder__ is the a simple way to achieve IFComponentHolder.
+- `appendTree`: see `registerComponent(type,class,appendTree)`
+- `names`(_String ..._): component's name in front end template file
+
+usage:
+
+```
+WXSDKEngine.registerComponent(
+              new SimpleComponentHolder(
+                      WXText.class,
+                      new WXText.Creator()
+              ),
+              false,
+              "text"
+      );
+```
+
+## Register module
+
+registerModule(moduleName,moduleClass)
+
+- `return`(_bool_): register success
+- `moduleName`(_String_): module name
+- `moduleClass`(_Class_): the Java class of the module, which provide a constructor with an empty parameter.
+
+使用方式:
+
+```
+WXSDKEngine.registerModule("picker", WXPickersModule.class);
+```
+
+## Set up various adapters
+
+### ImageAdapter
 Image adapter is responsible for loading images according to URLs. There are two types of image adapter:
 1. Loading a image to a view according to URL.
 1. Loading a image to a specified object according to URL.
 
 In order to use image component, one must implement the first adapter, while the second adapter is optional.
 
-##### IWXImgLoaderAdapter
+#### IWXImgLoaderAdapter
 
     public interface IWXImgLoaderAdapter {
       void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy);
@@ -49,111 +83,130 @@ In order to use image component, one must implement the first adapter, while the
  * `WXImageQuality` that the quality of the picture variables, take the following values `LOW`, `NORMAL`, `HIGH`, `ORIGINAL` picture quality in turn higher. The default is `LOW`.
  * `WXImageStrategy` is an extension class that indicates whether the image can be cut (isClipping) sharpening (isSharpen) placeholder (placeHolder) and so on.
 
-##### IDrawableLoaderAdapter
+#### IDrawableLoaderAdapter
 This adapter is optional.
 
     void setDrawable(String url, DrawableTarget drawableTarget, DrawableStrategy drawableStrategy);
 
 *  `DrawableTarget` is a object into where will load an image. `DrawableTarget` is one of `StaticTarget` or `AnimatedTarget`.
 
-#### IWXHttpAdapter
+### IWXHttpAdapter
 
 Weex custom `WXRequest` and `OnHttpListener`, Native reload interface can be obtained from the Request URL, Header and other parameters, the network request can be completed through `OnHttpListener` callback notification. Weex provides the default network request: `DefaultWXHttpAdapter`, using `HttpURLConnection` for network requests.
 
 The interface is defined as follows:
 
-    public interface IWXHttpAdapter {
-      void sendRequest(WXRequest request, OnHttpListener listener);
-    }
+```
+public interface IWXHttpAdapter {
+	void sendRequest(WXRequest request, OnHttpListener listener);
+}
+``` 
 
-* `WXRequest` defines the parameters related to the network request, the request method, the request body, and the timeout time. Weex default timeout is 3000.
+#### WXRequest
 
-* `OnHttpListener` defines the corresponding method after the network request ends. Defined as follows:
+* `WXRequest` defines the parameters related to the network request, the request method, the request body, and the timeout time. Weex default timeout is 3s.
 
-      interface OnHttpListener {
+#### OnHttpListener
 
-        /**
-        * start request
-        */
-        void onHttpStart();
+```
+ interface OnHttpListener {
 
-        /**
-        * headers received
-        */
-        void onHeadersReceived(int statusCode,Map<String,List<String>> headers);
+    /**
+     * start request
+     */
+    void onHttpStart();
 
-        /**
-        * post progress
-        * @param uploadProgress
-        */
-        void onHttpUploadProgress(int uploadProgress);
+    /**
+     * headers received
+     */
+    void onHeadersReceived(int statusCode,Map<String,List<String>> headers);
 
-        /**
-        * response loaded length (bytes), full length should read from headers (content-length)
-        * @param loadedLength
-        */
-        void onHttpResponseProgress(int loadedLength);
+    /**
+     * post progress
+     * @param uploadProgress
+     */
+    void onHttpUploadProgress(int uploadProgress);
 
-        /**
-        * http response finish
-        * @param response
-        */
-        void onHttpFinish(WXResponse response);
-      }
+    /**
+     * response loaded length (bytes), full length should read from headers (content-length)
+     * @param loadedLength
+     */
+    void onHttpResponseProgress(int loadedLength);
 
-#### IWXUserTrackAdapter
+    /**
+     * http response finish
+     * @param response
+     */
+    void onHttpFinish(WXResponse response);
+  }
+```
+
+### IWXUserTrackAdapter
 Weex related performance data (first screen loading time, JS-Native communication time, dom update time, etc.) and other general information (JSLib file size, Weex SDK version number, etc.).
 
-    public interface IWXUserTrackAdapter {
-      void commit(Context context, String eventId, String type, WXPerformance perf, Map<String, Serializable> params);
-    }
+```
+public interface IWXUserTrackAdapter {
+	void commit(Context context, String eventId, String type, WXPerformance perf, Map<String, Serializable> params);
+}
+```
 
 Native implementation interface can be obtained through `WXPerformance` and `params` corresponding information.
 
-#### IActivityNavBarSetter
+### IActivityNavBarSetter
 Weex provided the ability of navigation through `WXNavigatorModule` which relys on IActivityNavBarSetter.
 
 Usage:
 
-    WXSDKEngine.setActivityNavBarSetter(new IActivityNavBarSetter(){});    
+```
+WXSDKEngine.setActivityNavBarSetter(new IActivityNavBarSetter(){});   
+```    
 
-#### IWXStorageAdapter
+### IWXStorageAdapter
 Weex provided the ability of local storage through `WXStorageModule` which depends on IWXStorageAdapter. One can use `DefaultWXStorage` as the default implementation of IWXStorageAdapter.
 
 
-#### IWXJSExceptionAdapter
-IWXJSExceptionAdapter is used to handle JavaScript exception.
+### IWXJSExceptionAdapter
+IWXJSExceptionAdapter is used to handle weex exception.
+- DownLoadException
+- WhiteSceenException
+- JSException
+- DownGradeException
 
-## WXSDKInstace
-### Weex Native and JavaScript communication.
+```
+public interface IWXJSExceptionAdapter {
+  void onJSException(WXJSExceptionInfo exception);
+}
+```
+usage：
 
-#### Custom events
+```
+WXSDKEngine.setJSExcetptionAdapter(new TestExceptionAdapter());
+```
+
+# WXSDKInstace
+
+## Custom events
 Used for a custom control for event notifications, such as custom click events, response drop events, and so on.
 
-`WXSDKInstance.java `
+```
+void fireEvent(elementRef,type)
+void fireEvent(elementRef,type, data)
+void fireEvent(elementRef,type,data,domChanges)
+```
 
-    public void fireEvent(String elementRef,final String type, final Map<String, Object> data,final Map<String, Object> domChanges){  }
+* `elementRef`(_String_): The event occurred for the control ID。
 
-    public void fireEvent(String elementRef,final String type, final Map<String, Object> data){
-      fireEvent(elementRef,type,data,null);
-    }
+* `type`(_String_): Custom events, Weex defaults to a custom event starting with onXxxxx. OnPullDown (drop-down event)
 
-    public void fireEvent(String elementRef, String type){
-      fireEvent(ref,type,new HashMap<String, Object>());
-    }
+* `data`(_Map<String, Object>_): Need to reveal the parameters, such as the current control of the size, coordinates and other information。
 
-* `elementRef`：The event occurred for the control ID。
+* `domChanges`(_Map<String, Object>_): Update ref for the control's Attribute and Style
 
-* `type`: Custom events, Weex defaults to a custom event starting with onXxxxx. OnPullDown (drop-down event)
-
-* `data`: Need to reveal the parameters, such as the current control of the size, coordinates and other information。
-
-* `domChanges`：Update ref for the control's Attribute and Style
-
-#### Event callback
+## Event callback
 Used for Module callback, for example, after the completion of positioning Module need to notify JS. Use as follows:
 
-    public class WXLocation extends WXModule {
+```
+public class WXLocation extends WXModule {
 
       @JSMethod
       public void getLocation(JSCallback callback){
@@ -166,47 +219,15 @@ Used for Module callback, for example, after the completion of positioning Modul
       //Continuous connection
       callback.invokeAndKeepAlive(data);
       //Invoke method and invokeAndKeepAlive two methods of choice  }
-    }
+}
+```
 
-### Weex Native and other Native code communication
-#### OnWXScrollListener
+
+## OnWXScrollListener
 Weex gets the scroll event You can register `registerOnWXScrollListener` via `WXSDKInstance`
-The interface is defined as follows:
-
-    public interface OnWXScrollListener {
-
-      /**
-      * The  view is not currently scrolling.
-      */
-      int IDLE = RecyclerView.SCROLL_STATE_IDLE;
-      /**
-      * The view is currently being dragged by outside input such as user touch input.
-      */
-      int DRAGGING = RecyclerView.SCROLL_STATE_DRAGGING;
-      /**
-      * The view is currently animating to a final position while not under
-      * outside control.
-      */
-      int SETTLING = RecyclerView.SCROLL_STATE_SETTLING;
-
-      /**
-      * Callback method to be invoked when the view has been scrolled. This will be
-      * called after the scroll has completed.
-      * <p>
-      * This callback will also be called if visible item range changes after a layout
-      * calculation. In that case, dx and dy will be 0.
-      *
-      */
-      void onScrolled(View view, int x, int y);
-
-      /**
-      * Callback method to be invoked when view's scroll state changes.
-      *
-      */
-      void onScrollStateChanged(View view, int x, int y, int newState);
-    }
 
 ## Other Introduction
+
 ### setSize
 
 You can use the `mWXSDKInstance.setSize()` method to change the size of the Weex container.
