@@ -28,7 +28,7 @@ There are two special components that can only be used inside scroller component
 * show-scrollbar: &lt;boolean&gt;  true | false, default value is true. This attribute indicates whether show the scroll bar or not.
 * scroll-direction: &lt;string&gt;  the scroll direction of component, horizontal or vertical.
   * `scroll-direction` defines the scrollable axis of scroller and `flex-direction` defines the layout axis of scroller. `scroll-direction` and `flex-direction` must be set to the same direction, otherwise, undefined behavior may happen.
-  * Default value for `scroll-direction` is vertical, and for `flex-direction` is row .
+  * Default value for `scroll-direction` is `vertical`, and for `flex-direction` is `column` .
   * Use `scroll-direction:horizontal` and `flex-direction: row` when a horizontal layout and scrollable scroller is expected.
   * Use `scroll-direction:vertical` and `flex-direction: column` when a vertical layout and scrollable scroller is expected. But those two values are default, if you don't set them, it also works fine.
 * loadmoreoffset : &lt;number&gt; default value is 0. The loadmore event will be triggered when the list is loadmoreoffset left to reach the bottom. e.g. A list has total content length of 1000, and the loadmoreoffset is set to 400, the loadmore event will be triggered when 600 has beed scrolled and there is less than 400 left.
