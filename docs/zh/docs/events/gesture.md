@@ -7,23 +7,25 @@ Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于
 目前，仅支持以下四种手势类型：
 
 - touch: 当触摸到一个点，移动或从触摸面移开时触发 `touch` 手势。触摸手势很精准，它会返回所有详细的事件信息。所以，监听 `touch` 手势可能很慢，即使只移动一丁点也需要处理大量事件。有三种类型的 `touch` 手势：
+
   |type|描述|
   |---|---|
   |`touchstart`|将在触摸到触摸面上时触发|
   |`touchmove`|将在触摸点在触摸面移动时被触发|
   |`touchend`|将在从触摸面离开时被触发|
-  |`shouldStopPropagation` <Badge type="info" text="v0.18+" />|每个 touch 事件都会被传递过来, 可控制 touch 事件是否冒泡（返回 true）或者停止（返回 false）；用于解决事件冲突或者自定义手势|
+  |`stopPropagation` <Badge type="info" text="v0.18+" />|每个 touch 事件都会被传递过来, 可控制 touch 事件是否冒泡（返回 true）或者停止（返回 false）；用于解决事件冲突或者自定义手势|
 
   ![](https://img.alicdn.com/tfs/TB1rGU6n7voK1RjSZFNXXcxMVXa-251-282.gif)
 
   [试一下](http://dotwe.org/vue/3f03a4f64fd7e04db82bd42b555346a2)
 
 * Pan：`pan` 手势也会返回触摸点在触摸面的移动信息，有点类似于 `touch` 手势。但是 `pan` 手势只会采样收集部分事件信息因此比 `touch` 事件要快得多，当然精准性差于 `touch`。`pan` 也有三种类型的手势，这些手势的意义与 `touch`s 完全一样：
+
   |type|描述|
   |---|---|
-  |`panstart`||
-  |`panmove`||
-  |`panend`||
+  |`panstart`|pan 开始 |
+  |`panmove`|pan 移动事件|
+  |`panend`|pan 结束事件|
   |`horizontalpan` <Badge type="info" text="v0.10+" />|手势的 `start/move/end` 状态保存在 `state` 特性中。目前该手势在 Android 下会与 click 事件冲突|
   |`verticalpan` <Badge type="info" text="v0.10+" />|手势的 `start/move/end` 状态保存在 `state` 特性中。目前该手势在 Android 下会与 click 事件冲突|
 * Swipe: `swipe` 将会在用户在屏幕上滑动时触发，一次连续的滑动只会触发一次 `swipe` 手势。
@@ -52,6 +54,7 @@ Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于
 ### changedTouches
 
 `changedTouches` 是一个数组，其子元素中包含以下属性：
+
 |key|描述|
 |---|---|
 |`identifier`|触摸点的唯一标识符|
