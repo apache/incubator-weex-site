@@ -198,3 +198,8 @@ diibee:
   icon: 'http://diibee-images.oss-cn-shanghai.aliyuncs.com/www/icon/1024.png'
   iOS: 'https://itunes.apple.com/CN/app/id1367106723?mt=8'
   android: 'http://app.mi.com/details?id=com.retechcorp.diibee&ref=search'
+huinong:
+  name: '惠农网'
+  icon: 'http://image.cnhnb.com/image/jpeg/head/2018/12/19/517545b3826f4cbbaee926e4ce8e16f3.jpeg'
+  iOS: 'https://itunes.apple.com/cn/app/shou-ji-hui-nong-wang/id1024434395?mt=8'
+  android: 'http://zhuanti.cnhnb.com/zhuanti/download01?=mzhandingbu'  
