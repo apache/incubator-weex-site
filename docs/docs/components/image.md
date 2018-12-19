@@ -1,10 +1,4 @@
----
-title: <image>
-type: references
-group: Build-in Components
-order: 8.04
-version: 2.1
----
+# Image Component
 
 `<image>` is used to display a single image in your interface.
 

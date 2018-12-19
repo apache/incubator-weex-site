@@ -1,11 +1,3 @@
----
-title: <loading>
-type: references
-group: Build-in Components
-order: 8.09
-version: 2.1
----
-
 # &lt;loading&gt;
 
 ### <span class="weex-version">v0.6.1+</span>

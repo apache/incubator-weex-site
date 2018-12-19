@@ -1,11 +1,3 @@
----
-title: <list>
-type: references
-group: Build-in Components
-order: 8.07
-version: 2.1
----
-
 # List
 
 <span class="weex-version">v0.6.1+</span>
@@ -42,7 +34,7 @@ Notes: The list now supports the following child components: cell, header, refre
 * loadmoreretry : <number> default value 0，whether to reset loadmore related UI when loadmore failed, will be deprecated in further release.
 * offset-accuracy：<number> default value is 0, the vertical offset distance required to trigger the scroll event.
 * pagingEnabled: <boolean> default value is false. supporting pager style snapping in vertical orientation. support version: `0`<span class="api-version">v0.20+</span>. Example : [pagingEnabled](http://dotwe.org/vue/1323c218072f17f10e14a5c336dac3c4)
-* scrollable: <boolean> default value is true.  set whether list is scrollable. 
+* scrollable: <boolean> default value is true.  set whether list is scrollable.
 
 Please checkout [Scroller Component Attributes](./scroller.html) to have a look at the inherited attributes from direct parent.
 

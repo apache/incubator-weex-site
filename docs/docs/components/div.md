@@ -1,6 +1,6 @@
-# Introduction
+# Div Component
 
-`<div>` is a base container component.support all 
+`<div>` is a base container component.support all
 
 - [common styles](/wiki/common-styles.html)
 - [common events](/wiki/common-events.html)
@@ -14,7 +14,7 @@ similar to `div` in `html`
 
 ## Attributes
 
-* **common attributes**. 
+* **common attributes**.
 
 ## Styles
 
@@ -32,7 +32,7 @@ similar to `div` in `html`
 ## Example
 
 
-- code 
+- code
 
 	``` vue{2}
 	<template>

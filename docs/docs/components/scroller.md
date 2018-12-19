@@ -1,17 +1,10 @@
----
-title: <scroller>
-type: references
-order: 8.20
-version: 2.1
----
-
 # &lt;scroller&gt;
 
 <span class="weex-version">v0.6.1+</span>
 
 Scroller is a component which can have multiple child components in one column. It supports both direcitons. If the content size of child components exceeds the frame of the scroller, the whole child components will be scrollable.
 
-Notes: A <scroller> can be used as a root element or a embed element. The scroll direction of this component is column, and it can't be changed.
+Notes: A `<scroller>` can be used as a root element or a embed element. The scroll direction of this component is column, and it can't be changed.
 
 
 ## Child Components

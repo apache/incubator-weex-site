@@ -1,11 +1,3 @@
----
-title: <a>
-type: references
-group: Build-in Components
-order: 8.01
-version: 2.1
----
-
 ## Introduction
 
 `<a>` is mainly used for navigation between weex pages。
@@ -19,7 +11,7 @@ Wrap the element navigating from with `<a>`
 
     <a href="http://dotwe.org/raw/dist/a5e3760925ac3b9d68a3aa0cc0298857.bundle.wx">
       <text>Jump</text>
-    </a> 
+    </a>
 
 Refer the [demo](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955).
 

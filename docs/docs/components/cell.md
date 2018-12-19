@@ -1,11 +1,3 @@
----
-title: <cell>
-type: references
-group: Build-in Components
-order: 8.08
-version: 2.1
----
-
 # &lt;cell&gt;
 
 ### Summary

@@ -1,12 +1,4 @@
----
-title: <input>
-type: references
-group: Build-in Components
-order: 8.06
-version: 2.1
----
-
-# input
+# Input Component
 
 The weex builtin component `input` is used to create input controls to receive the user's input characters. How a `input` component works varies considerably depending on the value of its `type` attribute, such as `text`, `password`, `url`, `email`, `tel` etc.
 
