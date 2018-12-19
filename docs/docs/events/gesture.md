@@ -21,9 +21,9 @@ For now, there are four types of gestures:
 	* `touchend` will be fired when a touch point is removed from the touch surface.
 	* `stopPropagation`  every touch event will be fired, you can control touch event whether should be bubbled by return true(should bubble) or false(touch event consumed by this view, will not be bubbled). this can be used to handle touch confliction between views. (since v0.18+)
 * **Pan**. Pan gesture also report motion of touch point on the touch surface, which is similar to touch gesture. But Pan gesture is sampled and faster than the touch event. As consequence, it is less accuracy than touch gesture. There are also three types of Pan gesture, and the meaning of these types is very close to types of Touch.
-	* `panstart`
-	* `panmove`
-	* `panend`
+	* `panstart` will be fired when pan start
+	* `panmove`  will be fired when pan move
+	* `panend` will be fired when pan end
 * **Horizontal/Vertical Pan** <span class="api-version">v0.10+</span> . Mainly used for cell swipe gestures before conflict resolving system is completed. start/move/end state of the gesture will be passed by `state` property. **Note**: These gestures are in conflict with click event on Android currently.
   * `horizontalpan`
   * `verticalpan`
