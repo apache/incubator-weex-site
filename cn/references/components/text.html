@@ -5,17 +5,17 @@
   
   <title>&lt;text&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。&amp;lt;text&amp;gt; 只能包含文本值，你可以使用 {{}} 标记插入变量值作为文本内容。  注意： &amp;lt;text&amp;gt; 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。   注意： &amp;lt;text&amp;gt;不支持子组件。  属性# value {string}: 组件">
+  <meta name="description" content="&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来.  注意： &amp;lt;text&amp;gt; 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。   注意： &amp;lt;text&amp;gt;不支持子组件。  样式# 支持 通用样式。 支持 文本样式。  属性#除了动态文本，text组件不支持其他属性 dynamic text#下列代码片段可">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&lt;text&gt;">
 <meta property="og:url" content="https://weex.apache.org/cn/references/components/text.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。&amp;lt;text&amp;gt; 只能包含文本值，你可以使用 {{}} 标记插入变量值作为文本内容。  注意： &amp;lt;text&amp;gt; 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。   注意： &amp;lt;text&amp;gt;不支持子组件。  属性# value {string}: 组件">
+<meta property="og:description" content="&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来.  注意： &amp;lt;text&amp;gt; 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。   注意： &amp;lt;text&amp;gt;不支持子组件。  样式# 支持 通用样式。 支持 文本样式。  属性#除了动态文本，text组件不支持其他属性 dynamic text#下列代码片段可">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2018-12-14T07:22:16.651Z">
+<meta property="og:updated_time" content="2018-12-19T13:30:43.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;text&gt;">
-<meta name="twitter:description" content="&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。&amp;lt;text&amp;gt; 只能包含文本值，你可以使用 {{}} 标记插入变量值作为文本内容。  注意： &amp;lt;text&amp;gt; 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。   注意： &amp;lt;text&amp;gt;不支持子组件。  属性# value {string}: 组件">
+<meta name="twitter:description" content="&amp;lt;text&amp;gt; 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来.  注意： &amp;lt;text&amp;gt; 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。   注意： &amp;lt;text&amp;gt;不支持子组件。  样式# 支持 通用样式。 支持 文本样式。  属性#除了动态文本，text组件不支持其他属性 dynamic text#下列代码片段可">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -1155,39 +1155,50 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-12-14T07:22:16.651Z">Updated time: 14/12/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-12-19T13:30:43.841Z">Updated time: 19/12/2018</time> -->
 </header>
 
-    <html><head></head><body><p><code>&lt;text&gt;</code> &#x662F; Weex &#x5185;&#x7F6E;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x7528;&#x6765;&#x5C06;&#x6587;&#x672C;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x6837;&#x5F0F;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x3002;<code>&lt;text&gt;</code> &#x53EA;&#x80FD;&#x5305;&#x542B;&#x6587;&#x672C;&#x503C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>{{}}</code> &#x6807;&#x8BB0;&#x63D2;&#x5165;&#x53D8;&#x91CF;&#x503C;&#x4F5C;&#x4E3A;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x3002;</p>
+    <html><head></head><body><p><code>&lt;text&gt;</code> &#x662F; Weex &#x5185;&#x7F6E;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x7528;&#x6765;&#x5C06;&#x6587;&#x672C;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x6837;&#x5F0F;&#x6E32;&#x67D3;&#x51FA;&#x6765;.</p>
 <blockquote>
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> <code>&lt;text&gt;</code> &#x91CC;&#x76F4;&#x63A5;&#x5199;&#x6587;&#x672C;&#x5934;&#x5C3E;&#x7A7A;&#x767D;&#x4F1A;&#x88AB;&#x8FC7;&#x6EE4;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x4FDD;&#x7559;&#x5934;&#x5C3E;&#x7A7A;&#x767D;&#xFF0C;&#x6682;&#x65F6;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x5199;&#x5934;&#x5C3E;&#x7A7A;&#x683C;&#x3002;</p>
 </blockquote>
 <blockquote>
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> <code>&lt;text&gt;</code>&#x4E0D;&#x652F;&#x6301;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</p>
 </blockquote>
-<h2 class="article-heading"><span id="shu-xing">&#x5C5E;&#x6027;</span><a href="#shu-xing" class="header-anchor">#</a></h2><ul>
-<li><code>value {string}</code>: &#x7EC4;&#x4EF6;&#x7684;&#x503C;&#xFF0C;&#x4E0E; <code>&lt;text&gt;</code> &#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x76F8;&#x540C;&#x3002;</li>
-</ul>
 <h2 class="article-heading"><span id="yang-shi">&#x6837;&#x5F0F;</span><a href="#yang-shi" class="header-anchor">#</a></h2><ul>
 <li>&#x652F;&#x6301; <strong><a href="../../wiki/common-styles.html">&#x901A;&#x7528;&#x6837;&#x5F0F;</a>&#x3002;</strong></li>
-<li><code>lines {number}</code>: &#x6307;&#x5B9A;&#x6587;&#x672C;&#x884C;&#x6570;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>0</code>&#xFF0C; &#x4EE3;&#x8868;&#x4E0D;&#x9650;&#x5236;&#x884C;&#x6570;&#x3002;</li>
-<li>&#x652F;&#x6301; <strong><a href="/cn/wiki/text-styles.html">&#x6587;&#x672C;&#x6837;&#x5F0F;</a>&#x3002;</strong><ul>
-<li>&#x652F;&#x6301; <code>color</code> &#x6837;&#x5F0F;.</li>
-<li>&#x652F;&#x6301; <code>font-size</code> &#x6837;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>32</code>.</li>
-<li>&#x652F;&#x6301; <code>font-style</code> &#x6837;&#x5F0F;.</li>
-<li>&#x652F;&#x6301; <code>font-weight</code> &#x6837;&#x5F0F;.</li>
-<li>&#x652F;&#x6301; <code>text-align</code> &#x6837;&#x5F0F;.</li>
-<li>&#x652F;&#x6301; <code>text-decoration</code> &#x6837;&#x5F0F;.</li>
-<li>&#x652F;&#x6301; <code>text-overflow</code> &#x6837;&#x5F0F;.</li>
-<li>&#x652F;&#x6301; <code>line-height</code>&#x6837;&#x5F0F;<sup class="wx-v">0.6.1+</sup></li>
+<li>&#x652F;&#x6301; <strong><a href="../../wiki/text-styles.html">&#x6587;&#x672C;&#x6837;&#x5F0F;</a>&#x3002;</strong></li>
 </ul>
-</li>
-</ul>
-<h2 class="article-heading"><span id="shi-jian">&#x4E8B;&#x4EF6;</span><a href="#shi-jian" class="header-anchor">#</a></h2><p>&#x652F;&#x6301; <strong><a href="../../wiki/common-events.html">&#x901A;&#x7528;&#x4E8B;&#x4EF6;</a></strong>.</p>
-<h2 class="article-heading"><span id="zi-ding-yi-zi-ti">&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;</span><a href="#zi-ding-yi-zi-ti" class="header-anchor">#</a></h2><p><code>&#x652F;&#x6301;&#x7248;&#x672C;:v0.12.0</code></p>
+<h2 class="article-heading"><span id="shu-xing">&#x5C5E;&#x6027;</span><a href="#shu-xing" class="header-anchor">#</a></h2><p>&#x9664;&#x4E86;&#x52A8;&#x6001;&#x6587;&#x672C;&#xFF0C;text&#x7EC4;&#x4EF6;&#x4E0D;&#x652F;&#x6301;&#x5176;&#x4ED6;&#x5C5E;&#x6027;</p>
+<h3 class="article-heading"><span id="dynamic-text">dynamic text</span><a href="#dynamic-text" class="header-anchor">#</a></h3><p>&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6587;&#x5B57;&#x5185;&#x5BB9;&#x548C;JS&#x53D8;&#x91CF;&#x7684;&#x7ED1;&#x5B9A;&#x3002;</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;text &gt;{{content}}&lt;/text&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  module.exports = {
+    data: function(){
+      return {
+          content: &quot;Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. &quot;
+      }
+    }
+}
+&lt;/script&gt;
+</code></pre><h2 class="article-heading"><span id="shi-jian">&#x4E8B;&#x4EF6;</span><a href="#shi-jian" class="header-anchor">#</a></h2><p>&#x652F;&#x6301; <strong><a href="../../wiki/common-events.html">&#x901A;&#x7528;&#x4E8B;&#x4EF6;</a></strong>&#x3002;</p>
+<h2 class="article-heading"><span id="qi-ta">&#x5176;&#x4ED6;</span><a href="#qi-ta" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="wen-zi-gao-du">&#x6587;&#x5B57;&#x9AD8;&#x5EA6;</span><a href="#wen-zi-gao-du" class="header-anchor">#</a></h3><p>&#x6587;&#x5B57;&#x9AD8;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#x89C4;&#x5219;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x5927;&#x81F4;&#x4E0A;&#x9075;&#x5FAA;&#x4EE5;&#x4E0B;&#x4F18;&#x5148;&#x7EA7;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x6392;&#x5728;&#x524D;&#x9762;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#x3002;</p>
+<ol>
+<li>&#x6587;&#x5B57;&#x8282;&#x70B9;&#x7684;<code>max-height</code>/<code>min-height</code>&#x6837;&#x5F0F;&#x3002;</li>
+<li>&#x6587;&#x5B57;&#x8282;&#x70B9;&#x7684;<code>flex</code>&#x5C5E;&#x6027;&#x4E14;&#x6587;&#x5B57;&#x7684;&#x7236;&#x8282;&#x70B9;&#x4E0A;&#x6709;<code>flex-direction:column</code>&#x6837;&#x5F0F;&#x3002;</li>
+<li>&#x6587;&#x5B57;&#x8282;&#x70B9;&#x7684;<code>height</code>&#x6837;&#x5F0F;&#x3002;</li>
+<li>&#x6587;&#x5B57;&#x8282;&#x70B9;&#x7684;<code>align-items:stretch</code>&#x5982;&#x679C;&#x6587;&#x5B57;&#x7236;&#x8282;&#x70B9;&#x6709; <code>flex-direction:row</code>&#x6837;&#x5F0F;&#x3002;</li>
+<li>&#x6587;&#x5B57;&#x5185;&#x5BB9;&#x548C;&#x6587;&#x5B57;&#x672C;&#x8EAB;&#x7684;<a href="/wiki/text-styles.html">&#x6837;&#x5F0F;</a>&#x3002;</li>
+<li>&#x5176;&#x4ED6;&#x76F8;&#x5173;CSS&#x5C5E;&#x6027;&#x3002;</li>
+</ol>
+<h3 class="article-heading"><span id="zi-ding-yi-zi-ti">&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;</span><a href="#zi-ding-yi-zi-ti" class="header-anchor">#</a></h3><p><code>&#x652F;&#x6301;&#x7248;&#x672C;:v0.12.0</code></p>
 <p>&#x652F;&#x6301;ttf&#x548C;woff&#x5B57;&#x4F53;&#x683C;&#x5F0F;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;, &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>dom</code> module &#x91CC;&#x9762;&#x7684; <a href="../modules/custom_font.html">addRule</a>&#x65B9;&#x6CD5;, &#x6784;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>font-family</code>&#x4F7F;&#x7528;, addRule &#x5EFA;&#x8BAE;&#x5728; <code>beforeCreate</code> &#x6216;&#x8005;&#x66F4;&#x65E9;&#x65F6;&#x8C03;&#x7528;</p>
 <h2 class="article-heading"><span id="shi-li">&#x793A;&#x4F8B;</span><a href="#shi-li" class="header-anchor">#</a></h2><ul>
-<li><a href="http://dotwe.org/vue/9ac60ccb4d1aacbdbd608dd7107ad105" target="_blank" rel="noopener"><code>&lt;text&gt;</code>&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;</a></li>
+<li><a href="http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0" target="_blank" rel="noopener"><code>&lt;text&gt;</code>&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;</a></li>
 </ul>
 </body></html>
     <div class="article-tips">

@@ -5,17 +5,17 @@
   
   <title>&lt;text&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The weex builtin component ‘text’ is used to render text with specified style rule.  tag can contain text value only. You can use variable interpolation in the text content with the mark {{}}.  Note:">
+  <meta name="description" content="The weex builtin component ‘text’ is used to render text with specified style rule.  Note: This component supports no child components.   Note: The heading and trailing white space will be ignored. I">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&lt;text&gt;">
 <meta property="og:url" content="https://weex.apache.org/references/components/text.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="The weex builtin component ‘text’ is used to render text with specified style rule.  tag can contain text value only. You can use variable interpolation in the text content with the mark {{}}.  Note:">
+<meta property="og:description" content="The weex builtin component ‘text’ is used to render text with specified style rule.  Note: This component supports no child components.   Note: The heading and trailing white space will be ignored. I">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-14T07:22:16.715Z">
+<meta property="og:updated_time" content="2018-12-19T13:30:43.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;text&gt;">
-<meta name="twitter:description" content="The weex builtin component ‘text’ is used to render text with specified style rule.  tag can contain text value only. You can use variable interpolation in the text content with the mark {{}}.  Note:">
+<meta name="twitter:description" content="The weex builtin component ‘text’ is used to render text with specified style rule.  Note: This component supports no child components.   Note: The heading and trailing white space will be ignored. I">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -566,13 +566,13 @@
             
               
                 <li>
-                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
@@ -1064,13 +1064,13 @@
             
               
                 <li>
-                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
                 </li>
               
             
               
                 <li>
-                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
                 </li>
               
             
@@ -1155,39 +1155,50 @@
       </h1>
     
   
-  <!-- <time class="article-date" datetime="2018-12-14T07:22:16.715Z">Updated time: 14/12/2018</time> -->
+  <!-- <time class="article-date" datetime="2018-12-19T13:30:43.901Z">Updated time: 19/12/2018</time> -->
 </header>
 
-    <html><head></head><body><p>The weex builtin component &#x2018;text&#x2019; is used to render text with specified style rule. <text> tag can contain text value only. You can use variable interpolation in the text content with the mark <code>{{}}</code>.</text></p>
+    <html><head></head><body><p>The weex builtin component &#x2018;text&#x2019; is used to render text with specified style rule.</p>
 <blockquote>
 <p><strong>Note:</strong> This component supports no child components.</p>
 </blockquote>
-<h2 class="article-heading"><span id="attributes">Attributes</span><a href="#attributes" class="header-anchor">#</a></h2><ul>
-<li><p>value(string): text value of this component. This is equal to the content of &#x2018;text&#x2019;.</p>
-<pre><code>var textComponent = this.$el(&quot;textid&quot;);
-this.text = textComponent.attr.value;
-</code></pre></li>
-</ul>
+<blockquote>
+<p><strong>Note:</strong> The heading and trailing white space will be ignored. If this is not what you need, you can set text using the data-binding method above.</p>
+</blockquote>
 <h2 class="article-heading"><span id="styles">Styles</span><a href="#styles" class="header-anchor">#</a></h2><ul>
 <li>Support <a href="/wiki/common-styles.html">common styles for components</a></li>
-<li>lines: specify the text lines. Default value is <code>0</code> for unlimited.</li>
-<li>Support <a href="/wiki/text-styles.html">text styles</a><ul>
-<li>support &#x2018;color&#x2019; style.</li>
-<li>support &#x2018;font-size&#x2019; style. iOS: default vlaue <code>32</code>. Android: platform specify. HTML5: default value <code>32</code>.</li>
-<li>support &#x2018;font-style&#x2019; style.</li>
-<li>support &#x2018;font-weight&#x2019; style.</li>
-<li>support &#x2018;text-align&#x2019; style.</li>
-<li>support &#x2018;text-decoration&#x2019; style.</li>
-<li>support &#x2018;text-overflow&#x2019; style.</li>
-<li>support &#x2018;line-height&#x2019;(available from v0.6.1) style.</li>
+<li>Support <a href="/wiki/text-styles.html">text style</a></li>
 </ul>
-</li>
-</ul>
-<h2 class="article-heading"><span id="events">Events</span><a href="#events" class="header-anchor">#</a></h2><p>Support <a href="/wiki/common-events.html">common events</a></p>
-<h2 class="article-heading"><span id="custom-typeface">Custom Typeface</span><a href="#custom-typeface" class="header-anchor">#</a></h2><p><code>support:v0.12.0</code></p>
-<p>support <code>ttf</code> and <code>woff</code> font format to custom your text, call <a href="../modules/custom_font.html">addRule</a> in dom module to build your own <code>font-family</code>, we suggest that you call <code>addRule</code> in <code>beforeCreate</code>.</p>
+<h2 class="article-heading"><span id="attributes">Attributes</span><a href="#attributes" class="header-anchor">#</a></h2><p>Except for dynamic text, there is no other supported attributes for text.</p>
+<h3 class="article-heading"><span id="dynamic-text">dynamic text</span><a href="#dynamic-text" class="header-anchor">#</a></h3><p>One can use the following code snippet to bind the content of text to a variable</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;text &gt;{{content}}&lt;/text&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  module.exports = {
+    data: function(){
+      return {
+          content: &quot;Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. &quot;
+      }
+    }
+}
+&lt;/script&gt;
+</code></pre><h2 class="article-heading"><span id="events">Events</span><a href="#events" class="header-anchor">#</a></h2><p>Support <a href="/wiki/common-events.html">common events</a></p>
+<h2 class="article-heading"><span id="other">Other</span><a href="#other" class="header-anchor">#</a></h2><h3 class="article-heading"><span id="the-magic-of-text-height">The magic of text height</span><a href="#the-magic-of-text-height" class="header-anchor">#</a></h3><p>The rules for computed height of text component is complicated, basically but not always, text in weex obey the following rules in order:</p>
+<ol>
+<li>The CSS style of <code>max-height</code>/<code>min-height</code> on your text</li>
+<li>The CSS style of <code>flex</code> on your text if there is a <code>flex-direction:column</code> on the parent component of you text.</li>
+<li>The CSS style of <code>height</code> on your text</li>
+<li>The CSS style of <code>align-items:stretch</code> on your text if there is a <code>flex-direction:row</code> on the parent you text.</li>
+<li>The content of your text and <a href="/wiki/text-styles.html">text style</a> on your text.</li>
+<li>Other related CSS style not mentioned here.</li>
+</ol>
+<h3 class="article-heading"><span id="custom-typeface">Custom Typeface</span><a href="#custom-typeface" class="header-anchor">#</a></h3><p><code>support:v0.12.0</code></p>
+<p>support loading custom font of <code>ttf</code> and <code>woff</code> format. Call <a href="../modules/custom_font.html">addRule</a> in dom module to build your own <code>font-family</code>, we suggest that you call <code>addRule</code> in <code>beforeCreate</code>.</p>
 <h2 class="article-heading"><span id="examples">Examples</span><a href="#examples" class="header-anchor">#</a></h2><ul>
-<li><a href="http://dotwe.org/vue/9ac60ccb4d1aacbdbd608dd7107ad105" target="_blank" rel="noopener">Basic usage for <code>&lt;text&gt;</code></a>.</li>
+<li><a href="http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0" target="_blank" rel="noopener">Basic usage for <code>&lt;text&gt;</code></a>.</li>
 </ul>
 </body></html>
     <div class="article-tips">
