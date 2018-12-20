@@ -74,7 +74,9 @@ Rax 框架的类型标记如下：
 
 Weex 从 [v0.10.0](https://github.com/alibaba/weex/releases/tag/v0.10.0)（发布于 2017/02/17）这个版本开始，就集成了 v2 版本的 Vue.js。Vue.js 是一套用于构建用户界面的渐进式框架，详情请参阅其[官方网站](https://vuejs.org/)。
 
+::: tip
 关于在 Weex 中使用 Vue 的技巧请参阅：[《在 Weex 中使用 Vue.js》](./use-vue-in-weex.html)。
+:::
 
 ## Rax
 

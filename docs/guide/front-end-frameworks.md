@@ -1,7 +1,5 @@
 # Front-end Frameworks in Weex
 
-<!-- toc -->
-
 ![Vue and Rax](./images/vue-rax.png)
 
 Front-end technologies seem flourishing and productive. Using front-end frameworks in production is a good way to write maintainable apps.
@@ -38,7 +36,7 @@ The comment type annotation of Rax is:
 
 ### Using Directive Prologue <badge text="0.17+" type="warn" vertical="middle"/>
 
-Using comments is not a robust way to declare the framework type, because it may be removed during compiling or packaging. Since the v0.17, Weex supports using [Directive Prologue](http://ecma-international.org/ecma-262/5.1/#sec-14.1)）to indicate the framework type. The format of directive prologue type annotation is `"use weex:xxx";`, the `Xxx` in it is the name of front-end framework. Both `'` (single quote) and `"` (double quotes) are fine, but must be lower case.
+Using comments is not a robust way to declare the framework type, because it may be removed during compiling or packaging. Since the v0.17, Weex supports using [Directive Prologue](http://ecma-international.org/ecma-262/5.1/#sec-14.1) to indicate the framework type. The format of directive prologue type annotation is `"use weex:xxx";`, the `Xxx` in it is the name of front-end framework. Both `'` (single quote) and `"` (double quotes) are fine, but must be lower case.
 
 
 > NOTICE: **The directive prologue type annotation must be placed before all runnable codes.** Only spaces, blank lines or comments can be put before it.
@@ -77,7 +75,9 @@ The compatible type annotation of Rax is:
 
 Weex integrated the v2 version of Vue.js since WeexSDK [v0.10.0](https://github.com/alibaba/weex/releases/tag/v0.10.0) is released at 2017/02/17. Vue (pronounced /vjuː/, like view) is a progressive front-end framework for building user interfaces. Please refer to its [official website](https://vuejs.org/) for more information.
 
-Please refer to [Use Vue.js on Weex](./use-vue-in-weex.html) document to learn more technics about Weex and Vue.
+::: tip
+Please refer to [Use Vue.js in Weex](./use-vue-in-weex.html) document to learn more technics about Weex and Vue.
+:::
 
 ## Rax
 
