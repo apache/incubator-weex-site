@@ -8,21 +8,21 @@ version: 2.1
 
 <!-- toc -->
 
-> The `BroadcastChannel` is available since <span class="api-version">v0.9+</span>.
+> `BroadcastChannel` 接口在 <span class="api-version">v0.9+</span> 及以上的版本中可用。
 
-As mentioned in [JS Runtime Context](./runtime-context.html), Weex is using different context for each page, even global variables are isolated, but `BroadcastChannel` is a way to achieve cross-page communication.
+在 [JS 执行环境](./runtime-context.html)中提到过，不同的 Weex 页面使用的是不同的执行环境，即使全局变量也是互相隔离的，然而使用 `BroadcastChannel` 是可以实现跨页面通信的。
 
 ## API
 
-> *BroadcastChannel* is part of [W3C specifications](https://html.spec.whatwg.org/multipage/comms.html#broadcasting-to-other-browsing-contexts), as well as the [MessageEvent](https://html.spec.whatwg.org/multipage/comms.html#messageevent).
+> *BroadcastChannel* 是 [W3C 规范](https://html.spec.whatwg.org/multipage/comms.html#broadcasting-to-other-browsing-contexts)中的一部分，其中依赖的 [MessageEvent](https://html.spec.whatwg.org/multipage/comms.html#messageevent) 对象也是。
 
-The constructor of `BroadcastChannel` only take one single parameter which is the channel name.
+`BroadcastChannel` 的构造函数只接受一个参数，那就是“频道名称”（channel name）。
 
 ```js
-const jb = new BroadcastChannel('007')
+const bc = new BroadcastChannel('007')
 ```
 
-The type declaration of the `BroadcastChannel` is:
+`BroadcastChannel` 接口的定义如下：
 
 ```typescript
 declare interface BroadcastChannel = {
@@ -33,12 +33,12 @@ declare interface BroadcastChannel = {
 }
 ```
 
-+ `name`: The channel name, it's the indicator when broadcast messages.
-+ `postMessage`: Sends the given message to other BroadcastChannel objects set up for this channel.
-+ `onmessage`: The event handler. An event will be triggered when the instance received a message.
-+ `close`: Closes the BroadcastChannel object, opening it up to garbage collection.
++ `name`: 监听的频道名称，用来区分不同的频道（跨频道不可通信）。
++ `postMessage`: 用于在当前频道中广播消息。
++ `onmessage`: 消息事件的处理函数。在频道中接收到广播消息之后，会给所有订阅者派发消息事件。
++ `close`: 关闭当前频道。
 
-The type declaration of the `MessageEvent` is:
+消息对象（`MessageEvent`）的类型定义如下：
 
 ```typescript
 declare interface MessageEvent = {
@@ -47,67 +47,69 @@ declare interface MessageEvent = {
 }
 ```
 
-## Communication Procedure
+## 通信过程
 
 ![BroadcastChannel](../images/BroadcastChannel.png)
 
-Just like using radio, each client joins a specific channel by creating a `BroadcastChannel` object with the same channel name. Then implement the `onmessage` event handler to listen on the underlying channel. Call the `postMessage()` method on the BroadcastChannel object will broadcast a message to every subscriber of the channel.
+就像使用无线电一样，每个页面通过创建一个具有相同频道名称的 BroadcastChannel 对象来加入特定频道。 然后实现 `onmessage` 接口来监听消息事件。通过调用 BroadcastChannel 对象上的 `postMessage()` 方法可以在频道中广播一条消息给所有订阅者。
 
-Indeed, it's a full-duplex (bi-directional) communication between all subscriber of the particular channel, each of them is able to receive any message that has been posted to it. Even the sender of the message can receive the message event itself. Communications between different channels will not affect each other.
+事实上，这是在特定频道的所有用户之间的全双工（双向）通信，每个订阅者都可以在频道中彼此收发任何消息，即使消息的发送者也能收到自己发出的消息事件。不同频道之间的通信过程是不会互相影响的。
 
-To leave a channel, it is required to call the `close()` method on the BroadcastChannel object. This method only closed itself, and does not affect other subscribers. When a Weex page is destroyed, all subscribers in it will be closed at `destroyInstance`. If all subscribers of a channel are closed, the underlying channel would be destroyed and allows garbage collection to happen.
+调用 BroadcastChannel 对象的 `close()` 方法可以离开一个频道，这个方法只关闭自己，并不影响其他订阅者。当某个 Weex 页面被销毁时，其中的所有订阅者将在 `destroyInstance` 中强制关闭。如果某个频道的所有用户都关闭了，这个频道对象将会被销毁，所占内存页能被回收。
 
-## Usage Example
+## 使用范例
 
-In page A:
+在页面 A 中：
 
 ```js
 const Steve = new BroadcastChannel('Avengers')
 Steve.postMessage('Assemble!')
 ```
 
-In page B:
+在页面 B 中：
 
 ```js
 const Hulk = new BroadcastChannel('Avengers')
 ```
 
-In page C:
+在页面 C 中：
 
 ```js
-const Stack = new BroadcastChannel('Avengers')
-Stack.onmessage = function (event) {
+const Stark = new BroadcastChannel('Avengers')
+Stark.onmessage = function (event) {
   console.log(event.data) // Assemble!
-  Stack.postMessage('I am Tony and I am leaving now.')
+  Stark.postMessage('I am Tony and I am leaving now.')
 }
 ```
 
-The page A, B and C are all create a BroadcastChannel object which is listening on the `'Avengers'` channel. They can use it to communicate with each other.
+页面 A 、B 、C 都创建一个监听了 `'Avengers'` 频道的 BroadcastChannel 对象，它们可以用这个对象实现互相通信。
 
-When Steve post the message `'Assemble!'`, Stack will receive a message event whose `data` equals the `'Assemble!'`, and then send another message back. But Hulk will not receive the message because he does not implement the `onmessage` method, so he is not a subscriber actually.
+当 Steve 发布了 `'Assemble!'` 消息时，Stark 将收到一个消息事件，其 `data` 字段等于 `'Assemble!'`，然后也向频道中回复一条消息。但是 Hulk 并不会收到这些消息，因为他没有实现`onmessage` 方法，相当于没有接收频道中的消息，所以他实际上不是一个订阅者。
 
-## Notice
+> 注释: Hulk 不会收到他自己发送的消息
 
-> **The `message` object is not deep cloned.** (This feature could be changed.)
+## 注意事项
 
-In page A:
+> **消息事件中的对象并没有深度复制。**（这个特性可能会修改）
+
+在页面 A 中：
 
 ```js
 const a = new BroadcastChannel('app')
 const list = ['A', 'B']
-a.postMessage(list)
+a.postMessage({ list })
 ```
 
-In page B:
+在页面 B 中：
 
 ```js
 const b = new BroadcastChannel('app')
 b.onmessage = function (event) {
-  // the event.data is a reference of list in page A
-  event.data.push('C')
+  // the `event.data.list` is a reference of `list` in page A
+  event.data.list.push('C')
 }
 ```
 
-In this case, the `event.data` in page B is a reference of `list` in page A. When pushing a new item `'C'`, it will also affect the `list` object in page A.
+在这个例子中，页面 B 中的 `event.data.list` 实际上是页面 A 中 `list` 对象的引用。在页面 B 中给列表添加一项 `'C'`，也将影响到页面 A 中的 `list` 对象。
 
-Compared to the deep clone, this behavior improves efficiency and reduces memory cost. However, developers are not recommended caching or modifying the `event` object after received it.
+相比于深度复制，这个行为可以减少页面中的内存消耗。开发者在使用时不应该存储或修改 `event` 对象。
