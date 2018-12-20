@@ -19,7 +19,7 @@ As mentioned in [JS Runtime Context](./runtime-context.html), Weex is using diff
 The constructor of `BroadcastChannel` only take one single parameter which is the channel name.
 
 ```js
-const jb = new BroadcastChannel('007')
+const bc = new BroadcastChannel('007')
 ```
 
 The type declaration of the `BroadcastChannel` is:
@@ -85,6 +85,8 @@ Stack.onmessage = function (event) {
 The page A, B and C are all create a BroadcastChannel object which is listening on the `'Avengers'` channel. They can use it to communicate with each other.
 
 When Steve post the message `'Assemble!'`, Stack will receive a message event whose `data` equals the `'Assemble!'`, and then send another message back. But Hulk will not receive the message because he does not implement the `onmessage` method, so he is not a subscriber actually.
+
+> note: Stack will not receive this message which posted by himself
 
 ## Notice
 

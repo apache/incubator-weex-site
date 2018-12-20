@@ -11,9 +11,9 @@ version: 2.1
 
 <span class="weex-version">v0.9.5+</span>
 
-JS service and Weex instance are parallel in js runtime. Weex instance lifecycle will invoke JS service lifecycle. Currently provide create, refresh, destroy of lifecycle.
+JS service and Weex instance are parallel in js runtime. Weex instance's lifecycle will invoke JS service's lifecycle. Currently provide create, refresh, destroy of lifecycle.
 
-!!!Important: JS Service is very powerful. Please be careful to use.
+**!!!Important: JS Service is very powerful. Please be careful to use.**
 
 
 ## Register JS Service
@@ -33,6 +33,8 @@ String SERVICE_NAME = "SERVICE_NAME"
 String SERVICE_JS_CODE = "SERVICE_JS_CODE"
 boolean result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, options)
 ```
+
+> params of `options` Could have { create, refresh, destroy } lifecycle methods. In create method it should  return an object of what variables or classes would be injected into the `Weex` instance.
 
 ### Web
 ```html

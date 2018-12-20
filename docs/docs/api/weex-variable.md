@@ -8,7 +8,7 @@ version: 2.1
 
 <!-- toc -->
 
-Each page of Weex contains a `weex` variable in the js runtime context. It can be assessed directly just like a global object, but it's *readonly* and separated from different pages.
+Every Weex page contains a `weex` variable in its js runtime context. It can be assessed directly just like a global object, but it is *readonly* and separated from different pages.
 
 > NOTE: **The `weex` variable only exposed in the Vue framework. It's not available in Rax framework yet.**
 
@@ -25,7 +25,7 @@ declare type Weex = {
 }
 ```
 
-## `weex.config`
+## `config`
 
 The `weex.config` contains all the environment information of current page.
 
@@ -65,7 +65,7 @@ weex.config.env === WXEnvironment
 
 [This example](http://dotwe.org/vue/ea2cff9039f3b0e406f8f7da10e874af) prints all properties in the Weex environment object.
 
-## `weex.document`
+## `document`
 
 The `weex.document` is the document object of current page, it can be used to create or manipulate the *Elements* in *DOM tree*. It's part of *Weex DOM API* specification which is NOT the same with the `document` object in the [W3C DOM API](https://www.w3.org/DOM/).
 
@@ -73,7 +73,7 @@ However, it's not a good practice to manipulate DOM directly when using modern f
 
 This API is mainly used inside of the Vue and Rax framework to convert the virtual-dom into render directives and send them to native render engines of Weex. Not recommended for using it when developing pages.
 
-## `weex.requireModule`
+## `requireModule`
 
 For those features which does not rely on the UI, Weex wraps them into **modules**. It is a way to access native capabilities in javascript. Except for the [built-in modules](./modules/), it's quite easy to integrate the existing native modules to Weex platform. After that, you can use `weex.requireModule` to require both customized and built-in modules.
 
@@ -107,7 +107,7 @@ You can require a native module and use its APIs just like normal javascript fun
 </script>
 ```
 
-## `weex.supports`
+## `supports`
 
 > This API only available in <span class="api-version">v0.15+</span>.
 
@@ -161,7 +161,7 @@ weex.supports('@stream/fetch') // null
 weex.supports('getComponentRect') // null
 ```
 
-## `weex.isRegisteredModule`
+## `isRegisteredModule`
 
 Detect whether the specific module or method is registered.
 
@@ -178,7 +178,7 @@ weex.isRegisteredModule('whatever', '- unknown -') // false
 weex.isRegisteredModule('div') // false, not support components
 ```
 
-## `weex.isRegisteredComponent`
+## `isRegisteredComponent`
 
 Detect whether the specific component is registered.
 
