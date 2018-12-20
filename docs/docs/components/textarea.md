@@ -1,11 +1,3 @@
----
-title: <textarea>
-type: references
-group: Build-in Components
-order: 8.24
-version: 2.1
----
-
 # &lt;textarea&gt;
 <span class="weex-version">v0.8+</span>
 

@@ -1,11 +1,3 @@
----
-title: <waterfall>
-type: references
-group: Build-in Components
-order: 8.26
-version: 2.1
----
-
 # waterfall
 
 <span class="weex-version">v0.11.0+</span>

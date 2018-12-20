@@ -1,12 +1,5 @@
----
-title: <recycle list>
-type: references
-group: Build-in Components
-order: 8.10
-version: 2.1
----
 # &lt;Recycle List&gt;
-### <span class="weex-version">v0.18.0+</span>
+<span class="weex-version">v0.18.0+</span>
 
 `<recycle-list>`  is a new list container with the ability to recycle and reuse, which can greatly optimize memory usage and rendering performance.
 
@@ -34,11 +27,11 @@ version: 2.1
   - In the case of a `switch`, `case` and `default` must be written, otherwise the template will be ignored
 
 ## Attributes
-* `for`  
+* `for`
   In `<recycle-list>`, add the `for` attribute to describe how to loop through the list's data. The syntax is similar to Vue's `v-for` directive, but it loops through its own internal nodes, not the current node. Written:
   * `alias in expression`
   * `(alias, index) in expression`
-* `switch`  
+* `switch`
   Adding a `switch` attribute to the `<recycle-list> `can be used to specify the field name for the region's molecular template type in the data. The semantics are consistent with the switch in the programming language, along with the `case` and `default` attributes in `<cell-slot>`
 * If the `switch` attribute is omitted, only the first` <cell-slot>` will be treated as a template and the extra template will be ignored.
 
@@ -105,9 +98,9 @@ Different from the understanding in the front-end framework, the logic to implem
   * `vm.$refs.xxx`
   * `vm.$vnode`
   * `vm.#slots`
-  * `vm.#scopedSlots`  
+  * `vm.#scopedSlots`
 
-  The values in `vm.$refs` may be arrays, instances of subcomponents, DOM elements, which are commonly used in front ends. If not supported, the functionality of the `dom` module and `animation` module in Weex also has an effect. 
+  The values in `vm.$refs` may be arrays, instances of subcomponents, DOM elements, which are commonly used in front ends. If not supported, the functionality of the `dom` module and `animation` module in Weex also has an effect.
 
   The technical solution is currently being discussed, some of the interfaces may be redesigned, or an interface designed for` <recycle-list>` will be available on `vm`.
 
@@ -130,7 +123,7 @@ Different from the understanding in the front-end framework, the logic to implem
   - The component's `beforeCreate` and `created` will only fire when the component is about to be created and created.
   - Similarly, the component's `beforeMount` and `mounted` only the page is actually rendered to the component, and will only fire when it is about to be mounted and already mounted.
 
-* Component custom event  
+* Component custom event
   Plan support. Features such as `vm.$on`, `vm.$once`, `vm.$emit`, `vm.$off` are not fully tuned, the interface is available, but the behavior may be slightly different (parameters are missing), do not use it for the time being.
 
 ## Demo
@@ -170,7 +163,7 @@ If you merge the templates into one, you can also omit the `switch` and `case` t
   </cell-slot>
 </recycle-list>
 ```
-More demos：  
+More demos：
 
 **Template syntax**
 

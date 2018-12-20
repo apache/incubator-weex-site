@@ -1,10 +1,4 @@
----
-title: <video>
-type: references
-group: Build-in Components
-order: 8.25
-version: 2.1
----
+# Video
 
 The video component can be used to embed video content in a Weex page.
 

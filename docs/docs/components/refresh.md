@@ -1,11 +1,3 @@
----
-title: <refresh>
-type: references
-group: Build-in Components
-order: 8.10
-version: 2.1
----
-
 # &lt;refresh&gt;
 
 ### <span class="weex-version">v0.6.1+</span>

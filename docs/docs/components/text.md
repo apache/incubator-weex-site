@@ -1,10 +1,4 @@
----
-title: <text>
-type: references
-group: Build-in Components
-order: 8.23
-version: 2.1
----
+# Text
 
 The weex builtin component 'text' is used to render text with specified style rule. <text> tag can contain text value only. You can use variable interpolation in the text content with the mark `{% raw %}{{}}{% endraw %}`.
 
@@ -39,4 +33,3 @@ support `ttf` and `woff` font format to custom your text, call [addRule](../modu
 
 ## Examples
 * [Basic usage for `<text>`](http://dotwe.org/vue/9ac60ccb4d1aacbdbd608dd7107ad105).
-

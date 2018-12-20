@@ -1,10 +1,4 @@
----
-title: <web>
-type: references
-group: Build-in Components
-order: 8.27
-version: 2.1
----
+# Web
 
 <span class="weex-version">v0.5+</span>
 
