@@ -20,11 +20,11 @@ Push a weex page onto the navigator stack, you can specify whether apply animati
 
 **Arguments**
 
-* options(object): some options.
-  * url(string): The URL of the weex page to push.
-  * animated(string): true, if the weex page is push through animation, otherwise, false. Default value is true.
+* `options`(object): some options.
+  * `url`(string): The URL of the weex page to push.
+  * `animated`(string): true, if the weex page is push through animation, otherwise, false. Default value is true.
 
-* callback(object): the callback function to be called after executing this action.
+* `callback`(object): the callback function to be called after executing this action.
 
 **Example**
 
@@ -46,9 +46,9 @@ pop a weex page onto the navigator stack, you can specify whether apply animatio
 
 **Arguments**
 
-* options(object): some options.
-  * animated(string): true if the weex page is pop through animation; otherwise, false. Default value is true.
-* callback(object): the callback function after executing this action.
+* `options`(object): some options.
+  * `animated`(string): true if the weex page is pop through animation; otherwise, false. Default value is true.
+* `callback`(object): the callback function after executing this action.
 
 **Example**
 
