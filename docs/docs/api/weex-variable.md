@@ -75,7 +75,7 @@ This API is mainly used inside of the Vue and Rax framework to convert the virtu
 
 ## `requireModule`
 
-For those features which does not rely on the UI, Weex wraps them into **modules**. It is a way to access native capabilities in javascript. Except for the [built-in modules](./modules/), it's quite easy to integrate the existing native modules to Weex platform. After that, you can use `weex.requireModule` to require both customized and built-in modules.
+For those features which does not rely on the UI, Weex wraps them into **modules**. It is a way to access native capabilities in javascript. Except for the [built-in modules](../modules/), it's quite easy to integrate the existing native modules to Weex platform. After that, you can use `weex.requireModule` to require both customized and built-in modules.
 
 ```typescript
 weex.requireModule(name: string): Object | void;
@@ -92,7 +92,7 @@ weex.requireModule(name: string): Object | void;
 
 ### Use Native Module
 
-You can require a native module and use its APIs just like normal javascript functions. Here is [a simple example](http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828) of using the [`modal`](/examples/modal.html) module:
+You can require a native module and use its APIs just like normal javascript functions. Here is [a simple example](http://dotwe.org/vue/cd7e97f7da08d6d4ca627fc127ab8828) of using the `modal` module:
 
 ```html
 <template>
