@@ -1,14 +1,6 @@
----
-title: Setup Develop Environment
-type: guide
-group: Develop
-order: 5.1
-version: 2.1
----
+# Setup Develop Environment
 
 <!-- toc -->
-
-# Setup Develop Environment
 
 Using [dotWe](http://dotwe.org/vue) is a good choice, but if you want to develop locally on your own machine, you will need to set up your develop environment.
 
@@ -31,7 +23,7 @@ Run the following commands in a terminal:
 $ npm install -g weex-toolkit
 $ weex -v
 ```
-You can use 'weex update <component>@x.x.x' to update weex-devtool, weex-previewer, weex-builder and weexpack to a specific version.
+You can use 'weex update {component}@x.x.x' to update weex-devtool, weex-previewer, weex-builder and weexpack to a specific version.
 ```
 weex update weex-devtool@latest // Here latest means to install the latest version
 ```

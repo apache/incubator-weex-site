@@ -1,6 +1,6 @@
 # Text
 
-The weex builtin component 'text' is used to render text with specified style rule. <text> tag can contain text value only. You can use variable interpolation in the text content with the mark `{% raw %}{{}}{% endraw %}`.
+The weex builtin component 'text' is used to render text with specified style rule. `<text>` tag can contain text value only. You can use variable interpolation in the text content with the mark `{% raw %}{{}}{% endraw %}`.
 
 > **Note:** This component supports no child components.
 
