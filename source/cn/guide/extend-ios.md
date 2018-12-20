@@ -35,7 +35,7 @@ Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你�
   到此，我们已经完成了一个简单的 module 方法的封装，javaScript 端的使用如下:
 
     ```javaScript
-      weex.requireModule("event").showParams("hello Weex)
+      weex.requireModule("event").showParams("hello Weex")
     ```
 
 - module 高阶用法
