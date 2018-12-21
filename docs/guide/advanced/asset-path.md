@@ -9,24 +9,26 @@ has_chapter_content: true
 
 <!-- toc -->
 
-<span class="weex-version">0.9</span>
 
 This article will cover uri (url) usage in Weex. Including using image/typeface resources, deal with relative uri and how to access local and packaged asset files.
 
 ## Schemes
 
-* Local
+### Local
+
 Weex SDK provide `local` scheme to access resources packaged with application, and of cource, it's not working in the HTML5 runtime.
 Currently, developers can use this scheme with `image` and text's font file location.
+
   * In iOS, it's always locate file in 'bundle resources'. For example, a `image` component with `local:///app_icon` will load image file named 'app_icon' in bundle resouce, and font file work in the same way.
   * In Android, image component will load from 'drawable' resource folder like 'res/drawable-xxx'. But load font file is different, android framework can not load font file from 'res', so SDK will load it from `assets` folder.
 
-* HTTP/HTTPS
-It's working in the same way as in web, Weex support these at very beginning.
+### remote
 
-* File
-Use `file` scheme to access local disk file. This scheme has its limitations: You would not hard coded a file url in source page. Because not matter it's running in different platform(iOS, Android) or not, the content will be totally different in another device, which is depend to the specific device.
-So one possible case is getting the file url in runtime dynamically, which you can use it to display a local disk image, or maybe upload it later.
+* `HTTP/HTTPS` It's working in the same way as in web, Weex support these at very beginning.
+
+* `File` Use `file` scheme to access local disk file. This scheme has its limitations: 
+	* You would not hard coded a file url in source page. Because not matter it's running in different platform(iOS, Android) or not, the content will be totally different in another device, which is depend to the specific device.
+	* So one possible case is getting the file url in runtime dynamically, which you can use it to display a local disk image, or maybe upload it later.
 
 ## Relative URI
 
