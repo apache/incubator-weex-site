@@ -1,24 +1,31 @@
-## 扩展 Web 组件
-Vue.js 本身就是一个独立的前端框架，在浏览器中完全能够不基于 Weex 容器渲染。因此，针对 Weex 平台扩展 Vue.js 的 Web 端组件，和直接使用 Vue.js 开发一个 Web 组件是一样的。具体的组件编写方法可以参考其官方文档：[组件](https://cn.vuejs.org/v2/guide/docss.html) ，另外建议使用 `.vue` 格式的文件编写组件，使用方法参考：[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)。
+# Extend Web components
 
-## 扩展内置组件
-目前我们提供了 [weex-vue-render](https://github.com/weexteam/weex-vue-render) 作为 Vue 2.x Web 端的渲染器。首先引入该库到你的项目里，然后你就可以使用 `weex.registerComponent` 来进行内置组件扩展了，也可以使用 `Vue.component`，两者基本上是一致的。
+Vue.js is an independent front-end framework. In the browser, you can not use the Weex container for page rendering. So, the two things are the same: (1) for the Weex platform to expand Vue.js Web components. (2) directly using Vue.js to develop a Web component. The development of components can refer to its documentation: [component](https://vuejs.org/v2/guide/components.html). It is also recommended to use the `.vue` file to write components. How to use it: [Single file component](https://vuejs.org/v2/guide/single-file-components.html).
 
-以扩展 `<sidebar>` 为例，首先应该编写组件自身的逻辑：
-```vue
-// sidebar.vue
+# Extend Web renderer's built-in components
+
+Weex itself offers a lot of built-in components and modules, but also has the ability to expand horizontally. It allows developers to expand and customize themselves. But it is important to note that Weex is a cross-platform solution. When extending its built-in components or modules, you need to implement it on the three ends (Android, iOS, Web).
+
+After Weex switches the kernel to Vue 2.x, it will be easier to extend the Vue component on the Web side.
+
+We current use [weex-vue-render](https://github.com/weexteam/weex-vue-render) for Vue 2.x Web side rendering. Firstly import this library in your web page, then you can extend the render's built-in components using `weex.registerComponent` or `Vue.component`. Basically these two methods are doing the same thing.
+
+## Example of extension for weex built-in components.
+
+To extend `<sidebar>` as an example, you should first write the logic of the component itself:
+
+```html
+<!-- sidebar.vue -->
 <template>
   <div class="sidebar">
     <slot></slot>
   </div>
 </template>
-
 <style scoped>
   .sidebar {
     /* ... */
   }
 </style>
-
 <script>
   export default {
     props: [],
@@ -28,33 +35,45 @@ Vue.js 本身就是一个独立的前端框架，在浏览器中完全能够不�
   }
 </script>
 ```
-然后在使用之前，全局注册 `<sidebar>` 组件：
-```js
+
+And then register the `<sidebar>` component globally before using it:
+
+```javascript
 import Vue from 'vue'
 import weex from 'weex-vue-render'
 import Sidebar from './path/to/sidebar.vue'
 weex.init(Vue)
-// 全局注册 sidebar 组件
+// register the `<sidebar>` component globally
 weex.registerComponent('sidebar', Sidebar)
-// 或者使用 Vue.component
+// or:
 // Vue.component('sidebar', Sidebar)
 ```
 
-在扩展 Weex 组件时，如果只使用了 Weex 提供的内置组件，并且使用的都是 Weex 支持的样式，那么就和普通的自定义组件无异，不需要 Native 端再有相应的实现。
+When you extend the Weex component, if you only use the built-in components provided by Weex and use the styles that Weex supports, it is no different from the normal custom component and does not need to be implemented at the Native side.
 
-如果你定制组件时不得不用到目前 Weex 不支持的标签和样式，在这种情况下才是真正的“扩展”了 Weex 的组件，你还需要在 Android 和 iOS 中有相应的实现，不然会导致渲染异常。
+If you find a component that does not support labels and styles that are not supported by Weex, you will need to really extend the Weex component. At the same time, you also need to extend in the Android side and the iOS side, or will lead to rendering exception.
 
-## 扩展内置模块
-引入了 `weex-vue-render` 这个库之后，在全局能获取到 `weex` 这个变量，其中提供了 `registerModule` 方法可以扩展内置模块。
-### API格式
-`registerModule`
-  - `name`: {string} 必选，模块名称
-  - `define`: {object} 必选，模块的定义
-  - `define`: {object} 可选，如果你需要将非 iterable 的属性或方法注册到模块对象里，你才需要用到这个参数，将 `{ registerType: 'assignment' }` 作为 meta 参数传入即可
+# Extend the Web module
 
-### 扩展模块示例
-下边的代码注册了一个名为 `guide` 的模块：
-```js
+In addition to the common components, Weex also provides a common module, you can easily call the native API. In general, the registered Weex module requires three ends to be implemented, otherwise it will affect its normal use.
+
+## Register the module
+
+If we import the `weex-vue-render` library, we can get the weex variable globally. You can register the module using the `registerModule`method.
+
+## API format
+
++ `registerModule`
+
+	1. `name`: {String} Required, module name.
+	2. `define`: {Object} Required, module definition.
+  3. `meta`: {Object} Optional, module meta info. Basically you won't need this except you want to pass a non iterable attribute or method from your module implementation object. In this case you should pass a `{ registerType: 'assignment' }` object to it. Otherwise only the iterables will be registered in the module.
+
+## The example of register module
+
+The following code registers a module called guide:
+
+```javascript
 weex.registerModule('guide', {
   greeting () {
     console.log('Hello, nice to meet you. I am your guide.')
@@ -64,13 +83,17 @@ weex.registerModule('guide', {
   }
 })
 ```
-在 `weex` 上提供了 `require` 方法用于获取已注册的模块，直接传递模块名即可：
-```js
-// 获取模块
-const guide = weex.requireModule('guide')
 
-// 可以直接调用模块中的方法
+## Use the module
+
+Weex provides the require method for getting registered modules. You only need to pass the module name directly:
+
+```javascript
+//import module
+const guide = weex.requireModule('guide')
+// use the methods of module
 guide.greeting()
 guide.farewell()
 ```
-上述模块使用方法在 Native 环境中依然有效，只不过模块中的方法是由 Native 提供的。
+
+The above wording is as useful as the native end, except that the methods in the module are provided by Native.
