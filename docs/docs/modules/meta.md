@@ -95,4 +95,4 @@ Example component:
 
 [Try it](http://dotwe.org/vue/7d0302fe499ab08afdb12a376c646b59). (The http://dotwe.org doesn't support to configure the entry file currently.)
 
-Referance: [Set up development environment](../../guide/set-up-env.html).
+Referance: [Set up development environment](../../guide/develop/setup-develop-environment.html).
