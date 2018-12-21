@@ -22,11 +22,11 @@ See the [example](http://dotwe.org/vue/81da1f0129dfc72e1666cfd4b90f20ae).
 
 ### `src`
 
-A URL value for web content to be loaded. You can specify a URL which is relative to bundle URL, it will be rewritten to the real resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
+A URL value for web content to be loaded. You can specify a URL which is relative to bundle URL, it will be rewritten to the real resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
 
 ## Events
 
-Only support `appear` and `disappear` event in **[common events](../../wiki/common-events.html)**.
+Only support `appear` and `disappear` event in **[common events](../events/common-events.html)**.
 
 ### pagestart
 
@@ -89,7 +89,7 @@ See the [example](http://dotwe.org/vue/f9606de73fe386d554217371c4d60d03).
 
 ## Styles
 
-Support **[common styles](../../wiki/common-styles.html)**.
+Support **[common styles](../styles/common-styles.html)**.
 
 ## Usage Notes
 
