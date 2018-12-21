@@ -47,17 +47,19 @@ dependencies {
 3. Init Weex SDK When Application Create
 
 ```java
-public class WXApplication extends Application {
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    InitConfig config = new InitConfig.Builder().setImgAdapter(new FrescoImageAdapter()).build();
-    WXSDKEngine.initialize(this,config);
-  }
-}
+InitConfig config = new InitConfig.Builder()
+					//imageLib interface 
+    				.setImgAdapter(new FrescoImageAdapter())
+    				//network lib interface
+    				.setHttpAdapter(new InterceptWXHttpAdapter())
+    				.build();
+WXSDKEngine.initialize(applicationContext,config);
 ```
 
-[Fresco  ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) [Picasso ImageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)
+- [demo init case](https://github.com/apache/incubator-weex/blob/master/android/playground/app/src/main/java/com/alibaba/weex/WXApplication.java)
+- [InterceptWXHttpAdapter](https://github.com/apache/incubator-weex/blob/master/android/playground/app/src/main/java/com/alibaba/weex/extend/adapter/InterceptWXHttpAdapter.java)
+- [fresco  imageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/FrescoImageAdapter.java) 
+- [picasso imageAdapter](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/ImageAdapter.java)
 
 4. Create an WXSDKInstance,  add IWXRenderListener and activity lifecycle on it. load weex bundle url. when  page load success; target view will be send for you on  onViewCreated callback, set target view to activity contentView.
 
@@ -222,7 +224,7 @@ In the dealloc phase of the viewController destroyed Weex instance, can play a r
 
 The Weex SDK can be compiled from the source code. You can try the latest feature in the new feature or bugfix branch.
 
-- clone [Weex](https://github.com/apache/incubator-weex.git) project
+- `git clone https://github.com/apache/incubator-weex.git'
   you can use SSH
 
 	```
