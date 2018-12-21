@@ -78,6 +78,13 @@ If you would like to create a new issue on JIRA, be sure to search the existing 
 - Use [Google Java Style](https://google.github.io/styleguide/javaguide.html) as basic guidelines of java code.
 - Follow [AOSP Code Style](https://source.android.com/source/code-style.html) for rest of android related code style.
 
+### C & C++
+
+- Use [Google C++ Style ](https://google.github.io/styleguide/cppguide.html)  as basic guidelines of C++ code
+- Weex defines [a subset of the Google C++ development specification](https://github.com/jianhan-he/C-Style-Guide/blob/master/C%2B%2B_Style_Guide_en.md) that covers some of the major C++ scenario usage specifications.
+
+
+
 ## Commit Guidelines 
 
 Following template should be used to write commit descriptions.
