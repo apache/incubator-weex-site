@@ -1,8 +1,8 @@
 # Use Vue.js in Weex
 
-<!-- toc -->
+[[toc]]
 
-Weex integrated the v2 version of Vue.js since WeexSDK [v0.10.0](https://github.com/alibaba/weex/releases/tag/v0.10.0) is released at 2016/02/17. Vue (pronounced /vjuː/, like view) is a progressive front-end framework for building user interfaces. Please refer to its [official website](https://vuejs.org/) for more information.
+Weex integrated the v2 version of Vue.js since WeexSDK [v0.10.0](https://github.com/alibaba/weex/releases/tag/v0.10.0) is released at 2016/02/17. Vue is a progressive front-end framework for building user interfaces. Please refer to its [official website](https://vuejs.org/) for more information.
 
 > If there is no special instructions, the "Vue.js" or "Vue" in this article all refers to the v2 version of Vue.js.
 
@@ -10,27 +10,29 @@ Weex integrated the v2 version of Vue.js since WeexSDK [v0.10.0](https://github.
 
 If you are familiar with Vue.js, you should know that there are two available builds of Vue.js: [the **Runtime + Compiler** build and the **Runtime-only** build](https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build). The difference between them is whether to include the compiler which is able to compile the `template` option at runtime.
 
-Since the runtime-only builds are roughly 30% lighter-weight than their full-build counterparts, Weex is using the runtime-only build of Vue.js for better performance and less code size.
+Since the runtime-only builds are roughly 30% lighter-weight than their full-build counterparts (according to Vue's official website), Weex is using the runtime-only build of Vue.js for better performance and less code size.
 
 Specifically, the differences are as follows:
 
 + The [`template`](https://vuejs.org/v2/api/#template) option is not supported when defining a component.
-+ Does not support using [`x-templates`](https://vuejs.org/v2/guide/components.html#X-Templates).
-+ Does not support using [`Vue.compile`](https://vuejs.org/v2/api/#Vue-compile).
++ Not support [`x-templates`](https://vuejs.org/v2/guide/components.html#X-Templates).
++ Not support [`Vue.compile`](https://vuejs.org/v2/api/#Vue-compile).
 
 ## Platform Differences
 
-Vue.js was designed for the Web platform at the beginning. Although it can be based on Weex to develop native applications, there are still many [platform differences between Weex and web](../wiki/platform-difference.html).
+Vue.js was designed for the Web platform at the beginning. Although it can  develop native apps based on Weex, there are still many [platform differences between Weex and web](./platform-difference.html).
 
-The key platform differences are context, DOM, styles and events.
+In short, the key platform differences are running context, DOM API, styles and events.
 
-### Context
+### Running Context
 
-Weex is mostly used to write multi-page applications, each page is a native *View* or *Activity* on mobile, and has its own context. In particular, the `Vue` instances are different in each pages, and even the "global" config of Vue (`Vue.config.xxx`) only affect the single page on Weex.
+Weex is mostly used to write multi-page applications, each page is a native *View* or *Activity* on mobile, and has its own context. Although Weex is using the same javascript engine virtual machine for each page, but execution context of them are separated by the **Sandbox** technology of Weex.
 
-On this basis, some SPA (single-page application) technologies of Vue, such as [Vuex](https://vuex.vuejs.org/en/) and [vue-router](https://router.vuejs.org/en/) will also take effect within the single page. More colloquially, the "page" concept is virtual in SPA technologies, but it is real on Weex.
+> You can use [BroadcastChannel](../docs/api/broadcast-channel.html) to communicate between different pages.
 
-However, Vuex and vue-router are standalone libraries, they all have their own concept and usage scenario, you can still [use Vuex and vue-router](./advanced/use-vuex-and-vue-router.html) on Weex.
+In particular, the `Vue` variable are different in each pages, and even the "global" config of Vue (`Vue.config.xxx`) only affect the single page on Weex.
+
+On this basis, some SPA (single-page application) technologies of Vue, such as [Vuex](https://vuex.vuejs.org/en/) and [vue-router](https://router.vuejs.org/en/) will also take effect within the single page. More colloquially, the "page" concept is virtual in SPA technologies, but it is real on Weex. However, Vuex and vue-router are standalone libraries, they all have their own concept and usage scenario, you can still [use Vuex and vue-router](./advanced/use-vuex-and-vue-router.html) on Weex.
 
 ### DOM
 
@@ -44,13 +46,13 @@ To be more specific, the type of [`vm.$el`](https://vuejs.org/v2/api/#vm-el) pro
 
 The style sheet and CSS rules in managed by Weex js framework and native render engines. It would be very difficult and unnecessary to implement the whole CSSOM spec and support all CSS rules.
 
-For performance reasons, **Weex only support single class selector currently, and only support a subset of CSS Rules**. Please refer to *[common styles](../wiki/common-styles.html)* and *[text styles](../wiki/text-styles.html)* for more details.
+For performance reasons, **Weex only support single class selector currently, and only support a subset of CSS Rules**. Please refer to *[common styles](../docs/styles/common-styles.html)* and *[text styles](../docs/styles/text-styles.html)* for more details.
 
-On Weex, styles are *[scoped](https://vue-loader.vuejs.org/en/features/scoped-css.html)* by force for each Vue component.
+In Weex, styles are *[scoped](https://vue-loader.vuejs.org/en/features/scoped-css.html)* by force for each Vue component.
 
 ### Events
 
-Event bubbling and capturing are not supported in Weex currently, therefore, [event modifiers](https://vuejs.org/v2/guide/events.html#Event-Modifiers) such as `.prevent`, ` .capture`, `.stop`, ` .self` are not supported on Weex native components.
+Event bubbling and capturing are not supported in Weex currently, therefore, [event modifiers](https://vuejs.org/v2/guide/events.html#Event-Modifiers) such as `.prevent`, `.capture`, `.stop`, `.self` are not supported on Weex native components.
 
 Moreover, the [keyboard event modifiers](https://vuejs.org/v2/guide/events.html#Key-Modifiers) and [system modifier keys](https://vuejs.org/v2/guide/events.html#System-Modifier-Keys), such as `.enter`, `.tab`, `.ctrl`, `.shift` mostly are meaningless on mobile device, which are also not supported in Weex.
 
@@ -66,7 +68,11 @@ If you want to render your page on the web, you need to require the [weex-vue-re
 
 Moreover, there are a good deals of [syntax highlight plugins](https://github.com/vuejs/awesome-vue#source-code-editing) for all kind of editors.
 
-> It's a good practice to use single file component syntax in Weex.
+::: tip
+It's a good practice to use single file component syntax in Weex.
+
+Because the compiler tools are different between Weex and Vue, you have to handle all these platform differences if you are writing `render` function manually.
+:::
 
 ### Compile Targets
 
@@ -79,7 +85,7 @@ Use different bundles for different platforms is to make good use of the platfor
 
 ### Use weex-loader
 
-[weex-loader](https://github.com/weexteam/weex-loader) is a [loader](https://webpack.js.org/concepts/loaders/#using-loaders) for webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader](https://vue-loader.vuejs.org/en/).
+[weex-loader](https://github.com/weexteam/weex-loader) is a [loader](https://webpack.js.org/concepts/loaders/#using-loaders) of webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader (v14)](https://vue-loader-v14.vuejs.org/en/).
 
 One thing should be noted that if the *entry* option of your Webpack config is a `*.vue` file, you also need to pass an additional `entry` parameter.
 
@@ -107,6 +113,10 @@ const webpackConfig = {
   entry: './path/to/entry.js'
 }
 ```
+
+::: tip
+Always use javascript file as the entry file.
+:::
 
 ## Supported Features
 
@@ -179,7 +189,7 @@ Instance lifecycle hooks of Vue components will be emitted at particular stages,
 | [beforeCreate](https://vuejs.org/v2/api/#beforeCreate)   | <b class="tag-yes">Yes</b> | - |
 | [created](https://vuejs.org/v2/api/#created)             | <b class="tag-yes">Yes</b> | - |
 | [beforeMount](https://vuejs.org/v2/api/#beforeMount)     | <b class="tag-yes">Yes</b> | - |
-| [mounted](https://vuejs.org/v2/api/#mounted)             | <b class="tag-yes">Yes</b> | Not exactly the same with web, because there is no actually DOM in Weex. |
+| [mounted](https://vuejs.org/v2/api/#mounted)             | <b class="tag-yes">Yes</b> | Not exactly the same with web. (See the following tips) |
 | [beforeUpdate](https://vuejs.org/v2/api/#beforeUpdate)   | <b class="tag-yes">Yes</b> | - |
 | [updated](https://vuejs.org/v2/api/#updated)             | <b class="tag-yes">Yes</b> | - |
 | [activated](https://vuejs.org/v2/api/#activated)         | <b class="tag-no">No</b>   | Not support `<keep-alive>` yet. |
@@ -187,6 +197,11 @@ Instance lifecycle hooks of Vue components will be emitted at particular stages,
 | [beforeDestroy](https://vuejs.org/v2/api/#beforeDestroy) | <b class="tag-yes">Yes</b> | - |
 | [destroyed](https://vuejs.org/v2/api/#destroyed)         | <b class="tag-yes">Yes</b> | - |
 | [errorCaptured](https://vuejs.org/v2/api/#errorCaptured) | <b class="tag-yes">Yes</b> | New in Vue 2.5.0+, Weex SDK 0.18+ |
+
+::: warning About the "mounted" lifecycle.
+
+Unlike browsers, the render process of Weex is **asynchronous** by default and the render result are all native views which can't be accessed by javascript directly. So the `mounted` lifecycle will be emitted once the virtual-dom (`VNode` of Vue) is constructed, at that time, the corresponding native views many not rendered finish yet.
+:::
 
 ### Instance Properties
 
