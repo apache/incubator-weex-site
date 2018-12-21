@@ -171,7 +171,7 @@ module.exports = {
               ]
             }
           ],
-          '/tools/': [['toolkit', 'toolkit'], ['loaders', 'loaders']],
+          '/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
           '/community/': [['roadmap', 'roadmap']]
         }
       },
@@ -328,7 +328,7 @@ module.exports = {
               ]
             }
           ],
-          '/zh/tools/': [['toolkit', 'toolkit'], ['loaders', 'loaders']],
+          '/zh/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
           '/zh/community/': [['roadmap', 'roadmap']]
         }
       }
