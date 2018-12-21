@@ -20,6 +20,9 @@
   "homepage": "https://github.com/apache/incubator-weex-site#readme",
   "devDependencies": {
     "vuepress": "^0.12.0",
-    "vuepress-theme-fast": "0.0.7"
+    "vuepress-theme-fast": "0.0.11"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
