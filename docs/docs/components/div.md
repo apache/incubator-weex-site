@@ -1,8 +1,7 @@
-# Introduction
+# Div Component
 
-`<div>` is a base container component.support all 
+`<div>` is a base container component.support all
 
-- [common attributes](/wiki/common-attributes.html).
 - [common styles](/wiki/common-styles.html)
 - [common events](/wiki/common-events.html)
 - flexbox layout
@@ -15,14 +14,14 @@ similar to `div` in `html`
 
 ## Attributes
 
-* **common attributes**. Check out [common attributes](/wiki/common-attributes.html).
+* **common attributes**.
 
 ## Styles
 
-* **common styles**. Check out [common styles](/wiki/common-styles.html).
+* **common styles**. support [common styles](../styles/common-styles.html).
 
 ## Events
-* **common events**. Check out the [common events](/wiki/common-events.html).
+* **common events**. support [common events](../events/common-events.html).
 
 ## Other
 
@@ -33,7 +32,7 @@ similar to `div` in `html`
 ## Example
 
 
-- code 
+- code
 
 	``` vue{2}
 	<template>

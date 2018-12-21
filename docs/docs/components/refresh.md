@@ -1,51 +1,132 @@
 # &lt;refresh&gt;
-`<refresh>` 为容器提供下拉刷新功能。
 
-::: warning 注意
-* `<refresh>` 是 `<scroller>`、`<list>`、`<waterfall>` 的子组件，只能在被它们包含时才能被正确渲染。
-:::
+### <span class="weex-version">v0.6.1+</span>
 
-```vue{2}
-<scroller>
+The `<refresh>` Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the `<loading>` Component.
+> **Note：** To be rendered properly, the `<refresh>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
+
+ - Example:
+
+```
+<list>
   <refresh>
-    <text>Refreshing...</text>
+    ...
   </refresh>
-  <div v-for="num in lists">
-    <text>{{num}}</text>
-  </div>
-</scroller>
+  ...
+</list>
 ```
 
-## 子组件
-* 诸如 `<text>`、`<image>` 之类的任何组件，都可以放到 `<loading>` 进行渲染。
-* 特殊子组件 `<loading-indicator>`: 只能作为 `<refresh>` 和 `<loading>` 的子组件使用，拥有默认的动画效果实现。
-```vue{3}
+ - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
+
+## Child Components
+
+ - Any other components, like the `<text>` and `<image>` components, can be put inside the refresh component.
+
+ - `<loading-indicator>`: This is a dedicated component which provides a default refresh animation effect, can only be used inside the `<refresh>` or the `<loading>` components.
+
+ - Example:
+
+```
 <refresh>
   <text>Refreshing</text>
   <loading-indicator></loading-indicator>
+  ...
 </refresh>
 ```
+ - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
-## 属性
-* `display`  
-  控制 `<refresh>` 组件显示、隐藏。`display` 的设置必须成对出现，即设置 `display="show"`,必须有对应的 `display="hide"`。可选值为 `show / hide`，默认值为 `show`。
+## Attributes
 
-## 事件
-* `refresh` 事件：当 `<scroller>`、`<list>`、`<waterfall>` 被下拉完成时触发。
-* `pullingdown` 事件：当 `<scroller>`、`<list>`、`<waterfall>` 被下拉时触发。
-  可以从 `event` 参数对象中获取以下数据：
-  * `dy`: 前后两次回调滑动距离的差值
-  * `pullingDistance`: 下拉的距离
-  * `viewHeight`: refresh 组件高度
-  * `type`: “pullingdown” 常数字符串
+ - Support all common attributes, check out [common attributes](../common/common-attrs)
 
-```vue
-<refresh @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
-  <text>Refreshing ...</text>
-  <loading-indicator></loading-indicator>
-</refresh>
+| Attribute      | Type     | Value            | Default Value     |
+| ------------- | ------ | -------------------------- | ------- |
+| `display` | String | show / hide             | show      |
+
+#### `display`
+
+ - `show`：The refresh animation will be started if a `<loading-indicator>` is included in the refresh component.
+
+ - `hide`：Collapse the refresh view. It also hides the `<loading-indicator>` and stops the loading animation if there's a `<loading-indicator>` included in the refresh component.
+
+> **Note：** The visibility of `<refresh>` component can be controlled by display attribute with the value show and hide. A `display="show"` should always be paired with a `display="hide"` statement.
+
+ - Example:
+
 ```
+<template>
+  <list>
+    <refresh @refresh="onrefresh" :display="refreshing ? 'show' : 'hide'">
+      ...
+    </refresh>
+    ...
+  </list>
+</template>
 
-## Demo
-[基本用法](http://dotwe.org/vue/fccb7c6b9a9f4b7b1f3f7518344cf1bb)
-<IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1EMM7nYvpK1RjSZPiXXbmwXXa-1242-2208.png" />
+<script>
+  ...
+  methods: {
+    onrefresh (event) {
+      this.refreshing = true
+      setTimeout(() => {
+        this.refreshing = false
+      }, 2000)
+    },
+  }
+</script>
+```
+ - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
+
+## Styles
+
+ - Please check out the [common styles](/wiki/common-styles.html)
+
+## Events
+
+### `refresh`
+
+ - Triggered when the scroller or list is pulled down.
+
+### `pullingdown` <span class="weex-version">v0.6.1+</span>
+
+ - Triggered when the scroller or list is pulled down. The attributes `dy`, `pullingDistance`, `viewHeight` and `type` are accessible from the `event` object :
+
+  - `dy` : The offset between two scroll actions
+  - `pullingDistance` : The distance of pulling
+  - `viewHeight` : The height of refreshView
+  - `type` : "pullingdown" constant string type for this event
+
+
+ - Example:
+
+```
+<scroller>
+  <refresh @refresh="onrefresh" @pullingdown="onpullingdown">
+    ...
+  </refresh>
+  ...
+</scroller>
+
+<script>
+  export default {
+    methods: {
+      onrefresh (event) {
+        ...
+      },
+      onpullingdown (event) {
+        console.log("dy: " + event.dy)
+        console.log("pullingDistance: " + event.pullingDistance)
+        console.log("viewHeight: " + event.viewHeight)
+        console.log("type: " + type)
+      }
+    }
+  }
+</script>
+```
+ - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
+
+
+
+## Example
+
+ - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)

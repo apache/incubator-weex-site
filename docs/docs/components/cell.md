@@ -1,36 +1,37 @@
----
-sidebarDepth: 0
----
 # &lt;cell&gt;
-用于定义列表中的子列表项，类似于 HTML 中的 `ul` 之于 `li`。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为`<list>`、`<waterfall>`组件的子组件, 这是为了优化滚动时的性能。
 
-```vue{3}
-<template>
-  <list>
-    <cell v-for="num in lists">
-      <text>{{num}}</text>
-    </cell>
-  </list>
-</template>
+### Summary
 
-<script>
-  export default {
-    data () {
-      return {
-        lists: ['A', 'B', 'C', 'D', 'E']
-      }
-    }
-  }
-</script>
-```
+This component must be used as a subcomponent of a [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) component, which is for the performance optimizing for long list scrolling.
 
-::: warning 注意
-* 由于 `<cell>` 本身是一个容器，其布局由 `<list>` 进行管理，你不能给 `<cell>` 设定 flex 值。
-* `<cell>` 的宽度等于父组件 `<list>` 的宽度，并且 `<cell>` 高度自适应，指定 margin 样式也不起作用。
-:::
+### Child Components
 
-## 子组件
-支持所有 Weex 的组件作为它的子组件。
+This type of component supports all kinds of weex component as its child components.
 
-## Demo
-[基本用法](http://dotwe.org/vue/3c649d5bb5b8ec434fbdce5c16c357c9)
+### Attributes
+
+**Notes:** you can't give `<cell>` a `flex` value. Width of `<cell>` is equal to the width of its parent component `<list>`, and you don't need to specify its height.
+
+* `keep-scroll-position {boolean}`: <span class="api-version">v0.11+</span> List Whether to keep the last sliding position after inserting the Cell
+
+### Styles
+
+**common styles**: check out the [common styles](/wiki/common-styles.html)
+
+- support flexbox related styles
+- support box model related styles
+- support ``position`` related styles
+- support ``opacity``, ``background-color`` etc.
+
+**Notes:** cell itself is a container, its layout info is managed by list, so specifying cell's margin info will not work.
+
+### Events
+
+**common events**: check out the [common events](/wiki/common-events.html)
+
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
+
+### Example
+
+please refer to [List](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html)

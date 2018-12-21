@@ -8,15 +8,15 @@
 
 ## 属性
 
-* **通用属性**. 参见[通用属性](/wiki/common-attributes.html).
+* **通用属性**. 
 
 ## 样式
 
-* **通用样式**. 参见[通用样式](/wiki/common-styles.html).
+* **通用样式**. 参见[通用样式](../styles/common-styles.html).
 
 ## 事件
 
-* **通用事件**. 参见[通用事件](/wiki/common-events.html).
+* **通用事件**. 参见[通用事件](../events/common-events.html).
 
 ## 其它
 

@@ -1,0 +1,35 @@
+# Weex Project Roadmap
+
+> This document outlines work that is currently being worked on and things we plan to work on next.  And  we hope to obtain valuable feedback from the community to help us better understand user needs and adjust our roadmaps.
+
+## WeexCore
+### JS binding
+#### v0.20
+* Will be supporting C++ timer that more efficient than platform timer module;
+* Feature of MessageLoop for thread interactions;
+#### v0.21
+* Using javaScriptCore standard API instead of source code
+* Support dom Binding for better portability and performance.
+### Layout
+#### v0.20
+* Add test insfrastructure for layout engine.
+* Support direction:RTL and minor bugfix.
+#### v0.21
+* Add enough test cases to cover layout engine.
+### Render
+#### v0.20
+* Support renderPage life cycle management and resource management.
+* Support render task schedule.
+#### v0.21
+## tools
+
+This year, the weex-toolkit will release version 2.0.0, it mainly provides the following new features:
+
+- Flawless installation and upgrade experience.
+- Better unit & functional testing support.
+- Visual Studio Code extensions with support for build/run/debug.
+- Split into multiple packages that can be reused on the Node-side program.
+
+Also, there will be some feartures and optimization for the submodules, such as weex-debugger, weexpack and so on. 
+
+All the schedules can be viewed on the [milestones](https://github.com/weexteam/weex-toolkit/milestones).

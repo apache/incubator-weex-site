@@ -1,61 +1,50 @@
-# webview
+---
+title: webview
+type: references
+group: Build-in Modules
+order: 9.12
+version: 2.1
+---
 
-`webview` 模块提供了一系列的 [`<web>`](/docs/web.md) 组件操作接口，例如 `goBack`、`goForward` 和 `reload`，一般与 `<web>` 组件一起使用，在 Weex 页面内渲染 web 页面。
+`webview` module provides a series of web operation API like `goBack`, `goForward`, and `reload`. Usually used with the [`<web>` component](../components/web.html).
 
 ## API
 
 ### goBack(webElement)
 
-前往 WebView 历史记录的上一页。
+Goes to the previous page in WebView's session history.
 
-#### 参数
+**Arguments**
 
-| 属性        | 说明 |
-| ---------- | ------------- |
-| `webElement` | `<web>` 组件元素，可通过 `ref` 获取 |
-
-```js
-const webview = weex.requireModule('webview');
-
-webview.goBack(this.$refs.webview);
-```
+- `webElement`*(web)*: the element of the `<web>` component.
 
 ### goForward(webElement)
 
-前往 WebView 历史记录的下一页。
+Goes to the next page in WebView's session history.
 
-#### 参数
+**Arguments**
 
-| 属性        | 说明 |
-| ---------- | ------------- |
-| `webElement` | `<web>` 组件元素，可通过 `ref` 获取 |
-
-```js
-const webview = weex.requireModule('webview');
-
-webview.goForward(this.$refs.webview);
-```
+- `webElement`*(web)*: the element of the `<web>` component.
 
 ### reload(webElement)
 
-刷新当前 Web 页面。
+Reloads the current web page.
 
-#### 参数
+**Arguments**
 
-| 属性        | 说明 |
-| ---------- | ------------- |
-| `webElement` | `<web>` 组件元素，可通过 `ref` 获取 |
+- `webElement`*(web)*: the element of the `<web>` component.
+
+## Examples
+
+- Simple useage:
 
 ```js
-const webview = weex.requireModule('webview');
+var webElement = this.$el('webview');
 
-webview.reload(this.$refs.webview);
+var webview = weex.requireModule('webview');
+webview.goBack(webElement.ref);
+webview.goForward(webElement.ref);
+webview.reload(webElement.ref);
 ```
 
-## Demo
-
-- [API 示例](http://dotwe.org/vue/196dcbdb6a5bcea519c239d50ae5012d)
-
-- [仿浏览器](http://dotwe.org/vue/9877838e37d732dbe2639e3ec57f096a)
-
-  <IPhoneImg imgSrc="http://g.alicdn.com/amte-fe/weex-fast-website/1.0.0/webview.png" />
+- [Browser example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939)

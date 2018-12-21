@@ -1,245 +1,351 @@
-> 注意：Weex 所有暴露给 JS 的内置 module 或 component API 都是安全和可控的， 它们不会去访问系统的私有 API ，也不会去做任何 runtime 上的 hack 更不会去改变应用原有的功能定位。  
-> 如果需要扩展自定义的 module 或者 component ，一定注意不要将 OC 的 runtime 暴露给 JS ， 不要将一些诸如 `dlopen()`， `dlsym()`， `respondsToSelector:`，`performSelector:`，`method_exchangeImplementations()` 的动态和不可控的方法暴露给JS， 也不要将系统的私有API暴露给JS
+---
+title: Extend iOS
+type: guide
+group: Extend
+order: 6.4
+version: 2.1
+---
 
-Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你需要一些特性但 Weex 并未提供，可以通过扩展自定义的一些插件来实现，通过 WeexSDK 加载。
+<!-- toc -->
 
-本文都以 Objective-C 为例子书写，如果需要 swift 请参考 [使用 swift 扩展 Weex](/guide/extend-ios-with-swift.html)。
+> **NOTICE**: **All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do any system hacks at runtime,  neither can they change the primary purpose of the Application**.
+>
+> **If you are extending your custom modules/components,  be sure NOT to export the ability of Objective-C runtime, be sure NOT to export  dynamic and uncontrolled methods such as `dlopen()`, `dlsym()`, `respondsToSelector:`, `performSelector:`, `method_exchangeImplementations()`, be sure NOT to export any private methods. **
 
-## 自定义 module
-自定义 module, 需要让自己的 class 遵循 `WXModuleProtocol` 这个protocol, 通过 `WX_EXPORT_METHOD` 这个宏暴露出需要透出到 `JavaScript` 调用的方法，注册 module , 就可以完成一个简单 module 的自定义。
-### module 自定义初阶
-下面完成一个 module, 该 module 暴露一个打印输入参数的方法：
-1. 新建一个 基类为 NSObject 的 class `WXCustomEventModule`, 让该类遵循 `WXModuleProtocol` 的协议
-<img src="https://img.alicdn.com/tfs/TB1LrZ8n7voK1RjSZPfXXXPKFXa-1042-264.png" width="100%">
-2. 添加打印的方法，通过 `WX_EXPORT_METHOD` 暴露该方法
-<img src="https://img.alicdn.com/tfs/TB156M9nZfpK1RjSZFOXXa6nFXa-1434-564.png" width="100%">
-3. 在初始化完成 Weex SDK 之后注册该 module
-<img src="https://img.alicdn.com/tfs/TB1IGo4nVzqK1RjSZFoXXbfcXXa-1420-122.png" width="100%">
-到此，我们已经完成了一个简单的 module 方法的封装，javaScript 端的使用如下:
-```js
-weex.requireModule("event").showParams("hello weex")
-```
-### module 高阶用法
-1. `weexInstance`  
-在一个 Weex 页面中，默认 WXSDKInstance 的 Object 持有 多个 module 的 Object, 而 module 的 object 是没有对 WXSDKInstance 做持有的， 在自定义的module 中添加 `@synthesize weexInstance`, module Object 可以对 持有它本身的 WXSDKInstance Object 做一个 弱引用， 通过 weexInstance 可以拿到调用该 module 的页面的一些信息。
-2. `targetExecuteThread`  
-Module 方法默认会在UI线程中被调用，建议不要在这做太多耗时的任务，如果要在其他线程执行整个module 方法，需要实现`WXModuleProtocol` 中 `- (NSThread *)` 的方法，这样，分发到这个module的任务会在指定的线程中运行。
-3. `WXModuleKeepAliveCallback`  
-Module 支持返回值给 JavaScript中的回调，回调的类型是 `WXModuleKeepAliveCallback`，回调的参数可以是String或者Map, 该 block 第一个参数为回调给 JavaScript 的数据，第二参数是一个 BOOL 值，表示该回调执行完成之后是否要被清除，JavaScript 每次调用都会产生一个回调，但是对于单独一次调用，是否要在完成该调用之后清除掉回调函数 id 就由这个选项控制，如非特殊场景，建议传 NO。
-4. `WX_EXPORT_METHOD_SYNC`  
-使用 `WX_EXPORT_METHOD` 暴露到前端的方法都是异步方法(获得结果需要通过回调函数获得), 如果期望获得同步调用结果，可以使用 `WX_EXPORT_METHOD_SYNC` 暴露module 方法。
+Weex SDK provides only rendering capabilities, rather than have other capabilities. There are some internal [components](../wiki/component-introduction.html), [modules](../wiki/module-introduction.html) and [handlers](../wiki/handler-introduction.html). If you want these features which weexSDK doesn't provide, you can to extend.
+> The following section we will extend iOS using Objective-C and here is [swift](./extend-module-using-swift.html).
 
-## Component 扩展
-可能 WeexSDK 内置提供的组件并不能满足你的开发需求，比如需要期望使用地图这样一个复杂的组件，可以通过自定义一个组件，注册到 WeexSDK engine 中， 可以很方便的使用起来。
-### component 基础生命周期
-- 新建一个基类为 `WXComponent` 的 class  
-  如果此时我们什么都不做，将改组件注册进 WeexSDK engine，它的功能就跟内置的 div 组件功能是一致的。
-- 覆盖 `WXComponent` 中的生命周期方法
-  - `loadView`  
-    一个 component 默认对应于一个 view，如果未覆盖 `loadView` 提供自定义 `view`, 会使用 `WXComponent` 基类中的 `WXView`, `WXView` 是继承自 UIView 的一个派生 view。要实现地图功能，我们需要对应的地图 view, 比如系统的 `MKMapView`
+### extend custom module
+
+ To extend your custom weex modules in iOS, you must make your class conform to `WXModuleProtocol` protocol, and then exports your method to javaScript using macro `WX_EXPORT_METHOD`,finally register your module with your class and a self-define module name.
+
+- basic
+  we will custom a module to print params that javaScript give.
+
+  1. new a class derived from `NSObject` conforming `WXModuleProtocol` protocol
+  
+    ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/2f15f1ef79128dd923706f0d321482e7.png)
+
+  2. add your module method and then exports using macro `WX_EXPORT_METHOD`
+
+    ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/8079e55e74f098eb42e074f696537de1.png)
+
+  3. register module after WeexSDK's initialization
+
+    ![image.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/dd6b2a43132c0bfa724f5c1e56f300b4.png)
+
+  by far, we've finished a basic custom module, and you may understand how to custom a weex module in iOS using Objective-C.
+
+  We can use it in javaScript code like this: 
+
+  ```javaScript
+      weex.requireModule("event").showParams("hello Weex)
+  ```
+
+- advanced extendibility
+
+ you must understand more in `WXModuleProtocol` protocol, we'll talk more about blueprint methods and properties in this protocol.
+
+   1. `weexInstance`
+    The instance of `WXSDKInstance` holds the references of all modules created in a single page. if you add `@synthesize weexInstance` in your module class, your module will hold a reference to the instance of `WXSDKInstance` who create and initialize your module, or you get nothing. You can get more details by `weexInstance` such as pageName.
+
+   2. `targetExecuteThread`
+    We will schedule your module method to main thread(UI thread), we highly recommend that you can not do much works here, if must, you can add implementation for this method. You can provide a thread so that we can schedule to.
+
+   3. `WXModuleKeepAliveCallback`
+    Sometimes you can return your result to your caller, callback is important in this scene,the params for callback can be string or dictionary. You must specify a second params to keep your callback function id in js after used. We'll create a new function id every time callback, `NO` will be a better choice for memory.
+
+   4. `WX_EXPORT_METHOD_SYNC`
+    > This feature only works on WeexSDK 0.10 and later. Synchronous method only works in JavaScript thread, you cannot do much works here.
+    exports asynchronous method using `WX_EXPORT_METHOD`, you may get result in callback function.
+    `WX_EXPORT_METHOD_SYNC` to export synchronous method. You can get result on the left of operand `=`.
+
+### extend custom component
+
+- new a class derived from `WXComponent` class
+  if we do nothing in this class and then register to WeexSDK engine, its functionality is just like `div`.
+
+- override the lifecycle of `WXComponent`
+
+  - `loadView`
+    We will load a view for a component default, if you didn't override this method, supperclass will provide a `WXView` derived from `UIView`. If we want to load html or just to show a map, override `loadView` and provide a custom view is a good choice.
+
     ```
-    - (UIView *)loadView {
-      return [MKMapView new];
-    }
+        - (UIView *)loadView {
+            return [MKMapView new];
+        }
     ```
   - `viewDidLoad`
-    对组件 view 需要做一些配置，比如设置 delegate, 可以在 `viewDidLoad` 生命周期做，如果当前 view 没有添加 subview 的话，不要设置 view 的 frame，WeexSDK 会根据 style 设置。
-    ```
-    - (void)viewDidLoad {
-      ((MKMapView*)self.view).delegate = self;
-    } 
-    ```
-- 注册 component
-  ```
-  [WXSDKEngine registerComponent:@"map" withClass:[WXMapComponent class]];
-  ```
-  在前端页面直接可以使用 `<map>` 标签，如下所示
-  ```html
-  <template>
-    <div>
-      <map style="width:200px;height:200px"></map>
-    </div>
-  </template>
-  ```
-- 支持自定义事件  
-  给 map 组件支持 `mapLoaded` 事件
-  ```vue
-  <template>
-    <div>
-      <map style="width:200px;height:200px" @mapLoaded="onMapLoaded"></map>
-    </div>
-  </template>
+    If you want to make some configurations for your custom view like set delegate, you can finish here.
+    You don't need to set frame for your custom view if it doesn't has any subview, weexSDK will set it's frame according to style.
 
-  <script>
-  export default {
-    methods: {
-      onMapLoaded:function(e) {
-        console.log("map loaded"+JSON.stringify(e))
-      }
-    }
-  }
-  </script>
-  ```
-  给当前组件添加 BOOL 成员 mapLoaded,记录当前事件是否被添加，当地图加载完成时候，我们可以根据这个判断是否应该发送事件。
-  - 覆盖组件生命周期方法添加和移除事件  
-    覆盖 `addEvent` 和 `removeEvent` 方法
     ```
-    - (void)addEvent:(NSString *)eventName {
-      if ([eventName isEqualToString:@"mapLoaded"]) {
-        _mapLoaded = YES;
-      }
-    }
+	    - (void)viewDidLoad {
+            ((MKMapView*)self.view).delegate = self;
+	    }
+	```
+- register component
 
-    - (void)removeEvent:(NSString *)eventName
-    {
-      if ([eventName isEqualToString:@"mapLoaded"]) {
-        _mapLoaded = NO;
-      }
-    }
-    ```
-    - 在适宜的时间发事件通知
-    在 MKMapView 加载完成的 delegate 方法中，发事件通知自定义事件
-    > 不要忘记设置 MKMapView 的 delegate. 
-    ```
-    - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
-      if (_mapLoaded) {
-        [self fireEvent:@"mapLoaded" params:@{@"customKey":@"customValue"} domChanges:nil]
-      }
-    }
-    ```
-- 支持自定义属性  
-  添加自定义属性 `showTraffic`
-  ```html
-  <template>
-    <div>
-      <map style="width:200px;height:200px" showTraffic="true"></map>
-    </div>
-  </template>
-  ```
-  - 覆盖组件初始化方法 `initWithRef...`   
+ ```
+    [WXSDKEngine registerComponent:@"map" withClass:[WXMapComponent class]];
+ ```
 
-    当前component 添加 `BOOL` 成员 showsTraffic，接受保存用户输入值，添加到当前组件上的所有属性都会在初始化方法中 `attributes` 中传过来，此处我们处理我们感兴趣的属性即可。
+ by far you can use your custom component in front-end
+
+ ```html
+    <template>
+        <div>
+            <map style="width:200px;height:200px"></map>
+        </div>
+    </template>
+```
+
+Weex engine has done some works to support common events and other attributes, if you want support your own attributes, let's continue.
+
+- custom events for your component
+ Our target is that support `mapLoaded` event for the component we just implement, and then we can use in front-end directyly. The front-end code can be like this.
+
+ ```html
+    <template>
+        <div>
+            <map style="width:200px;height:200px" @mapLoaded="onMapLoaded"></map>
+        </div>
+    </template>
+
+    <script>
+    export default {
+        methods: {
+            onMapLoaded:function(e) {
+                console.log("map loaded"+JSON.stringify(e))
+            }
+        }
+    }
+    </script>
+```
+we must save status for event added or not, so we add a `BOOL` member named `mapLoaded` for the component class to make it record, and when event map loaded, we can fire event according to this record.
+
+- custom event
+    - override method add/remove event
+
+    ```Objective-C
+        - (void)addEvent:(NSString *)eventName {
+            if ([eventName isEqualToString:@"mapLoaded"]) {
+                _mapLoaded = YES;
+            }
+        }
+
+        - (void)removeEvent:(NSString *)eventName
+        {
+            if ([eventName isEqualToString:@"mapLoaded"]) {
+                _mapLoaded = NO;
+            }
+        }
     ```
+    - fire event to front-end
+    we'll fire `mapLoaded` event when map loaded finish according to our record.
+    > do not forget to set delegate for MKMapView.
+
+    ```object-c
+        - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
+            if (_mapLoaded) {
+                [self fireEvent:@"mapLoaded" params:@{@"customKey":@"customValue"} domChanges:nil]
+            }
+        }
+    ```
+
+We have finish our custom event, so what about custom attributes? this is the same important as custom events.
+
+- custom attributes
+ The next target is that we add a custom attribute `showTraffic`, we can display real time traffic or not according to this attribute. The front-end code can be like the following.
+
+```html
+    <template>
+        <div>
+            <map style="width:200px;height:200px" showTraffic="true"></map>
+        </div>
+    </template>
+```
+
+  - override component init method `initWithRef...`
+    add a `BOOL` member `showsTraffic` to make the status whether front-end user use the attribute or not record. We can get all the attribute for this component by override init method of component.
+     
+    ```object-c
     - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {
-      if(self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
-        if (attributes[@"showsTraffic"]) {
-          _showsTraffic = [WXConvert BOOL: attributes[@"showsTraffic"]];
+        if(self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
+            
+            if (attributes[@"showsTraffic"]) {
+                _showsTraffic = [WXConvert BOOL: attributes[@"showsTraffic"]];
+            }
         }
-      }
-      return self;
+        return self;
     }
     ```
-    - 在 `viewDidLoad` 中设置该属性
-      ```
-      - (void)viewDidLoad {
+  - set property for custom view.
+    ```object-c
+        - (void)viewDidLoad {
         ((MKMapView*)self.view).showsTraffic = _showsTraffic;
-      }
-      ```
-    - 支持属性更新
-      ```
-      - (void)updateAttributes:(NSDictionary *)attributes{
-        if (attributes[@"showsTraffic"]) {
-          _showsTraffic = [WXConvert BOOL: attributes[@"showsTraffic"]];
-          ((MKMapView*)self.view).showsTraffic = _showsTraffic;
         }
-      }
-      ```
-
-### 更多 component 生命周期
-native 的 component 是由 Weex 管理的，Weex 创建，布局，渲染，销毁。Weex 的 component 生命周期都是可以 hook 的，你可以在这些生命周期中去做自己的事情。
-
-| 方法 | 描述 |
-| ---------- | --------- |
-| initWithRef:type:… | 用给定的属性初始化一个component. |
-| layoutDidFinish | 在component完成布局时候会调用. |
-| loadView | 创建component管理的view. |
-| viewWillLoad | 在component的view加载之前会调用. |
-| viewDidLoad | 在component的view加载完之后调用. |
-| viewWillUnload | 在component的view被释放之前调用. |
-| viewDidUnload | 在component的view被释放之后调用. |
-| updateStyles: | 在component的style更新时候调用. |
-| updateAttributes: | 在component的attribute更新时候调用. |
-| addEvent: | 给component添加event的时候调用. |
-| removeEvent: | 在event移除的时候调用. |
-
-或许你需要考虑更多的生命周期方法去 Hook，当布局完成时候，像 `layoutDidFinish`，如果你想了解更多，可以参考一下 `WXComponent.h` 声明的方法。
-
-### component 方法
-WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，自定义完组件后，下面的例子可以指引你完成 component 方法。
-
-- 自定义一个 WXMyCompoenent 的组件
-  ```
-  @implementation WXMyComponent
-  WX_EXPORT_METHOD(@selector(focus)) // 暴露该方法给js
-  - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {
-    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
-      // handle your attributes
-      // handle your styles
+    ```
+  - support attribute updates
+    
+    ```object-c
+    - (void)updateAttributes:(NSDictionary *)attributes
+    {
+        if (attributes[@"showsTraffic"]) {
+            _showsTraffic = [WXConvert BOOL: attributes[@"showsTraffic"]];
+            ((MKMapView*)self.view).showsTraffic = _showsTraffic;
+        }
     }
-    return self;
-  }
+    ```
+-  more life cycle for component
 
-  - (void)focus {
-    NSLog(@"you got it");
-  }
-  @end
-  ```
-- 注册组件 `[WXSDKEngine registerComponent:@"mycomponent" withClass:[WXMyComponent class]]`
-- 在 weex 文件中调用
-  ```vue
-  <template>
-    <mycomponent ref='mycomponent'></mycomponent>
-  </template>
-  <script>
-    module.exports = {
-      created:function() {
-        this.$refs.mycomponent.focus();
-      }
+A Native Component has a life cycle managed by Weex. Weex creates it, layout it, renders it and destroys it.
+
+Weex offers component life cycle hooks that give you visibility into these key moments and the ability to act when they occur.
+
+    |        method        | description                              |
+    | :------------------: | ---------------------------------------- |
+    | initWithRef:type:... | Initializes a new component using the specified  properties. |
+    |   layoutDidFinish    | Called when the component has just laid out. |
+    |       loadView       | Creates the view that the component manages. |
+    |     viewWillLoad     | Called before the load of component's view . |
+    |     viewDidLoad      | Called after the component's view is loaded and set. |
+    |    viewWillUnload    | Called just before releasing the component's view. |
+    |    viewDidUnload     | Called when the component's view is released. |
+    |    updateStyles:     | Called when component's style are updated. |
+    |  updateAttributes:   | Called when component's attributes are updated. |
+    |      addEvent:       | Called when adding an event to the component. |
+    |     removeEvent:     | Called when removing an event frome the component. |
+
+### Component Method
+from WeexSDK `0.9.5`, you can define your component method by macro `WX_EXPORT_METHOD`
+for example:
+
+```
+@implementation WXMyComponent
+ +WX_EXPORT_METHOD(@selector(focus))
+ +- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
+ {
+     if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
+         // handle your attributes
+         // handle your styles
+     }
+
+     return self;
+ }
+
+
+ - (void)focus
+   {
+   		NSLog(@"you got it");
+   }
+@end
+```
+
+after your registration for your own custom component, now you can call it in your js file.
+
+```html
+<template>
+  <mycomponent ref='mycomponent'></mycomponent>
+</template>
+<script>
+  module.exports = {
+    created: function() {
+      this.$refs.mycomponent.focus();
     }
-  </script>
-  ```
-
-## 自定义 handler
-weexSDK 目前没有提供图片下载的能力，在 `WXImgLoaderProtocol` 定义了一些获取图片的接口, image 组件正是通过 `WXImgLoaderProtocol` 获得并展示图片，开发者可以实现该 protocol 中的接口方法，这样 `image` 标签才能正常展示图片。
-
-开发者也可以定义自己的 `protocol` 和对应的实现来使用 `handler` 机制。
-- 新建基类为 NSObject 的 class 实现 `WXImgLoaderProtocol` 协议， 实现 `WXImgLoaderProtocol` 的方法
-  > 下面加载图片的逻辑需要依赖 SDWebImage，你也可以不依赖 SDWebimage 使用自己的方式加载对应 URL 图片。
-  ```
-  @implementation WXImgLoaderDefaultImpl
-  - (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
-  {
-      if ([url hasPrefix:@"//"]) {
-          url = [@"http:" stringByAppendingString:url];
-      }
-      return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-      } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-      if (completedBlock) {
-          completedBlock(image, error, finished);
-      }
-      }];
   }
-  @end
-  ```
-- 注册 handler
-  你可以通过WXSDKEngine 中的 `registerHandler:withProtocol` 注册handler
-  ```
-  WXSDKEngine.h
-  /**
-  * @abstract Registers a handler for a given handler instance and specific protocol
-  * @param handler The handler instance to register
-  * @param protocol The protocol to confirm
-  */
-  + (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;
+</script>
+```
 
-  [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]
+### Fetch CSS styles of a WXComponent
+
+- Before v0.19, Weex used Yoga layout engine. You can access css styles via cssNode of WXCompoent. Such as
+  ```
+  self.cssNode->style.flex = 1.0;
+  float height = self.cssNode->style.dimensions[CSS_HEIGHT]);
+  ```
+
+- From v0.19, Weex replaced layout engine which is C++ codes. You can get css styles from styles dictionary of a WXComponent. You can also access flexCssNode property which is of type WeexCore::WXCoreLayoutNode, but must in .mm files.
+
+- From v0.20, WeexCore is imported to iOS, and css styles are never uploaded to WXComponent. The styles dictionary only contains non-css styles. We think that upper UI components should only care about final layout results generated by layout engine. If you still want to access css styles, you may use flexCssNode in .mm files or by extension methods provided in WXComponent+Layout.h.
+
+ ```
+/**
+ * @abstract Get css style value for key. The key should be of CSS standard form.
+ *  This method is for convenience use in C/ObjC environment. And if you want to
+ *  retrieve all style values or in C++, you could use flexCssNode directly.
+ *
+ *  Thread usage:
+ *      This method should be invoked in component thread by WXPerformBlockOnComponentThread.
+ *      Note that all initWithRef methods of WXComponent and its subclasses are performed in
+ *      component thread by default. Therefore you can call this method directly in initWithRef.
+ *
+ *  Supported keys:
+ *      width, height, min-width, min-height, max-width, max-height,
+ *      margin-(left/right/top/bottom)
+ *      padding-(left/right/top/bottom)
+ *      border-(left/right/top/bottom)-width
+ *      left, right, top, bottom
+ *      flex-grow
+ */
+- (float)getCssStyleValueForKey:(NSString *)key;
+
+// Other methods which should also be used in component thread.
+- (WXCoreFlexDirection)getCssStyleFlexDirection;
+- (WXCoreFlexWrap)getCssStyleFlexWrap;
+- (WXCoreJustifyContent)getCssStyleJustifyContent;
+- (WXCoreAlignItems)getCssStyleAlignItems;
+- (WXCoreAlignSelf)getCssStyleAlignSelf;
+- (WXCorePositionType)getCssStylePositionType;
+- (NSString*)convertLayoutValueToStyleValue:(NSString*)valueName;
+ ```
+
+### custom your handlers
+
+We don't provide functionality for downloading image but defines a blueprint of methods in `WXImgLoaderProtocol` for loading image, and image component get image content from these methods. You must implement methods in `WXImgLoaderProtocol` except the `optional` methods to display image from specified url.
+You can also define your own `protocol` and implement its handler.
+
+- new a class derived from `NSObject` conforming `WXImgLoaderProtocol` and then add implementation for methods in `WXImgLoaderProtocol`.
+
+> the flowing code may require SDWebImage as dependency, you can download remote url image by your own way without SDWebImage. 
+ 
+ ```object-c
+    @implementation WXImgLoaderDefaultImpl
+    - (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
+    {
+        if ([url hasPrefix:@"//"]) {
+            url = [@"http:" stringByAppendingString:url];
+        }
+        return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        if (completedBlock) {
+            completedBlock(image, error, finished);
+        }
+        }];
+    }
+    @end
+```
+- register handler
+  register handler by the method `registerHandler:withProtocol` in WXSDKEngine
+
+  ```object-c
+    WXSDKEngine.h
+    /**
+    * @abstract Registers a handler for a given handler instance and specific protocol
+    * @param handler The handler instance to register
+    * @param protocol The protocol to confirm
+    */
+    + (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;
+
+    [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]
 
   ```
-- 使用 handler
-  handler 可以在 native 的 module 或者 component 实现中使用
+- use handler
+ you can use your handle in any native code including `component`, `module` and other `handlers`
+ ```object-c
+    id<WXImgLoaderProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(WXImgLoaderProtocol)];
+    [iamgeLoader downloadImageWithURL:imageURl imageFrame:frame userInfo:customParam completed:^(UIImage *image, NSError *error, BOOL finished){
+    }];
   ```
-  id<WXImgLoaderProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(WXImgLoaderProtocol)];
-  [iamgeLoader downloadImageWithURL:imageURl imageFrame:frame userInfo:customParam completed:^(UIImage *image, NSError *error, BOOL finished){
-  }];
 
-  ```
+

@@ -21,6 +21,12 @@ module.exports = {
       '/': {
         selectText: 'Languages',
         label: 'English',
+        lastUpdated: 'Last Updated',
+        editLinkText: 'Edit this page on GitHub',
+        scoreText: {
+          good: 'Excellent doc',
+          bad: 'Unusable doc'
+        },
         nav: [
           { text: 'Guide', link: '/guide/introduction' },
           { text: 'Docs', link: '/docs/api/weex-variable' },
@@ -172,12 +178,19 @@ module.exports = {
             }
           ],
           '/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
-          '/community/': [['roadmap', 'roadmap']]
+          '/community/': [['roadmap', 'roadmap']],
+          '/blog/': [['weex-auto-test-locating', 'solution about auto-test locating']]
         }
       },
       '/zh/': {
         selectText: '选择语言',
         label: '简体中文',
+        lastUpdated: '上次更新',
+        editLinkText: '在 GitHub 上编辑此页',
+        scoreText: {
+          good: '文档写得很棒',
+          bad: '文档写得很差'
+        },
         nav: [
           { text: '指南', link: '/zh/guide/introduction' },
           { text: '文档', link: '/zh/docs/api/weex-variable' },
@@ -329,7 +342,8 @@ module.exports = {
             }
           ],
           '/zh/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
-          '/zh/community/': [['roadmap', 'roadmap']]
+          '/zh/community/': [['roadmap', 'roadmap']],
+          '/zh/blog/': [['weex-auto-test-locating', 'Weex自动化测试元素定位方案']]
         }
       }
     }

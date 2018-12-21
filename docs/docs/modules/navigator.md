@@ -1,45 +1,69 @@
-# navigator
-众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 `navigator` 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。
+---
+title: navigator
+type: references
+group: Build-in Modules
+order: 9.07
+version: 2.1
+---
+
+# Navigator 
+
+<span class="weex-version">v0.6.1+</span>
+
+As it's known to all that, we can navigate back and forth in the web browser using the navigation bar.
+And The navigator module mimics the same behaviors in the iOS/Android application. Without such an ability, We will have to stay in the same page forever, so it is very important. Besides the navigation, the module can specify whether to apply animation or not during the transition.
 
 ## API
-### navigator.push(options, callback)
-把一个weex页面URL压入导航堆栈中，可指定在页面跳转时是否需要动画，以及操作完成后需要执行的回调函数
+### push(options, callback)
 
-```js{2}
-var navigator = weex.requireModule('navigator')
-navigator.push({
-  url: 'http://dotwe.org/raw/dist/519962541fcf6acd911986357ad9c2ed.js',
-  animated: "true"
-}, event => {
-  console.log('callback: ', event })
-})
+Push a weex page onto the navigator stack, you can specify whether apply animation when pushing. And you can also specify a callback function to be executed after the operation is over.
+
+**Arguments**
+
+* `options`(object): some options.
+  * `url`(string): The URL of the weex page to push.
+  * `animated`(string): true, if the weex page is push through animation, otherwise, false. Default value is true.
+
+* `callback`(object): the callback function to be called after executing this action.
+
+**Example**
+
+```html
+	var navigator = weex.requireModule('navigator')
+  	var modal = weex.requireModule('modal')
+	var bundleUrl = weex.config.bundleUrl;
+	navigator.push({
+          url: bundleUrl,
+          animated: "true"
+        }, event => {
+          modal.toast({ message: 'callback: ' + event })
+        })
 ```
-| 参数        | 说明                | 类型   | 默认值  |
-| ---------- | -------------      | -----  | ----- |
-| options.url        | 要压入的 Weex 页面的 URL | string | -     |
-| options.animated   | 页面压入时是否需要动画效果 | string | "true"   |
-| callback   | 执行完该操作后的回调函数 | function | -  |
 
-### navigator.pop(options, callback)
-把一个 Weex 页面 URL 弹出导航堆栈中，可指定在页面弹出时是否需要动画，以及操作完成后需要执行的回调函数。
+### pop(options, callback)
 
-```js{2}
-var navigator = weex.requireModule('navigator')
-navigator.pop({
-  animated: "true"
-}, event => {
-  console.log('callback: ', event })
-})
+pop a weex page onto the navigator stack, you can specify whether apply animation when popping. And you can also specify a callback function to be executed after the operation is over.
+
+**Arguments**
+
+* `options`(object): some options.
+  * `animated`(string): true if the weex page is pop through animation; otherwise, false. Default value is true.
+* `callback`(object): the callback function after executing this action.
+
+**Example**
+
+```html
+  	var navigator = weex.requireModule('navigator')
+  	var modal = weex.requireModule('modal')
+	navigator.pop({ animated: "true"
+        }, event => {
+          	modal.toast({ message: 'callback: ' + event })
+        })
 ```
-| 参数        | 说明                | 类型   | 默认值  |
-| ---------- | -------------      | -----  | ----- |
-| options.animated   | 弹出页面时是否需要动画效果 | string | "true"   |
-| callback   | 执行完该操作后的回调函数 | function | -  |
 
-::: warning 注意
-`animated` 二级参数目前仅支持字符串的 `"true"` 和 `"false"`，传入布尔值类型会导致程序崩溃，未来版本会修复这个问题
-:::
+## Notice
+Due to the differences in the behavior of the navigation in clients, the above interfaces need to be adapted. You can implement the above interfaces on the client side by seeing the description of the navigation protocol. 
 
-## Demo
-[基本用法](http://dotwe.org/vue/5546f1dbd7537a6729cb03c687e885a8)
-<IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB10KNeokvoK1RjSZFDXXXY3pXa-544-960.gif" />
+In addtion，you can read [How to extend] (https://github.com/apache/incubator-weex-site/blob/master/source/guide/extend-ios.md) in iOS/Android to learn how to register  the implementation the protocol on the client.
+
+[try it](http://dotwe.org/vue/f2daa25e32eec2a294d59a9144660cad)

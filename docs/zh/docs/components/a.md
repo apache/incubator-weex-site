@@ -9,11 +9,11 @@
 
 ## 样式
 
-* **通用样式**. 参见[通用样式](/wiki/common-styles.html).
+* **通用样式**. 参见[通用样式](../styles/common-styles.html).
 
 ## 事件
 
-* **通用事件**. 参见[通用事件](/wiki/common-events.html)
+* **通用事件**. 参见[通用事件](../events/common-events.html)
 
 ## 其它
 

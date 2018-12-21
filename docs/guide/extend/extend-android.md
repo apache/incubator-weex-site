@@ -1,20 +1,28 @@
-Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。
-主要分为：
-- Module 扩展， 非 UI 的特定功能。例如 sendHttp、openURL 等。
-- Component 扩展， 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
-- Adapter 扩展， Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。
+---
+title: Extend Android
+type: guide
+group: Extend
+order: 6.3
+version: 2.1
+---
 
-## Module 扩展
-1. Module 扩展必须继承 WXModule 类。
-2. 扩展方法必须加上 `@JSMethod (uiThread = false or true)` 注解。Weex 会根据注解来判断当前方法是否要运行在 UI 线程，和当前方法是否是扩展方法。
-3. Weex是根据反射来进行调用 Module 扩展方法，所以Module中的扩展方法必须是 public 类型。
-4. 同样因为是通过反射调用，Module 不能被混淆。请在混淆文件中添加代码：`-keep public class * extends com.taobao.weex.common.WXModule{*;}`
-5. Module 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数
-6. 完成 Module 后一定要在初始化时注册 `WXSDKEngine.registerModule("myModule", MyModule.class);` 否则会报类似错误：`ReportException :undefined:9: TypeError: Object #<Object> has no method 'printLog'`
+<!-- toc -->
 
-示例如下：
+Weex supports module-extend、component-extend and adapter-extend.
+
+## Module extend
+
+1. Customize modules class must extend from WXModule.
+2. Extended method must add @JSMethod (uiThread = false or true) annotation, which determines whether the method is run on UI thread.
+3. The access level of method must be `public`.
+4. Do not obfuscate code using tools like ProGuard.
+5. Extended method suppport the data type of int, double, float, String, Map, List as its param.
+7. Register the module: `WXSDKEngine.registerModule("MyModule", MyModule.class);`or else may report an error: `ReportException :undefined:9: TypeError: Object #<Object> has no method 'xxx'` .
+
+Refer to the following example:
+
 ```java
-public class MyModule extends WXModule {
+public class MyModule extends WXModule{
 
   //run ui thread
   @JSMethod (uiThread = true)
@@ -30,11 +38,14 @@ public class MyModule extends WXModule {
 }
 ```
 Register the module
-```
+
+```java
 WXSDKEngine.registerModule("MyModule", MyModule.class);
 ```
-S 调用如下：
-```vue
+Use this module in weex DSL
+Now `event` moudle is avaiable in weex, use the module like this:
+
+```html
 <template>
   <div>
     <text onclick="click">testMyModule</text>
@@ -45,21 +56,101 @@ S 调用如下：
   module.exports = {
     methods: {
       click: function() {
-        weex.requireModule('MyModule').printLog("I am a weex Module");
+        weex.requireModule('MyModule').printLog("I am a weex Module!");
       }
     }
   }
 </script>
 ```
 
-## Component 扩展
-1. Component 扩展类必须继承 WXComponent.
-2. Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))
-3. Weex sdk 通过反射调用对应的方法，所以 Component 对应的属性方法必须是 public，并且不能被混淆。请在混淆文件中添加代码 `-keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}`
-4. Component 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数
-5. 完成 Component 后一定要在初始化时注册 `WXSDKEngine.registerComponent("richText", RichText.class);`
+## Javascript callback
 
-示例如下：
+If the module need implement a callback to javascript, you just add `JSCallback` argument to the method you want expose to javascript:
+
+```java
+@WXModuleAnno
+public void openURL(String url,JSCallback callback){
+  //implement your module logic here
+  Map<String,Object> resp = new HashMap();
+  resp.put("result","ok");
+  callback.invoke(resp);
+}
+```
+
+At the javascript side, call the module with javascript function to receive callback data:
+
+```javascript
+event.openURL("http://www.github.com",function(resp){ console.log(resp.result); });
+```
+
+## Component extension adaptation document（v0.19+）
+
+### 1. Description of change
+The WXDomObject and Layout engines are sunk into WeexCore using C++, and the WXDomObject in Java code has been removed. The 0.19 version of the upgrade involves interface changes to WXComponent and WXDomObject.
+
+#### (1) setMeasureFunction migrate
+The setMeasureFunction() method in WXDomObject was migrated to WXComponent:
+```java
+protected void setMeasureFunction(final ContentBoxMeasurement contentBoxMeasurement);
+```
+See: com.taobao.weex.layout.ContentBoxMeasurement.java
+
+Demo: WXText.java / setMeasureFunction()
+
+Note：ContentBoxMeasurement only supports leaf nodes.
+
+#### (2) WXComponent Interface change
+##### getDomObject [Delete]
+Since the WXDomObject sinks to WeexCore, the WXComponent's getDomObject() method has been removed.
+
+##### Constructor [Parameter change]
+The constructor of WXComponent removes the parameter of type WXDomObject, adds a parameter of type BasicComponentData, and the remaining parameters remain unchanged:
+
+```java
+public WXComponent(WXSDKInstance instance, WXVContainer parent, int type, BasicComponentData basicComponentData);
+public WXComponent(WXSDKInstance instance, WXVContainer parent, BasicComponentData basicComponentData);
+```
+
+
+#### （3）WXDomObject Interface change
+You can't access and inherit WXDomObject using Java code, (the ImmutableDomObject.java has also been removed), some of the methods in WXDomObject have been migrated to WXComponent if you need to use them:
+
+
+##### WXDomObject.getType() -> WXComponent.getComponentType() [Migrate]
+The getType() method in WXDomObject is used to get the type of Component (for example: list, div, text, img...). After migrating to WXComponent, it is renamed to:
+
+```java
+public String getComponentType();
+```
+
+##### Some methods for Layout results [Migrate]
+Migrating from WXDomObject to WXComponent:
+```java
+public float getCSSLayoutTop();
+public float getCSSLayoutBottom();
+public float getCSSLayoutLeft();
+public float getCSSLayoutRight();
+public float getLayoutWidth();
+public float getLayoutHeight();
+```
+Remove two obsolete interfaces:
+```java
+public float getLayoutY();
+public float getLayoutX();
+```
+
+## Component extend (< v0.19)
+
+1. Customize components must extend from WXComponent
+2. Use the `@WXComponentProp(name = value(value is attr or style))` annotation to let the update of attribute or style be recognized automatically.
+3. The access levels of method must be **public**
+4. Customize can not be obfuscated by tools like ProGuard
+5. Component method with the annotation of `@JSMethod` can
+7. Weex params can be int, double, float, String, Map, List, Array
+8. Register your Component by `WXSDKEngine.registerComponent`
+
+Refer to the following example
+
 ```java
 public class RichText extends WXComponent<TextView> {
 
@@ -70,7 +161,7 @@ public class RichText extends WXComponent<TextView> {
     @Override
     protected TextView initComponentHostView(@NonNull Context context) {
         TextView textView = new TextView(context);
-        textView.setTextSize(20);
+        textView.setTextSize(22);
         textView.setTextColor(Color.BLACK);
         return textView;
     }
@@ -81,11 +172,14 @@ public class RichText extends WXComponent<TextView> {
     }
 }
 ```
-注册你的组件：
-```
+Register your Component：
+
+```java
 WXSDKEngine.registerComponent("richText", RichText.class);
 ```
-JS 调用如下：
+
+Use this component in weex DSL：
+
 ```html
 <template>
   <div>
@@ -94,37 +188,40 @@ JS 调用如下：
 </template>
 ```
 
-### 组件方法支持
-从WeexSDK 0.9.5开始，你可以定义组件方法
-- 在组件中如下声明一个组件方法
-  ```java
-  @JSMethod
-  public void focus(){
+
+### Extend Component Method
+ WeexSDK `(0.9.5+)` support the component method that can be invoked
+ for example：
+
+ ```java
+ @JSMethod
+ public void focus(){
   //method implementation
-  }
-  ```
-- 注册组之后，你可以在weex 文件中调用
-  ```vue
-  <template>
-    <mycomponent ref='mycomponent'></mycomponent>
-  </template>
-  <script>
-    module.exports = {
-      created: function() {
-        this.$refs.mycomponent.focus();
-      }
+ }
+ ```
+ after your registration for your own custom component, now you can call it in your js file.
+
+```html
+<template>
+  <mycomponent ref='mycomponent'></mycomponent>
+</template>
+<script>
+  module.exports = {
+    created: function() {
+      this.$refs.mycomponent.focus();
     }
-  </script>
-  ```
-注:工程要添加依赖 `compile 'com.squareup.picasso:picasso:2.5.2'`
+  }
+</script>
+```
 
-## Adapter扩展
-图片下载：
 
-需要时集成接口 IWXImgLoaderAdapter，实现 setImage 方法。
+# Extend adapter
 
-示例如下：
+## ImagedownloadAdapter
 
+Weex SDK has no image download capability, you need to implement `IWXImgLoaderAdapter`.
+
+Refer to the following example
 ```java
 public class ImageAdapter implements IWXImgLoaderAdapter {
 
@@ -161,9 +258,10 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
   }
 }
 ```
+## Proguard Rules
 
-### SDK混淆规则
-若要在APP中使用混淆，请在相应的配置文件中添加如下规则：
+If you want to using proguard to protect your source code, please add the following rules to your profile:
+
 ```java
 -keep class com.taobao.weex.WXDebugTool{*;}
 -keep class com.taobao.weex.devtools.common.LogUtil{*;}

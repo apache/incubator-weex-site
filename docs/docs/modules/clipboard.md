@@ -1,145 +1,99 @@
-# clipboard <Badge text="0.8+" type="warn" vertical="middle"/>
+---
+title: clipboard
+type: references
+group: Build-in Modules
+order: 9.02
+version: 2.1
+---
 
-- getString 获取粘贴板内容
-- setString 设置粘贴板内容
+# clipboard
+<span class="weex-version">v0.8+ (developing)</span>
 
-## 使用场景
+clipboard allows you to `getString()` or `setString()` from the system clipboard.
 
-以前当我们收到一条短信验证码信息时，除了人肉拷贝，我们无法获取拷贝短信的内容。这是非常苦恼的。目前很多手机自带一键复制短信中的验证码到剪贴板功能，再配合使用 clipboard.getString() 接口，就可以直接获取到验证码信息，并且进行下一步操作，例如帮助用户自动填到对应输入框中。
+Not long ago, We're still suffering from such a situation that we got a verification code sent by SMS, and we had no way to get the code from the SMS text but to typed it by our hands. How frustrated it is! But now you can enable your app to get the code from the system clipboard by calling  `clipboard.getString()` .
 
-::: warning 注意
+## Caution
 
-- 仅支持文本拷贝
-- 出于安全考虑和平台限制，只支持 Android 和 iOS，不支持 html5。
-
-:::
+* only support text.
+* only works on Android and iOS. NOT works for html5, for web security reason.
 
 ## API
 
-### getString(callback) <Badge text="only in android & ios" type="warning" />
+### getString(callback)
 
-> <small>从系统粘贴板读取内容</small>
+reads from clipboard.
 
-- `callback: function(ret)`
+##### Arguments
 
-  ret {Object} 为 callback 函数的参数，有两个属性:
-  | key | 描述 |
-  | ---------- | -------------------------------- |
-  | ret.data | 获取到的文本内容 |
-  | ret.result | 返回状态，可能为 success 或 fail |
-
-  ```javascript
-  clipboard.getString(ret => {
-    this.message = ret.result === 'success' ? ret.data : '';
-  });
-  ```
+`callback(function)`: the callback function after executing this action. `data` is the return value.
 
 ### setString(text)
 
-> <small>将一段文本复制到剪切板，相当于手动复制文本。</small>
+sets the text to clipboard, having the same effect as copying manually.
 
-- `text {string}`：要复制到剪切板的字符串。
+##### Arguments
 
-  ```javascript
-  clipboard.setString('要复制到剪贴板的内容');
-  ```
+`text(string)`: the text copied to clipboard.
 
-## Demo
+### Example
 
-### setString + getString
-
-[<IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1tzJaomzqK1RjSZFpXXakSXXa-265-438.png" />](http://dotwe.org/vue/2e3e71b2f296c69228ae0cbd5e5854fe)
-
-<!-- [![](/clipboard-1.png)](http://dotwe.org/vue/2e3e71b2f296c69228ae0cbd5e5854fe) -->
-
-<details>
-  <summary>代码</summary>
-
-```vue
+```html
 <template>
   <div>
-    <div class="row">
-      <text class="label">set to clipboard: </text>
-      <input :value="text" class="input" type="text"
-        :autofocus="true" @input="handleChange"
-      />
+    <div class="div">
+      <text class="text" @click="onItemClick">{{message}}</text>
     </div>
-    <div class="row btn-holder">
-      <text class="btn" @click="handleSet">setString</text>
-      <text class="btn" @click="handleGet">getString(not supported in web)</text>
-    </div>
-    <div class="row">
-      <text class="label">get from clipboard: </text>
-      <text>{{message}}</text>
+    <div class="div">
+      <text class="text" @click="setContent">Click to copy: {{tobecopied}}</text>
     </div>
   </div>
 </template>
 
 <script>
-const clipboard = weex.requireModule('clipboard');
-const modal = weex.requireModule('modal');
+  const clipboard = weex.requireModule('clipboard')
 
-export default {
-  data() {
-    return {
-      text: '',
-      message: ''
-    };
-  },
-  methods: {
-    handleSet() {
-      clipboard.setString(this.text);
-      modal.toast({
-        message: 'set success',
-        duration: 0.3
-      });
+  export default {
+    data () {
+      return {
+        tobecopied: 'yay!',
+        message: 'nothing.'
+      }
     },
-    handleGet() {
-      clipboard.getString(ret => {
-        this.message = ret.result === 'success' ? ret.data : '';
-      });
-    },
-    handleChange(e) {
-      this.text = e.value;
+
+    methods: {
+      setContent () {
+        clipboard.setString(this.tobecopied)
+      },
+      onItemClick () {
+        this.message = 'clicked! '
+        clipboard.getString(ret => {
+          this.message = 'text from clipboard:' + ret.data
+        })
+      }
     }
   }
-};
 </script>
 
 <style scoped>
-.row {
-  flex-direction: row;
-  border-bottom-width: 1px;
-  border-color: #333;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-}
-.label {
-  width: 250px;
-}
-.input {
-  width: 400px;
-  height: 50px;
-  color: black;
-  border-width: 1px;
-  border-color: black;
-}
-.btn-holder {
-  justify-content: space-around;
-}
-.btn {
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  border-width: 1px;
-  border-color: black;
-  background-color: #238fff;
-  color: #fff;
-}
+  .div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 750px;
+    height: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: #DDDDDD;
+  }
+  .text {
+    width: 750px;
+    height: 90px;
+  }
 </style>
 ```
 
-</details>
+[try it](http://dotwe.org/vue/126d3cfc5533393e28943978b07aa5c1)

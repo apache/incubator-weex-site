@@ -1,103 +1,109 @@
-# globalEvent <Badge text="0.14" type="warn" vertical="middle"/>
+---
+title: globalEvent
+type: references
+group: Build-in Modules
+order: 9.04
+version: 2.1
+---
 
-`globalEvent` 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。
+# globalEvent
+<span class="weex-version">v0.8+</span>
 
-- 你能通过 `addEventListener` 注册事件监听
-- 当你不再需要的时候，也可以通过 `removeEventListener` 取消事件监听
+## Summary
 
-::: tip
-这是一个实例级别的事件，而非应用级别。
-:::
+`globalEvent` are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.
 
-## 如何让你的模块支持全局事件
+You can register events via `addEventListener`, which can be removed by `removeEventListener` when you do not need to listen for `globalEvent`.
 
-API 开发完成后，当需要发送事件时，需要通过以下方法：
+*AUCTION*
+- Only instance level is not application level .
+
+## How to make your Module support global events
+API development is complete, when the event needs to be sent, the need through the following methods:
 
 ```javascript
 /**
- *
- * @param eventName eventName
- * @param params event params
- */
-instance.fireGlobalEventCallback(eventName, params);
+  *
+  * @param eventName eventName
+  * @param params event params
+  */
+instance.fireGlobalEventCallback(eventName,params);
 ```
 
-如何在 weex-html5 组件或模块中分发全局事件？只需在文档元素上分派事件：
+How to dispatch a global event in a weex-html5 component or module ? Just dispatch the event on the document element:
 
 ```javascript
-var evt = new Event('some-type');
-evt.data = { foo: 'bar' };
-document.dispatchEvent(evt);
+var evt = new Event('some-type')
+evt.data = { foo: 'bar' }
+document.dispatchEvent(evt)
 ```
 
-### 示例
+### Example
 
-- Android
-  ```java
-  Map<String,Object> params=new HashMap<>();
-  params.put("key","value");
-  mWXSDKInstance.fireGlobalEventCallback("geolocation",params);
-  ```
-- IOS
-  ```objective-c
-  [weexInstance fireGlobalEvent:@"geolocation" params:@{@"key":@"value"}];
-  ```
+#### Android
+
+```java
+Map<String,Object> params=new HashMap<>();
+params.put("key","value");
+mWXSDKInstance.fireGlobalEventCallback("geolocation", params);
+```
+#### iOS
+
+```Objective-C
+[weexInstance fireGlobalEvent:@"geolocation" params:@{@"key":@"value"}];
+```
 
 ## API
 
-### addEventListener(eventName, callback)
+### addEventListener(String eventName, String callback)
 
-注册全局事件。
+register global event.
 
-| key                   | 描述                 |
-| --------------------- | -------------------- |
-| `eventName {string}`  | 需要监听的事件名称   |
-| `callback {Function}` | 触发事件后的回调函数 |
+#### Arguments
 
-示例：
+* `eventName`*(string)*: The name of the event you want to listen to.
+* `callback`*(function)*: the callback function after executing this action.
+
+#### Example
 
 ```javascript
 var globalEvent = weex.requireModule('globalEvent');
-globalEvent.addEventListener('geolocation', function(e) {
-  console.log('get geolocation');
+globalEvent.addEventListener("geolocation", function (e) {
+	console.log("get geolocation")
 });
 ```
 
-### removeEventListener(eventName)
+### removeEventListener(String eventName)
 
-取消事件监听。
+remove global event
 
-| key                  | 描述               |
-| -------------------- | ------------------ |
-| `eventName {string}` | 需要取消的事件名称 |
+#### Arguments
 
-示例：
+* `eventName`*(string)*: You no longer need to listen for event names.
+
+#### Example
 
 ```javascript
 var globalEvent = weex.requireModule('globalEvent');
-globalEvent.removeEventListener('geolocation');
+globalEvent.removeEventListener("geolocation");
 ```
 
-## 已有的全局事件
+## Built-in global event
+<span class="weex-version">0.14</span>
+### background or foreground event
+You can specify the event name as `WXApplicationDidBecomeActiveEvent ` or `WXApplicationWillResignActiveEvent` to obtain application becoming foreground or background, so that you can pause your video or music at this time.For example
 
-### 应用前后事件
-
-WeexSDK 对获取应用前后台事件做了支持，开发者可以在页面内监听对应的事件，获得应用被前后后这后台，以方便暂停音乐，视频等，只需要指定需要监听的事件名称和回调函数就可以，例如：
-
-```javascript
+```
 var globalEvent = weex.requireModule('globalEvent');
-globalEvent.addEventListener('WXApplicationDidBecomeActiveEvent', function(e) {
-  console.log('WXApplicationDidBecomeActiveEvent');
+globalEvent.addEventListener("WXApplicationDidBecomeActiveEvent", function (e) {
+  console.log("WXApplicationDidBecomeActiveEvent");
 });
 ```
 
-支持的事件名称：
+- `WXApplicationDidBecomeActiveEvent`   fired while application did become foreground 
+- `WXApplicationWillResignActiveEvent`  fired while application will become background
 
-- WXApplicationDidBecomeActiveEvent 应用被前台的时候触发
-- WXApplicationWillResignActiveEvent 应用即将被后台时候触发
+[have a try at DotWe](http://dotwe.org/vue/5a774e8ce3766c88038cab6fe3331f5b)
 
-在 [dotWe 上试一试](http://dotwe.org/vue/c89e85483ca2cb2274837ef027030539)
+> this feature only works on iOS and Android platforms, it doesn't work on Web. [Obtain your weex platform on weex page](../weex-variable.html#weex-environment-object)
 
-::: warning 注意
-目前只有 platform 为 iOS 和 Android 才能支持。[获取当前 platform](http://weex-project.io/cn/references/weex-variable.html#weex-environment-object)
-:::

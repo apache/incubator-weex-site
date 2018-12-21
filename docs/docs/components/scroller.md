@@ -1,19 +1,78 @@
 # &lt;scroller&gt;
 
-`<scroller>` 是一个容纳子组件进行横向或竖向滚动的容器组件。如果你的组件需要进行滚动，可以将 `<scroller>` 当作根元素或者父元素使用，否则页面无法滚动（ `<list>` 组件除外， `<list>` 默认可以滚动）。
+<span class="weex-version">v0.6.1+</span>
 
-::: warning
-- 不允许相同方向的 `<list>` 或者 `<scroller>` 互相嵌套，换句话说就是嵌套的 `<list>` / `<scroller>` 必须是不同的方向。
-- `<scroller>` 需要显式的设置其宽高，可使用 `position: absolute;` 定位或 `width`、`height` 设置其宽高值。
-:::
+Scroller is a component which can have multiple child components in one column. It supports both direcitons. If the content size of child components exceeds the frame of the scroller, the whole child components will be scrollable.
+
+Notes: A `<scroller>` can be used as a root element or a embed element. The scroll direction of this component is column, and it can't be changed.
+
+
+## Child Components
+
+Scroller supports all kinds of components, such as div, text, etc.
+There are two special components that can only be used inside scroller component.
+
+* refresh 0.6.1 used inside list to add pull-down-to-refresh functionality.
+* loading 0.6.1 used inside list to add pull-up-to-load-more functionality.
+
+
+## Attributes
+
+* show-scrollbar: &lt;boolean&gt;  true | false, default value is true. This attribute indicates whether show the scroll bar or not.
+* scroll-direction: &lt;string&gt;  the scroll direction of component, horizontal or vertical.
+  * `scroll-direction` defines the scrollable axis of scroller and `flex-direction` defines the layout axis of scroller. `scroll-direction` and `flex-direction` must be set to the same direction, otherwise, undefined behavior may happen.
+  * Default value for `scroll-direction` is vertical, and for `flex-direction` is row .
+  * Use `scroll-direction:horizontal` and `flex-direction: row` when a horizontal layout and scrollable scroller is expected.
+  * Use `scroll-direction:vertical` and `flex-direction: column` when a vertical layout and scrollable scroller is expected. But those two values are default, if you don't set them, it also works fine.
+* loadmoreoffset : &lt;number&gt; default value is 0. The loadmore event will be triggered when the list is loadmoreoffset left to reach the bottom. e.g. A list has total content length of 1000, and the loadmoreoffset is set to 400, the loadmore event will be triggered when 600 has beed scrolled and there is less than 400 left.
+* loadmoreretry : &lt;number&gt; default value 0，whether to reset loadmore related UI when loadmore failed, will be deprecated in further release.
+* offset-accuracy：&lt;number&gt; default value is 0, the vertical offset distance required to trigger the scroll event.
+
+
+## Styles
+
+common styles: check out [common styles for components](/wiki/common-styles.html)
+
+* support flexbox related styles
+* support box model related styles
+* support position related styles
+* support opacity, background-color etc.
+
+
+## Events
+
+**common events**: check out the [common events](/wiki/common-events.html)
+
+- support `click` event. Check out [common events](/wiki/common-events.html)
+- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
+
+- support `loadmore` event. The `loadmore` event should be used in concert with loadmoreoffset. If the view has less than loadmoreoffset to scroll down, the event will be triggered.See details in [example](http://dotwe.org/vue/26e980d5ccd9538941ea6d17761219ff).
+
+- support `scroll` event <sup class="wx-v">0.12+</sup> .The `scroll` should be used in concert with offset-accuracy. This event is fired when the list scrolls. The current contentOffset value is given in this event callback.  See details in [example](http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa).
+
+- support `scrollstart` and `scrollend` event <sup class="wx-v">0.17+</sup> .These events are fired when the list begins or ends scrolling.The current contentSize and contentOffset value are given in this event callback.  See details in [example](http://dotwe.org/vue/fd1b271fa1fa100cefb40f8d69198a1b)
+
+
+## Restrictions
+
+Nested lists or scrollers within the same direction are not supported. In other words. nested list/scroller must have different directions.
+For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.
+
+## example
 
 ```html
 <template>
-  <scroller class="scroller">
-    <div class="row" v-for="row in rows" :key="row.id">
-      <text class="text">{{row.name}}</text>
+  <div class="wrapper">
+    <scroller class="scroller">
+      <div class="row" v-for="(name, index) in rows" :ref="'item'+index">
+        <text class="text" :ref="'text'+index">{{name}}</text>
+      </div>
+    </scroller>
+    <div class="group">
+      <text @click="goto10" class="button">Go to 10</text>
+      <text @click="goto20" class="button">Go to 20</text>
     </div>
-  </scroller>
+  </div>
 </template>
 
 <script>
@@ -26,91 +85,65 @@
       }
     },
     created () {
-      for (let i = 0; i < 80; i++) {
-        this.rows.push({id: i, name: 'row ' + i})
+      for (let i = 0; i < 30; i++) {
+        this.rows.push('row ' + i)
       }
     },
+    methods: {
+      goto10 (count) {
+        const el = this.$refs.item10[0]
+        dom.scrollToElement(el, {})
+      },
+      goto20 (count) {
+        const el = this.$refs.item20[0]
+        dom.scrollToElement(el, { offset: 0 })
+      }
+    }
   }
 </script>
+
+<style scoped>
+  .scroller {
+    width: 700px;
+    height: 700px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    margin-left: 25px;
+  }
+  .row {
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #DDDDDD;
+  }
+  .text {
+    font-size: 45px;
+    color: #666666;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .button {
+    width: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    color: #41B883;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+</style>
 ```
 
-## 子组件
-
-`<scroller>` 支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下两个特殊组件作为子组件：
-
-- `<refresh>`: 用于添加下拉刷新的功能。详情请查看[`<refersh>`](./refresh.md)。
-- `<loading>`: 用于添加上拉加载更多的功能。详情请查看[`<loading>`](./loading.md)。
-
-## 属性
-
-| 参数        | 说明                | 类型   | 默认值 |
-| ---------- | -------------      | -----  | ----- |
-| show-scrollbar | 控制是否出现滚动条 | boolean | true |
-| scroll-direction | 控制滚动的方向 | string（horizontal 或者 vertical） | vertical |
-| loadmoreoffset | 触发 `loadmore` 事件所需要的垂直偏移距离（设备屏幕底部与页面底部之间的距离）。当页面的滚动条滚动到足够接近页面底部时将会触发 `loadmore` 这个事件 | number | 0 |
-| offset-accuracy | 控制 `scroll` 事件触发的频率，默认值为 10，表示两次 `scroll` 事件之间列表至少滚动了 10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能 | number | 10 |
-
-::: warning
-`scroll-direction` 定义了 scroller 的滚动方向，样式表属性 `flex-direction` 定义了 scroller 的布局方向，两个方向必须一致。例如：
-  - `scroll-direction` 的默认值是 `vertical`，`flex-direction` 的默认值是 `row`；
-  - 当需要一个水平方向的 scroller 时，使用 `scroll-direction="horizontal"` 和 `flex-direction: row`;
-  - 当需要一个竖直方向的 scroller 时，使用 `scroll-direction="vertical"` 和 `flex-direction: column`，由于这两个值均是默认值，当需要一个竖直方向的 scroller 时，这两个值可以不设置。
-:::
-
-`loadmoreoffset` 如图所示:
-  <div style="text-align: center"><img src="https://img.alicdn.com/tfs/TB16QBaobvpK1RjSZFqXXcXUVXa-616-1917.jpg" width="300"></div>
-
-## 事件
-
-- `loadmore`
-
-  如果滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项，可通过 `loadmoreoffset` 属性设置触发偏移距离。
-
-- `scroll`
-
-  列表发生滚动时将会触发该事件，事件的默认触发频率为 10px，即列表每滚动 10px 触发一次，可通过属性 `offset-accuracy` 设置抽样率。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `contentSize` | 列表的内容尺寸 | Object |
-  | `width` | 列表内容宽度 | number |
-  | `height` | 列表内容高度 | number |
-  | `contentOffset` | 列表的偏移尺寸 | Object |
-  | `x` | x 轴上的偏移量 | number |
-  | `y` | y 轴上的偏移量 | number |
-
-- `scrollstart` <Badge text="0.17.0+" type="warn" vertical="middle"/>
-
-  **H5 暂不支持该事件**，当列表开始滚动时触发，当前的内容高度和列表偏移会在 callback 中返回，示例参见 Demo。
-
-- `scrollend` <Badge text="0.17.0+" type="warn" vertical="middle"/>
-
-  **H5 暂不支持该事件**，与 `scrollstar` 类似，当列表结束滚动时触发，当前的内容高度和列表偏移会在 callback 中返回，示例参见 Demo。
-
-## 扩展
-
-### `scrollToElement(node, options)`
-
-与 `<list>` 类似，`<scroller>` 支持滚动到某个指定的元素，可通过 `dom.scrollToElement()` 滚动到指定元素位置。更多信息可参考[dom module](/docs/dom.html)。
-
-#### 参数
-
-- ` {node}`：指定目标节点
-- `options {Object}`：可选项，属性为：
-  - `offset {number}`：一个到其可见位置的偏移距离，默认是 0
-
-## Demo
-
-- [scrollerstart 事件](http://dotwe.org/vue/6e3c7fb21976e80c2959f330ddd1b26a)
-- [设置 scroller 事件触发频率](http://dotwe.org/vue/d896b0896293ec55c209729fdfc7bff2)
-- [热门动画列表](http://dotwe.org/vue/892bd1c977b61762baca8e02a65b6d97)，使用 `<scroller>` 进行长列表渲染，支持 `loadmore` 自动加载数据及右下角回到顶部功能。
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1.Bg6nZbpK1RjSZFyXXX_qFXa-750-1334.gif" />
-
-- [简易电梯导航](http://dotwe.org/vue/dda3f021a788c0cc9c92c9fa89784192)，顶部为横向 `<scroller>` 作为楼层导航，点击可定位到对应楼层，常见于各类活动会场页面。
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1Oo77nZbpK1RjSZFyXXX_qFXa-526-882.gif" />
-
-- [聊天窗口](http://dotwe.org/vue/21d8b0a79c20e95139353d9cc8b634f5)，页面局部可滚动，底部输入框不可滚动。
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB11_g_n7voK1RjSZPfXXXPKFXa-264-439.gif" />
+[try it](http://dotwe.org/vue/2f22f14fb711d88515e63c3f67bed46a)

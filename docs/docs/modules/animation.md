@@ -1,119 +1,90 @@
-# animation
+---
+title: animation
+type: references
+order: 9.01
+version: 2.1
+---
 
-`animation` 模块用来在组件上执行动画。可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。
+# Animation
 
-```vue
-<template>
-  <div class="wrapper">
-    <div ref="test" class="box"></div>
-  </div>
-</template>
-<script>
-  const animation = weex.requireModule('animation')
-  export default {
-    mounted() {
-      animation.transition(this.$refs.test, {
-        styles: {
-          height: '100px'
-        },
-        duration: 800, //ms
-        timingFunction: 'ease',
-        delay: 100 //ms
-      })
-    }
-  }
-</script>
-<style scoped>
-  .box {
-    width: 250px;
-    height: 250px;
-    background-color: #DDD;
-  }
-</style>
+## Overview
+
+The `animation` module is used to perform animation on components. 
+
+JS-Animation can perform a series of simple transformations  (position, size, rotation, background color, and opacity) on the component with Javascript.
+
+For example, if you have a `image` component, you can move, rotate, grow, or shrink it by animation.
+
+> **Note:** Now,Weex only support use animation in Javascript. CSS Animation is different from this,we will soon support CSS Animation.
+
+## Basic Usage
+
+### animation.transition(el, options, callback)
+
+```javascript
+animation.transition(ref1, {
+          styles: {
+            backgroundColor: '#FF0000',
+            transform: 'translate(250px, 100px)',
+          },
+          duration: 800, //ms
+          timingFunction: 'ease',
+          needLayout:false,
+          delay: 0 //ms
+        }, function () {
+          modal.toast({ message: 'animation finished.' })
+        })
 ```
 
-::: warning 注意
-* 涉及动画的需求，建议使用 animation 模块方法。相比于 css 动画 animation 模块方法有更好的兼容性。
-:::
+## Attributes
 
-## API
+### ``el``
 
-### animation.transition(element, options, callback)
+An element that will be animated.
 
-**element**：`[必选]`将要执行动画的元素。
+For example , specify the `el` attribute for the element you want to animated as `element`, so you can get this element by calling `this.refs.element`.
 
-```vue
-<template>
-  <div class="wrapper">
-    <div ref="test"></div>
-  </div>
-</template>
-<script>
-  export default {
-    mounted() {
-     // 例如指定动画的元素 element 属性为 test , 可以通过调用 this.$refs.test 来获取元素的引用。
-     console.log(this.$refs.test);
-    }
-  }
-</script>
-```
+### ``options``
 
-**options**：`[必选]`指定动画参数
-- styles(object):设置不同样式过渡效果的键值对，下表列出了所有合法的参数：
-    | 参数        | 描述              | 值类型   | 默认值 |
-    | ---------- | -------------     | -----  | ----- |
-    | width|动画执行后应用到组件上的宽度值|number|无|
-    | height|动画执行后应用到组件上的高度值|number|无|
-    | backgroundColor|动画执行后应用到组件上的背景颜色|string|无|
-    | opacity|动画执行后应用到组件上的不透明度值|number|1|
-    | transformOrigin|定义变化过程的中心点. 参数 x-aris 可能的值为 left、center、right、长度值或百分比值, 参数 y-axis 可能的值为 top、center、bottom、长度值或百分比值|x-axis y-axis|center center|
-    | transform|定义应用在元素上的变换类型，支持的属性请见下方附录部分|object|无|
-- duration(number)：指定动画的持续时间 (单位是毫秒)，默认值是 0，表示没有动画效果。
-- delay (number)：指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 0，表示没有延迟，在请求后立即执行动画。如下图，控制不同的间隔可实现特定效果。
-<div style="text-align: center"><img src="https://img.alicdn.com/tfs/TB15iA.nVzqK1RjSZSgXXcpAVXa-539-428.gif" width="300"></div>
-- needLayout (boolean)：节点动画执行时是否产生布局动画即LayoutAnimation，默认值是false。
-    <div style="dispaly:flex;">
-      <img src="https://img.alicdn.com/tfs/TB1x74XoirpK1RjSZFhXXXSdXXa-300-320.gif" width="300"/>
-      <img src="https://img.alicdn.com/tfs/TB175RXomzqK1RjSZFHXXb3CpXa-300-320.gif" width="300"/>
-    </div>
-    上图为会影响布局的元素 `height` 变化动画：左侧为浏览器动画，右侧为客户端动画。
+- `styles` (object): Specify the names and values of styles to which a transition effect should be applied. The allowed attributes are listed in the following table:        
 
-    在浏览器上执行动画当布局变化时，会自动将视图运动到它们新的位置上。但客户端 layout 都是独立的，
-    布局动画变化时，可能不会影响其他元素。当您的动画不符合您的预期时，可设置此参数，保障三端动画一致。
+| name            | description                              | value type            | default value   |
+| :-------------- | :--------------------------------------- | :-------------------- | :-------------- |
+| width           | The width applied to the component after the animation finished. | length                | none            |
+| height          | The height applied to the component after the animation finished. | length                | none            |
+| backgroundColor | The background color applied to the component after the animation finished. | string                | none            |
+| opacity         | The opacity applied to the component after the animation finished. | number between 0 to 1 | `1`             |
+| transformOrigin | The povit of transition. The possible values for `x-aris` are `left`/`center`/`right`/length or percent, and possible values of `y-axis` are `top`/`center`/`bottom`/ length or percent | `x-axis y-axis`       | `center center` |
+| **transform**   | Transform function to be applied to the element. The properties in the following table are supported | object                | none            |
 
-    请用客户端扫描示例二维码[体验动画差异](http://dotwe.org/vue/45e8b954d93216510782b3b6c0889298)
-- timingFunction (string)：描述动画执行的速度曲线，用于使动画变化更为平滑。默认值是 linear，表示动画从开始到结束都拥有同样的速度。下表列出了所有合法的属性：
-    | 参数        | 描述              |
-    | ---------- | -------------     |
-    |linear|动画从头到尾的速度是相同的|
-    |ease|动画速度逐渐变慢|
-    |ease-in|动画速度由慢到快|
-    |ease-out|动画速度由快到慢|
-    |ease-in-out|动画先加速到达中间点后减速到达终点|
-    |cubic-bezier(x1, y1, x2, y2)|在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 cubic-bezier 和 Bézier curve.|
+``transform`` also have many parameters,please see the table below.
 
-**callback**：`[可选]`是动画执行完毕之后的回调函数。
+| name                                     | description                              | value type       | default value     |
+| :--------------------------------------- | :--------------------------------------- | :--------------- | :---------------- |
+| translate/translateX/translateY          | Specifies the location of which the element will be translated to. | pixel or percent | none              |
+| rotate/rotateX <span class="api-version">v0.14+</span> /rotateY <span class="api-version">v0.14+</span> | Specifies the angle of which the element will be rotated, the unit is degree. | number           | none              |
+| perspective <span class="api-version">v0.16+</span> | The distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective. Supported for Android 4.1 and above. | number           | positive infinity |
+| scale/scaleX/scaleY                      | Stretch or shrink the element.           | number           | none              |
 
-## Demo
-[体验示例](http://dotwe.org/vue/a0f4ed064a6b46a2b8f63ab3843d7aee)
+- `duration` (number): Specifies the number of milliseconds of animation execution, the default value is `0`, means that no animation will occur.    
+- `delay` (number): Specifies the amount of milliseconds to wait between a change being requested to a property that is to be transitioned and the start of the transition effect. The default value is `0`.   
+- `needLayout`(boolean)：Whether or not the layout animation occurs when animation is executed，default value is `false`
+- `timingFunction` (string): Used to describe how the intermediate values of the styles being affected by a transition effect are calculated, default value is `linear`, the allowed attributes are listed in the following table:    
 
-上述示例点击灰色方块后，便可看到操作动画。
+| name                           | description                              |
+| :----------------------------- | :--------------------------------------- |
+| `linear`                       | Specifies a transition effect with the same speed from start to end |
+| `ease`                         | Specifies a transition effect with a slower and slower speed |
+| `ease-in`                      | Specifies a transition effect with a slow start |
+| `ease-out`                     | Specifies a transition effect with a slow end |
+| `ease-in-out`                  | Specifies a transition effect with a slow start and end |
+| `cubic-bezier(x1, y1, x2, y2)` | Define your own values in the cubic-bezier function. Possible values are parameter values from 0 to 1. More information about cubic-bezier please visit [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
 
-[循环动画](http://dotwe.org/vue/97e01e1b7f8992de287b0a690b54511c)
+### ``callback``
 
-目前 WEEX 没有提供可循环的属性，循环动画可像上述 Demo 在 callback 回调中执行下一次动画形成循环。
+Callback which is a function called after the completion of animation. In iOS platform, you can use function to get animation processing's information.
 
-### 附录
-WEEX transform 支持的对应属性，可以参见下表：
+>**Note: after WeexSDK0.16.0, in iOS platform can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.**
 
-```js
-// 注:如果想同时执行多个动画只需要用空格隔开，比如
-transform: 'translate(250px, 100px) scale(1.5)'
-```
-| 参数        | 描述              | 值类型   | 默认值 |
-| ---------- | -------------     | -----  | ----- |
-|translate/translateX/translateY|指定元素要移动到的位置|像素值或百分比	|无|
-|rotate|指定元素将被旋转的角度，单位是度|number|无|
-|scale/scaleX/scaleY|按比例放大或缩小元素|number|无|
-|rotateX/rotateY 需要 WEEX v0.14+ |指定元素将被旋转的角度，单位是度|number|无|
-|perspective 需要 WEEX v0.16+ |观察者距离z=0平面的距离，在Android 4.1及以上有效|number|无|
+### Example
+- [animation demo](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
