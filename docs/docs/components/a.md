@@ -1,4 +1,4 @@
-## Introduction
+## Summary
 
 `<a>` is mainly used for navigation between weex pages。
 
@@ -15,8 +15,7 @@ Wrap the element navigating from with `<a>`
 
 Refer the [demo](http://dotwe.org/vue/1cec564d6e25c169a0a9a92db3a00955).
 
-## Attributes:
-
+## Attributes
 
 * **href** String ,`href` defines the URL that current page will navigate. `href` **must** point to a weex page, the behavior of other case is **undefined**.
 

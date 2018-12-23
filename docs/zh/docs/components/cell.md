@@ -1,36 +1,34 @@
----
-sidebarDepth: 0
----
-# &lt;cell&gt;
-用于定义列表中的子列表项，类似于 HTML 中的 `ul` 之于 `li`。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为`<list>`、`<waterfall>`组件的子组件, 这是为了优化滚动时的性能。
+## 简介
 
-```vue{3}
-<template>
-  <list>
-    <cell v-for="num in lists">
-      <text>{{num}}</text>
-    </cell>
-  </list>
-</template>
-
-<script>
-  export default {
-    data () {
-      return {
-        lists: ['A', 'B', 'C', 'D', 'E']
-      }
-    }
-  }
-</script>
-```
-
-::: warning 注意
-* 由于 `<cell>` 本身是一个容器，其布局由 `<list>` 进行管理，你不能给 `<cell>` 设定 flex 值。
-* `<cell>` 的宽度等于父组件 `<list>` 的宽度，并且 `<cell>` 高度自适应，指定 margin 样式也不起作用。
-:::
+Cell 必须以一级子组件的形式存在于 [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) 中。
 
 ## 子组件
-支持所有 Weex 的组件作为它的子组件。
 
-## Demo
-[基本用法](http://dotwe.org/vue/3c649d5bb5b8ec434fbdce5c16c357c9)
+Cell 支持添加任意类型的组件作为自己的子组件。
+
+## 属性
+
+**注意:** 不要指定 `<cell>` 的 `flex` 值。Cell 的宽度是由它的父容器决定的，你也不需要指定它的高度。
+
+* **keep-scroll-position** boolean, <span class="api-version">v0.11+</span>. 控制当 Cell 被添加到列表中时，列表的滚动位置是否要保持不变。
+
+* **insert-animation** string, cell 的插入动画。当前只支持 `none` 和 `default`。
+* **delete-animation** string, cell 的删除动画。当前只支持 `none` 和 `default`。
+
+* **recycle** boolean, <span class="api-version">iOS</span>, 默认值 true。这个属性控制这个 Cell 的 view 和子 views 是否在列表滚动时进行回收，在 iOS 上通常必须指定为 true （因为默认为 true，所以一般不需要写这个属性），如果设置为 false，列表滚动时，页面会占用非常高的内存。
+
+## 样式
+
+* **通用样式** 支持所有[通用样式](/cn/wiki/common-styles.html)。
+
+**Notes:** Cell 的排版的位置是由父容器控制的，所以一般不要为其指定 `margin` 样式。
+
+## 事件
+
+* **通用事件** 支持所有[通用事件](/cn/wiki/common-events.html)。
+
+### Example
+
+Cell 的例子请参考
+* [list](./list.html)
+* [waterfall](./waterfall.html)

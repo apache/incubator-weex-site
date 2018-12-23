@@ -10,7 +10,7 @@ version: 2.1
 
 Weex supports module-extend、component-extend and adapter-extend.
 
-## Module extend
+## Extend module
 
 1. Customize modules class must extend from WXModule.
 2. Extended method must add @JSMethod (uiThread = false or true) annotation, which determines whether the method is run on UI thread.

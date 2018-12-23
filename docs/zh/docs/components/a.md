@@ -1,11 +1,10 @@
-# 简介 
+## 简介
 
 &lt;a&gt; 组件用于实现页面间的跳转。
 
 ## 属性
 
 * **href** string. 待跳转的页面 URL，待跳转页面需要是一个 Weex 页面。如果待跳转页面是一个普通 HTML，这会是一个未定义行为
-
 
 ## 样式
 
@@ -23,8 +22,7 @@
 
 ## 示例
 
-
-```
+```Html
 <a href="http://emas-ha-remote-log-poc.oss-cn-beijing.aliyuncs.com/eweex/app/biz-docs-com-mod/upload/271ccdca-db41-423d-981c-c7c6751ba479/show_1.js">
   <text>主会场</text>
 </a> 
