@@ -1,4 +1,6 @@
-# Video
+# &lt;video&gt;
+
+## Summary
 
 The video component can be used to embed video content in a Weex page.
 
@@ -16,7 +18,7 @@ A `text` is the only valid type of child component.
 
 ## Styles
 
-* **common styles**. Check out [common styles for components](/wiki/common-styles.html).
+* **common styles**. support [common styles](../styles/common-styles.html).
 
 ## Events
 
@@ -25,7 +27,7 @@ A `text` is the only valid type of child component.
 * **finish** Triggered when playback state is Finished.
 * **fail** Triggered when playback state is Failed.
 
-## example
+## Example
 
 ```html
 <template>
@@ -75,4 +77,6 @@ A `text` is the only valid type of child component.
   }
 </script>
 ```
-[try it](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
+* [Demo](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
+* [Demo of autoplay](http://dotwe.org/vue/342d32830f51f72df6acab21fb1c21bd)
+* [Demo of controls](http://dotwe.org/vue/7bdf54dce22def3d3850f65d95f5eac9)

@@ -19,17 +19,17 @@ This type of component supports all kinds of weex component as its child compone
 
 * **recycle** boolean, <span class="api-version">iOS</span>, default true. It controls whether the cell's view in a list should be recycled when the UITableView is scrolling. You should always use true for iOS.
 
-### Styles
+## Styles
 
 * **common styles**. Check out [common styles](../styles/common-styles.html).
 
 **Notes:** Cell itself is a container and its layout info is managed by parent component such as list. So `margin` should not be specified for a cell.
 
-### Events
+## Events
 
 * **common events**. Check out [common events](../events/common-events.html).
 
-### Example
+## Example
 
 Please refer to
 * [list](./list.html)

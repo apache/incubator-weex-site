@@ -29,7 +29,7 @@ Cell 支持添加任意类型的组件作为自己的子组件。
 
 * **通用事件** 支持所有[通用事件](../events/common-events.html)。
 
-### Example
+## 示例
 
 Cell 的例子请参考
 * [list](./list.html)
