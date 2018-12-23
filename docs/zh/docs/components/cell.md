@@ -1,3 +1,5 @@
+# &lt;cell&gt;
+
 ## 简介
 
 Cell 必须以一级子组件的形式存在于 [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) 中。
@@ -19,13 +21,13 @@ Cell 支持添加任意类型的组件作为自己的子组件。
 
 ## 样式
 
-* **通用样式** 支持所有[通用样式](/cn/wiki/common-styles.html)。
+* **通用样式** 支持所有[通用样式](../styles/common-styles.html)。
 
 **Notes:** Cell 的排版的位置是由父容器控制的，所以一般不要为其指定 `margin` 样式。
 
 ## 事件
 
-* **通用事件** 支持所有[通用事件](/cn/wiki/common-events.html)。
+* **通用事件** 支持所有[通用事件](../events/common-events.html)。
 
 ### Example
 

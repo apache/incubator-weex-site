@@ -1,3 +1,5 @@
+# &lt;cell&gt;
+
 ## Summary
 
 This component must be used as a subcomponent of a [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) component.
@@ -19,13 +21,13 @@ This type of component supports all kinds of weex component as its child compone
 
 ### Styles
 
-* **common styles**. Check out [common styles](/wiki/common-styles.html).
+* **common styles**. Check out [common styles](../styles/common-styles.html).
 
 **Notes:** Cell itself is a container and its layout info is managed by parent component such as list. So `margin` should not be specified for a cell.
 
 ### Events
 
-* **common events**. Check out [common events](/wiki/common-events.html).
+* **common events**. Check out [common events](../events/common-events.html).
 
 ### Example
 

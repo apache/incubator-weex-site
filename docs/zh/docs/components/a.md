@@ -1,6 +1,14 @@
+# &lt;a&gt;
+
 ## 简介
 
-&lt;a&gt; 组件用于实现页面间的跳转。
+`<a>` 组件用于实现页面间的跳转。
+
+```Html
+<a href="http://dotwe.org/raw/dist/a5e3760925ac3b9d68a3aa0cc0298857.bundle.wx">
+  <text>Jump</text>
+</a>
+```
 
 ## 属性
 
@@ -19,7 +27,6 @@
 - 不能直接在 `<a>` 中添加文本。
 -  `click` 事件的回调函数和 `href` 跳转的执行顺序**未被定义**，**不要**使用 `click` 来进行 `href` 跳转前的逻辑处理。
 
-
 ## 示例
 
 ```Html
@@ -28,4 +35,4 @@
 </a> 
 ```
 
-[运行case](http://dotwe.org/vue/3b789771e48be92a70bd682f084b84b5)
+[示例](http://dotwe.org/vue/3b789771e48be92a70bd682f084b84b5)

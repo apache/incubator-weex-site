@@ -1,37 +1,23 @@
-# 简介
+# &lt;div&gt;
 
-`<div>` 组件是用于包装其它组件的最基本容器。支持所有的通用样式、特性、flexbox 布局。其类似于 HTML 的 `<div>` 容器，
+## 简介
+
+`<div>` 是通用容器。
 
 ## 子组件
 
-`<div>` 是基本容器组件，支持包括 `<div>` 在内的任何组件作为自己的子组件。
-
-## 属性
-
-* **通用属性**. 
+`<div>` 支持各种类型的子元素，包括 `<div>` 自己。
 
 ## 样式
 
-* **通用样式**. 参见[通用样式](../styles/common-styles.html).
+* **通用样式** 支持所有[通用样式](../styles/common-styles.html)。
 
-## 事件
+## Events
 
-* **通用事件**. 参见[通用事件](../events/common-events.html).
+* **通用事件** 支持所有[通用事件](../events/common-events.html)。
 
-## 其它
+## Other
 
-* 不能直接在 `<div>` 中添加文本。如果要展示文本，应该使用 `<text>` 组件。
-* `<div>` 在 native 中不可滚动，即使显式设置高度也一样。
-* `<div>` 为了有一个好的性能，嵌套层级不宜过深，建议 __深度<14层__ 。
-
-## 例子
-
-``` vue{2}
-<template>
-  <div>
-    <text>Hello World!</text>
-  </div>
-</template>
-```
-
-- [运行case](http://dotwe.org/vue/57cc2dd8955b0ead3e5b46e3df2f58b9) （naitve 不可滚动）需要使用 [&lt;list&gt;](/docs/list.html)、[&lt;scroller&gt;](/docs/scroller.html) 组件实现。
+* 不要在 `<div>` 中直接添加文本，而要使用 `<text>` 组件。
+* 在 Weex 中，`<div>` 不可滚动。
+* 要控制 `<div>` 的层级，建议不要超过14层，否则会很影响页面性能。
