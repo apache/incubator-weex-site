@@ -122,11 +122,13 @@ module.exports = {
                 ['components/recycle-list', '<recycle-list>'],
                 ['components/scroller', '<scroller>'],
                 ['components/slider', '<slider>'],
+                ['components/indicator', '<indicator>'],
                 ['components/textarea', '<textarea>'],
                 ['components/input', '<input>'],
                 ['components/waterfall', '<waterfall>'],
                 ['components/video', '<video>'],
-                ['components/web', '<web>']
+                ['components/web', '<web>'],
+                ['components/richtext', '<richtext>']
               ]
             },
             {
@@ -286,11 +288,13 @@ module.exports = {
                 ['components/recycle-list', '<recycle-list>'],
                 ['components/scroller', '<scroller>'],
                 ['components/slider', '<slider>'],
+                ['components/indicator', '<indicator>'],
                 ['components/textarea', '<textarea>'],
                 ['components/input', '<input>'],
                 ['components/waterfall', '<waterfall>'],
                 ['components/video', '<video>'],
-                ['components/web', '<web>']
+                ['components/web', '<web>'],
+                ['components/richtext', '<richtext>']
               ]
             },
             {
