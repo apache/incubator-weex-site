@@ -1,24 +1,9 @@
 # &lt;textarea&gt;
 
-`<textarea>` 与 [`<input>`](./input.md) 组件类似，可用于接受用户输入数据，只不过 `<textarea>` 支持多行文本输入。 `<textarea>` 支持 `<input>` 支持的所有的事件。
+## 简介
 
-```html
-<template>
-  <div class="wrapper">
-    <textarea class="textarea" v-model="msg" placeholder="请输入内容."></textarea>
-  </div>
-</template>
+`<textarea>` 与 [`<input>`](./input.md) 组件类似，可用于接受用户输入数据。`<textarea>` 支持多行文本输入。 `<textarea>` 支持 `<input>` 支持的所有的属性、样式和事件。
 
-<script>
-  export default {
-    data: function () {
-      return {
-        msg: ''
-      }
-    }
-  }
-</script>
-```
 
 ## 子组件
 
@@ -26,88 +11,109 @@
 
 ## 属性
 
-| 参数        | 说明                | 类型   | 默认值 |
-| ---------- | -------------      | -----  | ----- |
-| `value` | 指定 `<textarea>` 的默认值 | string | - |
-| `placeholder` | 指定 `<textarea>` 的默认提示文案 | string | - |
-| `rows` | 指定组件的高度 | number | 2 |
+除了支持 `input` 支持的所有属性外，`textarea` 还支持 `row` 属性，用于指定输入的行数。
 
-::: warning 注意
-当使用 `v-model` 指令绑定数据时，`value` 属性不生效，你应该通过 JavaScript 在组件的 `data` 选项中声明初始值。详情可参考 [Vue 表单输入绑定](https://cn.vuejs.org/v2/guide/forms.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95)
-:::
+* **row**, number, 默认值为2。
 
 ## 样式
 
-除通用的样式外，`<textarea>` 还支持文本样式，其表现与 CSS 文本样式相同相同：
+#### 通用样式
 
-- 支持 `color` 样式。
-- 支持 `font-size` 样式，默认值为 32。
-- 支持 `font-style` 样式。
-- 支持 `font-weight` 样式。
-- 支持 `text-align` 样式。
+* 支持所有[通用样式](../styles/common-styles.html)。
 
-此外，`<textarea>` 还支持以下伪类:
+#### 伪类样式
 
-- `active`
-- `focus`
-- `disabled`
-- `enabled`
+* **active**
+* **disabled**
+* **enbaled**
+* **focus**
+
+`active` 和 `focus` 的区别在于，当光标位于输入框里时，它就是 focus 状态，而只有触摸输入框时它才是 active 的状态。
+
+#### 文本样式
+
+* 请参考[文本样式](../styles/text-styles.html)
 
 ## 事件
 
-`<textarea>` 支持的事件与 `<input>` 一致：
+* **通用事件** 支持所有[通用事件](../events/common-events.html)。
+* **input**. 当输入状态时，会不断触发。
+  * @param value: 当前文本。
+* **change**. 当用户完成了输入时触发。
+  * @param value: 当前文本。
+* **focus**. 当输入框获得焦点时触发。
+* **blur**. 当输入框失去焦点时触发。
+* **return**. 当用户点击了“回车”按钮时触发，会返回此时“回车”按钮的动作类型。
+  * @param value: 当前文本。
+  * @param returnKeyType, "default" | "go" | "next" | "search" | "send" | "done".
+* **keyboard**. 当键盘弹起或收起时触发。
+  * @param isShow: boolean, 显示或隐藏键盘。
+  * @param keyboardSize: 键盘的尺寸，以前端使用的样式单位返回。
 
-- input 事件
+## 示例
 
-  当输入字符时触发。 事件中 `Event` 对象有以下属性:
+```html
+<template>
+  <div class="wrapper">
+    <textarea class="textarea" @input="oninput" @change="onchange" @focus="onfocus" @blur="onblur"></textarea>
+  </div>
+</template>
 
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `value` | 当前组件的值 | string |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
+<script>
+  const modal = weex.requireModule('modal')
 
-- change 事件
+  export default {
+    methods: {
+      oninput (event) {
+        console.log('oninput:', event.value)
+        modal.toast({
+          message: `oninput: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onchange (event) {
+        console.log('onchange:', event.value)
+        modal.toast({
+          message: `onchange: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onfocus (event) {
+        console.log('onfocus:', event.value)
+        modal.toast({
+          message: `onfocus: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onblur (event) {
+        console.log('onblur:', event.value)
+        modal.toast({
+          message: `input blur: ${event.value}`,
+          duration: 0.8
+        })
+      }
+    }
+  }
+</script>
 
-  当用户输入完成时触发。通常在 blur 事件之后。事件中 `Event` 对象有以下属性:
+<style>
+  .textarea {
+    font-size: 50px;
+    width: 650px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #666666;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #41B883;
+  }
+</style>
+```
 
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `value` | 当前组件的值 | string |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- focus 事件
-
-  组件获得输入焦点。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- blur 事件
-
-  组件失去输入焦点。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-- return 事件
-
-  键盘点击返回键时触发。事件中 `Event` 对象有以下属性:
-
-  | 属性        | 说明           | 类型   |
-  | ---------- | ------------- | -----  |
-  | `value` | 当前组件的值 | string |
-  | `returnKeyType` | 事件发生时的返回键类型 | string |
-
-::: warning 注意
-`<textarea>` 不支持 `click` 事件。 请监听 `input` 或 `change` 事件代替。
-:::
-
-## Demo
-
-- [双向绑定](http://dotwe.org/vue/d884b0c18891a05d653253c0f0a94bc1)
-- [事件监听](http://dotwe.org/vue/4e2ba256d993ec2186c388e9d80157ea)
-- [创建文章](http://dotwe.org/vue/6dd65122144d9ad26594c0f900c75cd4)，`<textarea>` 常用于提交大量文本数据。
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1UWA7n4TpK1RjSZFGXXcHqFXa-750-1334.gif" />
+* [示例](http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa)
+* [事件示例](http://dotwe.org/vue/2ba8ebc4e6970e1e86725c3e80296e40)
+* [绑定示例](http://dotwe.org/vue/d884b0c18891a05d653253c0f0a94bc1)

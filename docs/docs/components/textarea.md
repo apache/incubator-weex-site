@@ -1,70 +1,55 @@
 # &lt;textarea&gt;
-<span class="weex-version">v0.8+</span>
 
+## Summary
 
-### Summary
+`textarea` is used to create interactive controls to accept keyboard input from users. It can be a multi-line [input](./input.html). `<textarea>` supports all attributes, styles and events that `<input>` supports.
 
-The weex builtin component `textarea` is used to create interactive controls to accept data from users. It can be a multi-line [input](./input.html).
+## Child Components
 
-**Notes:** `<textarea>` support all event which `<input>` had.
+No child should be added to a `textarea`.
 
-### Child Components
+## Attributes
 
-This component supports no child components.
+The `textarea` component supports all the properties of the `input` component. Besides, it support the `row` attributes.
 
-### attributes
+* **row**, number, default is 2. Specify the rows of a textarea.
 
-The `textarea` component supports all the properties of the `text` component, in addition to the following properties:
+## Styles
 
-- `rows:`&lt;number&gt; a number which can specify the height of textarea, default is `2`.
+#### Common styles
 
-### Styles
+* Checkout [common styles](../styles/common-styles.html).
 
-**Pseudo-class**<span class="api-version">v0.9.5+</span>: `textarea` component support the following pseudo-classes:
+#### Pseudo-class styles
 
-* `active`
-* `focus`
-* `disabled`
-* `enabled`
+* **active**
+* **disabled**
+* **enbaled**
+* **focus**
 
-**text styles**: checkout [text styles](/wiki/text-styles.html)
+The difference between `active` and `focus` is that when the cursor is inside the input, it is focused. While only when you touch down the input, it is in active status.
 
-- support `color` style.
-- support `font-size` style.
-- support `font-style` style.
-- support `font-weight` style.
-- support `text-align` style.
+#### Text styles
 
+* Checkout [text styles](../styles/text-styles.html)
 
-**common styles**: check out [common styles for components](/wiki/common-styles.html)
+## Events
 
-- support flexbox related styles.
-- support box model related styles.
-- support ``position`` related styles.
-- support ``opacity``, ``background-color`` etc.
+* **common events**. support [common events](../events/common-events.html).
+* **input**. Fired when the text is being changed.
+	* @param value: current text of the input.
+* **change**. Fired when the user finished and make a commit.
+	* @param value: current text of the input.
+* **focus**. Fired when the input become focused.
+* **blur**. Fired when the input lost focus.
+* **return**. Fired when return key is pressed.
+	* @param value: current text of the input.
+	* @param returnKeyType, "default" | "go" | "next" | "search" | "send" | "done".
+* **keyboard**. Fired when keyborad is shown or hidden.
+	* @param isShow: boolean, showing or hiding the keyboard.
+	* @param keyboardSize: keyboard size in web pixel format.
 
-### Events
-
-- `input`: the value of an element changes.
-- `change`: the change event is fired when a change to the component's value is commited by the user. It always come after a ``blur`` event.
-- `focus`: a component has received focus.
-- `blur`: a component has lost focus.
-
-**common events**: check out the [common events](/wiki/common-events.html)
-
-- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html).
-
-**Notes:** `<textarea>` does not support the common-event `click`. Please listen to the `input` or `change` event instead.
-
-### Parameters of events' object
-
-- for ``input`` and ``change`` events:
-  - `value`: the value of the component who dispatched this event.
-  - `timestamp`: the time stamp of the event.
-- for ``focus`` and ``blur`` events:
-  - `timestamp`: the time stamp of the event.
-
-### Example
+## Example
 
 ```html
 <template>
@@ -128,4 +113,6 @@ The `textarea` component supports all the properties of the `text` component, in
 </style>
 ```
 
-[try it](http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa)
+* [Demo](http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa)
+* [Demo of events](http://dotwe.org/vue/2ba8ebc4e6970e1e86725c3e80296e40)
+* [Demo of binding](http://dotwe.org/vue/d884b0c18891a05d653253c0f0a94bc1)
