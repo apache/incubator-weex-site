@@ -1,5 +1,7 @@
 # &lt;input&gt;
 
+## 简介
+
 Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组件。 `<input>` 组件的工作方式因 `type` 属性的值而异，比如 `text`， `password`，`url`，`email`，`tel` 等。
 
 ::: warning 注意
@@ -8,7 +10,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 
 ## 子组件
 
-不支持子组件。
+`<input>` 不支持子组件。
 
 ## 属性
 
@@ -63,60 +65,19 @@ placeholder 字符颜色。默认值是 `#999999`
 
 ## 事件
 
-#### input 事件
-
-当输入字符时触发。 事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `value`     | 当前组件的值                         | string |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### change 事件
-
-当用户输入完成时触发。通常在 blur 事件之后。事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `value`     | 当前组件的值                         | string |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### focus 事件
-
-组件获得输入焦点。事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### blur 事件
-
-组件失去输入焦点。事件中 `event` 对象有以下属性:
-
-| 属性        | 说明                                 | 类型   |
-| ----------- | ------------------------------------ | ------ |
-| `timestamp` | 事件发生时的时间戳，仅支持 Android。 | string |
-
-#### return 事件
-
-键盘点击返回键时触发。事件中 `event` 对象有以下属性:
-
-| 属性            | 说明                   | 类型   |
-| --------------- | ---------------------- | ------ |
-| `value`         | 当前组件的值           | string |
-| `returnKeyType` | 事件发生时的返回键类型 | string |
-
-::: warning 注意
-不支持 `click` 事件。 请监听 `input` 或 `change` 事件代替。
-:::
-
-支持以下通用事件：
-
-- longpress
-- appear
-- disappear
-
-查看 [通用事件](/guide/common-events.html)
+* **通用事件** 支持所有[通用事件](../events/common-events.html)。
+* **input**. 当输入状态时，会不断触发。
+  * @param value: 当前文本。
+* **change**. 当用户完成了输入时触发。
+  * @param value: 当前文本。
+* **focus**. 当输入框获得焦点时触发。
+* **blur**. 当输入框失去焦点时触发。
+* **return**. 当用户点击了“回车”按钮时触发，会返回此时“回车”按钮的动作类型。
+  * @param value: 当前文本。
+  * @param returnKeyType, "default" | "go" | "next" | "search" | "send" | "done".
+* **keyboard**. 当键盘弹起或收起时触发。
+  * @param isShow: boolean, 显示或隐藏键盘。
+  * @param keyboardSize: 键盘的尺寸，以前端使用的样式单位返回。
 
 ## 组件方法
 

@@ -1,4 +1,6 @@
-# Input Component
+# &lt;input&gt;
+
+## Summary
 
 The weex builtin component `input` is used to create input controls to receive the user's input characters. How a `input` component works varies considerably depending on the value of its `type` attribute, such as `text`, `password`, `url`, `email`, `tel` etc.
 
@@ -6,7 +8,7 @@ The weex builtin component `input` is used to create input controls to receive
 
 ## Child Components
 
-This component does not support any child component.
+No child should be added to a `input`.
 
 ## Attributes
 
@@ -66,16 +68,19 @@ check out [common styles for components](/wiki/common-styles.html)
 
 ## Events
 
-* `input`: the input evenr is fired when input content changes.
-* `change`: the change event is fired when a change to the component's value is commited by the user. It always come after a `blur` event.
-* `focus`: a component has received focus.
-* `blur`: a component has lost focus.
-* `return`: the return key clicked.
-
-     the object property of event:
-
-    - `returnKeyType`: return key Type  of component
-    - `value`: component text value
+* **common events**. support [common events](../events/common-events.html).
+* **input**. Fired when the text is being changed.
+  * @param value: current text of the input.
+* **change**. Fired when the user finished and make a commit.
+  * @param value: current text of the input.
+* **focus**. Fired when the input become focused.
+* **blur**. Fired when the input lost focus.
+* **return**. Fired when return key is pressed.
+  * @param value: current text of the input.
+  * @param returnKeyType, "default" | "go" | "next" | "search" | "send" | "done".
+* **keyboard**. Fired when keyborad is shown or hidden.
+  * @param isShow: boolean, showing or hiding the keyboard.
+  * @param keyboardSize: keyboard size in web pixel format.
 
 ### common events
 check out [common events](/wiki/common-events.html)
