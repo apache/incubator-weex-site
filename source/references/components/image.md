@@ -8,15 +8,16 @@ version: 2.1
 
 `<image>` is used to display a single image in your interface.
 
-> **Note:**  `<img>` element which is usually used in HTML is not supported in Weex, you should use `<image>` instead.
+> **Note:** Always use `<image>` in your code, as `<img>` exists only for backward compatibility reasons and may removed in the future release.
 
-> **Note:**  Weex doesn't have built-in image downloader, as download, cache, decompression features are complicated and some open source tools like  [SDWebImage](https://github.com/rs/SDWebImage) handles it well, so please add native image adapter/handler before using `<image>`.
+> **Note:**  Weex doesn't have built-in library for image downloading and caching, as there are some great open source library like  [SDWebImage in iOS](https://github.com/rs/SDWebImage) and [Picasso in Android](https://github.com/square/picasso) handling these problem, so please add native image adapter/handler before using `<image>`.
 >
 > See also:  [Android adapter](../android-apis.html#Adapter) and [iOS handler](../ios-apis.html#Handler-like-Android-Adapter).
 
 ## Basic Usage
 
-> **Note:** the style attributes of `width` and `height` must be specified, otherwise it won't work.
+> **Note:** the style of `width`, `height` and `src` must be specified, otherwise it will load nothing.
+
 
 ```html
 <image style="width:500px;height:500px" src="https://vuejs.org/images/logo.png"></image>
@@ -24,7 +25,14 @@ version: 2.1
 
 See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
 
-  ## Attributes
+## Child
+`<image>` doesn't support any child component.
+
+## Styles
+
+Support **[common styles](../../wiki/common-styles.html)**.
+
+## Attributes
 
 | Attribute     | Type   | Value                      | Default Value |
 | ------------- | ------ | -------------------------- | ------------- |
@@ -34,11 +42,11 @@ See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
 
   > **Note:** you can specify a relative URL  for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
 
-  ### `placeholder`
+### placeholder
 
-A URL value for placeholder image. It will be displayed when the image view is empty and will be replaced as soon as the 'src' image gets loaded.[(Example)](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c)
+A URL value for placeholder image. It will be displayed during image downloading and replaced as soon as the image gets loaded.[(Example)](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c)
 
-  ### `resize`
+### resize
 
 ![image resize property](../images/image-resize-property.png)
 
@@ -49,15 +57,17 @@ A URL value for placeholder image. It will be displayed when the image view is e
 
 -   `stretch`: `Default value`. Scales the content to fit the size of the element itself by changing the aspect ratio of the image if necessary. ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
 
-See also: [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
+`resize` property is similar to [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
 
-### `src`
+### src
 
 The URL of the image to display. This attribute is mandatory for the `<image>` component.
 
 #### Supported Image Formats
 
 Weex doesn't give a list of image formats that must be supported, it mainly relies on the image adapter/handler you are using. For example, if you are using [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) as the image adapter on iOS, you can use image formats like JPEG, PNG, GIF, WebP, etc.
+
+> **Note:** The default image adapter on Android doesn't support gif.
 
 ## Component Methods
 
@@ -90,10 +100,10 @@ Get the component reference and use the `save` method:
 const $image = this.$refs.poster
 $image.save(result => {
   if (result.success) {
-    // Do something to hanlde success
+    // Do something to handle success
   } else {
     console.log(result.errorDesc)
-    // Do something to hanlde failure
+    // Do something to handle failure
   }
 })
 ```
@@ -139,18 +149,6 @@ export default {
 
 Complete example goes [here](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0).
 
-## Styles
-
-Support **[common styles](../../wiki/common-styles.html)**.
-
-## Usage Notes
-
-- Add image adapter/handler before using `<image>`
-- The `width` and `height` in the styles of `<image>` must be specified.
-- `<image>` can not have any nested child component.
-
 ## Examples
-
-- [Base64 example](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
-- [Multi-layer images example](http://dotwe.org/vue/c44359c0f200abc1f66504b88587e4f6)
-- [Lazy load image example](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
+* [Base64 example](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
+* [Lazy load image example](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
