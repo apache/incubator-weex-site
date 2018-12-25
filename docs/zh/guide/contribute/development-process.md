@@ -2,13 +2,13 @@
 
 本文档描述了如何对 Weex 源代码进行更改和提交，以下是建议的步骤：
 
-## 1. 选择或创建一个 JIRA issue单
+## 1. 选择或创建一个 Github issue单
 
-目前 Weex 使用 [JIRA Issue](https://issues.apache.org/jira/projects/WEEX) 来跟踪所有类型的代码更改，而不仅仅是 bug 修复，我们使用 Github Pull Request 来管理代码 review 和合并特定的代码更改。也就是说，JIRA用于描述什么是需要修复或更改的，Pull Request 用于描述这些修复和变更如何实现。
+目前 Weex 使用 [Github Issues](https://github.com/apache/incubator-weex/issues)来跟踪所有类型的代码更改，而不仅仅是 bug 修复，我们使用 Github Pull Request 来管理代码 review 和合并特定的代码更改。也就是说，Github Issues用于描述什么是需要修复或更改的，Pull Request 用于描述这些修复和变更如何实现。
 
 在创建新问题之前一定要先搜索问题，避免重复。如果你的更改可能需要和其他开发者进行讨论，你可以在 [weex-dev](mailto:dev@weex.incubator.apache.org) 邮件列表中创建一个讨论。
 
-**每个 PR 都应该对应于 JIRA 中的一个 issue。**
+**每个 PR 都应该对应于 Github 中的一个 issue。**
 
 ## 2. 编写代码
 
@@ -50,7 +50,7 @@
 [创建一个 pull request](https://help.github.com/articles/using-pull-requests/) 并提交到 `apache/incubator-weex` 的 `master` 分支，确保它符合这些准则:
 
 1. 一个 Pull Request 只解决一个问题
-2. PR标题应该是 `[WEEX-xxxx][模块]标题`，其中 `xxxx` 是相关的 JIRA 问题号，模块是 PR 的类别（android、iOS、jsfm、web、component、doc、website、test、other），标题可以是 JIRA 的标题，也可以是描述 PR 本身的更具体的标题。
+2. PR标题应该是 `[WEEX-xxxx][模块]标题`，其中 `xxxx` 是相关的 Github Issue 问题号，模块是 PR 的类别（android、iOS、jsfm、web、component、doc、website、test、other），标题可以是 Github 上Issue 的标题，也可以是描述 PR 本身的更具体的标题。
 3. 如果该 PR 相关的工作还在进行中，还没有准备好被合并，但需要被推到 Github 上以方便查看，可以在模块后添加 `[WIP]` 标示。
 
 ## 代码风格指南
@@ -92,7 +92,7 @@ viewing interminals.
 Bug: 123456
 ```
 
-一个简短的主题紧跟一个空行再接着写 commit 的详细描述，Bug 这里使用的是来自 JIRA 的问题号。
+一个简短的主题紧跟一个空行再接着写 commit 的详细描述，Bug 这里使用的是来自 Github Issue 的问题号。
 
 在[这里](https://chris.beams.io/posts/git-commit/)可以找到一些关于如何编写 commit message 的好方法。
 
