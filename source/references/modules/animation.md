@@ -15,7 +15,7 @@ JS-Animation can perform a series of simple transformations  (position, size, ro
 
 For example, if you have a `image` component, you can move, rotate, grow, or shrink it by animation.
 
-> **Note:** Ref [transition](../../wiki/common-styles.html#property) if you want to use CSS animation.
+> **Note:** Ref [transition](../../wiki/common-styles.html#property) or [transform](../../wiki/common-styles.html#transform) if you want to use CSS animation.
 
 ## Basic Usage
 

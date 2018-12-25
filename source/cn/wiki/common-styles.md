@@ -300,50 +300,6 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
   }
 </style>
 ```
-
-## transform
-
-transform 属性向元素应用 2D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
-
-目前支持的 transform 声明格式:
-
-- translate( <number/percentage> [, <number/percentage>]?)
-- translateX( <number/percentage> )
-- translateY( <number/percentage> )
-- scale( <number>)
-- scaleX( <number> )
-- scaleY( <number> )
-- rotate( <angle/degree> )
-- rotateX( <angle/degree> ) <span class="api-version">v0.14+</span>
-- rotateY( <angle/degree> ) <span class="api-version">v0.14+</span>
-- perspective( <number> ) Android 4.1及以上版本支持 <span class="api-version">v0.16+</span>
-- transform-origin: number/percentage/keyword(top/left/right/bottom)
-
-### 示例
-
-```HTML
-<template>
-  <div class="wrapper">
-    <div class="transform">
-     <text class="title">Transformed element</text>
-    </div>
-  </div>
-</template>
-
-<style>
-  .transform {
-    align-items: center;
-    transform: translate(150px,200px) rotate(20deg);
-    transform-origin: 0 -250px;
-    border-color:red;
-    border-width:2px;
-  }
-  .title {font-size: 48px;}
-</style>
-```
-
-
-
 ## transition <span class="api-version">v0.16.0+</span>
 
 现在您可以在CSS中使用transition属性来提升您应用的交互性与视觉感受，transition中包括布局动画，即LayoutAnimation，现在布局产生变化的同时也能使用transition带来的流畅动画。transition允许CSS的属性值在一定的时间区间内平滑地过渡。
@@ -396,6 +352,48 @@ transform 属性向元素应用 2D 转换。该属性允许我们对元素进行
         transition-delay: 0s;
         transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
     }
+</style>
+```
+
+## transform
+> **注意：除了`perspective`和`transform-origin`，`transition`支持了`transform`的全部能力。**
+
+transform 属性向元素应用 2D/3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
+
+目前支持的 transform 声明格式:
+
+- translate( <number/percentage> [, <number/percentage>]?)
+- translateX( <number/percentage> )
+- translateY( <number/percentage> )
+- scale( <number>)
+- scaleX( <number> )
+- scaleY( <number> )
+- rotate( <angle/degree> )
+- rotateX( <angle/degree> ) <span class="api-version">v0.14+</span>
+- rotateY( <angle/degree> ) <span class="api-version">v0.14+</span>
+- perspective( <number> ) Android 4.1及以上版本支持 <span class="api-version">v0.16+</span>
+- transform-origin: number/percentage/keyword(top/left/right/bottom)
+
+### 示例
+
+```HTML
+<template>
+  <div class="wrapper">
+    <div class="transform">
+     <text class="title">Transformed element</text>
+    </div>
+  </div>
+</template>
+
+<style>
+  .transform {
+    align-items: center;
+    transform: translate(150px,200px) rotate(20deg);
+    transform-origin: 0 -250px;
+    border-color:red;
+    border-width:2px;
+  }
+  .title {font-size: 48px;}
 </style>
 ```
 
