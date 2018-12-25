@@ -16,7 +16,7 @@ JS-Animation可以对组件执行一系列简单的变换 (位置、大小、旋
 
 举个例子，如果有一个 `<image>` 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
 
-> **Note:** 如果需要使用CSS动画，参考 [transition](../../wiki/common-styles.html#property)。
+> **注意:** 如果需要使用CSS动画，参考 [transition](../../wiki/common-styles.html#property)或[transform](../../wiki/common-styles.html#transform) 。
 
 
 ## 基本用法

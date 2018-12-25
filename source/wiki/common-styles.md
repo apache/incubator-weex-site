@@ -190,47 +190,6 @@ we can use properties below to control placement of weex tag
 </template>
 ```
 
-## transform
-
-The CSS **transform** property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated and scaled.
-
-Currently supported format:
-
-* translate( <number/percentage> [, <number/percentage>]?)
-* translateX( <number/percentage> )
-* translateY( <number/percentage> )
-* scale( <number>)
-* scaleX( <number> )
-* scaleY( <number> )
-* rotate( <angle/degree> )
-* rotateX( <angle/degree> ) <span class="api-version">v0.14+</span>
-* rotateY( <angle/degree> ) <span class="api-version">v0.14+</span>
-* perspective( <number> ), supported for Android 4.1 and above. <span class="api-version">v0.16+</span>
-* transform-origin: number/percentage/keyword(top/left/right/bottom)
-
-### Example
-
-```HTML
-<template>
-  <div class="wrapper">
-    <div class="transform">
-     <text class="title">Transformed element</text>
-    </div>
-  </div>
-</template>
-
-<style>
-  .transform {
-    align-items: center;
-    transform: translate(150px,200px) rotate(20deg);
-    transform-origin: 0 -250px;
-    border-color:red;
-    border-width:2px;
-  }
-  .title {font-size: 48px;}
-</style>
-```
-
 ## transition <span class="api-version">v0.17.0+</span>
 
 Now you can use the transition attribute in CSS to enhance the interactivity and visual experience of your application. The transition includes the layout animation, that is, LayoutAnimation, which now changes the layout and uses the fluent animation of the transition. Transition allows the CSS attribute values to transition smoothly over a certain time interval.
@@ -286,6 +245,48 @@ Now you can use the transition attribute in CSS to enhance the interactivity and
 </style>
 ```
 
+## transform
+
+> **Note: Consider use `transition` instead, which supports all the style that `transform` supports except for `transform-origin` and `perspective`**
+
+The CSS **transform** property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated and scaled.
+
+Currently supported format:
+
+* translate( <number/percentage> [, <number/percentage>]?)
+* translateX( <number/percentage> )
+* translateY( <number/percentage> )
+* scale( <number>)
+* scaleX( <number> )
+* scaleY( <number> )
+* rotate( <angle/degree> )
+* rotateX( <angle/degree> ) <span class="api-version">v0.14+</span>
+* rotateY( <angle/degree> ) <span class="api-version">v0.14+</span>
+* perspective( <number> ), supported for Android 4.1 and above. <span class="api-version">v0.16+</span>
+* transform-origin: number/percentage/keyword(top/left/right/bottom)
+
+### Example
+
+```HTML
+<template>
+  <div class="wrapper">
+    <div class="transform">
+     <text class="title">Transformed element</text>
+    </div>
+  </div>
+</template>
+
+<style>
+  .transform {
+    align-items: center;
+    transform: translate(150px,200px) rotate(20deg);
+    transform-origin: 0 -250px;
+    border-color:red;
+    border-width:2px;
+  }
+  .title {font-size: 48px;}
+</style>
+```
 
 
 ## Pseudo class <span class="api-version">v0.9.5+</span>
