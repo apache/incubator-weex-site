@@ -8,9 +8,7 @@ version: 2.1
 
 <!-- toc -->
 
-Weex supports module-extend、component-extend and adapter-extend.
-
-## Extend module
+## Module extend
 
 1. Customize modules class must extend from WXModule.
 2. Extended method must add @JSMethod (uiThread = false or true) annotation, which determines whether the method is run on UI thread.
@@ -61,6 +59,20 @@ Now `event` moudle is avaiable in weex, use the module like this:
     }
   }
 </script>
+```
+
+## Register module
+
+registerModule(moduleName,moduleClass)
+
+- `return`(_bool_): register success
+- `moduleName`(_String_): module name
+- `moduleClass`(_Class_): the Java class of the module, which provide a constructor with an empty parameter.
+
+使用方式:
+
+```
+WXSDKEngine.registerModule("picker", WXPickersModule.class);
 ```
 
 ## Javascript callback
@@ -214,10 +226,46 @@ Use this component in weex DSL：
 </script>
 ```
 
+## Register component
 
-# Extend adapter
+### __registerComponent(type,class,appendTree)__
 
-## ImagedownloadAdapter
+- `return`(_bool_): register success
+- `type`(_String_): component's name,such as `div`
+- `class`(_Class_): ComponentClass，called when init component
+- `appendTree`(_bool_): render option logic，default false
+	- if true，render compoent tree one-time
+	- if false，render component one by one
+
+usage:
+
+```
+WXSDKEngine.registerComponent("video", WXVideo.class, false);
+```
+
+### __registerComponent(holder,appendTree，...names)__
+
+- `return`(_bool_): register success
+- `holder`(_IFComponentHolder_): abstract factory designed for create Component, and __SimpleComponentHolder__ is the a simple way to achieve IFComponentHolder.
+- `appendTree`: see `registerComponent(type,class,appendTree)`
+- `names`(_String ..._): component's name in front end template file
+
+usage:
+
+```
+WXSDKEngine.registerComponent(
+              new SimpleComponentHolder(
+                      WXText.class,
+                      new WXText.Creator()
+              ),
+              false,
+              "text"
+      );
+```
+
+## Extend adapter
+
+### ImagedownloadAdapter
 
 Weex SDK has no image download capability, you need to implement `IWXImgLoaderAdapter`.
 
@@ -258,6 +306,125 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
   }
 }
 ```
+
+## Set up various adapters
+
+### ImageAdapter
+Image adapter is responsible for loading images according to URLs. There are two types of image adapter:
+1. Loading a image to a view according to URL.
+1. Loading a image to a specified object according to URL.
+
+In order to use image component, one must implement the first adapter, while the second adapter is optional.
+
+#### IWXImgLoaderAdapter
+
+    public interface IWXImgLoaderAdapter {
+      void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy);
+    }
+
+ * `WXImageQuality` that the quality of the picture variables, take the following values `LOW`, `NORMAL`, `HIGH`, `ORIGINAL` picture quality in turn higher. The default is `LOW`.
+ * `WXImageStrategy` is an extension class that indicates whether the image can be cut (isClipping) sharpening (isSharpen) placeholder (placeHolder) and so on.
+
+#### IDrawableLoaderAdapter
+This adapter is optional.
+
+    void setDrawable(String url, DrawableTarget drawableTarget, DrawableStrategy drawableStrategy);
+
+*  `DrawableTarget` is a object into where will load an image. `DrawableTarget` is one of `StaticTarget` or `AnimatedTarget`.
+
+### IWXHttpAdapter
+
+Weex custom `WXRequest` and `OnHttpListener`, Native reload interface can be obtained from the Request URL, Header and other parameters, the network request can be completed through `OnHttpListener` callback notification. Weex provides the default network request: `DefaultWXHttpAdapter`, using `HttpURLConnection` for network requests.
+
+The interface is defined as follows:
+
+```
+public interface IWXHttpAdapter {
+	void sendRequest(WXRequest request, OnHttpListener listener);
+}
+```
+
+#### WXRequest
+
+* `WXRequest` defines the parameters related to the network request, the request method, the request body, and the timeout time. Weex default timeout is 3s.
+
+#### OnHttpListener
+
+```
+ interface OnHttpListener {
+
+    /**
+     * start request
+     */
+    void onHttpStart();
+
+    /**
+     * headers received
+     */
+    void onHeadersReceived(int statusCode,Map<String,List<String>> headers);
+
+    /**
+     * post progress
+     * @param uploadProgress
+     */
+    void onHttpUploadProgress(int uploadProgress);
+
+    /**
+     * response loaded length (bytes), full length should read from headers (content-length)
+     * @param loadedLength
+     */
+    void onHttpResponseProgress(int loadedLength);
+
+    /**
+     * http response finish
+     * @param response
+     */
+    void onHttpFinish(WXResponse response);
+  }
+```
+
+### IWXUserTrackAdapter
+Weex related performance data (first screen loading time, JS-Native communication time, dom update time, etc.) and other general information (JSLib file size, Weex SDK version number, etc.).
+
+```
+public interface IWXUserTrackAdapter {
+	void commit(Context context, String eventId, String type, WXPerformance perf, Map<String, Serializable> params);
+}
+```
+
+Native implementation interface can be obtained through `WXPerformance` and `params` corresponding information.
+
+### IActivityNavBarSetter
+Weex provided the ability of navigation through `WXNavigatorModule` which relys on IActivityNavBarSetter.
+
+Usage:
+
+```
+WXSDKEngine.setActivityNavBarSetter(new IActivityNavBarSetter(){});   
+```    
+
+### IWXStorageAdapter
+Weex provided the ability of local storage through `WXStorageModule` which depends on IWXStorageAdapter. One can use `DefaultWXStorage` as the default implementation of IWXStorageAdapter.
+
+
+### IWXJSExceptionAdapter
+IWXJSExceptionAdapter is used to handle weex exception.
+- DownLoadException
+- WhiteSceenException
+- JSException
+- DownGradeException
+
+```
+public interface IWXJSExceptionAdapter {
+  void onJSException(WXJSExceptionInfo exception);
+}
+```
+usage：
+
+```
+WXSDKEngine.setJSExcetptionAdapter(new TestExceptionAdapter());
+```
+
 ## Proguard Rules
 
 If you want to using proguard to protect your source code, please add the following rules to your profile:
