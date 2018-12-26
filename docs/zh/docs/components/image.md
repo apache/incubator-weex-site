@@ -1,90 +1,87 @@
----
-title: <image>
-type: references
-group: Build-in Components
-order: 8.04
-version: 2.1
----
+# Image
 
-`<image>` is used to display a single image in your interface.
+`<image>` 用于在界面中显示单个图片。
 
-> **Note:**  `<img>` element which is usually used in HTML is not supported in Weex, you should use `<image>` instead.
+> **注意:** 在代码中请使用 `<image>` 标签, `<img>` 的存在只是因为兼容性原因，在将来的版本中可能删除。
 
-> **Note:**  Weex doesn't have built-in image downloader, as download, cache, decompression features are complicated and some open source tools like  [SDWebImage](https://github.com/rs/SDWebImage) handles it well, so please add native image adapter/handler before using `<image>`.
+> **注意：** Weex 没有内置的图片库，因为一些开源项目如 [SDWebImage](https://github.com/rs/SDWebImage) 和[Picasso](https://github.com/square/picasso)已经能很好的解决这个问题， 所以在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
 >
-> See also:  [Android adapter](../android-apis.html#Adapter) and [iOS handler](../ios-apis.html#Handler-like-Android-Adapter).
+> 参见:  [Android adapter](../api/android-apis.html) 和 [iOS handler](../api/ios-apis.html)。
 
-## Basic Usage
+## 基本用法
 
-> **Note:** the style attributes of `width` and `height` must be specified, otherwise it won't work.
+> **注意：** `width`, `height` 和 `src`必须被提供，否则图片无法渲染。
 
 ```html
 <image style="width:500px;height:500px" src="https://vuejs.org/images/logo.png"></image>
 ```
 
-See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
+参见[示例](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f)。
 
-  ## Attributes
+## 子组件
+`<image>`不支持子组件。
 
-| Attribute     | Type   | Value                      | Default Value |
-| ------------- | ------ | -------------------------- | ------------- |
-| `placeholder` | String | {URL / Base64}             | -             |
-| `resize`      | String | cover / contain / stretch  | stretch       |
-| `src`         | String | {URL / Base64 }            | -             |
+## 样式
+支持**[通用样式](../styles/common-styles.html)**。
 
-  > **Note:** you can specify a relative URL  for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/path.html).
+## 属性
 
-  ### `placeholder`
+| 属性名           | 类型     | 值                          | 默认值     |
+| ------------- | ------ | -------------------------- | ------- |
+| `placeholder` | String | {URL / Base64}             | -       |
+| `resize`      | String | cover / contain / stretch  | stretch |
+| `src`         | String | {URL / Base64 }            | -       |
 
-A URL value for placeholder image. It will be displayed when the image view is empty and will be replaced as soon as the 'src' image gets loaded.[(Example)](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c)
+> **注意：**您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/asset-path.html)。
 
-  ### `resize`
+### `placeholder`
 
-![image resize property](../images/image-resize-property.png)
+占位图的 URL，在图片下载过程中将展示占位图，图片下载完成后将显示`src`中指定的图片。 ([示例](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c))
 
-- `contain`: Scales the image as large as possible without cropping or stretching it. Remaining area within bounds is transparent ([Example](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
+### `resize`
 
+- `contain`：缩放图片以完全装入`<image>`区域，可能背景区部分空白。 ([示例](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
+- `cover`：缩放图片以完全覆盖`<image>`区域，可能图片部分看不见。 ([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
+- `stretch`：`默认值`. 按照`<image>`区域的宽高比例缩放图片。([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
 
-- `cover`: Scales the image as large as possible without stretching it. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains.  ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
-
--   `stretch`: `Default value`. Scales the content to fit the size of the element itself by changing the aspect ratio of the image if necessary. ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
-
-See also: [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
+resize属性和[`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)的理念很相似。
 
 ### `src`
 
-The URL of the image to display. This attribute is mandatory for the `<image>` component.
+要显示图片的 URL，该属性是 `<image>` 组件的强制属性。
 
-#### Supported Image Formats
+#### 支持的图片格式
 
-Weex doesn't give a list of image formats that must be supported, it mainly relies on the image adapter/handler you are using. For example, if you are using [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) as the image adapter on iOS, you can use image formats like JPEG, PNG, GIF, WebP, etc.
+Weex没有提供必须支持的图片格式列表，主要依赖于你正在使用的图片 adapter 或者 handler。例如，如果你使用 [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) 作为iOS上的图片 handler，你可以使用像 JPEG、PNG、GIF、WebP 等图片格式。
 
-## Component Methods
+> **Note:** Android 默认的Image Adapter不支持 gif。
+
+## Component 方法
 
 ### `save` <span class="api-version">v0.16.0+</span>
 
-Save `<image>` content to the local device or photo album, this operation may require device permission.
+保存图片内容到本地文件或相册，此操作可能需要设备相关权限。
 
-**Parameters**:
+**参数**:
 
-* `callback`: {Function}  A function which is called after the image has been saved to the local device or photo album. Callback parameters:
-  * `result`: {Object} Callback result whose properties are:
-    * `success`: {Boolean}  A flag indicating whether the image has been saved completed.
-    * `errorDesc`: {String} A string containing the description of the error if image is not written successfully.
+* `callback`：{Function} 在图片被写入到本地文件或相册后的回调，回调参数：
+  * `result`：{Object} 回调结果对象，属性列表：
+    * `success`：{Boolean} 标记图片是否已写入完成。
+    * `errorDesc`：{String} 如果图像没有成功写入，该字符串包含了详细的错误描述。
 
-**Return value**: null
+**返回值**: null
 
-> **Note**: You must add `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryAddUsageDescription` (iOS 11) to enable the access permission of the iOS photo album. See also: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html).
+> **注意**: 你必须加入`NSPhotoLibraryAddUsageDescription` 和 `NSPhotoLibraryAddUsageDescription` (iOS 11) 以获得访问 iOS 系统相册权限. 参见: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
 
-#### Use `save` Method
+#### 使用 `save` 方法
 
-Add `ref` attribute (Vue.js *[Child Component Refs](https://vuejs.org/v2/guide/components.html#Child-Component-Refs)*) on `<image>`:
+在 `<image>`标签上增加 `ref` 属性 (Vue.js *[Child Component Refs](https://vuejs.org/v2/guide/components.html#Child-Component-Refs)*) ：
 
 ```html
 <image ref="poster" src="path/to/image.png"></image>
 ```
 
-Get the component reference and use the `save` method:
+获取组件引用并使用 `save` 方法:
 
 ```js
 const $image = this.$refs.poster
@@ -98,32 +95,34 @@ $image.save(result => {
 })
 ```
 
-Complete example goes [here](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df414).
+参见 [完整例子](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df414).
 
-## Events
+## 事件
 
-Support **[common events](../../wiki/common-events.html)**.
+支持 **[通用事件](../events/common-events.html)**.
 
 ### `load`
 
-`load` event handler will be called when the image is loaded.
+当加载完成 `src` 指定的图片时，`load`事件将被触发。
 
-**Event object**:
+**事件对象**:
 
-- `success`: {Boolean} It shows that whether the image is loaded successfully.
-- `size`: {Object} The loaded image size whose properties are:
-  - `naturalWidth`: {Number} The intrinsic width of image displayed on device,  it will be zero if the specified image cannot be loaded correctly.
-  - `naturalHeight`: {Number} the intrinsic height of image displayed on device, it will be zero if the specified image cannot be loaded correctly.
+- `success`: {Boolean} 标记图片是否成功加载。
 
-#### Handle `load` Event
 
-Bind `load` event on `<image>`:
+- `size`: {Object} 加载的图片大小对象，属性列表：
+  - `naturalWidth`: {Number} 图片宽度，如果图片加载失败则为0。
+  - `naturalHeight`: {Number} 图片高度，如果图片加载失败则为0。
+
+#### 处理 `load` 事件
+
+在 `<image>` 标签上绑定 `load` 事件：
 
 ```html
 <image @load="onImageLoad" src="path/to/image.png"></image>
 ```
 
-Add event handler:
+增加事件处理函数：
 
 ```js
 export default {
@@ -137,20 +136,15 @@ export default {
 }
 ```
 
-Complete example goes [here](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0).
+参见[完整示例](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0)。
 
-## Styles
+## 使用说明
 
-Support **[common styles](../../wiki/common-styles.html)**.
+- 在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
+- `<image>` 必须指定样式中的宽度和高度。
+- `<image>` 不支持内嵌子组件。
 
-## Usage Notes
+## 示例
 
-- Add image adapter/handler before using `<image>`
-- The `width` and `height` in the styles of `<image>` must be specified.
-- `<image>` can not have any nested child component.
-
-## Examples
-
-- [Base64 example](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
-- [Multi-layer images example](http://dotwe.org/vue/c44359c0f200abc1f66504b88587e4f6)
-- [Lazy load image example](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
+* [Base64 示例](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
+* [Lazy load image 示例](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
