@@ -67,9 +67,7 @@ JS 调用如下：
   }
 </script>
 ```
-
-## 0.19.+ Component 扩展适配文档
-
+## Component 扩展（version > 0.19.0）
 ### 1. 变更说明
 WXDomObject 和 Layout 引擎被下沉到 WeexCore 中使用 C++ 实现，移除 Java 代码中的 WXDomObject。此次变更涉及 WXComponent 和 WXDomObject 的适配。
 
@@ -123,9 +121,7 @@ public float getLayoutHeight();
 public float getLayoutY();
 public float getLayoutX();
 ```
-
-
-## 低于0.19版本的 Component 扩展
+## Component 扩展（version< 0.19.0）
 
 1. Component 扩展类必须继承 WXComponent.
 2. Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))
@@ -202,7 +198,7 @@ JS 调用如下：
 
 ## Adapter扩展
 
-图片下载：
+### 图片库Adapter
 
 需要时集成接口 IWXImgLoaderAdapter，实现 setImage 方法。
 
