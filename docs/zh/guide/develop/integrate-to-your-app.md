@@ -9,6 +9,7 @@ version: 2.1
 <!-- toc -->
 
 # 集成到应用中
+> Weex Release Note:  https://github.com/apache/incubator-weex/releases 
 
 ## 集成到Android应用
 
@@ -16,7 +17,6 @@ version: 2.1
 
 
 ### 1. 设置gradle依赖
-
 
 ```
 dependencies {
@@ -31,7 +31,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
-
 ### 2. 声明权限
 
 在`AndroidManifest.xml`中声明权限 
