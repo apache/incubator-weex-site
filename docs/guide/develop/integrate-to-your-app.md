@@ -9,6 +9,7 @@ version: 2.1
 <!-- toc -->
 
 # Integrate to Your App
+> Weex Release Note:  https://github.com/apache/incubator-weex/releases 
 
 ## Integrate to Android Platform
 
