@@ -1,137 +1,49 @@
 # 文本样式
+文本类组件共享一些通用样式, 这类组件目前包括 [`<text>`](../components/text.html)、[`<input>`](../components/input.html)和[`<richtext>`](../components/richtext.html)
 
-文本类组件支持一些特殊的 CSS 属性设置文本的样式，如字体、字号、文本颜色等, 这类组件目前包括 `<text>`、 `<input>` 和 `<textarea>`。
+## 属性
+### color
+`color {color}`：文字颜色，支持如下字段：
+    * RGB（ `rgb(255, 0, 0)` ）
+    * RGBA（ `rgba(255, 0, 0, 0.5)` ）
+    * 十六进制（ `#ff0000` ）；精简写法的十六进制（ `#f00` ）
+    * 色值关键字（`red`）
+### font-size
+`font-size {number}`：文字大小。
 
-## `color`
+### font-style
+`font-style {string}`：字体类别。可选值 `normal` | `italic`，默认为 `normal`。
 
-设置文字颜色，值为色值或颜色关键字，支持 RGB（`rgb(255, 0, 0)`），RGBA（`rgba(255, 0, 0, 0.5)`），十六进制（`#ff0000`），精简写法的十六进制（`#f00`），色值关键字（`red`）。具体可参考 [CSS 颜色单位](./css-units.html#css-颜色单位)。
+### font-weight
+`font-weight {string}`：字体粗细程度
+  * 可选值: `normal`, `bold`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
+  * normal 等同于 400, bold 等同于 700；
+  * 默认值: `normal`；
+  * iOS 支持 9 种 font-weight值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
+  * 类似 `lighter`, `bolder` 这样的值暂时不支持
 
-```html
-<style scope>
-.title {
-  color: rgba(0, 0, 0, 0.8);
-}
-.content {
-  color: #666;
-}
-</style>
-```
+### text-decoration
+`text-decoration {string}`：字体装饰，可选值 `none` | `underline` | `line-through`，默认值为 `none`。
 
-## `lines`
+::: warning
+只支持 `<text>` 和 `<ricthext>`
+:::
 
-指定文本行数，值为整数。**仅在 `<text>` 组件中支持**。默认值是 `0` 代表不限制行数。
+### text-algin
+`text-align {string}`：对齐方式。可选值 `left` | `center` | `right`，默认值为 `left`。
 
-通常与 `text-overflow` 配合限制文本行数，超过则文本末尾显示省略号。
+### font-family
+`font-family {string}`：设置字体。这个设置 **不保证** 在不同平台，设备间的一致性。如所选设置在平台上不可用，将会降级到平台默认字体。如果需要加载自定义字体，请参考相关[dom.addRule](../modules/dom.html)。
 
-```html
-<style scope>
-.content {
-  lines: 3;
-  text-overflow: ellipsis;
-  color: #666;
-}
-</style>
-```
+### text-overflow
+`text-overflow {string}`：设置内容超长时的省略样式。可选值 `clip` | `ellipsis`
 
-## `text-overflow`
+::: warning
+只支持 `<text>` 和 `<ricthext>`
+:::
 
-设置内容超长时的省略样式。**仅在 `<text>` 组件中支持**。通常与 `lines` 配合限制文本行数，超过则文本末尾显示省略号。可选值为：
+### lines
+`lines {number}`: 正整数，指定最大文本行数，默认值为0，表示不限制最大行数。如果文本不够长，实际展示行数会小于指定行数。
 
-- `clip`：截断，不做任何处理。
-- `ellipsis`：内容超长时在文本末尾显示省略号。
-
-```html
-<style scope>
-.content {
-  lines: 3;
-  text-overflow: ellipsis;
-  color: #666;
-}
-</style>
-```
-
-## `font-size`
-
-设置文字大小，**仅支持 `px` 单位。**文字默认大小为 36px。
-
-```html
-<style scope>
-.title {
-  font-size: 40px;
-}
-</style>
-```
-
-## `font-style`
-
-设置字体类别，可选值 `normal` | `italic`，默认为 `normal`。
-
-```html
-<style scope>
-.title {
-  font-style: italic;
-}
-</style>
-```
-
-## `font-weight`
-
-设置字体粗细程度，可选值为 `normal` | `bold` | `100` | `200` | `300` | `400` | `500` | `600` | `700` | `800` | `900`，默认为 `normal`。
-
-- `normal` 等同于 400, `bold` 等同于 700；
-- iOS 支持以上可选值；Android 仅支持 400 和 700，其他值会设为 400 或 700；
-- 暂不支持 `lighter`, `bolder` 等其他值。
-
-```html
-<style scope>
-.title {
-  font-weight: bold;
-}
-</style>
-```
-
-## `text-decoration`
-
-设置文本装饰，可选值为：
-
-- `none`：无任何装饰，默认为 `none`。
-- `underline`：文本下划线。
-- `line-through`：文本删除线。
-
-```html
-<style scope>
-.title {
-  text-decoration: underline;
-}
-</style>
-```
-
-## `text-align`
-
-设置文本对齐方式，可选值为：
-
-- `left`：左对齐，默认为 `none`。
-- `center`：水平居中对齐。
-- `right`：右对齐。
-
-```html
-<style scope>
-.title {
-  text-align: center;
-}
-</style>
-```
-
-## `font-family`
-
-设置文本设置字体，该属性**不保证**在不同平台、不同设备间的一致性。如所选设置在平台上不可用，将会降级到平台默认字体。
-
-```html
-<style scope>
-.title {
-  font-family: Arial;
-}
-</style>
-```
-
-该属性可配合 `dom.addRule()` 方法为 `<text>` 设置自定义字体，详情可查看 [`<text>` 组件](/docs/text.html#自定义字体)。
+### line-height
+`line-height {length}`：正整数，每行文字高度。`line-height`是 top 至 bottom 的距离。![line-height](http://i.stack.imgur.com/LwZJF.png)`line-height`与`font-size`没有关系，因为`line-height`被 top 和 bottom 所限制，`font-size` 被 glyph 所解析。`line-height`和`font-size`相等一般会导致文字被截断。
