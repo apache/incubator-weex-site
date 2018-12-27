@@ -50,7 +50,7 @@ No child should be added to a `input`.
   * `disabled`
   * `enabled`
 
-* text styles: checkout [text styles](/wiki/text-styles.html)
+* text styles: checkout [text styles](/docs/styles/text-styles.html)
 
   * support `color` style.
   * support `font-size` style.
@@ -59,7 +59,7 @@ No child should be added to a `input`.
   * support `text-align` style.
 
 ### common styles
-check out [common styles for components](/wiki/common-styles.html)
+check out [common styles for components](/docs/styles/common-styles.html)
 
 * support flexbox related styles.
 * support box model related styles.
@@ -68,7 +68,7 @@ check out [common styles for components](/wiki/common-styles.html)
 
 ## Events
 
-* **common events**. support [common events](../events/common-events.html).
+* **common events**. support [common events](docs/events/common-events.html).
 * **input**. Fired when the text is being changed.
   * @param value: current text of the input.
 * **change**. Fired when the user finished and make a commit.
@@ -83,7 +83,7 @@ check out [common styles for components](/wiki/common-styles.html)
   * @param keyboardSize: keyboard size in web pixel format.
 
 ### common events
-check out [common events](/wiki/common-events.html)
+check out [common events](/docs/events/common-events.html)
 
 * support `appear` / `disappear` event.
 
