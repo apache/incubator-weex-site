@@ -8,7 +8,7 @@ version: 2.1
 
 <!-- toc -->
 
-# Integrate to iOS App
+# 集成 Weex 到 iOS
 
 使用 [CocoaPods](https://cocoapods.org/) 或 [Carthage](https://github.com/Carthage/Carthage) 可以方便地将 Weex 集成到自己的项目中。
 

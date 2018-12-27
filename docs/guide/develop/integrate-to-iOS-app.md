@@ -8,7 +8,7 @@ version: 2.1
 
 <!-- toc -->
 
-# Integrate to iOS App
+# Integrate Weex to iOS App
 
 You may integrate Weex to your iOS app through the [CocoaPods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage). We assume that you have already installed the Xcode and CocoaPods or Carthage.
 
