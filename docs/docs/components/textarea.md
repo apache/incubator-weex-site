@@ -47,7 +47,7 @@ The difference between `active` and `focus` is that when the cursor is inside th
 	* @param returnKeyType, "default" | "go" | "next" | "search" | "send" | "done".
 * **keyboard**. Fired when keyborad is shown or hidden.
 	* @param isShow: boolean, showing or hiding the keyboard.
-	* @param keyboardSize: keyboard size in web pixel format.
+	* @param keyboardSize: keyboard height in web pixel format.
 
 ## Example
 
