@@ -17,6 +17,7 @@
 * Add test insfrastructure for layout engine.
 * Support direction:RTL and minor bugfix.
 #### v0.21
+* Support more layout attribute.
 * Add enough test cases to cover layout engine.
 ### Render
 #### v0.20

@@ -17,6 +17,7 @@
 * 为 Layout 引擎添加基础的测试设施.
 * 支持 RTL 布局和修复重大 bug.
 #### v0.21
+*  为 Layout 引擎增加更多的属性支持
 *  为 Layout 引擎添加更多的测试用例.
 ### Render
 #### v0.20
@@ -31,7 +32,7 @@
 - 更好的单元测试支持
 - Visual Studio Code  IDE插件支持 编译/运行/调试.
 - 拆成多包模式, 可以在服务端复用.
- 
+
 另外, 我们添加了一些新功能和优化来支持子模块, 例如 weex-debugger,weexpack 等等.
 
 所有的计划可以参考这里 [milestones](https://github.com/weexteam/weex-toolkit/milestones).
