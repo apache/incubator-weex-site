@@ -1,6 +1,6 @@
 # &lt;refresh&gt;
 
-### <span class="weex-version">v0.6.1+</span>
+## Summary
 
 The `<refresh>` Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the `<loading>` Component.
 > **Note：** To be rendered properly, the `<refresh>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.

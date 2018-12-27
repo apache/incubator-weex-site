@@ -177,19 +177,19 @@ A native Component has a life cycle managed by Weex. Weex creates it, layout it,
 
 Weex offers component life cycle hooks that give you visibility into these key moments and the ability to act when they occur.
 
-    |        method        | description                              |
-    | :------------------: | ---------------------------------------- |
-    | initWithRef:type:... | Initializes a new component using the specified  properties. |
-    |   layoutDidFinish    | Called when the component has just laid out. |
-    |       loadView       | Creates the view that the component manages. |
-    |     viewWillLoad     | Called before the load of component's view . |
-    |     viewDidLoad      | Called after the component's view is loaded and set. |
-    |    viewWillUnload    | Called just before releasing the component's view. |
-    |    viewDidUnload     | Called when the component's view is released. |
-    |    updateStyles:     | Called when component's style are updated. |
-    |  updateAttributes:   | Called when component's attributes are updated. |
-    |      addEvent:       | Called when adding an event to the component. |
-    |     removeEvent:     | Called when removing an event frome the component. |
+|        method        | description                              |
+| :------------------: | ---------------------------------------- |
+| initWithRef:type:... | Initializes a new component using the specified  properties. |
+|   layoutDidFinish    | Called when the component has just laid out. |
+|       loadView       | Creates the view that the component manages. |
+|     viewWillLoad     | Called before the load of component's view . |
+|     viewDidLoad      | Called after the component's view is loaded and set. |
+|    viewWillUnload    | Called just before releasing the component's view. |
+|    viewDidUnload     | Called when the component's view is released. |
+|    updateStyles:     | Called when component's style are updated. |
+|  updateAttributes:   | Called when component's attributes are updated. |
+|      addEvent:       | Called when adding an event to the component. |
+|     removeEvent:     | Called when removing an event frome the component. |
 
 #### Add method for component
 

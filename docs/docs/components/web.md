@@ -1,6 +1,6 @@
-# Web
+# &lt;web&gt;
 
-<span class="weex-version">v0.5+</span>
+## Summary
 
 `<web>` is used to display web content that specified by `src` attribute in weex page. You also can use `webview` module to control WebView behavior such as goBack, goForward and reload, See [webview module](../modules/webview.html) for more information.
 

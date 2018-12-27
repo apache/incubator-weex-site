@@ -1,4 +1,6 @@
-# List
+# &lt;list&gt;
+
+## Summary
 
 <span class="weex-version">v0.6.1+</span>
 
@@ -17,7 +19,7 @@ It can provide excellent experience and performance while still maintaining smoo
 [list cell appear event](http://dotwe.org/vue/ce0e953112b132e5897725b3149f3924)
 
 
-### Child Components
+## Child Components
 
 Notes: The list now supports the following child components: cell, header, refresh, loading and fixed-position components. Other kinds of components will not be guaranteed to be displayed correctly.
 
@@ -27,7 +29,7 @@ Notes: The list now supports the following child components: cell, header, refre
 * loading 0.6.1 used inside list to add pull-up-to-load-more functionality.
 
 
-### Attributes
+## Attributes
 
 * `show-scrollbar`: true/false whether show the scroll bar or not, default value is true
 * `loadmoreoffset` : `Number` default value is 0. The loadmore event will be triggered when the list is loadmoreoffset left to reach the bottom of the list view. e.g. a list has total content length of 1000, and the loadmoreoffset is set to 400, the loadmore event will be triggered when 600 has beed scrolled and there is less than 400 left.
@@ -38,7 +40,7 @@ Notes: The list now supports the following child components: cell, header, refre
 
 Please checkout [Scroller Component Attributes](./scroller.html) to have a look at the inherited attributes from direct parent.
 
-### Styles
+## Styles
 
 
 common styles: check out [common styles for components](/docs/styles/common-styles.html)
@@ -48,7 +50,7 @@ common styles: check out [common styles for components](/docs/styles/common-styl
 * support position related styles
 * support opacity, background-color etc.
 
-### Events
+## Events
 
 onloadmore  0.5 used with loadmoreoffset attribute. if the view has less than loadmoreoffset to scroll down, the onloadmore event will be triggered.
 
@@ -60,7 +62,7 @@ common events: check out the [common events](/docs/events/common-events.html)
 * support onappear / ondisappear event. Check out [common events](/docs/events/common-events.html)
 
 
-### API
+## API
 
 All cells or cell's subcomponents in list support the scrollToElement API in [dom module](../modules/dom.html)
 
@@ -69,7 +71,7 @@ All cells or cell's subcomponents in list support the scrollToElement API in [do
 loading is a child component that can response to the onloading  event, and this event can only be triggered when the  scroller/list has been scrolled down to the bottom.
 onloadmore is an event that will be triggered when the rest of the scroller/list is less than loadmoreoffset long.
 
-### Restrictions
+## Restrictions
 
 Nested lists or scrollers within the same direction are not supported. In other words. nested lists/scroller must have different directions.
 For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.
