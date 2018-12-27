@@ -1,10 +1,10 @@
-### 支持的颜色名称列表
-#### 基础颜色关键词:
+### List of supported color
+#### key words of basic color:
 <table>
 <thead>
 <tr>
-<th>颜色名</th>
-<th>十六进制RGB值</th>
+<th>Color</th>
+<th>RGB to HEX</th>
 </tr>
 </thead>
 <tbody>
@@ -75,7 +75,7 @@
 </tbody>
 </table>
 
-#### 扩展颜色关键词:
+#### key words of extended color:
 <table>
 <thead>
 <tr>

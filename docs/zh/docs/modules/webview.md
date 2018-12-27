@@ -1,6 +1,6 @@
 # webview
 
-`webview` 模块提供了一系列的 [`<web>`](/docs/web.md) 组件操作接口，例如 `goBack`、`goForward` 和 `reload`，一般与 `<web>` 组件一起使用，在 Weex 页面内渲染 web 页面。
+`webview` 模块提供了一系列的 [`<web>`](../components/web.html) 组件操作接口，例如 `goBack`、`goForward` 和 `reload`，一般与 `<web>` 组件一起使用，在 Weex 页面内渲染 web 页面。
 
 ## API
 

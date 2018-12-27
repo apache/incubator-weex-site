@@ -53,7 +53,8 @@ module.exports = {
               children: [
                 ['develop/setup-develop-environment', 'Setup Develop Environment'],
                 ['develop/create-a-new-app', 'Create a New App'],
-                ['develop/integrate-to-your-app', 'Integrate to Your App']
+                ['develop/integrate-to-android-app', 'Integrate to Android'],
+                ['develop/integrate-to-iOS-app', 'Integrate to iOS']
               ]
             },
             {
@@ -203,56 +204,57 @@ module.exports = {
         sidebar: {
           '/zh/guide/': [
             {
-              title: 'Getting Started',
+              title: '快速上手',
               collapsable: false,
               children: [
-                ['introduction', 'Introduction'],
-                ['front-end-frameworks', 'Front-End Frameworks'],
-                ['platform-difference', 'Platform Difference'],
-                ['use-vue-in-weex', 'Use Vue in Weex'],
-                ['use-rax-in-weex', 'Use Rax in Weex']
+                ['introduction', '简介'],
+                ['front-end-frameworks', '前端框架'],
+                ['platform-difference', '平台差异'],
+                ['use-vue-in-weex', '在Weex中使用Vue.js'],
+                ['use-rax-in-weex', '在Weex中使用Rax.js']
               ]
             },
             {
-              title: 'Develop',
+              title: '开发',
               collapsable: false,
               children: [
-                ['develop/setup-develop-environment', 'Setup Develop Environment'],
-                ['develop/create-a-new-app', 'Create a New App'],
-                ['develop/integrate-to-your-app', 'Integrate to Your App']
+                ['develop/setup-develop-environment', '设置开发环境'],
+                ['develop/create-a-new-app', '创建一个新的app'],
+                ['develop/integrate-to-android-app', '集成到Android应用'],
+                ['develop/integrate-to-iOS-app', '集成到iOS应用']
               ]
             },
             {
-              title: 'Debug',
+              title: '调试',
               collapsable: false,
               children: [
-                ['debug/integrate-devtool-to-android', 'Integrate Devtool to Android'],
-                ['debug/integrate-devtool-to-ios', 'Integrate Devtool to iOS'],
+                ['debug/integrate-devtool-to-android', '集成Devtool到Android'],
+                ['debug/integrate-devtool-to-ios', '集成Devtool到iOS'],
                 ['debug/debug', 'Debug']
               ]
             },
             {
-              title: 'Extend',
+              title: '扩展',
               collapsable: false,
               children: [
-                ['extend/extend-android', 'Extend Android'],
-                ['extend/extend-ios', 'Extend iOS'],
-                ['extend/extend-ios-with-swift', 'Extend iOS with swift'],
-                ['extend/extend-web', 'Extend Web Renderer'],
-                ['extend/extend-framework', 'Extend JS framework']
+                ['extend/extend-android', '扩展Android能力'],
+                ['extend/extend-ios', '扩展iOS能力'],
+                ['extend/extend-ios-with-swift', '使用Swift进行module 扩展'],
+                ['extend/extend-web', '扩展Web组件'],
+                ['extend/extend-framework', '扩展JS framework']
               ]
             },
             {
-              title: 'Advanced',
+              title: '高阶特性',
               collapsable: false,
               children: [
-                ['advanced/asset-path', 'Asset Path'],
-                ['advanced/downgrade', 'Downgrade'],
-                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router']
+                ['advanced/asset-path', '资源路径'],
+                ['advanced/downgrade', '降级方案'],
+                ['advanced/use-vuex-and-vue-router', '使用Vuex和vue-router']
               ]
             },
             {
-              title: 'Contribute',
+              title: '贡献',
               collapsable: false,
               children: [
                 ['contribute/how-to-contribute', 'How To Contribute'],

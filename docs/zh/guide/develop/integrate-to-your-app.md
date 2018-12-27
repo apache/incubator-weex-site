@@ -9,6 +9,7 @@ version: 2.1
 <!-- toc -->
 
 # 集成到应用中
+> Weex Release Note:  https://github.com/apache/incubator-weex/releases 
 
 ## 集成到Android应用
 
@@ -16,7 +17,6 @@ version: 2.1
 
 
 ### 1. 设置gradle依赖
-
 
 ```
 dependencies {
@@ -31,7 +31,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
-
 ### 2. 声明权限
 
 在`AndroidManifest.xml`中声明权限 
@@ -143,6 +142,34 @@ Run app, start activity, then you will see hello world demo. well done.
 
 - [Hello World Demo 源码](http://dotwe.org/vue/38e202c16bdfefbdb88a8754f975454c)
 - 提示: 点击二维码, 可以看到最终编译的代码产物。
+
+### 6. SDK混淆规则
+若要在APP中使用混淆，请在相应的配置文件中添加如下规则：
+
+```java
+-keep class com.taobao.weex.WXDebugTool{*;}
+-keep class com.taobao.weex.devtools.common.LogUtil{*;}
+-keepclassmembers class ** {
+  @com.taobao.weex.ui.component.WXComponentProp public *;
+}
+-keep class com.taobao.weex.bridge.**{*;}
+-keep class com.taobao.weex.dom.**{*;}
+-keep class com.taobao.weex.adapter.**{*;}
+-keep class com.taobao.weex.common.**{*;}
+-keep class * implements com.taobao.weex.IWXObject{*;}
+-keep class com.taobao.weex.ui.**{*;}
+-keep class com.taobao.weex.ui.component.**{*;}
+-keep class com.taobao.weex.utils.**{
+    public <fields>;
+    public <methods>;
+    }
+-keep class com.taobao.weex.view.**{*;}
+-keep class com.taobao.weex.module.**{*;}
+-keep public class * extends com.taobao.weex.common.WXModule{*;}
+-keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}
+-keep class * implements com.taobao.weex.ui.IExternalComponentGetter{*;}
+```
+
 
 ## 集成到iOS应用
 
