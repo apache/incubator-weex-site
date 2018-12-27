@@ -18,6 +18,7 @@ Weex 容器默认的宽度 (viewport) 是 750px，通过 setViewport 方法可�
 |---|---|
 |options.width|数值，或者 `"device-width"` 和 `"device-height"` 之一|
 |options.height|数值，或者 `"device-width"` 和 `"device-height"` 之一|
+|options.roundOffDeviation <Badge text="0.20.0+" type="warn" vertical="middle"/>|布尔值，默认值为true，表示layout引擎在布局时会忽略小数点导致的误差；若发现组件拼接处有缝隙，可以将 `roundOffDeviation` 设置为false，此时layout引擎将自动填补小数点误差|
 
 宽度和高度的单位默认是 px，暂不支持其他单位。
 
@@ -33,7 +34,8 @@ const meta = weex.requireModule('meta');
 
 // 配置 viewport 的宽度为 640px
 meta.setViewport({
-  width: 640
+  width: 640,
+  roundOffDeviation: false
 });
 
 App.el = '#root';

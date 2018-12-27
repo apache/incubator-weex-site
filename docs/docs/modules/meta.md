@@ -26,9 +26,11 @@ it is only in the rendering of the components will be implemented The correspond
 
 Referance: W3C Spec [CSS Device Adaptation](https://drafts.csswg.org/css-device-adapt/#viewport-meta).
 
-+ `options`: viewport configuration
-  + `width`: Number or `"device-width"` or `"device-height"`.
-  + `height`: Number or `"device-width"` or `"device-height"`.
+  |key|Description|
+  |---|---|
+  |options.width|Number or `"device-width"` or `"device-height"`|
+  |options.height|Number or `"device-width"` or `"device-height"`|
+  |options.roundOffDeviation <Badge text="0.20.0+" type="warn" vertical="middle"/>|Boolean, The default value is true, which means that the layout engine ignores the error caused by the decimal point in the layout; if there is a gap in the component splicing, you can set the `roundOffDeviation` to false, and the layout engine will automatically fill in the decimal point error.|
 
 The default unit of the width and height is `px`, other units are not supported.
 
@@ -44,7 +46,8 @@ const meta = weex.requireModule('meta')
 
 // The width of the viewport is set to 640px
 meta.setViewport({
-  width: 640
+  width: 640,
+  roundOffDeviation: false
 })
 
 App.el = '#root'
