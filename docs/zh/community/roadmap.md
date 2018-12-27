@@ -4,25 +4,17 @@
 
 ## WeexCore
 ### JS Runtime
-#### v0.20
-* 全新的 c++ 定时器, 相比平台的定时器更加的精准和高效.
-* WeexCore 多线程架构和线程之间的交互支持.
 #### v0.21
+
 * 全新的 WeexCore 3.0 架构, 支持更多的平台, ios, Android 和  Windows.
 * 使用 JavaScriptCore 标准的 api 代替原有的源码接入, 独立的 JSRuntime, 使 ios 和 Android 都可以运行在上面.
 * 更高性能的 C++ Dom API.
 
 ### Layout
-#### v0.20
-* 为 Layout 引擎添加基础的测试设施.
-* 支持 RTL 布局和修复重大 bug.
 #### v0.21
 *  为 Layout 引擎增加更多的属性支持
 *  为 Layout 引擎添加更多的测试用例.
 ### Render
-#### v0.20
-* 支持渲染页面的生命周期管理, 和资源管理.
-* 支持渲染任务调度.
 #### v0.21
 ## 工具
 
