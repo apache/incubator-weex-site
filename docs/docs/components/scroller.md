@@ -1,6 +1,6 @@
 # &lt;scroller&gt;
 
-<span class="weex-version">v0.6.1+</span>
+## Summary
 
 Scroller is a component which can have multiple child components in one column. It supports both direcitons. If the content size of child components exceeds the frame of the scroller, the whole child components will be scrollable.
 

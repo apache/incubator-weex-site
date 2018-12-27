@@ -1,4 +1,6 @@
-# Image
+# &lt;image&gt;
+
+## 简介
 
 `<image>` 用于在界面中显示单个图片。
 

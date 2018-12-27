@@ -1,17 +1,17 @@
-# waterfall
+# &lt;waterfall&gt;
 
-<span class="weex-version">v0.11.0+</span>
+## Summary
 
 A component providing waterfall layout over list component.
 
-### Child Components
+## Child Components
 
 Notes: The waterfall only supports the following child components: cell, header, refresh, loading and fixed-position components. Other kinds of components will not be guaranteed to be displayed correctly.
 
 * cell: presents the content for a single data item in waterfall
 * header: components that need to stretch across multiple columns. It can be sticky by using css position.
 
-### Attributes
+## Attributes
 
 * **column-width** : This property describes the width of columns in waterfall elements.
   * `auto`: means that the column width will be determined by other properties(e.g., column-count, if it has a non-auto value).
@@ -25,7 +25,7 @@ Notes: The waterfall only supports the following child components: cell, header,
 
 To see other attributes in list,  please checkout [List Component Attributes](./list.html)
 
-### Styles
+## Styles
 
 common styles: check out [common styles for components](/wiki/common-styles.html)
 
@@ -34,17 +34,17 @@ common styles: check out [common styles for components](/wiki/common-styles.html
 * support position related styles
 * support opacity, background-color etc.
 
-### Events
+## Events
 
 common events: check out the [common events](/wiki/common-events.html)
 
 * support onclick event. Check out [common events](/wiki/common-events.html)
 * support onappear / ondisappear event. Check out [common events](/wiki/common-events.html)
 
-### API
+## API
 
 All subcomponents in waterfall support the scrollToElement API in [dom module](../modules/dom.html)
 
-### Example
+## Example
 
 [waterfall example](http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0)

@@ -1,4 +1,6 @@
-# Text
+# &lt;text&gt;
+
+## Summary
 
 The weex builtin component 'text' is used to render text with specified style rule.
 

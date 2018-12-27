@@ -1,4 +1,6 @@
 # &lt;refresh&gt;
+
+## 简介
 `<refresh>` 为容器提供下拉刷新功能。
 
 ::: warning 注意

@@ -1,6 +1,6 @@
 # &lt;loading&gt;
 
-### <span class="weex-version">v0.6.1+</span>
+## Summary
 
 The `<loading>` Component provide a pullup to loading function for some special containers, its usage and attributes are similar to the `<refresh>` Component.
 > **Note：** To be rendered properly, the `<loading>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
