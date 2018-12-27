@@ -5,11 +5,13 @@
 ## WeexCore
 ### JS binding
 #### v0.20
-* Will be supporting C++ timer that more efficient than platform timer module;
-* Feature of MessageLoop for thread interactions;
+* Comes out with new C++ timer that more efficient than platform timer module;
+* New c++ MessageLoop and thread interaction support in WeexCore;
 #### v0.21
-* Using javaScriptCore standard API instead of source code
-* Support dom Binding for better portability and performance.
+* New WeexCore 3.0 structure. Support more platforms, Android, iOS, Windows...
+* Standlone jsRuntime with javaScriptCore standard API instead of source code. Available for both android and ios.
+* Support native dom Binding for better portability and performance.
+
 ### Layout
 #### v0.20
 * Add test insfrastructure for layout engine.
@@ -23,7 +25,7 @@
 #### v0.21
 ## tools
 
-This year, the weex-toolkit will release version 2.0.0, it mainly provides the following new features:
+Weex-toolkit will release version 2.0.0 this year, it mainly provides those following new features:
 
 - Flawless installation and upgrade experience.
 - Better unit & functional testing support.
