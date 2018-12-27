@@ -94,7 +94,7 @@
 
 ## 扩展
 ### `scrollToElement(node, options)`
-滚动到列表某个指定项是常见需求，`<list>` 拓展了该功能，可通过 `dom.scrollToElement()` 滚动到指定 `<cell>`。更多信息可参考 [dom module](/docs/dom.html)。  
+滚动到列表某个指定项是常见需求，`<list>` 拓展了该功能，可通过 `dom.scrollToElement()` 滚动到指定 `<cell>`。更多信息可参考 [dom module](/docs/modules/dom.html)。  
 相应的 demo 可参考 [&lt;scroller&gt; 示例](http://dotwe.org/vue/014c0dc53edf7320df7701ebf7c0b2be)中的实现。
 
 ## Demo

@@ -27,7 +27,7 @@ To see other attributes in list,  please checkout [List Component Attributes](./
 
 ### Styles
 
-common styles: check out [common styles for components](/wiki/common-styles.html)
+common styles: check out [common styles for components](/docs/styles/common-styles.html)
 
 * support flexbox related styles
 * support box model related styles
@@ -36,10 +36,10 @@ common styles: check out [common styles for components](/wiki/common-styles.html
 
 ### Events
 
-common events: check out the [common events](/wiki/common-events.html)
+common events: check out the [common events](/docs/events/common-events.html)
 
-* support onclick event. Check out [common events](/wiki/common-events.html)
-* support onappear / ondisappear event. Check out [common events](/wiki/common-events.html)
+* support onclick event. Check out [common events](/docs/events/common-events.html)
+* support onappear / ondisappear event. Check out [common events](/docs/events/common-events.html)
 
 ### API
 
