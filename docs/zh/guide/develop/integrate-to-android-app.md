@@ -12,6 +12,11 @@ version: 2.1
 
 在执行以下步骤之前，请先确认您的Android开发环境是ok的。
 
+- [JAVA环境, jdk7+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [Android Studio](https://developer.android.com/training/basics/firstapp/)
+- [NDK r16](https://developer.android.com/ndk/)、[Cmake 3.9.0+](https://cmake.org/download/) (可选项：如果需要编译WEEX源码，需要NDK环境支持)
+
+
 ## 1. 设置gradle依赖
 
 
@@ -151,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
 ## 7. 扩展Android能力
 
-Weex 提供了[能力扩展机制]((/guide/extend/extend-android.html))，可以根据自己的业务进行定制自己的功能。 主要分为：
+Weex 提供了[能力扩展机制](/guide/extend/extend-android.html)，可以根据自己的业务进行定制自己的功能。 主要分为：
 
 - Module 扩展， 非 UI 的特定功能。例如 sendHttp、openURL 等。
 - Component 扩展， 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
