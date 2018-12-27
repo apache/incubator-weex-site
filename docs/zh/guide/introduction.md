@@ -4,9 +4,9 @@
 
 > **Weex 是一个使用 Web 开发体验来开发高性能原生应用的框架。**
 
-Weex 致力于使开发者能基于当代先进的 Web 开发技术，使用同一套代码来构建 Android、iOS 和 Web 应用。具体来讲，在集成了 WeexSDK 之后，你可以使用 JavaScript 和现代流行的前端框架来开发移动应用。
+Weex 致力于使开发者能基于通用跨平台的Web开发语言，构建 Android、iOS 和 Web 应用。具体来讲，在集成了 WeexSDK 之后，你可以使用 JavaScript语言来开发移动应用。
 
-Weex 的结构是解耦的，渲染引擎与语法层是分开的，也不依赖任何特定的前端框架，目前主要支持 [Vue.js](https://vuejs.org/) 和 [Rax](https://alibaba.github.io/rax/) 这两个前端框架。
+Weex渲染引擎与DSL语法层是分开的，也不强依赖任何特定的前端框架，目前支持 [Vue.js](https://vuejs.org/) 和 [Rax](https://alibaba.github.io/rax/) 这两个前端框架。
 
 Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发的技术，使生产力和性能共存。在开发 Weex 页面就像开发普通网页一样；在渲染 Weex 页面时和渲染原生页面一样。
 
@@ -32,15 +32,15 @@ Weex 的另一个主要目标是跟进当代先进的 Web 开发和原生开发�
 
 ![Native Components](../../guide/images/native-component.png)
 
-Weex 在 iOS 和 Android 上都实现了一个渲染引擎，并提供了一套基础的[内置组件](../references/components/)。基于这些组件，你可以用 js 封装更多的上层组件。
+Weex 提供了一套基础的[内置组件](../references/components/)。基于这些组件，你可以用 js 封装更多的上层组件。
 
 尽管 Weex 中的组件看起来很像 HTML 标签，但你无法使用所有 HTML 标签，只能使用内置组件和自定义组件。
 
-在框架内部，Weex 使用的是原生系统提供的 Widget 来渲染的。尽管 Weex 强调每个跨平台的一致性，但我们仍然接受平台本身的行为和 UI 差异。 例如 [<switch/> switch 组件](http://dotwe.org/vue/d96943452b6708422197c47920903823) 在 Android 和 iOS 上看起来是不同的（在 Web 端的外观模拟了 iOS）。
+在框架内部，Weex 使用的是原生系统提供的 View 来渲染的。尽管 Weex 强调每个跨平台的一致性，但我们仍然接受平台本身的行为和 UI 差异。 例如 [<switch/> switch 组件](http://dotwe.org/vue/d96943452b6708422197c47920903823) 在 Android 和 iOS 上看起来是不同的（在 Web 端的外观模拟了 iOS）。
 
 ![Different switch](../../guide/images/different-switch.png)
 
-除了内置组件以外，Weex 也支持你扩展更多原生组件，但是你需要在每个平台上实现它们，并保持其行为一致。最实用的方法是将现有的本地组件集成到 Weex 平台中。
+除了内置组件以外，Weex 也支持你扩展更多原生组件，但是你需要在每个平台上实现它们，并保持其行为一致。最实用的方法是将现有的本地组件集成到 Weex 中。
 
 ### 原生模块
 
