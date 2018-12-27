@@ -10,21 +10,21 @@ version: 2.1
 Apache Weex is an open source project that is under active development and we're continuously working out to simplify contributing to Weex ecosystem. Developers can participate and contribute to the Apache Weex community by reporting bugs, contributing code, answering questions, joining in discussions and contributing to documentation.
 
 ## Bugs
-You can use Weex directly through [Getting Started](./guide/index.html) tutorial. If you encounter any unexpected phenomena during your use, feel free to let us know by filing a bug report.
+You can use Weex directly through [Getting Started](../introduction.html) tutorial. If you encounter any unexpected phenomena during your use, feel free to let us know by filing a bug report.
 
 ##### Find Known Issues
-We are using JIRA for tracking all the issues and updating whenever when have an internal fix in progress. Before filing a new task, try to confirm if it is already listed or if there is a fix in progress.
+We are using [Github Issues](https://github.com/apache/incubator-weex/issues) for tracking all the issues and updating whenever when have an internal fix in progress. Before filing a new task, try to confirm if it is already listed or if there is a fix in progress.
 
 ##### Report New Issues
-Open a  [JIRA Issue](https://issues.apache.org/jira/projects/WEEX) , click on the top red "Create" button (you may need to [create a JIRA account](https://issues.apache.org/jira/secure/Signup!default.jspa) if you haven't registered). [Bug Report Guidelines](/bug-report-guidelines.html) document provides some of the most useful information about writing a good bug report. The better your bug report is, the faster we can reproduce and fix it!
+Open a [Github Issues](https://github.com/apache/incubator-weex/issues) , click on the right top green "New Issue" button (you may need to create a Github account if you haven't registered). [Bug Report Guidelines](./bug-report-guidelines.html) document provides some of the most useful information about writing a good bug report. The better your bug report is, the faster we can reproduce and fix it!
 
 ## Contribute Code
 
 Apache Weex is an open source project and both, core team members and external contributors, send pull requests which go through the same review process. If you have already decided to start writing code in Weex, Congratulations! You’re up and running.
 
-You can contribute code by either fixing an existing bug or developing new features. In either case, we always encourage to create a JIRA ticket and ensure we are in agreement on your proposal.
+You can contribute code by either fixing an existing bug or developing new features. In either case, we always encourage to create a Github ticket and ensure we are in agreement on your proposal.
 
-To help you get started, we've created a document with more details about development process. Please read **[Getting Started with Development Process](/development-process.html)**.
+To help you get started, we've created a document with more details about development process. Please read **[Getting Started with Development Process](./development-process.html)**.
 
 ## Ask or Answer Questions
 

@@ -23,7 +23,7 @@ If you would like to create a new issue on Github, be sure to search the existin
 
 2. Clone the forked repository and create a new branch from `master` to push your commits to.
 
-3. Develop your feature or bug fix in your new branch. Make sure your code meets the [style guidelines](/development-process.html#code-style-guidelines).
+3. Develop your feature or bug fix in your new branch. Make sure your code meets the [style guidelines](./development-process.html#code-style-guidelines).
 
 4. Add the below mentioned copyright notice to the top of any new file(s) you've added.
 
@@ -50,7 +50,7 @@ If you would like to create a new issue on Github, be sure to search the existin
 
 5. Documentation and tests should be added or referenced if they need to be added or updated as part of the change. Make sure to test your changes thoroughly.
 
-6. Commit all the changes to your branch. [Commit Guidelines](/development-process.html#commit-guidelines) must be followed for better understanding.
+6. Commit all the changes to your branch. [Commit Guidelines](./development-process.html#commit-guidelines) must be followed for better understanding.
 
 ## 3. Create a Pull Request
 
