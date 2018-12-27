@@ -1,4 +1,4 @@
-# &lt;richtext&gt;
+# &lt;richtext&gt; <Badge text="v0.20+" type="warning"/>
 
 ## 简介
 

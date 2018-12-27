@@ -13,8 +13,8 @@ A `text` is the only valid type of child component.
 * **src**, string. The URL of the video to embed.
 * **play-status**, string. Valid options are 'play' | 'pause'. Use it to control video's play status. Default value is `pause`。
 * **auto-play**, boolean. Use it to control whether it is playing when the page initialization finished. Defalut value is false.
-* **poster**, string, <span class="weex-version">v0.18+ & iOS</span>. Post image URL of this video if any.
-* **controls**, string, <span class="weex-version">v0.19+</span>. If set to `nocontrols`, native video component will hide its play-back control panel.
+* **poster**, string, <Badge text="v0.18+ & iOS" type="warning"/>. Post image URL of this video if any.
+* **controls**, string, <Badge text="v0.19+" type="warning"/>. If set to `nocontrols`, native video component will hide its play-back control panel.
 
 ## Styles
 
