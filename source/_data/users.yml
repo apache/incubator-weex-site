@@ -13,6 +13,11 @@ youku:
   icon: 'https://img.alicdn.com/tfs/TB1CjajX1uSBuNjy1XcXXcYjFXa-740-737.png'
   iOS: 'https://itunes.apple.com/us/app/%E4%BC%98%E9%85%B7%E8%A7%86%E9%A2%91/id336141475'
   android: 'https://play.google.com/store/apps/details?id=com.youku.phone'
+zhaopin:
+  name: '智联'
+  icon: 'https://raw.githubusercontent.com/zhilianzhaopin/zhilianzhaopin.github.io/master/img/icon1024.png'
+  iOS: 'https://itunes.apple.com/us/app/%E6%99%BA%E8%81%94%E6%8B%9B%E8%81%98%E7%BD%91-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%B1%82%E8%81%8C%E4%BA%BA%E6%89%8D%E6%8B%9B%E8%81%98%E8%BD%AF%E4%BB%B6/id488033535?l=zh&ls=1&mt=8'
+  android: 'https://m.zhaopin.com/DownLoad/downapp.html'
 xianyu:
   name: '闲鱼'
   icon: 'https://img.alicdn.com/tfs/TB13I8cnC_I8KJjy0FoXXaFnVXa-150-150.jpg'
