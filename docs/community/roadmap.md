@@ -27,3 +27,8 @@ Weex-toolkit will release version 2.0.0 this year, it mainly provides those foll
 Also, there will be some feartures and optimization for the submodules, such as weex-debugger, weexpack and so on. 
 
 All the schedules can be viewed on the [milestones](https://github.com/weexteam/weex-toolkit/milestones).
+
+### Community
+#### v0.22
+* Github commit/PR will be send to commit@weex.incubator.apache.org instead of dev@weex.incubator.apache.org
+* Make the code design and development process of Layout transparent to the community, make it happen on [github project](https://github.com/apache/incubator-weex/projects)

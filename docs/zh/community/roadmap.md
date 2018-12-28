@@ -28,3 +28,8 @@
 另外, 我们添加了一些新功能和优化来支持子模块, 例如 weex-debugger,weexpack 等等.
 
 所有的计划可以参考这里 [milestones](https://github.com/weexteam/weex-toolkit/milestones).
+
+### Community
+#### 0.22
+* Github commit/PR 发送将发送至`commit@weex.incubator.apache.org`而不是`dev@weex.incubator.apache.org`
+* Layout 项目的代码设计和开发流程迁移到 [Github Project](https://github.com/apache/incubator-weex/projects) 中。
