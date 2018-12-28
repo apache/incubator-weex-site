@@ -61,11 +61,11 @@ placeholder 字符颜色。默认值是 `#999999`
 - `opacity`
 - `background-color`
 
-查看 [组件通用样式](/guide/common-styles.html)
+查看 [组件通用样式](/zh/docs/styles/common-styles.html)
 
 ## 事件
 
-* **通用事件** 支持所有[通用事件](../events/common-events.html)。
+* **通用事件** 支持所有[通用事件](/zh/docs/events/common-events.html)。
 * **input**. 当输入状态时，会不断触发。
   * @param value: 当前文本。
 * **change**. 当用户完成了输入时触发。

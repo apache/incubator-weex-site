@@ -4,24 +4,16 @@
 
 ## WeexCore
 ### JS binding
-#### v0.20
-* Comes out with new C++ timer that more efficient than platform timer module;
-* New c++ MessageLoop and thread interaction support in WeexCore;
 #### v0.21
 * New WeexCore 3.0 structure. Support more platforms, Android, iOS, Windows...
 * Standlone jsRuntime with javaScriptCore standard API instead of source code. Available for both android and ios.
 * Support native dom Binding for better portability and performance.
 
 ### Layout
-#### v0.20
-* Add test insfrastructure for layout engine.
-* Support direction:RTL and minor bugfix.
 #### v0.21
+* Support more layout attribute.
 * Add enough test cases to cover layout engine.
 ### Render
-#### v0.20
-* Support renderPage life cycle management and resource management.
-* Support render task schedule.
 #### v0.21
 ## tools
 
