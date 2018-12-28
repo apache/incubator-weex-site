@@ -32,7 +32,13 @@ In the example above, the `<div>` and the `<text>` elements are rendered into co
 
 ![Native Components](./images/native-component.png)
 
-Weex implements render engines both on iOS and Android and provides a group of [built-in components](../references/components/) for basic usage. Based on these components, you can compose and wrap more custom components.
+Weex implements render engines both on iOS and Android and provides a group of `built-in components` for basic usage. Based on these components, you can compose and wrap more custom components. example:
+
+- [Text](../docs/components/text.html)
+- [Image](../docs/components/image.html)
+- [List](../docs/components/list.html)
+- [RichText](../docs/components/richtext.html)
+
 
 Although the components in Weex look like HTML tags, you are not able to use all of them, instead, you can only use the built-in components and your custom components.
 
@@ -46,13 +52,18 @@ If you want to use additional native components, other than the built-in compone
 
 For those features that do not rely on the UI, Weex wraps them into **modules**. You can use `weex.requireModule('xxx')` to require them. Weex modules provide easy access to native capabilities in JavaScript, such as network, storage, clipboard, and navigator. For example, you can [use `stream` module to fetch the star count of Vue.js](http://dotwe.org/vue/2ae062b6a04124a35bbe2da3b1e5c07b).
 
-Similarly, Weex provides a group of [built-in modules](../references/modules/) for basic usage, and supports the integration of the existing native modules into the Weex platform.
+Similarly, Weex provides a group of `built-in modules`for basic usage, and supports the integration of the existing native modules into the Weex platform. exapmle:
+
+- [storage](../docs/modules/storage.html)
+- [navigator](../docs/modules/navigator.html)
+- [animation](../docs/modules/animation.html)
+- [websockets](../docs/modules/websockets.html)
 
 Here are some documents about how to extend native components and native modules for Weex:
 
-- [Extend Web Render](./extend-web-render.html)
-- [Extend Android](./extend-android.html)
-- [Extend iOS](./extend-ios.html)
+- [Extend Web Render](../guide/extend/extend-web.html)
+- [Extend Android](../guide/extend/extend-android.html)
+- [Extend iOS](../guide/extend/extend-ios.html)
 
 ### Write Once, Run Everywhere
 
@@ -62,7 +73,7 @@ Using the same source code across different platforms can dramatically increase 
 
 > You can read _[How it works](../wiki/index.html)_ and _[Design Principles](../wiki/design-principles.html)_ to know more about the technologies and ideas behind Weex.
 
-Although Weex uses a single codebase, you can still write platform specific code. Weex provides `weex.config.env` and `WXEnvironment` (they are strictly equal) to get the current runtime environment. You can use `WXEnvironment.platform` to determine which platform the code is running on. Except for the _platform_, `WXEnvironment` contains other information pertaining to environment, such as _osVersion_ and _deviceModel_. Refer to _[Weex variable](../references/weex-variable.html)_ for the complete list.
+Although Weex uses a single codebase, you can still write platform specific code. Weex provides `weex.config.env` and `WXEnvironment` (they are strictly equal) to get the current runtime environment. You can use `WXEnvironment.platform` to determine which platform the code is running on. Except for the _platform_, `WXEnvironment` contains other information pertaining to environment, such as _osVersion_ and _deviceModel_. Refer to _[Weex variable](../docs/api/weex-variable.html)_ for the complete list.
 
 ## Support For Multiple Front-End Frameworks
 
@@ -77,7 +88,7 @@ Weex supports [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/r
 
 > Vue.js and Rax are already integrated into Weex SDK, you don't need to require them manually.
 
-However, Vue and Rax are not the only options. It is entirely possible to integrate your favorite front-end framework into Weex! There is a document _[Extend JS Framework](./extend-js-framework.html)_ that describes how to integrate a different front-end framework, the process, however, is still complicated and tricky. You need to understand many underlying details about the js-native bridge and native render engines in order to successfully integrate an alternate front-end framework.
+However, Vue and Rax are not the only options. It is entirely possible to integrate your favorite front-end framework into Weex! There is a document _[Extend JS Framework](../guide/extend/extend-framework.html)_ that describes how to integrate a different front-end framework, the process, however, is still complicated and tricky. You need to understand many underlying details about the js-native bridge and native render engines in order to successfully integrate an alternate front-end framework.
 
 You can read _[Front-End Frameworks](./front-end-frameworks.html)_ for more details.
 
@@ -89,19 +100,18 @@ At this point, you should have a general understanding of Weex. The next step is
 If you want to use weex right now:
 
 - [Create new app](./develop/create-a-new-app.html)
-- [Integrate Weex to Your Existing App](./integrate-to-your-app.html)
-- [Set up Development Environment](./set-up-env.html)
-- [References](../references/)
+- [Integrate to existing  Android app](./develop/integrate-to-android-app.html)
+- [Integrate to existing iOS app](./develop/integrate-to-iOS-app.html)
+- [Set up Development Environment](./develop/setup-develop-environment.html)
 
 If you want to know the technologies and ideas behind Weex:
 
-- [How it Works](../wiki/index.html)
-- [Design Principles](../wiki/design-principles.html)
-- [Platform Differences between Weex and Web](../wiki/platform-difference.html)
+- [How it Works](./work-principles.html)
+- [Platform Differences between Weex and Web](./platform-difference.html)
 
 After getting acquainted with Weex, if you want to contribute to make it even better:
 
-- [Development Process](../development-process.html)
-- [How to Contribute](../contributing.html)
+- [Development Process](./contribute/development-process.html)
+- [How to Contribute](./contribute/how-to-contribute.html)
 
 Considering that Weex is a cross-stack technology, fundamental knowledge of front-end development, Vue.js, iOS, and Android would be especially helpful.

@@ -44,7 +44,8 @@ module.exports = {
                 ['front-end-frameworks', 'Front-End Frameworks'],
                 ['platform-difference', 'Platform Difference'],
                 ['use-vue-in-weex', 'Use Vue in Weex'],
-                ['use-rax-in-weex', 'Use Rax in Weex']
+                ['use-rax-in-weex', 'Use Rax in Weex'],
+                ['work-principles', 'How it works']
               ]
             },
             {
@@ -211,7 +212,8 @@ module.exports = {
                 ['front-end-frameworks', '前端框架'],
                 ['platform-difference', '平台差异'],
                 ['use-vue-in-weex', '在Weex中使用Vue.js'],
-                ['use-rax-in-weex', '在Weex中使用Rax.js']
+                ['use-rax-in-weex', '在Weex中使用Rax.js'],
+                ['work-principles', '工作原理']
               ]
             },
             {
