@@ -25,7 +25,7 @@
 #### image
 
 * **src**. 图片链接。
-* **pseudo-ref**, <span class="api-version">v0.15+</span>. 开发者指定的索引，会被传给回调方法 **itemclick**。
+* **pseudo-ref**. 开发者指定的索引，会被传给回调方法 **itemclick**。
 
 #### a
 

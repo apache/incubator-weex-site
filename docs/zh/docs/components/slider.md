@@ -17,8 +17,8 @@ Slider 组件用于在一个页面中展示多个图片，在前端这种效果�
 * **show-indicators**, boolean. 是否显示指示器。
 * **infinite**, boolean. 设置是否可以无限轮播，默认为 true。
 * **scrollable**, boolean. 设置是否可以通过滑动手势来切换页面，默认为 true。
-* **keep-index**, boolean, <span class="api-version">Android</span>. 设置轮播器中的数据发生变化后是否保持变化前的页面序号。
-* **forbid-slide-animation**, boolean, <span class="api-version">v0.20+ & iOS</span>. iOS 平台默认支持动画，使用该属性可以强制关闭切换时的动画。
+* **keep-index**, boolean, <Badge text="Android" type="warning"/>. 设置轮播器中的数据发生变化后是否保持变化前的页面序号。
+* **forbid-slide-animation**, boolean, <Badge text="v0.20+ & iOS" type="warning"/>. iOS 平台默认支持动画，使用该属性可以强制关闭切换时的动画。
 
 ## 样式
 
@@ -28,7 +28,7 @@ Slider 组件用于在一个页面中展示多个图片，在前端这种效果�
 
 * **通用事件** 支持所有[通用事件](../events/common-events.html)。
 * **change** 当轮播索引改变时，触发该事件。该事件给前端的参数中含有 `index`表示当前切换到的序号。
-* **scroll**, <span class="api-version">v0.11+</span> 列表发生滚动时将会触发该事件。在参数中有 `offsetXRatio`，它表示当前图片偏移的比率，取值范围是 [-1, 1]。负值表示当前图片向左滑，正值表示向右划。比如 -0.2 表示当前图片向左滑，并且有 20% 的区域超出了容器边缘。
+* **scroll** 列表发生滚动时将会触发该事件。在参数中有 `offsetXRatio`，它表示当前图片偏移的比率，取值范围是 [-1, 1]。负值表示当前图片向左滑，正值表示向右划。比如 -0.2 表示当前图片向左滑，并且有 20% 的区域超出了容器边缘。
 
 ## 示例
 ```html
