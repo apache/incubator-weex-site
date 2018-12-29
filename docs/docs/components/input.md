@@ -4,7 +4,11 @@
 
 The weex builtin component `input` is used to create input controls to receive the user's input characters. How a `input` component works varies considerably depending on the value of its `type` attribute, such as `text`, `password`, `url`, `email`, `tel` etc.
 
+::: warning 
+
 **Notes:** does not support the common-event `click`. Please listen to the `input` or `change` event instead.
+
+:::
 
 ## Child Components
 
@@ -22,7 +26,7 @@ No child should be added to a `input`.
 
 * `autofocus`: a boolean attribute lets you specify that a form control should have input focus when the page loads.
 
-* `singleline`: a boolean sttribute sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
+* `singleline`: <Badge text="only android & ios" type="warning" />a boolean sttribute sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
 
 * `lines`: makes the input exactly this many lines tall.
 
@@ -32,9 +36,9 @@ No child should be added to a `input`.
 
 * `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
 
-* `maxlength`: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.
+* `maxlength`: <Badge text="0.7+" type="warning" /> a number value to specify maxlength of input.
 
-* `return-key-type`：<sup class="wx-v">v0.11</sup>the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
+* `return-key-type`：<Badge text="0.11+" type="warning" />the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
 
 * `auto-capitalization-type`：the keybord auto capitalization type support `none`, `words`, `sentences`, `allCharacters`.
 
@@ -42,14 +46,11 @@ No child should be added to a `input`.
 ## Styles
 
 * placeholder-color: the color of placeholder. Default value is '#999999'.
-
-* Pseudo-class<span class="api-version">v0.9.5+</span>: `input` component support the following pseudo-classes:
-
+* Pseudo-class<Badge text="0.9.5" type="warning" /> : `input` component support the following pseudo-classes:
   * `active`
   * `focus`
   * `disabled`
   * `enabled`
-
 * text styles: checkout [text styles](/docs/styles/text-styles.html)
 
   * support `color` style.
@@ -82,32 +83,35 @@ check out [common styles for components](/docs/styles/common-styles.html)
   * @param isShow: boolean, showing or hiding the keyboard.
   * @param keyboardSize: keyboard size in web pixel format.
 
-### common events
-check out [common events](/docs/events/common-events.html)
-
-* support `appear` / `disappear` event.
-
 
 ### Methods
 
- - `focus()` <span class="api-version">v0.9+</span>
+ - `focus()` <Badge text="0.8+" type="warning" />
 
   The `focus()` method is used to give focus to an input component and tigger soft keybord(if it can be focused).
 
- - `blur()`<span class="api-version">v0.9+</span>
+ - `blur()`<Badge text="0.9+" type="warning" />
 
   The `blur()` method is used to remove focus from an input component and close soft keybord(if it has focus).
 
-- `setSelectionRange(selectionStart,selectionEnd)`  <span class="api-version">v0.11+</span>set text selection range of input or textarea
+- `setSelectionRange(selectionStart,selectionEnd)`  <Badge text="0.11+" type="warning" /><Badge text="only support android & ios" type="warning" />
+
+  Set text selection range of input or textarea
 
   - `selectionStart {number}`:set starting location text selection range
   - `selectionEnd {number}`:set end location text selection range
 
-- `getSelectionRange(callback[selectionStart,selectionEnd])`  <span class="api-version">v0.11+</span>get text selection range of input or textarea
+- `getSelectionRange(callback[selectionStart,selectionEnd])`  <Badge text="0.11+" type="warning" /><Badge text="only support android & ios" type="warning" />
+
+    Get text selection range of input or textarea
+
     - `selectionStart {number}`:get starting location text selection range
     - `selectionEnd {number}`: get end location text selection range
 
-- `setTextFormatter(params)`<span class="api-version">v0.18+</span>: This is a very useful feature,can be used to set a set of rules for the input to formatting the input content in real-time.
+- `setTextFormatter(params)`<Badge text="0.18+" type="warning" /><Badge text="only support android & ios" type="warning" />
+
+     This is a very useful feature,can be used to set a set of rules for the input to formatting the input content in real-time.
+
     - `params {object}`：formatting rules, contains the following parameters:
       - `formatRule {regexp}`: Regular expression used to format the match
       - `formatReplace {string}`: Contents to replace after format matching
@@ -116,7 +120,11 @@ check out [common events](/docs/events/common-events.html)
 
 For details of `setTextFormatter`, please refer to [sample](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
 ### Notes
+::: warning
+
 input does not support the common-event `click`. Please listen to the `input` or `change` event instead.
+
+:::
 
 ### Parameters of events' object
 
@@ -126,219 +134,12 @@ input does not support the common-event `click`. Please listen to the `input`�
 * for `focus` and `blur` events:
   - `timestamp`: the time stamp of the event.
 
-## Example
+## Demo
 
-```html
-<template>
-  <div>
-    <div>
-      <text style="font-size: 40px">oninput: {{txtInput}}</text>
-      <text style="font-size: 40px">onchange: {{txtChange}}</text>
-      <text style="font-size: 40px">onreturntype: {{txtReturnType}}</text>
-      <text style="font-size: 40px">selection: {{txtSelection}}</text>
+- [ date & time Example ](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b)
 
-    </div>
-    <scroller>
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = text</text>
-        </div>
-        <input type="text" placeholder="Input Text" class="input" :autofocus=true value="" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = password</text>
-        </div>
-        <input type="password" placeholder="Input Password" class="input" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = url</text>
-        </div>
-        <input type="url" placeholder="Input URL" class="input" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = email</text>
-        </div>
-        <input type="email" placeholder="Input Email" class="input" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = tel</text>
-        </div>
-        <input type="tel" placeholder="Input Tel" class="input" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = time</text>
-        </div>
-        <input type="time" placeholder="Input Time" class="input" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = number</text>
-        </div>
-        <input type="number" placeholder="Input number" class="input" @change="onchange" @input="oninput"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input type = date</text>
-        </div>
-        <input type="date" placeholder="Input Date" class="input" @change="onchange" @input="oninput" max="2017-12-12" min="2015-01-01"/>
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = default</text>
-        </div>
-        <input type="text" placeholder="please input" return-key-type="default" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = go</text>
-        </div>
-        <input type="text" placeholder="please input" return-key-type="go" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = next</text>
-        </div>
-        <input type="text" placeholder="please input" return-key-type="next" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = search</text>
-        </div>
-        <input type="text" placeholder="please input" return-key-type="search" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = send</text>
-        </div>
-        <input type="text" placeholder="please input" return-key-type="send" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
-      </div>
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input return-key-type = done</text>
-        </div>
-        <input type="text" placeholder="please input" return-key-type="done" class="input" @change="onchange" @return = "onreturn" @input="oninput" />
-      </div>
-
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">function focus() & blur()</text>
-        </div>
-        <div style="flex-direction: row;margin-bottom: 16px;justify-content: space-between">
-          <text class="button" value="Focus" type="primary" @click="focus"></text>
-          <text class="button" value="Blur" type="primary" @click="blur"></text>
-        </div>
-
-        <input type="text" placeholder="Input1" class="input" value="" ref="input1"/>
-      </div>
-
-
-      <div>
-        <div style="background-color: #286090">
-          <text class="title" style="height: 80 ;padding: 20;color: #FFFFFF">input selection</text>
-        </div>
-        <div style="flex-direction: row;margin-bottom: 16px;justify-content: space-between">
-          <text class="button" value="setRange" type="primary" @click="setRange"></text>
-          <text class="button" value="getSelectionRange" type="primary" @click="getSelectionRange"></text>
-        </div>
-        <input type="text"  ref="inputselection" placeholder="please input" value="123456789"  class="input" @change="onchange" @return = "onreturn" @input="oninput"/>
-      </div>
-
-
-
-    </scroller>
-  </div>
-</template>
-
-<style scoped>
-  .input {
-    font-size: 60px;
-    height: 80px;
-    width: 750px;
-  }
-  .button {
-    font-size: 36;
-    width: 200;
-    color: #41B883;
-    text-align: center;
-    padding-top: 10;
-    padding-bottom: 10;
-    border-width: 2;
-    border-style: solid;
-    margin-right: 20;
-    border-color: rgb(162, 217, 192);
-    background-color: rgba(162, 217, 192, 0.2);
-  }
-</style>
-
-<script>
-  module.exports = {
-    data: function () {
-      return {
-        txtInput: '',
-        txtChange: '',
-        txtReturnType: '',
-        txtSelection:'',
-        autofocus: false
-      };
-    },
-    methods: {
-      ready: function () {
-        var self = this;
-        setTimeout(function () {
-          self.autofocus = true;
-        }, 1000);
-      },
-      onchange: function (event) {
-        this.txtChange = event.value;
-        console.log('onchange', event.value);
-      },
-      onreturn: function (event) {
-        this.txtReturnType = event.returnKeyType;
-        console.log('onreturn', event.type);
-      },
-      oninput: function (event) {
-        this.txtInput = event.value;
-        console.log('oninput', event.value);
-      },
-      focus: function () {
-        this.$refs['input1'].focus();
-      },
-      blur: function () {
-        this.$refs['input1'].blur();
-      },
-      setRange: function() {
-        console.log(this.$refs["inputselection"]);
-        this.$refs["inputselection"].setSelectionRange(2, 6);
-      },
-      getSelectionRange: function() {
-        console.log(this.$refs["inputselection"]);
-        var self = this;
-        this.$refs["inputselection"].getSelectionRange(function(e) {
-          self.txtSelection = e.selectionStart +'-' + e.selectionEnd;
-        });
-      }
-    }
-  };
-</script>
-```
+- [return-key-type Example](http://dotwe.org/vue/703c94a1db921df110a11ce33b42c0d7)
+- [setTextFormatter Example](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
+- [Other Examples](http://dotwe.org/vue/aec5342b15d3c01b3b427384a71b0874)
 
 [try it](http://dotwe.org/vue/3470e4d0194f3879a72d38e2ab02cc9f)
