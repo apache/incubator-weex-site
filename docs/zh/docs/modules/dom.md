@@ -1,4 +1,4 @@
-# dom
+# Dom
 
 用于对 weex 页面里的组件节点进行一部分特定操作。
 
@@ -8,6 +8,8 @@
   获取某个组件的 bounding rect 布局信息
 - `addRule`
   添加 font-face rule
+- `getLayoutDirection`<Badge text="0.20.0+" type="warn" vertical="middle"/>
+  获取某个组件的布局方向（rtl、lrt、inherit）
 
 ## API
 
@@ -16,9 +18,8 @@
 让页面滚动到 ref 对应的组件
 
 ::: warning 注意
-
-- `这个 API 只能用于可滚动组件的子节点，例如 <scroller>，<list>, <waterfall> 等可滚动组件中`
-  :::
+ - `这个 API 只能用于可滚动组件的子节点，例如 <scroller>，<list>, <waterfall> 等可滚动组件中`
+:::
 
 * `ref`
   你要滚动到的那个节点
@@ -40,7 +41,7 @@ dom.scrollToElement(element, { offset: 0 });
 
 [滚动到某层](http://dotwe.org/vue/56e0d256cbb26facd958dbd6424f42b2)
 
-### getComponentRect(ref, callback)
+### getComponentRect(ref, callback) <Badge text="0.9.4+" type="warn" vertical="middle"/>
 
 - `ref`
   节点元素
@@ -84,7 +85,30 @@ dom.scrollToElement(element, { offset: 0 });
 
 :::
 
-### addRule(type, contentObject)
+### getLayoutDirection(ref, callback) <Badge text="0.20.0+" type="warn" vertical="middle"/>
+
+- `ref`
+  节点元素
+- `callback: function(ret){}`
+  回调，其中 `ret {object}` 格式如下:
+
+  ```json
+  // top, bottom, left, right 是相对于 `viewport` 的位置
+  {
+    "result": "rtl",
+  }
+  ```
+
+  调用示例：
+
+  ```javascript
+  const element = this.$refs['kkk'][0];
+  dom.getLayoutDirection(element, function(ret) {
+    console.log(ret.result);
+  });
+  ```
+
+### addRule(type, contentObject)  <Badge text="0.12.0+" type="warn" vertical="middle"/>
 
 `支持版本: >=0.12.0`
 Weex 提供  **DOM.addRule** 以加载自定义字体。开发者可以通过指定 **font-family**加载 *iconfont* 和 *custom font*。
@@ -103,20 +127,18 @@ Weex 提供  **DOM.addRule** 以加载自定义字体。开发者可以通过指
 * **fontFamily** font-family的名称。
 * **src** 字体地址，url('') 是保留字段，其参数如下:
     * **http**. 从HTTP请求加载, e.g. `url('http://at.alicdn.com/t/font_1469606063_76593.ttf')`
-    * **https**. 从HTTPS请求加载, e.g. `url('https://at.alicdn.com/t/font_1469606063_76593.ttf')` 
+    * **https**. 从HTTPS请求加载, e.g. `url('https://at.alicdn.com/t/font_1469606063_76593.ttf')`
     * **local**, *Android ONLY*. 从assets目录读取, e.g. `url('local://foo.ttf')`,  **foo.ttf** 是文件名在你的assets目录中.
-    * **file**. 从本地文件读取, e.g. `url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')` 
+    * **file**. 从本地文件读取, e.g. `url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')`
     * **data**. 从base64读取, e.g. `url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')`, 上述data字段不全。
 
-#### Note
-> **Note:** `addRule` 方法里的 `fontFamily` 可以随意取。这个名字不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。
+::: warning 注意
+`addRule` 方法里的 `fontFamily` 可以随意取。这个名字不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。
 
-> **Note:** 如果你使用 http://www.iconfont.cn/ 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
+如果你使用 http://www.iconfont.cn/ 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
 
-> **Note:** 调用`addRule` 在 `beforeCreate` 中是被推荐的。
-
-#### Example
-[示例](http://dotwe.org/vue/7e328ee2ac9b7205c9ee37f4e509263d)。
+调用`addRule` 在 `beforeCreate` 中是被推荐的。
+:::
 
 ## DEMO
 
