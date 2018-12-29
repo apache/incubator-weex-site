@@ -1,11 +1,3 @@
----
-title: globalEvent
-type: references
-group: Build-in Modules
-order: 9.04
-version: 2.1
----
-
 # globalEvent<Badge text="0.14" type="warn" vertical="middle"/>
 ## Summary
 
