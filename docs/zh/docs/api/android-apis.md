@@ -8,11 +8,11 @@ version: 2.1
 
 # WXSDKInstace
 
-Weex Native 和 JavaScript 世界交互通信.
+Weex Native 和 JavaScript 交互通信.
 
 ## 自定义发送事件
 
-向js世界发送一些事件，比如`click`事件
+向JS环境发送一些事件，比如`click`事件
 
 ```
 void fireEvent(elementRef,type)
