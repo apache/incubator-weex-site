@@ -68,7 +68,7 @@ check out [common styles for components](/docs/styles/common-styles.html)
 
 ## Events
 
-* **common events**. support [common events](docs/events/common-events.html).
+* **common events**. support [common events](/docs/events/common-events.html).
 * **input**. Fired when the text is being changed.
   * @param value: current text of the input.
 * **change**. Fired when the user finished and make a commit.
