@@ -1,22 +1,15 @@
----
-title: globalEvent
-type: references
-group: Build-in Modules
-order: 9.04
-version: 2.1
----
-
-# globalEvent
-<span class="weex-version">v0.8+</span>
-
+# globalEvent<Badge text="0.14" type="warn" vertical="middle"/>
 ## Summary
 
 `globalEvent` are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.
 
-You can register events via `addEventListener`, which can be removed by `removeEventListener` when you do not need to listen for `globalEvent`.
+- You can register events via `addEventListener`, which can be removed by `removeEventListener` when you do not need to listen for `globalEvent`.
 
-*AUCTION*
-- Only instance level is not application level .
+::: tip
+
+Only instance level is not application level .
+
+:::
 
 ## How to make your Module support global events
 API development is complete, when the event needs to be sent, the need through the following methods:
@@ -89,8 +82,6 @@ globalEvent.removeEventListener("geolocation");
 ```
 
 ## Built-in global event
-<span class="weex-version">0.14</span>
-
 ### background or foreground event
 You can specify the event name as `WXApplicationDidBecomeActiveEvent ` or `WXApplicationWillResignActiveEvent` to obtain application becoming foreground or background, so that you can pause your video or music at this time.For example
 
@@ -104,7 +95,11 @@ globalEvent.addEventListener("WXApplicationDidBecomeActiveEvent", function (e) {
 - `WXApplicationDidBecomeActiveEvent`   fired while application did become foreground 
 - `WXApplicationWillResignActiveEvent`  fired while application will become background
 
-[have a try at DotWe](http://dotwe.org/vue/5a774e8ce3766c88038cab6fe3331f5b)
+[Have a try at DotWe](http://dotwe.org/vue/5a774e8ce3766c88038cab6fe3331f5b)
 
-> this feature only works on iOS and Android platforms, it doesn't work on Web. [Obtain your weex platform on weex page](/docs/api/weex-variable.html#weex-environment-object)
+::: warning
+
+this feature only works on iOS and Android platforms, it doesn't work on Web. [Obtain your weex platform on weex page](/docs/api/weex-variable.html#weex-environment-object)
+
+::: 
 
