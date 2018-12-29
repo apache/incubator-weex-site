@@ -67,8 +67,9 @@ Weex 提供了通过事件触发动作的能力，例如在用户点击组件时
 ## stopPropagation
 
 用于内嵌处理Native滑动冲突的情况，阻止Native事件进行冒泡传递。可结合shouldStopPropagationInterval和shouldStopPropagationInitResult属性来控制。
-shouldStopPropagationInitResult默认初始化false/true的结果。
-shouldStopPropagationInterval控制touch频率，减少JS和Native通信次数，提升流畅性。
+
+shouldStopPropagationInitResult  默认初始化false/true的结果。
+shouldStopPropagationInterval  默认数字类型，控制touch频率，减少JS和Native通信次数，提升流畅性。可参考[Scroller内嵌List示例]
 
 ### 事件对象无
 
