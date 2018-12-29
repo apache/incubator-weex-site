@@ -2,22 +2,21 @@
 
 ### <span class="weex-version">v0.6.1+</span>
 
+::: warning
 The `<loading>` Component provide a pullup to loading function for some special containers, its usage and attributes are similar to the `<refresh>` Component.
 > **Note：** To be rendered properly, the `<loading>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
+:::
 
- - Example:
-
-```
-<list>
-  ...
-  ...
+```vue{5}
+<scroller>
+  <div v-for="num in lists">
+    <text>{{num}}</text>
+  </div>
   <loading>
-    ...
+    <text>Loading</text>
   </loading>
-</list>
+</scroller>
 ```
-
- - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
 ## Child Components
 
@@ -25,16 +24,12 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
  - `<loading-indicator>`: This is a dedicated component which provides a default loading animation effect, can only be used inside the `<refresh>` or the `<loading>` components.
 
- - Example:
-
-```
-<loading>
-  <text>Loading</text>
-  <loading-indicator></loading-indicator>
-  ...
-</loading>
-```
- - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
+ ```vue{3}
+ <loading>
+   <text>Loading</text>
+   <loading-indicator></loading-indicator>
+ </loading>
+ ```
 
 ## Attributes
 
@@ -52,33 +47,6 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
 > **Note：** The visibility of `<loading>` component can be controlled by display attribute with the value show and hide. A `display="show"` should always be paired with a `display="hide"` statement.
 
- - Example:
-
-```
-<template>
-  <list>
-    ...
-    ...
-    <loading @loading="onloading" :display="loadinging ? 'show' : 'hide'">
-      ...
-    </loading>
-    ...
-  </list>
-</template>
-
-<script>
-  ...
-  methods: {
-    onloading (event) {
-      this.loadinging = true
-      setTimeout(() => {
-        this.loadinging = false
-      }, 2000)
-    },
-  }
-</script>
-```
- - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
 
 ## Styles
 
@@ -90,8 +58,12 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
  - Triggered when the scroller or list is pulled up.
 
- - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)
-
+ ```vue
+ <loading @loading="onloading" :display="loadinging ? 'show' : 'hide'">
+   <text>Loading ...</text>
+   <loading-indicator></loading-indicator>
+ </loading>
+ ```
 
 ## Example
 
