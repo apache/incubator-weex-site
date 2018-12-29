@@ -70,6 +70,12 @@
       <td>10</td>
     </tr>
      <tr>
+      <td>pagingEnabled</td>
+      <td>是否按分页模式线上List，默认值false</td>
+      <td>boolean</td>
+      <td>true/false</td>
+    </tr>
+     <tr>
       <td>scrollable</td>
       <td>是否运行List关系</td>
       <td>boolean</td>
