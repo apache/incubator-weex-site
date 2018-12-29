@@ -2,7 +2,6 @@
 
 ## Summary
 
-<span class="weex-version">v0.6.1+</span>
 
 The List component, which inspired by Android RecyclerView, is a core component, and it provides the most popular features for using a list of items. which support vertical and horizontal list.
 
@@ -23,10 +22,10 @@ It can provide excellent experience and performance while still maintaining smoo
 
 Notes: The list now supports the following child components: cell, header, refresh, loading and fixed-position components. Other kinds of components will not be guaranteed to be displayed correctly.
 
-* cell 0.6.1 defines the attributes and behavior of the cells that appear in list.
-* header 0.6.1 sticks to the top when it reaches the top of the screen.
-* refresh 0.6.1 used inside list to add pull-down-to-refresh functionality.
-* loading 0.6.1 used inside list to add pull-up-to-load-more functionality.
+* cell defines the attributes and behavior of the cells that appear in list.
+* header sticks to the top when it reaches the top of the screen.
+* refresh used inside list to add pull-down-to-refresh functionality.
+* loading used inside list to add pull-up-to-load-more functionality.
 
 
 ## Attributes
