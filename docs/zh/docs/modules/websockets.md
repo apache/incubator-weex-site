@@ -18,10 +18,8 @@ h5 提供 WebSockets 的 protocol 默认实现，iOS 和 Android 需要自定义
 
 #### 参数
 
-| 属性        | 说明                | 类型   | 是否必选 |
-| ---------- | -------------      | -----  | ----- |
-| `url` | 表示要连接的 URL | string | 必选 |
-| `protocol` | WebSockets 协议名字字符串 | string | 可选 |
+ - `url`(string): 表示要连接的 URL
+ - `protocol`(string): WebSockets 协议名字字符串
 
 ```js
 const ws = weex.requireModule('webSocket');
@@ -35,9 +33,7 @@ ws.WebSocket('ws://echo.websocket.org','');
 
 #### 参数
 
-| 属性        | 说明           | 类型   | 是否必选 |
-| ---------- | ------------- | -----  | ----- |
-| `data` | 要发送到服务器的数据 | string | 可选 |
+ - `data`(string): 要发送到服务器的数据
 
 ```js
 const ws = weex.requireModule('webSocket');
@@ -52,10 +48,8 @@ ws.send('some message.');
 
 #### 参数
 
-| 属性        | 说明           | 类型   | 是否必选 |
-| ---------- | ------------- | -----  | ----- |
-| `code` | 关闭连接的状态号 | number | 可选 |
-| `reason` | 关闭的原因 | string | 可选 |
+ - `code`(number):关闭连接的状态号
+ - `reason`(string): 关闭的原因
 
 ```js
 const ws = weex.requireModule('webSocket');
@@ -89,9 +83,7 @@ ws.onopen = function(event) {
 
 #### event 对象
 
-| 属性        | 说明           | 类型   |
-| ---------- | ------------- | -----  |
-| `data` | 监听器接收的到的消息 | string |
+ - `data`(string): 监听器接收的到的消息
 
 ```js
 const ws = weex.requireModule('webSocket')
@@ -108,11 +100,9 @@ ws.onmessage = function(event) {
 
 #### event 对象
 
-| 属性        | 说明           | 类型   |
-| ---------- | ------------- | -----  |
-| `code` | 服务器返回关闭的状态码 | number |
-| `reason` | 服务器返回的关闭原因 | string |
-| `wasClean` | 是否完全关闭 | boolen |
+ - `code`(number):服务器返回关闭的状态码
+ - `reason`(string):服务器返回的关闭原因
+ - `wasClean`(boolen): 是否完全关闭
 
 ```js
 const ws = weex.requireModule('webSocket')
@@ -123,15 +113,14 @@ ws.onclose = function(event) {
 }
 ```
 
+
 ### onerror
 
 一个用于 error 事件的事件监听器，当错误发生时触发。`onerror` 接受一个函数作为 EventListener，这个监听器会接受一个 `type` 为 "error" 的事件对象。
 
 #### event 对象
 
-| 属性        | 说明           | 类型   |
-| ---------- | ------------- | -----  |
-| `data` | 监听器接收的到的消息 | string |
+ - `data`(string): 监听器接收的到的消息
 
 ```js
 const ws = weex.requireModule('webSocket')
