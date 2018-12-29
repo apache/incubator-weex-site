@@ -1,19 +1,8 @@
----
-title: Extend iOS
-type: guide
-group: Extend
-order: 6.4
-version: 2.1
----
-
-<!-- toc -->
-
 > **NOTICE**: **All of the exported APIs in Weex are controllable and safe, they can not access private APIs or do any system hacks at runtime,  neither can they change the primary purpose of the Application**.
 >
-> **If you are extending your custom modules/components, be sure NOT to export the ability of Objective-C runtime, be sure NOT to export  dynamic and uncontrolled methods such as `dlopen()`, `dlsym()`, `respondsToSelector:`, `performSelector:`, `method_exchangeImplementations()`, be sure NOT to export any private methods. **
+> **If you are extending your custom modules/components, be sure NOT to export the ability of Objective-C runtime, be sure NOT to export  dynamic and uncontrolled methods such as `dlopen()`, `dlsym()`, `respondsToSelector:`, `performSelector:`, `method_exchangeImplementations()`, be sure NOT to export any private methods.**
 
-Weex SDK provides only rendering capabilities, rather than have other capabilities. There are some internal [components](../wiki/component-introduction.html), [modules](../wiki/module-introduction.html) and [handlers](../wiki/handler-introduction.html). If you want these features which weexSDK doesn't provide, you can to extend.
-> The following section we will extend iOS using Objective-C and here is [swift](./extend-module-using-swift.html).
+In this section we will talk about how to extend Weex on iOS using Objective-C. For Swift, please refer [Extend using Swift](./extend-ios-with-swift.html)
 
 ## Extend module
 
@@ -193,7 +182,7 @@ Weex offers component life cycle hooks that give you visibility into these key m
 
 #### Add method for component
 
-From WeexSDK `0.9.5`, you can define your component method by macro `WX_EXPORT_METHOD`
+You can define your component method by macro `WX_EXPORT_METHOD`
 
 ```Objective-C
 @implementation WXMyComponent

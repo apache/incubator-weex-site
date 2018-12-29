@@ -1,9 +1,7 @@
 > 注意：Weex 所有暴露给 JS 的内置 module 或 component API 都是安全和可控的，它们不会去访问系统的私有 API，也不会去做任何 runtime 上的 hack 更不会去改变应用原有的功能定位。  
-> 如果需要扩展自定义的 module 或者 component ，一定注意不要将 OC 的 runtime 暴露给 JS ， 不要将一些诸如 `dlopen()`， `dlsym()`， `respondsToSelector:`，`performSelector:`，`method_exchangeImplementations()` 的动态和不可控的方法暴露给JS， 也不要将系统的私有API暴露给JS
+> 如果需要扩展自定义的 module 或者 component ，一定注意不要将 OC 的 runtime 暴露给 JS ，不要将一些诸如 `dlopen()`， `dlsym()`， `respondsToSelector:`，`performSelector:`，`method_exchangeImplementations()` 的动态和不可控的方法暴露给JS，也不要将系统的私有API暴露给JS。否则将可能面临苹果上架审核问题。
 
-Weex SDK 只提供渲染，提供了一些默认的组件和能力，如果你需要一些特性但 Weex 并未提供，可以通过扩展自定义的一些插件来实现，通过 WeexSDK 加载。
-
-本文都以 Objective-C 为例子书写，如果需要 swift 请参考 [使用 swift 扩展 Weex](/guide/extend-ios-with-swift.html)。
+在这篇文档里，我们使用 Objective-C 来扩展 Weex 功能，如果想使用 Swift，可以参考 [使用 Swift 扩展](./extend-ios-with-swift.html)。
 
 ## 自定义 module
 自定义 module，需要让自己的 class 遵循 `WXModuleProtocol` 这个protocol，通过 `WX_EXPORT_METHOD` 这个宏暴露出需要透出到 `JavaScript` 调用的方法，再向 WeexSDK 注册 module，就可以完成一个简单 module 的自定义。
@@ -175,7 +173,7 @@ export default {
 
 #### 给组件添加方法
 
-WeexSDK 0.9.5 之后支持了在 js 中直接调用组件的方法。
+在组件代码中使用宏 `WX_EXPORT_METHOD` 声明组件方法供前端调用。
 
 ```Objective-C
 @implementation WXMyComponent
