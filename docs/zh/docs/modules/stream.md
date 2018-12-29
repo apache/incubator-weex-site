@@ -12,15 +12,17 @@
 
 ##### options {Object}
 
-请求的配置选项，支持以下配置：
+* options {Object} 请求的配置选项，支持以下配置：
 
-| 属性        | 说明                | 类型   | 是否必选 |
-| ---------- | -------------      | -----  | ----- |
-| `method` | HTTP 请求方法，值为 `GET`/`POST`/`PUT`/`DELETE`/`PATCH`/`HEAD` | string | 必选 |
-| `url` | 请求的 URL | string | 必选 |
-| `headers` | HTTP 请求头 | Object | 可选 |
-| `type` | 响应类型：`json`，`text` 或是 `jsonp`(在 native 原生实现中其实与 `json` 相同) | string | 必选 |
-| `body` | HTTP 请求体 | string | 可选 |
+  * method(string): HTTP 请求方法，值为 `GET`/`POST`/`PUT`/`DELETE`/`PATCH`/`HEAD`
+
+  * url(string): 请求的 URL | string
+
+  * headers(string): HTTP 请求头
+
+  * type(string): 响应类型：`json`，`text` 或是 `jsonp`(在 native 原生实现中其实与 `json` 相同)
+
+  * body(string): HTTP 请求体
 
 ::: warning 注意
 - `body` 参数仅支持 `string` 类型的参数，请勿直接传递 `JSON`，必须先将其转为字符串。
@@ -57,10 +59,10 @@
 ## Demo
 
 - [HTTP method 示例](http://dotwe.org/vue/80b21a0fce98acdffad96c57b2eadd1d)
-- [创建文章](http://dotwe.org/vue/6dd65122144d9ad26594c0f900c75cd4)，常见应用场景，发送 POST 请求。
+- [Post 示例](http://dotwe.org/vue/6dd65122144d9ad26594c0f900c75cd4)，常见应用场景，发送 POST 请求。
 
   <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1UWA7n4TpK1RjSZFGXXcHqFXa-750-1334.gif" />
 
-- [热门动画列表](http://dotwe.org/vue/892bd1c977b61762baca8e02a65b6d97)，常见应用场景，通过 GET 请求获取数据。
+- [Get 示例](http://dotwe.org/vue/892bd1c977b61762baca8e02a65b6d97)，常见应用场景，通过 GET 请求获取数据。
 
   <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1.Bg6nZbpK1RjSZFyXXX_qFXa-750-1334.gif" />
