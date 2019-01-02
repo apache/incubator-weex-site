@@ -10,7 +10,7 @@ version: 2.1
 
 > The `BroadcastChannel` is available since <span class="api-version">v0.9+</span>.
 
-As mentioned in [JS Runtime Context](./runtime-context.html), Weex is using different context for each page, even global variables are isolated, but `BroadcastChannel` is a way to achieve cross-page communication.
+As mentioned in JS Runtime Context, Weex is using different context for each page, even global variables are isolated, but `BroadcastChannel` is a way to achieve cross-page communication.
 
 ## API
 
