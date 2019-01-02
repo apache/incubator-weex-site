@@ -34,7 +34,7 @@ To be rendered properly, the `<refresh>` Component must appear inside the specia
 
 ## Attributes
 
- - Support all common attributes, check out [common attributes](../common/common-attrs)
+ - Support all common attributes;
 
 | Attribute      | Type     | Value            | Default Value     |
 | ------------- | ------ | -------------------------- | ------- |
@@ -50,7 +50,7 @@ To be rendered properly, the `<refresh>` Component must appear inside the specia
 
 ## Styles
 
- - Please check out the [common styles](/wiki/common-styles.html)
+ - Please check out the [common styles](../styles/common-styles.html)
 
 ## Events
 
