@@ -75,7 +75,7 @@ This API is mainly used inside of the Vue and Rax framework to convert the virtu
 
 ## `requireModule`
 
-For those features which does not rely on the UI, Weex wraps them into **modules**. It is a way to access native capabilities in javascript. Except for the [built-in modules](../modules/), it's quite easy to integrate the existing native modules to Weex platform. After that, you can use `weex.requireModule` to require both customized and built-in modules.
+For those features which does not rely on the UI, Weex wraps them into **modules**. It is a way to access native capabilities in javascript. Except for the [built-in modules](../modules/animation.html), it's quite easy to integrate the existing native modules to Weex platform. After that, you can use `weex.requireModule` to require both customized and built-in modules.
 
 ```typescript
 weex.requireModule(name: string): Object | void;
