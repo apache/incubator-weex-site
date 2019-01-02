@@ -65,6 +65,6 @@ Weex 中并未提供浏览器中的 `window` 和 `screen` 对象，不支持使�
 + [《navigator 导航控制》](/cn/references/modules/navigator.html)
 + [《storage 本地存储 》](/cn/references/modules/storage.html)
 
-为了保持框架的通用性，Weex 内置的原生模块有限，不过 Weex 提供了横向扩展的能力，可以扩展原生模块，具体的扩展方法请参考[《iOS 扩展》](/cn/index.html) 和[《Android 扩展》](/cn/guide/extend-android.html)。
+为了保持框架的通用性，Weex 内置的原生模块有限，不过 Weex 提供了横向扩展的能力，可以扩展原生模块，具体的扩展方法请参考[《iOS 扩展》](/cn/guide/extend-ios.html) 和[《Android 扩展》](/cn/guide/extend-android.html)。
 
 > 有些接口在浏览器环境中也存在，不过在使用时应该注意浏览器的兼容性；如剪贴板功能，出于安全性考虑，绝大多数浏览器都限制其使用。
