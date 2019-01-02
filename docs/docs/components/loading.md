@@ -33,7 +33,7 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
 ## Attributes
 
- - Support all common attributes, check out [common attributes](../common/common-attrs)
+ - Support all common attributes.
 
 | Attribute      | Type     | Value            | Default Value     |
 | ------------- | ------ | -------------------------- | ------- |
@@ -50,7 +50,7 @@ The `<loading>` Component provide a pullup to loading function for some special 
 
 ## Styles
 
- - Please check out the [common styles](/wiki/common-styles.html)
+ - Please check out the [common styles](../styles/common-styles.html)
 
 ## Events
 
