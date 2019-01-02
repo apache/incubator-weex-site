@@ -24,4 +24,4 @@ No events.
 
 ## Example
 
-Please refer to [slide](./slide.html)
+Please refer to [slider](./slider.html)
