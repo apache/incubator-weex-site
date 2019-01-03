@@ -73,8 +73,7 @@ module.exports = {
                 ['extend/extend-android', 'Extend Android'],
                 ['extend/extend-ios', 'Extend iOS'],
                 ['extend/extend-ios-with-swift', 'Extend iOS with swift'],
-                ['extend/extend-web', 'Extend Web Renderer'],
-                ['extend/extend-framework', 'Extend JS framework']
+                ['extend/extend-web', 'Extend Web Renderer']
               ]
             },
             {
@@ -240,8 +239,7 @@ module.exports = {
                 ['extend/extend-android', '扩展Android能力'],
                 ['extend/extend-ios', '扩展iOS能力'],
                 ['extend/extend-ios-with-swift', '使用Swift进行module 扩展'],
-                ['extend/extend-web', '扩展Web组件'],
-                ['extend/extend-framework', '扩展JS framework']
+                ['extend/extend-web', '扩展Web组件']
               ]
             },
             {
