@@ -26,7 +26,7 @@ No child should be added to a `input`.
 
 * `autofocus`: a boolean attribute lets you specify that a form control should have input focus when the page loads.
 
-* `singleline`: <Badge text="only android & ios" type="warning" />a boolean sttribute sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
+* `singleline`: a boolean sttribute sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
 
 * `lines`: makes the input exactly this many lines tall.
 
@@ -36,17 +36,19 @@ No child should be added to a `input`.
 
 * `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
 
-* `maxlength`: <Badge text="0.7+" type="warning" /> a number value to specify maxlength of input.
+* `maxlength`: a number value to specify maxlength of input.
 
-* `return-key-type`：<Badge text="0.11+" type="warning" />the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
+* `return-key-type`: the keybord returen key type support `defalut`, `go`, `next`, `search`, `send`, `done`.
 
-* `auto-capitalization-type`：the keybord auto capitalization type support `none`, `words`, `sentences`, `allCharacters`.
+* `auto-capitalization-type`: the keybord auto capitalization type support `none`, `words`, `sentences`, `allCharacters`.
+
+* `upriseOffset`: <Badge text="v0.21+ & iOS" type="warn" vertical="middle"/> the additional vertical margin between bottom of input and top of keyboard if the keyboard would cover the input. Default is 20 system pixels on iOS.
 
 
 ## Styles
 
 * placeholder-color: the color of placeholder. Default value is '#999999'.
-* Pseudo-class<Badge text="0.9.5" type="warning" /> : `input` component support the following pseudo-classes:
+* Pseudo-class: `input` component support the following pseudo-classes:
   * `active`
   * `focus`
   * `disabled`
