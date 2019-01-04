@@ -1,4 +1,4 @@
-# Text Style
+# Text Styles
 
 Text alike components share some common style rules. The text alike components currently includes [`text`](../components/text.html)、[`input`](../components/input.html) and [`richtext`](../components/richtext.html)
 
