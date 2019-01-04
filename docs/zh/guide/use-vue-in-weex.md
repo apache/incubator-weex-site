@@ -18,7 +18,7 @@
 
 ## 平台的差异
 
-Vue.js 最初是为 Web 平台设计的。虽然可以基于Weex开发原生应用程序，但是仍然存在许多[Weex 与 Web 平台的差异](../wiki/platform-difference.html)。
+Vue.js 最初是为 Web 平台设计的。虽然可以基于Weex开发原生应用程序，但是仍然存在许多[Weex 与 Web 平台的差异](./platform-difference.html)。
 
 与 Web 平台的主要差异是: 执行环境、DOM、样式和事件。
 

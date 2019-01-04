@@ -1,37 +1,36 @@
 # &lt;cell&gt;
 
-### Summary
+## Summary
 
-This component must be used as a subcomponent of a [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) component, which is for the performance optimizing for long list scrolling.
+This component must be used as a subcomponent of a [`list`](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html) component.
 
-### Child Components
+## Child Components
 
 This type of component supports all kinds of weex component as its child components.
 
-### Attributes
+## Attributes
 
-**Notes:** you can't give `<cell>` a `flex` value. Width of `<cell>` is equal to the width of its parent component `<list>`, and you don't need to specify its height.
+**Notes:** You can't give `<cell>` a `flex` value. Width of `<cell>` is equal to the width of its parent list/recycler/waterfall component, and you don't need to specify its height.
 
-* `keep-scroll-position {boolean}`: <span class="api-version">v0.11+</span> List Whether to keep the last sliding position after inserting the Cell
+* **keep-scroll-position** boolean. It controls whether to keep the last sliding position after inserting the cell.
 
-### Styles
+* **insert-animation** string, cell insert animation. Only support `none` and `default` now.
+* **delete-animation** string, cell delete animation. Only support `none` and `default` now.
 
-**common styles**: check out the [common styles](/wiki/common-styles.html)
+* **recycle** boolean, <Badge text="iOS" type="warning"/>, default true. It controls whether the cell's view in a list should be recycled when the UITableView is scrolling. You should always use true for iOS.
 
-- support flexbox related styles
-- support box model related styles
-- support ``position`` related styles
-- support ``opacity``, ``background-color`` etc.
+## Styles
 
-**Notes:** cell itself is a container, its layout info is managed by list, so specifying cell's margin info will not work.
+* **common styles**. Check out [common styles](../styles/common-styles.html).
 
-### Events
+**Notes:** Cell itself is a container and its layout info is managed by parent component such as list. So `margin` should not be specified for a cell.
 
-**common events**: check out the [common events](/wiki/common-events.html)
+## Events
 
-- support `click` event. Check out [common events](/wiki/common-events.html)
-- support `appear` / `disappear` event. Check out [common events](/wiki/common-events.html)
+* **common events**. Check out [common events](../events/common-events.html).
 
-### Example
+## Example
 
-please refer to [List](./list.html) [`recycler`](./list.html) [`waterfall`](./waterfall.html)
+Please refer to
+* [list](./list.html)
+* [waterfall](./waterfall.html)

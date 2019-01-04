@@ -1,5 +1,7 @@
 # &lt;waterfall&gt;
 
+## 简介
+
 `<waterfall>` 组件是提供瀑布流布局的核心组件。瀑布流，又称瀑布流式布局是比较流行的一种页面布局，视觉表现为参差不齐的多栏布局。随着页面滚动条向下滚动，这种布局还可以不断加载数据块并附加至当前尾部。
 ```vue
 <template>
@@ -23,11 +25,11 @@
 ```
 
 ## 子组件
-和 [`<list>`](/docs/list.html)组件一样, `<waterfall>` 组件的子组件只能包括以下四种组件或是 `fix` 定位的组件，其他形式的组件将不能被正确渲染。
-* [`<cell>`](/docs/cell.html)：用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能。
+和 [`<list>`](./list.html)组件一样, `<waterfall>` 组件的子组件只能包括以下四种组件或是 `fix` 定位的组件，其他形式的组件将不能被正确渲染。
+* [`<cell>`](./cell.html)：用于定义列表中的子列表项，类似于 HTML 中的 ul 之于 li。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能。
 * `<header>`：当 `<header>` 到达屏幕顶部时，吸附在屏幕顶部。
-* [`<refresh>`](/docs/refresh.html)：用于给列表添加下拉刷新的功能。
-* [`<loading>`](/docs/loading.html)：`<loading>` 用法与特性和 `<refresh>` 类似，用于给列表添加上拉加载更多的功能。
+* [`<refresh>`](./refresh.html)：用于给列表添加下拉刷新的功能。
+* [`<loading>`](./loading.html)：`<loading>` 用法与特性和 `<refresh>` 类似，用于给列表添加上拉加载更多的功能。
 
 <div style="text-align: center"><img src="https://img.alicdn.com/tfs/TB1sa8bokvoK1RjSZFwXXciCFXa-621-678.png" width="600"></div>
 
@@ -45,7 +47,7 @@
 
 <div style="text-align: center"><img src="https://img.alicdn.com/tfs/TB1Mjk9n3TqK1RjSZPhXXXfOFXa-641-673.png" width="600"></div>
 
-其他支持的属性参见 [List 组件属性部分](/docs/list.html#%E5%B1%9E%E6%80%A7)
+其他支持的属性参见 [List 组件属性部分](./list.html#%E5%B1%9E%E6%80%A7)
 
 ## 事件
 支持所有通用事件：

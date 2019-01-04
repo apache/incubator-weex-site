@@ -1,90 +1,92 @@
----
-title: animation
-type: references
-order: 9.01
-version: 2.1
----
-
 # Animation
-
-## Overview
-
 The `animation` module is used to perform animation on components. 
 
 JS-Animation can perform a series of simple transformations  (position, size, rotation, background color, and opacity) on the component with Javascript.
 
 For example, if you have a `image` component, you can move, rotate, grow, or shrink it by animation.
 
-> **Note:** Now,Weex only support use animation in Javascript. CSS Animation is different from this,we will soon support CSS Animation.
+:::tip
+Ref [transition](../styles/common-styles.html#property) or [transform](../styles/common-styles.html#transform) if you prefer CSS animation.
+:::
 
 ## Basic Usage
+One can invoke `animation.transition(ref, options, callback)` to start animation. Ref the following code snippets.
 
-### animation.transition(el, options, callback)
+## Example
+* [animation demo](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
 
 ```javascript
-animation.transition(ref1, {
-          styles: {
-            backgroundColor: '#FF0000',
-            transform: 'translate(250px, 100px)',
-          },
-          duration: 800, //ms
-          timingFunction: 'ease',
-          needLayout:false,
-          delay: 0 //ms
-        }, function () {
-          modal.toast({ message: 'animation finished.' })
-        })
+animation.transition(test, {
+    styles: {
+        backgroundColor: '#FF0000',
+        transform: 'translate(250px, 100px)',
+    },
+    duration: 800, //ms
+    timingFunction: 'ease',
+    needLayout:false,
+    delay: 0 //ms
+    }, function () {
+        modal.toast({ message: 'animation finished.' })
+    })
 ```
 
-## Attributes
+# Reference
+## ``ref``
+The element that will be animated.
 
-### ``el``
+For example, if the value of `ref` for an element is `test`, you can start an animation with `this.$refs.test`.
 
-An element that will be animated.
+## ``options``
+### styles
+`styles` specifies the names and values of styles to which a transition effect should be applied. The supported styles are listed below:
+  * width
+  * height
+  * backgroundColor 
+  * opacity
+  * transformOrigin
+  * transform
+    * translate/translateX/translateY
+    * rotate/rotateX/rotateY
+    * perspective
+    * scale/scaleX/scaleY
+#### width
+The `width` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed width`.
+#### height
+The `height` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed height`.
+#### backgroundColor
+The `backgroundColor` applied to the component after the animation finished. The default value is `computed backgroundColor`.
+#### opacity
+The `opacity` applied to the component after the animation finished. The default value is `computed opacity`.
+#### transformOrigin
+The `transformOrigin` indicate the pivot of the element being animated. The possible values for `x-axis` are `left`/`center`/`right`/length or percent, and possible values of `y-axis` are `top`/`center`/`bottom`/ length or percent. The default value is `center center`.
+#### transform
+Transform object, which may include `rotate`, `translate`, `scale` and etc. The detail of  transform is illustrated below.
+  * `translate/translateX/translateY`: Specify the location which the element will be translated to.The unit is number or percent and the default value is 0.
+  * `rotate/rotateX/rotateY`**v0.14+**: Specify the angle of which the element will be rotated. The unit is **degree** and the default value is 0.
+  * `perspective`**v0.16+**: The distance between the z=0 plane and the user. Supported for **Android 4.1** and above. The unit is number and the default value is positive infinity.
+  * `scale/scaleX/scaleY`: Stretch or shrink the element. The unit is number and the default value is 1.
+### duration
+`duration` *number* specifies the duration of animation execution, the default value is `0`, meaning that the component get the desired property immediately.
+### delay
+`delay` *number* specifies the waiting time before the animation starts. The default value is `0`. 
+### needLayout
+`needLayout` *boolean* Specifies whether the change to layout(width/height/etc..) is persistence and takes affect after the animation. Default value is `false`
+### timingFunction
+`timingFunction` *string* describes how the intermediate values are calculated for the CSS properties being affected by the animation effect. default value is `linear`, the supported values are listed in the following:
+  * `linear`: Specify a transition effect with the same speed from start to end.
+  * `ease-in`: Specify a transition effect with a slow start and fast end.
+  * `ease-out`: Specify a transition effect with a fast start and slow end.
+  * `ease-in-out`: Specify a transition effect with a slow start, fast intermediate and slow end.
+  * `cubic-bezier(x1, y1, x2, y2)`: Define your own values in the cubic-bezier function. Possible values are parameter values from 0 to 1. More information about cubic-bezier please visit [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
 
-For example , specify the `el` attribute for the element you want to animated as `element`, so you can get this element by calling `this.refs.element`.
+## ``callback``
 
-### ``options``
+Callback is a function called after the completion of animation. In iOS platform, you can use function to get information of animation execution.
 
-- `styles` (object): Specify the names and values of styles to which a transition effect should be applied. The allowed attributes are listed in the following table:        
+::: tip
+after WeexSDK0.16.0, in iOS platform can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.
+:::
 
-| name            | description                              | value type            | default value   |
-| :-------------- | :--------------------------------------- | :-------------------- | :-------------- |
-| width           | The width applied to the component after the animation finished. | length                | none            |
-| height          | The height applied to the component after the animation finished. | length                | none            |
-| backgroundColor | The background color applied to the component after the animation finished. | string                | none            |
-| opacity         | The opacity applied to the component after the animation finished. | number between 0 to 1 | `1`             |
-| transformOrigin | The povit of transition. The possible values for `x-aris` are `left`/`center`/`right`/length or percent, and possible values of `y-axis` are `top`/`center`/`bottom`/ length or percent | `x-axis y-axis`       | `center center` |
-| **transform**   | Transform function to be applied to the element. The properties in the following table are supported | object                | none            |
-
-``transform`` also have many parameters,please see the table below.
-
-| name                                     | description                              | value type       | default value     |
-| :--------------------------------------- | :--------------------------------------- | :--------------- | :---------------- |
-| translate/translateX/translateY          | Specifies the location of which the element will be translated to. | pixel or percent | none              |
-| rotate/rotateX <span class="api-version">v0.14+</span> /rotateY <span class="api-version">v0.14+</span> | Specifies the angle of which the element will be rotated, the unit is degree. | number           | none              |
-| perspective <span class="api-version">v0.16+</span> | The distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective. Supported for Android 4.1 and above. | number           | positive infinity |
-| scale/scaleX/scaleY                      | Stretch or shrink the element.           | number           | none              |
-
-- `duration` (number): Specifies the number of milliseconds of animation execution, the default value is `0`, means that no animation will occur.    
-- `delay` (number): Specifies the amount of milliseconds to wait between a change being requested to a property that is to be transitioned and the start of the transition effect. The default value is `0`.   
-- `needLayout`(boolean)：Whether or not the layout animation occurs when animation is executed，default value is `false`
-- `timingFunction` (string): Used to describe how the intermediate values of the styles being affected by a transition effect are calculated, default value is `linear`, the allowed attributes are listed in the following table:    
-
-| name                           | description                              |
-| :----------------------------- | :--------------------------------------- |
-| `linear`                       | Specifies a transition effect with the same speed from start to end |
-| `ease`                         | Specifies a transition effect with a slower and slower speed |
-| `ease-in`                      | Specifies a transition effect with a slow start |
-| `ease-out`                     | Specifies a transition effect with a slow end |
-| `ease-in-out`                  | Specifies a transition effect with a slow start and end |
-| `cubic-bezier(x1, y1, x2, y2)` | Define your own values in the cubic-bezier function. Possible values are parameter values from 0 to 1. More information about cubic-bezier please visit [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). |
-
-### ``callback``
-
-Callback which is a function called after the completion of animation. In iOS platform, you can use function to get animation processing's information.
-
->**Note: after WeexSDK0.16.0, in iOS platform can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.**
-
-### Example
-- [animation demo](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
+::: tip
+Android doesn't support the result parameter.
+:::

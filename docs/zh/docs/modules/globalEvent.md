@@ -99,5 +99,5 @@ globalEvent.addEventListener('WXApplicationDidBecomeActiveEvent', function(e) {
 在 [dotWe 上试一试](http://dotwe.org/vue/c89e85483ca2cb2274837ef027030539)
 
 ::: warning 注意
-目前只有 platform 为 iOS 和 Android 才能支持。[获取当前 platform](http://weex-project.io/cn/references/weex-variable.html#weex-environment-object)
+目前只有 platform 为 iOS 和 Android 才能支持。[获取当前 platform](/zh/docs/api/weex-variable.html#weex-environment-object)
 :::

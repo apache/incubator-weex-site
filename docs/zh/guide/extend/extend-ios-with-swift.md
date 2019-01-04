@@ -1,4 +1,4 @@
-## Swift In Weex
+## 使用 Swift 扩展 Weex
 
 [Swift和Objective-C](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-ID122) 混编
 

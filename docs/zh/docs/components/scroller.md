@@ -1,5 +1,7 @@
 # &lt;scroller&gt;
 
+## 简介
+
 `<scroller>` 是一个容纳子组件进行横向或竖向滚动的容器组件。如果你的组件需要进行滚动，可以将 `<scroller>` 当作根元素或者父元素使用，否则页面无法滚动（ `<list>` 组件除外， `<list>` 默认可以滚动）。
 
 ::: warning
@@ -91,7 +93,7 @@
 
 ### `scrollToElement(node, options)`
 
-与 `<list>` 类似，`<scroller>` 支持滚动到某个指定的元素，可通过 `dom.scrollToElement()` 滚动到指定元素位置。更多信息可参考[dom module](/docs/dom.html)。
+与 `<list>` 类似，`<scroller>` 支持滚动到某个指定的元素，可通过 `dom.scrollToElement()` 滚动到指定元素位置。更多信息可参考[dom module](../modules/dom.html)。
 
 #### 参数
 
@@ -99,7 +101,7 @@
 - `options {Object}`：可选项，属性为：
   - `offset {number}`：一个到其可见位置的偏移距离，默认是 0
 
-## Demo
+## 例子
 
 - [scrollerstart 事件](http://dotwe.org/vue/6e3c7fb21976e80c2959f330ddd1b26a)
 - [设置 scroller 事件触发频率](http://dotwe.org/vue/d896b0896293ec55c209729fdfc7bff2)

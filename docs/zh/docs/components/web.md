@@ -1,5 +1,6 @@
-
 # &lt;web&gt;
+
+## 简介
 
 `<web>` 用于在 WEEX 页面中显示由 src 属性指定的网页内容。
 
@@ -23,7 +24,7 @@
 ::: warning 注意
 * `<web>` 不支持任何嵌套的子组件。
 * `<web>` 必须指定 width 和 height 的样式属性，否则将不起作用。
-* 您可以使用 [webview module](/docs/webview.html)来控制 `<web>`。
+* 您可以使用 [webview module](../modules/webview.html)来控制 `<web>`。
 :::
 
 ## 属性
@@ -39,15 +40,15 @@
 * **pagestart** 会在 Web 页面开始加载时调用。
 
     事件对象：
-    - url: {String} 当前 Web 页面的 URL。
+    - `url`: {String} 当前 Web 页面的 URL。
 
 * **pagefinish** 会在 Web 页面完成加载时调用。
 
     事件对象：
-    - url: {String} 当前 Web 页面的 URL。
-    - canGoBack: {Boolean} 当前 Web 页面是否可以回退。
-    - canGoForward: {Boolean} 当前 Web 页面是否可以前进。
-    - title: {String} 当前 Web 页面的标题（仅限 iOS 平台）。
+    - `url`: {String} 当前 Web 页面的 URL。
+    - `canGoBack`: {Boolean} 当前 Web 页面是否可以回退。
+    - `canGoForward`: {Boolean} 当前 Web 页面是否可以前进。
+    - `title`: {String} 当前 Web 页面的标题（仅限 iOS 平台）。
 
 * **error** 会在 Web 页面加载失败时调用。
 
@@ -78,8 +79,8 @@
 <style></style>
 ```
 
-## Demo
+## 例子
 
 * [体验示例](http://dotwe.org/vue/9f8a7be89a4ad881ff515145cc9306ea)
 
-上述示例监听了 pagestart、pagefinish 及 error 事件，同时使用了  [webview module](/docs/webview.html) 提供的 API。
+上述示例监听了 pagestart、pagefinish 及 error 事件，同时使用了  [webview module](../modules/webview.html) 提供的 API。

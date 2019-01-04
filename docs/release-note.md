@@ -1,3 +1,14 @@
+## v0.20.0
+### Bug
+* [WEEX-490](https://issues.apache.org/jira/browse/WEEX-490) - [Android] set "type=tel" and "type=number" in input component, but also can input text
+* [WEEX-664](https://issues.apache.org/jira/browse/WEEX-664) - [weex_core] RTL performance is incorrect
+* [WEEX-669](https://issues.apache.org/jira/browse/WEEX-669) - [Android] crash when slider mAdapter null
+* [WEEX-673](https://issues.apache.org/jira/browse/WEEX-673) - [weex_core][iOS][Android] fix crash && advance RTL performance
+### Improvement
+* [WEEX-394](https://issues.apache.org/jira/browse/WEEX-394) - [iOS] Add license for some iOS files
+* [WEEX-553](https://issues.apache.org/jira/browse/WEEX-553) - [Android] Add interceptTouch attribute in component
+
+
 ## v0.19.0
 
 - [WEEX-219][Android] support copy action for text component [#1037](https://github.com/apache/incubator-weex/pull/1037)

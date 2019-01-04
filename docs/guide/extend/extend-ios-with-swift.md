@@ -1,11 +1,3 @@
----
-title: Extend iOS with swift
-type: guide
-group: Extend
-order: 6.4
-version: 2.1
----
-
 ## Swift In Weex
 
 [Swift and Objective-C](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-ID122) mix-up

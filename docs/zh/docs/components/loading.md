@@ -1,4 +1,7 @@
 # &lt;loading&gt;
+
+## 简介
+
 `<loading>` 为容器提供上拉加载功能。
 
 ::: warning 注意

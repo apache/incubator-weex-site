@@ -1,5 +1,6 @@
-# &lt;Recycle List&gt;
-<span class="weex-version">v0.18.0+</span>
+# &lt;recycle-list&gt; <Badge text="v0.18+" type="warning"/>
+
+## Summary
 
 `<recycle-list>`  is a new list container with the ability to recycle and reuse, which can greatly optimize memory usage and rendering performance.
 

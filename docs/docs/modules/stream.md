@@ -30,6 +30,13 @@ Start a network request, use two callbacks to receive server's response data.
 
     * body(string): the HTTP body.
 
+::: warning
+- The `body` parameter only supports arguments of type `string`. Do not use the `JSON` format directly, you must convert it to a string.
+- The `GET` request does not support arguments as `body`. Please use the URL to set the parameters.
+- The default value of `Content-Type` is `application/x-www-form-urlencoded`.
+- If you need to send data in `JSON` format via POST, you need to set `Content-Type` to `application/json`.
+:::
+
 * callback(function): A callback function whose argument is the response object of the request. Callback function will receive a `response` object.
 
     * status(number): response status code.
@@ -61,4 +68,11 @@ Start a network request, use two callbacks to receive server's response data.
 
 ### Example
 
-[stream demo](http://dotwe.org/vue/e182a9fbbeb6f0763cd1df1baddf1e10)
+- [Simple Demo](http://dotwe.org/vue/80b21a0fce98acdffad96c57b2eadd1d)
+- [Post Demo](http://dotwe.org/vue/6dd65122144d9ad26594c0f900c75cd4)
+
+  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1UWA7n4TpK1RjSZFGXXcHqFXa-750-1334.gif" />
+
+- [Get Demo](http://dotwe.org/vue/892bd1c977b61762baca8e02a65b6d97)
+
+  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1.Bg6nZbpK1RjSZFyXXX_qFXa-750-1334.gif" />

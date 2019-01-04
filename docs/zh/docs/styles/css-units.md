@@ -2,37 +2,53 @@
 
 ## CSS 长度单位
 
-在 Weex 中，我们**只支持 `px` 长度单位**。并且它将在 JavaScript 运行时和本机渲染器中解析为数字类型。
+在 Weex 中，我们**只支持 `px` 长度单位**。
 
 ::: warning 注意
-- Weex 不支持类似 `em`、`rem`、`pt` 这样的 CSS 标准中的其他长度单位；
+- Weex 不支持类似 `em`、`rem`、`pt`,`%` 这样的 CSS 标准中的其他长度单位；
 - 单位 `px` 不可省略，否则在 H5 环境无法正确渲染；
-- `line-height` 不支持相对 `font-size` 计算倍数，必须是 `px`。
 :::
 
 ## CSS 数值单位
 
 在 Weex 中，除了长度单位外，还有数值单位，仅仅一个数值，后面没有 `px` 等单位。用于 `opacity`，`lines`，`flex` 等属性指定一个纯数值。
 
-有时值必须是整数，例如：`lines`。
-
-## CSS 百分比单位
-
-**Weex 暂不支持百分比，如“50％”，“66.7％”等。**
+::: tip
+有时值必须是整数，例如：`lines`
+:::
 
 ## CSS 颜色单位
 
 Weex 支持多种颜色单位：
 
-- 颜色关键字，例如 `red`，`green` 等；
-- 十六进制的 HEX 值，每个颜色包括一个 `#` 号，其后面紧跟着三组两位十六进制数，如果这三组数值各自在两位上的数字都相同，那么本单位也可缩写为 `#RGB` 的方式。例如：`#FF8800` 可以缩写为 `#F80`;
-- `rgb(a,b,c)`;
-- `rgba(a,b,c,d)`.
+* 精简写法的十六进制，如`#f00`
+* 十六进制，如 `#ff0000`
+* RGB， 如 `rgb(255, 0, 0)`
+* RGBA，如 `rgba(255, 0, 0, 0.5)`
+* 色值关键字，如 `red`
+
+```css
+.classA {
+  /* 3-chars hex */
+  color: #0f0;
+  /* 6-chars hex */
+  color: #00ff00;
+  /* rgba */
+  color: rgb(255, 0, 0);
+  /* rgba */
+  color: rgba(255, 0, 0, 0.5);
+  /* transparent */
+  color: transparent;
+  /* Basic color keywords */
+  color: orange;
+  /* Extended color keywords */
+  color: darkgray;
+}
+```
 
 ::: warning 注意
-- 不支持 `hsl()`、`hsla()` 8个字符的十六进制颜色。
-- 不支持 `currentColor`单位。
-- `rgb(a,b,c)` 或 `rgba(a,b,c,d)` 的性能比其他颜色格式差很多，请选择合适的颜色格式。
+* 只有上面列出的颜色格式被支持，其他颜色格式均**不**被支持。
+* `6-chars hex` *16进制颜色值* 是性能最好的颜色使用方式。除非有特殊原因，请使用`6-chars hex`格式。
 :::
 
 ### 颜色关键字列表

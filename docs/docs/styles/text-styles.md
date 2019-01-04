@@ -1,137 +1,56 @@
-# 文本样式
+# Text Styles
 
-文本类组件支持一些特殊的 CSS 属性设置文本的样式，如字体、字号、文本颜色等, 这类组件目前包括 `<text>`、 `<input>` 和 `<textarea>`。
+Text alike components share some common style rules. The text alike components currently includes [`text`](../components/text.html)、[`input`](../components/input.html) and [`richtext`](../components/richtext.html)
 
-## `color`
+## Reference
+### color
+`color`: &lt;colors&gt; this property set the foreground color of an component's text content.
+    * The property `color` support multiple formats of values, contains rgb, rgba, #fff, #ffffff, named-color. Example:
+        ```css
+        .my-class { color: red; }
+        .my-class { color: #f00; }
+        .my-class { color: #ff0000; }
+        .my-class { color: rgb(255, 0, 0); }
+        .my-class { color: rgba(255, 0, 0, 0.5); }
+        ```
+### font-size
+`font-size`: &lt;length&gt; this property specifies the size of the font.
 
-设置文字颜色，值为色值或颜色关键字，支持 RGB（`rgb(255, 0, 0)`），RGBA（`rgba(255, 0, 0, 0.5)`），十六进制（`#ff0000`），精简写法的十六进制（`#f00`），色值关键字（`red`）。具体可参考 [CSS 颜色单位](./css-units.html#css-颜色单位)。
+### font-style
+`font-style`: &lt;enum&gt; `normal` | `italic`. This property lets you select italic or normal faces within a font-family. Default value is `normal`.
 
-```html
-<style scope>
-.title {
-  color: rgba(0, 0, 0, 0.8);
-}
-.content {
-  color: #666;
-}
-</style>
-```
+### font-weight
+This property indicate the weight of the text.
+  * values: `normal`, `bold`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
+  * normal is equal to 400, bold equel to 700
+  * default value: `normal`
+  * apply to: `<text>`, `<input>`
+  * ios support showing 9 kind of font-weight.
+  * android support showing 2 kind of font-weight:400,700, other value will map to 400 or 700
+  * Some standard values like `lighter`, `bolder`, number unit are not supported.
+  * The effect not apply to all elements, just `<text>` and `<input>`. In another way, it's not inherited.
+### text-decoration
+`text-decoration`: &lt;enum&gt; `none` | `underline` | `line-through`. This property is used to set the text formatting to underline or line-through. The default value is `none`.
 
-## `lines`
+::: warning
+Only support for `<text>` and `<ricthext>`
+:::
 
-指定文本行数，值为整数。**仅在 `<text>` 组件中支持**。默认值是 `0` 代表不限制行数。
+### text-align
+`text-align`: &lt;enum&gt; `left` | `center` | `right`. This property describes how inline content like text is aligned in its parent component. The default value is `left`.
 
-通常与 `text-overflow` 配合限制文本行数，超过则文本末尾显示省略号。
+### font-family
+`font-family`:&lt;string&gt; this property set the font-family of the text. This property **doesn't guarantee** the given font will always be set to the text. If the specified font cannot be found at the device, a typeface fallback will occur and the default typeface will be load. The fallback mechanism may vary in different devices. If you want load your own font-family, ref [dom.addRule](../modules/dom.html) instead.
 
-```html
-<style scope>
-.content {
-  lines: 3;
-  text-overflow: ellipsis;
-  color: #666;
-}
-</style>
-```
+### text-overflow
+`text-overflow`:&lt;enum&gt; `clip` | `ellipsis`. This property determines how overflowed content that is not displayed is signaled to users. It can be clipped, display an ellipsis.
 
-## `text-overflow`
+::: warning
+Only support for `<text>` and `<ricthext>`
+:::
 
-设置内容超长时的省略样式。**仅在 `<text>` 组件中支持**。通常与 `lines` 配合限制文本行数，超过则文本末尾显示省略号。可选值为：
+### lines
+`lines`: &lt;number&gt; positive number. This is the max lines of text that would be displayed, the default value is 0 which means there is no restriction on text lines. If the text is not enough, the actual number of line may be shorter than the specified value.
 
-- `clip`：截断，不做任何处理。
-- `ellipsis`：内容超长时在文本末尾显示省略号。
-
-```html
-<style scope>
-.content {
-  lines: 3;
-  text-overflow: ellipsis;
-  color: #666;
-}
-</style>
-```
-
-## `font-size`
-
-设置文字大小，**仅支持 `px` 单位。**文字默认大小为 36px。
-
-```html
-<style scope>
-.title {
-  font-size: 40px;
-}
-</style>
-```
-
-## `font-style`
-
-设置字体类别，可选值 `normal` | `italic`，默认为 `normal`。
-
-```html
-<style scope>
-.title {
-  font-style: italic;
-}
-</style>
-```
-
-## `font-weight`
-
-设置字体粗细程度，可选值为 `normal` | `bold` | `100` | `200` | `300` | `400` | `500` | `600` | `700` | `800` | `900`，默认为 `normal`。
-
-- `normal` 等同于 400, `bold` 等同于 700；
-- iOS 支持以上可选值；Android 仅支持 400 和 700，其他值会设为 400 或 700；
-- 暂不支持 `lighter`, `bolder` 等其他值。
-
-```html
-<style scope>
-.title {
-  font-weight: bold;
-}
-</style>
-```
-
-## `text-decoration`
-
-设置文本装饰，可选值为：
-
-- `none`：无任何装饰，默认为 `none`。
-- `underline`：文本下划线。
-- `line-through`：文本删除线。
-
-```html
-<style scope>
-.title {
-  text-decoration: underline;
-}
-</style>
-```
-
-## `text-align`
-
-设置文本对齐方式，可选值为：
-
-- `left`：左对齐，默认为 `none`。
-- `center`：水平居中对齐。
-- `right`：右对齐。
-
-```html
-<style scope>
-.title {
-  text-align: center;
-}
-</style>
-```
-
-## `font-family`
-
-设置文本设置字体，该属性**不保证**在不同平台、不同设备间的一致性。如所选设置在平台上不可用，将会降级到平台默认字体。
-
-```html
-<style scope>
-.title {
-  font-family: Arial;
-}
-</style>
-```
-
-该属性可配合 `dom.addRule()` 方法为 `<text>` 设置自定义字体，详情可查看 [`<text>` 组件](/docs/text.html#自定义字体)。
+### line-height
+`line-height`: &lt;length&gt; The line height of every line in the text. `line-height` is the space between top and bottom.![line-height](http://i.stack.imgur.com/LwZJF.png) There is no relationship between `line-height` and `font-size`, as `line-height` is restricted by top and bottom, `font-size` is interpreted by glyph. Usually but not always, `line-height` and `font-size` with the same value will cause the text clipped.

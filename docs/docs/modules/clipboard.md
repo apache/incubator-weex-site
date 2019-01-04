@@ -13,10 +13,10 @@ clipboard allows you to `getString()` or `setString()` from the system clipboard
 
 Not long ago, We're still suffering from such a situation that we got a verification code sent by SMS, and we had no way to get the code from the SMS text but to typed it by our hands. How frustrated it is! But now you can enable your app to get the code from the system clipboard by calling  `clipboard.getString()` .
 
-## Caution
-
+::: warning
 * only support text.
 * only works on Android and iOS. NOT works for html5, for web security reason.
+:::
 
 ## API
 

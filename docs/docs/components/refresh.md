@@ -1,22 +1,23 @@
 # &lt;refresh&gt;
 
-### <span class="weex-version">v0.6.1+</span>
+## Summary
 
+::: warning
 The `<refresh>` Component provide a pulldown-refresh function for some special containers, its usage and attributes are similar to the `<loading>` Component.
-> **Note：** To be rendered properly, the `<refresh>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
 
- - Example:
+To be rendered properly, the `<refresh>` Component must appear inside the special Component such as `<scroller>`、`<list>`、`<hlist>`、`<vlist>`、`<waterfall>`.
+:::
 
-```
-<list>
+```vue{2}
+<scroller>
   <refresh>
-    ...
+    <text>Refreshing...</text>
   </refresh>
-  ...
-</list>
+  <div v-for="num in lists">
+    <text>{{num}}</text>
+  </div>
+</scroller>
 ```
-
- - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
 ## Child Components
 
@@ -24,20 +25,16 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
  - `<loading-indicator>`: This is a dedicated component which provides a default refresh animation effect, can only be used inside the `<refresh>` or the `<loading>` components.
 
- - Example:
-
-```
+```vue{2}
 <refresh>
   <text>Refreshing</text>
   <loading-indicator></loading-indicator>
-  ...
 </refresh>
 ```
- - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
 ## Attributes
 
- - Support all common attributes, check out [common attributes](../common/common-attrs)
+ - Support all common attributes;
 
 | Attribute      | Type     | Value            | Default Value     |
 | ------------- | ------ | -------------------------- | ------- |
@@ -51,35 +48,9 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
 
 > **Note：** The visibility of `<refresh>` component can be controlled by display attribute with the value show and hide. A `display="show"` should always be paired with a `display="hide"` statement.
 
- - Example:
-
-```
-<template>
-  <list>
-    <refresh @refresh="onrefresh" :display="refreshing ? 'show' : 'hide'">
-      ...
-    </refresh>
-    ...
-  </list>
-</template>
-
-<script>
-  ...
-  methods: {
-    onrefresh (event) {
-      this.refreshing = true
-      setTimeout(() => {
-        this.refreshing = false
-      }, 2000)
-    },
-  }
-</script>
-```
- - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
-
 ## Styles
 
- - Please check out the [common styles](/wiki/common-styles.html)
+ - Please check out the [common styles](../styles/common-styles.html)
 
 ## Events
 
@@ -96,34 +67,12 @@ The `<refresh>` Component provide a pulldown-refresh function for some special c
   - `viewHeight` : The height of refreshView
   - `type` : "pullingdown" constant string type for this event
 
-
- - Example:
-
-```
-<scroller>
-  <refresh @refresh="onrefresh" @pullingdown="onpullingdown">
-    ...
+```vue{2}
+  <refresh @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+    <text>Refreshing ...</text>
+    <loading-indicator></loading-indicator>
   </refresh>
-  ...
-</scroller>
-
-<script>
-  export default {
-    methods: {
-      onrefresh (event) {
-        ...
-      },
-      onpullingdown (event) {
-        console.log("dy: " + event.dy)
-        console.log("pullingDistance: " + event.pullingDistance)
-        console.log("viewHeight: " + event.viewHeight)
-        console.log("type: " + type)
-      }
-    }
-  }
-</script>
 ```
- - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 
 
 

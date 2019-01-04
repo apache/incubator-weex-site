@@ -2,6 +2,14 @@
 
 所有 Weex 自带组件都支持以下通用样式规则。
 
+::: danger
+Weex所支持的通用样式已在本文档中全部列出，一些组件可能有自定义样式，请参考组件文档。除此之外的属性，均不被支持。
+:::
+
+::: warning
+Weex 对于长度值目前只支持像素值，不支持相对单位（`em`、`rem`）。
+:::
+
 ## 盒模型
 
 Weex 盒模型基于 [CSS 盒模型](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)，每个 Weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。
@@ -11,137 +19,131 @@ Weex 盒模型基于 [CSS 盒模型](https://developer.mozilla.org/zh-CN/docs/We
 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding edge 与内容边界 content edge。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。
 
 ::: warning
-- Weex 对于长度值目前只支持像素值，不支持相对单位（`em`、`rem`）。
-- **Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。**
+Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
 :::
 
-### 属性
+::: warning
+Weex 只支持 `overflow:hidden`.
+:::
 
-#### 宽度
+下面的例子显示了盒模型的基本用法
+
+```html
+<template>
+  <div>
+    <image src="..." style="width: 400; height: 200; margin-left: 20;"></image>
+  </div>
+</template>
+```
+
+### 宽度
 
 `width {length}`：默认值 0
 
-#### 高度
+### 高度
 
 `height {length}`：默认值 0
 
-#### 内边距
-
+### 内边距
 `padding {length}`：内边距，内容和边框之间的距离，默认值 0。与标准 CSS 类似，`padding` 支持简写，也可分解为以下四个：
-  - `padding-left {length}`：左内边距，默认值 0
-  - `padding-right {length}`：右内边距，默认值 0
-  - `padding-top {length}`：上内边距，默认值 0
-  - `padding-bottom {length}`：下内边距，默认值 0
+  * `padding {length}`: 上、下、左、右四边内边距，默认值 0
+  * `padding-left {length}`：左内边距，默认值 0
+  * `padding-right {length}`：右内边距，默认值 0
+  * `padding-top {length}`：上内边距，默认值 0
+  * `padding-bottom {length}`：下内边距，默认值 0
 
-```css
-.content {
-  /* 应用于四个边 */
-  padding: 10px;
+### 边框
+#### border-style
+`border-width`设定边框样式，如果四个方向的边框样式不同，可分别设置：
+  * `border-style {string}`
+  * `border-left-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
+  * `border-top-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
+  * `border-right-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
+  * `border-bottom-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
 
-  /* 垂直方向| 水平方向*/
-  padding: 5px 10px;
+支持的值如下：
+  * `solid`：实线边框，默认值 `solid`
+  * `dashed`：方形虚线边框
+  * `dotted`：圆点虚线边框
 
-  /* 顶部| 水平方向| 底部*/
-  padding: 1px 2px 2px;
+#### border-width
+`border-width`：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
+  * `border-left-width {length}`：非负值, 默认值 0
+  * `border-left-width {length}`：非负值, 默认值 0
+  * `border-top-width {length}`：非负值, 默认值 0
+  * `border-right-width {length}`：非负值, 默认值 0
+  * `border-bottom-width {length}`：非负值, 默认值 0
 
-  /* 顶部| 右边| 底部| 左边*/
-  padding: 2px 1px 0px 1px;
-}
-```
+#### border-color
+`border-color`：设定边框颜色，默认值 `#000000`，如果四个方向的边框颜色不同，可分别设置：
+  * `border-color {color}`：默认值 `#000000`
+  * `border-left-color {color}`：默认值 `#000000`
+  * `border-top-color {color}`：默认值 `#000000`
+  * `border-right-color {color}`：默认值 `#000000`
+  * `border-bottom-color {color}`：默认值 `#000000`
 
-#### 外边距
+#### border-radius
+`border-radius`：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
+  * `border-radius {length}`: 非负值, 默认值 0
+  * `border-bottom-left-radius {length}`：非负值, 默认值 0
+  * `border-bottom-right-radius {length}`：非负值, 默认值 0
+  * `border-top-left-radius {length}`：非负值, 默认值 0
+  * `border-top-right-radius {length}`：非负值, 默认值 0
 
-`margin {length}`：外边距，元素和元素之间的空白距离，默认值 0。与标准 CSS 类似，`margin` 支持简写，也可分解为以下四个：
-  - `margin-left {length}`：左外边距，默认值 0
-  - `margin-right {length}`：右外边距，默认值 0
-  - `margin-top {length}`：上外边距，默认值 0
-  - `margin-bottom {length}`：下外边距，默认值 0
-
-```css
-.content {
-  /* 应用于四个边 */
-  margin: 10px;
-
-  /* 垂直方向| 水平方向*/
-  margin: 5px 10px;
-
-  /* 顶部| 水平方向| 底部*/
-  margin: 1px 2px 2px;
-
-  /* 顶部| 右边| 底部| 左边*/
-  margin: 2px 1px 0px 1px;
-}
-```
-
-#### 边框
-
-**设置元素边框暂不支持类似** `border: 1 solid #ff0000;` **的组合写法**。需分别设置 `border-width`（边框宽度），`border-style`（边框样式）和 `border-color`（边框颜色）。
-
-- `border-style {string}`：统一设定四个方向的边框样式，值类型为 `string`，**不支持简写**，可选值为：
-  - `solid`：实线边框，默认值 `solid`
-  - `dashed`：方形虚线边框
-  - `dotted`：圆点虚线边框
-
-  如果四个方向的边框样式不同，可分别设置：
-
-  - `border-left-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
-  - `border-top-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
-  - `border-right-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
-  - `border-bottom-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
-
-- `border-width {length}`：统一设定四个方向的边框宽度，非负值, 默认值 0，**不支持简写**，如果四个方向的边框宽度不同，可分别设置：
-
-  - `border-left-width {length}`：非负值, 默认值 0
-  - `border-top-width {length}`：非负值, 默认值 0
-  - `border-right-width {length}`：非负值, 默认值 0
-  - `border-bottom-width {length}`：非负值, 默认值 0
-
-- `border-color {color}`：统一设定四个方向的设定边框颜色，默认值 `#000000`，**不支持简写**，如果四个方向的边框颜色不同，可分别设置：
-
-  - `border-left-color {color}`：默认值 `#000000`
-  - `border-top-color {color}`：默认值 `#000000`
-  - `border-right-color {color}`：默认值 `#000000`
-  - `border-bottom-color {color}`：默认值 `#000000`
-
-- `border-radius {length}`：统一设定四个方向的圆角，默认值 0，**不支持简写**，如果四个方向的圆角弧度不同，可分别设置：
-
-  - `border-bottom-left-radius {length}`：非负值, 默认值 0
-  - `border-bottom-right-radius {length}`：非负值, 默认值 0
-  - `border-top-left-radius {length}`：非负值, 默认值 0
-  - `border-top-right-radius {length}`：非负值, 默认值 0
-
-::: warning
-- 目前在 `<image>` 组件上尚无法只定义一个或几个角的 `border-radius`，比如你无法在这个组件上使用 `border-top-left-radius`，该约束只对 iOS 生效，Android 并不受此限制。
-
-- 尽管 `overflow: hidden` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去剪切它的子 view。这个限制只对 Android 生效，iOS 不受影响：
-
-  - 父view是 `div`, `a`, `cell`, `refresh` 或 `loading`。
-  - 系统版本是 Android 4.3 或更高。
-  - 系统版本不是 Andorid 7.0。
-  - 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
+::: danger
+`border-radius`和`border-width`定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边`border-radius`(或`border-width`不一致，weex绘制的边框曲线可能不够平滑。
 :::
 
+::: danger Android 兼容性
+尽管 `overflow: hidden` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去剪切它的子 view。
+  * 父view是 `div`, `a`, `cell`, `refresh` 或 `loading`。
+  * 系统版本是 Android 4.3 或更高。
+  * 系统版本不是 Andorid 7.0。
+  * 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
+:::
+
+### 外边距
+`margin {length}`：外边距，元素和元素之间的空白距离，默认值 0。与标准 CSS 类似，`margin` 支持简写，也可分解为四边：
+  * `margin {length}`: 上、下、左、右四边外边距，默认值 0
+  * `margin-left {length}`：左外边距，默认值 0
+  * `margin-right {length}`：右外边距，默认值 0
+  * `margin-top {length}`：上外边距，默认值 0
+  * `margin-bottom {length}`：下外边距，默认值 0
+
 ## Flexbox
+Weex 布局模型基于 CSS [`Flexbox`](http://www.w3.org/TR/css3-flexbox/)，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容纳其他元素，那么它就成为 flex 容器。
 
-Weex 布局模型基于 CSS [`Flexbox`](http://www.w3.org/TR/css3-flexbox/)，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。
-
-Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容纳其他元素，那么它就成为 flex 容器。需要注意的是，flexbox 的老版规范相较新版有些出入，比如是否能支持 wrapping。这些都描述在 W3C 的工作草案中了，你需要注意下新老版本之间的不同。另外，老版本只在安卓 4.4 版以下得到支持。
+::: warning
+文档中未说明的 flexbox 属性均不支持：如 `order`、`flex-flow` 等。
+:::
 
 ### Flex 容器
-
 在 Weex 中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 `display: flex;` 属性。
 
-- `flex-direction`：
+#### direction
+`direction`决定了文字方向和**Flex容器**的基线方向。默认值为`ltr`。
+* `ltr`: 文字和其他元素从左到右排布
+* `rtl`: 文字和其他元素从右到左排布。
 
-  定义了 flex 容器中 flex 成员项的排列方向。可选值为 `row` | `column`，默认值为 `column`
+:::tip
+尽管 `direction` 不是 Flexbox模型的一部分，但却对 Flexbox 模型有着影响。
+:::
 
-  - `column`：从上到下排列。
-  - `row`：从左到右排列。
+#### flex-direction
+`flex-direction`定义了 flex 容器中 flex 成员项的排列方向，默认值为 `column`
+  * `column`：从上到下排列。
+  * `column-reverse`: 从下到上排布
+  * `row`：如果存在`direction:ltr`，则从左到右排布；如果存在`direction:rtl`，则从右到左排布。
+  * `row-reverse`: 排布方向与`flex-direction:row`相反
 
-- `justify-content`：
-
-  定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。可选值为 `flex-start` | `flex-end` | `center` | `space-between`，默认值为 `flex-start`。
-
+#### flex-wrap
+`flex-wrap`属性决定了`Flex成员项`在一行还是多行分布，默认值为`nowrap`
+* `nowrap`: `Flex成员项`在一行排布，排布的开始位置由`direction`指定。
+* `wrap`：` Flex成员项`在多行排布，排布的开始位置由`direction`指定
+* `wrap-reverse`: 行为类似于`wrap`，排布方向与其相反。
+  
+#### justify-content
+定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。可选值为 `flex-start` | `flex-end` | `center` | `space-between`，默认值为 `flex-start`。
   - `flex-start`：是默认值，所有的 flex 成员项都排列在容器的前部；
   - `flex-end`：则意味着成员项排列在容器的后部；
   - `center`：即中间对齐，成员项排列在容器中间、两边留白；
@@ -151,10 +153,8 @@ Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容
     <img width="400px" src="https://img.alicdn.com/tfs/TB1fQRmohnaK1RjSZFBXXcW7VXa-504-270.svg" />
   </div>
 
-- `align-items`：
-
-  定义了 flex 容器中 flex 成员项在纵轴方向上如何排列以处理空白部分。可选值为 `stretch` | `flex-start` | `center` | `flex-end`，默认值为 `stretch`。
-
+#### align-items
+定义了 flex 容器中 flex 成员项在纵轴方向上如何排列以处理空白部分。可选值为 `stretch` | `flex-start` | `center` | `flex-end`，默认值为 `stretch`。
   - `stretch` 是默认值，即拉伸高度至 flex 容器的大小；
   - `flex-start` 则是上对齐，所有的成员项排列在容器顶部；
   - `flex-end` 是下对齐，所有的成员项排列在容器底部；
@@ -165,43 +165,17 @@ Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容
   </div>
 
 ### Flex 成员项
-
+#### flex
 flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。如果所有的成员项设置相同的值 `flex: 1`，它们将平均分配剩余空间。如果一个成员项设置的值为 `flex: 2`，其它的成员项设置的值为 `flex: 1`，那么这个成员项所占用的剩余空间是其它成员项的 2 倍。Flex 成员项暂不支持 `flex-shrink` 和 `flex-basis` 属性。
-
 - `flex {number}`：值为 number 类型。**该属性不支持 `flex: <flex-grow> | <flex-shrink> | <'flex-basis>`** 的简写。
 
 示例，使用 flexbox 实现水平居中与垂直居中：
 
-```html
-<template>
-  <div class="wrapper">
-    <div class="box">
-    </div>
-  </div>
-</template>
+### Examples
+* [水平和竖直居中](http://dotwe.org/vue/505b5e8bdb6774bccb597a30f74492af)
+* [Grid布局](http://dotwe.org/vue/4e1dcb58b31c266c4979fcbed04bb25b)
+* [等高模块](http://dotwe.org/vue/5aa2fa9a1ed5ea250e553683ca710f7a)
 
-<style scoped>
-  .wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #cccccc;
-    justify-content: center;
-    align-items: center;
-  }
-  .box {
-    width: 200px;
-    height: 200px;
-    background-color: #fc0000;
-  }
-</style>
-```
-
-::: warning
-文档中未说明的 flexbox 属性均不支持：如 `order`、`flex-flow` 等。
-:::
 
 ## 定位
 
@@ -228,55 +202,7 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 
 [示例](http://dotwe.org/vue/cb3436ea65283d2ab456641ba30133a4)
 
-## transform
-
-transform 属性向元素应用 2D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
-
-目前支持的 transform 声明格式:
-
-- `translateX({<length/percentage>})`：X 轴方向平移，支持长度单位或百分比。
-- `translateY({<length/percentage>})`：Y 轴方向平移，支持长度单位或百分比。
-- `translate({<length/percentage>} {<length/percentage>})`：X 轴和 Y 轴方向同时平移，`translateX` + `translateY` 简写。
-- `scaleX(<number>)`：X 轴方向缩放，值为数值，表示缩放比例，**不支持百分比**。
-- `scaleY(<number>)`：Y 轴方向缩放，值为数值，表示缩放比例，**不支持百分比**。
-- `scale(<number>)`：X 轴和 Y 轴方向同时缩放，`scaleX` + `scaleY` 简写。
-- `rotate(<angle/degree>)`：将元素围绕一个定点（由 `transform-origin` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。
-- `rotateX(<angle/degree>)`<Badge text="0.14+" type="warn" vertical="middle"/>：X 轴方向的旋转。
-- `rotateY(<angle/degree>)`<Badge text="0.14+" type="warn" vertical="middle"/>：Y 轴方向的旋转。
-- `perspective(<length>)`<Badge text="0.16+" type="warn" vertical="middle"/>：指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定。**Android 4.1及以上版本支持**。详情可参考 [MDN 介绍](https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective)。
-- `transform-origin {length/percentage/关键字(top/left/right/bottom)}:`：设置一个元素变形的原点，**仅支持 2D 坐标**。
-
-### 示例
-
-```HTML
-<template>
-  <div class="wrapper">
-    <div class="transform">
-     <text class="title">Transformed element</text>
-    </div>
-  </div>
-</template>
-
-<style>
-  .transform {
-    align-items: center;
-    transform: translate(150px, 200px) rotate(20deg);
-    transform-origin: 0 -250px;
-    border-color:red;
-    border-width:2px;
-  }
-  .title {font-size: 48px;}
-</style>
-```
-
-::: warning
-在 native 端，给组件设置 `transform` 变换后，如果需要恢复原效果，不能直接删除对应的 `transform` 属性，而需要重新设置一个 `transform` 将元素变换恢复。可对比以下两个示例：
-
-- [手动恢复](http://dotwe.org/vue/2c800bd791ce68860981bb6f611ce2aa)
-- [直接删除 transform](http://dotwe.org/vue/020c00fd633711107fd2b3cedd5018db)
-:::
-
-## transition <Badge text="0.16+" type="warn" vertical="middle"/>
+## Transition <Badge text="0.16+" type="warn" vertical="middle"/>
 
 现在您可以在 CSS 中使用 `transition` 属性来提升您应用的交互性与视觉感受，`transition` 中包括布局动画，即 LayoutAnimation，现在布局产生变化的同时也能使用 `transition` 带来的流畅动画。`transition`允许 CSS 的属性值在一定的时间区间内平滑地过渡。
 
@@ -329,6 +255,55 @@ transform 属性向元素应用 2D 转换。该属性允许我们对元素进行
   }
 </style>
 ```
+
+## Transform
+::: tip
+除了`perspective`和`transform-origin`，`transition`支持了`transform`的全部能力。
+:::
+
+目前支持的 transform 声明格式:
+
+- `translateX({<length/percentage>})`：X 轴方向平移，支持长度单位或百分比。
+- `translateY({<length/percentage>})`：Y 轴方向平移，支持长度单位或百分比。
+- `translate({<length/percentage>} {<length/percentage>})`：X 轴和 Y 轴方向同时平移，`translateX` + `translateY` 简写。
+- `scaleX(<number>)`：X 轴方向缩放，值为数值，表示缩放比例，**不支持百分比**。
+- `scaleY(<number>)`：Y 轴方向缩放，值为数值，表示缩放比例，**不支持百分比**。
+- `scale(<number>)`：X 轴和 Y 轴方向同时缩放，`scaleX` + `scaleY` 简写。
+- `rotate(<angle/degree>)`：将元素围绕一个定点（由 `transform-origin` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。
+- `rotateX(<angle/degree>)`<Badge text="0.14+" type="warn" vertical="middle"/>：X 轴方向的旋转。
+- `rotateY(<angle/degree>)`<Badge text="0.14+" type="warn" vertical="middle"/>：Y 轴方向的旋转。
+- `perspective(<length>)`<Badge text="0.16+" type="warn" vertical="middle"/>：指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定。**Android 4.1及以上版本支持**。详情可参考 [MDN 介绍](https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective)。
+- `transform-origin {length/percentage/关键字(top/left/right/bottom)}:`：设置一个元素变形的原点，**仅支持 2D 坐标**。
+
+### 示例
+
+```HTML
+<template>
+  <div class="wrapper">
+    <div class="transform">
+     <text class="title">Transformed element</text>
+    </div>
+  </div>
+</template>
+
+<style>
+  .transform {
+    align-items: center;
+    transform: translate(150px, 200px) rotate(20deg);
+    transform-origin: 0 -250px;
+    border-color:red;
+    border-width:2px;
+  }
+  .title {font-size: 48px;}
+</style>
+```
+
+::: warning
+在 native 端，给组件设置 `transform` 变换后，如果需要恢复原效果，不能直接删除对应的 `transform` 属性，而需要重新设置一个 `transform` 将元素变换恢复。可对比以下两个示例：
+
+- [手动恢复](http://dotwe.org/vue/2c800bd791ce68860981bb6f611ce2aa)
+- [直接删除 transform](http://dotwe.org/vue/020c00fd633711107fd2b3cedd5018db)
+:::
 
 ## 伪类 <Badge text="0.9.5" type="warn" vertical="middle"/>
 

@@ -58,9 +58,3 @@ The aim to provide the reproducible steps is to enable developers to reproduce t
 
 The test results, including *Expected Result* and *Actual Result*, will tell developers what's wrong. *Expected Result* describes what should happen, and *Actual Result* describes what actually happens.
 
-## Reference
-
-This document is a modified version of [1].
-
- [1] http://testthewebforward.org/docs/bugs.html
-

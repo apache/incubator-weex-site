@@ -1,62 +1,82 @@
 # &lt;video&gt;
 
-`<video>` 组件可以让我们在 Weex 页面中嵌入视频内容。**该组件只包含基础视频播放能力，如需复杂能力，建议自行实现。**
+## 简介
 
-::: warning
-- `<video>` 需要显式的设置其宽高样式，否则在 App 中无法渲染。
-:::
+Video 组件用于在页面中嵌入视频内容。
+
+## 子组件
+
+`text` 是唯一合法的子组件。
+
+## 属性
+
+* **src**, string. 内嵌的视频指向的URL。
+* **play-status**, string. 可选值为 `play` | `pause`，用来控制视频的播放状态，`play` 或者 `pause`，默认值是 `pause`。
+* **auto-play**, boolean. 当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 `false`。
+* **poster**, string, <Badge text="v0.18+ & iOS" type="warning"/>. 指定视频首图的图片链接。
+* **controls**, string, <Badge text="v0.19+" type="warning"/>. 可选值为  `controls` | `nocontrols`，控制视频播放组件是否显示回放控制面板，默认会显示，当指定为 `nocontrols` 时不显示回放控制面板。
+
+## 样式
+
+* **通用样式** 支持所有[通用样式](../styles/common-styles.html)。
+
+## 事件
+
+* **start** 当 playback 的状态是 Playing 时触发。
+* **pause** 当 playback 的状态是 Paused 时触发。
+* **finish** 当 playback 的状态是 Finished 时触发。
+* **fail** 当 playback 状态是 Failed 时触发。
+
+## 示例
 
 ```html
 <template>
   <div>
-    <video class="video" :src="src" auto-play="true" @pause="onpause" controls="true"></video>
+    <video class="video" :src="src" autoplay controls
+      @start="onstart" @pause="onpause" @finish="onfinish" @fail="onfail"></video>
+    <text class="info">state: {{state}}</text>
   </div>
 </template>
-
-<script>
-  export default {
-    data () {
-      return {
-        src:'http://7xodnm.com1.z0.glb.clouddn.com/03000A01005A5363D9CB5F514325B3E6018933-6359-951A-945C-0D482B330E2A.mp4'
-      }
-    }
-  }
-</script>
 
 <style scoped>
   .video {
     width: 630px;
     height: 350px;
+    margin-top: 60px;
+    margin-left: 60px;
+  }
+  .info {
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
   }
 </style>
+
+<script>
+  export default {
+    data () {
+      return {
+        state: '----',
+        src:'http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4'
+      }
+    },
+    methods:{
+      onstart (event) {
+        this.state = 'onstart'
+      },
+      onpause (event) {
+        this.state = 'onpause'
+      },
+      onfinish (event) {
+        this.state = 'onfinish'
+      },
+      onfail (event) {
+        this.state = 'onfinish'
+      }
+    }
+  }
+</script>
 ```
-
-## 子组件
-
-`<video>` 不支持子组件。
-
-## 属性
-
-| 参数        | 说明                | 类型   | 默认值 |
-| ---------- | -------------      | -----  | ----- |
-| `src` | 内嵌的视频指向的 URL | string | - |
-| `play-status` | 可选值为 `play`/`pause`，用来控制视频的播放状态 | string | pause |
-| `auto-play` | 当页面加载初始化完成后，用来控制视频是否立即播放 | boolean | false |
-
-::: warning
-部分浏览器禁止页面自动播放视频或音频，`auto-play` 属性在这些浏览器中将会失效。建议为 `<video>` 组件添加 `controls="true"` 的属性，该属性是 W3C 标准属性，在浏览器中生效，将显示 video 元素控制栏。
-:::
-
-## 事件
-
-- `start`: 当开始播放或从暂停状态继续播放时触发，事件回调参数为标准 `Event` 对象。
-- `pause`: 当暂停播放时触发，事件回调参数为标准 `Event` 对象。
-- `finish`: 当播放结束后触发，事件回调参数为标准 `Event` 对象。
-- `fail`: 当播放失败时触发，事件回调参数为标准 `Event` 对象。
-
-## Demo
-
-- [自动播放](http://dotwe.org/vue/342d32830f51f72df6acab21fb1c21bd)
-- [手动控制播放状态](http://dotwe.org/vue/7bdf54dce22def3d3850f65d95f5eac9)
-
-  <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1rqI5n9zqK1RjSZPxXXc4tVXa-750-1334.gif" />
+* [示例](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
+* [自动播放示例](http://dotwe.org/vue/342d32830f51f72df6acab21fb1c21bd)
+* [手动控制示例](http://dotwe.org/vue/7bdf54dce22def3d3850f65d95f5eac9)
