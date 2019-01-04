@@ -72,7 +72,7 @@ module.exports = {
               children: [
                 ['extend/extend-android', 'Extend Android'],
                 ['extend/extend-ios', 'Extend iOS'],
-                ['extend/extend-ios-with-swift', 'Extend iOS with swift'],
+                ['extend/extend-ios-with-swift', 'Extend iOS with Swift'],
                 ['extend/extend-web', 'Extend Web Renderer']
               ]
             },
@@ -167,16 +167,6 @@ module.exports = {
                 ['events/event-bubbling', 'Event Bubble'],
                 ['events/gesture', 'Gesture']
               ]
-            },
-            {
-              title: 'Compatibility',
-              collapsable: false,
-              children: [
-                ['compatibility/components', 'Components'],
-                ['compatibility/modules', 'Modules'],
-                ['compatibility/styles', 'Styles'],
-                ['compatibility/events', 'Events']
-              ]
             }
           ],
           '/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
@@ -238,7 +228,7 @@ module.exports = {
               children: [
                 ['extend/extend-android', '扩展Android能力'],
                 ['extend/extend-ios', '扩展iOS能力'],
-                ['extend/extend-ios-with-swift', '使用Swift进行module 扩展'],
+                ['extend/extend-ios-with-swift', '使用Swift扩展iOS能力'],
                 ['extend/extend-web', '扩展Web组件']
               ]
             },
@@ -332,16 +322,6 @@ module.exports = {
                 ['events/common-events', 'Common Events'],
                 ['events/event-bubbling', 'Event Bubble'],
                 ['events/gesture', 'Gesture']
-              ]
-            },
-            {
-              title: 'Compatibility',
-              collapsable: false,
-              children: [
-                ['compatibility/components', 'Components'],
-                ['compatibility/modules', 'Modules'],
-                ['compatibility/styles', 'Styles'],
-                ['compatibility/events', 'Events']
               ]
             }
           ],
