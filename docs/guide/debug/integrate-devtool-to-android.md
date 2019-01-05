@@ -14,17 +14,13 @@ Weex devtools is a custom devtools for weex that implements Chrome Debugging Pro
 
 #### Version compatibility
 
-| weex sdk | weex inspector | Debugger Server |
-|----------|----------------|-----------------|
-| 0.13+    | 0.12+          | 0.2.39+         |
-| 0.8.0.1+ | 0.0.8.1+       | 0.2.39+         |
-| 0.7.0+   | 0.0.7.13       | 0.2.38          |
-| 0.6.0+   | 0.0.2.2        | -               |
-| 0.16.0+  | 0.12.1         | -               |
-| 0.17.0+  | 0.13.2         | -               |
-| 0.18.0+  | 0.13.4-multicontext | -               |
-| 0.19.0+  | 0.18.68        | -               |
-| 0.20.3.0-beta | 0.20.3.0-beta | - |
+| weex sdk | weex inspector |
+|----------|----------------|
+| 0.16.0+  | 0.12.1         |
+| 0.17.0+  | 0.13.2         |
+| 0.18.0+  | 0.13.4-multicontext |
+| 0.19.0+  | 0.18.68        |
+| 0.20.3.0-beta | 0.20.3.0-beta |
 
 ## Integrate to Android
 
