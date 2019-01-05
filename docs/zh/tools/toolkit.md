@@ -155,7 +155,7 @@ $ weex run web
 `@weex-cli/debug` 模块提供对Weex页面的调试能力，可使用如下命令启动：
 
 ``` bash
-weex debug [we_file|bundles_dir] [options]
+$ weex debug [we_file|bundles_dir] [options]
 ```
 
 #### 选项

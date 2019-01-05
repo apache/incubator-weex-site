@@ -1,195 +1,200 @@
-# Weex Toolkit
+# Introduction
 
-The [weex-toolkit](https://github.com/weexteam/weex-toolkit) is an official command line tool to help developers to create, debug and build their Weex project.
+::: warning warning
+This document is for the `weex-toolkit` **2.x** version. For the old version of the `weex-toolkit` documentation, please go to [here] (https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md).
+:::
 
-## Install
+[Weex Toolkit](https://github.com/weexteam/weex-toolkit) is dedicated to standardizing the tool base in the Weex ecosystem. It ensures that various build tools can be seamlessly connected based on smart default configuration, so you can focus on writing applications without having to spend days tangling configuration issues.
+
+## System Components
+
+[Weex Toolkit](https://github.com/weexteam/weex-toolkit) split each function module into separate parts, if you see our [source code](https://github.com/weexteam/weex-toolkit/tree/master/packages/%40weex) , you will find that we manage multiple separate releases in the repository via [Lerna](https://lernajs.io/) Package, providing the following functional modules:
+
+- The `@weex-cli/core`:
+  - upgradeable;
+  - Ability to customize through plugins and extensions;
+  - Provide globally configurable files;
+- The `@weex-cli/generator` module can quickly init the official project.
+- The `@weex-cli/compile` module can quickly configuration compile Weex file.
+- The `@weex-cli/preview` module can quickly previews the Weex page.
+- The `@weex-cli/debug` module compiles and debugs the Weex page.
+- The `@weex-cli/doctor` module quickly checks the user's local development environment.
+- The `@weex-cli/lint` module performs quality diagnostics on local `.vue` files.
+- The `@weex-cli/preview` module quickly zero previews the Weex page.
+- The `@weex-cli/device` module quickly manages user local devices.
+- The `@weex-cli/run` module runs the `iOS/Android/Web` project quickly.
+
+# How to use
+
+::: warning Warning
+If you don't have node.js installed locally, you can go to [Nodejs official website](https://nodejs.org/en/) to download and install, and make sure your node version is `>=7.6.0`, you can use [n]( Https://github.com/tj/n) to perform version management of node.
+:::
+
+## Installation
+
+If you have problems during the installation process, you can do a question search and feedback at [here](https://github.com/weexteam/weex-toolkit/issues).
 
 ``` bash
-$ npm install -g weex-toolkit
+$ npm install weex-toolkit@alpha -g
 ```
-You can use the `weex -v` command to confirm that the installation is successful.
-
-
-> If you have never installed node.js, you should go [node.js.org]( https://nodejs.org/en/) to download and install it. The node version needs to be upper 6.0. You can try [n](https://github.com/tj/n) to manage your node versions.
-
-If you meet some errors when installing, please go [Issues](https://github.com/weexteam/weex-toolkit/issues) or [Faq](https://github.com/weexteam/weex-toolkit#faq) to find some solution or have a discuss with us.
-
 
 ## Commands
 
-### create
+### Create a project
+
 ```bash
-# create a new project with an official template
+# Create a project from the official template
 $ weex create my-project
-
-# create a new project straight from a github template
-# see how to write a remote template https://www.npmjs.com/package/download-git-repo#repository
-$ weex create username/repo my-project
-```
-Create a new project with an official template or from other remote, also you can create your own weex template, more detail you can see [How-to-create-your-own-template](https://github.com/weex-templates/How-to-create-your-own-template).
-
-### preview
-
-weex-toolkit supports previewing your Weex file(`.vue`) in a watch mode. You only need specify your file path.
-
-``` bash
-$ weex preview src/foo.vue
 ```
 
-The browser automatically opens the preview page and you can see the layout and effects of your weex page. If you have a [Playground App](/tools/dotwe.html) in your mobile devices, you can scan the QR code at the opened page.
+The `@weex-cli/generator` module uses [`download-git-repo`](https://github.com/flipxfx/download-git-repo) to download the template file. The `download-git-repo` tool allows You specify a specific branch and remote repository address for project download, and the specified branch is separated by the (`#`) symbol.
 
-Try the command below, you’ll preview the whole directory files.
-
-``` bash
-$ weex preview src --entry src/foo.vue
+The template format under the download specific branch is as follows:
+```bash
+$ weex create '<template-name>#<branch-name>' <project-name>
 ```
 
-You need to specify the folder path to preview and the entry file (passed in via `--entry`).
+E.g:
 
-#### options
-
-| Option        | Description    |
-| --------   | :-----   |
-|`-b,--base [path]`        | set the base path of source|
-|`-d,--devtool [devtool]`        |set webpack devtool mode|
-|`-c,--config [path]`        | compile with specify webpack config file |
-|`-m, --min`| set jsbundle uglify or not. [default `false`]|
-
-
-### compile
-
-Use `weex compile` o compile a single weex file or a weex file in an entire folder.
-
-``` bash
-$ weex compile [source] [dist]  [options]
+```bash
+$ weex create weex-templates/webpack#v1.0 my-project
 ```
 
-#### options
+This command will initialize the project via the `v1.0` branch of the [weex-templates/webpack] (https://github.com/weex-templates/webpack/tree/v1.0) project.
 
-| Option        | Description    |
-| --------   | :-----   |
-|`-w, --watch`        | watch we file changes auto build them and refresh debugger page! [default `true`]|
-|`-d,--devtool [devtool]`        |set webpack devtool mode|
-|`-e,--ext [ext]`        | set enabled extname for compiler default is vue |
-|`-m, --min`| set jsbundle uglify or not. [default `false`]|
+You can create project templates from official templates or remote sources, or you can create your own `weex` project templates. For more details you can see [How to create your own templates] (https://github.com/weex-templates /How-to-create-your-own-template).
 
-You can use like this:
+### Compile page
 
-``` bash
-$ weex compile src dest --devtool source-map -m
+The `@weex-cli/compile` module provides the ability to compile `.vue` files in Weex projects. You can use them in official projects, or you can directly compile sandboxes with zero configuration for a single `.vue` file, use as follows:
+
+```bash
+$ weex compile [resource file] [product address] <options>
 ```
 
-### platform
+E.g:
 
-Use `weex platform [add|remove|update] [ios|android]` to add, remove or update your ios / android project templates.
-
-``` bash
-# add weex platform
-$ weex platform add [ios|android]
-
-# remove weex platform
-$ weex platform remove [ios|android]
-
-# update weex platform
-$ weex platform update [ios|android]
-
-# list weex platform
-$ weex platform list
+```bash
+$ weex compile src build
 ```
-Use `weex platform list` to show what platforms your application supported.
 
-### run
+or
 
-You can use `weex-toolkit` to run project on android/ios/web.
+```bash
+$ weex compile src/index.vue build
+```
+
+#### Options
+
+| Options | Description |
+| -------- | :----- |
+|`-w, --watch` | Listen for file changes and compile in real time [Default: `true`]|
+|`-d,--devtool [devtool]` |Set the devtool option for webpack compilation|
+|`-e,--ext [ext]` | Set the default build file [Default: `.vue`] |
+|`-m, --min`| Code obfuscation and compression of the product [Default: `false`]|
+|`-c, --config`| Incoming webpack configuration file [Default: `false`]|
+|`-b, --base`| Set the base path [Default: `process.cwd()`]|
+
+### Preview page
+
+The `@weex-cli/preview` module provides the ability to compile and preview `.vue` files in Weex projects. You can use them in official projects, or you can directly perform a sandbox preview of zero configuration for a single `.vue` file, use as follows:
 
 ``` bash
-# run weex Android project
-$ weex run android
+$ weex preview [file | folder] <options>
+```
 
-# run weex iOS project
+The browser will automatically open the preview page and you can see the layout and effects of your weex page. If you have [Weex Playground App] (/tools/) installed on your device, you can also view the page by scanning the QR code on the page.
+
+Using the command below, you will be able to preview the `.vue` file in the entire folder.
+
+``` bash
+$ weex src --entry src/foo.vue
+```
+
+You need to specify the folder path to be previewed and the entry file (passed in `--entry`).
+
+#### Options
+
+| Options | Description |
+| -------- | :----- |
+|`-d,--devtool [devtool]` |Set the devtool option for webpack compilation|
+|`-m, --min`| Code obfuscation and compression of the product [Default: `false`]|
+|`-c, --config`| Incoming webpack configuration file [Default: `false`]|
+|`-b, --base`| Set the base path [Default: `process.cwd()`]|
+
+### Add iOS/Android project
+
+The `@weex-cli/generator` module provides the ability to add Weex official iOS/Android engineering features.
+
+Use the `weex platform [add|remove] [ios|android]` command to add or remove the `iOS/Android` project template.
+
+``` bash
+$ weex platform add ios
+$ weex platform remove ios
+```
+
+This command is only valid in the official `weex` project. Please note the project structure. You can use `weex platform list` to view the supported platforms in your project.
+
+### Running iOS/Android Project
+
+The `@weex-cli/run` module provides the ability to add and run Weex official iOS/Android project functions, which you can use with the following commands:
+
+``` bash
+# Run iOS Simulator Preview
 $ weex run ios
-
-# run weex web
+# Run Android Simulator / Real Machine Preview
+$ weex run android
+# Run web preview
 $ weex run web
 ```
 
-### debug
+### Debugging page
 
-The [Weex Debugger](https://github.com/weexteam/weex-debugger) is a custom devtools for Weex that implements [Chrome Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol), it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page, both android and iOS platform are supported. So you can use `weex-debugger` feature by weex-toolkit.
-
-#### usage
+The `@weex-cli/debug` module provides debugging capabilities for Weex pages, which can be started with the following command:
 
 ``` bash
-weex debug [we_file|bundles_dir] [options]
+$ weex debug [we_file|bundles_dir] [options]
 ```
 
-| Option        | Description    |
-| --------   | :-----   |
-|`-V, --verbose`       | display logs of debugger server|
-|`-v, --version`       | display version|
-|`-p, --port [port]`   | set debugger server port|
-|`-e, --entry [entry]` | set the entry bundlejs path when you specific the bundle server root path|
-|`-m, --mode [mode]`   | set build mode [transformer or loader]|
-|`-w, --watch`        | watch we file changes auto build them and refresh debugger page [default `true`]|
-|`--ip [ip]`|set the host ip of debugger server|
-|`--loglevel [loglevel]`| set log level|
-|`--min`| set jsbundle uglify or not. [default `false`]|
-|`--remotedebugport [remotedebugport]`|set the remote debug port,default 9222|
+#### Options
 
-#### Features
+| Options | Description |
+| -------- | :----- |
+|`-p, --port [port]`| Set the port of the debug server, [default: `8088`]|
+|`--manual`| When this option is enabled, the browser will not open automatically, [Default: `false`]|
+|`--channelid`|Specify debug channel ID|
+|`--remote-debug-port [port]`|Set the debug server port number, [default: `9222`]|
 
-##### Connect devices
 
+
+#### How to integrate debugging tools into your own app
+
+Reference documentation:
+- [1] [Integrated Weex Debugging Tool (Android)] (zh/guide/debug/integrate-devtool-to-android.html)
+- [2] [Integrated Weex Debugging Tool (iOS)] (zh/guide/debug/integrate-devtool-to-ios.html)
+
+
+### Code Quality Check
+
+The `@weex-cli/lint` module provides a Weex code quality check function that can be started with the following command:
+
+```base
+$ weex lint [file | folder] <options>
 ```
-$ weex debug
+
+#### Options
+
+`@weex-cli/lint` The built-in `eslint` module is used for code quality verification. For options, please refer to [ESLint CLI] (https://eslint.org/docs/user-guide/command-line-interface).
+
+If you want to add the `weex` code quality check to your project, you can also add the eslint plugin [eslint-plugin-weex] (https://www.npmjs.com/package/eslint-plugin-weex) Way to use.
+
+
+### Development Environment Check
+
+The `@weex-cli/doctor` module provides a check for the local development environment and can be started with the following command:
+
+```base
+$ weex doctor
 ```
 
-This command will start debug server and launch a chrome opening `DeviceList` page.
-this page will display a QR code, you can use [Playground](/tools/playground.html) scan it for starting debug or integrate [Weex devtools](#Integrate devtool) into your application.
-
-![devtools-main](https://img.alicdn.com/tfs/TB1v.PqbmBYBeNjy0FeXXbnmFXa-1886-993.png)
-
-##### Debug with `.vue` file
-
-```
-$ weex debug your_weex.vue
-```
-Click the button you can use your app or [weex playground app](/tools/playground.html) to preview your pages.
-
-![devtools-entry](https://img.alicdn.com/tfs/TB1j3DIbntYBeNjy1XdXXXXyVXa-1915-1001.png)
-
-
-##### Inspector
-
-> Inspector feature to view the page's VDOM / Native Tree structure
-
-Note: If you do not need this feature as far as possible to maintain the closed state, open the browser Inspector interface will increase the page communication, more affect performance.
-
-![inspectors-one](https://img.alicdn.com/tfs/TB166B8bhGYBuNjy0FnXXX5lpXa-2876-1652.png)
-
-![inspectors-two](https://img.alicdn.com/tfs/TB11kN2beuSBuNjy1XcXXcYjFXa-2872-1636.png)
-
-##### Breakpoint
-> JS Debug feature support you to set breakpoint on your jsbundle and debugging with it.
-
-You can find your jsbundle in the `source` folder of the `Runtime.js` directory. If you do not see the `Runtime.js` directory, check if the weex-debugger tool is completely installed or try to restart the debug tool.
-
-![js-debug](https://img.alicdn.com/tfs/TB1b5J2beuSBuNjy1XcXXcYjFXa-2880-1648.png)
-
-##### NetWork
-
-> The Network feature collects network request information from weex applications.
-
-![network](https://img.alicdn.com/tfs/TB126JNbbGYBuNjy0FoXXciBFXa-2868-1642.png)
-
-##### Loglevel & ElementMode
-
-> The LogLevel and ElementMode feature are used to adjust the output configuration of the debugger.
-
-![loglevel-elementMode](https://img.alicdn.com/tfs/TB1qzrObntYBeNjy1XdXXXXyVXa-2872-1636.png)
-
-#### Integrate devtool
-* Android
-    * See the doc [How to integrate Weex Devtool (Android)](/guide/debug/integrate-devtool-to-android.html), it will lead you to config and use it step by step.
-* iOS
-    * See the doc [How to integrate Weex Devtool (iOS)](/guide/debug/integrate-devtool-to-ios.html), it will lead you to config and use it step by step.
+This command will check your local development environment, you can adjust your development environment according to the prompts, in order to develop the weex page.
