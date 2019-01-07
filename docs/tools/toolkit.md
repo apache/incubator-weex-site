@@ -170,8 +170,8 @@ $ weex debug [we_file|bundles_dir] [options]
 #### How to integrate debugging tools into your own app
 
 Reference documentation:
-- [1] [Integrated Weex Debugging Tool (Android)] (zh/guide/debug/integrate-devtool-to-android.html)
-- [2] [Integrated Weex Debugging Tool (iOS)] (zh/guide/debug/integrate-devtool-to-ios.html)
+- [1] [Integrated Weex Debugging Tool (Android)] (/guide/debug/integrate-devtool-to-android.html)
+- [2] [Integrated Weex Debugging Tool (iOS)] (/guide/debug/integrate-devtool-to-ios.html)
 
 
 ### Code Quality Check

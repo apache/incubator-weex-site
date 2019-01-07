@@ -172,8 +172,8 @@ $ weex debug [we_file|bundles_dir] [options]
 #### 如何集成调试工具到自己的APP
 
 参考文档：
-- [1] [集成Weex调试工具(Android)](zh/guide/debug/integrate-devtool-to-android.html)
-- [2] [集成Weex调试工具 (iOS)](zh/guide/debug/integrate-devtool-to-ios.html)
+- [1] [集成Weex调试工具(Android)](/zh/guide/debug/integrate-devtool-to-android.html)
+- [2] [集成Weex调试工具 (iOS)](/zh/guide/debug/integrate-devtool-to-ios.html)
 
 
 ### 代码质量检查
