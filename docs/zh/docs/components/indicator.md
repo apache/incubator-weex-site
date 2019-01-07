@@ -24,4 +24,4 @@
 
 ## 示例
 
-请参考 [slide](./slide.html)
+请参考 [slider](./slider.html)
