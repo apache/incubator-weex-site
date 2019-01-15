@@ -23,7 +23,6 @@ version: 2.1
 ## Components and Modules
 
 - [Weex Ui](https://alibaba.github.io/weex-ui/) **Weex Ui** is a rich interaction, lightweight, high performance UI library.
-- [Weex Market](https://market.dotwe.org) A website that provides a quick porting of weex's third-party component list, where you can find the weex components you need for integration.
 
 ## Tools
 
