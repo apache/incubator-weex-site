@@ -171,7 +171,7 @@ module.exports = {
           ],
           '/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
           '/community/': [['roadmap', 'roadmap']],
-          '/blog/': [['weex-auto-test-locating', 'solution about auto-test locating']]
+          '/blog/': [['write-a-blog', 'Write a Blog'], ['weex-third-party-extensions', 'Weex Third Party Plugins']]
         }
       },
       '/zh/': {
@@ -327,7 +327,7 @@ module.exports = {
           ],
           '/zh/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
           '/zh/community/': [['roadmap', 'roadmap']],
-          '/zh/blog/': [['weex-auto-test-locating', 'Weex自动化测试元素定位方案']]
+          '/zh/blog/': [['write-a-blog', '写一篇博客'], ['weex-third-party-extensions', 'Weex 三方插件'], ['weex-auto-test-locating', 'Weex自动化测试元素定位方案']]
         }
       }
     }

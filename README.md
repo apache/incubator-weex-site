@@ -24,3 +24,37 @@ It will start a web server at `http://localhost:8080`. The pages will be updated
 ## Contribute
 
 The documents are written in Markdown format located in the `docs` folder. Feel free to send pull requests!
+
+## How to add a blog
+
+To write a blog, edit 'docs/.vuepress/config.js'.
+
+* Search 'blog' in this file. Edit blog section and add your article filename and title.
+```javascript
+'/blog/': [['write-a-blog', 'Write a Blog'], ['your-file-name', 'Your article title']]
+'/zh/blog/': [['write-a-blog', '写一篇博客'], ['your-file-name', '你的文章标题']]
+```
+
+* Add your file in 'docs/blog' and 'docs/zn/blog' directories.
+
+* Edit 'docs/blog/README.md' and 'docs/zh/blog/README.md', and add your file.
+```javascript
+<script>
+module.exports = {
+  created(){
+  	this.$router.push('/blog/write-a-blog.html')
+  	this.$router.push('/blog/your-file-name.html')
+  }
+}
+</script>
+```
+```javascript
+<script>
+module.exports = {
+  created(){
+  	this.$router.push('/zh/blog/write-a-blog.html')
+  	this.$router.push('/zh/blog/your-file-name.html')
+  }
+}
+</script>
+```
