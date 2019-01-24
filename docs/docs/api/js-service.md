@@ -13,7 +13,7 @@ version: 2.1
 
 JS service and Weex instance are parallel in js runtime. Weex instance's lifecycle will invoke JS service's lifecycle. Currently provide create, refresh, destroy of lifecycle.
 
-**!!!Important: JS Service is very powerful. Please be careful to use.**
+**!!!Important: JS Service is very  powerful, improper use can lead to increased memory or global pollution, please do not abuse.**
 
 
 ## Register JS Service
