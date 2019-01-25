@@ -17,7 +17,7 @@ This type of component supports all kinds of weex component as its child compone
 * **insert-animation** string, cell insert animation. Only support `none` and `default` now.
 * **delete-animation** string, cell delete animation. Only support `none` and `default` now.
 
-* **recycle** boolean, <Badge text="iOS" type="warning"/>, default true. It controls whether the cell's view in a list should be recycled when the UITableView is scrolling. You should always use true for iOS.
+* **recycle** boolean, <Badge text="iOS" type="warning"/>, <Badge text="Android" type="warning"/>, default true. It controls whether the cell's view in a list should be recycled when the UITableView is scrolling. You should always use true for iOS. On Android recycle is always true, you can use false to prevent image and text data rebinding.
 
 ## Styles
 
