@@ -108,7 +108,7 @@ var _InstanceService = new InstanceService(weex)
 var _NormalService = new service.NormalService(weex)
 
 module.exports = {
-  created: fucntion() {
+  created: function() {
     // called modal module to toast something
     _InstanceService.toast('Instance JS Service')
     _NormalService.toast('Normal JS Service')
