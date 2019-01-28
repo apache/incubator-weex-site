@@ -59,7 +59,7 @@ version: 2.1
 
 ### receivedtitle
 
-`error` 事件，会在 Web 页面的标题发生改变时调用（仅限 Android 平台）。
+`receivedtitle` 事件，会在 Web 页面的标题发生改变时调用（仅限 Android 平台）。
 
 **事件对象**：
 
