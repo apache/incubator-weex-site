@@ -125,7 +125,7 @@ weex debug [we_file|bundles_dir] [options]
 |`-p, --port [port]`| 设置调试服务器的端口，默认值 8088|
 |`-m, --manual`|开启该选项后将不会自动打开浏览器|
 |`-e,--ext [ext]`|设置文件拓展名用于编译器编译，默认值为`vue`|
-|`--min`|开启该选项后将会压缩jsbunlde|
+|`--min`|开启该选项后将会压缩jsbundle|
 |`--telemetry`|上传用户数据帮助提升weex-toolkit体验|
 |`--verbose`|显示详细的日志数据|
 |`--loglevel [loglevel]`|设置日志等级，可选silent/error/warn/info/log/debug,默认值为error|
