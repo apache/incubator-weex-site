@@ -17,7 +17,7 @@ Cell 支持添加任意类型的组件作为自己的子组件。
 * **insert-animation** string, cell 的插入动画。当前只支持 `none` 和 `default`。
 * **delete-animation** string, cell 的删除动画。当前只支持 `none` 和 `default`。
 
-* **recycle** boolean, <Badge text="iOS" type="warning"/>, 默认值 true。这个属性控制这个 Cell 的 view 和子 views 是否在列表滚动时进行回收，在 iOS 上通常必须指定为 true （因为默认为 true，所以一般不需要写这个属性），如果设置为 false，列表滚动时，页面会占用非常高的内存。
+* **recycle** boolean,  默认值 true。这个属性控制这个 Cell 的 view 和子 views 是否在列表滚动时进行回收，在 iOS 上通常必须指定为 true （因为默认为 true，所以一般不需要写这个属性），如果设置为 false，列表滚动时，页面会占用非常高的内存。Android上默认是true，设置为false可以防止Image和Text上数据重新绑定。
 
 ## 样式
 
