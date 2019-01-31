@@ -1,3 +1,7 @@
+---
+pageClass: noFooter
+---
+
 ## v0.20.0
 ### Bug
 * [WEEX-490](https://issues.apache.org/jira/browse/WEEX-490) - [Android] set "type=tel" and "type=number" in input component, but also can input text
