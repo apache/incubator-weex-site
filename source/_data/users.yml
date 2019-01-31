@@ -137,7 +137,12 @@ sinazc:
   name: '新浪众测'
   icon: 'http://n.sinaimg.cn/tech/zcapp/zhongce_3x.png'
   iOS: 'https://itunes.apple.com/cn/app/id1309407290?mt=8'
-  android: ''
+  android: 'http://zhongce.sina.cn/about/app?vt=4'
+heimao:
+  name: '黑猫投诉'
+  icon: 'http://n.sinaimg.cn/tech/hmapp/icon_512.png'
+  iOS: 'https://itunes.apple.com/cn/app/id1429402895?mt=8'
+  android: 'http://tousu.sina.cn/about_app/index?vt=4'
 bandou:
   name: '班豆'
   icon: 'https://app.bandou.cn/download/app/bandou.png'
