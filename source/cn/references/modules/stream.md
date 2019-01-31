@@ -41,7 +41,7 @@ version: 2.1
 - `progressCallback {Function}`：关于请求状态的回调。 这个回调函数将在请求完成后就被调用:
   - `readyState {number}`：当前状态
     state:'1': 请求连接中
-    opened:'2': 返回响应头中
+    opened:'2': 返回响应中
     received:'3': 正在加载返回数据
   - `status {number}`：响应状态码.
   - `length {number}`：已经接受到的数据长度. 你可以从响应头中获取总长度
