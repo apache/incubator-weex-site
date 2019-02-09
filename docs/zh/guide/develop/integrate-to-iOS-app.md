@@ -106,3 +106,24 @@ Weex 支持自定义组件、模块，可以参考以下两篇文档。
 
 * [Extend iOS](../extend/extend-ios.html)
 * [Extend iOS with swift](../extend/extend-ios-with-swift.html)
+
+## 6. 在 iPad 中使用 Weex
+
+当页面渲染完成后，屏幕再旋转，页面不会自动适配。所以，如果你的 App 允许屏幕旋转，务必在页面渲染前更新屏幕宽度。
+
+前端样式中指定的坐标在渲染时会根据 **屏幕宽度** 和 **当前页面的 view-port-width** 进行换算。
+
+修改 view-port-width 的方法，会影响前端代码，通常不要设置，默认为 750px。
+```javascript
+beforeCreate(){
+    const meta = weex.requireModule('meta');
+    meta.setViewport({
+        width: 1536
+    });
+}
+```
+
+监听 UIDeviceOrientationDidChangeNotification 通知，并调用下面方法修改屏幕尺寸（假设已经旋转完成，[UIScreen mainScreen].bounds.size.width 就是当前宽度）
+```Objective-C
+[WXCoreBridge setDeviceSize:[UIScreen mainScreen].bounds.size];
+```
