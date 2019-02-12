@@ -99,3 +99,25 @@ You should destroy the Weex instance explicitly using `[instance destroyInstance
 ## 5. Extend Weex
 
 You can extend Weex functionality by writing your own components, modules. For more details please refer to [Extend iOS](../extend/extend-ios.html) and [Extend iOS with swift](../extend/extend-ios-with-swift.html).
+
+## 6. Using Weex on iPad
+
+When a page finishes rendering, then the screen rotates, the page will not adjust automatically.
+So if your App allows screen orientation changing, you must update screen-width before rendering.
+
+CSS styles will be converted using **screen-width** and **view-port-width of a page**.
+
+view-port-width is 750px by default.
+```javascript
+beforeCreate(){
+    const meta = weex.requireModule('meta');
+    meta.setViewport({
+        width: 1536
+    });
+}
+```
+
+Observe UIDeviceOrientationDidChangeNotification notification and update screen size. We presume that screen rotation is done and [UIScreen mainScreen].bounds.size.width gives the current screen width.
+```Objective-C
+[WXCoreBridge setDeviceSize:[UIScreen mainScreen].bounds.size];
+```

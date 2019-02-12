@@ -14,7 +14,7 @@ module.exports = {
     repo: 'apache/incubator-weex-site',
     docsRepo: 'apache/incubator-weex-site',
     docsBranch: 'draft',
-    version: 'v0.19',
+    version: 'v0.20',
     versionLink: '/release-note.html',
     logo: 'https://img.alicdn.com/tfs/TB1WtVjogHqK1RjSZFgXXa7JXXa-78-39.svg',
     locales: {
@@ -28,8 +28,8 @@ module.exports = {
           bad: 'Unusable doc'
         },
         nav: [
-          { text: 'Guide', link: '/guide/introduction' },
-          { text: 'Docs', link: '/docs/api/weex-variable' },
+          { text: 'Guide', link: '/guide/' },
+          { text: 'Docs', link: '/docs/' },
           { text: 'Tools', link: '/tools/' },
           { text: 'Community', link: '/community/' },
           { text: 'Blog', link: '/blog/' }
@@ -169,9 +169,15 @@ module.exports = {
               ]
             }
           ],
-          '/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
-          '/community/': [['roadmap', 'roadmap']],
-          '/blog/': [['write-a-blog', 'Write a Blog'], ['weex-third-party-extensions', 'Weex Third Party Plugins']]
+          '/tools/': [
+            ['playground', 'Playground App'],
+            ['toolkit', 'Weex Toolkit'],
+            ['extension', 'VSCode Extension']
+          ],
+          '/community/': [['roadmap', 'Roadmap'], ['weex-third-party-extensions', 'Weex Third Party Plugins']],
+          '/blog/': [
+            ['write-a-blog', 'Write a Blog']
+          ]
         }
       },
       '/zh/': {
@@ -184,8 +190,8 @@ module.exports = {
           bad: '文档写得很差'
         },
         nav: [
-          { text: '指南', link: '/zh/guide/introduction' },
-          { text: '文档', link: '/zh/docs/api/weex-variable' },
+          { text: '指南', link: '/zh/guide/' },
+          { text: '文档', link: '/zh/docs/' },
           { text: '工具', link: '/zh/tools/' },
           { text: '社区', link: '/zh/community/' },
           { text: '博客', link: '/zh/blog/' }
@@ -325,9 +331,16 @@ module.exports = {
               ]
             }
           ],
-          '/zh/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
-          '/zh/community/': [['roadmap', 'roadmap']],
-          '/zh/blog/': [['write-a-blog', '写一篇博客'], ['weex-third-party-extensions', 'Weex 三方插件'], ['weex-auto-test-locating', 'Weex自动化测试元素定位方案']]
+          '/zh/tools/': [
+            ['playground', 'Playground App'],
+            ['toolkit', 'Weex Toolkit'],
+            ['extension', 'VSCode Extension']
+          ],
+          '/zh/community/': [['roadmap', 'Roadmap'], ['weex-third-party-extensions', 'Weex 三方插件']],
+          '/zh/blog/': [
+            ['write-a-blog', '写一篇博客'],
+            ['weex-auto-test-locating', 'Weex自动化测试元素定位方案']
+          ]
         }
       }
     }

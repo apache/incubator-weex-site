@@ -13,7 +13,7 @@ version: 2.1
 
 JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命周期可调用 JS service 生命周期。目前提供创建、刷新、销毁生命周期。
 
-**重要提醒: JS Service 非常强大但也很危险，请小心使用！**
+**重要提醒: JS Service 非常强大，使用不当会导致内存增高或全局污染，请不要滥用！**
 
 
 ## 注册 JS Service
