@@ -1,58 +1,57 @@
----
-title: How to Contribute
-type: community
-has_chapter_content: false
-version: 2.1
----
+# Join Weex community
 
-# How to Contribute
+> Community over code
 
-Apache Weex is an open source project that is under active development and we're continuously working out to simplify contributing to Weex ecosystem. Developers can participate and contribute to the Apache Weex community by reporting bugs, contributing code, answering questions, joining in discussions and contributing to documentation.
+Weex project belongs to Apache Software Foundation and Weex community respects and fulfills the Apache rule, which is **Community over code** .
 
-## Bugs
-You can use Weex directly through [Getting Started](../introduction.html) tutorial. If you encounter any unexpected phenomena during your use, feel free to let us know by filing a bug report.
+## Code of Conduct
 
-##### Find Known Issues
-We are using [Github Issues](https://github.com/apache/incubator-weex/issues) for tracking all the issues and updating whenever when have an internal fix in progress. Before filing a new task, try to confirm if it is already listed or if there is a fix in progress.
+To make an open and friendly community, Weex community adopt [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct) as the code of conduct.
 
-##### Report New Issues
-Open a [Github Issues](https://github.com/apache/incubator-weex/issues) , click on the right top green "New Issue" button (you may need to create a Github account if you haven't registered). [Bug Report Guidelines](./bug-report-guidelines.html) document provides some of the most useful information about writing a good bug report. The better your bug report is, the faster we can reproduce and fix it!
+## Mailing List
+> If it didn't happen on a mailing list, it didn't happen.
 
-## Contribute Code
+**Subscribing mailing list of weex is necessary to join weex community.**
 
-Apache Weex is an open source project and both, core team members and external contributors, send pull requests which go through the same review process. If you have already decided to start writing code in Weex, Congratulations! You’re up and running.
+In Weex community, feature requests, discussions and decisions happen on the mailing list, which is open to the whole world.
 
-You can contribute code by either fixing an existing bug or developing new features. In either case, we always encourage to create a Github ticket and ensure we are in agreement on your proposal.
+`dev@weex.incubator.apache.org` is the mailing list's address. Developers can subscribe this list to know what is happening in weex community and express his/her idea. Send an email to [subscription](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29) then you will receive a confirmation email. Once you reply the confirmation email, the subscription is done.
 
-To help you get started, we've created a document with more details about development process. Please read **[Getting Started with Development Process](./development-process.html)**.
+If you want to unsubscribe, send an email to [Canceling subscription](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29)
+
+Read [Apache mailing list](https://apache.org/foundation/mailinglists.html) to have a deeper view of mailing list.
+
 
 ## Ask or Answer Questions
+* You ask questions on [stackoverflow.com](http://stackoverflow.com/questions/tagged/weex) for basic use problems and concepts.
+* You can report a bug through Github Issue as mention in [bug report](./bug-report-guidelines.html).
 
-For basic use problems and help, we suggest you ask questions on [stackoverflow.com](http://stackoverflow.com/)  and mark them with **weex** tag.
+:::tip
+Formally speaking, StackOverflow is not part of Weex community though developers around the world continually contribute to it. If your question on StackOverflow doesn't get response within 96 hours, you can fire a [Github Issue](https://github.com/apache/incubator-weex/issues) with link to your question on StackOverflow.
+:::
 
-You can also view all [Weex related issues](http://stackoverflow.com/questions/tagged/weex) and answer some of the questions if you can. This will also help you get familiar with basic concepts and common misunderstandings about Weex, which can be useful when contributing documentation or code.
+:::warning
+Only the following types of issues are valid Github issues, for other problem, ask it in the mailing list.
+* Bug
+* StackOverflow questions, which doesn't get response over 96 hours.
+:::
 
-## Join in Discussions
+## Contribute Code or document
+In Weex community, **Documentation is as important as code**, and Weex community respects all the contribution of documentation or code.
 
-In Weex community, most discussions happen on the mailing list.
+:::tip
+Weex adopts [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) as its open source license. Make sure your contribution obeys the requirement of Apache License 2.0.
+:::
 
-Dev mailing list "dev@weex.incubator.apache.org" is the place where Weex developers exchange ideas and discuss new features, new releases and the development process.
-
-Contributors and developers should subscribe to this list and follow it in order to keep up to date on what’s happening in Weex. [(subscribe)](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29) [(unsubscribe)](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29) [(archives)](http://mail-archives.apache.org/mod_mbox/incubator-weex-dev/)
-
-## Contribute Documentation
-
+### Contribute documentation
 Documentation with good quality is a great help to developers. If there is a powerful API that is not easy to use, it becomes useless. So, we welcome any contributions to help Weex's documents become precise and easy to read.
 
-To make changes to the document, you can edit the corresponding Markdown file at the [weex-site repository](https://github.com/apache/incubator-weex-site) and create a pull request.
+You can contribute to a document through the following ways:
+* Click **Edit this page** on the bottom of website, and you will be navigated to a new Github PR.
 
-## How to Become a Committer
+:::tip
+PR about documentation should be fired based on **draft** branch currently, which will be merged master branch automatically later when all things are settled.
+:::
 
-Committers are core members of the community who can access the project's repository and modify its code, documentation and web sites, as well as accept the contributions of other developers.
-
-There's no exact criteria for becoming a committer,  we are looking for contributors who are actively involved in community contributions and who have continued interest in Weex. If you are interested in becoming a Weex committer, contact any existing committer and we will help you go through the invitation process.
-
-
-## License
-By contributing to Weex, you agree that your contributions will be licensed under its Apache License, Version 2.0.
-
+### Contribute code
+You can fix a bug or develop a new feature when contributing code, ref [Contribution of Code](./contribute-code.html) to see more detail.
