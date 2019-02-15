@@ -4,16 +4,17 @@
 
 `<image>` 用于在界面中显示单个图片。
 
-> **注意:** 在代码中请使用 `<image>` 标签, `<img>` 的存在只是因为兼容性原因，在将来的版本中可能删除。
+:::tip
+在代码中请使用 `<image>` 标签, `<img>` 的存在只是因为兼容性原因，在将来的版本中可能删除。
+:::
 
-> **注意：** Weex 没有内置的图片库，因为一些开源项目如 [SDWebImage](https://github.com/rs/SDWebImage) 和[Picasso](https://github.com/square/picasso)已经能很好的解决这个问题， 所以在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
->
-> 参见:  [Android adapter](../api/android-apis.html) 和 [iOS handler](../api/ios-apis.html)。
+:::warning
+Weex 没有内置的图片库，因为一些开源项目如 [SDWebImage](https://github.com/rs/SDWebImage) 和[Picasso](https://github.com/square/picasso)已经能很好的解决这个问题， 所以在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
+
+参见:  [Android adapter](../api/android-apis.html) 和 [iOS handler](../api/ios-apis.html)。
+:::
 
 ## 基本用法
-
-> **注意：** `width`, `height` 和 `src`必须被提供，否则图片无法渲染。
-
 ```html
 <image style="width:500px;height:500px" src="https://vuejs.org/images/logo.png"></image>
 ```
@@ -26,21 +27,28 @@
 ## 样式
 支持**[通用样式](../styles/common-styles.html)**。
 
+:::danger
+`width`, `height` 和 `src`必须被提供，否则图片无法渲染。
+:::
+
 ## 属性
 
-| 属性名           | 类型     | 值                          | 默认值     |
-| ------------- | ------ | -------------------------- | ------- |
-| `placeholder` | String | {URL / Base64}             | -       |
-| `resize`      | String | cover / contain / stretch  | stretch |
-| `src`         | String | {URL / Base64 }            | -       |
+| 属性名               | 类型   | 值                          | 默认值   |
+| ------------------- | ------ | -------------------------- | ------- |
+| `placeholder`       | String | {URL / Base64}             | -       |
+| `resize`            | String | cover / contain / stretch  | stretch |
+| `src`               | String | {URL / Base64 }            | -       |
+| `autoBitmapRecycle` | Boolean| {true / false }            | true    |
 
-> **注意：**您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/asset-path.html)。
+:::tip
+您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/asset-path.html)。
+:::
 
-### `placeholder`
+### placeholder
 
 占位图的 URL，在图片下载过程中将展示占位图，图片下载完成后将显示`src`中指定的图片。 ([示例](http://dotwe.org/vue/712ef102fc5e073b6c7e3b701545681c))
 
-### `resize`
+### resize
 
 - `contain`：缩放图片以完全装入`<image>`区域，可能背景区部分空白。 ([示例](http://dotwe.org/vue/89be94dcd1fec73b77246ec46c678914))
 - `cover`：缩放图片以完全覆盖`<image>`区域，可能图片部分看不见。 ([示例](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
@@ -48,7 +56,7 @@
 
 resize属性和[`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)的理念很相似。
 
-### `src`
+### src
 
 要显示图片的 URL，该属性是 `<image>` 组件的强制属性。
 
@@ -56,7 +64,16 @@ resize属性和[`background-size`](https://developer.mozilla.org/en-US/docs/Web/
 
 Weex没有提供必须支持的图片格式列表，主要依赖于你正在使用的图片 adapter 或者 handler。例如，如果你使用 [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) 作为iOS上的图片 handler，你可以使用像 JPEG、PNG、GIF、WebP 等图片格式。
 
-> **Note:** Android 默认的Image Adapter不支持 gif。
+:::danger
+Android 默认的Image Adapter不支持 gif。
+:::
+
+### autoBitmapRecycle
+一个布尔标志位控制当图片滚出屏幕时是否回收相关内存。
+
+* `true` 当图片不可见时回收图片内存
+* `false` 当图片不可见时不回收图片内存，这样做会占用更高的内存，但是会提供更好的用户体验。
+* 默认值是true
 
 ## Component 方法
 
@@ -73,7 +90,10 @@ Weex没有提供必须支持的图片格式列表，主要依赖于你正在使�
 
 **返回值**: null
 
-> **注意**: 你必须加入`NSPhotoLibraryAddUsageDescription` 和 `NSPhotoLibraryAddUsageDescription` (iOS 11) 以获得访问 iOS 系统相册权限. 参见: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
+:::warning
+你必须加入`NSPhotoLibraryAddUsageDescription` 和 `NSPhotoLibraryAddUsageDescription` (iOS 11) 以获得访问 iOS 系统相册权限. 参见: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html)
+:::
+
 
 #### 使用 `save` 方法
 
