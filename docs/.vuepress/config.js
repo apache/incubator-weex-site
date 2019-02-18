@@ -225,7 +225,7 @@ module.exports = {
               children: [
                 ['debug/integrate-devtool-to-android', '集成Devtool到Android'],
                 ['debug/integrate-devtool-to-ios', '集成Devtool到iOS'],
-                ['debug/debug', 'Debug']
+                ['debug/debug', '调试']
               ]
             },
             {
@@ -262,11 +262,11 @@ module.exports = {
               title: 'API',
               collapsable: false,
               children: [
-                ['api/weex-variable', 'Weex Variable'],
-                ['api/android-apis', 'Android APIs'],
-                ['api/ios-apis', 'iOS APIs'],
-                ['api/js-service', 'JS Service'],
-                ['api/broadcast-channel', 'BroadcastChannel']
+                ['api/weex-variable', 'Weex 环境变量'],
+                ['api/android-apis', 'Android 接口'],
+                ['api/ios-apis', 'iOS 接口'],
+                ['api/js-service', 'JS服务'],
+                ['api/broadcast-channel', '跨页面通信']
               ]
             },
             {

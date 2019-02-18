@@ -1,5 +1,5 @@
 ---
-title: JS Service
+title: JSService
 type: references
 group: API
 order: 2.6
@@ -7,16 +7,16 @@ version: 2.1
 ---
 
 
-# JS Service
+## 概述
 
 <span class="weex-version">v0.9.5+</span>
 
-JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命周期可调用 JS service 生命周期。目前提供创建、刷新、销毁生命周期。
+JSService 和 Weex 实例在 JS Runtime 中并行运行。Weex 实例的生命周期可调用 JSService 生命周期。目前提供创建、刷新、销毁生命周期。
 
-**重要提醒: JS Service 非常强大，使用不当会导致内存增高或全局污染，请不要滥用！**
+**重要提醒: JSService 使用不当会导致内存增高或全局污染！**
 
 
-## 注册 JS Service
+## 注册
 
 ### iOS
 
@@ -42,14 +42,12 @@ boolean result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, opti
 <script src="SERVICE_JS_CODE_URL"></script>
 ```
 
-
-
-## 编写一个 JS service
+## 样例
 
 ```javascript
 service.register(SERVICE_NAME /* same string with native */, {
   /**
-    * JS Service lifecycle. JS Service `create` will before then each instance lifecycle `create`. The return param `instance` is Weex protected param. This object will return to instance global. Other params will in the `services` at instance.
+    * JSService lifecycle. JSService `create` will before then each instance lifecycle `create`. The return param `instance` is Weex protected param. This object will return to instance global. Other params will in the `services` at instance.
     *
     * @param  {String} id  instance id
     * @param  {Object} env device environment
@@ -79,7 +77,7 @@ service.register(SERVICE_NAME /* same string with native */, {
   },
 
   /**
-    * JS Service lifecycle. JS Service `refresh` will before then each instance lifecycle `refresh`. If you want to reset variable or something on instance refresh.
+    * JSService lifecycle. JSService `refresh` will before then each instance lifecycle `refresh`. If you want to reset variable or something on instance refresh.
     *
     * @param  {String} id  instance id
     * @param  {Object} env device environment
@@ -89,7 +87,7 @@ service.register(SERVICE_NAME /* same string with native */, {
   },
 
   /**
-    * JS Service lifecycle. JS Service `destroy` will before then each instance lifecycle `destroy`. You can deleted variable here. If you doesn't detete variable define in JS Service. The variable will always in the js runtime. It's would be memory leak risk.
+    * JSService lifecycle. JSService `destroy` will before then each instance lifecycle `destroy`. You can deleted variable here. If you doesn't detete variable define in JSService. The variable will always in the js runtime. It's would be memory leak risk.
     *
     * @param  {String} id  instance id
     * @param  {Object} env device environment
@@ -101,7 +99,7 @@ service.register(SERVICE_NAME /* same string with native */, {
 })
 ```
 
-## Using JS Service (vuejs)
+Use JSService
 
 ```html
 <script>
@@ -111,8 +109,8 @@ var _NormalService = new service.NormalService(weex)
 module.exports = {
   created: fucntion() {
     // called modal module to toast something
-    _InstanceService.toast('Instance JS Service')
-    _NormalService.toast('Normal JS Service')
+    _InstanceService.toast('Instance JSService')
+    _NormalService.toast('Normal JSService')
   }
 }
 </script>
