@@ -89,9 +89,9 @@ module.exports = {
               title: 'Contribute',
               collapsable: false,
               children: [
-                ['contribute/how-to-contribute', 'How To Contribute'],
-                ['contribute/development-process', 'Development Process'],
-                ['contribute/bug-report-guidelines', 'Bug Report Guidelines']
+                ['contribute/bug-report-guidelines', 'Bug Report'],
+                ['contribute/how-to-contribute', 'Join Weex community'],
+                ['contribute/contribute-code', 'Contribute Code'],
               ]
             }
           ],
@@ -251,9 +251,9 @@ module.exports = {
               title: '贡献',
               collapsable: false,
               children: [
-                ['contribute/how-to-contribute', 'How To Contribute'],
-                ['contribute/development-process', 'Development Process'],
-                ['contribute/bug-report-guidelines', 'Bug Report Guidelines']
+                ['contribute/bug-report-guidelines', 'Bug 反馈'],
+                ['contribute/how-to-contribute', '加入 Weex 社区'],
+                ['contribute/contribute-code', '代码贡献指南'],
               ]
             }
           ],

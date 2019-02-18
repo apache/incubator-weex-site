@@ -1,60 +1,23 @@
----
-title: Bug Report Guidelines
-type: community
-has_chapter_content: false
-version: 2.1
----
+# Bug Report
 
-# Bug Report Guidelines
+Weex Community [Github Issue](https://github.com/apache/incubator-weex/issues) to report and track bugs 。The more information provided in a Github issue, the sooner it get solved.
 
-This document describes how to write a good Weex bug report. Good bug reports help developers to classify the priority and severity of a bug properly, which helps the bug get fixed as soon as possible. The more specific information you provide, the better your bug gets understood.
+::: tip
+* Avoid duplicated: Always search on Github before you fire a new one.
+* Always run with the latest version before you fire a bug
+* Only report one bug in one Github Issue.
+:::
 
-## Bug Report General Principles
+## Format of Github issue
+Please use the [Bug Report](https://github.com/apache/incubator-weex/issues/new?template=bug_report.md) template when firing a bug. All the information needed to solve a bug is listed in the Bug report template , please fill it out as much as you can. **The more information provided in a Github issue, the sooner it get solved.**
 
-- Avoid duplicates: Search before you file a new one!
-- Always test the latest available version before submitting a bug.
-- One bug per report.
-- State useful facts, not opinions or complaints.
+::: warning
+Report bug with fact and expected behavior, not complaint or emotional words.
+:::
 
-## How to Write a Good Bug Report
+## 96 Hours rule
+Generally speaking, weex community response to a Github issue within 96 hours, which could be longer if there is a holiday. Please be patient.
 
-A good bug report should include the following information:
-
-### Title 
-
-The goal of title is to make the report searchable and uniquely identifiable.
-
-A bad example: `List Crash`
-
-A good Example: `List Crashes when deleting a header`
-
-### Environment
-
-**Weex Version**: Please identify the version of WeexSDK or Weex Playground or weex-toolkit you were using when the bug occurred
-
-**Device environment**: Please identify the device model, platform and OS version. e.g. , iPhone 6, iOS 10.3.
-
-### Overview/Description
-
-The overview or description of a bug report is to explain the bug in detail, including:
-
-- Justifications of why this is a bug
-- [dotwe](http://dotwe.org/vue/) demo that can reproduce the bug
-- Screenshots for visual bugs
-- Stack traces for crash bugs
-- Console logs or error messages which are relevant in the bug
-
-### Steps to Reproduce
-
-The aim to provide the reproducible steps is to enable developers to reproduce the bug in their own environment. Here's an example:
-
-*Step 1: Load the demo using Weex Playground*
-
-*Step 2: Scroll to the bottom of the list*
-
-*Step 3: Click the red button to delete a header*
-
-### Test Results
-
-The test results, including *Expected Result* and *Actual Result*, will tell developers what's wrong. *Expected Result* describes what should happen, and *Actual Result* describes what actually happens.
-
+::: tip
+If your Github issue doesn't get any response over a week, you can ask developers through [weex mailing list](./how-to-contribute.html#join-in-discussions).
+:::
