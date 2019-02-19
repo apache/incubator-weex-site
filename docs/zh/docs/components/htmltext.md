@@ -13,7 +13,11 @@ Html字符串组件理论上可以支持任意HTML字符串中的任意tag的解
 
 ```
 <html-text :html-text="formatHtml"
-           :html-option="htmlOption">
+           :html-option="htmlOption"
+           @headerAppear=""
+           @headerDisappear=""
+           @footerAppear=""
+           @footerDisappear="">
      <div> Any Header View</div>
      <div> Any Footer View</div>
 </html-text>
@@ -61,7 +65,12 @@ Html字符串组件理论上可以支持任意HTML字符串中的任意tag的解
 
   默认所有自定义标签的点击均为[空实现](https://github.com/brucetoo/incubator-weex/blob/10c5576f4d9384967fad67759f2ec2ed39f36530/android/sdk/src/main/java/com/taobao/weex/ui/component/html/adapter/DefaultHtmlTagAdapter.java#L93)，需要重载 [getTagViewClickListener](https://github.com/brucetoo/incubator-weex/blob/10c5576f4d9384967fad67759f2ec2ed39f36530/android/sdk/src/main/java/com/taobao/weex/ui/component/html/adapter/DefaultHtmlTagAdapter.java#L92) 此方法实现
 
-- **通用事件** 理论上支持所有[通用事件](../events/common-events.html)
+- **通用事件**  理论上支持所有[通用事件](../events/common-events.html)
+  - header&footer对应的appear和disappear事件
+    - headerAppear - 头部显示事件
+    - headerDisappear - 头部隐藏事件
+    - footerAppear - 底部显示事件
+    - footerDisappear - 底部隐藏事件
 
 
 
