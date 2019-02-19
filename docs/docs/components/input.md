@@ -38,6 +38,8 @@ No child should be added to a `input`.
 
 * `upriseOffset`: <Badge text="v0.21+ & iOS" type="warn" vertical="middle"/> the additional vertical margin between bottom of input and top of keyboard if the keyboard would cover the input. Default is 20 system pixels on iOS.
 
+* `hideDoneButton`: <Badge text="iOS" type="warn" vertical="middle"/>, hide the "Done" button toolbar on keyboard.
+
 
 ## Styles
 
