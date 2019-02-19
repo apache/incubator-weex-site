@@ -2,7 +2,6 @@
 
 ## Summary
 
-
 The List component, which inspired by Android RecyclerView, is a core component, and it provides the most popular features for using a list of items. which support vertical and horizontal list.
 
 It can provide excellent experience and performance while still maintaining smooth scroll and low memory usage.

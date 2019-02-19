@@ -5,13 +5,10 @@
 `<image>` 用于在界面中显示单个图片。
 
 :::tip
-在代码中请使用 `<image>` 标签, `<img>` 的存在只是因为兼容性原因，在将来的版本中可能删除。
-:::
-
-:::warning
-Weex 没有内置的图片库，因为一些开源项目如 [SDWebImage](https://github.com/rs/SDWebImage) 和[Picasso](https://github.com/square/picasso)已经能很好的解决这个问题， 所以在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
-
-参见:  [Android adapter](../api/android-apis.html) 和 [iOS handler](../api/ios-apis.html)。
+* 在代码中请使用 `<image>` 标签, `<img>` 的存在只是因为兼容性原因，在将来的版本中可能删除。
+* Weex 没有内置的图片库，因为一些开源项目如 [SDWebImage](https://github.com/rs/SDWebImage) 和[Picasso](https://github.com/square/picasso)已经能很好的解决这个问题， 所以在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。参见: [Android adapter](../api/android-apis.html) 和 [iOS handler](../api/ios-apis.html)。
+* `<image>` 必须指定样式中的宽度和高度。
+* `<image>` 不支持内嵌子组件。
 :::
 
 ## 基本用法
@@ -22,13 +19,13 @@ Weex 没有内置的图片库，因为一些开源项目如 [SDWebImage](https:
 参见[示例](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f)。
 
 ## 子组件
-`<image>`不支持子组件。
+`<image>`不支持子组件。
 
 ## 样式
 支持**[通用样式](../styles/common-styles.html)**。
 
-:::danger
-`width`, `height` 和 `src`必须被提供，否则图片无法渲染。
+:::warning
+`width`, `height` 和 `src`必须被提供，否则图片无法渲染。
 :::
 
 ## 属性
@@ -75,7 +72,7 @@ Android 默认的Image Adapter不支持 gif。
 * `false` 当图片不可见时不回收图片内存，这样做会占用更高的内存，但是会提供更好的用户体验。
 * 默认值是true
 
-## Component 方法
+## 组件方法
 
 ### `save` <span class="api-version">v0.16.0+</span>
 
@@ -121,7 +118,7 @@ $image.save(result => {
 
 ## 事件
 
-支持 **[通用事件](../events/common-events.html)**.
+* **通用事件**. 参见[通用事件](../events/common-events.html)
 
 ### `load`
 
@@ -159,12 +156,6 @@ export default {
 ```
 
 参见[完整示例](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0)。
-
-## 使用说明
-
-- 在使用 `<image>` 之前，请在 native 侧先接入相应的 adapter 或者 handler。
-- `<image>` 必须指定样式中的宽度和高度。
-- `<image>` 不支持内嵌子组件。
 
 ## 示例
 

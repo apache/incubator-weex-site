@@ -6,11 +6,9 @@ Cell 必须以一级子组件的形式存在于 [`list`](./list.html) [`recycler
 
 ## 子组件
 
-Cell 支持添加任意类型的组件作为自己的子组件。
+Cell 支持添加任意类型的组件作为自己的子组件，但是请不要再内部添加滚动容器了。
 
 ## 属性
-
-**注意:** 不要指定 `<cell>` 的 `flex` 值。Cell 的宽度是由它的父容器决定的，你也不需要指定它的高度。
 
 * **keep-scroll-position** boolean. 控制当 Cell 被添加到列表中时，列表的滚动位置是否要保持不变。
 
@@ -21,13 +19,16 @@ Cell 支持添加任意类型的组件作为自己的子组件。
 
 ## 样式
 
-* **通用样式** 支持所有[通用样式](../styles/common-styles.html)。
+* **通用样式**. 参见[通用样式](../styles/common-styles.html)
 
-**Notes:** Cell 的排版的位置是由父容器控制的，所以一般不要为其指定 `margin` 样式。
+::: tip
+* 不要指定 `<cell>` 的 `flex` 值。Cell 的宽度是由它的父容器决定的，你也不需要指定它的高度。
+* Cell 的排版的位置是由父容器控制的，所以一般不要为其指定 `margin` 样式。
+:::
 
 ## 事件
 
-* **通用事件** 支持所有[通用事件](../events/common-events.html)。
+* **通用事件**. 参见[通用事件](../events/common-events.html)
 
 ## 示例
 

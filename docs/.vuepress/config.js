@@ -265,12 +265,12 @@ module.exports = {
                 ['api/weex-variable', 'Weex 环境变量'],
                 ['api/android-apis', 'Android 接口'],
                 ['api/ios-apis', 'iOS 接口'],
-                ['api/js-service', 'JS服务'],
+                ['api/js-service', 'JS 服务'],
                 ['api/broadcast-channel', '跨页面通信']
               ]
             },
             {
-              title: 'Built-in Components',
+              title: '内置组件',
               collapsable: false,
               children: [
                 ['components/a', '<a>'],
@@ -294,7 +294,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Built-in Modules',
+              title: '内置模块',
               collapsable: false,
               children: [
                 ['modules/animation', 'animation'],
@@ -312,31 +312,31 @@ module.exports = {
               ]
             },
             {
-              title: 'Styles',
+              title: '样式',
               collapsable: false,
               children: [
-                ['styles/common-styles', 'Common Styles'],
-                ['styles/text-styles', 'Text Styles'],
-                ['styles/css-units', 'CSS Units'],
-                ['styles/color-name', 'Color name']
+                ['styles/common-styles', '通用样式'],
+                ['styles/text-styles', '文本样式'],
+                ['styles/css-units', 'CSS 单位'],
+                ['styles/color-name', '颜色值']
               ]
             },
             {
-              title: 'Events',
+              title: '事件',
               collapsable: false,
               children: [
-                ['events/common-events', 'Common Events'],
-                ['events/event-bubbling', 'Event Bubble'],
-                ['events/gesture', 'Gesture']
+                ['events/common-events', '通用事件'],
+                ['events/event-bubbling', '事件冒泡'],
+                ['events/gesture', '手势']
               ]
             }
           ],
           '/zh/tools/': [
-            ['playground', 'Playground App'],
-            ['toolkit', 'Weex Toolkit'],
-            ['extension', 'VSCode Extension']
+            ['playground', 'Playground 应用'],
+            ['toolkit', 'Weex 工具箱'],
+            ['extension', 'VSCode 插件']
           ],
-          '/zh/community/': [['roadmap', 'Roadmap'], ['weex-third-party-extensions', 'Weex 三方插件']],
+          '/zh/community/': [['roadmap', '路线图'], ['weex-third-party-extensions', 'Weex 三方插件']],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
             ['weex-auto-test-locating', 'Weex自动化测试元素定位方案']

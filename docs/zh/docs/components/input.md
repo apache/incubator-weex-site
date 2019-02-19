@@ -125,7 +125,7 @@ placeholder 字符颜色。默认值是 `#999999`
 目前不支持 this.$el(id).value = '' 这种方式改写 input value。只支持在 `<input>` 组件的 input、change 事件中改写。
 :::
 
-## Demo
+## 示例
 
 - [date + time 示例(手机扫码查看)](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b)
 

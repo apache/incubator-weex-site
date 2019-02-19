@@ -5,13 +5,8 @@
 `<image>` is used to display a single image in your interface.
 
 :::tip
-Always use `<image>` in your code, as `<img>` exists only for backward compatibility reasons and may removed in the future release.
-:::
-
-:::warning
-Weex doesn't have built-in library for image downloading and caching, as there are some great open source library like  [SDWebImage in iOS](https://github.com/rs/SDWebImage) and [Picasso in Android](https://github.com/square/picasso) handling these problem, so please add native image adapter/handler before using `<image>`.
-
-Ref [Android adapter](../api/android-apis.html) and [iOS handler](../api/ios-apis.html).
+* Always use `<image>` in your code, as `<img>` exists only for backward compatibility reasons and may removed in the future release.
+* Weex doesn't have built-in library for image downloading and caching, as there are some great open source library like  [SDWebImage in iOS](https://github.com/rs/SDWebImage) and [Picasso in Android](https://github.com/square/picasso) handling these problem, so please add native image adapter/handler before using `<image>`. Ref [Android adapter](../api/android-apis.html) and [iOS handler](../api/ios-apis.html).
 :::
 
 ## Basic Usage
@@ -26,10 +21,10 @@ See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
 
 ## Styles
 
-Support **[common styles](../styles/common-styles.html)**.
+* **common styles**. Check out [common styles](../styles/common-styles.html).
 
-:::danger
-the style of `width`, `height` and `src` must be specified, otherwise it will load nothing.
+:::warning
+The style of `width`, `height` and `src` must be specified, otherwise it will load nothing.
 :::
 
 ## Attributes
@@ -42,7 +37,7 @@ the style of `width`, `height` and `src` must be specified, otherwise it will lo
 | `autoBitmapRecycle` | Boolean| {true / false }            | true          |
 
 :::tip
-You can specify a relative URL  for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
+You can specify a relative URL for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
 :::
 
 ### placeholder
@@ -126,7 +121,8 @@ Complete example goes [here](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df4
 
 ## Events
 
-Support **[common events](../events/common-events.html)**.
+* **common events**. Check out [common events](../events/common-events.html).
+
 ### `load`
 
 `load` event handler will be called when the image is loaded.
