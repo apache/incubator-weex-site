@@ -13,7 +13,11 @@ Here is a sample：
 
 ```
 <html-text :html-text="formatHtml"
-           :html-option="htmlOption">
+           :html-option="htmlOption"
+           @headerAppear=""
+           @headerDisappear=""
+           @footerAppear=""
+           @footerDisappear="">
      <div> Any Header View</div>
      <div> Any Footer View</div>
 </html-text>
@@ -63,7 +67,12 @@ Here is a sample：
 
 - **Common Event** 
 
-  support all [common event](../events/common-events.html) in theory.
+  - support all [common event](../events/common-events.html) in theory.
+  - header&footer‘s appear and disappear event
+    - headerAppear - header's appear event
+    - headerDisappear - header's disappear event
+    - footerAppear - footer's appear event
+    - footerDisappear - footer's disappear event
 
 
 
