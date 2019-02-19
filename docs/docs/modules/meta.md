@@ -1,40 +1,27 @@
----
-title: meta
-type: references
-group: Build-in Modules
-order: 9.05
-version: 2.1
----
-
 # meta
 
 The meta module can be used to update meta information for a single page, such as the viewport of the container.
 
-## API
+# API
 
-### setViewport(options)
-
-<span class="weex-version">0.10.0+</span>
+## setViewport
 
 The default width (viewport) of Weex container is 750px. The `setViewport` method can change the viewport of the page and only takes effect on the current page.
 
-> Notice: **The viewport must be set before the page rendering starts.** In other words, the `setViewport` method can only be used in the entry file, and before the `new Vue (...)` statement. If it's used in the component, the code is executed only when the component is being rendered, meanwhile, the page is already in the rendering process, set the viewport will not take effect again.
+#### setViewport(options)
 
-it is only in the rendering of the components will be implemented The corresponding code,
+* **@options**
+  * **`width`**, number value or `"device-width"` or `"device-height"` macros.
+  * **`height`**, number value or `"device-width"` or `"device-height"` macros.
+  * **`roundOffDeviation`** <Badge text="0.20.0+" type="warn" vertical="middle"/>, The default value is true, which means that the layout engine ignores the error caused by the decimal point in the layout; if there is a gap in the component splicing, you can set the `roundOffDeviation` to false, and the layout engine will automatically fill in the decimal point error.
 
-#### Parameters
+::: tip
+* Referance: W3C Spec [CSS Device Adaptation](https://drafts.csswg.org/css-device-adapt/#viewport-meta).
+* The default unit of the width and height is `px`, other units are not supported.
+* The viewport must be set before the page rendering starts. ** In other words, the `setViewport` method can only be used in the entry file, and before the `new Vue (...)` statement. If it's used in the component, the code is executed only when the component is being rendered, meanwhile, the page is already in the rendering process, set the viewport will not take effect again.
+:::
 
-Referance: W3C Spec [CSS Device Adaptation](https://drafts.csswg.org/css-device-adapt/#viewport-meta).
-
-  |key|Description|
-  |---|---|
-  |options.width|Number or `"device-width"` or `"device-height"`|
-  |options.height|Number or `"device-width"` or `"device-height"`|
-  |options.roundOffDeviation <Badge text="0.20.0+" type="warn" vertical="middle"/>|Boolean, The default value is true, which means that the layout engine ignores the error caused by the decimal point in the layout; if there is a gap in the component splicing, you can set the `roundOffDeviation` to false, and the layout engine will automatically fill in the decimal point error.|
-
-The default unit of the width and height is `px`, other units are not supported.
-
-#### Example
+#### Demo
 
 The entry file:
 
