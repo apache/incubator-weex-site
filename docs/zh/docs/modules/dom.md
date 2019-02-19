@@ -15,7 +15,7 @@
 
 ## scrollToElement
 
-让页面滚动到 ref 对应的组件，这个 API 只能用于可滚动组件的子节点，例如 <scroller>，<list>, <waterfall> 等可滚动组件中。
+让页面滚动到 ref 对应的组件，这个 API 只能用于可滚动组件的子节点，例如 `<scroller>`，`<list>`, `<waterfall>` 等可滚动组件中。
 
 #### scrollToElement(ref, options)
 
