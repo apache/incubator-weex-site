@@ -341,7 +341,8 @@ module.exports = {
             ['write-a-blog', '写一篇博客'],
             ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
             ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore'],
-            ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进']
+            ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进'],
+            ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路']
           ]
         }
       }

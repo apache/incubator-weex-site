@@ -1,4 +1,4 @@
-# WeexCore 多进程多线程架构演进 -- 对外发布
+# WeexCore 多进程多线程架构演进
 
 ### 1. 背景
 `Weex Android` 早在 2016 年时就采用了多线程的模型来提升 `Weex` 的渲染能力. `DomThread`, `JSThread`, `UIThread` . 去年双十一 `Weex` 进化成多进程模式来提升 `Weex` 的稳定性. 所以理论上来说, Weex 早就是多进程多线程的模式了, 为什么现在还在谈这个事情. 且听我慢慢重新介绍一些目前的 `WeexCore`
