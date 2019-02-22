@@ -1,86 +1,807 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Downgrade | WEEX</title>
-    <meta name="description" content="Weex">
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Downgrade | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Due to the continuous development of Weex, some version fragmentation problems occur inevitably . For example, certain new features are not fully supported in the historical version. In this case,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Downgrade">
+<meta property="og:url" content="https://weex.apache.org/guide/advanced/downgrade.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Due to the continuous development of Weex, some version fragmentation problems occur inevitably . For example, certain new features are not fully supported in the historical version. In this case,">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-19T13:30:43.876Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Downgrade">
+<meta name="twitter:description" content="Due to the continuous development of Weex, some version fragmentation problems occur inevitably . For example, certain new features are not fully supported in the historical version. In this case,">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
     <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
-  <script src="//g.alicdn.com/alilog/mlog/aplus_v2.js"></script>
-  <meta name="data-spm" dataSpmProtocol="i" content="a2c7j">
-  <meta name="aplus-ajax" content="chksum">
-  <meta name="aplus-waiting" content="MAN">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="guide" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "guide";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="current">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+            <li>
+              <a href="https://github.com/weex-cli/vscode-weex" target="_blank">VSCode Extension</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/advanced/downgrade.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/advanced/downgrade.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
     
-    <link rel="preload" href="/assets/css/styles.d763af28.css" as="style"><link rel="preload" href="/assets/js/app.d763af28.js" as="script"><link rel="preload" href="/assets/js/105.9ff47802.js" as="script"><link rel="prefetch" href="/assets/css/10.styles.3be8dd0e.css"><link rel="prefetch" href="/assets/css/11.styles.b9c62c6e.css"><link rel="prefetch" href="/assets/css/12.styles.61809060.css"><link rel="prefetch" href="/assets/css/13.styles.c281fbbb.css"><link rel="prefetch" href="/assets/css/16.styles.66ada604.css"><link rel="prefetch" href="/assets/css/17.styles.a7653f2e.css"><link rel="prefetch" href="/assets/css/18.styles.20a412c7.css"><link rel="prefetch" href="/assets/css/19.styles.79a56c0a.css"><link rel="prefetch" href="/assets/css/20.styles.f7d754f1.css"><link rel="prefetch" href="/assets/css/21.styles.99630910.css"><link rel="prefetch" href="/assets/css/22.styles.46be6643.css"><link rel="prefetch" href="/assets/css/29.styles.25612289.css"><link rel="prefetch" href="/assets/css/3.styles.88d6b34e.css"><link rel="prefetch" href="/assets/css/4.styles.2a893f4e.css"><link rel="prefetch" href="/assets/css/42.styles.d1a6a098.css"><link rel="prefetch" href="/assets/css/5.styles.9ae31646.css"><link rel="prefetch" href="/assets/css/6.styles.981a4764.css"><link rel="prefetch" href="/assets/css/7.styles.dd6f90f9.css"><link rel="prefetch" href="/assets/css/8.styles.770de0b0.css"><link rel="prefetch" href="/assets/js/0.d4a2a6fc.js"><link rel="prefetch" href="/assets/js/1.8b67fb28.js"><link rel="prefetch" href="/assets/js/10.3be8dd0e.js"><link rel="prefetch" href="/assets/js/100.4e519952.js"><link rel="prefetch" href="/assets/js/101.992361e4.js"><link rel="prefetch" href="/assets/js/102.2268e5d7.js"><link rel="prefetch" href="/assets/js/103.8284f462.js"><link rel="prefetch" href="/assets/js/104.dc108886.js"><link rel="prefetch" href="/assets/js/106.2e9da92a.js"><link rel="prefetch" href="/assets/js/107.0a90925a.js"><link rel="prefetch" href="/assets/js/108.26bf39c9.js"><link rel="prefetch" href="/assets/js/109.547ca76d.js"><link rel="prefetch" href="/assets/js/11.b9c62c6e.js"><link rel="prefetch" href="/assets/js/110.7e14fffe.js"><link rel="prefetch" href="/assets/js/111.7ab9685d.js"><link rel="prefetch" href="/assets/js/112.c6be9e4f.js"><link rel="prefetch" href="/assets/js/113.47adde5e.js"><link rel="prefetch" href="/assets/js/114.e6fc075d.js"><link rel="prefetch" href="/assets/js/115.86b40036.js"><link rel="prefetch" href="/assets/js/116.885121e8.js"><link rel="prefetch" href="/assets/js/117.ad28fcf2.js"><link rel="prefetch" href="/assets/js/118.9e744f71.js"><link rel="prefetch" href="/assets/js/119.fa0273db.js"><link rel="prefetch" href="/assets/js/12.61809060.js"><link rel="prefetch" href="/assets/js/120.c06164bc.js"><link rel="prefetch" href="/assets/js/121.9bbfed89.js"><link rel="prefetch" href="/assets/js/122.540a2653.js"><link rel="prefetch" href="/assets/js/123.57e4dc49.js"><link rel="prefetch" href="/assets/js/124.9f010656.js"><link rel="prefetch" href="/assets/js/125.615f46d5.js"><link rel="prefetch" href="/assets/js/126.5521f9f6.js"><link rel="prefetch" href="/assets/js/127.fe5defb2.js"><link rel="prefetch" href="/assets/js/128.c8ecd79c.js"><link rel="prefetch" href="/assets/js/129.9e5d6fd4.js"><link rel="prefetch" href="/assets/js/13.c281fbbb.js"><link rel="prefetch" href="/assets/js/130.441b4ea4.js"><link rel="prefetch" href="/assets/js/131.0c4bfbce.js"><link rel="prefetch" href="/assets/js/132.1a004562.js"><link rel="prefetch" href="/assets/js/133.f1c4593b.js"><link rel="prefetch" href="/assets/js/134.50a6a1c2.js"><link rel="prefetch" href="/assets/js/135.358847d1.js"><link rel="prefetch" href="/assets/js/136.ebfdaa46.js"><link rel="prefetch" href="/assets/js/137.b141ab37.js"><link rel="prefetch" href="/assets/js/138.5083bcc3.js"><link rel="prefetch" href="/assets/js/139.d22e2a1e.js"><link rel="prefetch" href="/assets/js/14.50bb56fa.js"><link rel="prefetch" href="/assets/js/140.fffa3143.js"><link rel="prefetch" href="/assets/js/141.23c5eb46.js"><link rel="prefetch" href="/assets/js/142.b16eda3e.js"><link rel="prefetch" href="/assets/js/143.8ef0b3bf.js"><link rel="prefetch" href="/assets/js/144.61ef3459.js"><link rel="prefetch" href="/assets/js/145.7b5150d2.js"><link rel="prefetch" href="/assets/js/146.1ba1fbd0.js"><link rel="prefetch" href="/assets/js/147.37d0b563.js"><link rel="prefetch" href="/assets/js/148.64ae9a5d.js"><link rel="prefetch" href="/assets/js/149.50acef79.js"><link rel="prefetch" href="/assets/js/15.12ba0982.js"><link rel="prefetch" href="/assets/js/150.0c07dc68.js"><link rel="prefetch" href="/assets/js/151.63244246.js"><link rel="prefetch" href="/assets/js/152.aa57463a.js"><link rel="prefetch" href="/assets/js/153.17223db4.js"><link rel="prefetch" href="/assets/js/154.2759747b.js"><link rel="prefetch" href="/assets/js/155.e301614e.js"><link rel="prefetch" href="/assets/js/156.ad3d7833.js"><link rel="prefetch" href="/assets/js/157.855f5683.js"><link rel="prefetch" href="/assets/js/158.87f94e43.js"><link rel="prefetch" href="/assets/js/159.066d89cd.js"><link rel="prefetch" href="/assets/js/16.66ada604.js"><link rel="prefetch" href="/assets/js/160.988f32e7.js"><link rel="prefetch" href="/assets/js/161.e5e7a30f.js"><link rel="prefetch" href="/assets/js/162.576ad0ae.js"><link rel="prefetch" href="/assets/js/163.339f412f.js"><link rel="prefetch" href="/assets/js/164.689e2825.js"><link rel="prefetch" href="/assets/js/165.a258f192.js"><link rel="prefetch" href="/assets/js/166.7c564e03.js"><link rel="prefetch" href="/assets/js/167.e30545e9.js"><link rel="prefetch" href="/assets/js/168.7eef01e9.js"><link rel="prefetch" href="/assets/js/169.d3e4e873.js"><link rel="prefetch" href="/assets/js/17.a7653f2e.js"><link rel="prefetch" href="/assets/js/170.6e5c5909.js"><link rel="prefetch" href="/assets/js/171.b2b9bcc1.js"><link rel="prefetch" href="/assets/js/172.32f30de2.js"><link rel="prefetch" href="/assets/js/173.28cc4a8f.js"><link rel="prefetch" href="/assets/js/174.0135ed2b.js"><link rel="prefetch" href="/assets/js/175.42bc0f94.js"><link rel="prefetch" href="/assets/js/176.4f61ac0b.js"><link rel="prefetch" href="/assets/js/177.b8519077.js"><link rel="prefetch" href="/assets/js/178.022f1b5e.js"><link rel="prefetch" href="/assets/js/179.04b3f04d.js"><link rel="prefetch" href="/assets/js/18.20a412c7.js"><link rel="prefetch" href="/assets/js/180.ad970ac8.js"><link rel="prefetch" href="/assets/js/181.f614c03e.js"><link rel="prefetch" href="/assets/js/182.700b84a2.js"><link rel="prefetch" href="/assets/js/183.aabb037b.js"><link rel="prefetch" href="/assets/js/184.76fc24b9.js"><link rel="prefetch" href="/assets/js/185.8478aceb.js"><link rel="prefetch" href="/assets/js/186.86e3e559.js"><link rel="prefetch" href="/assets/js/187.a6328776.js"><link rel="prefetch" href="/assets/js/188.3858cc89.js"><link rel="prefetch" href="/assets/js/189.5bd4dd9d.js"><link rel="prefetch" href="/assets/js/19.79a56c0a.js"><link rel="prefetch" href="/assets/js/190.cedead72.js"><link rel="prefetch" href="/assets/js/191.8b7c635c.js"><link rel="prefetch" href="/assets/js/192.35b16908.js"><link rel="prefetch" href="/assets/js/193.af346a6d.js"><link rel="prefetch" href="/assets/js/194.37733cfd.js"><link rel="prefetch" href="/assets/js/195.7a71f759.js"><link rel="prefetch" href="/assets/js/196.1291f4b1.js"><link rel="prefetch" href="/assets/js/197.968b0c83.js"><link rel="prefetch" href="/assets/js/198.052e30db.js"><link rel="prefetch" href="/assets/js/199.3c952935.js"><link rel="prefetch" href="/assets/js/20.f7d754f1.js"><link rel="prefetch" href="/assets/js/200.687060ca.js"><link rel="prefetch" href="/assets/js/201.12bac1ed.js"><link rel="prefetch" href="/assets/js/202.d299b33b.js"><link rel="prefetch" href="/assets/js/203.e029cb99.js"><link rel="prefetch" href="/assets/js/204.7861beab.js"><link rel="prefetch" href="/assets/js/205.4d3b4c7f.js"><link rel="prefetch" href="/assets/js/206.69e9996b.js"><link rel="prefetch" href="/assets/js/207.2ff276d9.js"><link rel="prefetch" href="/assets/js/208.b9301b5b.js"><link rel="prefetch" href="/assets/js/209.217490d9.js"><link rel="prefetch" href="/assets/js/21.99630910.js"><link rel="prefetch" href="/assets/js/210.cc09b2f8.js"><link rel="prefetch" href="/assets/js/211.4cbfa969.js"><link rel="prefetch" href="/assets/js/212.dbedec80.js"><link rel="prefetch" href="/assets/js/213.8b2c48ac.js"><link rel="prefetch" href="/assets/js/214.4bdc53ed.js"><link rel="prefetch" href="/assets/js/215.0d45409b.js"><link rel="prefetch" href="/assets/js/216.7c030db1.js"><link rel="prefetch" href="/assets/js/217.5fc6f782.js"><link rel="prefetch" href="/assets/js/218.375d03b7.js"><link rel="prefetch" href="/assets/js/219.b94151d2.js"><link rel="prefetch" href="/assets/js/22.46be6643.js"><link rel="prefetch" href="/assets/js/220.9715a27b.js"><link rel="prefetch" href="/assets/js/221.3eae158a.js"><link rel="prefetch" href="/assets/js/222.d3cc7853.js"><link rel="prefetch" href="/assets/js/223.43e87552.js"><link rel="prefetch" href="/assets/js/224.bdc5864f.js"><link rel="prefetch" href="/assets/js/225.ca7ed902.js"><link rel="prefetch" href="/assets/js/226.b29327f0.js"><link rel="prefetch" href="/assets/js/227.6c2ba0fd.js"><link rel="prefetch" href="/assets/js/228.4b45caa7.js"><link rel="prefetch" href="/assets/js/229.bc2dd135.js"><link rel="prefetch" href="/assets/js/23.ba377622.js"><link rel="prefetch" href="/assets/js/230.a7f637c0.js"><link rel="prefetch" href="/assets/js/231.3b8a2e07.js"><link rel="prefetch" href="/assets/js/232.25ea352a.js"><link rel="prefetch" href="/assets/js/233.2b240b52.js"><link rel="prefetch" href="/assets/js/234.5e183484.js"><link rel="prefetch" href="/assets/js/235.d866bc73.js"><link rel="prefetch" href="/assets/js/236.f5eb4574.js"><link rel="prefetch" href="/assets/js/237.1388e719.js"><link rel="prefetch" href="/assets/js/238.c4aa1785.js"><link rel="prefetch" href="/assets/js/239.eda2198b.js"><link rel="prefetch" href="/assets/js/24.cce0f88b.js"><link rel="prefetch" href="/assets/js/240.99f8dd1b.js"><link rel="prefetch" href="/assets/js/241.0c450cb9.js"><link rel="prefetch" href="/assets/js/242.1e223e8d.js"><link rel="prefetch" href="/assets/js/243.1b3cea4a.js"><link rel="prefetch" href="/assets/js/244.c6578eca.js"><link rel="prefetch" href="/assets/js/245.2e9e4a4a.js"><link rel="prefetch" href="/assets/js/246.8f12791e.js"><link rel="prefetch" href="/assets/js/247.8c43dde1.js"><link rel="prefetch" href="/assets/js/248.38aff51f.js"><link rel="prefetch" href="/assets/js/249.8f731541.js"><link rel="prefetch" href="/assets/js/25.7a3ec17a.js"><link rel="prefetch" href="/assets/js/250.32647357.js"><link rel="prefetch" href="/assets/js/26.62c25a14.js"><link rel="prefetch" href="/assets/js/27.53b95771.js"><link rel="prefetch" href="/assets/js/28.03970acb.js"><link rel="prefetch" href="/assets/js/29.25612289.js"><link rel="prefetch" href="/assets/js/3.88d6b34e.js"><link rel="prefetch" href="/assets/js/30.07f9df7f.js"><link rel="prefetch" href="/assets/js/31.4a2b375c.js"><link rel="prefetch" href="/assets/js/32.2aa1764a.js"><link rel="prefetch" href="/assets/js/33.73f0fd29.js"><link rel="prefetch" href="/assets/js/34.1a020430.js"><link rel="prefetch" href="/assets/js/35.d35300bc.js"><link rel="prefetch" href="/assets/js/36.f09febe5.js"><link rel="prefetch" href="/assets/js/37.1245b1df.js"><link rel="prefetch" href="/assets/js/38.38de7e86.js"><link rel="prefetch" href="/assets/js/39.8fe129bb.js"><link rel="prefetch" href="/assets/js/4.2a893f4e.js"><link rel="prefetch" href="/assets/js/40.a7f1ad60.js"><link rel="prefetch" href="/assets/js/41.6d5e8989.js"><link rel="prefetch" href="/assets/js/42.d1a6a098.js"><link rel="prefetch" href="/assets/js/43.cfd9872b.js"><link rel="prefetch" href="/assets/js/44.f3094b3d.js"><link rel="prefetch" href="/assets/js/45.853d96a0.js"><link rel="prefetch" href="/assets/js/46.ccc6949e.js"><link rel="prefetch" href="/assets/js/47.8c88e1fc.js"><link rel="prefetch" href="/assets/js/48.d25ecc89.js"><link rel="prefetch" href="/assets/js/49.289d1e41.js"><link rel="prefetch" href="/assets/js/5.9ae31646.js"><link rel="prefetch" href="/assets/js/50.d7b6f3e8.js"><link rel="prefetch" href="/assets/js/51.e086ebec.js"><link rel="prefetch" href="/assets/js/52.b5d902e3.js"><link rel="prefetch" href="/assets/js/53.55de1dfc.js"><link rel="prefetch" href="/assets/js/54.362c7742.js"><link rel="prefetch" href="/assets/js/55.eb55da30.js"><link rel="prefetch" href="/assets/js/56.eccecee9.js"><link rel="prefetch" href="/assets/js/57.6404f633.js"><link rel="prefetch" href="/assets/js/58.2162d4ce.js"><link rel="prefetch" href="/assets/js/59.5557cc2d.js"><link rel="prefetch" href="/assets/js/6.981a4764.js"><link rel="prefetch" href="/assets/js/60.2f3655c5.js"><link rel="prefetch" href="/assets/js/61.a113ad1c.js"><link rel="prefetch" href="/assets/js/62.667fd6eb.js"><link rel="prefetch" href="/assets/js/63.8c7b7940.js"><link rel="prefetch" href="/assets/js/64.502218f6.js"><link rel="prefetch" href="/assets/js/65.7448c5fd.js"><link rel="prefetch" href="/assets/js/66.ddc034e4.js"><link rel="prefetch" href="/assets/js/67.152f25ba.js"><link rel="prefetch" href="/assets/js/68.e5d4b8f2.js"><link rel="prefetch" href="/assets/js/69.aa7520ea.js"><link rel="prefetch" href="/assets/js/7.dd6f90f9.js"><link rel="prefetch" href="/assets/js/70.6e8d3bcf.js"><link rel="prefetch" href="/assets/js/71.6e626b0c.js"><link rel="prefetch" href="/assets/js/72.3c023329.js"><link rel="prefetch" href="/assets/js/73.22725f4b.js"><link rel="prefetch" href="/assets/js/74.959d7503.js"><link rel="prefetch" href="/assets/js/75.4f0d15c8.js"><link rel="prefetch" href="/assets/js/76.1999e766.js"><link rel="prefetch" href="/assets/js/77.9fd08940.js"><link rel="prefetch" href="/assets/js/78.7ff63be1.js"><link rel="prefetch" href="/assets/js/79.c602c823.js"><link rel="prefetch" href="/assets/js/8.770de0b0.js"><link rel="prefetch" href="/assets/js/80.b6826d7f.js"><link rel="prefetch" href="/assets/js/81.3bf2dcb6.js"><link rel="prefetch" href="/assets/js/82.4389ec31.js"><link rel="prefetch" href="/assets/js/83.38018e9b.js"><link rel="prefetch" href="/assets/js/84.ba0f730e.js"><link rel="prefetch" href="/assets/js/85.3bee5bf2.js"><link rel="prefetch" href="/assets/js/86.90b7d095.js"><link rel="prefetch" href="/assets/js/87.9d27c060.js"><link rel="prefetch" href="/assets/js/88.4fb754db.js"><link rel="prefetch" href="/assets/js/89.35996fd2.js"><link rel="prefetch" href="/assets/js/9.d8ddbc4b.js"><link rel="prefetch" href="/assets/js/90.f88d9533.js"><link rel="prefetch" href="/assets/js/91.b204aaea.js"><link rel="prefetch" href="/assets/js/92.fe89d0c5.js"><link rel="prefetch" href="/assets/js/93.1c9d237f.js"><link rel="prefetch" href="/assets/js/94.d6926e80.js"><link rel="prefetch" href="/assets/js/95.277cb018.js"><link rel="prefetch" href="/assets/js/96.4b32dfdf.js"><link rel="prefetch" href="/assets/js/97.83ff1697.js"><link rel="prefetch" href="/assets/js/98.ea3dd543.js"><link rel="prefetch" href="/assets/js/99.53bfd96a.js">
-    <link rel="stylesheet" href="/assets/css/styles.d763af28.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container vuepress-theme-fast"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><img src="/logo@2x.svg" alt="WEEX" class="logo"></a><span class="version"><a href="/release-note.html" class="version-bg"><img src="/assets/img/version-bg.ab65ded9.svg" alt="v0.20"><span class="version-no">v0.20</span></a></span><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/docs/" class="nav-link">Docs</a></div><div class="nav-item"><a href="/tools/" class="nav-link">Tools</a></div><div class="nav-item"><a href="/community/" class="nav-link">Community</a></div><div class="nav-item"><a href="/blog/" class="nav-link">Blog</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/guide/advanced/downgrade.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----><a href="/zh/guide/advanced/downgrade.html" class="nav-link">简体中文</a></li></ul></div></div></nav><a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener noreferrer" class="repo-link"><img src="/assets/img/github.7cb484a9.svg" alt="github" class="github-icon"></a></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/docs/" class="nav-link">Docs</a></div><div class="nav-item"><a href="/tools/" class="nav-link">Tools</a></div><div class="nav-item"><a href="/community/" class="nav-link">Community</a></div><div class="nav-item"><a href="/blog/" class="nav-link">Blog</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/guide/advanced/downgrade.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----><a href="/zh/guide/advanced/downgrade.html" class="nav-link">简体中文</a></li></ul></div></div></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Getting Started</span><!----></p><ul class="sidebar-group-items"><li><a href="/guide/introduction.html" class="sidebar-link">Introduction</a></li><li><a href="/guide/front-end-frameworks.html" class="sidebar-link">Front-End Frameworks</a></li><li><a href="/guide/platform-difference.html" class="sidebar-link">Platform Difference</a></li><li><a href="/guide/use-vue-in-weex.html" class="sidebar-link">Use Vue in Weex</a></li><li><a href="/guide/use-rax-in-weex.html" class="sidebar-link">Use Rax in Weex</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Develop</span><!----></p><ul class="sidebar-group-items"><li><a href="/guide/develop/setup-develop-environment.html" class="sidebar-link">Setup Develop Environment</a></li><li><a href="/guide/develop/create-a-new-app.html" class="sidebar-link">Create a New App</a></li><li><a href="/guide/develop/integrate-to-android-app.html" class="sidebar-link">Integrate to Android</a></li><li><a href="/guide/develop/integrate-to-iOS-app.html" class="sidebar-link">Integrate to iOS</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Debug</span><!----></p><ul class="sidebar-group-items"><li><a href="/guide/debug/integrate-devtool-to-android.html" class="sidebar-link">Integrate Devtool to Android</a></li><li><a href="/guide/debug/integrate-devtool-to-ios.html" class="sidebar-link">Integrate Devtool to iOS</a></li><li><a href="/guide/debug/debug.html" class="sidebar-link">Debug</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Extend</span><!----></p><ul class="sidebar-group-items"><li><a href="/guide/extend/extend-android.html" class="sidebar-link">Extend Android</a></li><li><a href="/guide/extend/extend-ios.html" class="sidebar-link">Extend iOS</a></li><li><a href="/guide/extend/extend-ios-with-swift.html" class="sidebar-link">Extend iOS with Swift</a></li><li><a href="/guide/extend/extend-web.html" class="sidebar-link">Extend Web Renderer</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Advanced</span><!----></p><ul class="sidebar-group-items"><li><a href="/guide/advanced/asset-path.html" class="sidebar-link">Asset Path</a></li><li><a href="/guide/advanced/downgrade.html" class="active sidebar-link">Downgrade</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/advanced/downgrade.html#emit-downgrade" class="sidebar-link">Emit Downgrade</a></li><li class="sidebar-sub-header"><a href="/guide/advanced/downgrade.html#useful-tools" class="sidebar-link">Useful Tools</a></li><li class="sidebar-sub-header"><a href="/guide/advanced/downgrade.html#downgrade-options" class="sidebar-link">Downgrade Options</a></li></ul></li><li><a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link">Use Vuex and vue-router</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Contribute</span><!----></p><ul class="sidebar-group-items"><li><a href="/guide/contribute/bug-report-guidelines.html" class="sidebar-link">Bug Report</a></li><li><a href="/guide/contribute/how-to-contribute.html" class="sidebar-link">Join Weex community</a></li><li><a href="/guide/contribute/contribute-code.html" class="sidebar-link">Contribute Code</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="downgrade"><a href="#downgrade" aria-hidden="true" class="header-anchor">#</a> Downgrade</h1><p>&quot;Downgrade&quot; means to rendering Weex's pages as the normal web page.</p><p>Weex supports cross-platform (Android, iOS, Web), with different SDK but same APIs, under the hood, it's using platform capability to render pages. However with the iteration of the platforms and app, version fragmentation problem is inevitable. If you are using the feature which only supported in a higher version, you can let your page &quot;downgrade&quot; at the lower versions (The web renderer of Weex, or the &quot;WebSDK&quot;, is implemented in Javascript, so it can be updated dynamically).</p><blockquote><p>“Downgrade” is not a technical limitation, but it's useful to handle real world problems.</p></blockquote><h2 id="emit-downgrade"><a href="#emit-downgrade" aria-hidden="true" class="header-anchor">#</a> Emit Downgrade</h2><p>In Weex, the &quot;downgrade&quot; behavior is emitted at the front-end and is implemented by the native. The trigger of it is by calling the <code>error</code> method of the <code>instanceWrap</code> module.</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> instanceWrap <span class="token operator">=</span> weex<span class="token punctuation">.</span><span class="token function">requireModule</span><span class="token punctuation">(</span><span class="token string">'instanceWrap'</span><span class="token punctuation">)</span>
-instanceWrap<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errorType<span class="token punctuation">,</span> errorCode<span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-</code></pre></div><p>The <code>instanceWrap</code> only contains one API which is <code>error</code>, the arguments of it will be used to differentiate the type and reason of the downgrade behavior, they are not restrictions but conventions.</p><ul><li><code>errorType</code>: <code>Number</code> Error type, usually be <code>1</code> when it was emitted at front-end.</li><li><code>errorCode</code>: <code>Number</code> Error code, the meaning are as follows:
-<ul><li><code>1001</code>: The version of os (Android or iOS) is not satisfied.</li><li><code>1002</code>: The version of app is not satisfied.</li><li><code>1003</code>: The version of WeexSDK is not satisfied.</li><li><code>1004</code>: The device mode is not satisfied.</li></ul></li><li><code>message</code>: <code>String</code> Error message.</li></ul><blockquote><p>Calling the API anywhere in the page will trigger the downgrade immediately. It a common way to determine whether to downgrade at the beginning of the page by checking if environment meets the requirements.</p></blockquote><h2 id="useful-tools"><a href="#useful-tools" aria-hidden="true" class="header-anchor">#</a> Useful Tools</h2><h3 id="npm-module"><a href="#npm-module" aria-hidden="true" class="header-anchor">#</a> Npm module</h3><ul><li>npm module: <a href="https://www.npmjs.com/package/@weex-project/downgrade" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/@weex-project/downgrade<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li>source code: <a href="https://github.com/weexteam/downgrade" target="_blank" rel="noopener noreferrer">https://github.com/weexteam/downgrade<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul><p>First install the <code>@weex-project/downgrade</code> package, the import it to your code.</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> downgrade <span class="token keyword">from</span> <span class="token string">'@weex-project/downgrade'</span>
-</code></pre></div><p>The APIs of this package are as follows:</p><h4 id="force"><a href="#force" aria-hidden="true" class="header-anchor">#</a><code>force()</code></h4><p>Force downgrade. Will downgrade immediately once you call this API.</p><div class="language-js extra-class"><pre class="language-js"><code>downgrade<span class="token punctuation">.</span><span class="token function">force</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre></div><h4 id="check-options"><a href="#check-options" aria-hidden="true" class="header-anchor">#</a><code>check(options)</code></h4><p>Check if the environment satisfies the <code>options</code>, return the diagnose result, and <strong>will not emit downgrade.</strong></p><p>The format of <code>options</code> will be explained later, the return value is as follow:</p><ul><li><code>isDowngrade</code>: Should downgrade or not. (It's <code>true</code> of the environment not satisfies the <code>options</code>)</li><li><code>errorType</code>: Error type, only exist when <code>isDowngrade</code> is <code>true</code>.</li><li><code>code</code>: Error code, only exist when <code>isDowngrade</code> is <code>true</code>.</li></ul><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> result <span class="token operator">=</span> downgrade<span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span><span class="token punctuation">{</span> ios<span class="token punctuation">:</span> <span class="token punctuation">{</span> osVersion<span class="token punctuation">:</span> <span class="token string">'&lt;=9.0'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>result<span class="token punctuation">.</span>isDowngrade<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Do something</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h4 id="condition-options"><a href="#condition-options" aria-hidden="true" class="header-anchor">#</a><code>condition(options)</code></h4><p><strong>Emit downgrade</strong> when the environment is not satisfies the <code>options</code>.</p><div class="language-js extra-class"><pre class="language-js"><code>downgrade<span class="token punctuation">.</span><span class="token function">condition</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  android<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    appVersion<span class="token punctuation">:</span> <span class="token string">'&lt;=7.8.0'</span><span class="token punctuation">,</span>
-    weexVersion<span class="token punctuation">:</span> <span class="token string">'&lt;0.16.0'</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre></div><h3 id="webpack-plugin"><a href="#webpack-plugin" aria-hidden="true" class="header-anchor">#</a> Webpack Plugin</h3><p>Weex provides a Webpack plugin <a href="https://www.npmjs.com/package/webpack-plugin-downgrade" target="_blank" rel="noopener noreferrer"><code>webpack-plugin-downgrade</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to inject downgrade codes to the generated file.</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// webpack.config.js</span>
-<span class="token keyword">var</span> DowngradePlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-plugin-downgrade'</span><span class="token punctuation">)</span>
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
 
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token comment">// other configs ...</span>
 
-  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token keyword">new</span> <span class="token class-name">DowngradePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token comment">/* downgrade options */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>Supported options as as follows:</p><ul><li><code>force</code>: <code>Boolean</code> Whether to force downgrade.</li><li><code>condition</code>: <code>Object</code> The condition to emit downgrade.</li></ul><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Force downgrade</span>
-<span class="token keyword">new</span> <span class="token class-name">DowngradePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> force<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
 
-<span class="token comment">// Downgrade if the environment satisfies the condition</span>
-<span class="token keyword">new</span> <span class="token class-name">DowngradePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  condition<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    ios<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      deviceModel<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'iPhone5,1'</span><span class="token punctuation">]</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    android<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      osVersion<span class="token punctuation">:</span> <span class="token string">'&lt;=4.4'</span><span class="token punctuation">,</span>
-      weexVersion<span class="token punctuation">:</span> <span class="token string">'&lt;0.16.0'</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre></div><h2 id="downgrade-options"><a href="#downgrade-options" aria-hidden="true" class="header-anchor">#</a> Downgrade Options</h2><p>The downgrade configuration is a plain object which contains <code>ios</code> and <code>android</code> options, the config properties within them are the same. The page will be downgrade once any of the option is satisfied.</p><table><thead><tr><th>Option</th><th>Data Format</th><th>Note</th></tr></thead><tbody><tr><td><code>osVersion</code></td><td>Semantic Version</td><td>Version range of mobile OS (Android or iOS).</td></tr><tr><td><code>appVersion</code></td><td>Semantic Version</td><td>Version range of App.</td></tr><tr><td><code>weexVersion</code></td><td>Semantic Version</td><td>Version range of Weex SDK.</td></tr><tr><td><code>deviceModel</code></td><td>String Array</td><td>Device model list.</td></tr></tbody></table><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
-  android<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Downgrade if Android version is lower than 4.5</span>
-    osVersion<span class="token punctuation">:</span> <span class="token string">'&lt;4.5'</span><span class="token punctuation">,</span>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
 
-    <span class="token comment">// Only downgrade in the v8.1.10 of App</span>
-    appVersion<span class="token punctuation">:</span> <span class="token string">'8.1.10'</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
 
-  ios<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Downgrade in WeexSDK v0.18.2 or lower</span>
-    weexVersion<span class="token punctuation">:</span> <span class="token string">'&lt;=0.18.2'</span><span class="token punctuation">,</span>
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
 
-    <span class="token comment">// Downgrade in iPhone 5 or iPhone 5s</span>
-    deviceModel<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">'iPhone5,1'</span><span class="token punctuation">,</span> <span class="token string">'iPhone6,1'</span> <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3 id="semantic-version"><a href="#semantic-version" aria-hidden="true" class="header-anchor">#</a> Semantic Version</h3><p>In the npm package and Webpack plugin, they are using a simple version of <a href="https://semver.org/" target="_blank" rel="noopener noreferrer">Semantic Versioning<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to verify the version number, but <strong>only supports <code>&gt;</code>, <code>&lt;</code>, <code>=</code>, <code>&gt;=</code>, <code>&lt;=</code> those five compare operator</strong></p><h3 id="device-model"><a href="#device-model" aria-hidden="true" class="header-anchor">#</a> Device Model</h3><p>The device mode string in defined by mobile device manufacturer.</p></div><div class="page-nav"><p class="inner"><span class="prev">
-        ←
-        <a href="/guide/advanced/asset-path.html" class="prev">
-          Asset Path
-        </a></span><span class="next"><a href="/guide/advanced/use-vuex-and-vue-router.html">
-          Use Vuex and vue-router
-        </a>
-        →
-      </span></p></div><div class="page-edit"><div class="last-updated"><span class="prefix">Last Updated: </span><span class="time">1/8/2019</span></div><div class="edit-link"><a href="https://github.com/apache/incubator-weex-site/edit/draft/docs/guide/advanced/downgrade.md" target="_blank" rel="noopener noreferrer">Edit this page</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><a href="https://github.com/apache/incubator-weex-site/issues/new?body=https%3A%2F%2Fweex.io%2F" target="_blank" rel="noopener noreferrer" class="issueText">Suggest</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div><div class="score"><span class="choice"><img src="https://img.alicdn.com/tfs/TB1h7TSqpYqK1RjSZLeXXbXppXa-20-18.svg" class="score-icon">Excellent doc</span><span class="choice"><img src="https://img.alicdn.com/tfs/TB1h7TSqpYqK1RjSZLeXXbXppXa-20-18.svg" class="score-icon bad">Unusable doc</span></div></div><!----></div><!----></div></div>
-    <script src="/assets/js/app.d763af28.js" defer></script><script src="/assets/js/105.9ff47802.js" defer></script>
-  </body>
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link current ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Overview</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/index.html" class="sidebar-link  ">Getting Started</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/front-end-frameworks.html" class="sidebar-link  ">Front-End Frameworks</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/use-vue.html" class="sidebar-link  ">Use Vue.js on Weex</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Develop</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/set-up-env.html" class="sidebar-link  ">Setup Develop Environment</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Extend</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/create-a-plugin.html" class="sidebar-link  ">Create a plugin</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-web-render.html" class="sidebar-link  ">Extend Web Renderer</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-android.html" class="sidebar-link  ">Extend Android</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-ios.html" class="sidebar-link  ">Extend iOS</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-module-using-swift.html" class="sidebar-link  ">Extend iOS with swift</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/extend-js-framework.html" class="sidebar-link  ">Extend JS framework</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">Advanced Guide</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/guide/advanced/path.html" class="sidebar-link  ">Asset Path</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/downgrade.html" class="sidebar-link current ">Downgrade</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/use-vuex-and-vue-router.html" class="sidebar-link  ">Use Vuex and vue-router</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/guide/advanced/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Downgrade
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-12-19T13:30:43.876Z">Updated time: 19/12/2018</time> -->
+</header>
+
+    <div class="article-toc">
+
+<!-- toc -->
+<!-- tocstop -->
+<p></div><br>Due to the continuous development of Weex, some version fragmentation problems occur inevitably . For example, certain new features are not fully supported in the historical version. In this case, we need to degrade Weex to HTML and render through web.</p>
+<p>Currently, there are many conditions and rules for the degradation which triggered by Weex definition, including operating system version, app version, SDK version, etc.</p>
+<p>Weex 2.0 downgrade change to module，please refer to <a href="https://www.npmjs.com/package/@weex-project/downgrade" target="_blank" rel="noopener">downgrade</a></p>
+
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/guide/advanced/downgrade.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
 </html>
