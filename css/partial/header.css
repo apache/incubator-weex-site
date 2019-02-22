@@ -1,0 +1,101 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+#header {
+  width: 100%;
+  height: 50px;
+  padding: 0 40px;
+  position: absolute;
+  background-color: #F2F2F2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.05);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; }
+  #header ul, #header li, #header ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  #header #logo {
+    display: block; }
+    #header #logo img {
+      width: 78px;
+      height: 38px; }
+  #header .navbar {
+    height: 50px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center; }
+  #header #mobile-nav {
+    display: none;
+    height: 50px;
+    -ms-flex-align: center;
+        align-items: center; }
+    #header #mobile-nav #logo {
+      margin: 0 auto; }
+    #header #mobile-nav .btn-menu {
+      position: absolute;
+      left: 20px;
+      top: 20px; }
+  #header .main-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    #header .main-nav > ul {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      height: 50px;
+      line-height: 50px; }
+    #header .main-nav li > a {
+      display: block;
+      height: 100%;
+      font-size: 1.16em;
+      color: #606060;
+      padding: 0 16px; }
+  #header .links > li > a:hover {
+    color: #1FB5FC;
+    background-color: #EEE; }
+  #header .links > li.current > a {
+    color: #1FB5FC;
+    border-bottom: 0.2em solid #1FB5FC; }
+  #header .links > li {
+    margin: 0 1px; }
+  #header .tools > li {
+    margin-left: 30px;
+    position: relative; }
+  #header .tools .search-form {
+    width: 140px; }
+  #header .dropdown .dropdown-menu {
+    width: 200px;
+    left: -60%;
+    top: 98%;
+    border: none;
+    padding: 10px 0; }
+    #header .dropdown .dropdown-menu a {
+      font-size: 15px;
+      padding: 5px 10px; }
+  #header .select-lang {
+    width: 90px; }
+  #header .select-lang .dropdown-toggle {
+    color: #00293D; }
+  #header .select-lang .dropdown-menu {
+    width: 105px;
+    left: 0; }
+  #header .caret {
+    display: inline-block;
+    margin-left: 2px;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #999ba4; }

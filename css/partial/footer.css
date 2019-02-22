@@ -1,0 +1,30 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+#footer {
+  width: 100%;
+  padding: 10px 40px 15px;
+  background: #F0F0F0;
+  font-size: 10px;
+  font-weight: 200;
+  color: #A0A0A0;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
+  #footer a {
+    text-decoration: underline; }
+  #footer p {
+    margin: 0; }
+  #footer .disclaimer {
+    max-width: 1200px;
+    line-height: 1.5; }
+    #footer .disclaimer .title {
+      font-weight: bold;
+      margin-bottom: 10px; }
+  #footer .copyright {
+    margin-top: 15px; }
+    #footer .copyright a, #footer .copyright a:focus {
+      color: #999; }
+    #footer .copyright a:active {
+      color: #888; }
