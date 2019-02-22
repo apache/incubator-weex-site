@@ -28,7 +28,7 @@ version: 2.1
 
     **注意：**
 
-    - `body` 参数仅支持 `string` 类型的参数，请勿直接传递 `JSON`，必须先将其转为字符串。
+    - `body` 参数仅支持 `string` 类型的参数，请勿直接传递 `JSON`(JSON可以传吧本质是字符串），必须先将其转为字符串。
     - `GET` 请求不支持 `body` 方式传递参数，请使用 url 传参。
 
 - `callback {Function}`：响应结果回调，回调函数将收到如下的 `response` 对象：
