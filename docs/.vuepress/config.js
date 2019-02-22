@@ -340,7 +340,8 @@ module.exports = {
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
             ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
-            ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore']
+            ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore'],
+            ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进']
           ]
         }
       }
