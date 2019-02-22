@@ -1,0 +1,52 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.summary {
+  -webkit-overflow-scrolling: touch;
+  font-size: 15px;
+  -ms-flex: 1;
+      flex: 1; }
+  .summary ul, .summary li, .summary ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .summary a.current {
+    border: none;
+    color: #1FB5FC; }
+  .summary a:hover {
+    color: #1FB5FC; }
+  .summary h3.chapter-title {
+    font-size: 1.2em; }
+    .summary h3.chapter-title a {
+      color: #333; }
+  .summary ul.chapter {
+    margin-left: 15px; }
+    .summary ul.chapter li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 10px; }
+
+.doc-summary > li {
+  margin-bottom: 30px; }
+
+.lang-en .summary h3.chapter-title {
+  font-weight: 600; }
+
+.sponsor {
+  -ms-flex: 0;
+      flex: 0;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.sponsor-poster {
+  display: block;
+  width: 140px; }
+
+.sponsor-title {
+  color: #7f8c8d;
+  font-size: 10px;
+  text-align: center; }
