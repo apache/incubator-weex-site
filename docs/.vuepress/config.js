@@ -339,7 +339,8 @@ module.exports = {
           '/zh/community/': [['roadmap', '路线图'], ['weex-third-party-extensions', '插件市场']],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
-            ['weex-auto-test-locating', 'Weex自动化测试元素定位方案']
+            ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
+            ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore']
           ]
         }
       }
