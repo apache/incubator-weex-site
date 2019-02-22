@@ -1,0 +1,198 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+@media screen and (max-width: 1380px) {
+  .article .article-toc > ul {
+    width: 32%;
+    margin-left: 4%; } }
+
+@media screen and (max-width: 1280px) {
+  .article .article-toc {
+    display: none; } }
+
+@media screen and (max-width: 1080px) {
+  #header {
+    padding: 0 30px; }
+    #header .tools > li {
+      margin-left: 10px; }
+    #header .tools .search-form {
+      width: 120px; }
+    #header .main-nav li > a {
+      font-size: 1.1em;
+      padding: 0 12px; }
+  .article .article-toc {
+    display: none; }
+  .article .article-entry {
+    margin: 40px 0 20px 20px; } }
+
+@media screen and (max-width: 850px) {
+  /***********************************************
+   * Global
+   **********************************************/
+  body {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-size: 14px; }
+  #header .navbar {
+    display: none !important; }
+  #header #mobile-nav {
+    display: -ms-flexbox;
+    display: flex; }
+  #sidebar {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-transform: translateX(-320px);
+        transform: translateX(-320px);
+    transition: all .3s ease; }
+    #sidebar.open {
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+  #footer {
+    padding: 10px 20px; }
+    #footer .disclaimer {
+      display: none; }
+    #footer .copyright {
+      margin: 0; }
+  .article .article-entry {
+    margin: 20px; }
+  /***********************************************
+   * Index
+   **********************************************/
+  .header .galaxy {
+    display: none; }
+  .edge .scene-container .textbox {
+    -ms-flex: 2;
+        flex: 2; }
+  .edge .scene-container .inner-box:nth-child(3) {
+    -ms-flex: 0 0 240px;
+        flex: 0 0 240px; }
+  .edge .scene-container .sketch-content {
+    /*flex-direction: column;
+      align-items: center;*/ }
+  .horizon .sketch-content {
+    padding: 50px 5em; }
+  .horizon .sketch-content .inner-box {
+    padding: 0 2em; }
+  .users .scene-container .textbox {
+    -ms-flex: 1;
+        flex: 1; }
+  .feedback .sketch-content {
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .feedback .scene-container .textbox {
+    -ms-flex: 1;
+        flex: 1; }
+  /***********************************************
+   * Post
+   **********************************************/
+  .article-wrapper .doc-nav {
+    display: none; }
+  .article-wrapper .article {
+    margin-left: 0; } }
+
+@media screen and (max-width: 600px) {
+  /***********************************************
+   * Index
+   **********************************************/
+  .edge .scene-container .textbox {
+    -ms-flex: 1;
+        flex: 1; }
+  .edge .scene-container .sketch-content {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center; }
+  .article .article-entry {
+    margin: 10px;
+    padding: 5px; }
+    .article .article-entry img {
+      max-width: 100%; }
+  .scene.overlength {
+    height: auto;
+    min-height: 100%;
+    min-height: calc(100% - 72px); }
+  .horizon .textbox {
+    -ms-flex: 4;
+        flex: 4; }
+  .horizon .sketch-content {
+    padding: 50px 1em; }
+    .horizon .sketch-content .title {
+      font-size: 18px; }
+    .horizon .sketch-content .download-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      top: 5px;
+      left: 5px; }
+      .horizon .sketch-content .download-btn a {
+        width: 100%;
+        height: 30px;
+        float: none; }
+      .horizon .sketch-content .download-btn .android {
+        background: url(../images/android-icon.png) center center no-repeat;
+        background-size: 24px 24px; }
+      .horizon .sketch-content .download-btn .ios {
+        background: url(../images/ios-icon.png) center center no-repeat;
+        background-size: 24px 24px; }
+    .horizon .sketch-content .app-listing {
+      margin-top: 0; }
+      .horizon .sketch-content .app-listing li {
+        padding: 5px; }
+      .horizon .sketch-content .app-listing .img {
+        width: 60px;
+        height: 60px;
+        background-size: 60px 60px; }
+      .horizon .sketch-content .app-listing .tooltip {
+        width: 60px;
+        font-size: 12px;
+        height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+    .horizon .sketch-content .addmore {
+      font-size: 14px;
+      margin-top: 0; }
+      .horizon .sketch-content .addmore:before {
+        font-size: 14px; }
+  .horizon .sketch-content .inner-box {
+    padding: 0 1em; }
+  .horizon .textbox p {
+    width: 100%; }
+  .header .slide-content .page-title {
+    width: 320px;
+    margin-left: -160px; }
+  .header .slide-content .btn-group {
+    bottom: 10%; }
+  .feature .right-box {
+    width: 500px;
+    height: 245.45px;
+    top: 50%;
+    right: -65px; }
+    .feature .right-box .level1, .feature .right-box .level2, .feature .right-box .level3, .feature .right-box .level4 {
+      width: 500px;
+      height: 245.45px; }
+  .cross-platform .sketch-content {
+    height: 200px; }
+  .supporting-vue .sketch-content.imgbox .imgbox {
+    background-size: 80px; }
+  .users .sketch-content .user-logo {
+    width: 140px;
+    height: 140px;
+    background-size: 45px; }
+  .users .sketch-content .user-info p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; }
+  .users .sketch-content .user-logo h3 {
+    margin-top: 110px; }
+  .feedback .user-feedback {
+    /*flex: 1 0 140px;*/ }
+  .feedback .scene-container .go-2-doc {
+    margin-top: 0; } }
