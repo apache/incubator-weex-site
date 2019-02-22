@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;textarea&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;textarea&amp;gt;#v0.8+ Summary#The weex builtin component textarea is used to create interactive controls to accept data from users. It can be a multi-line input. Notes: &amp;lt;textarea&amp;gt; support all e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="&lt;textarea&gt;">
+<meta property="og:url" content="https://weex.apache.org/references/components/textarea.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="&amp;lt;textarea&amp;gt;#v0.8+ Summary#The weex builtin component textarea is used to create interactive controls to accept data from users. It can be a multi-line input. Notes: &amp;lt;textarea&amp;gt; support all e">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-19T13:30:43.902Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&lt;textarea&gt;">
+<meta name="twitter:description" content="&amp;lt;textarea&amp;gt;#v0.8+ Summary#The weex builtin component textarea is used to create interactive controls to accept data from users. It can be a multi-line input. Notes: &amp;lt;textarea&amp;gt; support all e">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png">
+  
+  
+    <link rel="stylesheet" href="/css/docsearch.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+</head>
+<body id="references" class="lang-en">
+  
+  <script>
+    window.PAGE_TYPE = "references";
+    window.ROOT = "/"
+  </script>
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li class="">
+          <a href="/guide">Guide</a>
+        </li>
+        <li class="current">
+          <a href="/references">References</a>
+        </li>
+        <li class="">
+          <a href="/wiki">WiKi</a>
+        </li>
+        <li class="dropdown ">
+          <a>Tools</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a target="_blank" href="http://dotwe.org/vue/">Online Playground</a>
+            </li>
+            <li>
+              <a href="/tools/playground.html">Playground App</a>
+            </li>
+            <li>
+              <a href="/tools/toolkit.html">Weex Toolkit</a>
+            </li>
+            <li>
+              <a href="/tools/helpers.html">Helpers</a>
+            </li>
+            <li>
+              <a href="https://github.com/weex-cli/vscode-weex" target="_blank">VSCode Extension</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown ">
+          <a href="javascript:;">Community</a>
+          <ul class="dropdown-menu subnav">
+            <li>
+              <a href="/contributing.html">How to Contribute</a>
+            </li>
+            <li>
+              <a href="/bug-report-guidelines.html">Bug Report Guidelines</a>
+            </li>
+            <li>
+              <a href="/development-process.html">Development Process</a>
+            </li>
+            <li>
+              <a href="/resources.html">Resources</a>
+            </li>
+            <li>
+              <a href="/releasenote.html">Release Note</a>
+            </li>
+            <li>
+              <a href="/who-is-using-weex.html">Who is using Weex?</a>
+            </li>
+            <li>
+              <a href="/examples.html">Examples</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/textarea.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/textarea.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+      <ul>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="//img.alicdn.com/tps/TB1zBLaPXXXXXXeXXXXXXXXXXXX-121-59.svg" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/components/index.html">Build-in Components</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (deprecated)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/textarea.html" class="sidebar-link current ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/richtext.html" class="sidebar-link  ">&lt;richtext&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/modules/index.html">Build-in Modules</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+
+  
+
+<div class="main-content">
+  <div class="article-wrapper page-layout with-chapter">
+    
+      <div class="doc-nav">
+        
+
+
+<div class="summary">
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <span class="sidebar-link">API</span>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+                <li>
+                  <a href="/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/ios-apis.html" class="sidebar-link  ">iOS APIs</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/weex-variable.html" class="sidebar-link  ">Weex Variable</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/js-service.html" class="sidebar-link  ">JS Service</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/broadcast-channel.html" class="sidebar-link  ">BroadcastChannel</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/components/index.html">Build-in Components</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/recycle-list.html" class="sidebar-link  ">&lt;recycle-list&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt; (deprecated)</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/textarea.html" class="sidebar-link current ">&lt;textarea&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/waterfall.html" class="sidebar-link  ">&lt;waterfall&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/components/richtext.html" class="sidebar-link  ">&lt;richtext&gt;</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+          <h3 class="chapter-title">
+            
+            
+              <a class="sidebar-link" href="/references/modules/index.html">Build-in Modules</a>
+            
+          </h3>
+          
+
+        
+          <ul class="chapter">
+            
+              
+            
+              
+                <li>
+                  <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/dom.html" class="sidebar-link  ">custom font</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/custom_font.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/meta.html" class="sidebar-link  ">meta</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/websocket.html" class="sidebar-link  ">webSocket</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+        <div class="sponsor">
+            <a class="sponsor-poster" target="_blank" href="https://render.alipay.com/p/s/taobaonpm_click/weex_banner_click">
+              <img src="https://render.alipay.com/p/s/taobaonpm_click/weex_banner" alt="" width="180px">
+            </a>
+            <div class="sponsor-title">本站点由阿里云赞助支持</div>
+          </div>
+      </div>
+    
+    
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;textarea&gt;
+      </h1>
+    
+  
+  <!-- <time class="article-date" datetime="2018-12-19T13:30:43.902Z">Updated time: 19/12/2018</time> -->
+</header>
+
+    <html><head></head><body><h1 class="article-heading"><span id="lt-textarea-gt">&lt;textarea&gt;</span><a href="#lt-textarea-gt" class="header-anchor">#</a></h1><p><span class="weex-version">v0.8+</span></p>
+<h3 class="article-heading"><span id="summary">Summary</span><a href="#summary" class="header-anchor">#</a></h3><p>The weex builtin component <code>textarea</code> is used to create interactive controls to accept data from users. It can be a multi-line <a href="./input.html">input</a>.</p>
+<p><strong>Notes:</strong> <code>&lt;textarea&gt;</code> support all event which <code>&lt;input&gt;</code> had.</p>
+<h3 class="article-heading"><span id="child-components">Child Components</span><a href="#child-components" class="header-anchor">#</a></h3><p>This component supports no child components.</p>
+<h3 class="article-heading"><span id="attributes">attributes</span><a href="#attributes" class="header-anchor">#</a></h3><p>The <code>textarea</code> component supports all the properties of the <code>text</code> component, in addition to the following properties:</p>
+<ul>
+<li><code>rows:</code>&lt;number&gt; a number which can specify the height of textarea, default is <code>2</code>.</li>
+</ul>
+<h3 class="article-heading"><span id="styles">Styles</span><a href="#styles" class="header-anchor">#</a></h3><p><strong>Pseudo-class</strong><span class="api-version">v0.9.5+</span>: <code>textarea</code> component support the following pseudo-classes:</p>
+<ul>
+<li><code>active</code></li>
+<li><code>focus</code></li>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+</ul>
+<p><strong>text styles</strong>: checkout <a href="/wiki/text-styles.html">text styles</a></p>
+<ul>
+<li>support <code>color</code> style.</li>
+<li>support <code>font-size</code> style.</li>
+<li>support <code>font-style</code> style.</li>
+<li>support <code>font-weight</code> style.</li>
+<li>support <code>text-align</code> style.</li>
+</ul>
+<p><strong>common styles</strong>: check out <a href="/wiki/common-styles.html">common styles for components</a></p>
+<ul>
+<li>support flexbox related styles.</li>
+<li>support box model related styles.</li>
+<li>support <code>position</code> related styles.</li>
+<li>support <code>opacity</code>, <code>background-color</code> etc.</li>
+</ul>
+<h3 class="article-heading"><span id="events">Events</span><a href="#events" class="header-anchor">#</a></h3><ul>
+<li><code>input</code>: the value of an element changes.</li>
+<li><code>change</code>: the change event is fired when a change to the component&#x2019;s value is commited by the user. It always come after a <code>blur</code> event.</li>
+<li><code>focus</code>: a component has received focus.</li>
+<li><code>blur</code>: a component has lost focus.</li>
+</ul>
+<p><strong>common events</strong>: check out the <a href="/wiki/common-events.html">common events</a></p>
+<ul>
+<li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="/wiki/common-events.html">common events</a>.</li>
+</ul>
+<p><strong>Notes:</strong> <code>&lt;textarea&gt;</code> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
+<h3 class="article-heading"><span id="parameters-of-events-object">Parameters of events&#x2019; object</span><a href="#parameters-of-events-object" class="header-anchor">#</a></h3><ul>
+<li>for <code>input</code> and <code>change</code> events:<ul>
+<li><code>value</code>: the value of the component who dispatched this event.</li>
+<li><code>timestamp</code>: the time stamp of the event.</li>
+</ul>
+</li>
+<li>for <code>focus</code> and <code>blur</code> events:<ul>
+<li><code>timestamp</code>: the time stamp of the event.</li>
+</ul>
+</li>
+</ul>
+<h3 class="article-heading"><span id="example">Example</span><a href="#example" class="header-anchor">#</a></h3><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">&quot;textarea&quot;</span> @<span class="attr">input</span>=<span class="string">&quot;oninput&quot;</span> @<span class="attr">change</span>=<span class="string">&quot;onchange&quot;</span> @<span class="attr">focus</span>=<span class="string">&quot;onfocus&quot;</span> @<span class="attr">blur</span>=<span class="string">&quot;onblur&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">&apos;modal&apos;</span>)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> {</span></span><br><span class="line"><span class="undefined">    methods: {</span></span><br><span class="line"><span class="undefined">      oninput (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;oninput:&apos;</span>, event.value)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">`oninput: <span class="subst">${event.value}</span>`</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onchange (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;onchange:&apos;</span>, event.value)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">`onchange: <span class="subst">${event.value}</span>`</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onfocus (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;onfocus:&apos;</span>, event.value)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">`onfocus: <span class="subst">${event.value}</span>`</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      },</span></span><br><span class="line"><span class="undefined">      onblur (event) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">&apos;onblur:&apos;</span>, event.value)</span></span><br><span class="line"><span class="undefined">        modal.toast({</span></span><br><span class="line"><span class="javascript">          message: <span class="string">`input blur: <span class="subst">${event.value}</span>`</span>,</span></span><br><span class="line"><span class="undefined">          duration: 0.8</span></span><br><span class="line"><span class="undefined">        })</span></span><br><span class="line"><span class="undefined">      }</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.textarea</span> {</span></span><br><span class="line"><span class="undefined">    font-size: 50px;</span></span><br><span class="line"><span class="undefined">    width: 650px;</span></span><br><span class="line"><span class="undefined">    margin-top: 50px;</span></span><br><span class="line"><span class="undefined">    margin-left: 50px;</span></span><br><span class="line"><span class="undefined">    padding-top: 20px;</span></span><br><span class="line"><span class="undefined">    padding-bottom: 20px;</span></span><br><span class="line"><span class="undefined">    padding-left: 20px;</span></span><br><span class="line"><span class="undefined">    padding-right: 20px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#666666</span>;</span></span><br><span class="line"><span class="undefined">    border-width: 2px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></span><br><span class="line"><span class="undefined">  }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<p><a href="http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa" target="_blank" rel="noopener">try it</a></p>
+</body></html>
+    <div class="article-tips">
+      <p class="tips-text">
+        <a target="_blank" href="https://github.com/apache/incubator-weex-site/edit/master/source/references/components/textarea.md">Edit this page on GitHub</a>
+      </p>
+    </div>
+  </div>
+  
+  <footer id="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <a target="_blank" href="https://incubator.apache.org/">
+        <img src="//gw.alicdn.com/tfs/TB1pTBZQFXXXXX9XXXXXXXXXXXX-794-280.png" width="100px" alt="Apache Incubator">
+      </a>
+      <p>
+        <span class="title">Disclaimer:</span>
+        <span>Apache Weex is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span>
+    </div>
+    <p class="copyright">
+      <img src="//gw.alicdn.com/tfs/TB1bg8SQFXXXXcHXXXXXXXXXXXX-85-170.png" height="16px" alt="Apache"><span>Copyright(c) 2017 The Apache Software Foundation. Licensed under the </span>
+      <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>
+    </p>
+  </div>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261496509&web_id=1261496509" language="JavaScript"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104559823-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+</footer>
+
+</article>
+
+  </div>
+</div>
+
+
+  <script src="/js/reqwest.js"></script>
+  <script src="/js/common.js"></script>
+  
+    
+    
+    <script src="/js/docsearch.min.js"></script>
+    <script type="text/javascript">
+    docsearch({
+      apiKey: "a6896fe3619315a7f04e9a76bbbbbfcb",
+      indexName: "weex",
+      inputSelector: '#search-input-header',
+      algoliaOptions: {
+        hitsPerPage: 10
+      }
+    });
+    </script>
+  
+</body>
+</html>
