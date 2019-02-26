@@ -19,10 +19,10 @@ export default {
   info: {
     solutionTitle: 'Solutions',
     demoTitle: 'Demos',
-    searchTag: 'searchTags',
-    hotTags: 'hotTags',
+    searchTag: 'Search Tags',
+    hotTags: 'Hot Tags',
     searchBtn: 'Search',
-    placeholder: 'select tags or input tags then press the Enter key',
+    placeholder: 'Select tags or input tags then press the Enter key',
     solutionFavoriteNone:
       "You don't have any favorite solution. Start collecting the first one now!",
     solutionWorksNone: "You don't write any solution. Start writing one now!",
