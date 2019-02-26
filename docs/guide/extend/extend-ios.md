@@ -219,7 +219,7 @@ You can call `focus` in your js file.
 </script>
 ```
 
-#### Get css style of component
+## Get css style of component
 
 1. Before v0.19, Weex used Yoga layout engine. You can access css styles via cssNode of WXCompoent. Such as
 ```Objective-C

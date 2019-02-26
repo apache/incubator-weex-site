@@ -36,6 +36,7 @@ table td:first-child {
 | `max`                                                                       | string  | 控制当 type 属性为 date 时选择日期的最大时间，格式为 yyyy-MM-dd                                                   |        |                                                                                                                                                                                                                                            |
 | `min`                                                                       | string  | 控制当 type 属性为 date 时选择日期的最小时间，格式为 yyyy-MM-dd                                                   |        |                                                                                                                                                                                                                                            |
 | `upriseOffset` <Badge text="v0.21+ & iOS" type="warn" vertical="middle"/> | number  | 当键盘弹起可能盖住输入框时，页面整体会上移。这个属性指定键盘上边缘与输入框下边缘的间隙。使用 iOS 系统坐标，默认是 20。 |    20    |                                                                                                                                                                                                                                            |
+| `hideDoneButton` <Badge text="iOS" type="warn" vertical="middle"/> | number  | 隐藏键盘上面的完成栏 |    false    |                                                                                                                                                                                                                                            |
 
 ## 样式
 
@@ -125,7 +126,7 @@ placeholder 字符颜色。默认值是 `#999999`
 目前不支持 this.$el(id).value = '' 这种方式改写 input value。只支持在 `<input>` 组件的 input、change 事件中改写。
 :::
 
-## Demo
+## 示例
 
 - [date + time 示例(手机扫码查看)](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b)
 

@@ -14,7 +14,7 @@ module.exports = {
     repo: 'apache/incubator-weex-site',
     docsRepo: 'apache/incubator-weex-site',
     docsBranch: 'draft',
-    version: 'v0.19',
+    version: 'v0.20',
     versionLink: '/release-note.html',
     logo: 'https://img.alicdn.com/tfs/TB1WtVjogHqK1RjSZFgXXa7JXXa-78-39.svg',
     locales: {
@@ -28,8 +28,8 @@ module.exports = {
           bad: 'Unusable doc'
         },
         nav: [
-          { text: 'Guide', link: '/guide/introduction' },
-          { text: 'Docs', link: '/docs/api/weex-variable' },
+          { text: 'Guide', link: '/guide/' },
+          { text: 'Docs', link: '/docs/' },
           { text: 'Tools', link: '/tools/' },
           { text: 'Community', link: '/community/' },
           { text: 'Blog', link: '/blog/' }
@@ -89,9 +89,9 @@ module.exports = {
               title: 'Contribute',
               collapsable: false,
               children: [
-                ['contribute/how-to-contribute', 'How To Contribute'],
-                ['contribute/development-process', 'Development Process'],
-                ['contribute/bug-report-guidelines', 'Bug Report Guidelines']
+                ['contribute/bug-report-guidelines', 'Bug Report'],
+                ['contribute/how-to-contribute', 'Join Weex community'],
+                ['contribute/contribute-code', 'Contribute Code'],
               ]
             }
           ],
@@ -169,9 +169,15 @@ module.exports = {
               ]
             }
           ],
-          '/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
-          '/community/': [['roadmap', 'roadmap']],
-          '/blog/': [['weex-auto-test-locating', 'solution about auto-test locating']]
+          '/tools/': [
+            ['playground', 'Playground App'],
+            ['toolkit', 'Weex Toolkit'],
+            ['extension', 'VSCode Extension']
+          ],
+          '/community/': [['roadmap', 'Roadmap'], ['weex-third-party-extensions', 'Plugins Market']],
+          '/blog/': [
+            ['write-a-blog', 'Write a Blog']
+          ]
         }
       },
       '/zh/': {
@@ -184,8 +190,8 @@ module.exports = {
           bad: '文档写得很差'
         },
         nav: [
-          { text: '指南', link: '/zh/guide/introduction' },
-          { text: '文档', link: '/zh/docs/api/weex-variable' },
+          { text: '指南', link: '/zh/guide/' },
+          { text: '文档', link: '/zh/docs/' },
           { text: '工具', link: '/zh/tools/' },
           { text: '社区', link: '/zh/community/' },
           { text: '博客', link: '/zh/blog/' }
@@ -219,7 +225,7 @@ module.exports = {
               children: [
                 ['debug/integrate-devtool-to-android', '集成Devtool到Android'],
                 ['debug/integrate-devtool-to-ios', '集成Devtool到iOS'],
-                ['debug/debug', 'Debug']
+                ['debug/debug', '调试']
               ]
             },
             {
@@ -245,9 +251,9 @@ module.exports = {
               title: '贡献',
               collapsable: false,
               children: [
-                ['contribute/how-to-contribute', 'How To Contribute'],
-                ['contribute/development-process', 'Development Process'],
-                ['contribute/bug-report-guidelines', 'Bug Report Guidelines']
+                ['contribute/bug-report-guidelines', 'Bug 反馈'],
+                ['contribute/how-to-contribute', '加入 Weex 社区'],
+                ['contribute/contribute-code', '代码贡献指南'],
               ]
             }
           ],
@@ -256,15 +262,15 @@ module.exports = {
               title: 'API',
               collapsable: false,
               children: [
-                ['api/weex-variable', 'Weex Variable'],
-                ['api/android-apis', 'Android APIs'],
-                ['api/ios-apis', 'iOS APIs'],
-                ['api/js-service', 'JS Service'],
-                ['api/broadcast-channel', 'BroadcastChannel']
+                ['api/weex-variable', 'Weex 环境变量'],
+                ['api/android-apis', 'Android 接口'],
+                ['api/ios-apis', 'iOS 接口'],
+                ['api/js-service', 'JS 服务'],
+                ['api/broadcast-channel', '跨页面通信']
               ]
             },
             {
-              title: 'Built-in Components',
+              title: '内置组件',
               collapsable: false,
               children: [
                 ['components/a', '<a>'],
@@ -288,7 +294,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Built-in Modules',
+              title: '内置模块',
               collapsable: false,
               children: [
                 ['modules/animation', 'animation'],
@@ -306,28 +312,38 @@ module.exports = {
               ]
             },
             {
-              title: 'Styles',
+              title: '样式',
               collapsable: false,
               children: [
-                ['styles/common-styles', 'Common Styles'],
-                ['styles/text-styles', 'Text Styles'],
-                ['styles/css-units', 'CSS Units'],
-                ['styles/color-name', 'Color name']
+                ['styles/common-styles', '通用样式'],
+                ['styles/text-styles', '文本样式'],
+                ['styles/css-units', 'CSS 单位'],
+                ['styles/color-name', '颜色值']
               ]
             },
             {
-              title: 'Events',
+              title: '事件',
               collapsable: false,
               children: [
-                ['events/common-events', 'Common Events'],
-                ['events/event-bubbling', 'Event Bubble'],
-                ['events/gesture', 'Gesture']
+                ['events/common-events', '通用事件'],
+                ['events/event-bubbling', '事件冒泡'],
+                ['events/gesture', '手势']
               ]
             }
           ],
-          '/zh/tools/': [['toolkit', 'Weex Toolkit'], ['extension', 'VSCode Extension']],
-          '/zh/community/': [['roadmap', 'roadmap']],
-          '/zh/blog/': [['weex-auto-test-locating', 'Weex自动化测试元素定位方案']]
+          '/zh/tools/': [
+            ['playground', 'Playground 应用'],
+            ['toolkit', 'Weex 工具箱'],
+            ['extension', 'VSCode 插件']
+          ],
+          '/zh/community/': [['roadmap', '路线图'], ['weex-third-party-extensions', '插件市场']],
+          '/zh/blog/': [
+            ['write-a-blog', '写一篇博客'],
+            ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
+            ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore'],
+            ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进'],
+            ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路']
+          ]
         }
       }
     }

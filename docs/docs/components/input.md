@@ -4,12 +4,6 @@
 
 The weex builtin component `input` is used to create input controls to receive the user's input characters. How a `input` component works varies considerably depending on the value of its `type` attribute, such as `text`, `password`, `url`, `email`, `tel` etc.
 
-::: warning 
-
-**Notes:** does not support the common-event `click`. Please listen to the `input` or `change` event instead.
-
-:::
-
 ## Child Components
 
 No child should be added to a `input`.
@@ -44,30 +38,35 @@ No child should be added to a `input`.
 
 * `upriseOffset`: <Badge text="v0.21+ & iOS" type="warn" vertical="middle"/> the additional vertical margin between bottom of input and top of keyboard if the keyboard would cover the input. Default is 20 system pixels on iOS.
 
+* `hideDoneButton`: <Badge text="iOS" type="warn" vertical="middle"/>, hide the "Done" button toolbar on keyboard.
+
 
 ## Styles
 
-* placeholder-color: the color of placeholder. Default value is '#999999'.
+#### Common Styles
+* Support [common styles](../styles/common-styles.html).
+
+::: tip 
+Input component does not support separate border styles for edges. You can wrap another div out of the input.
+:::
+
+#### Pseudo Styles
 * Pseudo-class: `input` component support the following pseudo-classes:
   * `active`
   * `focus`
   * `disabled`
   * `enabled`
-* text styles: checkout [text styles](/docs/styles/text-styles.html)
 
+#### Text Styles  
+* Support [text styles](/docs/styles/text-styles.html)
   * support `color` style.
   * support `font-size` style.
   * support `font-style` style.
   * support `font-weight` style.
   * support `text-align` style.
 
-### common styles
-check out [common styles for components](/docs/styles/common-styles.html)
-
-* support flexbox related styles.
-* support box model related styles.
-* support `position` related styles.
-* support `opacity`, `background-color` etc.
+#### Custom Styles
+* **placeholder-color** the color of placeholder. Default value is '#999999'.
 
 ## Events
 
@@ -84,6 +83,10 @@ check out [common styles for components](/docs/styles/common-styles.html)
 * **keyboard**. Fired when keyborad is shown or hidden.
   * @param isShow: boolean, showing or hiding the keyboard.
   * @param keyboardSize: keyboard size in web pixel format.
+
+::: tip 
+Input component does not support the common-event `click`. Please listen to the `input` or `change` event instead.
+:::
 
 
 ### Methods

@@ -5,7 +5,7 @@
 ## WeexCore
 ### JS binding
 #### v0.21
-* New WeexCore 3.0 structure. Support more platforms, Android, iOS, Windows...
+* New WeexCore 3.0 structure. Support more platforms, Android, iOS.
 * Standlone jsRuntime with javaScriptCore standard API instead of source code. Available for both android and ios.
 * Support native dom Binding for better portability and performance.
 

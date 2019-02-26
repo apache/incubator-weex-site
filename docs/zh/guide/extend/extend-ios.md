@@ -210,7 +210,7 @@ WX_EXPORT_METHOD(@selector(focus))
 </script>
 ```
 
-#### 获取组件的 CSS 样式
+## 获取组件的 CSS 样式
 
 1. 在 0.19 版本之前，Weex 使用 Yoga 排版引擎，可以通过访问 WXComponent 的 cssNode 属性获取。例如：
 ```Objective-C

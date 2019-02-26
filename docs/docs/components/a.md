@@ -4,12 +4,10 @@
 
 `<a>` is mainly used for navigation between weex pages。
 
-> **Note:** The behavior of `<a>` is similar to [`<div>`](./div.html) except for the aspect mentioned in current page.
+::: tip
+It's forbidden to add text directly to `<a>`, use [`<text>`](./text.html) to wrap your text instead.
+:::
 
-> **Note:** It's forbidden to add text directly to `<a>`, use [`<text>`](./text.html) to wrap your text instead.
-
-## Basic Usage
-Wrap the element navigating from with `<a>`
 ```Html
 <a href="http://dotwe.org/raw/dist/a5e3760925ac3b9d68a3aa0cc0298857.bundle.wx">
   <text>Jump</text>
@@ -18,16 +16,19 @@ Wrap the element navigating from with `<a>`
 
 ## Attributes
 
-* **href** String ,`href` defines the URL that current page will navigate. `href` **must** point to a weex page, the behavior of other case is **undefined**.
+* **href** String, `href` defines the URL that current page will navigate to. `href` must point to a weex page, or behavior is undefined.
 
 ## Style
-Support [common styles](../styles/common-styles.html).
+
+* **common styles**. Check out [common styles](../styles/common-styles.html).
 
 ## Events
-Support [common events](../events/common-events.html)
 
-### `click`
-> **Notes:** The execution order of callback function of click and href is **undefined**. Do **not** use click event to do the preprocessing of `href`.
+* **common events**. Check out [common events](../events/common-events.html).
+
+::: tip
+The execution order of callback function of click and href is **undefined**. Do **not** use click event to do the preprocessing of `href`.
+:::
 
 ## Examples
 

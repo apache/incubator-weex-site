@@ -79,7 +79,7 @@
 <style></style>
 ```
 
-## 例子
+## 示例
 
 * [体验示例](http://dotwe.org/vue/9f8a7be89a4ad881ff515145cc9306ea)
 

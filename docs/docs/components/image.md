@@ -4,17 +4,12 @@
 
 `<image>` is used to display a single image in your interface.
 
-> **Note:** Always use `<image>` in your code, as `<img>` exists only for backward compatibility reasons and may removed in the future release.
-
-> **Note:**  Weex doesn't have built-in library for image downloading and caching, as there are some great open source library like  [SDWebImage in iOS](https://github.com/rs/SDWebImage) and [Picasso in Android](https://github.com/square/picasso) handling these problem, so please add native image adapter/handler before using `<image>`.
->
-> See also:  [Android adapter](../api/android-apis.html) and [iOS handler](../api/ios-apis.html).
+:::tip
+* Always use `<image>` in your code, as `<img>` exists only for backward compatibility reasons and may removed in the future release.
+* Weex doesn't have built-in library for image downloading and caching, as there are some great open source library like  [SDWebImage in iOS](https://github.com/rs/SDWebImage) and [Picasso in Android](https://github.com/square/picasso) handling these problem, so please add native image adapter/handler before using `<image>`. Ref [Android adapter](../api/android-apis.html) and [iOS handler](../api/ios-apis.html).
+:::
 
 ## Basic Usage
-
-> **Note:** the style of `width`, `height` and `src` must be specified, otherwise it will load nothing.
-
-
 ```html
 <image style="width:500px;height:500px" src="https://vuejs.org/images/logo.png"></image>
 ```
@@ -26,17 +21,24 @@ See the [example](http://dotwe.org/vue/00f4b68b3a86360df1f38728fd0b4a1f).
 
 ## Styles
 
-Support **[common styles](../styles/common-styles.html)**.
+* **common styles**. Check out [common styles](../styles/common-styles.html).
+
+:::warning
+The style of `width`, `height` and `src` must be specified, otherwise it will load nothing.
+:::
 
 ## Attributes
 
-| Attribute     | Type   | Value                      | Default Value |
-| ------------- | ------ | -------------------------- | ------------- |
-| `placeholder` | String | {URL / Base64}             | -             |
-| `resize`      | String | cover / contain / stretch  | stretch       |
-| `src`         | String | {URL / Base64 }            | -             |
+| Attribute           | Type   | Value                      | Default Value |
+| ------------------- | ------ | -------------------------- | ------------- |
+| `placeholder`       | String | {URL / Base64}             | -             |
+| `resize`            | String | cover / contain / stretch  | stretch       |
+| `src`               | String | {URL / Base64 }            | -             |
+| `autoBitmapRecycle` | Boolean| {true / false }            | true          |
 
-  > **Note:** you can specify a relative URL  for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
+:::tip
+You can specify a relative URL for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
+:::
 
 ### placeholder
 
@@ -51,7 +53,7 @@ A URL value for placeholder image. It will be displayed during image downloading
 
 - `cover`: Scales the image as large as possible without stretching it. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains.  ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
 
--   `stretch`: `Default value`. Scales the content to fit the size of the element itself by changing the aspect ratio of the image if necessary. ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
+-  `stretch`: `Default value`. Scales the content to fit the size of the element itself by changing the aspect ratio of the image if necessary. ([Example](http://dotwe.org/vue/f38e311d2e6b2af87f0a65a8f37d9490))
 
 `resize` property is similar to [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
 
@@ -63,7 +65,16 @@ The URL of the image to display. This attribute is mandatory for the `<image>` c
 
 Weex doesn't give a list of image formats that must be supported, it mainly relies on the image adapter/handler you are using. For example, if you are using [SDWebImage](https://github.com/rs/SDWebImage#supported-image-formats) as the image adapter on iOS, you can use image formats like JPEG, PNG, GIF, WebP, etc.
 
-> **Note:** The default image adapter on Android doesn't support gif.
+:::danger
+The default image adapter on Android doesn't support gif.
+:::
+
+### autoBitmapRecycle
+A boolean flag which controls whether recycle the memory of image when the image is out of the screen.
+
+* `true` for recycling the memory of image when the image is out of the screen. 
+* `false` for not recycling the memory of image when the image is out of the screen, which may provide better user experience with more memory cost.
+* The default value is `true`
 
 ## Component Methods
 
@@ -80,7 +91,9 @@ Save `<image>` content to the local device or photo album, this operation may re
 
 **Return value**: null
 
-> **Note**: You must add `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryAddUsageDescription` (iOS 11) to enable the access permission of the iOS photo album. See also: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html).
+:::warning
+You must add `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryAddUsageDescription` (iOS 11) to enable the access permission of the iOS photo album. See also: [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html).
+:::
 
 #### Use `save` Method
 
@@ -108,7 +121,8 @@ Complete example goes [here](http://dotwe.org/vue/fadcd44a7031943ff0feaaf1895df4
 
 ## Events
 
-Support **[common events](../events/common-events.html)**.
+* **common events**. Check out [common events](../events/common-events.html).
+
 ### `load`
 
 `load` event handler will be called when the image is loaded.

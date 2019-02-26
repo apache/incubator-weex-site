@@ -10,7 +10,7 @@ version: 2.1
 
 > `BroadcastChannel` 接口在 <span class="api-version">v0.9+</span> 及以上的版本中可用。
 
-在 [JS 执行环境](./runtime-context.html)中提到过，不同的 Weex 页面使用的是不同的执行环境，即使全局变量也是互相隔离的，然而使用 `BroadcastChannel` 是可以实现跨页面通信的。
+在 [Weex 和 Web 的平台差异](../../guide/platform-difference.html)中提到过，不同的 Weex 页面使用的是不同的执行环境，即使全局变量也是互相隔离的，然而使用 `BroadcastChannel` 是可以实现跨页面通信的。
 
 ## API
 

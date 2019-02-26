@@ -1,7 +1,7 @@
 <script>
 module.exports = {
   created(){
-    this.$router.push('/docs/components/a.html')
+    this.$router.push('/docs/api/weex-variable.html')
   }
 }
 </script>

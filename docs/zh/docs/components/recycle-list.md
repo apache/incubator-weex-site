@@ -120,7 +120,7 @@
 * 组件的自定义事件  
   *计划支持*。`vm.$on`, `vm.$once`, `vm.$emit`, `vm.$off` 等功能还未完全调通，接口可用，但是行为可能有些差异（参数丢失），暂时不要使用。
 
-## Demo
+## 示例
 ```html
 <recycle-list for="(item, i) in longList" switch="type">
   <cell-slot case="A">
