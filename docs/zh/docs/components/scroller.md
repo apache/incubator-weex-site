@@ -51,6 +51,9 @@
 | scroll-direction | 控制滚动的方向 | string（horizontal 或者 vertical） | vertical |
 | loadmoreoffset | 触发 `loadmore` 事件所需要的垂直偏移距离（设备屏幕底部与页面底部之间的距离）。当页面的滚动条滚动到足够接近页面底部时将会触发 `loadmore` 这个事件 | number | 0 |
 | offset-accuracy | 控制 `scroll` 事件触发的频率，默认值为 10，表示两次 `scroll` 事件之间列表至少滚动了 10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能 | number | 10 |
+| scrollToBegin | 控制 `scroll` 内容（layout）改变后，是否自动滚到初时位置。默认是true| string | true |
+
+
 
 ::: warning
 `scroll-direction` 定义了 scroller 的滚动方向，样式表属性 `flex-direction` 定义了 scroller 的布局方向，两个方向必须一致。例如：
