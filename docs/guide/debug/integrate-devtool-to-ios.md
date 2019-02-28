@@ -100,9 +100,9 @@ eg：
 
 Q: Why do we need auto refresh feature?
 
-A: As shown in future, when you click the debugger button, Javascript runtime environment will change from the phone (JavaScriptCore) to PC (Chrome V8), then Weex need to re-initialize the Weex environment, re-render the page. Page rendering is required for the developer to add on its own page.
+A: As shown in future, when you click the JSDebug button, Javascript runtime environment will change from the phone (JavaScriptCore) to PC (Chrome V8), then Weex need to re-initialize the Weex environment, re-render the page. Page rendering is required for the developer to add on its own page.
 
-![_debug](http://img.alicdn.com/tps/TB1xRHhNXXXXXakXpXXXXXXXXXX-1498-668.png)
+![_debug](https://img.alicdn.com/tfs/TB17AF4JkPoK1RjSZKbXXX1IXXa-1302-390.png)
 
 Q: What kind of scene need to add refresh feature?
 

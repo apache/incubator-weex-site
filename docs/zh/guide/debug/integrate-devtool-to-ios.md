@@ -109,16 +109,15 @@ pod  'WXDevtool', '0.20.0', :configurations => ['Debug']，
 
 ### 附加页面刷新功能
 
-- 为什么需要页面刷新功能？
-
-  如下图所示，当点击 debugger 按钮时，js 的运行环境会从手机端（JavaScriptCore）切换到 Chrome（V8），这时需要重新初始化 Weex 环境，重新渲染页面。页面渲染是需要接入方在自己的页面添加。
-
-  ![_debug](http://img.alicdn.com/tps/TB1xRHhNXXXXXakXpXXXXXXXXXX-1498-668.png)
-
 - 什么场景下需要添加页面刷新功能?
 
   - 切换 JSDebug 开关时刷新页面
   - 刷新 Chrome 页面（command+R）
+
+  如下图所示，在快速导航功能中需要能够刷新当前weex实例，同时，在切换JSDebug按钮状态时也需要将运行环境会从手机端（JavaScriptCore）切换到 Chrome（V8），这时需要重新初始化 Weex 环境，重新渲染页面。页面渲染是需要接入方在自己的页面添加。
+
+  ![_debug](https://img.alicdn.com/tfs/TB1cnygJhjaK1RjSZKzXXXVwXXa-1915-999.png)
+
 
 - 如何添加刷新  
   - 具体实现可参考 [Playground App](https://github.com/weexteam/weex-devtool-iOS/blob/master/playground/WeexDemo/WXDemoViewController.m)  `WXDemoViewController.m` 例子 
