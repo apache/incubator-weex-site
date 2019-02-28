@@ -35,10 +35,13 @@
 | `placeholder`       | String | {URL / Base64}             | -       |
 | `resize`            | String | cover / contain / stretch  | stretch |
 | `src`               | String | {URL / Base64 }            | -       |
-| `autoBitmapRecycle` | Boolean| {true / false }            | true    |
+| `quality`           | String | original/normal/low/high/auto | - |
+| `autoBitmapRecycle`  <Badge text="Android" type="warning"/> | Boolean| {true / false }            | true    |
 
 :::tip
-您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/asset-path.html)。
+* 您可以指定一个相对 bundle URL 的相对路径，相对路径将被重写为绝对资源路径(本地或远程)。参见: [资源路径](../../guide/advanced/asset-path.html)。
+* `quality` 属性被 WeexSDK 解析但不处理，该参数会直接传给接入的图片下载库，由图片库决定下载什么图片。
+* 当接入的外置图片库支持 `quality` 属性时，`resize` 有可能不能按照预期工作，这是因为图片被下载库剪裁了。可以通过指定 "quality='original'" 解决问题。
 :::
 
 ### placeholder
