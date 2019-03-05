@@ -137,7 +137,10 @@
   "/cn/guide/advanced/use-vuex-and-vue-router.html": "/zh/guide/advanced/use-vuex-and-vue-router.html",
   "/guide/integrate-to-your-app.html": "/guide/develop/integrate-to-android-app.html",
   "/cn/guide/integrate-to-your-app.html": "/zh/guide/develop/integrate-to-android-app.html",
+<<<<<<< HEAD
   "/guide/front-end-frameworks.html": "/guide/front-end-frameworks.html",
+=======
+>>>>>>> 168f9ad113c6a6949025706182c9e96551197ecb
   "/cn/guide/front-end-frameworks.html": "/zh/guide/front-end-frameworks.html",
   
 

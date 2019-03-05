@@ -34,10 +34,13 @@ The style of `width`, `height` and `src` must be specified, otherwise it will lo
 | `placeholder`       | String | {URL / Base64}             | -             |
 | `resize`            | String | cover / contain / stretch  | stretch       |
 | `src`               | String | {URL / Base64 }            | -             |
-| `autoBitmapRecycle` | Boolean| {true / false }            | true          |
+| `quality`           | String | original/normal/low/high/auto | - |
+| `autoBitmapRecycle` <Badge text="Android" type="warning"/> | Boolean| {true / false }            | true          |
 
 :::tip
-You can specify a relative URL for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
+* You can specify a relative URL for `src` and `placeholder`, relative URL will be rewritten to the to the actual resource URL (local or remote). See also: [Path](../../guide/advanced/asset-path.html).
+* `quality` attribute is parsed by WeexSDK but not handled. WeexSDK will pass this value to image handler.
+* If `resize` property does not work as expected, the image may be clipped by image downloader. You can use "quality='original'" to solve the problem.
 :::
 
 ### placeholder
