@@ -99,6 +99,8 @@
   "/cn/references/js-service.html": "/zh/docs/api/js-service.html",
   "/wiki/event-bubble.html": "/docs/events/event-bubbling.html",
   "/cn/wiki/event-bubble.html": "/zh/docs/events/event-bubbling.html",
+  "/references/weex-variable.html": "/docs/api/weex-variable.html",
+  "/cn/references/weex-variable.html": "/zh/docs/api/weex-variable.html",
   "/references/ios-apis.html": "/docs/api/ios-apis.html",
   "/cn/references/ios-apis.html": "/zh/docs/api/ios-apis.html",
   "/references/android-apis.html": "/docs/api/android-apis.html",
@@ -136,8 +138,6 @@
   "/guide/integrate-to-your-app.html": "/guide/develop/integrate-to-android-app.html",
   "/cn/guide/integrate-to-your-app.html": "/zh/guide/develop/integrate-to-android-app.html",
   "/cn/guide/front-end-frameworks.html": "/zh/guide/front-end-frameworks.html",
-  
-
   "/references/components/image.html": "/docs/components/image.html",
   "/cn/references/components/image.html": "/zh/docs/components/image.html",
   "/references/components/web.html": "/docs/components/web.html",
