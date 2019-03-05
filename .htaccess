@@ -1,3 +1,5 @@
+刚刚
+17:26
 ###############################################################################
 # WARNING
 ###############################################################################
@@ -36,9 +38,8 @@ RewriteEngine on
 #     references/         -> docs/api/
 #     cn/references/      -> zh/docs/api/
 #
-RewriteRule ^.*references/$ https://weex.apache.org/docs/apis/ [R=301,L]
-RewriteRule ^.*cn/references/$ https://weex.apache.org/zh/docs/apis/ [R=301,L]
-
+RewriteRule "^.*references/(.*)$" "https://weex.apache.org/docs/api/$1" [R=301,L]
+RewriteRule "^.*cn/references/(.*)$" "https://weex.apache.org/zh/docs/api/$1" [R=301,L]
 
 # Redirect http to https
 # From Cordova PMC Member raphinesse 
