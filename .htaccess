@@ -23,6 +23,23 @@ ErrorDocument 404 https://weex.apache.org/404.html
 Options +FollowSymLinks
 RewriteEngine on
 
+#
+# NOTE:
+#      Meanings of some of the flags at the ends of rules:
+#
+#      L  - terminal rule; if it applies, no more rules are checked
+#      R  - redirect (followed by code)
+#      NE - no escaping special characters
+
+# 302 (temporary):
+#
+#     references/         -> docs/api/
+#     cn/references/      -> zh/docs/api/
+#
+RewriteRule ^.*references/$ https://weex.apache.org/docs/apis/ [R=301,L]
+RewriteRule ^.*cn/references/$ https://weex.apache.org/zh/docs/apis/ [R=301,L]
+
+
 # Redirect http to https
 # From Cordova PMC Member raphinesse 
 # https://s.apache.org/An8s
