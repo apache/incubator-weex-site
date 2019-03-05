@@ -39,10 +39,10 @@ RewriteEngine on
 #     cn/references/components/      -> zh/docs/api/components/
 #
 
-RewriteRule "^.*references/modules/(.*)$" "https://weex.apache.org/docs/modules/$1" [R=301,L]
 RewriteRule "^.*cn/references/modules/(.*)$" "https://weex.apache.org/zh/docs/modules/$1" [R=301,L]
-RewriteRule "^.*references/components/(.*)$" "https://weex.apache.org/docs/components/$1" [R=301,L]
+RewriteRule "^.*references/modules/(.*)$" "https://weex.apache.org/docs/modules/$1" [R=301,L]
 RewriteRule "^.*cn/references/components/(.*)$" "https://weex.apache.org/zh/docs/components/$1" [R=301,L]
+RewriteRule "^.*references/components/(.*)$" "https://weex.apache.org/docs/components/$1" [R=301,L]
 
 # Redirect http to https
 # From Cordova PMC Member raphinesse 
