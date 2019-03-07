@@ -15,9 +15,9 @@ To make an open and friendly community, Weex community adopt [Contributor Covena
 
 In Weex community, feature requests, discussions and decisions happen on the mailing list, which is open to the whole world.
 
-`dev@weex.incubator.apache.org` is the mailing list's address. Developers can subscribe this list to know what is happening in weex community and express his/her idea. Send an email to [subscription](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29) then you will receive a confirmation email. Once you reply the confirmation email, the subscription is done.
+`dev@weex.incubator.apache.org` is the mailing list's address. Developers can subscribe this list to know what is happening in weex community and express his/her idea.If you want to subscribe the mailing list, please an email to [dev-subscribe@weex.incubator.apache.org](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29) ,shortly after you will receive a confirmation email. Once you reply the confirmation email, the subscription is done.
 
-If you want to unsubscribe, send an email to [Canceling subscription](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29)
+If you want to unsubscribe, send an email to [dev-unsubscribe@weex.incubator.apache.org](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29)
 
 Read [Apache mailing list](https://apache.org/foundation/mailinglists.html) to have a deeper view of mailing list.
 
