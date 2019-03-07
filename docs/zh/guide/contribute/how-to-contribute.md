@@ -13,7 +13,7 @@ Weex 是一个属于 Apache 基金会的开源社区。Weex 社区推崇并遵�
 
 在 Apache 社区中，邮件列表是项目内部的主要沟通方式。Weex 作为 Apache 的一个项目，其新特性的讨论、开发流程、未来演进方等事宜会在邮件列表上进行讨论与决策。
 
-Weex 开发者邮件列表是 "dev@weex.incubator.apache.org"，开发者可以通过订阅邮件列表的方式了解到 Weex 最近所发生的事情并表达自己的观点。如果你想订阅 Weex 邮件列表，请发送邮件至[dev-subscribe@weex.incubator.apache.or](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29)，之后你会收到一封确认邮件，回复此确认邮件，即完成了 Weex 邮件组的订阅。
+Weex 开发者邮件列表是 "dev@weex.incubator.apache.org"，开发者可以通过订阅邮件列表的方式了解到 Weex 最近所发生的事情并表达自己的观点。如果你想订阅 Weex 邮件列表，请发送邮件至[dev-subscribe@weex.incubator.apache.org](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29)，之后你会收到一封确认邮件，回复此确认邮件，即完成了 Weex 邮件组的订阅。
 
 若想退订，可发送邮件到退订[dev-unsubscribe@weex.incubator.apache.org](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29)。
 
