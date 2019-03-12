@@ -20,7 +20,6 @@
 - `@weex-cli/debug` 模块对Weex页面进行编译调试。
 - `@weex-cli/doctor` 模块快速检查用户本地开发环境。
 - `@weex-cli/lint` 模块对本地`.vue`文件进行质量诊断。
-- `@weex-cli/preview` 模块快速零预览Weex页面。
 - `@weex-cli/device` 模块快速管理用户本地设备。
 - `@weex-cli/run` 模块快速运行`iOS/Android/Web`工程。
 
