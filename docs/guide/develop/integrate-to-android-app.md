@@ -9,7 +9,9 @@ version: 2.1
 <!-- toc -->
 
 # Integrate to Android App
-
+::: warning 
+Considering the package size, Android x86 is not supported for the moment.  
+:::
 
 The following documents assume that you already have a certain Android development experience.
 
