@@ -34,7 +34,7 @@
 如果你安装的过程中遇到了问题，你可以在[这里](https://github.com/weexteam/weex-toolkit/issues)进行问题搜索及反馈。
 
 ``` bash
-$ npm install weex-toolkit@alpha -g
+$ npm install weex-toolkit -g
 ```
 
 ## 命令
