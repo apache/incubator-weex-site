@@ -9,6 +9,9 @@ version: 2.1
 <!-- toc -->
 
 # 集成到Android应用
+::: warning
+考虑到包大小的问题, 暂不提供 Android x86 so 的支持.
+:::
 
 在执行以下步骤之前，请先确认您的Android开发环境是ok的。
 
