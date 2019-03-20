@@ -34,7 +34,7 @@ If you don't have node.js installed locally, you can go to [Nodejs official webs
 If you have problems during the installation process, you can do a question search and feedback at [here](https://github.com/weexteam/weex-toolkit/issues).
 
 ``` bash
-$ npm install weex-toolkit@alpha -g
+$ npm install weex-toolkit -g
 ```
 
 ## Commands
