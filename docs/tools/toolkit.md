@@ -16,7 +16,7 @@ This document is for the `weex-toolkit` **2.x** version. For the old version of 
   - Provide globally configurable files;
 - The `@weex-cli/generator` module can quickly init the official project.
 - The `@weex-cli/compile` module can quickly configuration compile Weex file.
-- The `@weex-cli/preview` module can quickly previews the Weex page.
+- The `@weex-cli/preview` module can quickly preview the Weex page.
 - The `@weex-cli/debug` module compiles and debugs the Weex page.
 - The `@weex-cli/doctor` module quickly checks the user's local development environment.
 - The `@weex-cli/lint` module performs quality diagnostics on local `.vue` files.
