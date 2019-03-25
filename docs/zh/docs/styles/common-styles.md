@@ -53,6 +53,12 @@ Weex 只支持 `overflow:hidden`.
   * `padding-bottom {length}`：下内边距，默认值 0
 
 ### 边框
+::: warning Android 兼容性
+你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `border` 的 `component` 的长度超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+
+你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
+:::
+
 #### border-style
 `border-width`设定边框样式，如果四个方向的边框样式不同，可分别设置：
   * `border-style {string}`
@@ -195,16 +201,25 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 - `left {number}`：距离左方的偏移量，默认为 0。
 - `right {number}`：距离右方的偏移量，默认为 0。
 
-**注意：**
-
-1. Weex 目前不支持 `z-index` 设置元素层级关系，但靠后的元素层级更高，因此，对于层级高的元素，可将其排列在后面。
-2. 如果定位元素超过容器边界，在 Android 下，超出部分将**不可见**，原因在于 Android 端元素 `overflow` 默认值为 `hidden`，但目前 Android 暂不支持设置 `overflow: visible`。
+:::warning Android 兼容性
+如果定位元素超过容器边界，在 Android 下，超出部分将**不可见**，原因在于 Android 端元素 `overflow` 默认值为 `hidden`，但目前 Android 暂不支持设置 `overflow: visible`。
 
 [示例](http://dotwe.org/vue/cb3436ea65283d2ab456641ba30133a4)
+:::
 
 ## Transition <Badge text="0.16+" type="warn" vertical="middle"/>
 
 现在您可以在 CSS 中使用 `transition` 属性来提升您应用的交互性与视觉感受，`transition` 中包括布局动画，即 LayoutAnimation，现在布局产生变化的同时也能使用 `transition` 带来的流畅动画。`transition`允许 CSS 的属性值在一定的时间区间内平滑地过渡。
+
+::: tip
+v0.17.0以上支持。
+:::
+
+::: warning Android 兼容性
+你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `transition-property` 的 `component` 的大小 (*长 或 宽*) 超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+
+你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
+:::
 
 ### 参数
 
@@ -257,6 +272,12 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 ```
 
 ## Transform
+::: warning Android 兼容性
+你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `transition-property` 的 `component` 的大小 (*长 或 宽*) 超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+
+你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
+:::
+
 ::: tip
 除了`perspective`和`transform-origin`，`transition`支持了`transform`的全部能力。
 :::
@@ -329,6 +350,12 @@ Weex 支持线性渐变背景，具体介绍可参考 [CSS 渐变介绍](https:/
 
 所有组件均支持线性渐变。
 
+::: warning Android 兼容性
+你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `background-image: linear-gradient` 的 `component` 的大小 (*长 或 宽*) 超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+
+你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
+:::
+
 ### 使用
 
 你可以通过 `background-image` 属性创建线性渐变。
@@ -396,6 +423,12 @@ Weex 支持 `box-shadow` 属性用于设置元素阴影。
 - `background-color {color}`：设定元素的背景色，可选值为色值，支持RGB（ `rgb(255, 0, 0)` ）；RGBA（ `rgba(255, 0, 0, 0.5)` ）；十六进制（ `#ff0000` ）；精简写法的十六进制（ `#f00` ）；色值关键字（`red`），默认值是 `transparent` 。
 
 **注意：** [色值的关键字列表](./css-units.html#颜色关键字列表)。
+
+::: warning Android 兼容性
+你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `background-color` 的 `component` 的大小 (*长或宽*) 超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+
+你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
+:::
 
 ## 上手样式
 

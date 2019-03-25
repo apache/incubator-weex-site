@@ -6,10 +6,6 @@ JS-Animation can perform a series of simple transformations  (position, size, ro
 
 For example, if you have a `image` component, you can move, rotate, grow, or shrink it by animation.
 
-:::tip
-Ref [transition](../styles/common-styles.html#property) or [transform](../styles/common-styles.html#transform) if you prefer CSS animation.
-:::
-
 One can invoke `animation.transition(ref, options, callback)` to start animation. Ref the following code snippets.
 ```javascript
 animation.transition(test, {
@@ -26,6 +22,16 @@ animation.transition(test, {
     })
 ```
 * [Demo](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
+
+::: warning Only for Android
+It may cause crash with exception **Unable to create layer for xxx** if the size ( *width or height* ) of your component with `animation` exceeds the maximum as your component makes the OpenGL memory zone OutOfMemory.
+
+The maximum of the size for your component is device dependent, but you are in the danger zone if the size is bigger than screen's size.
+:::
+
+:::tip
+Ref [transition](../styles/common-styles.html#property) or [transform](../styles/common-styles.html#transform) if you prefer CSS animation.
+:::
 
 # API
 
@@ -58,7 +64,12 @@ animation.transition(test, {
 
 * **@callback**, callback is a function called after the completion of animation. In iOS platform, you can use function to get information of animation execution.
 
-::: tip Animatable properties of @style
+::: tip
+* On iOS platform you can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.
+* Android doesn't support the result parameter.
+:::
+
+#### Animated properties in styles
 * **`width`**, the `width` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed width`.
 * **`height`**, the `height` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed height`.
 * **`backgroundColor`**, the `backgroundColor` applied to the component after the animation finished. The default value is `computed backgroundColor`.
@@ -71,7 +82,4 @@ animation.transition(test, {
   * `scale/scaleX/scaleY`: Stretch or shrink the element. The unit is number and the default value is 1.
 :::
 
-::: tip
-* On iOS platform you can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.
-* Android doesn't support the result parameter.
-:::
+
