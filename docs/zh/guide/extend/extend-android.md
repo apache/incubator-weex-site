@@ -82,11 +82,13 @@ registerModule(moduleName,moduleClass)
 WXSDKEngine.registerModule("picker", WXPickersModule.class);
 ```
 
-## Component 扩展（version > 0.19.0）
-### 1. 变更说明
+## Component 扩展
+### wee x版本 >= 0.19.0
+#### 变更说明
 WXDomObject 和 Layout 引擎被下沉到 WeexCore 中使用 C++ 实现，移除 Java 代码中的 WXDomObject。此次变更涉及 WXComponent 和 WXDomObject 的适配。
 
-#### （1）setMeasureFunction 迁移
+#### 迁移指南
+##### setMeasureFunction 迁移
 WXDomObject 中的 setMeasureFunction() 方法迁移至 WXComponent 中：
 ```java
 protected void setMeasureFunction(final ContentBoxMeasurement contentBoxMeasurement);
@@ -96,11 +98,11 @@ protected void setMeasureFunction(final ContentBoxMeasurement contentBoxMeasurem
 ContentBoxMeasurement 示例请参考：WXText.java / setMeasureFunction()
 注意：ContentBoxMeasurement 只支持叶子节点。
 
-#### （2）WXComponent 接口变更
-##### getDomObject [移除]
+##### WXComponent 接口变更
+###### getDomObject [移除]
 由于 WXDomObject 下沉至 WeexCore 中，所以 getDomObject() 方法已被删除。
 
-##### 构造方法 [参数变更]
+###### 构造方法 [参数变更]
 WXComponent 的构造方法删除了类型为 WXDomObject 的参数，新增了类型为 BasicComponentData 的参数，其余参数保持不变：
 ```java
 public WXComponent(WXSDKInstance instance, WXVContainer parent, int type, BasicComponentData basicComponentData);
@@ -109,18 +111,18 @@ public WXComponent(WXSDKInstance instance, WXVContainer parent, BasicComponentDa
 
 ```
 
-#### （3）WXDomObject 接口变更
+##### WXDomObject 接口变更
 你无法在Java代码中访问和继承 WXDomObject，（ ImmutableDomObject 接口也已被删除）
 
 WXDomObject 的部分方法被迁移至 WXComponent中，如需使用，如下：
 
-##### WXDomObject.getType() -> WXComponent.getComponentType() [迁移]
+###### WXDomObject.getType() -> WXComponent.getComponentType() [迁移]
 WXDomObject 中 的 getType() 方法用于获取组件类型（如：list、div、text、img...），迁移到 WXComponent 后，更名为：
 ```java
 public String getComponentType();
 ```
 
-##### 获取 Layout 结果的相关方法 [迁移]
+###### 获取 Layout 结果的相关方法 [迁移]
 获取 Layout 结果的6个方法从 WXDomObject 迁移至 WXComponent：
 ```java
 public float getCSSLayoutTop();
@@ -136,7 +138,8 @@ public float getLayoutHeight();
 public float getLayoutY();
 public float getLayoutX();
 ```
-## Component 扩展（version< 0.19.0）
+
+### weex_sdk 版本 < 0.19.0
 
 1. Component 扩展类必须继承 WXComponent.
 2. Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))
