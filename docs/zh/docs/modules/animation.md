@@ -4,9 +4,6 @@
 
 举个例子，如果有一个 `<image>` 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
 
-:::tip
-如果需要使用CSS动画，参考 [transition](../styles/common-styles.html#property) 或 [transform](../styles/common-styles.html#transform)。
-:::
 
 ```javascript
 animation.transition(ref1, {
@@ -24,6 +21,16 @@ animation.transition(ref1, {
 ```
 
 * [示例](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
+
+::: warning Android 兼容性
+你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `animation` 的 `component` 的大小(*长或宽*)超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+
+你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
+:::
+
+:::tip
+如果需要使用CSS动画，参考 [transition](../styles/common-styles.html#property) 或 [transform](../styles/common-styles.html#transform)。
+:::
 
 # 文档
 
@@ -55,7 +62,12 @@ animation.transition(ref1, {
     * `cubic-bezier(x1, y1, x2, y2)`:在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 [cubic-bezier](http://cubic-bezier.com/) 和 [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)。
 * **@callback**，`callback`是动画执行完毕之后的回调函数。在iOS平台上，你可以获取动画执行是否成功的信息。
 
-::: tip @style 中可以做动画的属性
+:::tip
+* iOS上可以获取 animation 是否执行成功的信息，callback中的`result`参数会有两种，分别是是`Success`与`Fail`。
+* Android 的callback 函数不支持result参数。
+:::
+
+#### styles中支持动画的属性
 * **`width`**，`width`表示动画执行后应用到组件上的宽度值。如果你需要影响布局，设置`needLayout`为`true`。默认值为`computed width`。
 * **`height`**，`height`表示动画执行后应用到组件上的高度值。如果你需要影响布局，设置设置为 `needLayout`为`true`。默认值为`computed width`。
 * **`backgroundColor`**，`backgroundColor`动画执行后应用到组件上的背景颜色，默认值为computed backgroundColor。
@@ -66,9 +78,3 @@ animation.transition(ref1, {
   * `rotate`/`rotateX`/`rotateY`**v0.16+** 指定元素将被旋转的角度。单位是度 *角度度*，默认值是0
   * `scale`/`scaleX`/`scaleY`按比例放大或缩小元素。单位是数字，默认值是1
   * `perspective`**v0.16+** 观察者距离z=0平面的距离，在**Android 4.1**及以上有效。单位值数字，默认值为正无穷。
-:::
-
-:::tip
-* iOS上可以获取 animation 是否执行成功的信息，callback中的`result`参数会有两种，分别是是`Success`与`Fail`。
-* Android 的callback 函数不支持result参数。
-:::

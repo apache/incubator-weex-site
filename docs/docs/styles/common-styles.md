@@ -50,6 +50,11 @@ The following code snippets shows the basic usage of box model
   * `padding-bottom {length}`: default value `0`
 
 ### border
+::: warning Only for Android
+It may cause crash with exception **Unable to create layer for xxx** if the length of border exceeds the maximum as your component makes the OpenGL memory zone OutOfMemory.
+
+The maximum of the border length is device dependent, but you are in the danger zone if the length of your border is longer than the screen height.
+:::
 #### border-style
 The `border-style` CSS property is a shorthand property that sets the line style for all four sides of an element's border. One can use shorthand for four edges or specify the style for one edge:
   * `border-style`: values `solid` | `dashed` | `dotted`, default value `solid`
@@ -199,6 +204,12 @@ we can use properties below to control placement of weex tag
 - `left`: `number` type, default value `0`, leftward offset value
 - `right`: `number` type, default value `0`, rightward offset value
 
+:::warning Only for Android
+If your `component` is bigger than its parent, it will be **partial** invisible as Weex on Android only supports `overflow:hidden`.
+
+Ref the [demo](http://dotwe.org/vue/cb3436ea65283d2ab456641ba30133a4) to see more detail.
+:::
+
 ### Examples
 
 ```html
@@ -222,6 +233,12 @@ Now you can use the transition attribute in CSS to enhance the interactivity and
 
 :::warning
 Supported for v0.17.0 and higher.
+:::
+
+::: warning Only for Android
+It may cause crash with exception **Unable to create layer for xxx** if the size ( *width or height* ) of your component with `transition-property` exceeds the maximum as your component makes the OpenGL memory zone OutOfMemory.
+
+The maximum of the size for your component is device dependent, but you are in the danger zone if the size is bigger than screen's size.
 :::
 
 ### Property
@@ -276,6 +293,12 @@ Supported for v0.17.0 and higher.
 ```
 
 ## Transform
+::: warning Only for Android
+It may cause crash with exception **Unable to create layer for xxx** if the size ( *width or height* ) of your component with `transform` exceeds the maximum as your component makes the OpenGL memory zone OutOfMemory.
+
+The maximum of the size for your component is device dependent, but you are in the danger zone if the size is bigger than screen's size.
+:::
+
 :::tip
 Consider use `transition` instead, which supports all the style that `transform` supports except for `transform-origin` and `perspective`
 :::
@@ -389,6 +412,12 @@ All components support `active`, but only the input component and the textarea c
 ## Linear-gradient <span class="api-version">v0.10+</span>
 
 Weex support linear-gradient background, You can see [W3C description of the gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients).
+
+::: warning Only for Android
+It may cause crash with exception **Unable to create layer for xxx** if the size ( *width or height* ) of your component with `background-image: linear-gradient` exceeds the maximum as your component makes the OpenGL memory zone OutOfMemory.
+
+The maximum of the size for your component is device dependent, but you are in the danger zone if the size is bigger than screen's size.
+:::
 
 ### Supported components
 
@@ -539,6 +568,12 @@ box-shadow takes effect on Android
     * RGBA, e.g. `rgba(255, 0, 0, 0.5)`
     * Hexadecimal color e.g. `#ff0000` or `#f00`
     * Keywords, include [basic keywords](https://drafts.csswg.org/css-color-3/#html4) and [extends keywords](https://drafts.csswg.org/css-color-3/#svg-color)
+
+::: warning Only for Android
+It may cause crash with exception **Unable to create layer for xxx** if the size ( *width or height* ) of your component with `background-color` exceeds the maximum as your component makes the OpenGL memory zone OutOfMemory.
+
+The maximum of the size for your component is device dependent, but you are in the danger zone if the size is bigger than screen's size.
+:::
 
 ## Simple Step
 
