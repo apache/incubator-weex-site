@@ -13,7 +13,7 @@ module.exports = {
   themeConfig: {
     repo: 'apache/incubator-weex-site',
     docsRepo: 'apache/incubator-weex-site',
-    docsBranch: 'draft',
+    docsBranch: 'master',
     version: 'v0.20',
     versionLink: '/release-note.html',
     logo: 'https://img.alicdn.com/tfs/TB1WtVjogHqK1RjSZFgXXa7JXXa-78-39.svg',
