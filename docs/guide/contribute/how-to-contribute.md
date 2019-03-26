@@ -50,7 +50,7 @@ You can contribute to a document through the following ways:
 * Click **Edit this page** on the bottom of website, and you will be navigated to a new Github PR.
 
 :::tip
-PR about documentation should be fired based on **draft** branch currently, which will be merged master branch automatically later when all things are settled.
+PR about documentation should be fired based on **master** branch.
 :::
 
 ### Contribute code

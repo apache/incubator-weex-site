@@ -50,7 +50,7 @@ Weex 采用了 Apache License 2.0，请确保你的贡献符合Apache License 
 * 在 [weex-site 仓库](https://github.com/apache/incubator-weex-site)创建或编辑 Markdown 文件。
 
 :::tip
-文档相关的PR请提交到[weex-site 仓库](https://github.com/apache/incubator-weex-site)的draft分支上，后续我们会将该分支合并到master分支上。
+文档相关的PR请提交到[weex-site 仓库](https://github.com/apache/incubator-weex-site)的master分支上。
 :::
 
 ### 贡献代码
