@@ -4,9 +4,13 @@
 
 `<text>` is used to render text with specified styles.
 
-> **Note:** This component supports no child components.
+:::warning
+This component supports no child components.
+:::
 
-> **Note:** The heading and trailing white spaces will be ignored. If this is not what you need, you can set text using data-binding method demonstrated below.
+:::tip
+The heading and trailing white spaces will be ignored. If this is not what you need, you can set text using data-binding method demonstrated below.
+:::
 
 ## Styles
 * Support [common styles](../styles/common-styles.html)
@@ -55,11 +59,22 @@ Text component supports loading custom fonts in `ttf` and `woff` file formats.
 2. Using [addRule](../modules/dom.html#addrule-type-contentobject) method of dom module to register your font.
 3. Set `font-family:YourFontFamilyName` style for your text component.
 
-> **Note:** You can name fontFamily in addRule as you wish in your page, any string is OK. But this is not the real font-family name of the font file. The real name or system name for the font is stored in binary data of font file. You must ensure that the real font-family name of font file is unique. Or your font may not be successfully registered to device and your text may display as a ‘?’. To get the real name of a font file on Mac, right click on the file in Finder and inspect the file info. This image shows a BAD CASE. You should never use `iconfont` as family-name.
+:::warning iOS compatibility
+You can name fontFamily in addRule as you wish in your page, any string is OK. But this is not the real font-family name of the font file. The real name or system name for the font is stored in binary data of font file. You must ensure that the real font-family name of font file is unique. Or your font may not be successfully registered to device and your text may display as a ‘?’. To get the real name of a font file on Mac, right click on the file in Finder and inspect the file info. This image shows a BAD CASE. You should never use `iconfont` as family-name.
+
+Specially, if you are using [Alibaba Iconfont](http://www.iconfont.cn/) to build your iconfont. Make sure that you set a unique enough font-family name for your font in project settings.
 
 ![image](../images/CustomFontface_badcase.png)
+:::
 
-> **Note:** Specially, if you are using [Alibaba Iconfont](http://www.iconfont.cn/) to build your iconfont. Make sure that you set a unique enough font-family name for your font in project settings.
+### word-break
+:::warning Android compatibility
+The word-break behavior is unpredictable and ROM dependent. Actually, the word-break strategy relies on `Minikin`, which is highly inconsistent cross different Android ROMs, you should not rely its behavior.
+
+Generally speaking, you would meet inconsistent word-break behavior if one of the following conditions meets:
+* Mix Chinese/Japanese/Korean (CJK) text and other text, the inconsistent word-break behavior would happen on the intersection text of multiple languages.
+* Mix half-width and full-width among non-CJK text, the inconsistent word-break behavior would happen on the intersection text of half-width and full-width text.
+:::
 
 ## Example
 * [Basic usage for `<text>`](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0).

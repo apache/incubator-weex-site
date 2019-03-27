@@ -4,9 +4,15 @@
 
 `<text>` 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来.
 
-> **注意：** `<text>` 里直接写文本头尾空白会被过滤，如果需要保留头尾空白字符，暂时只能通过数据绑定的方式，见下面动态文本。
+::: warning
+`<text>` 不支持子组件。
+:::
 
-> **注意：** `<text>` 不支持子组件。
+::: tip
+`<text>` 里直接写文本头尾空白会被过滤，如果需要保留头尾空白字符，暂时只能通过数据绑定的方式，见下面动态文本。
+:::
+
+
 
 ## 样式
 * 支持 [通用样式](../styles/common-styles.html)。
@@ -55,11 +61,22 @@
 2. 使用 Dom 模块的 [addRule](../modules/dom.html#addrule-type-contentobject) 方法注册字体。
 3. 在文本中使用 `font-family:YourFontFamilyName` 样式指定字体。
 
-> **注意** addRule 方法里的 fontFamily 可以随意取，这个名字是 Weex 本地索引用的，并不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统字库中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。要获取字体名字，可以在字体文件上单击右键，显示文件信息。以下图片显示了一个不好的做法，记住，永远不要使用 `iconfont` 作为你字体的名字。
+:::warning iOS 兼容性
+addRule 方法里的 fontFamily 可以随意取，这个名字是 Weex 本地索引用的，并不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统字库中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。要获取字体名字，可以在字体文件上单击右键，显示文件信息。以下图片显示了一个不好的做法，记住，永远不要使用 `iconfont` 作为你字体的名字。
+
+如果你使用 [Alibaba Iconfont](http://www.iconfont.cn/) 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
 
 ![image](../images/CustomFontface_badcase.png)
+:::
 
-> **注意** 如果你使用 [Alibaba Iconfont](http://www.iconfont.cn/) 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
+### word-break
+:::warning Android compatibility
+word-break 行为是不可预测的且与 Android ROM 强相关。事实上，word-break 行为依赖 Android 系统的 `Minikin` 组件，而 `Minikin`在各个 Android ROMs 上差别很大，开发者不应该依赖其行为。
+
+一般来说，在下列场景下你可能会遇到 word-break 在不同机器上不一致的现象：
+* 中文/日文/韩文(*即 CJK 文字*)与其他文字混合排布时，在 CJK 文字和其他文件相交区域可能会遇到 word-break 不一致的现象。
+* 全角非 JCK 文字和半角非 CJK 文字混合时，全角和半角相交的地方可能会遇到 word-break 不一致的现象。
+:::
 
 ## 示例
 * [`<text>`的基本用法](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0)
