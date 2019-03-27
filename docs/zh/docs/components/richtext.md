@@ -68,6 +68,7 @@
    * 没有任何父节点是 `a`
    * 如果第二个条件不满足，Weex 会尝试打开 `a` 标签指定的链接。
    * `img` 的 **pseudo-ref** 会作为参数传回来。
+   * `span`标签被点击时，如果满足此条件: 所在的`a`标签的href被指定为"click://"，并且设置了pseudo-ref, 则itemclick事件会被触发，并且携带pseudo-ref的值。[示例](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
 
 ## 示例
 
