@@ -54,7 +54,8 @@ module.exports = {
                 ['develop/setup-develop-environment', 'Setup Develop Environment'],
                 ['develop/create-a-new-app', 'Create a New App'],
                 ['develop/integrate-to-android-app', 'Integrate to Android'],
-                ['develop/integrate-to-iOS-app', 'Integrate to iOS']
+                ['develop/integrate-to-iOS-app', 'Integrate to iOS'],
+                ['develop/weex_error_code', 'WeexErrorCode']
               ]
             },
             {
@@ -216,7 +217,8 @@ module.exports = {
                 ['develop/setup-develop-environment', '设置开发环境'],
                 ['develop/create-a-new-app', '创建一个新的app'],
                 ['develop/integrate-to-android-app', '集成到Android应用'],
-                ['develop/integrate-to-iOS-app', '集成到iOS应用']
+                ['develop/integrate-to-iOS-app', '集成到iOS应用'],
+                ['develop/weex_error_code', 'WEEX常见错误码']
               ]
             },
             {
