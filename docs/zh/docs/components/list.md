@@ -100,6 +100,7 @@
   * `contentOffset {Object}`：列表的偏移尺寸
     * `x {number}`：x轴上的偏移量
     * `y {number}`：y轴上的偏移量
+  * `isDragging {boolean}`: 用户是否正在拖动列表
 
 ## 扩展
 #### `scrollToElement(node, options)`
