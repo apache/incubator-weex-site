@@ -21,13 +21,14 @@
 
 ## 子组件
 * 诸如 `<text>`、`<image>` 之类的任何组件，都可以放到 `<loading>` 进行渲染。
-* 特殊子组件 `<loading-indicator>`: 只能作为 `<refresh>` 和 `<loading>` 的子组件使用，拥有默认的动画效果实现。
+* 组件 `<loading-indicator>`: 作为 `<refresh>` 和 `<loading>` 的子组件使用，则拥有默认的动画效果实现。
   ```vue{3}
   <loading>
     <text>Loading</text>
     <loading-indicator></loading-indicator>
   </loading>
   ```
+* 组件 `<loading-indicator>`: 作为独立组件使用时，通过`animating`属性控制动画状态。[示例](http://dotwe.org/vue/15b0ac96db6e1837ef5c27c0345b7fb6)
 
 ## 属性
 * `display`  
