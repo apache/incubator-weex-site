@@ -63,12 +63,15 @@
 ## 事件
 
 * **通用事件** 支持所有[通用事件](../events/common-events.html)。
-* **itemclick**. 触发时机
-   * `img` 被点击
-   * 没有任何父节点是 `a`
-   * 如果第二个条件不满足，Weex 会尝试打开 `a` 标签指定的链接。
-   * `img` 的 **pseudo-ref** 会作为参数传回来。
-   * `span`标签被点击时，如果满足此条件: 所在的`a`标签的href被指定为"click://"，并且设置了pseudo-ref, 则itemclick事件会被触发，并且携带pseudo-ref的值。[示例](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
+* **itemclick**. 只有`img`和`span`标签可能触发，触发时机是: 
+   * `img`标签:
+      * `img`被点击时没有任何父节点是 `a`
+      * 如果第一个条件不满足，Weex 会尝试打开 `a` 标签指定的链接。
+      * `img` 的 **pseudo-ref** 会作为参数传回来。
+   * `span`标签:
+      * `a`标签中的`span`被点击
+      * 并且所在的`a`标签的href被指定为"click://"（这个条件iOS端强要求，Android端并不要求）
+      * a标签设置了pseudo-ref。此时itemclick事件会被触发，并且携带pseudo-ref的值。[示例](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
 
 ## 示例
 
