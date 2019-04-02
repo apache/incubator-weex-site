@@ -64,11 +64,15 @@ Only limited css styles listed below are supported by richtext.
 ## Events
 
 * **common events**. Support [common events](../events/common-events.html).
-* **itemclick**. This event will be fired when
-   * An `img` in richtext is clicked
-   * None of parents is an `a` tag
-   * If the second condition is not satisfied, Weex will try to open the hyperlink of `a` tag instead.
-   * **pseudo-ref** of img will be passed to the callback function of onitemclick.
+* **itemclick**. Only works on `img` and `span`:
+   * `img` tag:
+      * None of parents is an `a` tag when the `img` tag is clicked.
+      * If the first condition is not satisfied, Weex will try to open the hyperlink of `a` tag instead.
+      * **pseudo-ref** of img will be passed to the callback function of onitemclick.
+   * `span` tag:
+      * The `span` tag is clicked whose parent is an `a` tag.
+      * The href property is 'click://' (This condition is required on iOS and is optional on Android).
+      * The `a` tag has a `pseudo-ref` property whose value will be sent with the itemclick event.
 
 ## Example
 
