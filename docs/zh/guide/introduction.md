@@ -13,7 +13,7 @@ Weex 渲染引擎与 DSL 语法层是分开的，Weex 并不强依赖任何特�
 想初步了解 Weex 其实非常简单。
 
 * 安装 [WeexPlayground](http://weex.apache.org/tools/playground.html). 在 Playground 里，你可以打开各种示例。
-* 访问 [Weex online playground](http://dotwe.org/vue). 在这个网站上，你可以浏览、修改、新建各种基于 Vuew.js 的[单页面]((https://vuejs.org/v2/guide/single-file-components.html))例子，并用 WeexPlayground 应用扫码查看实时效果。
+* 访问 [Weex online playground](http://dotwe.org/vue). 在这个网站上，你可以浏览、修改、新建各种基于 Vue.js 的[单页面]((https://vuejs.org/v2/guide/single-file-components.html))例子，并用 WeexPlayground 应用扫码查看实时效果。
 
 这里有一个使用 Weex 和 Vue.js 开发的[最简单的例子](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380)。你可以大致了解 Weex 是如何工作的。
 
