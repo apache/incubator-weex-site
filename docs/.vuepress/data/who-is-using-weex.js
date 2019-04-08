@@ -281,5 +281,13 @@ export default [
     iOS:
       'https://itunes.apple.com/cn/app/%E6%9C%89%E8%B5%9E%E5%BE%AE%E5%95%86%E5%9F%8E-%E6%89%8B%E6%9C%BA%E5%BF%AB%E9%80%9F%E5%BC%80%E5%BE%AE%E5%BA%97/id880579403?mt=8',
     android: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.qima.kdt'
+  },
+  {
+    name_CN: '超级IP',
+    name_EN: 'superip',
+    icon: 'https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/f1/c9/18/f1c91808-8244-9e97-bd4e-c98a03d6d850/AppIcon-0-1x_U007emarketing-0-0-85-220-0-5.png/460x0w.jpg',
+    iOS:
+      'https://itunes.apple.com/cn/app/%E8%B6%85%E7%BA%A7ip/id1425709969?mt=8',
+    android: 'https://sj.qq.com/myapp/detail.htm?apkName=com.jiatui.app.ip.cards'
   }
 ];
