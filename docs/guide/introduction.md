@@ -4,6 +4,8 @@
 
 > **Weex is a framework for building high-performance cross-platform mobile applications with a modern web development experience.**
 
+> You can pronounce "*Weex*" as /wiːks/, just like "*Weeks*".
+
 Weex enables developers to use modern web development skills to build Android, iOS, and Web apps with a single codebase. In practice, you can use JavaScript with modern front-end frameworks to develop mobile apps.
 
 The structure of Weex is decoupled. The render engine is separated from the syntax layer(DSL). This means that Weex does not rely on any specific front-end framework or language. For now, Weex is widely used with the supports of [Vue.js](https://vuejs.org/) and [Rax](https://alibaba.github.io/rax/). Another primary goal of Weex is to keep up with modern development technologies and platform capabilities both for web and native. Productivity and performance can coexist in Weex. Write a Weex page is almost like writing a web page, even if the page is designated to run on native environment.
