@@ -132,7 +132,7 @@ Thought `direction` is not part of flexbox but have huge impact on flexbox.
 The `flex-direction` CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
 * `row`: The flex container's main-axis is horizontal and defined to be the same as `direction`. The **main-start** and **main-end** points are the same as the `direction`.
 * `row-reverse`: Behaves the same as `row` but the **main-start** and **main-end** points are permuted
-* `vertical`: The flex container's main-axis is vertical. The **main-start** and **main-end** points is top and bottom.
+* `column`: The flex container's main-axis is vertical. The **main-start** and **main-end** points is top and bottom.
 * `column-reverse`: Behaves the same as column but the **main-start** and **main-end** are permuted.
 
 #### flex-wrap
