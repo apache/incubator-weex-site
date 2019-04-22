@@ -1,7 +1,7 @@
 # Introduction
 
 ::: warning warning
-This document is for the `weex-toolkit` **2.x** version. For the old version of the `weex-toolkit` documentation, please go to [here] (https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md).
+This document is for the `weex-toolkit` **2.x** version. For the old version of the `weex-toolkit` documentation, please go to [here](https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md).
 :::
 
 [Weex Toolkit](https://github.com/weexteam/weex-toolkit) is dedicated to standardizing the tool base in the Weex ecosystem. It ensures that various build tools can be seamlessly connected based on smart default configuration, so you can focus on writing applications without having to spend days tangling configuration issues.
@@ -59,9 +59,9 @@ E.g:
 $ weex create weex-templates/webpack#v1.0 my-project
 ```
 
-This command will initialize the project via the `v1.0` branch of the [weex-templates/webpack] (https://github.com/weex-templates/webpack/tree/v1.0) project.
+This command will initialize the project via the `v1.0` branch of the [weex-templates/webpack](https://github.com/weex-templates/webpack/tree/v1.0) project.
 
-You can create project templates from official templates or remote sources, or you can create your own `weex` project templates. For more details you can see [How to create your own templates] (https://github.com/weex-templates /How-to-create-your-own-template).
+You can create project templates from official templates or remote sources, or you can create your own `weex` project templates. For more details you can see [How to create your own templates](https://github.com/weex-templates /How-to-create-your-own-template).
 
 ### Compile page
 
@@ -102,7 +102,7 @@ The `@weex-cli/preview` module provides the ability to compile and preview `.vue
 $ weex preview [file | folder] <options>
 ```
 
-The browser will automatically open the preview page and you can see the layout and effects of your weex page. If you have [Weex Playground App] (/tools/) installed on your device, you can also view the page by scanning the QR code on the page.
+The browser will automatically open the preview page and you can see the layout and effects of your weex page. If you have [Weex Playground App](/tools/) installed on your device, you can also view the page by scanning the QR code on the page.
 
 Using the command below, you will be able to preview the `.vue` file in the entire folder.
 
@@ -169,8 +169,8 @@ $ weex debug [we_file|bundles_dir] [options]
 #### How to integrate debugging tools into your own app
 
 Reference documentation:
-- [1] [Integrated Weex Debugging Tool (Android)] (/guide/debug/integrate-devtool-to-android.html)
-- [2] [Integrated Weex Debugging Tool (iOS)] (/guide/debug/integrate-devtool-to-ios.html)
+- [1] [Integrated Weex Debugging Tool (Android)](/guide/debug/integrate-devtool-to-android.html)
+- [2] [Integrated Weex Debugging Tool (iOS)](/guide/debug/integrate-devtool-to-ios.html)
 
 
 ### Code Quality Check
@@ -183,9 +183,9 @@ $ weex lint [file | folder] <options>
 
 #### Options
 
-`@weex-cli/lint` The built-in `eslint` module is used for code quality verification. For options, please refer to [ESLint CLI] (https://eslint.org/docs/user-guide/command-line-interface).
+`@weex-cli/lint` The built-in `eslint` module is used for code quality verification. For options, please refer to [ESLint CLI](https://eslint.org/docs/user-guide/command-line-interface).
 
-If you want to add the `weex` code quality check to your project, you can also add the eslint plugin [eslint-plugin-weex] (https://www.npmjs.com/package/eslint-plugin-weex) Way to use.
+If you want to add the `weex` code quality check to your project, you can also add the eslint plugin [eslint-plugin-weex](https://www.npmjs.com/package/eslint-plugin-weex) Way to use.
 
 
 ### Development Environment Check
