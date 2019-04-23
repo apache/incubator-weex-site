@@ -1,5 +1,11 @@
 # Introduction
 
+:::danger
+Weex Toolkit is a third party plugin, and is not developed nor maintained by Apache Weex.
+
+Committers of Apache Weex is not responsible for any issue of Weex Toolkit.
+:::
+
 ::: warning warning
 This document is for the `weex-toolkit` **2.x** version. For the old version of the `weex-toolkit` documentation, please go to [here](https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md).
 :::

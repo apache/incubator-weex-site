@@ -1,3 +1,9 @@
+:::danger
+VSCode Extension 是三方插件, 不由 Apache Weex 开发或维护。
+
+Apache Weex 的 committer 不对 VSCode Extension 的问题负责。
+:::
+
 # 介绍
 
 ::: warning 警告

@@ -1,3 +1,9 @@
+:::danger
+Weex Toolkit 是三方插件, 不由 Apache Weex 开发或维护。
+
+Apache Weex 的 committer 不对 Weex Toolkit 的问题负责。
+:::
+
 # 介绍
 
 ## 功能
