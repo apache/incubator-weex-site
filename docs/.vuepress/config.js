@@ -30,7 +30,7 @@ module.exports = {
         nav: [
           { text: 'Guide', link: '/guide/' },
           { text: 'Docs', link: '/docs/' },
-          { text: 'Tools', link: '/tools/' },
+          { text: 'Third Party Tools', link: '/tools/' },
           { text: 'Community', link: '/community/' },
           { text: 'Blog', link: '/blog/' }
         ],
@@ -192,7 +192,7 @@ module.exports = {
         nav: [
           { text: '指南', link: '/zh/guide/' },
           { text: '文档', link: '/zh/docs/' },
-          { text: '工具', link: '/zh/tools/' },
+          { text: '第三方工具', link: '/zh/tools/' },
           { text: '社区', link: '/zh/community/' },
           { text: '博客', link: '/zh/blog/' }
         ],
