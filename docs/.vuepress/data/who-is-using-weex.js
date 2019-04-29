@@ -289,5 +289,13 @@ export default [
     iOS:
       'https://itunes.apple.com/cn/app/%E8%B6%85%E7%BA%A7ip/id1425709969?mt=8',
     android: 'https://sj.qq.com/myapp/detail.htm?apkName=com.jiatui.app.ip.cards'
+  },
+  {
+    name_CN: '多利农庄',
+    name_EN: 'tonysfarm',
+    icon: 'http://shop.tonysfarm.com/static/images/logos/icon-60@3x.png',
+    iOS:
+      'https://itunes.apple.com/cn/app/%E4%BF%A1%E5%A5%BD%E6%9C%89%E7%94%B0/id1439791996?mt=8',
+    android: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.tonysfarm.wx'
   }
 ];
