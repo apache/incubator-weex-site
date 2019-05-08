@@ -176,7 +176,8 @@ module.exports = {
           ],
           '/community/': [['roadmap', 'Roadmap'], ['weex-third-party-extensions', 'Plugins Market']],
           '/blog/': [
-            ['write-a-blog', 'Write a Blog']
+            ['write-a-blog', 'Write a Blog'],
+            ['ios-weexcore.md', 'Adapt iOS WeexSDK to WeexCore']
           ]
         }
       },
