@@ -31,7 +31,7 @@ module.exports = {
           { text: 'Guide', link: '/guide/' },
           { text: 'Docs', link: '/docs/' },
           { text: 'Third Party Tools', link: '/tools/' },
-          { text: 'DownLoad', link: '/download/' },
+          { text: 'Download', link: '/download/' },
           { text: 'Community', link: '/community/' },
           { text: 'Blog', link: '/blog/' }
         ],
