@@ -350,7 +350,7 @@ module.exports = {
             ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进'],
             ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路']
           ],
-          '/download/':[
+          '/zh/download/':[
             ['download', "源代码下载"] 
           ]
         }
