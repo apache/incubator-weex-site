@@ -31,6 +31,7 @@ module.exports = {
           { text: 'Guide', link: '/guide/' },
           { text: 'Docs', link: '/docs/' },
           { text: 'Third Party Tools', link: '/tools/' },
+          { text: 'Download', link: '/download/' },
           { text: 'Community', link: '/community/' },
           { text: 'Blog', link: '/blog/' }
         ],
@@ -194,6 +195,7 @@ module.exports = {
           { text: '指南', link: '/zh/guide/' },
           { text: '文档', link: '/zh/docs/' },
           { text: '第三方工具', link: '/zh/tools/' },
+          { text: '下载', link: '/zh/download/' },
           { text: '社区', link: '/zh/community/' },
           { text: '博客', link: '/zh/blog/' }
         ],
