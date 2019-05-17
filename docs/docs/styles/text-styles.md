@@ -54,3 +54,6 @@ Only support for `<text>` and `<ricthext>`
 
 ### line-height
 `line-height`: &lt;length&gt; The line height of every line in the text. `line-height` is the space between top and bottom.![line-height](http://i.stack.imgur.com/LwZJF.png) There is no relationship between `line-height` and `font-size`, as `line-height` is restricted by top and bottom, `font-size` is interpreted by glyph. Usually but not always, `line-height` and `font-size` with the same value will cause the text clipped.
+
+### word-wrap
+`word-wrap`:&lt;string&gt; `break-word` | `normal` | `anywhere`. This property determins word wrap mode. For Weex, `anywhere` means clipping at character boundaries, other values or by default we break at word boundaries.

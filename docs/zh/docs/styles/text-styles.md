@@ -47,3 +47,6 @@
 
 ### line-height
 `line-height {length}`：正整数，每行文字高度。`line-height`是 top 至 bottom 的距离。![line-height](http://i.stack.imgur.com/LwZJF.png)`line-height`与`font-size`没有关系，因为`line-height`被 top 和 bottom 所限制，`font-size` 被 glyph 所解析。`line-height`和`font-size`相等一般会导致文字被截断。
+
+### word-wrap
+`word-wrap`:&lt;string&gt; `break-word` | `normal` | `anywhere`. 对 Weex 来说 `anywhere` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
