@@ -65,4 +65,4 @@ weex run web
 weex debug
 ```
 
-这条命令会启动一个调试服务，并且在 Chrome （目前只支持基于 V8 引擎的桌面浏览器） 中打开调试页面。详细用法请参考 [weex-toolkit 的文档](../../tools/toolkit.htm)。
+这条命令会启动一个调试服务，并且在 Chrome （目前只支持基于 V8 引擎的桌面浏览器） 中打开调试页面。详细用法请参考 [weex-toolkit 的文档](../../tools/toolkit.html)。
