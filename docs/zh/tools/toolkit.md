@@ -1,5 +1,5 @@
 :::danger
-VSCode Extension 是三方插件, 不由 Apache Weex 开发或维护。
+Weex Toolkit 是三方插件, 不由 Apache Weex 开发或维护。
 :::
 
 # 介绍
