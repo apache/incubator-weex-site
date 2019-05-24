@@ -1,25 +1,35 @@
 # Download
+Use the link below to download Weex release from one of Apache mirror site.
 
-# Verification
- you can follow these [procedures](https://www.apache.org/dyn/closer.cgi#verify) and the [KEYS](https://dist.apache.org/repos/dist/dev/incubator/weex/KEYS) file to verify the download files
+Weex Release is all about source code, not binary, ref [ASF policy on software release](http://www.apache.org/legal/release-policy.html#compiled-packages).
 
+:::WARNING
+Every Weex Release includes source together with corresponding cryptographic signatures and checksums. You should always verify the file downloaded file from mirror with checksum and signature using the [procedures](https://www.apache.org/dyn/closer.cgi#verify) and [KEYS](https://dist.apache.org/repos/dist/dev/incubator/weex/KEYS).
+:::
 
-# Apache Weex
-> GitHub: [https://github.com/apache/incubator-weex](https://github.com/apache/incubator-weex)    
-> Release Notes: [https://github.com/apache/incubator-weex](https://github.com/apache/incubator-weex/releases)
+:::TIP
+Weex provides binary files in every release only for users' convenience. Binary files are never part of any release.
+:::
 
-## 0.20.0
-- [source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz&action=download) | [asc](https://www.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [sha512](https://www.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
+# Latest Release
+## 0.24.0
+* Released in May 23, 2019
+* [source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz&action=download) | [asc](https://www.apache.org/dist/incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz.asc) | [sha](https://dist.apache.org/repos/dist/release/incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz.sha512)
+* Binary
+    * Android 
+        `compile 'com.taobao.android:weex_sdk:0.24.0'`
+    * iOS 
+        `pod "WeexSDK","0.24.0"`
+
+# Archived Release
+## 0.20.0 
+* Released in Nov 30, 2018
+* [source]https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [sha](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
 
 ## 0.19.0
-- [source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz&action=download) | [asc](https://www.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.asc) | [sha512](https://www.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.sha512)
+* Released in Oct 30, 2018
+* [source](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.asc) | [sha512](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.sha512)
 
-## 0.12.0-incubating
-- [source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz&action=download) | [asc](https://www.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.asc) | [sha](https://www.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.sha)
-
-
-
-
-
-
-
+## 0.12.0
+* Released in Jun 9, 2017
+* [source](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.asc) | [sha512](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.sha)
