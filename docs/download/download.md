@@ -24,7 +24,7 @@ Weex provides binary files in every release only for users' convenience. Binary 
 # Archived Release
 ## 0.20.0 
 * Released in Nov 30, 2018
-* [source]https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [sha](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
+* [source](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [sha](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
 
 ## 0.19.0
 * Released in Oct 30, 2018
