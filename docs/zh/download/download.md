@@ -3,11 +3,11 @@
 
 根据[ASF policy on software release](http://www.apache.org/legal/release-policy.html#compiled-packages)，Weex Release 包含且只包含源代码。
 
-:::WARNING
+::: warning
 每一个Weex Release 中均包含源代码及对应的签名和哈希校验。在 Apache 镜像网站下载 Weex Release 后，你应该使用签名文件和哈希值验证你的下载。你可以根据[校验流程](https://www.apache.org/dyn/closer.cgi#verify) 文档和[密钥文件](https://dist.apache.org/repos/dist/dev/incubator/weex/KEYS) 来验证下载。
 :::
 
-:::TIP
+::: tip
 出于方便开发者的考虑，Weex提供二进制产物(*JCenter 与Cocoapods*)，但二进制产物不是 Weex Release 的一部分。
 :::
 
