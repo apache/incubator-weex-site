@@ -26,7 +26,7 @@
 ## 0.20.0 
 * 发布日期 2018年11月30日
 * [变更记录](https://github.com/apache/incubator-weex/releases/tag/0.20.0)
-* [源代码]https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [签名](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [哈希](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
+* [源代码](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [签名](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [哈希](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
 
 ## 0.19.0
 * 发布日期 2018年10月30日
