@@ -514,7 +514,7 @@ Weex supports box-shadow in iOS： `inset`,`offset-x`,`offset-y`, `blur-radius`,
 
 
 :::danger
-box-shadow takes effect on Android
+box-shadow takes no effect on Android
 :::
 
 ### Example
