@@ -3,11 +3,11 @@ Use the link below to download Weex release from one of Apache mirror site.
 
 Weex Release is all about source code, not binary, ref [ASF policy on software release](http://www.apache.org/legal/release-policy.html#compiled-packages).
 
-:::WARNING
+::: warning
 Every Weex Release includes source together with corresponding cryptographic signatures and checksums. You should always verify the file downloaded file from mirror with checksum and signature using the [procedures](https://www.apache.org/dyn/closer.cgi#verify) and [KEYS](https://dist.apache.org/repos/dist/dev/incubator/weex/KEYS).
 :::
 
-:::TIP
+::: tip
 Weex provides binary files in every release only for users' convenience. Binary files are never part of any release.
 :::
 
