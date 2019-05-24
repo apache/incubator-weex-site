@@ -15,7 +15,7 @@ Weex provides binary files in every release only for users' convenience. Binary 
 ## 0.24.0
 * Released in May 23, 2019
 * [ChangeLog](https://github.com/apache/incubator-weex/releases/tag/0.24.0)
-* [source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz&action=download) | [asc](https://www.apache.org/dist/incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz.asc) | [sha](https://dist.apache.org/repos/dist/release/incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz.sha512)
+* [Source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz&action=download) | [Signature](https://www.apache.org/dist/incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz.asc) | [Checksum](https://dist.apache.org/repos/dist/release/incubator/weex/0.24.0/apache-weex-incubating-0.24.0-src.tar.gz.sha512)
 * Binary
     * Android 
         `compile 'com.taobao.android:weex_sdk:0.24.0'`
@@ -26,13 +26,13 @@ Weex provides binary files in every release only for users' convenience. Binary 
 ## 0.20.0 
 * Released in Nov 30, 2018
 * [ChangeLog](https://github.com/apache/incubator-weex/releases/tag/0.20.0)
-* [source](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [sha](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
+* [Source](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz) | [Signature](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.asc) | [Checksum](https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-0.20.0-src.tar.gz.sha512)
 
 ## 0.19.0
 * Released in Oct 30, 2018
 * [ChangeLog](https://github.com/apache/incubator-weex/releases/tag/0.19.0)
-* [source](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.asc) | [sha512](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.sha512)
+* [Source](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz) | [Signature](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.asc) | [Checksum](https://archive.apache.org/dist/incubator/weex/0.19.0/apache-weex-incubating-0.19.0-src.tar.gz.sha512)
 
 ## 0.12.0
 * Released in Jun 9, 2017
-* [source](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz) | [asc](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.asc) | [sha512](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.sha)
+* [Source](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz) | [Signature](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.asc) | [Checksum](https://archive.apache.org/dist/incubator/weex/0.12.0-incubating/apache-weex-incubating-0.12.0-src.tar.gz.sha)
