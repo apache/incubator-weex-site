@@ -14,8 +14,8 @@ module.exports = {
     repo: 'apache/incubator-weex-site',
     docsRepo: 'apache/incubator-weex-site',
     docsBranch: 'master',
-    version: 'v0.20',
-    versionLink: '/release-note.html',
+    version: 'v0.24',
+    versionLink: '/download/download.html',
     logo: 'https://img.alicdn.com/tfs/TB1WtVjogHqK1RjSZFgXXa7JXXa-78-39.svg',
     locales: {
       '/': {
