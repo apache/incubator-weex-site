@@ -1,8 +1,7 @@
+# 介绍
 :::danger
 Weex Toolkit 是三方插件, 不由 Apache Weex 开发或维护。
 :::
-
-# 介绍
 
 ::: warning 警告
 这份文档是对应 `weex-toolkit` **2.x** 版本的。老版本的 `weex-toolkit` 文档请移步[这里](https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md)。

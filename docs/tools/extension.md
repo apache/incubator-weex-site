@@ -1,8 +1,8 @@
+# Introduction
+
 :::danger
 VSCode Extension is a third party plugin, and is not developed nor maintained by Apache Weex.
 :::
-
-# Introduction
 
 ## Features
 

@@ -1,5 +1,9 @@
 # 概要
 
+:::danger
+[Android Weex DevTools](https://github.com/weexteam/weex-devtools-android) 是三方插件, 不由 Apache Weex 开发或维护。
+:::
+
 Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。
 
 #### 版本兼容
