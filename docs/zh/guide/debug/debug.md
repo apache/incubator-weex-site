@@ -1,5 +1,9 @@
 # 调试
 
+:::danger
+[weex-toolkit](https://github.com/weexteam/weex-toolkit) 是三方插件, 不由 Apache Weex 开发或维护。
+:::
+
 本文档主要演示如何使用 `weex-toolkit` 中内置的调试工具进行代码调试。
 
 ## 安装

@@ -1,8 +1,7 @@
+# 介绍
 :::danger
 VSCode Extension 是三方插件, 不由 Apache Weex 开发或维护。
 :::
-
-# 介绍
 
 ## 功能
 

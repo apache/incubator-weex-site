@@ -1,14 +1,8 @@
----
-title: Integrate Devtool to Android
-type: guide
-group: debug
-order: 5.4
-version: 2.1
----
-
-<!-- toc -->
-
 # Integrate Devtool to Android
+
+:::danger
+[Android Weex DevTools](https://github.com/weexteam/weex-devtools-android) is a third party plugin, and is not developed nor maintained by Apache Weex.
+:::
 
 Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page. To make it work, at first you must integrate devtool to your App. This page will help you integrate devtool to your Android App.
 

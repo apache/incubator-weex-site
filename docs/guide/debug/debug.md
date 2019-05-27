@@ -1,4 +1,7 @@
 # Debug
+:::danger
+[weex-toolkit](https://github.com/weexteam/weex-toolkit) is a third party plugin, and is not developed nor maintained by Apache Weex.
+:::
 
 This document focuses on how to use the debugging tools built into `weex-toolkit` for code debugging.
 
