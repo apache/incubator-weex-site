@@ -22,9 +22,12 @@
 ```
 
 ::: warning 注意
-* `<web>` 不支持任何嵌套的子组件。
-* `<web>` 必须指定 width 和 height 的样式属性，否则将不起作用。
-* 您可以使用 [webview module](../modules/webview.html)来控制 `<web>`。
+* `<web>`不支持list，scroller，slider组件同向嵌套滚动模式，会导致滚动冲突；
+* `<web>` 不支持任何嵌套的子组件；
+* `<web>` 必须指定 width 和 height 的样式属性，否则将不起作用；
+* 您可以使用 [webview module](../modules/webview.html)来控制 `<web>`；
+* `<web>` 仅作为降级的非常规场景，不建议用于正常页面。
+
 :::
 
 ## 属性
