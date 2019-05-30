@@ -88,6 +88,10 @@ The above script will do following things for the release manager:
 All the links in your emails must be `https` instead of `http`.
 :::
 
+::: warning
+It's recommendation that release manager should send email during release with him/her Apache email account instead of personal account.
+:::
+
 ### Start Vote
 Release manager should call a vote for your release in [dev@weex.apache.org](mailto:dev@weex.apache.org). To get the vote passed, you need three positive vote(namely +1 binding vote) and more positive vote than negative vote(namely -1).
 
