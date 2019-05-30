@@ -175,7 +175,10 @@ module.exports = {
             ['toolkit', 'Weex Toolkit'],
             ['extension', 'VSCode Extension']
           ],
-          '/community/': [['roadmap', 'Roadmap'], ['weex-third-party-extensions', 'Plugins Market']],
+          '/community/': [
+            ['release-procedure', 'Release Procedure'],
+            ['roadmap', 'Roadmap'], 
+            ['weex-third-party-extensions', 'Plugins Market']],
           '/blog/': [
             ['write-a-blog', 'Write a Blog'],
             ['ios-weexcore.md', 'Adapt iOS WeexSDK to WeexCore']
@@ -342,7 +345,10 @@ module.exports = {
             ['toolkit', 'Weex 工具箱'],
             ['extension', 'VSCode 插件']
           ],
-          '/zh/community/': [['roadmap', '路线图'], ['weex-third-party-extensions', '插件市场']],
+          '/zh/community/': [
+            ['release-procedure', 'Apache Release 流程'],
+            ['roadmap', '路线图'], 
+            ['weex-third-party-extensions', '插件市场']],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
             ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
