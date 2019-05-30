@@ -1,5 +1,9 @@
 # &lt;waterfall&gt;
 
+::: danger
+`<waterfall>` is only supported on Android and iOS, and is not supported on web.
+:::
+
 ## Summary
 
 A component providing waterfall layout over list component.
