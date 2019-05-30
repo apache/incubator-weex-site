@@ -210,7 +210,7 @@ The above script will do following things for the release manager:
 1. Generate `RELEASE_NOTE.md` based on the history of git commit and `CHANGELOG.md`.
 1. Download release candidate from `https://dist.apache.org/repos/dist/dev/incubator/weex/${RELEASE_CANDIDATE_PREFIX}/${RELEASE_CANDIDATE_SUFFIX}`, rename it to `apache-weex-incubating-${$RELEASE_CANDIDATE_PREFIX}-src.tar.gz`, then upload it to [https://dist.apache.org/repos/dist/release/incubator/weex/](https://dist.apache.org/repos/dist/release/incubator/weex/)
 1. Push git tag named `${RELEASE_CANDIDATE_PREFIX}` to `${GIT_REMOTE}` repository and generate a corresponding [Github Release](https://help.github.com/en/articles/about-releases) with `${GITHUB_PERSONAL_TOKEN}`. As the script will install [release-it](https://github.com/release-it/release-it#github-releases) with `npm install -g release-it` to publish github release, make sure your npm environment is ready.
-1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`
+1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`. You can see the [JCenter token](https://svn.apache.org/repos/private/pmc/incubator/weex/) if you are a PPMC member of Weex
 
 ::: warning
 The convenience binary of iOS can only be published manually now.
