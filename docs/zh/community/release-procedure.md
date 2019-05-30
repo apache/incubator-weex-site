@@ -203,18 +203,18 @@ The procedure below may not work well if the release manager is not a PPMC membe
 :::
 
 Release manager could invoke `scripts/publish_release_official.sh $RELEASE_CANDIDATE_PREFIX $RELEASE_CANDIDATE_SUFFIX $TAG_OF_LATEST_RELEASE $GIT_REMOTE $GITHUB_PERSONAL_TOKEN $JCENTER_TOKEN` to publish the release officially. The explanation of the variable is listed below:
-* $RELEASE_CANDIDATE_PREFIX, Weex release candidate prefix, like 0.24.0
-* $RELEASE_CANDIDATE_SUFFIX, The release candidate suffix, like RC3
-* $TAG_OF_LATEST_RELEASE  Weex tag of last release, like 0.19.0.2. RELEASE_NOTE.md came from the difference between ${RELEASE_CANDIDATE_PREFIX}-${RELEASE_CANDIDATE_SUFFIX} and $TAG_OF_LATEST_RELEASE .
-* $GIT_REMOTE The name of your Github repository, like github-Apache whose URL should be git@github.com:apache/incubator-weex.git
-* $GITHUB_PERSONAL_TOKEN The personal access token of your github Account(https://github.com/settings/tokens), which should have write privilege to git@github.com:apache/incubator-weex.git . The personal access token is used to publish Github Release
-* $JCENTER_TOKEN The private key for JCenter (https://bintray.com/alibabaweex/maven/weex_sdk/), which is the distribution channel for Android
+* `$RELEASE_CANDIDATE_PREFIX`, Weex release candidate prefix, like 0.24.0
+* `$RELEASE_CANDIDATE_SUFFIX`, The release candidate suffix, like RC3
+* `$TAG_OF_LATEST_RELEASE`  Weex tag of last release, like 0.19.0.2. RELEASE_NOTE.md came from the difference between `${RELEASE_CANDIDATE_PREFIX}-${RELEASE_CANDIDATE_SUFFIX}` and `$TAG_OF_LATEST_RELEASE`.
+* `$GIT_REMOTE` The name of your Github repository, like github-Apache whose URL should be `git@github.com:apache/incubator-weex.git`
+* `$GITHUB_PERSONAL_TOKEN` The personal access token of your [github Account](https://github.com/settings/tokens), which should have write privilege to `git@github.com:apache/incubator-weex.git` . The personal access token is used to publish Github Release
+* `$JCENTER_TOKEN` The private key for [JCenter](https://bintray.com/alibabaweex/maven/weex_sdk/), which is the distribution channel for Android
 
 The above script will do following things for the release manager:
 1. Generate `RELEASE_NOTE.md` based on the history of git commit and `CHANGELOG.md`.
 1. Download release candidate from `https://dist.apache.org/repos/dist/dev/incubator/weex/${RELEASE_CANDIDATE_PREFIX}/${RELEASE_CANDIDATE_SUFFIX}`, rename it to `apache-weex-incubating-${$RELEASE_CANDIDATE_PREFIX}-src.tar.gz`, then upload it to [https://dist.apache.org/repos/dist/release/incubator/weex/](https://dist.apache.org/repos/dist/release/incubator/weex/)
-1. Push git tag named `${RELEASE_CANDIDATE_PREFIX}` to ${GIT_REMOTE} repository and generate a corresponding [Github Release](https://help.github.com/en/articles/about-releases) with ${GITHUB_PERSONAL_TOKEN}. As the script will install [release-it](https://github.com/release-it/release-it#github-releases) with `npm install -g release-it` to publish github release, make sure your npm environment is ready.
-1. Publish the convenience binary of Android to JCenter with your ${JCENTER_TOKEN}
+1. Push git tag named `${RELEASE_CANDIDATE_PREFIX}` to `${GIT_REMOTE}` repository and generate a corresponding [Github Release](https://help.github.com/en/articles/about-releases) with `${GITHUB_PERSONAL_TOKEN}`. As the script will install [release-it](https://github.com/release-it/release-it#github-releases) with `npm install -g release-it` to publish github release, make sure your npm environment is ready.
+1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`
 
 ::: warning
 The convenience binary of iOS can only be published manually now.
@@ -230,7 +230,7 @@ The download link of the latest release source must be provided in the format of
 :::
 
 ::: warning
-As the old release is archived, you should probably update the link of your previous release to new address like, `https://archive.apache.org/dist/incubator/weex/0.20.0/apache-weex-incubating-${PREVIOUS_RELEASE}-src.tar.gz`
+As the old release is archived, you should probably update the link of your previous release to new address like, `https://archive.apache.org/dist/incubator/weex/${PREVIOUS_RELEASE}/apache-weex-incubating-${PREVIOUS_RELEASE}-src.tar.gz`
 :::
 
 ::: tip
