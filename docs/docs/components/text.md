@@ -68,12 +68,16 @@ Specially, if you are using [Alibaba Iconfont](http://www.iconfont.cn/) to build
 :::
 
 ### word-break
-:::warning Android compatibility
 The word-break behavior is unpredictable and ROM dependent. Actually, the word-break strategy relies on `Minikin`, which is highly inconsistent cross different Android ROMs, you should not rely its behavior.
 
+:::warning Android compatibility
 Generally speaking, you would meet inconsistent word-break behavior if one of the following conditions meets:
 * Mix Chinese/Japanese/Korean (CJK) text and other text, the inconsistent word-break behavior would happen on the intersection text of multiple languages.
 * Mix half-width and full-width among non-CJK text, the inconsistent word-break behavior would happen on the intersection text of half-width and full-width text.
+:::
+
+::: tip hack into word-break
+Developers could add `\uFEFF` 即[ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) just after the character with inconsistent word-break behavior to force no-break strategy, ref [demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce) to see more detail。`\uFEFF` may not work on all Android ROMs, as some of them may just ignore it.
 :::
 
 ## Example
