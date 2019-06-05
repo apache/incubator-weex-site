@@ -77,7 +77,7 @@ Generally speaking, you would meet inconsistent word-break behavior if one of th
 :::
 
 ::: tip hack into word-break
-Developers could add `\uFEFF` 即[ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) just after the character with inconsistent word-break behavior to force no-break strategy, ref [demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce) to see more detail。`\uFEFF` may not work on all Android ROMs, as some of them may just ignore it.
+Developers could add `\uFEFF` namely [ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) just after the character with inconsistent word-break behavior to force no-break strategy, ref [demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce) to see more detail。`\uFEFF` may not work on all Android ROMs, as some of them may just ignore it.
 :::
 
 ## Example

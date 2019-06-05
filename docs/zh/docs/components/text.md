@@ -79,7 +79,7 @@ word-break 行为是不可预测的且与 Android ROM 强相关。事实上，wo
 :::
 
 ::: tip hack into word-break
-开发者可通过在意外换行处添加 `\uFEFF` 即[ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html)以触发**强制不换行**，详细用法可参考[demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce)。请注意这个方法**无法**保证在所有 Android ROM 上有效，一些 ROM 会忽略 *ZERO WIDTH NO-BREAK SPACE* 指令。
+开发者可通过在意外换行处添加 `\uFEFF` 即 [ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) 以触发**强制不换行**，详细用法可参考[demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce)。请注意这个方法**无法**保证在所有 Android ROM 上有效，一些 ROM 会忽略 *ZERO WIDTH NO-BREAK SPACE* 指令。
 :::
 
 ## 示例
