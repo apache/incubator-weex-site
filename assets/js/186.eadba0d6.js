@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[186],{451:function(t,n,e){"use strict";e.r(n);var i=e(1),s=Object(i.a)({},function(){var t=this.$createElement,n=this._self._c||t;return n("div",{staticClass:"content"},[n("Offline-activities")],1)},[],!1,null,null,null);n.default=s.exports}}]);
