@@ -22,7 +22,8 @@ Weex only supports `box-sizing:border-box`, in which box size includes `content`
 :::
 
 ::: warning
-Weex only supports `overflow:hidden`.
+* On Android, Weex only supports `overflow:hidden`.
+* On iOS, before version 0.24, Weex behaves the same as browser, so overflow is visible by default. From 0.25, overflow on iOS is hidden by default. And `overflow` is ignored on iOS. You should use 'ios-overflow' to set overflow value on iOS. Please refer to this [Demo](http://editor.weex.io/vue/5033e82e4341472a4a218ca3bd8ca7f3)
 :::
 
 The following code snippets shows the basic usage of box model
@@ -92,7 +93,7 @@ The border-color shorthand CSS property sets the color of all sides of an elemen
 :::
 
 ::: danger Only for Android
-Although `overflow:hidden` is default on android, a view **will not** clip its children according to `border-radius` unless all the following conditions meet.
+Although `overflow:hidden` is default on Android, a view **will not** clip its children according to `border-radius` unless all the following conditions meet.
   * The view type is `div`, `a`, `cell`, `refresh` or `loading`.
   * OS version is Android 4.3 or higher.
   * OS version is **not** Android 7.0
