@@ -83,7 +83,8 @@ module.exports = {
               children: [
                 ['advanced/asset-path', 'Asset Path'],
                 ['advanced/downgrade', 'Downgrade'],
-                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router']
+                ['advanced/use-vuex-and-vue-router', 'Use Vuex and vue-router'],
+                ['advanced/multi-size-screen', 'Fit for multi-size screen']
               ]
             },
             {
@@ -253,7 +254,8 @@ module.exports = {
               children: [
                 ['advanced/asset-path', '资源路径'],
                 ['advanced/downgrade', '降级方案'],
-                ['advanced/use-vuex-and-vue-router', '使用Vuex和vue-router']
+                ['advanced/use-vuex-and-vue-router', '使用Vuex和vue-router'],
+                ['advanced/multi-size-screen', '适应不同尺寸屏幕']
               ]
             },
             {
