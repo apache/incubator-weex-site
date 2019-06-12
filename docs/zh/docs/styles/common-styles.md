@@ -383,6 +383,34 @@ Weex 目前只支持两种颜色的渐变，渐变方向如下：
 
 [示例](http://dotwe.org/vue/5ca46fdb8520e5a1255533d390d41f63)
 
+## 无障碍
+
+- role 指定组件角色,告诉用户当前元素是何种类型组件 参考[web定义](https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties)
+	- button 
+	- input `input`组件的 的默认值是 input
+	- img `image`组件的的默认值是 img
+	- link
+	- search
+	- tab
+	- text `text`组件的 role 的默认值是 text
+- aria-hidden 对有用户影藏掉一些没必要的元素
+- aria-label  配置当前元素被聚焦后的文案提示
+
+### Demo:
+
+```
+<text class='txt' role='text' aria-label='I am a text'>text</text>
+
+<a class='a' role='link' href='http://xxx.xxx.xxx' aria-label='I am a link'></a>
+
+
+<image class='img' aria-hidden='true' role='img' src="http://xxx.png" aria-label='I am a image，but you can not see me'></image>
+
+```
+
+
+
+
 ## 阴影(box-shadow) <Badge text="0.11+" type="warn" vertical="middle"/>
 
 Weex 支持 `box-shadow` 属性用于设置元素阴影。
