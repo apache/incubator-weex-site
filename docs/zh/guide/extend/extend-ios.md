@@ -3,6 +3,26 @@
 
 在这篇文档里，我们使用 Objective-C 来扩展 Weex 功能，如果想使用 Swift，可以参考 [使用 Swift 扩展](./extend-ios-with-swift.html)。
 
+## JSEnv 扩展
+
+
+### 接口
+
+```
+NSDictionary *options = @{@"testVlaue":@"hello"};
+
+[_instance renderWithURL:url options:options data:nil];
+
+```
+
+### 使用
+
+```
+var value = weex.config.testValue;
+
+console.log(value);
+```
+
 ## 自定义 module
 自定义 module，需要让自己的 class 遵循 `WXModuleProtocol` 这个protocol，通过 `WX_EXPORT_METHOD` 这个宏暴露出需要透出到 `JavaScript` 调用的方法，再向 WeexSDK 注册 module，就可以完成一个简单 module 的自定义。
 

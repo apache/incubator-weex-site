@@ -8,6 +8,29 @@ version: 2.1
 
 <!-- toc -->
 
+## JSEnv Extend
+
+
+### Api
+
+```
+
+Map<String, Object> options = new HashMap();
+options.set("testVlaue","hello");
+//.... 
+instance.render(pagename, template,options);
+
+```
+
+### usage
+
+```
+var value = weex.config.testValue;
+
+console.log(value);
+```
+
+
 ## Module extend
 
 1. Customize modules class must extend from WXModule.
