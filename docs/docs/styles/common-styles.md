@@ -562,6 +562,33 @@ box-shadow takes no effect on Android
 ```
 
 
+## Accessibility
+
+
+- role: show compoent‘s role [web define](https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties)
+	- button 
+	- input `input`compoent default role is input
+	- img `image` compoent default role is image
+	- link
+	- search
+	- tab
+	- text `text`compoent default role is text
+- aria-hidden :hide compoent which is unnecessary for user
+- aria-label  : configure the msg after the current element is focused
+
+### Example
+
+```
+<text class='txt' role='text' aria-label='I am a text'>text</text>
+
+<a class='a' role='link' href='http://xxx.xxx.xxx' aria-label='I am a link'></a>
+
+
+<image class='img' aria-hidden='true' role='img' src="http://xxx.png" aria-label='I am a image，but you can not see me'></image>
+
+```
+
+
 ## Other Common Style
 * `opacity {number}`:Set the transparency of an element or the degree to which content behind an element is visible. The {number} range is **0** to **1**, **0** for fully transparent and **1** for fully opaque.
 * `background-color {color}`: Set the background color of an element. The following color format is supported.
