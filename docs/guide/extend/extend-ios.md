@@ -4,6 +4,28 @@
 
 In this section we will talk about how to extend Weex on iOS using Objective-C. For Swift, please refer [Extend using Swift](./extend-ios-with-swift.html)
 
+
+
+## JSEnv Extend
+
+
+### Api
+
+```
+NSDictionary *options = @{@"testVlaue":@"hello"};
+
+[_instance renderWithURL:url options:options data:nil];
+
+```
+
+### usage
+
+```
+var value = weex.config.testValue;
+
+console.log(value);
+```
+
 ## Extend module
 
 To extend your custom weex modules in iOS, you must make your class conform to `WXModuleProtocol` protocol, and then exports your method to javaScript using macro `WX_EXPORT_METHOD`, finally register your module with your class and a self-define module name.
