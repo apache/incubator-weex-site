@@ -150,6 +150,7 @@ module.exports = {
                 ['modules/stream', 'stream'],
                 ['modules/webview', 'webview'],
                 ['modules/websockets', 'webSockets'],
+                ['modules/deviceInfo', 'deviceInfo']
                 ['modules/console-log', 'console-log']
               ]
             },
@@ -323,6 +324,7 @@ module.exports = {
                 ['modules/stream', 'stream'],
                 ['modules/webview', 'webview'],
                 ['modules/websockets', 'webSockets'],
+                ['modules/deviceInfo', 'deviceInfo']
                 ['modules/console-log', 'console-log']
               ]
             },
