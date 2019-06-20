@@ -54,7 +54,7 @@ The rules for computed height of text component is complicated, basically but no
 
 ### Custom Typeface <Badge text="v0.12+" type="warning"/>
 
-Text component supports loading custom fonts in `ttf` and `woff` file formats. 
+Text component supports loading custom fonts in `ttf` file formats. 
 1. Create your font with unique `font-family` name.
 2. Using [addRule](../modules/dom.html#addrule-type-contentobject) method of dom module to register your font.
 3. Set `font-family:YourFontFamilyName` style for your text component.
