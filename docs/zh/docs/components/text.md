@@ -56,7 +56,7 @@
 
 ### 自定义字体 <Badge text="v0.12+" type="warning"/>
 
-文本组件支持 `ttf` 和 `woff` 字体格式的自定义字体。
+文本组件支持 `ttf` 字体格式的自定义字体。
 1. 使用唯一的 `font-family` 名字创建字体文件。
 2. 使用 Dom 模块的 [addRule](../modules/dom.html#addrule-type-contentobject) 方法注册字体。
 3. 在文本中使用 `font-family:YourFontFamilyName` 样式指定字体。
