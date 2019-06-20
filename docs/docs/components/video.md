@@ -1,14 +1,15 @@
-# &lt;video&gt;
-
-## Summary
+# Summary
+::: danger
+You should consider `<video>` as demo purpose, and re-implement it your favourite video library.
+:::
 
 The video component can be used to embed video content in a Weex page.
 
-## Child Components
+# Child Components
 
 A `text` is the only valid type of child component.
 
-## Attributes
+# Attributes
 
 * **src**, string. The URL of the video to embed.
 * **play-status**, string. Valid options are 'play' | 'pause'. Use it to control video's play status. Default value is `pause`。
@@ -16,18 +17,18 @@ A `text` is the only valid type of child component.
 * **poster**, string, <Badge text="v0.18+ & iOS" type="warning"/>. Post image URL of this video if any.
 * **controls**, string, <Badge text="v0.19+" type="warning"/>. If set to `nocontrols`, native video component will hide its play-back control panel.
 
-## Styles
+# Styles
 
 * **common styles**. support [common styles](../styles/common-styles.html).
 
-## Events
+# Events
 
 * **start** Triggered when playback state is Playing.
 * **pause** Triggered when playback state is Paused.
 * **finish** Triggered when playback state is Finished.
 * **fail** Triggered when playback state is Failed.
 
-## Example
+# Example
 
 ```html
 <template>

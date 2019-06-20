@@ -21,7 +21,7 @@ navigator.push({
   url: 'http://dotwe.org/raw/dist/519962541fcf6acd911986357ad9c2ed.js',
   animated: "true"
 }, event => {
-  console.log('callback: ', event })
+  console.log('callback: ', event)
 })
 ```
 
@@ -40,7 +40,7 @@ var navigator = weex.requireModule('navigator')
 navigator.pop({
   animated: "true"
 }, event => {
-  console.log('callback: ', event })
+  console.log('callback: ', event)
 })
 ```
 ::: warning 注意

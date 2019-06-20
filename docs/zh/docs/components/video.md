@@ -1,14 +1,15 @@
-# &lt;video&gt;
-
-## 简介
+# 简介
+::: danger
+Weex中内置的`<video>`组件一般只做demo用途，在你的App中，你应该用你喜欢的视频库重新实现video组件。
+:::
 
 Video 组件用于在页面中嵌入视频内容。
 
-## 子组件
+# 子组件
 
 `text` 是唯一合法的子组件。
 
-## 属性
+# 属性
 
 * **src**, string. 内嵌的视频指向的URL。
 * **play-status**, string. 可选值为 `play` | `pause`，用来控制视频的播放状态，`play` 或者 `pause`，默认值是 `pause`。
@@ -16,18 +17,18 @@ Video 组件用于在页面中嵌入视频内容。
 * **poster**, string, <Badge text="v0.18+ & iOS" type="warning"/>. 指定视频首图的图片链接。
 * **controls**, string, <Badge text="v0.19+" type="warning"/>. 可选值为  `controls` | `nocontrols`，控制视频播放组件是否显示回放控制面板，默认会显示，当指定为 `nocontrols` 时不显示回放控制面板。
 
-## 样式
+# 样式
 
 * **通用样式** 支持所有[通用样式](../styles/common-styles.html)。
 
-## 事件
+# 事件
 
 * **start** 当 playback 的状态是 Playing 时触发。
 * **pause** 当 playback 的状态是 Paused 时触发。
 * **finish** 当 playback 的状态是 Finished 时触发。
 * **fail** 当 playback 状态是 Failed 时触发。
 
-## 示例
+# 示例
 
 ```html
 <template>

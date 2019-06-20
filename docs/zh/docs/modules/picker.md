@@ -1,5 +1,9 @@
 # picker
 
+::: danger
+`<picker>` 只支持 Android 和 iOS，不支持 Web.
+:::
+
 以下为 picker 相关的 API，用于数据选择，日期选择，时间选择。（ H5模块如需使用，请手动引入 [weex-picker组件](https://github.com/weexteam/weex-picker)）。
 
 # API

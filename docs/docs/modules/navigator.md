@@ -24,7 +24,7 @@ navigator.push({
   url: bundleUrl,
   animated: "true"
 }, event => {
-  modal.toast({ message: 'callback: ' + event })
+  modal.toast({ message: 'callback: ' + event)
 })
 ```
 
@@ -43,7 +43,7 @@ Demo
 var navigator = weex.requireModule('navigator')
 var modal = weex.requireModule('modal')
 navigator.pop({ animated: "true"}, event => {
-      	modal.toast({ message: 'callback: ' + event })
+      	modal.toast({ message: 'callback: ' + event)
 })
 ```
 
