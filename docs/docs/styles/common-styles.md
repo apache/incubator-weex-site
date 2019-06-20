@@ -302,6 +302,7 @@ The maximum of the size for your component is device dependent, but you are in t
 
 :::tip
 Consider use `transition` instead, which supports all the style that `transform` supports except for `transform-origin` and `perspective`
+`rotate` is the same as `rotateZ`
 :::
 
 The CSS **transform** property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated and scaled.
@@ -317,6 +318,7 @@ Currently supported format:
 * rotate: `degree`
 * rotateX: `degree` **v0.14+**
 * rotateY: `degree` **v0.14+**
+* rotateZ: `degree` **v0.26+** 
 * perspective: `number`, supported for Android 4.1 and above. **v0.16+**
 * transform-origin: number, percentage, keyword (top/left/right/bottom)
 
