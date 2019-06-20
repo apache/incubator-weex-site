@@ -17,7 +17,7 @@ The following documents assume that you already have a certain Android developme
 
 - [JAVA Environment, jdk7+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Android Studio](https://developer.android.com/training/basics/firstapp/)
-- [NDK r16](https://developer.android.com/ndk/)、[Cmake 3.9.0+](https://cmake.org/download/) (option: if you need compile the source ,ndk and cmake are required)
+- [NDK r18](https://developer.android.com/ndk/)、[Cmake 3.9.0+](https://cmake.org/download/) (option: if you need compile the source ,ndk and cmake are required)
 
 
 ## 1. Configure dependency 
