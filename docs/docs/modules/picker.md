@@ -1,5 +1,9 @@
 # picker
 
+::: danger
+`<picker>` is only supported on Android and iOS, and is not supported on web.
+:::
+
 A series of stream api. It provides function: pick data, pick date, pick time
 
 # API
