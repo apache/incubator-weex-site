@@ -75,7 +75,7 @@ Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内�
 
 #### border-width
 `border-width`：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
-  * `border-left-width {length}`：非负值, 默认值 0
+  * `border-width {length}`：非负值, 默认值 0
   * `border-left-width {length}`：非负值, 默认值 0
   * `border-top-width {length}`：非负值, 默认值 0
   * `border-right-width {length}`：非负值, 默认值 0
