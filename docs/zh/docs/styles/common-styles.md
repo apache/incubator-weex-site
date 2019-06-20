@@ -24,7 +24,7 @@ Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内�
 
 ::: warning
 * 在 Android 平台，Weex 只支持 `overflow:hidden`。
-* 在 iOS 上，0.24版本及以前，Weex 与浏览器行为一致，`overflow` 默认是 `visible`。从 0.25 版本开始，默认改为 `hidden`。同时 `overflow` 样式在 iOS 上会被忽略。你需要使用 `ios-overflow` 样式名称来指定。可参考 [样例](http://editor.weex.io/vue/13268ebfd31d8a3ef28bb6d88fa461d3)
+* 在 iOS 上，Weex 支持 `overflow:hidden` 和 `overflow:visible`，默认是 `overflow:visible`。
 :::
 
 下面的例子显示了盒模型的基本用法

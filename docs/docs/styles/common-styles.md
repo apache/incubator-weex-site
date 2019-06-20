@@ -23,7 +23,7 @@ Weex only supports `box-sizing:border-box`, in which box size includes `content`
 
 ::: warning
 * On Android, Weex only supports `overflow:hidden`.
-* On iOS, before version 0.24, Weex behaves the same as browser, so overflow is visible by default. From 0.25, overflow on iOS is hidden by default. And `overflow` is ignored on iOS. You should use 'ios-overflow' to set overflow value on iOS. Please refer to this [Demo](http://editor.weex.io/vue/13268ebfd31d8a3ef28bb6d88fa461d3)
+* On iOS, Weex supports `overflow:hidden` and `overflow:visible` and by default, it is `overflow:visible`.
 :::
 
 The following code snippets shows the basic usage of box model

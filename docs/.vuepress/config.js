@@ -149,7 +149,8 @@ module.exports = {
                 ['modules/storage', 'storage'],
                 ['modules/stream', 'stream'],
                 ['modules/webview', 'webview'],
-                ['modules/websockets', 'webSockets']
+                ['modules/websockets', 'webSockets'],
+                ['modules/console-log', 'console-log']
               ]
             },
             {
@@ -321,7 +322,8 @@ module.exports = {
                 ['modules/storage', 'storage'],
                 ['modules/stream', 'stream'],
                 ['modules/webview', 'webview'],
-                ['modules/websockets', 'webSockets']
+                ['modules/websockets', 'webSockets'],
+                ['modules/console-log', 'console-log']
               ]
             },
             {
