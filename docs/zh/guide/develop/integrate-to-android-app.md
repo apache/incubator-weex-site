@@ -17,7 +17,7 @@ version: 2.1
 
 - [JAVA环境, jdk7+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Android Studio](https://developer.android.com/training/basics/firstapp/)
-- [NDK r16](https://developer.android.com/ndk/)、[Cmake 3.9.0+](https://cmake.org/download/) (可选项：如果需要编译WEEX源码，需要NDK环境支持)
+- [NDK r18](https://developer.android.com/ndk/)、[Cmake 3.9.0+](https://cmake.org/download/) (可选项：如果需要编译WEEX源码，需要NDK环境支持)
 
 
 ## 1. 设置gradle依赖
