@@ -63,7 +63,7 @@ The above script will do following things for the release manager:
 
 Release manager should always check the following things before you move to the next step:
 1. Check RELEASE_AUDIT.LOG to see if there is any license problems in your release candidate.
-1. Go to `apache_release_temp` and verify you can compile it from source by running `scripts/build_from_source.sh $NDK13_dir $NDK_16dir`
+1. Go to `apache_release_temp` and verify you can compile it from source by running `scripts/build_from_source.sh $NDK18_dir`
 
 ## Publish release candidate
 ::: warning
