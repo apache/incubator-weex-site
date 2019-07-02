@@ -16,14 +16,22 @@ Weex 官方提供了`weex-toolkit` 的脚手架工具来辅助开发和调试。
 
 通常，安装了 Node.js 环境，npm 包管理工具也随之安装了。因此，直接使用 npm 来安装 `weex-toolkit`, 你也可以通过 `yarn` 来进行安装。
 
-国内的开发者推荐将npm镜像切换至 [Taobao NPM 镜像](https://registry.npm.taobao.org)。
+国内的开发者推荐将npm镜像切换至 Taobao NPM 镜像 `https://registry.npm.taobao.org`。
 
 :::
 
 运行下面的命令安装最新的beta版本工具：
 
+### OSX环境
 ```bash
-$ npm install -g weex-toolkit@beta
+$ sudo chmod -R 777 /usr/local/lib/node_modules/
+$ npm i -g weex-toolkit // 安装不要使用sudo执行
+$ weex -v // 查看当前weex工具版本
+```
+
+### Windows环境
+```bash
+$ npm i -g weex-toolkit 
 $ weex -v // 查看当前weex工具版本
 ```
 
