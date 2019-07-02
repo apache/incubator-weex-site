@@ -12,10 +12,19 @@ There are many ways to install Node.js. The easiest way is to download the execu
 
 Run the following commands in a terminal:
 
+### OSX
 ```bash
-$ npm install -g weex-toolkit
-$ weex -v
+$ sudo chmod -R 777 /usr/local/lib/node_modules/
+$ npm i -g weex-toolkit // Do not use sudo
+$ weex -v 
 ```
+
+### Windows
+```bash
+$ npm i -g weex-toolkit 
+$ weex -v 
+```
+
 After the installation is complete, you can use the `weex help` command to verify that the installation is successful. It will display all the commands supported by `weex`. You can also check your local development environment with the `weex doctor` command.
 
 ## Generate a new Weex project
