@@ -25,7 +25,7 @@ Release are always about source code, binary is only published for users' conven
 ## Prepare environment
 To generate and compile a weex release, you need to set up the following environment:
 * [Weex build environment](https://github.com/apache/incubator-weex/blob/master/HOW-TO-BUILD.md#build-environment), which includes Android, iOS, JS, C++ toolchains.
-* [OpenPGP environment](http://www.apache.org/dev/openpgp.html#key-gen-generate-key), which is used to generate signature and checksum for release candidate. Please note that OpenPGP is not the same as your `ssh` key though both of them may use the same cryptography algorithm.
+* [OpenPGP environment](http://www.apache.org/dev/openpgp.html#key-gen-generate-key), which is used to generate signature and checksum for release candidate. Please note that OpenPGP is not the same as your `ssh` key though both of them may use the same cryptography algorithm. You may simply use `brew install gpg` to install tools and setup your key pair by `gpg --full-gen-key`.
 
 ## Create release branch
 The release branch should be named to `release/xxx`, like `release/0.24`. Then the release manager should push the release branch to the remote repository.
@@ -68,12 +68,13 @@ The procedure below may not work well if the release manager is not a PPMC membe
 * The signature of the source file, like `apache-weex-incubating-xxxxx-xxxxx-src.tar.gz.asc`
 * The checksum of the source file, like `apache-weex-incubating-xxxxx-xxxxx-src.tar.gz.sha512`
 * The `KEYS` as a result of `gpg --list-sigs && gpg --armor --export >> KEYS` 
+* Remeber to append your public-key info to `KEYS` file in repository https://dist.apache.org/repos/dist/release/incubator/weex and https://dist.apache.org/repos/dist/dev/incubator/weex
 :::
 
 Release manager could invoke `scripts/publish_release_candidate.sh $RELEASE_CANDIDATE_PREFIX $RELEASE_CANDIDATE_SUFFIX $GIT_REMOTE` to publish a release candidate. The explanation of the variable is listed below:
 * `$RELEASE_CANDIDATE_PREFIX`, Weex release candidate prefix, like 0.24.0
 * `$RELEASE_CANDIDATE_SUFFIX`, The release candaidate suffix, like RC3
-* `$GIT_REMOTE` The name of your Github repository, like github-Apache whose URL should be `git@github.com:apache/incubator-weex.git`
+* `$GIT_REMOTE` The name of your Github repository, like github-Apache whose URL should be `git@github.com:apache/incubator-weex.git`. You can view `.git/config` file to find the name of your repository.
 
 The above script will do following things for the release manager:
 1. Push git tag with the name `${RELEASE_CANDIDATE_PREFIX}-${RELEASE_CANDIDATE_SUFFIX}` to ${GIT_REMOTE} repository.
