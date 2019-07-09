@@ -78,7 +78,8 @@ If you are writing Java or C++ with Android Studio, **License** will be added to
     * If the PR is about fixing a bug *excluding crash*, a [demo](http://dotwe.org/vue) is necessary in code's description.
     * If the PR is about adding a new feature, another [PR for documentation](how-to-contribute.html#contribute-code-or-document) is necessary in codes' PR description.
     * *Optional* If the PR fixes an existing Github issue, you may add the link to the corresponding issue in the PR.
-
+    * *Optional* If you submit a PR, you may update the the corresponding document and add the document PR link in the PR content with the format `[Document](http://document_PR_link)`.
+    
 :::tip
 Reviewing PR may take a great deal of time, please be patient. If your PR doesn't get response over 96 hours, you might send an email to [mailing list](how-to-contribute.html#mailing-list) to ask the progress.
 :::
