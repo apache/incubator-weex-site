@@ -12,6 +12,16 @@ Weex provides binary files in every release only for users' convenience. Binary 
 :::
 
 # Latest Release
+## 0.26.0
+* Released in July 11, 2019
+* [ChangeLog](https://github.com/apache/incubator-weex/releases/tag/0.26.0)
+* [Source](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz&action=download) | [Signature](https://www.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.asc) | [Checksum](https://dist.apache.org/repos/dist/release/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.sha512)
+* Binary
+    * Android 
+        `compile 'com.taobao.android:weex_sdk:0.26.0'`
+    * iOS 
+        `pod "WeexSDK","0.26.0"`
+
 ## 0.24.0
 * Released in May 23, 2019
 * [ChangeLog](https://github.com/apache/incubator-weex/releases/tag/0.24.0)
