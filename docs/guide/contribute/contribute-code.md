@@ -82,7 +82,7 @@ If you are writing Java or C++ with Android Studio, **License** will be added to
 There will be a static check program when you submit a PR,and the following rules will be checked:
 1. Check if your PR is submitted to master branch, if not, you will failed.
 2. Check if your PR is binded with a milestone, if not, you will receive a warning message.
-3. Check if your PR description contains keywords `Document` and it's correponding http links. if not, you will receive a warning message.
+3. Check if your PR description contains keywords `Documentation` and it's correponding http links. if not, you will receive a warning message.
 4. Check if your PR description contains keywords `Demo` and it's correponding http links. if not, you will receive a warning message.
 5. Check if your PR modify the changelog.md, if not,you will receive a warning message.
 
