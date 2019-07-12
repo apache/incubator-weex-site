@@ -29,7 +29,7 @@ Release are always about source code, binary is only published for users' conven
 ## Prepare environment
 To generate and compile a weex release, you need to set up the following environment:
 * [Weex build environment](https://github.com/apache/incubator-weex/blob/master/HOW-TO-BUILD.md#build-environment), which includes Android, iOS, JS, C++ toolchains.
-* [OpenPGP environment](http://www.apache.org/dev/openpgp.html#key-gen-generate-key), which is used to generate signature and checksum for release candidate. Please note that OpenPGP is not the same as your `ssh` key though both of them may use the same cryptography algorithm.
+* [OpenPGP environment](http://www.apache.org/dev/openpgp.html#key-gen-generate-key), which is used to generate signature and checksum for release candidate. Please note that OpenPGP is not the same as your `ssh` key though both of them may use the same cryptography algorithm. You may simply use `brew install gpg` to install tools and setup your key pair by `gpg --full-gen-key`.
 
 ## Create release branch
 The release branch should be named to `release/xxx`, like `release/0.24`. Then the release manager should push the release branch to the remote repository.
@@ -72,12 +72,13 @@ The procedure below may not work well if the release manager is not a PPMC membe
 * The signature of the source file, like `apache-weex-incubating-xxxxx-xxxxx-src.tar.gz.asc`
 * The checksum of the source file, like `apache-weex-incubating-xxxxx-xxxxx-src.tar.gz.sha512`
 * The `KEYS` as a result of `gpg --list-sigs && gpg --armor --export >> KEYS` 
+* Remeber to append your public-key info to `KEYS` file in repository https://dist.apache.org/repos/dist/release/incubator/weex and https://dist.apache.org/repos/dist/dev/incubator/weex
 :::
 
 Release manager could invoke `scripts/publish_release_candidate.sh $RELEASE_CANDIDATE_PREFIX $RELEASE_CANDIDATE_SUFFIX $GIT_REMOTE` to publish a release candidate. The explanation of the variable is listed below:
 * `$RELEASE_CANDIDATE_PREFIX`, Weex release candidate prefix, like 0.24.0
 * `$RELEASE_CANDIDATE_SUFFIX`, The release candaidate suffix, like RC3
-* `$GIT_REMOTE` The name of your Github repository, like github-Apache whose URL should be `git@github.com:apache/incubator-weex.git`
+* `$GIT_REMOTE` The name of your Github repository, like github-Apache whose URL should be `git@github.com:apache/incubator-weex.git`. You can view `.git/config` file to find the name of your repository.
 
 The above script will do following things for the release manager:
 1. Push git tag with the name `${RELEASE_CANDIDATE_PREFIX}-${RELEASE_CANDIDATE_SUFFIX}` to ${GIT_REMOTE} repository.
@@ -214,7 +215,7 @@ The above script will do following things for the release manager:
 1. Generate `RELEASE_NOTE.md` based on the history of git commit and `CHANGELOG.md`.
 1. Download release candidate from `https://dist.apache.org/repos/dist/dev/incubator/weex/${RELEASE_CANDIDATE_PREFIX}/${RELEASE_CANDIDATE_SUFFIX}`, rename it to `apache-weex-incubating-${$RELEASE_CANDIDATE_PREFIX}-src.tar.gz`, then upload it to [https://dist.apache.org/repos/dist/release/incubator/weex/](https://dist.apache.org/repos/dist/release/incubator/weex/)
 1. Push git tag named `${RELEASE_CANDIDATE_PREFIX}` to `${GIT_REMOTE}` repository and generate a corresponding [Github Release](https://help.github.com/en/articles/about-releases) with `${GITHUB_PERSONAL_TOKEN}`. As the script will install [release-it](https://github.com/release-it/release-it#github-releases) with `npm install -g release-it` to publish github release, make sure your npm environment is ready.
-1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`. You can see the [JCenter token](https://svn.apache.org/repos/private/pmc/incubator/weex/) if you are a PPMC member of Weex
+1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`. You can see the [JCenter token](https://svn.apache.org/repos/private/pmc/incubator/weex/) if you are a PPMC member of Weex.
 
 ::: warning
 The convenience binary of iOS can only be published manually now.
@@ -226,15 +227,15 @@ You should also archive your old release by deleting them from [https://dist.apa
 Please remember update the [website](https://weex.apache.org/download/download.html) with your latest release information and correct link.
 
 ::: warning
-The download link of the latest release source must be provided in the format of mirror, like `https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/${RELEASE_CANDIDATE_PREFIX}/apache-weex-incubating-${RELEASE_CANDIDATE_PREFIX}-src.tar.gz&action=download` according to [ASF' policy](http://www.apache.org/dev/release-download-pages#links).
-:::
+* The download link of the latest release source must be provided in the format of mirror, like `https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/${RELEASE_CANDIDATE_PREFIX}/apache-weex-incubating-${RELEASE_CANDIDATE_PREFIX}-src.tar.gz&action=download` according to [ASF' policy](http://www.apache.org/dev/release-download-pages#links).
 
-::: warning
-As the old release is archived, you should probably update the link of your previous release to new address like, `https://archive.apache.org/dist/incubator/weex/${PREVIOUS_RELEASE}/apache-weex-incubating-${PREVIOUS_RELEASE}-src.tar.gz`
+* As the old release is archived, you should probably update the link of your previous release to new address like, `https://archive.apache.org/dist/incubator/weex/${PREVIOUS_RELEASE}/apache-weex-incubating-${PREVIOUS_RELEASE}-src.tar.gz`
 :::
 
 ::: tip
-The version information like `pod version` in [Github Page](https://github.com/apache/incubator-weex/edit/master/README.md) will get updated within 24 hours automatically. Please be patient.
+* Remember to move old latest version to Archived Release section.
+
+* The version information like `pod version` in [Github Page](https://github.com/apache/incubator-weex/edit/master/README.md) will get updated within 24 hours automatically. Please be patient.
 :::
 
 ## Announce it

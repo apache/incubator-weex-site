@@ -211,7 +211,7 @@ The above script will do following things for the release manager:
 1. Generate `RELEASE_NOTE.md` based on the history of git commit and `CHANGELOG.md`.
 1. Download release candidate from `https://dist.apache.org/repos/dist/dev/incubator/weex/${RELEASE_CANDIDATE_PREFIX}/${RELEASE_CANDIDATE_SUFFIX}`, rename it to `apache-weex-incubating-${$RELEASE_CANDIDATE_PREFIX}-src.tar.gz`, then upload it to [https://dist.apache.org/repos/dist/release/incubator/weex/](https://dist.apache.org/repos/dist/release/incubator/weex/)
 1. Push git tag named `${RELEASE_CANDIDATE_PREFIX}` to `${GIT_REMOTE}` repository and generate a corresponding [Github Release](https://help.github.com/en/articles/about-releases) with `${GITHUB_PERSONAL_TOKEN}`. As the script will install [release-it](https://github.com/release-it/release-it#github-releases) with `npm install -g release-it` to publish github release, make sure your npm environment is ready.
-1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`. You can see the [JCenter token](https://svn.apache.org/repos/private/pmc/incubator/weex/) if you are a PPMC member of Weex
+1. Publish the convenience binary of Android to JCenter with your `${JCENTER_TOKEN}`. You can see the [JCenter token](https://svn.apache.org/repos/private/pmc/incubator/weex/) if you are a PPMC member of Weex.
 
 ::: warning
 The convenience binary of iOS can only be published manually now.
@@ -223,15 +223,15 @@ You should also archive your old release by deleting them from [https://dist.apa
 Please remember update the [website](https://weex.apache.org/download/download.html) with your latest release information and correct link.
 
 ::: warning
-The download link of the latest release source must be provided in the format of mirror, like `https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/${RELEASE_CANDIDATE_PREFIX}/apache-weex-incubating-${RELEASE_CANDIDATE_PREFIX}-src.tar.gz&action=download` according to [ASF' policy](http://www.apache.org/dev/release-download-pages#links).
-:::
+* The download link of the latest release source must be provided in the format of mirror, like `https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/${RELEASE_CANDIDATE_PREFIX}/apache-weex-incubating-${RELEASE_CANDIDATE_PREFIX}-src.tar.gz&action=download` according to [ASF' policy](http://www.apache.org/dev/release-download-pages#links).
 
-::: warning
-As the old release is archived, you should probably update the link of your previous release to new address like, `https://archive.apache.org/dist/incubator/weex/${PREVIOUS_RELEASE}/apache-weex-incubating-${PREVIOUS_RELEASE}-src.tar.gz`
+* As the old release is archived, you should probably update the link of your previous release to new address like, `https://archive.apache.org/dist/incubator/weex/${PREVIOUS_RELEASE}/apache-weex-incubating-${PREVIOUS_RELEASE}-src.tar.gz`
 :::
 
 ::: tip
-The version information like `pod version` in [Github Page](https://github.com/apache/incubator-weex/edit/master/README.md) will get updated within 24 hours automatically. Please be patient.
+* Remember to move old latest version to Archived Release section.
+
+* The version information like `pod version` in [Github Page](https://github.com/apache/incubator-weex/edit/master/README.md) will get updated within 24 hours automatically. Please be patient.
 :::
 
 ## Announce it
