@@ -79,6 +79,14 @@ If you are writing Java or C++ with Android Studio, **License** will be added to
     * If the PR is about adding a new feature, another [PR for documentation](how-to-contribute.html#contribute-code-or-document) is necessary in codes' PR description.
     * *Optional* If the PR fixes an existing Github issue, you may add the link to the corresponding issue in the PR.
 
+There will be a static check program when you submit a PR,and the following rules will be checked:
+1. Check if your PR is submitted to master branch, if not, you will failed.
+2. Check if your PR is binded with a milestone, if not, you will receive a warning message.
+3. Check if your PR description contains keywords `Documentation` and it's correponding http links. if not, you will receive a warning message.
+4. Check if your PR description contains keywords `Demo` and it's correponding http links. if not, you will receive a warning message.
+5. Check if your PR modify the changelog.md, if not,you will receive a warning message.
+
+
 :::tip
 Reviewing PR may take a great deal of time, please be patient. If your PR doesn't get response over 96 hours, you might send an email to [mailing list](how-to-contribute.html#mailing-list) to ask the progress.
 :::
