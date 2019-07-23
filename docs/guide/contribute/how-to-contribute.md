@@ -6,7 +6,7 @@ Weex project belongs to Apache Software Foundation and Weex community respects a
 
 ## Code of Conduct
 
-To make an open and friendly community, Weex community adopt [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct) as the code of conduct.
+To make an open and friendly community, Weex community adopt [Contributor Covenant](https://github.com/apache/incubator-weex/blob/master/CODE_OF_CONDUCT.md) as the code of conduct.
 
 ## Mailing List
 > If it didn't happen on a mailing list, it didn't happen.
@@ -24,7 +24,7 @@ Read [Apache mailing list](https://apache.org/foundation/mailinglists.html) to h
 
 ## Ask or Answer Questions
 * You ask questions on [stackoverflow.com](http://stackoverflow.com/questions/tagged/weex) for basic use problems and concepts.
-* You can report a bug through Github Issue as mention in [bug report](./bug-report-guidelines.html).
+* You can report a bug through Github Issue as mention in [ask-or-answer-questions](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#ask-or-answer-questions).
 
 :::tip
 Formally speaking, StackOverflow is not part of Weex community though developers around the world continually contribute to it. If your question on StackOverflow doesn't get response within 96 hours, you can fire a [Github Issue](https://github.com/apache/incubator-weex/issues) with link to your question on StackOverflow.
@@ -54,4 +54,4 @@ PR about documentation should be fired based on **master** branch.
 :::
 
 ### Contribute code
-You can fix a bug or develop a new feature when contributing code, ref [Contribution of Code](./contribute-code.html) to see more detail.
+You can fix a bug or develop a new feature when contributing code, ref [Contribution of Code](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#contribute-code) to see more detail.
