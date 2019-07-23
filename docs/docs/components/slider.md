@@ -14,7 +14,7 @@ It supports all kinds of weex components as its slides. The `indicator` componen
 * **interval**, number in millisecond. This value determines time interval for each page displayed in slider.
 * **index**, number. This value determines the  index of current shown slide. The default value is 0.
 * **offset-x-accuracy**, number. Set the scroll event trigger precision, precision value represents the rolling distance of a page width ratio.
-* **show-indicators**, boolean. Set whether to display indicator. This attribute is useless if there is no `[<indicator>](.indicator.html)` in the slider despite the default value of `show-indicators` is true.
+* **show-indicators**, boolean. Set whether to display indicator. This attribute is useless if there is no [`<indicator>`](.indicator.html) in the slider despite the default value of `show-indicators` is true.
 * **infinite**, boolean. Set whether the page in the slider can be scrolled. The default value is true.
 * **scrollable**, boolean. Set whether slider pages can be switched by sliding gestures. The default value is true.
 * **keep-index**, boolean, <Badge text="Android" type="warning"/>. Set whether to maintain the index of the page after the data changes.
