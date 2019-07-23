@@ -14,7 +14,7 @@ Slider 组件用于在一个页面中展示多个图片，在前端这种效果�
 * **interval**, number（ms）. 轮播间隔，默认为 3000ms。
 * **index**, number. 设置显示slider的第几个页面。
 * **offset-x-accuracy**, number. 控制 `onscroll` 事件触发的频率，默认值为10，表示两次 `onscroll` 事件之间滚动容器至少滚动了10px。将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。
-* **show-indicators**, boolean. 是否显示指示器。尽管`show-indicator`的默认值是true，本属性只有在slider下包含 [`<indicator>`](.indicator.html) 时才有意义。
+* **show-indicators**, boolean. 是否显示指示器。尽管`show-indicator`的默认值是true，本属性只有在slider下包含 [`<indicator>`](indicator.html) 时才有意义。
 * **infinite**, boolean. 设置是否可以无限轮播，默认为 true。
 * **scrollable**, boolean. 设置是否可以通过滑动手势来切换页面，默认为 true。
 * **keep-index**, boolean, <Badge text="Android" type="warning"/>. 设置轮播器中的数据发生变化后是否保持变化前的页面序号。
