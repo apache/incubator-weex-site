@@ -11,6 +11,9 @@ has_chapter_content: true
 
 In this article, we demonstrate how to fit Weex pages for different or changable screen sizes such as orientation switches.
 
+::: danger 
+iOS only,Android not support yet
+:::
 ## How Weex convert a CSS style ot view coordinate
 
 Take iOS as example, when your application starts up, Weex acquires current device screen width as global variable. On iOS, this value is screen physical pixels divided by screen scale. For iPhone6, this value is 375.

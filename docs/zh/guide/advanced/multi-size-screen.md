@@ -10,6 +10,9 @@ has_chapter_content: true
 ## 简介
 
 本文将介绍 Weex 适配不同尺寸屏幕的方法以及横竖屏动态切换时如何自适应。
+::: danger 
+Android暂不支持
+:::
 
 ## Weex 如何将前端样式值转换为系统坐标值
 
