@@ -12,7 +12,7 @@ has_chapter_content: true
 In this article, we demonstrate how to fit Weex pages for different or changable screen sizes such as orientation switches.
 
 ::: danger 
-IOS only,Android not support yet
+iOS only,Android not support yet
 :::
 ## How Weex convert a CSS style ot view coordinate
 
