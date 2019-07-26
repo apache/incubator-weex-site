@@ -178,8 +178,6 @@ module.exports = {
             ['extension', 'VSCode Extension']
           ],
           '/community/': [
-            ['release-procedure', 'Release Procedure'],
-            ['roadmap', 'Roadmap'], 
             ['weex-third-party-extensions', 'Plugins Market']],
           '/blog/': [
             ['write-a-blog', 'Write a Blog'],
@@ -350,8 +348,6 @@ module.exports = {
             ['extension', 'VSCode 插件']
           ],
           '/zh/community/': [
-            ['release-procedure', 'Apache Release 流程'],
-            ['roadmap', '路线图'], 
             ['weex-third-party-extensions', '插件市场']],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
