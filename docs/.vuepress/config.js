@@ -178,7 +178,8 @@ module.exports = {
             ['extension', 'VSCode Extension']
           ],
           '/community/': [
-            ['weex-third-party-extensions', 'Plugins Market']]
+            ['weex-third-party-extensions', 'Plugins Market']
+          ],
           '/blog/': [
             ['write-a-blog', 'Write a Blog'],
             ['ios-weexcore.md', 'Adapt iOS WeexSDK to WeexCore']
@@ -348,7 +349,8 @@ module.exports = {
             ['extension', 'VSCode 插件']
           ],
           '/zh/community/': [
-            ['weex-third-party-extensions', '插件市场']]
+            ['weex-third-party-extensions', '插件市场']
+          ],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
             ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
