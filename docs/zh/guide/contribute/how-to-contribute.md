@@ -23,6 +23,9 @@ Weex 开发者邮件列表是 "dev@weex.incubator.apache.org"，开发者可以�
 在Weex邮件组中，请使用英文沟通，以便让来自全球的开发者知道你的观点。
 :::
 
+## Members and Governance Model
+Weex 目前的 Committer，PPMC 成员以及加入 Weex Committer 的方式都列在[文档](https://cwiki.apache.org/confluence/x/bFoyBw)中。
+
 ## 提出与解决解答问题
 * 如果你对weex的用法或基本概念有疑惑，可以在[stackoverflow.com](http://stackoverflow.com/questions/tagged/weex)上提出相关问题。
 * 如果你确定某个问题是一个bug，请参考[Bug 反馈指南](./bug-report-guidelines.html)，并使用Github Issue来反馈。
@@ -34,6 +37,15 @@ Weex 开发者邮件列表是 "dev@weex.incubator.apache.org"，开发者可以�
 :::warning
 Github Issue 仅用接收 Bug 反馈以及 StackOverflow 上超过 96 小时无人回复的问题，其他问题请通过邮件列表进行沟通。
 :::
+
+## 研发流程
+Weex 研发流程的文档被放置于 [Confluence](https://cwiki.apache.org/confluence/x/eJBTB) 上，这个文档对所有用户可以，文档的主要使用者是 Weex 的 Contributor 。
+
+* [Release Plan](https://github.com/apache/incubator-weex/milestones): 从 0.27 开始，Weex 使用 Github Milestone 管理版本计划。所有的 feature, bugfix 和已经解决的 issue 都和某个里程碑关联。由于 Weex 发布需要两轮投票，里程碑的发布日期仅供参考。
+* [Release Procedure](https://cwiki.apache.org/confluence/x/_I5TBw)
+* [Major feature](https://github.com/apache/incubator-weex/projects)
+* [System Design](https://cwiki.apache.org/confluence/x/XYxTBw)
+* [Road Map](https://cwiki.apache.org/confluence/x/fJBTBw)
 
 ## 贡献文档或代码
 提交代码 *Pull Request* 并不是参与 Weex 贡献的唯一方式，在Weex社区中，**文档和一样重要**，并尊重所有开发者对 Weex 文档或代码的贡献。

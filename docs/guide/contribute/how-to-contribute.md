@@ -21,6 +21,8 @@ If you want to unsubscribe, please send an email to [dev-unsubscribe@weex.incuba
 
 Read [Apache mailing list](https://apache.org/foundation/mailinglists.html) to have a deeper view of mailing list.
 
+## Members and Governance Model
+You can find committers, PPMCs and governance model of Weex from [confluence](https://cwiki.apache.org/confluence/x/bFoyBw)
 
 ## Ask or Answer Questions
 * You ask questions on [stackoverflow.com](http://stackoverflow.com/questions/tagged/weex) for basic use problems and concepts.
@@ -35,6 +37,15 @@ Only the following types of issues are valid Github issues, for other problem, a
 * Bug
 * StackOverflow questions, which doesn't get response over 96 hours.
 :::
+
+## Development Process
+Most of the development process is described in [confluence](https://cwiki.apache.org/confluence/x/eJBTBw), which services the contributors of Weex and is transparent to all users.
+
+* [Release Plan](https://github.com/apache/incubator-weex/milestones): All feature, bugfix, issue-solved are associated with a certain milestone since Weex 0.27. As every Weex release needs approval from PPMC and IPMC, the due date of milestone is just an estimation of release date, not accuracy schedule.
+* [Release Procedure](https://cwiki.apache.org/confluence/x/_I5TBw)
+* [Major feature](https://github.com/apache/incubator-weex/projects)
+* [System Design](https://cwiki.apache.org/confluence/x/XYxTBw)
+* [Road Map](https://cwiki.apache.org/confluence/x/fJBTBw)
 
 ## Contribute Code or document
 In Weex community, **Documentation is as important as code**, and Weex community respects all the contribution of documentation or code.
