@@ -1,7 +1,7 @@
 <script>
 module.exports = {
   created(){
-    this.$router.push('/zh/community/roadmap.html')
+    this.$router.push('/zh/community/weex-third-party-extensions.html')
   }
 }
 </script>
