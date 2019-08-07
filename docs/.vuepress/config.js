@@ -45,7 +45,8 @@ module.exports = {
                 ['front-end-frameworks', 'Front-End Frameworks'],
                 ['platform-difference', 'Platform Difference'],
                 ['use-vue-in-weex', 'Use Vue in Weex'],
-                ['use-rax-in-weex', 'Use Rax in Weex']
+                ['use-rax-in-weex', 'Use Rax in Weex'],
+                ['playground', 'Playground App']
               ]
             },
             {
@@ -173,7 +174,6 @@ module.exports = {
             }
           ],
           '/tools/': [
-            ['playground', 'Playground App'],
             ['toolkit', 'Weex Toolkit'],
             ['extension', 'VSCode Extension'],
             ["dotwe", "Online Playground"]
@@ -217,7 +217,8 @@ module.exports = {
                 ['front-end-frameworks', '前端框架'],
                 ['platform-difference', '平台差异'],
                 ['use-vue-in-weex', '在Weex中使用Vue.js'],
-                ['use-rax-in-weex', '在Weex中使用Rax.js']
+                ['use-rax-in-weex', '在Weex中使用Rax.js'],
+                ['playground', 'Playground 应用']
               ]
             },
             {
@@ -345,7 +346,6 @@ module.exports = {
             }
           ],
           '/zh/tools/': [
-            ['playground', 'Playground 应用'],
             ['toolkit', 'Weex 工具箱'],
             ['extension', 'VSCode 插件'],
             ["dotwe", "Online Playground"]
