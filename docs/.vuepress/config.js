@@ -175,7 +175,8 @@ module.exports = {
           '/tools/': [
             ['playground', 'Playground App'],
             ['toolkit', 'Weex Toolkit'],
-            ['extension', 'VSCode Extension']
+            ['extension', 'VSCode Extension'],
+            ["dotwe", "Online Playground"]
           ],
           '/community/': [
             ['weex-third-party-extensions', 'Plugins Market']
@@ -346,7 +347,8 @@ module.exports = {
           '/zh/tools/': [
             ['playground', 'Playground 应用'],
             ['toolkit', 'Weex 工具箱'],
-            ['extension', 'VSCode 插件']
+            ['extension', 'VSCode 插件'],
+            ["dotwe", "Online Playground"]
           ],
           '/zh/community/': [
             ['weex-third-party-extensions', '插件市场']
