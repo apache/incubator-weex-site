@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="warning">
       <p class="warning-icon">WARNING</p>
-      <p>{{lang === 'en-US' ? 'Online Playground is a third party editor, and is not developed nor maintained by Apache Weex.' : 'Online Playground 是三方编辑器, 不由 Apache Weex 开发或维护。'}}</p>
+      <p>{{lang === 'en-US' ? 'Online Editor is a third party editor, and is not developed nor maintained by Apache Weex.' : 'Online Editor 是三方编辑器, 不由 Apache Weex 开发或维护。'}}</p>
     </div>
     <img class="editor hide" src="https://img.alicdn.com/tfs/TB1OFpuI4naK1RjSZFBXXcW7VXa-1936-1188.png" />
     <div class="link">
