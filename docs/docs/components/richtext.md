@@ -31,6 +31,7 @@ Supported attributes of children of a `richtext`.
 #### a
 
 * **herf**. The herf.
+* **pseudo-ref**. A ref assigned by developers and passed to the callback function of **itemclick**.
 
 #### span
 
@@ -64,16 +65,16 @@ Only limited css styles listed below are supported by richtext.
 ## Events
 
 * **common events**. Support [common events](../events/common-events.html).
-* **itemclick**. Only works on `img` and `span`:
+* **itemclick**. Only works on `img` and `a`:
    * `img` tag:
       * None of parents is an `a` tag when the `img` tag is clicked.
       * If the first condition is not satisfied, Weex will try to open the hyperlink of `a` tag instead.
       * **pseudo-ref** of img will be passed to the callback function of onitemclick.
-   * `span` tag:
-      * The `span` tag is clicked whose parent is an `a` tag.
+   * `a` tag:
       * The href property is 'click://' (This condition is required on iOS and is optional on Android).
-      * The `a` tag has a `pseudo-ref` property whose value will be sent with the itemclick event.
+      * The `a` tag has a `pseudo-ref` property whose value will be sent with the itemclick event. **Please be noted that the default jump behavior on `a` tag will be disabled at this moment.`[Demo](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
+    * If `itemclick` is specified on nested nodes, only the event on the outer node will take effect.
 
 ## Example
 
-[Demo](http://dotwe.org/vue/f748b0cee3991522a66d4376b66a4f2a)
+[Demo](http://dotwe.org/vue/8a817e1acb46c2910caf1b53b8016a48)

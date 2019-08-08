@@ -30,6 +30,7 @@
 #### a
 
 * **herf**. Herf。
+* **pseudo-ref**. 开发者指定的索引，会被传给回调方法 **itemclick**。
 
 #### span
 
@@ -63,16 +64,16 @@
 ## 事件
 
 * **通用事件** 支持所有[通用事件](../events/common-events.html)。
-* **itemclick**. 只有`img`和`span`标签可能触发，触发时机是: 
+* **itemclick**. 只有`img`和`a`标签可能触发，触发时机是: 
    * `img`标签:
       * `img`被点击时没有任何父节点是 `a`
       * 如果第一个条件不满足，Weex 会尝试打开 `a` 标签指定的链接。
       * `img` 的 **pseudo-ref** 会作为参数传回来。
-   * `span`标签:
-      * `a`标签中的`span`被点击
-      * 并且所在的`a`标签的href被指定为"click://"（这个条件iOS端强要求，Android端并不要求）
-      * a标签设置了pseudo-ref。此时itemclick事件会被触发，并且携带pseudo-ref的值。[示例](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
+   * `a`标签:
+      * `a`标签的href被指定为"click://"（这个条件iOS端强要求，Android端并不要求）
+      * `a`标签设置了pseudo-ref。此时itemclick事件会被触发，并且携带pseudo-ref的值。**此时 `a` 标签的无效。**。[示例](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
+    * 若多个嵌套节点上均包含 `itemclick` 事件，则只有最外层节点上的 `itemclick` 会被触发
 
 ## 示例
 
-[示例](http://dotwe.org/vue/f748b0cee3991522a66d4376b66a4f2a)
+[示例](http://dotwe.org/vue/8a817e1acb46c2910caf1b53b8016a48)
