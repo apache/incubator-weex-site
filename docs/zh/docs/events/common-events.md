@@ -14,7 +14,7 @@ Weex在`<div>`组件中增加了`eventPenetrationEnabled`属性，当值为`true
 
 [示例](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
 
-### View交互性
+## View交互性
 
 Weex在`<div>`组件中增加了`userInteractionEnabled`属性，当值为`true`时，View及其子View均不响应事件 事件向下层View传递
 

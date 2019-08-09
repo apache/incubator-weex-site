@@ -20,7 +20,7 @@ Weex add attribute `eventPenetrationEnabled` to `<div>` component. When the valu
 
 [Event penetration](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
 
-### View interactivity
+## View interactivity
 
 Weex add attribute `userInteractionEnabled` to `<div>` component. When the value is `true`, neither the view nor its children views respond to the event. The event is passed to the lower layer View.
 
