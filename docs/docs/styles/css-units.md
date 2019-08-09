@@ -2,10 +2,10 @@
 
 ## CSS `length` unit
 
-`px` is the only supported length units.
+`px` 、`wx` are supported as length units. For styles that should not be affected by screen width and viewPortWidth, please use `wx` as unit.
 
 ::: danger
-Ignoring `px` will cause render error on Webview.
+Ignoring `px` or  `wx` will cause render error on Webview.
 :::
 
 ::: warning
