@@ -14,15 +14,15 @@ Weex provide the ability to let events trigger action, like starting a JavaScrip
 
 **Notes: ** The principle of native event delivery under `Android` and `iOS` is different, only for `iOS` here.
 
-When a parent view has multiple peer views, iOS will select the highest level View to respond to the event, and the underlying View event will never be responded.
+When a parent view has multiple peer views, iOS will select the highest level View to respond to the event, and the underlying view event will never be responded.
 
-Weex add attribute `eventPenetrationEnabled` to `<div>` component. When the value is `true`, the View's child view still responds to the event normally, while the View itself will not respond to the event, but pass the event to the lower level View.
+Weex add attribute `eventPenetrationEnabled` to `<div>` component. When the value is `true`, the view's children views still respond to the event normally, while the view itself will not respond to the event, but pass the event to the lower level View.
 
 [Event penetration](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
 
 ### View interactivity
 
-Weex add attribute `userInteractionEnabled` to `<div>` component. When the value is `true`, neither the View nor its child View responds to the event. The event is passed to the lower layer View.
+Weex add attribute `userInteractionEnabled` to `<div>` component. When the value is `true`, neither the view nor its children views respond to the event. The event is passed to the lower layer View.
 
 
 ## Click event
