@@ -10,6 +10,21 @@ version: 2.1
 
 Weex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Below are the common event attributes that can be added to weex components to define event actions.
 
+## Event penetration
+
+**Notes: ** The principle of native event delivery under `Android` and `iOS` is different, only for `iOS` here.
+
+When a parent view has multiple peer views, iOS will select the highest level View to respond to the event, and the underlying View event will never be responded.
+
+Weex add attribute `eventPenetrationEnabled` to `<div>` component. When the value is `true`, the View's child view still responds to the event normally, while the View itself will not respond to the event, but pass the event to the lower level View.
+
+[Event penetration](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
+
+### View interactivity
+
+Weex add attribute `userInteractionEnabled` to `<div>` component. When the value is `true`, neither the View nor its child View responds to the event. The event is passed to the lower layer View.
+
+
 ## Click event
 
 The onclick attribute fires on a click gesture on the element.
