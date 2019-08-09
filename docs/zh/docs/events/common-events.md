@@ -2,6 +2,22 @@
 
 Weex 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 Weex 组件上以定义事件动作的属性：
 
+## 事件穿透
+
+::: warning 注意
+`Android`和`iOS`下原生事件传递机制不同，这里仅针对`iOS`
+:::
+
+当一个父View存在多个同级子View时，由于`iOS`会选择层级最高的View来响应事件，底层的View的事件永远都不会响应。
+
+Weex在`<div>`组件中增加了`eventPenetrationEnabled`属性，当值为`true`时，View的子View仍能正常响应事件，但View自身将不会响应事件，而是将事件向下层View传递。
+
+[示例](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
+
+## View交互性
+
+Weex在`<div>`组件中增加了`userInteractionEnabled`属性，当值为`true`时，View及其子View均不响应事件 事件向下层View传递
+
 ## click
 
 当组件上发生点击手势时被触发。
