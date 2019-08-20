@@ -183,7 +183,7 @@ module.exports = {
           ],
           '/blog/': [
             ['write-a-blog', 'Write a Blog'],
-            ['ios-weexcore.md', 'Adapt iOS WeexSDK to WeexCore']
+            ['ios-weexcore.md', 'Adapt iOS WeexSDK to WeexCore'],
             ['weex-third-party-extensions','List of Third Party Plugin']
           ],
           '/download/':[
@@ -359,7 +359,7 @@ module.exports = {
             ['weex-auto-test-locating', 'Weex自动化测试元素定位方案'],
             ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore'],
             ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进'],
-            ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路']
+            ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路'],
             ['weex-third-party-extensions','Weex 三方插件']
           ],
           '/zh/download/':[
