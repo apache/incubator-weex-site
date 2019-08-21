@@ -31,7 +31,7 @@
           <dl><dt>Resources</dt>
             <dd><a href="/blog/write-a-blog.html" target="_self">Blog</a></dd>
             <dd><a href="/community/" target="_self">Community</a></dd>
-            <dd><a href="thanks" target="_self">Thanks (Weex)</a></dd>
+            <dd><a href="/thanks.html" target="_self">Thanks (Weex)</a></dd>
             <dd><a href="https://www.apache.org/security/" target="_self">Security</a></dd>
           </dl>
         </div>
