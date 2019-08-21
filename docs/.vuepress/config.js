@@ -93,7 +93,8 @@ module.exports = {
               title: 'Contribute',
               collapsable: false,
               children: [
-                ['contribute/how-to-contribute', 'Join Weex community']
+                ['contribute/how-to-contribute', 'Join Weex community'],
+                ['contribute/thanks', 'Thanks'],
               ]
             }
           ],
@@ -266,7 +267,8 @@ module.exports = {
               title: '贡献',
               collapsable: false,
               children: [
-                ['contribute/how-to-contribute', '加入 Weex 社区']
+                ['contribute/how-to-contribute', '加入 Weex 社区'],
+                ['contribute/thanks', '鸣谢'],
               ]
             }
           ],
