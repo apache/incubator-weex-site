@@ -79,44 +79,22 @@ Because the compiler tools are different between Weex and Vue, you have to handl
 Because of the platform difference and to improve the performance on the web, the `*.vue` file should be compiled in two different ways:
 
 + For the web platform, you can compile source files in any official way, such as [Webpack](https://webpack.js.org/) + [vue-loader](https://vue-loader.vuejs.org/en/) or Browserify + vueify.
-+ For Android and iOS platforms, you should use [weex-loader](https://github.com/weexteam/weex-loader) to compile the `*.vue` files.
 
++ For Android and iOS platforms,you can follow below steps:
+1. execute `git clone https://github.com/dingtalk-templates/webpack.git` in terminal
+2. cd `webpack/template`,and then execute `npm install` to install dependence.
+3. modify the content of `build/webpack.base.weex.conf.js`，in this file ,you should change the output-filename and input-filename.
+	```
+    entry: {
+        '<your-output-filename>': '<your-input-vue-filename>?entry=true'
+      },
+      output: {
+        path: path.resolve(__dirname, ',your-output-dir')
+      },
+  ```
+4. execute `npm run build:weex` in terminal,Done!
+ 
 Use different bundles for different platforms is to make good use of the platform original features and reduce compatibility code at build time. But the source code is still the same, the only difference is the way to compile it.
-
-### Use weex-loader
-
-[weex-loader](https://github.com/weexteam/weex-loader) is a [loader](https://webpack.js.org/concepts/loaders/#using-loaders) of webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader (v14)](https://vue-loader-v14.vuejs.org/en/).
-
-One thing should be noted that if the *entry* option of your Webpack config is a `*.vue` file, you also need to pass an additional `entry` parameter.
-
-```js
-const webpackConfig = {
-  // Add the entry parameter for the .vue file
-  entry: './path/to/App.vue?entry=true'
-
-  /* ... */
-
-  use: {
-    loaders: [{
-      // matches the .vue file path which contains the entry parameter
-      test: /\.vue(\?^^]+)?$/,
-      loaders: ['weex-loader']
-    }]
-  }
-}
-```
-
-**You don't need to write those additional parameters if you are using `.js` file as entry file.** It's a good practice to using javascript file as the entry file of webpack config.
-
-```Js
-{
-  entry: './path/to/entry.js'
-}
-```
-
-::: tip
-Always use javascript file as the entry file.
-:::
 
 ## Supported Features
 
