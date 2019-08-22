@@ -90,45 +90,11 @@ Vue 中的[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components
   output: {
     path: path.resolve(__dirname, ',your-output-dir')
   },
+```
 4. 在命令行执行`npm run build:weex`，完成。
-
 
 不同的平台使用不同的`bundles`，可以充分利用平台原有的特性，减少构建时的兼容性代码。但是源代码仍然是一样的，唯一的区别是编译它的方法。
 
-### 使用weex-loader
-
-[weex-loader](https://github.com/weexteam/weex-loader) 是一个 webpack 的 [loader](https://webpack.js.org/concepts/loaders/#using-loaders)，它能把`*.vue`文件转化为简单的javascript 模块用于安卓以及 iOS 平台。所有的特性和配置都是跟 [vue-loader](https://vue-loader-v14.vuejs.org/zh-cn/) 一样的。
-
-需要注意的是，如果 Webpack 的 *entry* 配置项是一个 `*.vue` 文件的话，你仍需要传递一个额外的 `entry` 参数作为标记。
-
-```js
-const webpackConfig = {
-  // Add the entry parameter for the .vue file
-  entry: './path/to/App.vue?entry=true'
-
-  /* ... */
-
-  use: {
-    loaders: [{
-      // matches the .vue file path which contains the entry parameter
-      test: /\.vue(\?^^]+)?$/,
-      loaders: ['weex-loader']
-    }]
-  }
-}
-```
-
-**如果你现在用的是`.js`文件做入口文件，你不需要写那些额外的参数。** 推荐 webpack 配置的入口文件使用 javascript 文件。
-
-```js
-{
-  entry: './path/to/entry.js'
-}
-```
-
-::: tip
-无论什么情况下都使用 javascript 文件作为入口文件。
-:::
 
 ## 支持的功能
 
