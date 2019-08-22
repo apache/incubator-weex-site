@@ -84,14 +84,14 @@ Because of the platform difference and to improve the performance on the web, th
 1. execute `git clone https://github.com/dingtalk-templates/webpack.git` in terminal
 2. cd `webpack/template`,and then execute `npm install` to install dependence.
 3. modify the content of `build/webpack.base.weex.conf.js`，in this file ,you should change the output-filename and input-filename.
-	```
+```
     entry: {
         '<your-output-filename>': '<your-input-vue-filename>?entry=true'
       },
       output: {
         path: path.resolve(__dirname, ',your-output-dir')
-      },
-  ```
+      }
+ ```
 4. execute `npm run build:weex` in terminal,Done!
  
 Use different bundles for different platforms is to make good use of the platform original features and reduce compatibility code at build time. But the source code is still the same, the only difference is the way to compile it.
