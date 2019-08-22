@@ -79,7 +79,19 @@ Vue 中的[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components
 因为平台的差异以及为了提高网络性能，`*.vue`文件需要用两种不同的方式来编译：
 
 + 对于 Web 平台来说，你可以用任何正式的方式来编译源文件，例如 使用 **[Webpack](https://webpack.js.org/) + [vue-loader](https://vue-loader.vuejs.org/en/)** 或者 **Browserify + vueify** 来编译`*.vue`文件。
-+ 对于安卓与 iOS 平台来说， 你需要使用 [weex-loader](https://github.com/weexteam/weex-loader) 来编译`*.vue`文件。
++ 对于安卓与 iOS 平台来说， 你可以使用以下的方式：
+1. 在命令行执行`git clone https://github.com/dingtalk-templates/webpack.git`
+2. cd `webpack/template`,然后执行`npm install`安装所需要的依赖
+3. 修改`build/webpack.base.weex.conf.js`的内容，在这个文件中填写编译的vue文件和输出的js文件，如下：
+```
+  entry: {
+    '<your-output-filename>': '<your-input-vue-filename>?entry=true'
+  },
+  output: {
+    path: path.resolve(__dirname, ',your-output-dir')
+  },
+4. 在命令行执行`npm run build:weex`，完成。
+
 
 不同的平台使用不同的`bundles`，可以充分利用平台原有的特性，减少构建时的兼容性代码。但是源代码仍然是一样的，唯一的区别是编译它的方法。
 
