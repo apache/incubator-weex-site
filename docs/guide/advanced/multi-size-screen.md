@@ -86,14 +86,25 @@ meta.setViewport({
 
 #### b. Use WXSDKInstance
 
+* iOS:  
 ```Objective-C
 WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 [instance setViewportWidth:800.f];
 ```
+* Android:  
+```Java
+WXSDKInstance instance = new WXSDKInstance(mContext);
+instance.setInstanceViewPortWidth(800);
+```
 
 ### 2. Set deviceWidth of a page
 
+::: danger 
+iOS only,Android not support yet
+:::
+
 <Badge text="v0.25+" type="warning"/>
+
 
 #### a. Use Meta Module
 
@@ -133,17 +144,28 @@ meta.setViewport({
 
 #### b. Use WXSDKInstance
 
+* iOS:  
 ```Objective-C
 WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 [instance setPageKeepRawCssStyles];
+```
+* Android:
+```Java
+WXSDKInstance instance = new WXSDKInstance(mContext);
+instance.setPageKeepRawCssStyles();
 ```
 
 ### 4. Force the page to relayout
 
 <Badge text="v0.25+" type="warning"/>
 
+* iOS:  
 ```Objective-C
 [instance reloadLayout];
+```
+* Android:  
+```Java
+instance.reloadPageLayout();
 ```
 
 ## Scenarios
@@ -159,11 +181,17 @@ If your app does not support screen rotation, you can ignore all issues above. W
 1. Let the page reserve all CSS style values.
 2. After screen rotation is done, use the code below to reset screen width for the page and trigger relayout.
 
+* iOS:
 ```Objective-C
 CGFloat w = [UIScreen mainScreen].bounds.size.width;
 CGFloat h = [UIScreen mainScreen].bounds.size.height;
 [_instance setPageRequiredWidth:w height:h];
 [_instance reloadLayout];
+```
+* Android:
+```Java
+instance.resetDeviceDisplayOfPage();
+instance.reloadPageLayout();
 ```
 
 You could use latest Playground to test the [demo](http://editor.weex.io/p/wqyfavor/scroller/commit/37810078ef963388b699b5ad7d5e9881)

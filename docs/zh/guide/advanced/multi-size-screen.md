@@ -10,9 +10,6 @@ has_chapter_content: true
 ## 简介
 
 本文将介绍 Weex 适配不同尺寸屏幕的方法以及横竖屏动态切换时如何自适应。
-::: danger 
-Android暂不支持
-:::
 
 ## Weex 如何将前端样式值转换为系统坐标值
 
@@ -79,18 +76,29 @@ dimension(UIKit) = 375 / 750 * 667 = 333.5
 ```Javascript
 const meta = weex.requireModule('meta');
 meta.setViewport({
-	width: 800
+    width: 800
 });
 ```
 
 #### 2. 使用 WXSDKInstance 的接口
 
+* iOS:  
 ```Objective-C
 WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 [instance setViewportWidth:800.f];
 ```
 
+* Android:  
+```Java
+WXSDKInstance instance = new WXSDKInstance(mContext);
+instance.setInstanceViewPortWidth(800);
+```
+
 ### 二、设置页面使用的 deviceWidth
+
+::: danger 
+Android暂不支持
+:::
 
 <Badge text="v0.25+" type="warning"/>
 
@@ -99,8 +107,8 @@ WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 ```Javascript
 const meta = weex.requireModule('meta');
 meta.setViewport({
-	deviceWidth: 375,
-	deviceHeight: 800
+    deviceWidth: 375,
+    deviceHeight: 800
 });
 ```
 
@@ -126,23 +134,34 @@ WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 ```Javascript
 const meta = weex.requireModule('meta');
 meta.setViewport({
-	reserveCssStyles: true
+    reserveCssStyles: true
 });
 ```
 
 #### 2. 使用 WXSDKInstance 的接口
 
+* iOS:  
 ```Objective-C
 WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 [instance setPageKeepRawCssStyles];
 ```
+* Android:
+```Java
+WXSDKInstance instance = new WXSDKInstance(mContext);
+instance.setPageKeepRawCssStyles();
+```
 
 ### 四、强制页面重新排版
 
-<Badge text="v0.25+" type="warning"/>
+<Badge text="v0.25+" type="warning"/> 
 
+* iOS:  
 ```Objective-C
 [instance reloadLayout];
+```
+* Android:  
+```Java
+instance.reloadPageLayout();
 ```
 
 ## 使用场景
@@ -157,11 +176,18 @@ WXSDKInstance* instance = [[WXSDKInstance alloc] init];
 
 1、设置页面保留原始 CSS 样式值
 2、当屏幕旋转完成后，调用以下接口设置新的屏幕尺寸，并重新排版
+
+* iOS:
 ```Objective-C
 CGFloat w = [UIScreen mainScreen].bounds.size.width;
 CGFloat h = [UIScreen mainScreen].bounds.size.height;
 [_instance setPageRequiredWidth:w height:h];
 [_instance reloadLayout];
+```
+* Android:
+```Java
+instance.resetDeviceDisplayOfPage();
+instance.reloadPageLayout();
 ```
 
 你可以使用最新 Playground 扫码[示例](http://editor.weex.io/p/wqyfavor/scroller/commit/37810078ef963388b699b5ad7d5e9881)
