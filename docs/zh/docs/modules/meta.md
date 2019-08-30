@@ -13,8 +13,16 @@ Weex 容器默认的宽度 (viewport) 是 750px，通过 setViewport 方法可�
 * **@options**
   * **`width`**，number，具体数值或 `"device-width"` 和 `"device-height"` 宏。
   * **`height`**，number，具体数据或 `"device-width"` 和 `"device-height"` 宏。
+  * **`deviceWidth`**，number。
+  ::: danger
+  Android暂不支持
+  :::
+  * **`deviceHeight`**，number。
+  ::: danger
+  Android暂不支持
+  :::
   * **`roundOffDeviation`** <Badge text="0.20.0+ & Android Only" type="warn" vertical="middle"/>，表示layout引擎在布局时会忽略小数点导致的误差；若发现组件拼接处有缝隙，可以将 `roundOffDeviation` 设置为false，此时layout引擎将自动填补小数点误差，默认值为 true。
-
+  * **`reserveCssStyles`**，设置为true保留页面样式，用于支持横竖屏切换,[文档](https://weex.apache.org/zh/guide/advanced/multi-size-screen.html)。
 ::: tip 注意
 * 需要注意的是：只有在页面渲染开始之前设置 viewport 才会生效。 也就是说，setViewport 方法只能在入口文件中使用，而且要在 new Vue(...) 之前调用；如果是在组件中使用，就只有在渲染到该组件的时候才会执行相应的代码，此时页面已经处于渲染过程中，设置 viewport 将不会再生效。
 * 宽度和高度的单位默认是 px，暂不支持其他单位。
@@ -34,6 +42,7 @@ const meta = weex.requireModule('meta');
 meta.setViewport({
   width: 640,
   roundOffDeviation: false
+  reserveCssStyles: true
 });
 
 App.el = '#root';

@@ -13,7 +13,17 @@ The default width (viewport) of Weex container is 750px. The `setViewport` metho
 * **@options**
   * **`width`**, number value or `"device-width"` or `"device-height"` macros.
   * **`height`**, number value or `"device-width"` or `"device-height"` macros.
+    * **`deviceWidth`**，number value.
+  ::: danger
+  iOS only,Android not support yet
+  :::
+  * **`deviceHeight`**，number value.
+  ::: danger
+  iOS only,Android not support yet
+  :::
   * **`roundOffDeviation`** <Badge text="0.20.0+" type="warn" vertical="middle"/>, The default value is true, which means that the layout engine ignores the error caused by the decimal point in the layout; if there is a gap in the component splicing, you can set the `roundOffDeviation` to false, and the layout engine will automatically fill in the decimal point error.
+  * **`reserveCssStyles`**,set true to let the page reserve all CSS style values,designed to support screen rotation
+,[document](https://weex.apache.org/guide/advanced/multi-size-screen.html)。
 
 ::: tip
 * Referance: W3C Spec [CSS Device Adaptation](https://drafts.csswg.org/css-device-adapt/#viewport-meta).
@@ -35,6 +45,7 @@ const meta = weex.requireModule('meta')
 meta.setViewport({
   width: 640,
   roundOffDeviation: false
+  reserveCssStyles: true
 })
 
 App.el = '#root'
