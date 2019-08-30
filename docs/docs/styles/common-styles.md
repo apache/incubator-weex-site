@@ -7,7 +7,7 @@ The supported styles is listed below, and some component may support custom styl
 :::
 
 ::: warning
-Weex supports `px`and `wx`(not affected by screen width and viewPortWidth) as length unit, `%`, `rem`, `em` are not supported.
+All Styles support `px` as length unit,part of them support `wx`. `%`, `rem`, `em` are not supported.Learn more at [CSS Units](https://weex.apache.org/docs/styles/css-units.html)
 :::
 
 ## Box Model
