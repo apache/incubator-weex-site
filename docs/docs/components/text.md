@@ -43,6 +43,10 @@ One can use the following code snippet to bind the content of text to a variable
 * Support [common events](../events/common-events.html)
 
 ## Other
+
+### `wx` unit
+`font-size`  and `line-height` support `wx` . For styles that should not be affected by screen width and viewPortWidth, please use `wx` as unit.
+
 ### Text height
 The rules for computed height of text component is complicated, basically but not always, text in Weex obey the following rules in order:
 1. The CSS style of `max-height`/`min-height` on your text
