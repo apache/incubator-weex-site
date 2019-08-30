@@ -45,6 +45,9 @@
 * 支持 [通用事件](../events/common-events.html)。
 
 ## 其他
+### wx单位
+`font-size`和`line-height`支持`wx`单位，可设置使样式不受屏幕宽度和viewportwidth影响。
+
 ### 文字高度
 文字高度的计算规则比较复杂，但大致上遵循以下优先级进行计算，排在前面的优先级最高。
 1. 文字节点的`max-height`/`min-height`样式。

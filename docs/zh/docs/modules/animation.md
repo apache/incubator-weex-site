@@ -68,13 +68,13 @@ animation.transition(ref1, {
 :::
 
 #### styles中支持动画的属性
-* **`width`**，`width`表示动画执行后应用到组件上的宽度值。如果你需要影响布局，设置`needLayout`为`true`。默认值为`computed width`。
-* **`height`**，`height`表示动画执行后应用到组件上的高度值。如果你需要影响布局，设置设置为 `needLayout`为`true`。默认值为`computed width`。
+* **`width`**，`width`表示动画执行后应用到组件上的宽度值。如果你需要影响布局，设置`needLayout`为`true`。默认值为`computed width`。支持`wx`单位。
+* **`height`**，`height`表示动画执行后应用到组件上的高度值。如果你需要影响布局，设置设置为 `needLayout`为`true`。默认值为`computed width`。支持`wx`单位。
 * **`backgroundColor`**，`backgroundColor`动画执行后应用到组件上的背景颜色，默认值为computed backgroundColor。
 * **`opacity`**，`opacity`表示动画执行后应用到组件上的不透明度值，默认值为computed opacity。
 * **`transformOrigin`**，`transformOrigin`定义变化过程的中心点，如`transformOrigin: x-axis y-axis` 参数 `x-axis` 可能的值为 `left`、`center`、`right`、长度值或百分比值，参数 `y-axis` 可能的值为 `top`、`center`、`bottom`、长度值或百分比。默认值为`center center`。
-* **`transform`**，`transform`变换类型，可能包含rotate`，`translate`，`scale`及其他属性。默认值为空。
-  * `translate`/`translateX`/`translateY`指定元素要移动到的位置。单位是长度或百分比，默认值是0.
+* **`transform`**，`transform`变换类型，可能包含rotate`，`translate`，`scale`及其他属性。默认值为空。支持 
+  * `translate`/`translateX`/`translateY`指定元素要移动到的位置。单位是长度或百分比，默认值是0。支持`wx`单位。
   * `rotate`/`rotateX`/`rotateY`**v0.16+** 指定元素将被旋转的角度。单位是度 *角度度*，默认值是0
   * `scale`/`scaleX`/`scaleY`按比例放大或缩小元素。单位是数字，默认值是1
   * `perspective`**v0.16+** 观察者距离z=0平面的距离，在**Android 4.1**及以上有效。单位值数字，默认值为正无穷。

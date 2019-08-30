@@ -70,13 +70,13 @@ Ref [transition](../styles/common-styles.html#property) or [transform](../styles
 :::
 
 #### Animated properties in styles
-* **`width`**, the `width` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed width`.
-* **`height`**, the `height` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed height`.
+* **`width`**, the `width` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed width`.support `wx` as unit.
+* **`height`**, the `height` applied to the component after the animation finished. Set `needLayout` to true if you want the change to be persistence. The default value is `computed height`.support `wx` as unit.
 * **`backgroundColor`**, the `backgroundColor` applied to the component after the animation finished. The default value is `computed backgroundColor`.
 * **`opacity`**, the `opacity` applied to the component after the animation finished. The default value is `computed opacity`.
 * **`transformOrigin`**, the `transformOrigin` indicate the pivot of the element being animated. The possible values for `x-axis` are `left`/`center`/`right`/length or percent, and possible values of `y-axis` are `top`/`center`/`bottom`/ length or percent. The default value is `center center`.
 * **`transform`**, transform object, which may include `rotate`, `translate`, `scale` and etc. The detail of  transform is illustrated below.
-  * `translate/translateX/translateY`: Specify the location which the element will be translated to.The unit is number or percent and the default value is 0.
+  * `translate/translateX/translateY`: Specify the location which the element will be translated to.The unit is number or percent and the default value is 0.support `wx` as unit.
   * `rotate/rotateX/rotateY`**v0.14+**: Specify the angle of which the element will be rotated. The unit is **degree** and the default value is 0.
   * `perspective`**v0.16+**: The distance between the z=0 plane and the user. Supported for **Android 4.1** and above. The unit is number and the default value is positive infinity.
   * `scale/scaleX/scaleY`: Stretch or shrink the element. The unit is number and the default value is 1.
