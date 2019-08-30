@@ -62,7 +62,7 @@ Weex 主要用于编写多页的应用程序，每个页面都对应了原生开
 
 ## 单文件组件
 
-Vue 中的[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)（即`*.vue`文件）是一种特殊的文件格式，扩展名为`.vue`。这个模板会在构建时便于到`render`函数里。
+Vue 中的[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)（即`*.vue`文件）是一种特殊的文件格式，扩展名为`.vue`。这个模板会在构建时编译到`render`函数里。
 
 此外，所有的编辑器里都支持一个好的[语法高亮插件](https://github.com/vuejs/awesome-vue#source-code-editing)。
 
