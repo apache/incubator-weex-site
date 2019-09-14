@@ -118,6 +118,57 @@ const webpackConfig = {
 Always use javascript file as the entry file.
 :::
 
+**Example of using weex-loader compile targets**
+1. execute `npm init` in terminal
+2. update `package.json`，add belows content into it
+```
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "weex-loader": "^0.7.12",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+```
+3. create `webpack.config.js`,modify `<your-input-file>` and `<your-output-file>`
+```
+const webpack = require('webpack');
+const path = require('path');
+module.exports = {
+  entry: '<your-input-file>',
+  output: {
+    path: path.resolve(__dirname, './'),
+    filename: <your-output-file>
+  },
+  module: {
+	    rules: [
+	      {
+	        test: /\.vue(\?[^?]+)?$/,
+	        loaders: ['weex-loader']
+	      },
+	      {
+	        test: /\.js$/,
+	        loaders: ['babel-loader']
+	      }
+	    ]
+	  },
+	plugins: [
+		new webpack.BannerPlugin({
+			raw: true ,
+			banner: '// { "framework": "Vue" }\n'
+		})
+	]
+}
+```
+4. execute `npm run build` in terminal
+5. Done 
+
+**使用weex compile编译**
+1. install [weex-toolkit](https://weex.apache.org/tools/toolkit.html#system-components)：`npm install weex-toolkit -g`
+2. execute `weex compile [resource file] [product address]`
+3. Done
+
 ## Supported Features
 
 ### Global Config
