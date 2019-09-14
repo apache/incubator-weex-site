@@ -164,7 +164,7 @@ module.exports = {
 4. execute `npm run build` in terminal
 5. Done 
 
-**使用weex compile编译**
+**Example of using weex-toolkit compile targets**
 1. install [weex-toolkit](https://weex.apache.org/tools/toolkit.html#system-components)：`npm install weex-toolkit -g`
 2. execute `weex compile [resource file] [product address]`
 3. Done
