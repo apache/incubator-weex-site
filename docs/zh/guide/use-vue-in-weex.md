@@ -162,11 +162,13 @@ module.exports = {
 	]
 }
 ```
-4. 执行`npm run build`,完成。
+4. 执行`npm run build`。
+5. 完成。
 
 **使用weex compile编译**
 1. 安装[weex-toolkit](https://weex.apache.org/zh/tools/toolkit.html#安装)：`npm install weex-toolkit -g`
-2. 执行`weex compile [资源文件] [产物地址]`命令，完成。
+2. 执行`weex compile [资源文件] [产物地址]`命令
+3. 完成。
 
 ## 支持的功能
 
