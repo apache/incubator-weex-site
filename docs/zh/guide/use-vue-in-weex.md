@@ -118,6 +118,58 @@ const webpackConfig = {
 无论什么情况下都使用 javascript 文件作为入口文件。
 :::
 
+**使用weex-loader单文件编译示例**
+1. 执行`npm init`
+2. 修改`package.json`文件，向其中添加：
+```
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "weex-loader": "^0.7.12",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+```
+3. 创建`webpack.config.js`,按照你的需要更改。
+```
+const webpack = require('webpack');
+const path = require('path');
+
+module.exports = {
+  entry: '<your-input-file>',
+  output: {
+    path: path.resolve(__dirname, './'),
+    filename: <your-output-file>
+  },
+  module: {
+	    rules: [
+	      {
+	        test: /\.vue(\?[^?]+)?$/,
+	        loaders: ['weex-loader']
+	      },
+	      {
+	        test: /\.js$/,
+	        loaders: ['babel-loader']
+	      }
+	    ]
+	  },
+	plugins: [
+		new webpack.BannerPlugin({
+			raw: true ,
+			banner: '// { "framework": "Vue" }\n'
+		})
+	]
+}
+```
+4. 执行`npm run build`。
+5. 完成。
+
+**使用weex compile编译**
+1. 安装[weex-toolkit](https://weex.apache.org/zh/tools/toolkit.html#安装)：`npm install weex-toolkit -g`
+2. 执行`weex compile [资源文件] [产物地址]`命令
+3. 完成。
+
 ## 支持的功能
 
 ### 全局配置
