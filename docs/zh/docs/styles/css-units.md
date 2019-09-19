@@ -2,27 +2,13 @@
 
 ## CSS 长度单位
 
-在 Weex 中，**所有样式支持`px`长度单位，部分样式支持`wx`**。
+在 Weex 中，我们**支持 `px`和`wx` 长度单位**。对于不希望受屏幕宽度和 viewPortWidth 影响的尺寸，请使用 `wx` 单位。
 
 ::: warning 注意
 - Weex 不支持类似 `em`、`rem`、`pt`,`%` 这样的 CSS 标准中的其他长度单位；
 - 单位 `px`或`wx` 不可省略，否则在 H5 环境无法正确渲染；
 :::
 
-### wx单位
-使用 `wx` 单位可使尺寸不受屏幕宽度和 viewPortWidth 影响。以下是支持`wx`单位的样式。
-* 通用盒模型：
-  *  `width {length}`
-  *  `height {length}`
-  *  `padding {length}`
-  *  `margin {length}`
-  *  `border-width {length}`
-* Transform：
-  *  `translate {length}`
-* 文本样式：
-  *  `font-size {number}`
-  *  `line-height {length}`
-  
 ## CSS 数值单位
 
 在 Weex 中，除了长度单位外，还有数值单位，仅仅一个数值，后面没有 `px` 等单位。用于 `opacity`，`lines`，`flex` 等属性指定一个纯数值。

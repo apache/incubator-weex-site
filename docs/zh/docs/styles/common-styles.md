@@ -7,7 +7,7 @@ Weex所支持的通用样式已在本文档中全部列出，一些组件可能�
 :::
 
 ::: warning
-对于长度值，Weex所有样式均支持`px`单位，部分样式支持`wx`单位，不支持相对单位（`em`、`rem`），详见[CSS单位](https://weex.apache.org/zh/docs/styles/css-units.html)。
+Weex 对于长度值目前只支持`px`和`wx`（不受屏幕宽度和viewPortWidth影响），不支持相对单位（`em`、`rem`）。
 :::
 
 ## 盒模型
