@@ -2,8 +2,7 @@
 
 ## CSS `length` unit
 
-All Styles support `px` as length unit,part of them support `wx`. 
-
+`px` 、`wx` are supported as length units. For styles that should not be affected by screen width and viewPortWidth, please use `wx` as unit.
 
 ::: danger
 Ignoring `px` or  `wx` will cause render error on Webview.
@@ -13,20 +12,6 @@ Ignoring `px` or  `wx` will cause render error on Webview.
 `em`、`rem`、`pt`, `%`, etc. are not supported. 
 :::
 
-###  `wx` unit
-Please use  `wx` as unit for styles that should not be affected by screen width and viewPortWidth.The following are the styles that support `wx` unit.
-* Box Model
-  *  `width {length}`
-  *  `height {length}`
-  *  `padding {length}`
-  *  `margin {length}`
-  *  `border-width {length}`
-* Transform：
-  *  `translate {length}`
-* Text Styles:
-  *  `font-size {number}`
-  *  `line-height {length}`
-  
 ## CSS `number` units
 
 CSS `number` unit is a pure number without `px`, styles like `opacity`，`lines`，`flex` only accept `number` unit, you can find detail in [common-style](./common-styles.html).
