@@ -2,7 +2,7 @@
 
 ## Summary
 
-`<recycle-list>`  is a new list container with the ability to recycle and reuse, which can greatly optimize memory usage and rendering performance.
+`<recycle-list>`  is a new  vertical or horizontal list container with the ability to recycle and reuse, which can greatly optimize memory usage and rendering performance.
 
 > * Please refer to [Design.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md) for design ideas. For details, please refer to  [Implementation.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md)
 > * This feature is partially dependent on the build tool, please ensure that the version of weex-loader is up to date (v0.7.2+)
@@ -46,6 +46,8 @@
   </cell-slot>
 </recycle-list>
 ```
+* `scrollDirection`  
+  Value vertical or horizontal
 
 ## Recyclable component
 Subcomponents used in `<recycle-list>` will also be treated as templates, and the recyclable attribute will be added to the `<template> `tag when developing the component before it can be used in `<recycle-list>`.
