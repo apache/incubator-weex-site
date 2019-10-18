@@ -48,7 +48,7 @@ Weex 研发流程的文档被放置于 [Confluence](https://cwiki.apache.org/con
 * [Road Map](https://cwiki.apache.org/confluence/x/fJBTBw)
 
 ## 贡献文档或代码
-提交代码 *Pull Request* 并不是参与 Weex 贡献的唯一方式，在Weex社区中，**文档和一样重要**，并尊重所有开发者对 Weex 文档或代码的贡献。
+提交代码 *Pull Request* 并不是参与 Weex 贡献的唯一方式，在Weex社区中，**文档和代码一样重要**，并尊重所有开发者对 Weex 文档或代码的贡献。
 
 :::tip
 Weex 采用了 Apache License 2.0，请确保你的贡献符合Apache License 2.0的约束。
