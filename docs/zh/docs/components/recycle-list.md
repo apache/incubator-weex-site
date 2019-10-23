@@ -2,7 +2,7 @@
 
 ## 简介
 
-`<recycle-list>` 是一个新的列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。
+`<recycle-list>` 是一个新的支持竖向或横向的列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。
 > * 设计思路请参考 [Design.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Design.md)，具体的实现细节请参考 [Implementation.md](https://github.com/Hanks10100/weex-native-directive/blob/master/Implementation.md)
 > * 该功能部分依赖于编译工具，请确保 weex-loader 的版本升级到最新（v0.7.2+）
 > * 使用最新版的 playground app（SDK 版本 0.18.0 及以上）才可以扫码查看原生效果，也可以直接使用dotwe查看Web预览效果
@@ -44,6 +44,8 @@
   </cell-slot>
 </recycle-list>
 ```
+* `scrollDirection`  
+  取值vertical或horizontal
 
 ## 可复用的组件
 在 `<recycle-list>` 中使用的子组件也将被视为模板，在开发组件时给 `<template>` 标签添加 recyclable 属性，才可以用在 `<recycle-list>` 中。
