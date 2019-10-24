@@ -188,7 +188,8 @@ module.exports = {
             ['weex-third-party-extensions','List of Third Party Plugin']
           ],
           '/download/':[
-             ['download', "Source Download"] 
+             ['download', "Source Download"],
+             ['major_change', 'Major Change'] 
           ]
         }
       },
@@ -365,7 +366,8 @@ module.exports = {
             ['weex-third-party-extensions','Weex 三方插件']
           ],
           '/zh/download/':[
-            ['download', "源代码下载"] 
+            ['download', "源代码下载"],
+            ['major_change', '重大变更']
           ]
         }
       }

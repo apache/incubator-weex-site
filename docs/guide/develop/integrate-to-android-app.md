@@ -1,16 +1,9 @@
----
-title: Integrate to Your App
-type: guide
-group: Overview
-order: 1.3
-version: 2.1
----
-
-<!-- toc -->
-
 # Integrate to Android App
-::: warning 
-Considering the package size, Android x86 is not supported for the moment.  
+::: tip
+Currently, Weex supports the following [ABIs](https://developer.android.com/ndk/guides/abis.html):
+* x86
+* armeabi-v7a
+* arm64-v8a
 :::
 
 The following documents assume that you already have a certain Android development experience.
@@ -22,13 +15,18 @@ The following documents assume that you already have a certain Android developme
 
 ## 1. Configure dependency 
 
-edit `build.gradle`
+::: tip
+**Since 0.28.0, Weex would publish two convince binary in each release, please [read the documentation about the detail](../../download/major_change.html).**
+:::
 
-```javascript
+```
 dependencies {
     ...
-    // weex sdk and fastjson
-    compile 'com.taobao.android:weex_sdk:0.20.0.2@aar'
+    // Choose one of the following sdk of weex.
+    //compile 'org.apache.weex:sdk:0.28.0'
+    //compile 'org.apache.weex:sdk_legacy:0.28.0'
+
+    // fastjson
     compile 'com.alibaba:fastjson:1.1.46.android'
 
     //support library dependencies
