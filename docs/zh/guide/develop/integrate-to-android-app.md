@@ -1,16 +1,9 @@
----
-title: Integrate to Your App
-type: guide
-group: Overview
-order: 1.3
-version: 2.1
----
-
-<!-- toc -->
-
 # 集成到Android应用
-::: warning
-考虑到包大小的问题, 暂不提供 Android x86 so 的支持.
+::: tip
+目前，Weex 支持以下 [ABI](https://developer.android.com/ndk/guides/abis.html):
+* x86
+* armeabi-v7a
+* arm64-v8a
 :::
 
 在执行以下步骤之前，请先确认您的Android开发环境是ok的。
@@ -21,13 +14,18 @@ version: 2.1
 
 
 ## 1. 设置gradle依赖
-
+::: tip
+从 0.28.0 开始，Weex 每次 Release 都将会发布两个二进制版本，请[阅读文档了解它们的区别](../../download/major_change.html)
+:::
 
 ```
 dependencies {
     ...
-    // weex sdk and fastjson
-    compile 'com.taobao.android:weex_sdk:0.20.0.2@aar'
+    // 以下两个 weex_sdk 版本二选一
+    //compile 'org.apache.weex:sdk:0.28.0'
+    //compile 'org.apache.weex:sdk_legacy:0.28.0'
+
+    // fastjson
     compile 'com.alibaba:fastjson:1.1.46.android'
 
     //support library dependencies

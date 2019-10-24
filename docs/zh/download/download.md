@@ -12,17 +12,24 @@
 :::
 
 # 最新版本
+## 0.28.0
+* 发布日期 2019年10月23日
+* [变更记录](https://github.com/apache/incubator-weex/releases/tag/0.28.0)
+* [源代码](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.28.0/apache-weex-incubating-0.28.0-src.tar.gz&action=download) | [签名](https://www.apache.org/dist/incubator/weex/0.28.0/apache-weex-incubating-0.28.0-src.tar.gz.asc) | [哈希](https://dist.apache.org/repos/dist/release/incubator/weex/0.28.0/apache-weex-incubating-0.28.0-src.tar.gz.sha512)
+* 二进制下载渠道
+    * Android 
+        * **从 0.28.0 开始，Weex 每次 Release 都将会发布两个二进制版本，请[阅读文档了解它们的区别](major_change.html)**
+        * `compile 'org.apache.weex:sdk:0.28.0'`
+        * `compile 'org.apache.weex:sdk_legacy:0.28.0'`
+    * iOS 
+        `pod "WeexSDK","0.28.0"
+
+# 历史版本
 ## 0.26.0
 * 发布日期 2019年7月11日
 * [变更记录](https://github.com/apache/incubator-weex/releases/tag/0.26.0)
-* [源代码](https://www.apache.org/dyn/closer.cgi?filename=incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz&action=download) | [签名](https://www.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.asc) | [哈希](https://dist.apache.org/repos/dist/release/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.sha512)
-* 二进制下载渠道
-    * Android 
-        `compile 'com.taobao.android:weex_sdk:0.26.0'`
-    * iOS 
-        `pod "WeexSDK", "0.26.0"`
+* [源代码](https://archive.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz) | [签名](ttps://archive.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.asc) | [哈希](https://archive.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.sha512)
 
-# 历史版本
 ## 0.24.0
 * 发布日期 2019年5月23日
 * [变更记录](https://github.com/apache/incubator-weex/releases/tag/0.24.0)
