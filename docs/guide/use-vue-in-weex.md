@@ -58,9 +58,13 @@ Moreover, the [keyboard event modifiers](https://vuejs.org/v2/guide/events.html#
 
 ## The Web Renderer
 
-If you want to render your page on the web, you need to require the [weex-vue-render](https://github.com/weexteam/weex-vue-render) to achieve it.
+If you want to render your page on the web, you need to require the [vue-render-for-apache-weex](https://github.com/weexteam/weex-vue-render) to achieve it.
 
-`weex-vue-render` is a web renderer for Vue DSL, it implemented the built-in components and built-in modules of Weex on the web. Please refer to [its repo](https://github.com/weexteam/weex-vue-render) for more details.
+::: warning
+`vue-render-for-apache-weex` is a third party plugin, and is not developed nor maintained by Apache Weex
+:::
+
+`vue-render-for-apache-weex` is a web renderer for Vue DSL, it implemented the built-in components and built-in modules of Weex on the web. Please refer to [its repo](https://github.com/weexteam/weex-vue-render) for more details.
 
 ## Single File Component
 
@@ -79,13 +83,13 @@ Because the compiler tools are different between Weex and Vue, you have to handl
 Because of the platform difference and to improve the performance on the web, the `*.vue` file should be compiled in two different ways:
 
 + For the web platform, you can compile source files in any official way, such as [Webpack](https://webpack.js.org/) + [vue-loader](https://vue-loader.vuejs.org/en/) or Browserify + vueify.
-+ For Android and iOS platforms, you should use [weex-loader](https://github.com/weexteam/weex-loader) to compile the `*.vue` files.
++ For Android and iOS platforms, you should use [weex-loader](https://github.com/apache/weex-loader) to compile the `*.vue` files.
 
 Use different bundles for different platforms is to make good use of the platform original features and reduce compatibility code at build time. But the source code is still the same, the only difference is the way to compile it.
 
 ### Use weex-loader
 
-[weex-loader](https://github.com/weexteam/weex-loader) is a [loader](https://webpack.js.org/concepts/loaders/#using-loaders) of webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader (v14)](https://vue-loader-v14.vuejs.org/en/).
+[weex-loader](https://github.com/apache/weex-loader) is a [loader](https://webpack.js.org/concepts/loaders/#using-loaders) of webpack that can transform `*.vue` file into a plain javascript module for Android and iOS platform. All features and configurations of it are same with [vue-loader (v14)](https://vue-loader-v14.vuejs.org/en/).
 
 One thing should be noted that if the *entry* option of your Webpack config is a `*.vue` file, you also need to pass an additional `entry` parameter.
 
@@ -164,8 +168,8 @@ module.exports = {
 4. execute `npm run build` in terminal
 5. Done 
 
-**Example of using weex-toolkit compile targets**
-1. install [weex-toolkit](https://weex.apache.org/tools/toolkit.html#system-components)：`npm install weex-toolkit -g`
+**Example of using weex-cli compile targets**
+1. install [weex-cli](https://weex.apache.org/develop/weex_cli.html#system-components)：`npm install weex-toolkit -g`
 2. execute `weex compile [resource file] [product address]`
 3. Done
 

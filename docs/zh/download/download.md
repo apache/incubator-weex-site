@@ -29,6 +29,11 @@
 * 发布日期 2019年7月11日
 * [变更记录](https://github.com/apache/incubator-weex/releases/tag/0.26.0)
 * [源代码](https://archive.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz) | [签名](ttps://archive.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.asc) | [哈希](https://archive.apache.org/dist/incubator/weex/0.26.0/apache-weex-incubating-0.26.0-src.tar.gz.sha512)
+* 二进制下载渠道
+    * Android 
+        `compile 'com.taobao.android:weex_sdk:0.26.0'`
+    * iOS 
+        `pod "WeexSDK","0.26.0"`
 
 ## 0.24.0
 * 发布日期 2019年5月23日

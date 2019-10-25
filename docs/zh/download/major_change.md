@@ -3,7 +3,10 @@
 
 # 版本
 ## 0.28
-**下述在 0.28 中的重大变更只影响 Android 用户。**
+::: tip
+下述在 0.28 中的重大变更只影响 Android 用户。
+:::
+
 ### Android
 #### Java 包名
 由于 Weex 在捐献给 ASF(Apache Software Foundation) 前隶属于阿里巴巴集团(淘宝的母公司)，因此在 `0.28.0` 之前，Android 代码中的 Java 包名是 `com.taobao.weex`

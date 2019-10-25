@@ -1,10 +1,10 @@
 # Setup Develop Environment
 
-Using [Weex Online Editor]((http://editor.weex.io/) is a good choice, but if you want to develop locally on your own machine, you will need to set up your develop environment.
+Using [Online Editor](http://dotwe.org/vue) is a good choice, but if you want to develop locally on your own machine, you will need to set up your develop environment.
 
 ## Install
 
-You will need Node.js and the [Weex CLI](https://github.com/weexteam/weex-toolkit).
+You will need Node.js and the [Weex CLI](https://github.com/apache/weex-cli).
 
 There are many ways to install Node.js. The easiest way is to download the executable directly from [Node.js official website] (https://nodejs.org/en/).
 

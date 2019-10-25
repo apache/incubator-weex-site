@@ -1,10 +1,11 @@
 # What is Weex?
 
-<!-- toc -->
+::: tip
 
-> **Weex is a framework for building high-performance cross-platform mobile applications with a modern web development experience.**
+Weex is a framework for building high-performance cross-platform mobile applications with a modern web development experience.
 
-> You can pronounce "*Weex*" as /wiːks/, just like "*Weeks*".
+You can pronounce "*Weex*" as /wiːks/, just like "*Weeks*".
+:::
 
 Weex enables developers to use modern web development skills to build Android, iOS, and Web apps with a single codebase. In practice, you can use JavaScript with modern front-end frameworks to develop mobile apps.
 
@@ -14,8 +15,12 @@ The structure of Weex is decoupled. The render engine is separated from the synt
 
 To have a glance of the abilities of Weex, it is very simple.
 
-* Install [WeexPlayground](http://weex.apache.org/tools/playground.html). In the playground you can try various demos.
-* Visit [Weex online playground](http://dotwe.org/vue). On this site, you can write and run single page demos using Vue.js. And you can use WeexPlayground app to scan the demo.
+* Install [Weex Playground](https://weex.apache.org/zh/guide/playground.html). In the playground you can try various demos.
+* Visit [Online Editor](http://dotwe.org/vue). On this site, you can write and run single page demos using Vue.js. And you can use WeexPlayground app to scan the demo.
+
+::: tip
+Though Weex Playground is a part of Apache Weex, but Online Editor isn't.
+:::
 
 Here is an [example](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380) written in Weex and Vue.js which will give you an overall view of how Weex works:
 

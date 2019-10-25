@@ -2,7 +2,11 @@
 Vue.js 是一个独立的前端框架，在浏览器中渲染时不需要基于 Weex 容器。因此，针对 Weex 平台扩展 Vue.js 的 Web 端组件，和直接使用 Vue.js 开发一个 Web 组件是一样的。具体的组件编写方法可以参考其官方文档：[组件](https://cn.vuejs.org/v2/guide/docss.html) ，另外建议使用 `.vue` 格式的文件编写组件，使用方法参考：[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)。
 
 ## 扩展内置组件
-目前我们提供了 [weex-vue-render](https://github.com/weexteam/weex-vue-render) 作为 Vue 2.x Web 端的渲染器。引入该库到项目里，即可使用 `weex.registerComponent` 来进行内置组件扩展，也可以使用 `Vue.component`，两者基本上是一致的。
+目前我们提供了 [Vue Render For Apache Weex](https://github.com/weexteam/vue-render-for-apache-weex) 作为 Vue 2.x Web 端的渲染器。引入该库到项目里，即可使用 `weex.registerComponent` 来进行内置组件扩展，也可以使用 `Vue.component`，两者基本上是一致的。
+
+::: tip
+Vue Render For Apache Weex 是三方插件, 不由 Apache Weex 开发或维护。
+:::
 
 以扩展 `<sidebar>` 为例，首先应该编写组件自身的逻辑：
 ```vue

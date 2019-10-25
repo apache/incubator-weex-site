@@ -3,7 +3,10 @@ This page introduces the break change of Weex, you can visit [GitHub page](https
 
 # Version
 ## 0.28
-**The following three major change in 0.28 only affects Android developers**
+::: tip
+The following three major change in 0.28 only affects Android developers.
+:::
+
 ### Android
 #### Package name
 Due to the fact that Weex was a software of Alibaba Group (the mother company of Taobao Software Cooperation, ltd.) before donated to ASF (Apache Software Foundation),the Android package name of Weex was `com.taobao.weex` before Weex 0.28.0 released. 
@@ -13,17 +16,17 @@ Since Weex 0.28.0, the package name of Android(i.e. Java) files was changed to `
 #### GroupId and artifactId in JCenter
 Due to the fact that Weex was a software of Alibaba Group (the mother company of Taobao Software Cooperation, ltd.) before donated to ASF (Apache Software Foundation),Weex Android was under `com.taobao.android:weex_sdk` in JCenter before Weex 0.28.0 release.
 
-Since 0.28.0, Weex provides a convince library in JCenter with the following groupId and artifactId:
+Since 0.28.0, Weex provides a convenience library in JCenter with the following groupId and artifactId:
 * `org.apache.weex:sdk` is the currently stable package of Weex, where all Java files are under the package of `org.apache.weex`.
 * `org.apache.weex:sdk_legacy` is the legacy package of Weex, where all Java files are under the package of `com.taobao.weex`. This artifact may not be maintained in the future, please upgrade to the new package name when it's possible for you.
 
 #### JavaScript Interpreter
-Before Weex 0.28.0, Weex Android relied and bundled [JavaScriptCore](https://github.com/alibaba/weex_js_engine/tree/bridge_branch_mergeTimer) into its convince binary(i.e. aar), and this approach have the following disadvantage:
+Before Weex 0.28.0, Weex Android relied and bundled [JavaScriptCore](https://github.com/alibaba/weex_js_engine/tree/bridge_branch_mergeTimer) into its convenience binary(i.e. aar), and this approach have the following disadvantage:
 * JavaScriptCore is partly licensed under BSD, partly licensed under LGPL, which is against the [License policy of ASF](https://apache.org/legal/resolved.html#category-a)
-* Users of Weex has no choice of JavaScript Interpreter if we continue bundling JavaScriptCore in convince binary.
+* Users of Weex has no choice of JavaScript Interpreter if we continue bundling JavaScriptCore in convenience binary.
 * The JavaScriptCore Weex used is a pruning version of [official JavaScriptCore](https://svn.webkit.org/repository/webkit/releases/WebKitGTK/webkit-2.17.4/Source/JavaScriptCore/) in 2016 and not update since that time, which means we might miss a lot of new features.
 
-Since Weex 0.28.0, the JavaScript Interpreter is not bundled in the convince binary anymore, users have the freedom of using whatever JavaScript Interpreter they want as long as they implement the [same interface](https://svn.webkit.org/repository/webkit/releases/WebKitGTK/webkit-2.27.1/Source/JavaScriptCore/API/). 
+Since Weex 0.28.0, the JavaScript Interpreter is not bundled in the convenience binary anymore, users have the freedom of using whatever JavaScript Interpreter they want as long as they implement the [same interface](https://svn.webkit.org/repository/webkit/releases/WebKitGTK/webkit-2.27.1/Source/JavaScriptCore/API/). 
 
 This means users have to bundle a JavaScript Interpreter in their APP to run Weex. For users who don't have idea about how to choose JavaScript Interpreter, one can insert the following code snippet into the `build.gradle` of the app:
 

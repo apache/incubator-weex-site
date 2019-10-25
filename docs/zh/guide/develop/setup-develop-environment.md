@@ -1,23 +1,21 @@
 # 设置开发环境
 
-使用 [Weex Online Editor](http://editor.weex.io/) 对 Weex 尝鲜是一个不错的选择，但如果你想更专业的开发 Weex，本节会教你如何搭建本地开发环境进行 Weex 开发。
+使用 [Online Editor](http://dotwe.org/vue) 对 Weex 尝鲜是一个不错的选择，但如果你想更专业的开发 Weex，本节会教你如何搭建本地开发环境进行 Weex 开发。
 
 ## 安装依赖
 
-Weex 官方提供了`weex-toolkit` 的脚手架工具来辅助开发和调试。
+Weex 官方提供了`weex-cli` 的脚手架工具来辅助开发和调试。
 
-首先，你需要 Node.js 和 [Weex CLi](https://github.com/weexteam/weex-toolkit)。
+首先，你需要 Node.js 和 [Weex CLI](https://github.com/apache/weex-cli)。
 
 安装 Node.js 方式多种多样，最简单的方式是在 [Node.js 官网](https://nodejs.org/en/) 下载可执行程序直接安装即可。
 
 > 更多安装方式可参考 [Node.js 官方信息](https://nodejs.org/en/download/)
 
-::: Tip
-
+::: tip
 通常，安装了 Node.js 环境，npm 包管理工具也随之安装了。因此，直接使用 npm 来安装 `weex-toolkit`, 你也可以通过 `yarn` 来进行安装。
 
 国内的开发者推荐将npm镜像切换至 Taobao NPM 镜像 `https://registry.npm.taobao.org`。
-
 :::
 
 运行下面的命令安装最新的beta版本工具：
