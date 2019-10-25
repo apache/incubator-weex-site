@@ -357,9 +357,9 @@ alias:
   cn/doc/references/events/blur.html: cn/references/index.html
   cn/doc/references/events/input.html: cn/references/index.html
   cn/doc/references/events/focus.html: cn/references/index.html
-  guide/tools/toolkit.html: tools/toolkit.html
-  guide/tools/devtools.html: tools/toolkit.html
-  guide/tools/weexpack.html: tools/toolkit.html
+  guide/tools/toolkit.html: develop/weex_cli.html
+  guide/tools/devtools.html: develop/weex_cli.html
+  guide/tools/weexpack.html: develop/weex_cli.html
   guide/tools/plugin.html: tools/helpers.html
   guide/contributing.html: contributing.html
   guide/intro/how-it-works.html: wiki/index.html
@@ -396,9 +396,9 @@ alias:
   references/advanced/integrate-devtool-to-ios.html: guide/integrate-devtool-to-ios.html
   playground.html: tools/playground.html
   faq.html: wiki/faq.html
-  cn/guide/tools/toolkit.html: cn/tools/toolkit.html
-  cn/guide/tools/devtools.html: cn/tools/toolkit.html
-  cn/guide/tools/weexpack.html: cn/tools/toolkit.html
+  cn/guide/tools/toolkit.html: cn/develop/weex_cli.html
+  cn/guide/tools/devtools.html: cn/develop/weex_cli.html
+  cn/guide/tools/weexpack.html: cn/develop/weex_cli.html
   cn/guide/tools/plugin.html: cn/tools/helpers.html
   cn/guide/contributing.html: cn/contributing.html
   cn/guide/intro/how-it-works.html: cn/wiki/index.html

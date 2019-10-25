@@ -2,13 +2,17 @@
 
 > 以下步骤假设您已经了解了 Node.js 和 npm 的基本知识。如果对它们不熟悉，可以访问 [https://docs.npmjs.com/](https://docs.npmjs.com/) 来了解更多关于 npm 的用法。
 
-Weex 提供了一个命令行工具 [weex-toolkit](../../tools/toolkit.html) 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。
+Weex 提供了一个命令行工具 [weex-cli](./weex_cli.html) 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。
 
-目前 `weex-toolkit` 只支持创建 Vue.js 的项目。创建 Rax 的项目可以使用 `rax-cli`，参考 [Rax 的官方网站](https://alibaba.github.io/rax/) 了解其用法。
+目前 `weex-cli` 只支持创建 Vue.js 的项目。创建 Rax 的项目可以使用 `rax-cli`，参考 [Rax 的官方网站](https://alibaba.github.io/rax/) 了解其用法。
+
+::: tip
+Rax CLI 是三方插件, 不由 Apache Weex 开发或维护。
+:::
 
 ## 初始化
 
-请确保你已经安装了 [Node.js](https://nodejs.org/)，然后全局安装 `weex-toolkit`。
+请确保你已经安装了 [Node.js](https://nodejs.org/)，然后全局安装 `weex-cli`。
 
 ```bash
 npm install weex-toolkit -g
@@ -65,4 +69,4 @@ weex run web
 weex debug
 ```
 
-这条命令会启动一个调试服务，并且在 Chrome （目前只支持基于 V8 引擎的桌面浏览器） 中打开调试页面。详细用法请参考 [weex-toolkit 的文档](../../tools/toolkit.html)。
+这条命令会启动一个调试服务，并且在 Chrome （目前只支持基于 V8 引擎的桌面浏览器） 中打开调试页面。详细用法请参考 [weex-toolkit 的文档](./weex_cli.html)。

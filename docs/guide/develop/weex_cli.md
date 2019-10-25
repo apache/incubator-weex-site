@@ -1,18 +1,13 @@
 # Introduction
-
-:::danger
-Weex Toolkit is a third party plugin, and is not developed nor maintained by Apache Weex.
-:::
-
 ::: warning warning
-This document is for the `weex-toolkit` **2.x** version. For the old version of the `weex-toolkit` documentation, please go to [here](https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md).
+This document is for the `Weex CLI` **2.x** version. For the old version of the `Weex CLI` documentation, please go to [here](https://github.com/apache/weex-cli/blob/v1.0/README.md).
 :::
 
-[Weex Toolkit](https://github.com/weexteam/weex-toolkit) is dedicated to standardizing the tool base in the Weex ecosystem. It ensures that various build tools can be seamlessly connected based on smart default configuration, so you can focus on writing applications without having to spend days tangling configuration issues.
+[Weex CLI](https://github.com/apache/weex-cli) is dedicated to standardizing the tool base in the Weex ecosystem. It ensures that various build tools can be seamlessly connected based on smart default configuration, so you can focus on writing applications without having to spend days tangling configuration issues.
 
 ## System Components
 
-[Weex Toolkit](https://github.com/weexteam/weex-toolkit) split each function module into separate parts, if you see our [source code](https://github.com/weexteam/weex-toolkit/tree/master/packages/%40weex) , you will find that we manage multiple separate releases in the repository via [Lerna](https://lernajs.io/) Package, providing the following functional modules:
+[Weex CLI](https://github.com/apache/weex-cli) split each function module into separate parts, if you see our [source code](https://github.com/apache/weex-cli/tree/master/packages/%40weex) , you will find that we manage multiple separate releases in the repository via [Lerna](https://lernajs.io/) Package, providing the following functional modules:
 
 - The `@weex-cli/core`:
   - upgradeable;
@@ -35,7 +30,7 @@ If you don't have node.js installed locally, you can go to [Nodejs official webs
 
 ## Installation
 
-If you have problems during the installation process, you can do a question search and feedback at [here](https://github.com/weexteam/weex-toolkit/issues).
+If you have problems during the installation process, you can do a question search and feedback at [here](https://github.com/apache/weex-cli/issues).
 
 ``` bash
 $ npm install weex-toolkit -g

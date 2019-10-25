@@ -55,6 +55,7 @@ module.exports = {
               children: [
                 ['develop/setup-develop-environment', 'Setup Develop Environment'],
                 ['develop/create-a-new-app', 'Create a New App'],
+                ['develop/weex_cli', 'Weex CLI'],
                 ['develop/integrate-to-android-app', 'Integrate to Android'],
                 ['develop/integrate-to-iOS-app', 'Integrate to iOS'],
                 ['develop/weex_error_code', 'WeexErrorCode']
@@ -175,7 +176,6 @@ module.exports = {
             }
           ],
           '/tools/': [
-            ['toolkit', 'Weex Toolkit'],
             ['extension', 'VSCode Extension'],
             ["dotwe", "Online Editor"]
           ],
@@ -230,6 +230,7 @@ module.exports = {
               children: [
                 ['develop/setup-develop-environment', '设置开发环境'],
                 ['develop/create-a-new-app', '创建一个新的app'],
+                ['develop/weex_cli', 'Weex CLI'],
                 ['develop/integrate-to-android-app', '集成到Android应用'],
                 ['develop/integrate-to-iOS-app', '集成到iOS应用'],
                 ['develop/weex_error_code', 'WEEX常见错误码']
@@ -350,7 +351,6 @@ module.exports = {
             }
           ],
           '/zh/tools/': [
-            ['toolkit', 'Weex 工具箱'],
             ['extension', 'VSCode 插件'],
             ["dotwe", "Online Editor"]
           ],

@@ -1,10 +1,10 @@
 # 什么是 Weex ？
 
-<!-- toc -->
+::: tip
+Weex 是使用流行的 Web 开发体验来开发高性能原生应用的框架。
 
-> **Weex 是使用流行的 Web 开发体验来开发高性能原生应用的框架。**
-
-> "*Weex*" 的发音是 /wiːks/, 和 "*Weeks*" 同音。
+"*Weex*" 的发音是 /wiːks/, 和 "*Weeks*" 同音。
+:::
 
 Weex 致力于使开发者能基于通用跨平台的 Web 开发语言和开发经验，来构建 Android、iOS 和 Web 应用。简单来说，在集成了 WeexSDK 之后，你可以使用 JavaScript 语言和前端开发经验来开发移动应用。
 
@@ -14,8 +14,12 @@ Weex 渲染引擎与 DSL 语法层是分开的，Weex 并不强依赖任何特�
 
 想初步了解 Weex 其实非常简单。
 
-* 安装 [WeexPlayground](http://weex.apache.org/tools/playground.html). 在 Playground 里，你可以打开各种示例。
-* 访问 [Weex online playground](http://dotwe.org/vue). 在这个网站上，你可以浏览、修改、新建各种基于 Vue.js 的[单页面]((https://vuejs.org/v2/guide/single-file-components.html))例子，并用 WeexPlayground 应用扫码查看实时效果。
+* 安装 [Weex Playground](https://weex.apache.org/zh/guide/playground.html). 在 Playground 里，你可以打开各种示例。
+* 访问 [Online Editor](http://dotwe.org/vue). 在这个网站上，你可以浏览、修改、新建各种基于 Vue.js 的[单页面]((https://vuejs.org/v2/guide/single-file-components.html))例子，并用 WeexPlayground 应用扫码查看实时效果。
+
+::: tip
+尽管 Weex Playground 是 Apache Weex 的一部分，但 Online Editor 不是。
+:::
 
 这里有一个使用 Weex 和 Vue.js 开发的[最简单的例子](http://dotwe.org/vue/8da01827631b21150a12dd54d7114380)。你可以大致了解 Weex 是如何工作的。
 

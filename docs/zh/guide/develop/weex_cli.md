@@ -1,17 +1,14 @@
 # 介绍
-:::danger
-Weex Toolkit 是三方插件, 不由 Apache Weex 开发或维护。
-:::
 
 ::: warning 警告
-这份文档是对应 `weex-toolkit` **2.x** 版本的。老版本的 `weex-toolkit` 文档请移步[这里](https://github.com/weexteam/weex-toolkit/blob/v1.0/README.md)。
+这份文档是对应 `Weex CLI` **2.x** 版本的。老版本的 `Weex CLI` 文档请移步[这里](https://github.com/apache/weex-cli/blob/v1.0/README.md)。
 :::
 
-[Weex Toolkit](https://github.com/weexteam/weex-toolkit) 致力于将 Weex 生态中的工具基础标准化。它确保了各种构建工具能够基于智能的默认配置即可平稳衔接，这样你可以专注在撰写应用上，而不必花好几天去纠结配置的问题。
+[Weex CLI](https://github.com/apache/weex-cli) 致力于将 Weex 生态中的工具基础标准化。它确保了各种构建工具能够基于智能的默认配置即可平稳衔接，这样你可以专注在撰写应用上，而不必花好几天去纠结配置的问题。
 
 ## 系统组件
 
-[Weex Toolkit](https://github.com/weexteam/weex-toolkit) 在新版本中将各个功能模块拆分成了独立的几个部分，如果你看到我们的[源代码](https://github.com/weexteam/weex-toolkit/tree/master/packages/%40weex)，你会发现我们在仓库中通过[Lerna](https://lernajs.io/)管理了多个单独发布的包，提供如下功能模块：
+[Weex CLI](https://github.com/apache/weex-cli) 在新版本中将各个功能模块拆分成了独立的几个部分，如果你看到我们的[源代码](https://github.com/apache/weex-cli/tree/master/packages/%40weex)，你会发现我们在仓库中通过[Lerna](https://lernajs.io/)管理了多个单独发布的包，提供如下功能模块：
 
 - `@weex-cli/core` 内核模块用于模块调用及升级管理，该内核：
   - 可升级；
@@ -34,7 +31,7 @@ Weex Toolkit 是三方插件, 不由 Apache Weex 开发或维护。
 
 ## 安装
 
-如果你安装的过程中遇到了问题，你可以在[这里](https://github.com/weexteam/weex-toolkit/issues)进行问题搜索及反馈。
+如果你安装的过程中遇到了问题，你可以在[这里](https://github.com/apache/weex-cli/issues)进行问题搜索及反馈。
 
 ``` bash
 $ npm install weex-toolkit -g

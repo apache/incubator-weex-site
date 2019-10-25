@@ -56,9 +56,13 @@ Weex 主要用于编写多页的应用程序，每个页面都对应了原生开
 
 ## Web 渲染器
 
-如果你想在网络上呈现你的页面，你需要 [weex-vue-render](https://github.com/weexteam/weex-vue-render) 来实现它。
+如果你想在网络上呈现你的页面，你需要 [vue-render-for-apache-weex](https://github.com/weexteam/weex-vue-render) 来实现它。
 
-`weex-vue-render`是 Vue DSL 的 Web 渲染器， 它在 Web 上实现了 Weex 的内置组件和内置模块。详情请参阅[这里](https://github.com/weexteam/weex-vue-render)。
+::: warning
+`vue-render-for-apache-weex` 是三方插件，不由 Apache Weex 开发或维护。
+:::
+
+`vue-render-for-apache-weex`是 Vue DSL 的 Web 渲染器， 它在 Web 上实现了 Weex 的内置组件和内置模块。详情请参阅[这里](https://github.com/weexteam/weex-vue-render)。
 
 ## 单文件组件
 
@@ -79,13 +83,13 @@ Vue 中的[单文件组件](https://cn.vuejs.org/v2/guide/single-file-components
 因为平台的差异以及为了提高网络性能，`*.vue`文件需要用两种不同的方式来编译：
 
 + 对于 Web 平台来说，你可以用任何正式的方式来编译源文件，例如 使用 **[Webpack](https://webpack.js.org/) + [vue-loader](https://vue-loader.vuejs.org/en/)** 或者 **Browserify + vueify** 来编译`*.vue`文件。
-+ 对于安卓与 iOS 平台来说， 你需要使用 [weex-loader](https://github.com/weexteam/weex-loader) 来编译`*.vue`文件。
++ 对于安卓与 iOS 平台来说， 你需要使用 [weex-loader](https://github.com/apache/weex-loader) 来编译`*.vue`文件。
 
 不同的平台使用不同的`bundles`，可以充分利用平台原有的特性，减少构建时的兼容性代码。但是源代码仍然是一样的，唯一的区别是编译它的方法。
 
 ### 使用weex-loader
 
-[weex-loader](https://github.com/weexteam/weex-loader) 是一个 webpack 的 [loader](https://webpack.js.org/concepts/loaders/#using-loaders)，它能把`*.vue`文件转化为简单的javascript 模块用于安卓以及 iOS 平台。所有的特性和配置都是跟 [vue-loader](https://vue-loader-v14.vuejs.org/zh-cn/) 一样的。
+[weex-loader](https://github.com/apache/weex-loader) 是一个 webpack 的 [loader](https://webpack.js.org/concepts/loaders/#using-loaders)，它能把`*.vue`文件转化为简单的javascript 模块用于安卓以及 iOS 平台。所有的特性和配置都是跟 [vue-loader](https://vue-loader-v14.vuejs.org/zh-cn/) 一样的。
 
 需要注意的是，如果 Webpack 的 *entry* 配置项是一个 `*.vue` 文件的话，你仍需要传递一个额外的 `entry` 参数作为标记。
 
@@ -166,7 +170,7 @@ module.exports = {
 5. 完成。
 
 **使用weex compile编译**
-1. 安装[weex-toolkit](https://weex.apache.org/zh/tools/toolkit.html#安装)：`npm install weex-toolkit -g`
+1. 安装[weex-cli](https://weex.apache.org/zh/develop/weex_cli.html)：`npm install weex-toolkit -g`
 2. 执行`weex compile [资源文件] [产物地址]`命令
 3. 完成。
 

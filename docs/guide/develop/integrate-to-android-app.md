@@ -16,7 +16,7 @@ The following documents assume that you already have a certain Android developme
 ## 1. Configure dependency 
 
 ::: tip
-**Since 0.28.0, Weex would publish two convince binary in each release, please [read the documentation about the detail](../../download/major_change.html).**
+**Since 0.28.0, Weex would publish two convenience binary in each release, please [read the documentation about the detail](../../download/major_change.html).**
 :::
 
 ```

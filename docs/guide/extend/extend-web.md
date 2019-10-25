@@ -8,7 +8,11 @@ Weex itself offers a lot of built-in components and modules, but also has the ab
 
 After Weex switches the kernel to Vue 2.x, it will be easier to extend the Vue component on the Web side.
 
-We current use [weex-vue-render](https://github.com/weexteam/weex-vue-render) for Vue 2.x Web side rendering. Firstly import this library in your web page, then you can extend the render's built-in components using `weex.registerComponent` or `Vue.component`. Basically these two methods are doing the same thing.
+We current use [Vue Render For Apache Weex](https://github.com/weexteam/vue-render-for-apache-weex) for Vue 2.x Web side rendering. Firstly import this library in your web page, then you can extend the render's built-in components using `weex.registerComponent` or `Vue.component`. Basically these two methods are doing the same thing.
+
+::: danger
+Vue Render For Apache Weex is not a part of Apache Weex, and is not developed nor maintained by Apache Weex.
+:::
 
 ## Example of extension for weex built-in components.
 

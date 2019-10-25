@@ -1,10 +1,10 @@
 # 概要
 
 :::danger
-[Android Weex DevTools](https://github.com/weexteam/weex-devtools-android) 是三方插件, 不由 Apache Weex 开发或维护。
+[Android Devtools for Apache Weex](https://github.com/weexteam/android-devtools-for-Apache-Weex) 是三方插件, 不由 Apache Weex 开发或维护。
 :::
 
-Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。
+Android Devtools for Apache Weex 能够方便调试 Weex 页面，但此功能离不开 Native端 的支持。本章将会详细说明 Android 端如何接入 Android Devtools for Apache Weex.
 
 #### 版本兼容
 
@@ -21,7 +21,7 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
 ## Android接入指南
 
 #### 一、添加依赖
-可以通过Gradle 或者 Maven添加对devtools aar的依赖, 也可以直接对源码依赖.
+可以通过Gradle 或者 Maven添加对 Android Devtools for Apache Weex 的依赖, 也可以直接对源码依赖.
 
   * *Gradle依赖*.
   ```
@@ -110,6 +110,9 @@ if (WXEnvironment.isApkDebugable()) {
 ```
 
 ## 科普
+::: tip
+在以下的简介中，Android Devtools for Apache Weex 将简称为 Devtools
+:::
 
 #### Devtools组件介绍
 Devtools扩展了[Chrome Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol), 在客户端和调试服务器之间的采用[JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC)作为通信机制, 本质上调试过程是两个进程间协同, 相互交换控制权及运行结果的过程. 更多细节还请阅读[Weex Devtools Debugger的技术选型实录](http://www.atatech.org/articles/59284)这篇文章.
