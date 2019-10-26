@@ -78,6 +78,7 @@ EEUI提供完整的插件市场，在原有的组件、模块不够业务需求�
 
 ## EEUI生态
 
+- eeui-cli - [https://www.npmjs.com/package/eeui-cli](https://www.npmjs.com/package/eeui-cli)
 - 中文文档 - [https://eeui.app/](https://eeui.app/)
 - 插件市场 - [https://eeui.app/markets/](https://eeui.app/markets/)
 - 演示项目 - [https://editor.eeui.app/#/case](https://editor.eeui.app/#/case)
