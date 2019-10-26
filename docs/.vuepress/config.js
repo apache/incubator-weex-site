@@ -177,7 +177,8 @@ module.exports = {
           ],
           '/tools/': [
             ['extension', 'VSCode Extension'],
-            ["dotwe", "Online Editor"]
+            ["dotwe", "Online Editor"],
+            ['eeui', 'EEUI Framework']
           ],
           '/community/': [
             ['weex-third-party-extensions', 'Plugins Market']
@@ -352,7 +353,8 @@ module.exports = {
           ],
           '/zh/tools/': [
             ['extension', 'VSCode 插件'],
-            ["dotwe", "Online Editor"]
+            ["dotwe", "Online Editor"],
+            ["eeui", "EEUI 框架"]
           ],
           '/zh/community/': [
             ['weex-third-party-extensions', '插件市场']
