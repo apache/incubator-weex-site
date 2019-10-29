@@ -15,4 +15,4 @@
 
 扫码打开页面 [Log Switch](http://editor.weex.io/vue/eb6d6b27563608112a655b63ade638f0) ，选择日志等级即可。
 
-在 iOS 平台，连接设备到 Mac，打开 XCode->Window->Devices and Simulators，Open Console。过滤“<Weex>”日志。
+在 iOS 平台，连接设备到 Mac，打开 XCode->Window->Devices and Simulators，Open Console。过 `Weex` 日志。
