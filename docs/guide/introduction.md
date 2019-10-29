@@ -85,4 +85,4 @@ If you want to use weex to write your own app now, please read
 If you want to contribute to Weex code and documents, or commit a bug, please read
 
 - [How to Contribute](./contribute/how-to-contribute.html)
-- [Bug Report Guidelines](./contribute/bug-report-guidelines.html)
+- [Bug Report Guidelines](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#ask-or-answer-questions)

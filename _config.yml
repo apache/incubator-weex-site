@@ -435,7 +435,7 @@ alias:
   cn/references/advanced/extend-to-jsfm.html: cn/guide/extend-js-framework.html
   cn/references/advanced/integrate-devtool-to-android.html: cn/guide/integrate-devtool-to-android.html
   cn/references/advanced/integrate-devtool-to-ios.html: cn/guide/integrate-devtool-to-ios.html
-  cn/playground.html: cn/tools/playground.html
-  cn/faq.html: cn/wiki/faq.html
+  cn/playground.html: cn/guide/playground.html
+  cn/faq.html: cn/guide/contribute/how-to-contribute.html
 
 

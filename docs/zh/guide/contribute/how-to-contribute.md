@@ -28,7 +28,7 @@ Weex 目前的 Committer，PPMC 成员以及加入 Weex Committer 的方式都�
 
 ## 提出与解决解答问题
 * 如果你对weex的用法或基本概念有疑惑，可以在[stackoverflow.com](http://stackoverflow.com/questions/tagged/weex)上提出相关问题。
-* 如果你确定某个问题是一个bug，请参考[Bug 反馈指南](./bug-report-guidelines.html)，并使用Github Issue来反馈。
+* 如果你确定某个问题是一个bug，请参考[Bug 反馈指南](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#ask-or-answer-questions)，并使用Github Issue来反馈。
 
 :::tip
 尽管 StackOverflow 的内容由来自全球各地的开发者所贡献，但 StackOverflow 并不是 Weex 官方社区的一部分，如果您在 StackOverflow 上的问题超过 96 小时仍无人回复，可在 Github Issue 中发起问题讨论。
@@ -66,4 +66,4 @@ Weex 采用了 Apache License 2.0，请确保你的贡献符合Apache License 
 :::
 
 ### 贡献代码
-贡献的代码可以是修复已知的 bug 或者 开发新 feature，参考[代码提交指南](./contribute-code.html)了解更多细节。
+贡献的代码可以是修复已知的 bug 或者 开发新 feature，参考[代码提交指南](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#contribute-code)了解更多细节。
