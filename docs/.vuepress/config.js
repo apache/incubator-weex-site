@@ -9,7 +9,6 @@ module.exports = {
       lang: 'zh-CN'
     }
   },
-  theme: 'fast',
   themeConfig: {
     repo: 'apache/incubator-weex-site',
     docsRepo: 'apache/incubator-weex-site',
