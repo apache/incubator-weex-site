@@ -40,7 +40,7 @@ Run the above script to deploy the website. This script will add all files in `d
 
 After executing, `https://weex.apache.org/` will be updated automatically. If you're in China, you will need to wait several hours or one day before the CDN cache refreshing.
 
-**The above scripts only works for committers, if you are not a committer, then you don't have the privilege to do the `git push`*.
+**The above scripts only works for committers, if you are not a committer, then you don't have the privilege to do the `git push`**.
 
 ## Contribute
 
