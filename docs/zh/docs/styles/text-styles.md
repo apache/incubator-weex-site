@@ -29,7 +29,7 @@
 只支持 `<text>` 和 `<ricthext>`
 :::
 
-### text-algin
+### text-align
 `text-align {string}`：对齐方式。可选值 `left` | `center` | `right`，默认值为 `left`。
 
 ### font-family
