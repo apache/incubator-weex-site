@@ -4,9 +4,9 @@ WebSockets is an advanced technology that makes it possible to open an interacti
 
 ::: warning
 iOS and h5 provide  webSocket default handle. if you use webSocket in android environment. You should provide custom adapter implementation, source:
-- [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java);
-- [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
-- refer:  [weex playground](https://github.com/apache/incubator-weex/tree/master/android/playground)
+- [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex-playground/blob/master/android/commons/src/main/java/org/apache/weex/commons/adapter/DefaultWebSocketAdapter.java);
+- [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex-playground/blob/master/android/commons/src/main/java/org/apache/weex/commons/adapter/DefaultWebSocketAdapterFactory.java);
+- refer:  [weex playground](https://github.com/apache/incubator-weex-playground)
 :::
 
 # API

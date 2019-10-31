@@ -4,9 +4,9 @@
 
 ::: warning 注意
 h5 提供 WebSockets 的 protocol 默认实现，iOS 和 Android 需要自定义实现，Android 可参考:
-- [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java)
-- [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex/blob/master/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java)
-- 集成例子参考 [weex playground](https://github.com/apache/incubator-weex/tree/master/android/playground)
+- [DefaultWebSocketAdapter.java](https://github.com/apache/incubator-weex-playground/blob/master/android/commons/src/main/java/org/apache/weex/commons/adapter/DefaultWebSocketAdapter.java)
+- [DefaultWebSocketAdapterFactory.java](https://github.com/apache/incubator-weex-playground/blob/master/android/commons/src/main/java/org/apache/weex/commons/adapter/DefaultWebSocketAdapterFactory.java)
+- 集成例子参考 [weex playground](https://github.com/apache/incubator-weex-playground)
 :::
 
 # API
