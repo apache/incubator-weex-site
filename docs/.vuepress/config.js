@@ -236,11 +236,8 @@ module.exports = {
             ['eeui', 'EEUI Framework']
           ],
           '/community/': [
-            [ "code-demos", 'Code Demos'],
-            [
-              "who-is-using-weex",
-              "Who is using Weex"
-            ],
+            ['code-demos', 'Code Demos'],
+            ['who-is-using-weex', 'Who is using Weex'],
             ['weex-third-party-extensions', 'Plugins Market']
           ],
           '/blog/': [
@@ -427,8 +424,10 @@ module.exports = {
             ["eeui", "EEUI 框架"]
           ],
           '/zh/community/': [
+            ['code-demos', '代码示例'],
+            ['who-is-using-weex', '谁在使用Weex'],
             ['weex-third-party-extensions', '插件市场'],
-            ["who-is-using-weex","谁在使用Weex"],
+            ['', '']
           ],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],
