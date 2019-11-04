@@ -236,6 +236,7 @@ module.exports = {
             ['eeui', 'EEUI Framework']
           ],
           '/community/': [
+            [ "code-demos", 'Code Demos'],
             [
               "who-is-using-weex",
               "Who is using Weex"
