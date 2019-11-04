@@ -10,13 +10,13 @@ Weex 提供了通过事件触发动作的能力，例如在用户点击组件时
 
 当一个父View存在多个同级子View时，由于`iOS`会选择层级最高的View来响应事件，底层的View的事件永远都不会响应。
 
-Weex在`<div>`组件中增加了`eventPenetrationEnabled`属性，当值为`true`时，View的子View仍能正常响应事件，但View自身将不会响应事件，而是将事件向下层View传递。
+Weex在`<div>`组件中增加了`eventPenetrationEnabled`属性，当值为`true`（默认为`false`）时，View的子View仍能正常响应事件，但View自身将不会响应事件。
 
 [示例](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
 
 ## View交互性
 
-Weex在`<div>`组件中增加了`userInteractionEnabled`属性，当值为`true`时，View及其子View均不响应事件 事件向下层View传递
+Weex在`<div>`组件中增加了`userInteractionEnabled`属性，当值为`false`（默认为`true`）时，View及其子View均不响应事件，事件向下层View传递
 
 ## click
 
