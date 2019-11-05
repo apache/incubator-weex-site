@@ -434,6 +434,7 @@ module.exports = {
             ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore'],
             ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进'],
             ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路'],
+            ['what_is_the_most_important_assest_to_an_open_souce_project', '什么是一个开源项目最重要的资产？'],
             ['weex-third-party-extensions','Weex 三方插件']
           ],
           '/zh/download/':[
