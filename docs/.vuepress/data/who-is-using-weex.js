@@ -297,5 +297,19 @@ export default [
     iOS:
       'https://itunes.apple.com/cn/app/%E4%BF%A1%E5%A5%BD%E6%9C%89%E7%94%B0/id1439791996?mt=8',
     android: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.tonysfarm.wx'
+  },
+  {
+    name_CN: '智联招聘',
+    name_EN: 'zhilian zhoapin',
+    icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/6b/4c/26/6b4c267e-8360-16c9-d019-c0b2fe013cad/AppIcon-0-0-1x_U007emarketing-0-0-0-9-0-85-220.png/246x0w.png',
+    iOS:'https://apps.apple.com/cn/app/id488033535',
+    android: 'https://sj.qq.com/myapp/detail.htm?apkName=com.zhaopin.social'
+  },
+  {
+    name_CN: '智联招聘企业版',
+    name_EN: 'zhilian zhoapin qiye',
+    icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/0b/14/e3/0b14e352-008d-dcbe-61fd-69f3d4ca3bca/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-85-220.png/246x0w.png',
+    iOS:'https://apps.apple.com/cn/app/id1268483731',
+    android: 'https://sj.qq.com/myapp/detail.htm?apkName=com.zhaopin.ihr'
   }
 ];
