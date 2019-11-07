@@ -138,3 +138,24 @@ placeholder 字符颜色。默认值是 `#999999`
 
 * [其他示例集合](http://dotwe.org/vue/aec5342b15d3c01b3b427384a71b0874)
   <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB10jc9nVzqK1RjSZFvXXcB7VXa-297-479.png" />
+
+## Rax 示例
+
+`rax-textinput` 是 `<textarea>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from "rax";
+import Driver from 'driver-universal';
+import TextInput from "rax-textinput";
+
+function App() {
+  return (
+    <TextInput autoFocus={true} />
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-textinput 文档](https://rax.js.org/docs/components/textinput)
+

@@ -426,8 +426,7 @@ module.exports = {
           '/zh/community/': [
             ['code-demos', '代码示例'],
             ['who-is-using-weex', '谁在使用Weex'],
-            ['weex-third-party-extensions', '插件市场'],
-            ['', '']
+            ['weex-third-party-extensions', '插件市场']
           ],
           '/zh/blog/': [
             ['write-a-blog', '写一篇博客'],

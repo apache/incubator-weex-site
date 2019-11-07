@@ -39,3 +39,24 @@
 ```
 
 [示例](http://dotwe.org/vue/3b789771e48be92a70bd682f084b84b5)
+
+
+## Rax 示例
+
+`rax-link` 是 `<a>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Link from 'rax-link';
+import Text from 'rax-text';
+
+function App() {
+	return <Link href={"//www.google.com"} onPress={(e)=>{console.log(e)}}>
+	  <Text>点击跳转</Text>
+	</Link>
+}
+```
+
+[rax-link 文档](https://rax.js.org/docs/components/link)
+

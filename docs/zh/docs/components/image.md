@@ -164,3 +164,32 @@ export default {
 
 * [Base64 示例](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
 * [Lazy load image 示例](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
+
+## Rax 示例
+
+`rax-image` 是 `<image>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Image from 'rax-image';
+
+const App = () => {
+ return (
+   <Image
+     source={{
+       uri: 'https://gw.alicdn.com/tfs/TB1bBD0zCzqK1RjSZFpXXakSXXa-68-67.png',
+     }}
+     style={{
+       height: '68rpx',
+       width: '67rpx'
+     }}
+  />
+ );
+};
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-image 文档](https://rax.js.org/docs/components/image)
+
