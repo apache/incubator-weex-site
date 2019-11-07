@@ -71,3 +71,94 @@
 
 
 <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1iEk9nVzqK1RjSZFCXXbbxVXa-544-960.gif" />
+
+## Rax 示例
+
+`rax-waterfall` 是 `<waterfall>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, useState, useRef, render } from 'rax';
+import View from 'rax-view';
+import Text from 'rax-text';
+import Driver from "driver-universal"
+import RefreshControl from 'rax-refreshcontrol';
+import Waterfall from 'rax-waterfall';
+
+// 数据需要指定高度
+const data = [
+  { height: 550, item: {} },
+  { height: 624, item: {} },
+  { height: 708, item: {} },
+  { height: 600, item: {} },
+  { height: 300, item: {} },
+  { height: 100, item: {} },
+  { height: 400, item: {} },
+  { height: 550, item: {} },
+  { height: 624, item: {} },
+  { height: 708, item: {} },
+  { height: 600, item: {} },
+  { height: 300, item: {} },
+  { height: 100, item: {} },
+  { height: 400, item: {} }
+];
+
+let App = (props) => {
+
+  let [refreshing, setRefreshing] = useState(false);
+  let handleRefresh = () => {
+    if (refreshing) {
+      return;
+    }
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 500);
+  }
+  let loadMore = () => {
+    console.log('load more');
+  }
+
+  return (
+    <Waterfall
+      columnWidth={370}
+      columnCount={2}
+      columnGap={10}
+      dataSource={data}
+      renderHeader={() => {
+        return [
+          <RefreshControl
+            key="0"
+            refreshing={refreshing}
+            onRefresh={handleRefresh}>
+            <Text>RefreshControl</Text>
+          </RefreshControl>,
+          <View key="1" style={{
+            height: 100, 
+            backgroundColor: '#efefef', 
+            marginBottom: 10
+          }}><Text>Header Mod</Text></View>
+        ];
+      }}
+      renderFooter={() => {
+        return <View key="3" style={{width: 750, height: 100, backgroundColor: '#efefef', marginTop: 10}}><Text>Footer Mod</Text></View>;
+      }}
+      renderItem={(item, index) => {
+        return (
+          <View style={{
+            height: item.height, 
+            backgroundColor: '#efefef', 
+            marginBottom: 10
+          }}>
+            <Text>{index}</Text>
+          </View>
+        );
+      }}
+      onEndReached={loadMore} />
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-waterfall 文档](https://rax.js.org/docs/components/waterfall)
+

@@ -119,3 +119,64 @@
 - [聊天窗口](http://dotwe.org/vue/21d8b0a79c20e95139353d9cc8b634f5)，页面局部可滚动，底部输入框不可滚动。
 
   <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB11_g_n7voK1RjSZPfXXXPKFXa-264-439.gif" />
+
+## Rax 示例
+
+`rax-scrollview` 是 `<scroller>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal"
+import View from 'rax-view';
+import ScrollView from 'rax-scrollview';
+
+function Thumb() {
+  return (
+    <View style={styles.button}>
+      <View style={styles.box} />
+    </View>
+  );
+}
+
+let THUMBS = [];
+for (let i = 0; i < 20; i++) THUMBS.push(i);
+let createThumbRow = (val, i) => <Thumb key={i} />;
+
+function App () {
+  return (
+    <View style={{ ...styles.container, ...{ height: 500 } }}>
+      <ScrollView>
+        {THUMBS.map(createThumbRow)}
+      </ScrollView>
+    </View>
+  );
+}
+
+let styles = {
+  container: {
+    padding: 20,
+    borderStyle: 'solid',
+    borderColor: '#dddddd',
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 10,
+  },
+  button: {
+    margin: 7,
+    padding: 5,
+    alignItems: 'center',
+    backgroundColor: '#eaeaea',
+    borderRadius: 3,
+  },
+  box: {
+    width: 64,
+    height: 64,
+  }
+};
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-scrollview 文档](https://rax.js.org/docs/components/scrollview)
+

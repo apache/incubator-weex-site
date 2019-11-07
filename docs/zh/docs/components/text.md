@@ -85,3 +85,24 @@ word-break 行为是不可预测的且与 Android ROM 强相关。事实上，wo
 ## 示例
 * [`<text>`的基本用法](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0)
   
+
+## Rax 示例
+
+`rax-text` 是 `<text>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Text from 'rax-text';
+
+function App() {
+  return (
+    <Text>Text</Text>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-text 文档](https://rax.js.org/docs/components/text)
+

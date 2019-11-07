@@ -81,6 +81,8 @@ Please refer to [Use Vue.js in Weex](./use-vue-in-weex.html) document to learn m
 
 ## Rax
 
-Rax is a front-end framework with React-compatible APIs.
+Rax is a front-end framework with React-compatible APIs.Please refer to [Rax's official website](https://alibaba.github.io/rax/) to get more information.
 
-Please refer to [Rax's official website](https://alibaba.github.io/rax/) to get more information.
+::: tip
+Please refer to [Use Rax in Weex](./use-rax-in-weex.html) document to learn more technics about Weex and Rax.
+:::

@@ -10,7 +10,6 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 
 ## 属性
 
-* **keep-scroll-position** boolean. 控制当 Cell 被添加到列表中时，列表的滚动位置是否要保持不变。
 
 * **insert-animation** string, cell 的插入动画。当前只支持 `none` 和 `default`。
 * **delete-animation** string, cell 的删除动画。当前只支持 `none` 和 `default`。
@@ -35,3 +34,17 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 Cell 的例子请参考
 * [list](./list.html)
 * [waterfall](./waterfall.html)
+## Rax 示例
+
+Rax 中 cell 是 `rax-recyclerview` 提供的子组件，使用方式如下
+
+```jsx
+import RecyclerView from 'rax-recyclerview';
+```
+
+```jsx
+<RecyclerView.Cell>{...}</RecyclerView.Cell>
+```
+
+[rax-recyclerview 文档](https://rax.js.org/docs/components/recyclerview)
+

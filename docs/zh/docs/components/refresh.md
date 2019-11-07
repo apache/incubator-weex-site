@@ -51,3 +51,64 @@
 ## 示例
 [基本用法](http://dotwe.org/vue/fccb7c6b9a9f4b7b1f3f7518344cf1bb)
 <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1EMM7nYvpK1RjSZPiXXbmwXXa-1242-2208.png" />
+
+## Rax 示例
+
+`rax-refreshcontrol` 是 `<refresh>` 组件的上层封装，提供了 Weex 下拉刷新能力
+
+```jsx
+import { createElement, Component, render } from 'rax';
+import View from 'rax-view';
+import Text from 'rax-text';
+import Driver from 'driver-universal';
+import RecyclerView from 'rax-recyclerview';
+import RefreshControl from 'rax-refreshcontrol';
+
+class RefreshControlDemo extends Component {
+  state = {
+    isRefreshing: false,
+    loaded: 0,
+    refreshText: '↓ Pull To Refresh'
+  };
+
+  handleRefresh = (e) => {
+    this.setState({
+      isRefreshing: true,
+      refreshText: 'Refreshing',
+    });
+    setTimeout(() => {
+      // update Data
+      this.setState({
+        isRefreshing: false,
+        refreshText: '↓ Pull To Refresh',
+      });
+    }, 1000);
+  };
+
+  render() {
+    return (
+      <View>
+        <RecyclerView
+          refreshControl={null}>
+          <RefreshControl
+            refreshing={this.state.isRefreshing}
+            onRefresh={this.handleRefresh}
+          >
+            <Text>{this.state.refreshText}</Text>
+          </RefreshControl>
+          <RecyclerView.Cell>
+            <View>
+              <Text>this is list</Text>
+            </View>
+          </RecyclerView.Cell>
+        </RecyclerView>
+      </View>
+   );
+  }
+}
+
+render(<RefreshControlDemo/>, document.body, { driver: Driver });
+```
+
+[rax-refreshcontrol 文档](https://rax.js.org/docs/components/refreshcontrol)
+

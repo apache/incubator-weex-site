@@ -87,3 +87,27 @@
 * [体验示例](http://dotwe.org/vue/9f8a7be89a4ad881ff515145cc9306ea)
 
 上述示例监听了 pagestart、pagefinish 及 error 事件，同时使用了  [webview module](../modules/webview.html) 提供的 API。
+
+## Rax 示例
+
+`rax-embed` 是 `<web>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render, Component } from 'rax';
+import Driver from 'driver-universal';
+import Embed from 'rax-embed';
+
+function App() {
+  const urlParam = {
+      paramOne:123,
+     paramTwo:456
+  };
+  return <Embed urlParam={urlParam} src={'http://taobao.com'} 
+  useIframeInWeb={true} style={{ height: 750, width: 750 }} />
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-embed 文档](https://rax.js.org/docs/components/embed)
+

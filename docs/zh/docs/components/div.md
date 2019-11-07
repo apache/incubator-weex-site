@@ -21,3 +21,28 @@
 ## 事件
 
 * **通用事件** 支持所有[通用事件](../events/common-events.html)。
+
+## Rax 示例
+
+`rax-view` 是 `<div>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import View from "rax-view";
+
+function App() {
+  return <View
+		style={{
+		  width: '200rpx',
+		  height: '200rpx',
+		  backgroundColor: '#222831',
+		}}
+	/>;
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-view 文档](https://rax.js.org/docs/components/view)
+
