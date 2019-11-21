@@ -7,19 +7,40 @@ This is the source code of Weex official website.
 
 ## Develop
 
+### Install
 First you should install the [Node.js](https://nodejs.org/), and install dependencies:
 
 ```bash
 npm install
 ```
 
-After that, you can start a web server to preview the website on your local machine.
+### Develop
 
 ```bash
-npm run dev
+npm start
 ```
 
 It will start a web server at `http://localhost:8080`. The pages will be updated automatically once you save the corresponding source file.
+
+### Package
+
+```
+npm run build
+```
+
+This will generate static files for publishing. The files are located in `docs/.vuepress/dist/`
+
+### Deploy
+
+```
+scripts/publish.sh
+```
+
+Run the above script to deploy the website. This script will add all files in `docs/.vuepress/dist/` to `asf-site` branch, make a git commit and publish to the remote.
+
+After executing, `https://weex.apache.org/` will be updated automatically. If you're in China, you will need to wait several hours or one day before the CDN cache refreshing.
+
+**The above scripts only works for committers, if you are not a committer, then you don't have the privilege to do the `git push`**.
 
 ## Contribute
 

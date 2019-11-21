@@ -1,6 +1,57 @@
 module.exports = {
   title: 'WEEX',
   description: 'Weex',
+  "head": [
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "//gw.alicdn.com/tps/TB1XNqxPXXXXXcSXVXXXXXXXXXX-64-63.png"
+      }
+    ],
+    [
+      "script",
+      {
+        "src": "//g.alicdn.com/alilog/mlog/aplus_v2.js"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "data-spm",
+        "dataSpmProtocol": "i",
+        "content": "a2c7j"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "aplus-ajax",
+        "content": "chksum"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "aplus-waiting",
+        "content": "MAN"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "google-site-verification",
+        "content": "FbH8DPHpxdDJlfkKLKXuXWOu69DI8ZRRP8O2Phg8UKw"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "baidu-site-verification",
+        "content": "WRr1iWvsYK"
+      }
+    ]
+  ],
   locales: {
     '/': {
       lang: 'en-US'
@@ -9,23 +60,27 @@ module.exports = {
       lang: 'zh-CN'
     }
   },
-  theme: 'fast',
   themeConfig: {
-    repo: 'apache/incubator-weex-site',
-    docsRepo: 'apache/incubator-weex-site',
-    docsBranch: 'master',
-    version: 'v0.24',
-    versionLink: '/download/download.html',
-    logo: 'https://img.alicdn.com/tfs/TB1WtVjogHqK1RjSZFgXXa7JXXa-78-39.svg',
+    "spm": "a2c7j",
+    "repo": "apache/incubator-weex",
+    "docsRepo": "apache/incubator-weex-site",
+    "docsDir": "docs",
+    "docsBranch": "master",
+    "editLinks": true,
+    "version": "v0.28",
+    "versionLink": "/download/download.html",
+    "logo": "/logo@2x.svg",
+    "search": false,
     locales: {
       '/': {
-        selectText: 'Languages',
-        label: 'English',
-        lastUpdated: 'Last Updated',
-        editLinkText: 'Edit this page on GitHub',
-        scoreText: {
-          good: 'Excellent doc',
-          bad: 'Unusable doc'
+        "selectText": "Languages",
+        "label": "English",
+        "lastUpdated": "Last Updated",
+        "editLinkText": "Edit this page",
+        "openIssueText": "Suggest",
+        "scoreText": {
+          "good": "Excellent doc",
+          "bad": "Unusable doc"
         },
         nav: [
           { text: 'Guide', link: '/guide/' },
@@ -181,6 +236,8 @@ module.exports = {
             ['eeui', 'EEUI Framework']
           ],
           '/community/': [
+            ['code-demos', 'Code Demos'],
+            ['who-is-using-weex', 'Who is using Weex'],
             ['weex-third-party-extensions', 'Plugins Market']
           ],
           '/blog/': [
@@ -192,16 +249,26 @@ module.exports = {
              ['download', "Source Download"],
              ['major_change', 'Major Change'] 
           ]
+        },
+        "algolia": {
+          "apiKey": "a6896fe3619315a7f04e9a76bbbbbfcb",
+          "indexName": "weex",
+          "algoliaOptions": {
+            "facetFilters": [
+              "lang:en-US"
+            ]
+          }
         }
       },
       '/zh/': {
-        selectText: '选择语言',
-        label: '简体中文',
-        lastUpdated: '上次更新',
-        editLinkText: '在 GitHub 上编辑此页',
-        scoreText: {
-          good: '文档写得很棒',
-          bad: '文档写得很差'
+        "selectText": "选择语言",
+        "label": "简体中文",
+        "lastUpdated": "上次更新",
+        "editLinkText": "编辑此页",
+        "openIssueText": "提交建议",
+        "scoreText": {
+          "good": "文档写得很棒",
+          "bad": "文档写得很差"
         },
         nav: [
           { text: '指南', link: '/zh/guide/' },
@@ -357,6 +424,8 @@ module.exports = {
             ["eeui", "EEUI 框架"]
           ],
           '/zh/community/': [
+            ['code-demos', '代码示例'],
+            ['who-is-using-weex', '谁在使用Weex'],
             ['weex-third-party-extensions', '插件市场']
           ],
           '/zh/blog/': [
@@ -365,12 +434,22 @@ module.exports = {
             ['ios-weexcore.md', 'iOS WeexSDK 接入 WeexCore'],
             ['weexcore-multiprocess-evolution', 'WeexCore 多进程多线程架构演进'],
             ['interaction-optimization', '可交互时间的探索和首屏时间的改进之路'],
+            ['what_is_the_most_important_assest_to_an_open_souce_project', '什么是一个开源项目最重要的资产？'],
             ['weex-third-party-extensions','Weex 三方插件']
           ],
           '/zh/download/':[
             ['download', "源代码下载"],
             ['major_change', '重大变更']
           ]
+        },
+        "algolia": {
+          "apiKey": "a6896fe3619315a7f04e9a76bbbbbfcb",
+          "indexName": "weex",
+          "algoliaOptions": {
+            "facetFilters": [
+              "lang:zh-CN"
+            ]
+          }
         }
       }
     }

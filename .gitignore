@@ -37,3 +37,4 @@ bin/
 
 # Vue Press
 docs/.vuepress/dist/
+.deploy_git

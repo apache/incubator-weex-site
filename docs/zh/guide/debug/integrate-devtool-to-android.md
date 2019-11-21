@@ -26,7 +26,7 @@ Android Devtools for Apache Weex 能够方便调试 Weex 页面，但此功能�
   * *Gradle依赖*.
   ```
   dependencies {
-     compile 'com.taobao.android:weex_inspector:0.18.10'
+     implementation 'com.taobao.android:weex_inspector:0.24.2.11'
   }
   ```
 
@@ -36,7 +36,7 @@ Android Devtools for Apache Weex 能够方便调试 Weex 页面，但此功能�
   <dependency>
     <groupId>com.taobao.android</groupId>
     <artifactId>weex_inspector</artifactId>
-    <version>0.18.10</version>
+    <version>0.24.2.11</version>
     <type>pom</type>
   </dependency>
   ```

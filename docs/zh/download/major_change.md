@@ -11,7 +11,7 @@
 #### Java 包名
 由于 Weex 在捐献给 ASF(Apache Software Foundation) 前隶属于阿里巴巴集团(淘宝的母公司)，因此在 `0.28.0` 之前，Android 代码中的 Java 包名是 `com.taobao.weex`
 
-从 `0.28.0` 之后，Android 代码中的 Java 包名被修改为 `org.apache.weex`。考虑到这个升级会给现有用户来不兼容，weex 提供了 `org.apache.weex:sdk_legacy` 作为[兼容性方案]((#groupid-and-artifactid-in-jcenter)。这个兼容性方案后续可能不再维护，请尽可能的依 `org.apache.weex:sdk` 并将现有代码的包名升级为 `org.apache.weex`。
+从 `0.28.0` 之后，Android 代码中的 Java 包名被修改为 `org.apache.weex`。考虑到这个升级会给现有用户来不兼容，weex 提供了 `org.apache.weex:sdk_legacy` 作为[兼容性方案](#groupid-and-artifactid-in-jcenter)。这个兼容性方案后续可能不再维护，请尽可能的依 `org.apache.weex:sdk` 并将现有代码的包名升级为 `org.apache.weex`。
 
 #### GroupId and artifactId in JCenter
 由于 Weex 在捐献给 ASF(Apache Software Foundation) 前隶属于阿里巴巴集团(淘宝的母公司)，因此在 `0.28.0` 之前，Android 代码中的 Java 包名是 `com.taobao.weex`，因此在 `0.28.0` 之前，Weex 在JCenter 上的发布产物为 `com.taobao.android:weex_sdk`

@@ -39,7 +39,7 @@ $ weex -v // 检查是否安装成功
 </br>
 [2] [iOS Weex Detool集成文档](./integrate-devtool-to-ios.html)。
 
-你也可以使用Weex官方提供的Playground App进行代码调试，下载地址见：[Weex Playground](http://weex.apache.org/zh/tools/playground.html)。
+你也可以使用Weex官方提供的Playground App进行代码调试，下载地址见：[Weex Playground](http://weex.apache.org/zh/guide/playground.html)。
 
 回到调试二维码页面，用应用的扫码功能进行扫码，即可进入调试控制台，如图所示：
 

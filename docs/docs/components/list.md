@@ -2,7 +2,7 @@
 
 ## Summary
 
-The List component, which inspired by Android RecyclerView, is a core component, and it provides the most popular features for using a list of items. which support vertical and horizontal list.
+The List component, which inspired by Android RecyclerView, is a core component, and it provides the most popular features for using a list of items. The list component only supports vertical orientation, for horizontal orientation list check [recycle-list](https://weex.apache.org/docs/components/recycle-list.html) component
 
 It can provide excellent experience and performance while still maintaining smooth scroll and low memory usage.
 

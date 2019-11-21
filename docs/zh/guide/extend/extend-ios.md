@@ -36,7 +36,7 @@ console.log(value);
 到此，我们已经完成了一个简单的 module 方法的封装，在 JS 里使用方法如下：
 
 ```Javascript
-weex.requireModule("event").showParams("hello Weex)
+weex.requireModule("event").showParams("hello Weex")
 ```
 
 #### Module 进阶

@@ -22,16 +22,16 @@
 dependencies {
     ...
     // 以下两个 weex_sdk 版本二选一
-    //compile 'org.apache.weex:sdk:0.28.0'
-    //compile 'org.apache.weex:sdk_legacy:0.28.0'
+    //implementation 'org.apache.weex:sdk:0.28.0'
+    //implementation 'org.apache.weex:sdk_legacy:0.28.0'
 
     // fastjson
-    compile 'com.alibaba:fastjson:1.1.46.android'
+    implementation 'com.alibaba:fastjson:1.1.46.android'
 
     //support library dependencies
-    compile 'com.android.support:recyclerview-v7:23.1.1'
-    compile 'com.android.support:support-v4:23.1.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    implementation 'com.android.support:recyclerview-v7:23.1.1'
+    implementation 'com.android.support:support-v4:23.1.1'
+    implementation 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
 

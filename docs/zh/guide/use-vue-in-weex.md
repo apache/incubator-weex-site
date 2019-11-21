@@ -44,7 +44,7 @@ Weex 主要用于编写多页的应用程序，每个页面都对应了原生开
 
 样式表和 CSS 规则是由 Weex js 框架和原生渲染引擎管理的。要实现完整的 CSS 对象模型（CSSOM：CSS Object Model）并支持所有的 CSS 规则是非常困难的，而且没有这个必要。
 
-出现性能考虑，**Weex 目前只支持单个类选择器，并且只支持 CSS 规则的子集**。详情请参阅 *[通用样式](../docs/styles/common-styles.html)* 与 *[文本样式](../docs/styles/text-styles.html)*。
+出于性能考虑，**Weex 目前只支持单个类选择器，并且只支持 CSS 规则的子集**。详情请参阅 *[通用样式](../docs/styles/common-styles.html)* 与 *[文本样式](../docs/styles/text-styles.html)*。
 
 在 Weex 里， 每一个 Vue 组件的样式都是 *[scoped](https://vue-loader.vuejs.org/zh-cn/features/scoped-css.html)*。
 

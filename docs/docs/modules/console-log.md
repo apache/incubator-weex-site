@@ -16,4 +16,4 @@ Console-log module is used to force redirect all Weex logs to console.
 
 Scan to open page [Log Switch](http://editor.weex.io/vue/eb6d6b27563608112a655b63ade638f0) and select log level.
 
-On iOS, connect your device to Mac, open XCode->Window->Devices and Simulators，Open Console. Filter using "<Weex>".
+On iOS, connect your device to Mac, open XCode->Window->Devices and Simulators，Open Console. Filter using `Weex`.

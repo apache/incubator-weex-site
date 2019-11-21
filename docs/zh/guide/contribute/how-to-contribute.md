@@ -13,9 +13,16 @@ Weex 是一个属于 Apache 基金会的开源社区。Weex 社区推崇并遵�
 
 在 Apache 社区中，邮件列表是项目内部的主要沟通方式。Weex 作为 Apache 的一个项目，其新特性的讨论、开发流程、未来演进方等事宜会在邮件列表上进行讨论与决策。
 
-Weex 开发者邮件列表是 "dev@weex.incubator.apache.org"，开发者可以通过订阅邮件列表的方式了解到 Weex 最近所发生的事情并表达自己的观点。如果你想订阅 Weex 邮件列表，请发送邮件至[dev-subscribe@weex.incubator.apache.org](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29)，之后你会收到一封确认邮件，回复此确认邮件，即完成了 Weex 邮件组的订阅。
+Weex 开发者邮件列表是 "dev@weex.incubator.apache.org"，开发者可以通过订阅邮件列表的方式了解到 Weex 最近所发生的事情并表达自己的观点。
 
+### 订阅
+如果你想订阅 Weex 邮件列表，请发送邮件至[dev-subscribe@weex.incubator.apache.org](mailto:dev-subscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20subscribe%29)，之后你会收到一封确认邮件，回复此确认邮件，即完成了 Weex 邮件组的订阅。
+
+### 退订
 若想退订，可发送邮件到退订[dev-unsubscribe@weex.incubator.apache.org](mailto:dev-unsubscribe@weex.incubator.apache.org?subject=%28send%20this%20email%20to%20unsubscribe%29)。
+
+### 浏览
+如果你不想订阅，那么通过浏览 [https://mail-archives.apache.org/mod_mbox/weex-dev/](https://mail-archives.apache.org/mod_mbox/weex-dev/)，你可以看到邮件列表中的所有内容。但如果你想向邮件列表中发送邮件，你仍需订阅。
 
 更多邮件相关事宜，可参考 [Apache Mailing List指南](https://apache.org/foundation/mailinglists.html)。
 
@@ -28,7 +35,7 @@ Weex 目前的 Committer，PPMC 成员以及加入 Weex Committer 的方式都�
 
 ## 提出与解决解答问题
 * 如果你对weex的用法或基本概念有疑惑，可以在[stackoverflow.com](http://stackoverflow.com/questions/tagged/weex)上提出相关问题。
-* 如果你确定某个问题是一个bug，请参考[Bug 反馈指南](./bug-report-guidelines.html)，并使用Github Issue来反馈。
+* 如果你确定某个问题是一个bug，请参考[Bug 反馈指南](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#ask-or-answer-questions)，并使用Github Issue来反馈。
 
 :::tip
 尽管 StackOverflow 的内容由来自全球各地的开发者所贡献，但 StackOverflow 并不是 Weex 官方社区的一部分，如果您在 StackOverflow 上的问题超过 96 小时仍无人回复，可在 Github Issue 中发起问题讨论。
@@ -66,4 +73,4 @@ Weex 采用了 Apache License 2.0，请确保你的贡献符合Apache License 
 :::
 
 ### 贡献代码
-贡献的代码可以是修复已知的 bug 或者 开发新 feature，参考[代码提交指南](./contribute-code.html)了解更多细节。
+贡献的代码可以是修复已知的 bug 或者 开发新 feature，参考[代码提交指南](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#contribute-code)了解更多细节。

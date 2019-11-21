@@ -85,4 +85,4 @@ Weex 应用需要依赖前端框架来编写，但 Weex 并没有绑定、限制
 如果你想为 Weex 贡献自己的力量，比如提交代码、修改文档或提交一些 Bug，可以阅读
 
 - [How to Contribute](./contribute/how-to-contribute.html)
-- [Bug Report Guidelines](./contribute/bug-report-guidelines.html)
+- [Bug Report Guidelines](https://github.com/apache/incubator-weex/blob/master/CONTRIBUTING.md#ask-or-answer-questions)
