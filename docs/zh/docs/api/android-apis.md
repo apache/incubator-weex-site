@@ -6,7 +6,7 @@ order: 2.2
 version: 2.1
 ---
 
-# WXSDKInstace
+# WXSDKInstance
 
 Weex Native 和 JavaScript 交互通信.
 
