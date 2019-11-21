@@ -10,9 +10,9 @@ No child should be added to a `textarea`.
 
 ## Attributes
 
-The `textarea` component supports all the properties of the `input` component. Besides, it support the `row` attributes.
+The `textarea` component supports all the properties of the `input` component. Besides, it support the `rows` attributes.
 
-* **row**, number, default is 2. Specify the rows of a textarea.
+* **rows**, number, default is 2. Specify the rows of a textarea.
 
 ## Styles
 
