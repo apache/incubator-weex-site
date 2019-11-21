@@ -6,7 +6,7 @@ order: 2.2
 version: 2.1
 ---
 
-# WXSDKInstace
+# WXSDKInstance
 
 ## Custom events
 Used for a custom control for event notifications, such as custom click events, response drop events, and so on.
