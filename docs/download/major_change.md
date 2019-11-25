@@ -33,3 +33,10 @@ This means users have to bundle a JavaScript Interpreter in their APP to run Wee
     apply from: 'https://raw.githubusercontent.com/apache/incubator-weex/release/0.28/android/sdk/buildSrc/download_jsc.gradle'
 
 The above code snippet will download and bundle [jsc-android](https://www.npmjs.com/package/jsc-android/v/241213.1.0) of version `241213.1.0`. This is only for demonstration purpose, users always have the freedom of choosing JavaScript Interpreter in their APP.
+
+::: tip
+1. The **JavaScriptCore Interpreter** included above only supports armeabi-v7a, arm64-v8a, x86.
+2. The above script will copy **JavaScriptCore Interpreter** into `project.android.sourceSets.main.jniLibs`.
+
+If there is any problems in your project when applying the script, please adjust it based on your condition.
+:::

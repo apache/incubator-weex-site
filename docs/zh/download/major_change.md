@@ -33,3 +33,10 @@
     apply from: 'https://raw.githubusercontent.com/apache/incubator-weex/release/0.28/android/sdk/buildSrc/download_jsc.gradle'
 
 这个脚本将会下载并内置[jsc-android](https://www.npmjs.com/package/jsc-android/v/241213.1.0)到你的 App 中。上述脚本仅为演示时使用，用户依然有权利在 App 中选择其符合其诉求的 JavaScript 引擎。
+
+::: tip
+1. 上述脚本中引入的 JavaScriptCore Interpreter 只支持 armeabi-v7a, arm64-v8a, x86 三种架构。
+2. 上述脚本将尝试把 JavaScriptCore Interpreter 拷贝至 `project.android.sourceSets.main.jniLibs` 文件夹。
+
+若你的工程无法在上述条件下运行起来，请自行调整脚本。
+:::
