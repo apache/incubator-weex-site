@@ -262,24 +262,24 @@ weex在统计可交互时间的同时，同时记录了以下几个辅助信息�
 
 
 
-[img_interaction_logic]: http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/ac84ce579b28867aac2e8ba18e40e954.png
+[img_interaction_logic]: /blog/interaction-optimization/ac84ce579b28867aac2e8ba18e40e954.png
 
-[img_yhh_android]: https://cdn.nlark.com/lark/0/2018/png/48836/1532953968812-86ca8419-7b4f-4ac1-987a-1cc32049e385.png
+[img_yhh_android]: /blog/interaction-optimization/1532953968812-86ca8419-7b4f-4ac1-987a-1cc32049e385.png
 
-[img_tttj_first_iOS]: https://cdn.nlark.com/lark/0/2018/png/48836/1532953955583-a020c31d-9e1e-4d5f-8754-ba9b42e04eb6.png
+[img_tttj_first_iOS]: /blog/interaction-optimization/1532953955583-a020c31d-9e1e-4d5f-8754-ba9b42e04eb6.png
 
-[img_agj_iOS]: https://cdn.nlark.com/lark/0/2018/png/48836/1532953779052-391a0eb5-2902-4a76-bb7d-ecb79fad40d5.png
+[img_agj_iOS]: /blog/interaction-optimization/1532953779052-391a0eb5-2902-4a76-bb7d-ecb79fad40d5.png
 
-[img_js_logic_normal]: https://cdn.nlark.com/lark/0/2018/png/48836/1532953927448-6af8006c-efa9-4a83-a33e-31ac264e2320.png
+[img_js_logic_normal]: /blog/interaction-optimization/1532953927448-6af8006c-efa9-4a83-a33e-31ac264e2320.png
 
-[img_interaction_screen_case]: https://cdn.nlark.com/lark/0/2018/png/48836/1532953896764-72b52689-f4b2-4442-9f0f-9a2e4edb007f.png
+[img_interaction_screen_case]: /blog/interaction-optimization/1532953896764-72b52689-f4b2-4442-9f0f-9a2e4edb007f.png
 
-[img_async_data_case]: https://cdn.nlark.com/lark/0/2018/png/48836/1532953850732-b0d52294-a6c6-4fbb-bd08-ee7e2a4b84b8.png
+[img_async_data_case]: /blog/interaction-optimization/1532953850732-b0d52294-a6c6-4fbb-bd08-ee7e2a4b84b8.png
 
-[img_wx_render_compare]: https://cdn.nlark.com/lark/0/2018/png/48836/1533126050649-50116f85-0101-4389-99f5-35f3ef4813d9.png
+[img_wx_render_compare]: /blog/interaction-optimization/1533126050649-50116f85-0101-4389-99f5-35f3ef4813d9.png
 
 
-[img_wx_screen_render_stream]: https://cdn.nlark.com/lark/0/2018/png/48836/1533125815712-c17b4df4-e072-42b7-8c77-560deabf7696.png
+[img_wx_screen_render_stream]: /blog/interaction-optimization/1533125815712-c17b4df4-e072-42b7-8c77-560deabf7696.png
 
 
 

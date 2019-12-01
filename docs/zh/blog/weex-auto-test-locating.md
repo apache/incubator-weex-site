@@ -11,7 +11,7 @@
 ---
 **实现原理**
 
-![image.png](https://cdn.yuque.com/lark/0/2018/png/34622/1531211875576-24be9339-cb25-41fc-8b4c-26d74aaf1ddd.png)
+![image.png](/blog/weex-auto-test-locating/1531211875576-24be9339-cb25-41fc-8b4c-26d74aaf1ddd.png)
 
 如上图所示，我们首先在weex页面的根部，创建了一个container节点，用于存储当前页面所有添加test-id属性的节点其test-id值与实际节点ID的映射关系；其次，在页面的layout发生变化时，触发收集新的携带test-id节点的信息，并为其分配一个新的ID；最后，我们将该节点的test-id属性和对应的ID写入到container节点中，方便自动化脚本查询指定节点时，能够获取其真实ID的信息；
 
@@ -141,7 +141,7 @@ if (attributes[@"testId"]) {
 由于iOS下，只需要获取“testID”属性即可，此处我们不在赘述在iOS下定位带元素的方法。下面，我们将给出Android下查找test-id的测试代码。而业务方在实际使用过程当中，可以在自己的自动化框架中，封装统一的FindByTestID方法，来达到一套代码双端执行的效果。后续，我们也会对外推出一个基于Appium的测试框架，提供一个功能较为丰富的weex自动化执行框架给外部开发者。
 
 **原理示意图**
-![image.png](https://cdn.yuque.com/lark/0/2018/png/34622/1531211945217-fe2a8501-dfd8-4372-a3e5-b5007e5bced2.png)
+![image.png](/blog/weex-auto-test-locating/1531211945217-fe2a8501-dfd8-4372-a3e5-b5007e5bced2.png)
 
 针对本方案，我们基于Appium测试框架，实现了对应查找元素的方法。代码逻辑如下：
 ```java

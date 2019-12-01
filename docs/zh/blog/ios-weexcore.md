@@ -14,7 +14,7 @@ WeexCore 为了实现跨平台，使用 C++ 编写。其当前基本职责为：
 
 此外，在接入 WeexCore 前，ObjC 层除了需要维护 Component Tree 外，还需要建立并维护排版引擎使用的 Layout Tree。架构如下：
 
-![Screen Shot 2018-08-03 at 15.00.43.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801663181-91fc0fd3-8568-42f7-b026-83e56e5f2c7f.png)
+![Screen Shot 2018-08-03 at 15.00.43.png](/blog/ios-weexcore/1550801663181-91fc0fd3-8568-42f7-b026-83e56e5f2c7f.png)
 
 接入 WeexCore 后，Layout 引擎下沉到 WeexCore 层，JSFramework 输出的渲染指令直接交给 WeexCore 中的 RenderManager。RenderManager 进行解析后，创建 RenderObject。RenderObject 直接是 LayoutNode 的子类，可由 LayoutEngine 处理。不需要像之前那样由上层 Component 创建并手工关联。RenderManager 将渲染指令平坦化，并输出相关 Action 到 Render Action Pool，再通过 PlatformBridge 传递给 ObjC 层的 ComponentManager。平坦化体现在：
 * 组件及它的孩子被拆分成多条 AddElementAction 输出。
@@ -24,7 +24,7 @@ WeexCore 为了实现跨平台，使用 C++ 编写。其当前基本职责为：
 
 架构图如下：
 
-![Screen Shot 2018-08-03 at 16.54.25.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801699138-b1bd32d9-8cea-4375-aec2-e23f81d7edd6.png)
+![Screen Shot 2018-08-03 at 16.54.25.png](/blog/ios-weexcore/1550801699138-b1bd32d9-8cea-4375-aec2-e23f81d7edd6.png)
 
 初看两副架构图，当前的 WeexCore 还没有发挥出威力。未来，它将在 JSFramework 与平台层中间发挥越来越大的作用。
 
@@ -32,15 +32,15 @@ WeexCore 为了实现跨平台，使用 C++ 编写。其当前基本职责为：
 
 ## 0x31 将前端渲染指令传给WeexCore
 
-![Screen Shot 2018-08-03 at 16.57.39.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801726358-df1c5c8e-8f4a-4c79-9ddd-a9dd2e791132.png?x-oss-process=image/resize,w_1492)
+![Screen Shot 2018-08-03 at 16.57.39.png](/blog/ios-weexcore/1550801726358-df1c5c8e-8f4a-4c79-9ddd-a9dd2e791132.png)
 
-![Screen Shot 2018-08-03 at 16.57.48.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801745140-2d132467-dc6d-4fd9-ac8a-8acdd6de1a24.png?x-oss-process=image/resize,w_1492)
+![Screen Shot 2018-08-03 at 16.57.48.png](/blog/ios-weexcore/1550801745140-2d132467-dc6d-4fd9-ac8a-8acdd6de1a24.png)
 
 相比于接入前，拿到前端渲染指令和数据后，不做逻辑，直接将数据透传给 WeexCore。此处涉及一次 OC 对象到 wson 数据的转换，未来可以优化。
 
 ## 0x32 实现 PlatformBridge，接收平坦化后的指令
 
-![Screen Shot 2018-08-03 at 17.06.02.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801778053-070004cb-8157-466c-846b-5e403c9364e3.png?x-oss-process=image/resize,w_1492)
+![Screen Shot 2018-08-03 at 17.06.02.png](/blog/ios-weexcore/1550801778053-070004cb-8157-466c-846b-5e403c9364e3.png)
 
 以 AddElement 为例，WeexCore 回吐的每条指令，只对应一个 Element。数据经过平坦化，但是需要转换回 OC 对象，未来可以优化。
 

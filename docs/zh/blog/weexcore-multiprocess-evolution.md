@@ -6,7 +6,7 @@
 `WeexCore` 在今年三月份的时候, 加入了一个新的成员, 叫 `LayoutEngine`, 它的算法都沉到 c++ 层. 而且一同带下来的还有它的合作伙伴 `Parser`. 这样, `DOM 解析`和 `Layout` 全家桶就全部进入了 `JSThread`. 在减少一个线程的情况下, Weex 的渲染性能还能有所提升, 足以说明目前的 `LayoutEngine` 的强大.
 
 演变过程大致如下图所示, 黄色 DOMParser 本来在一个独立的线程里, 现在和绿色块合成了一个线程.
-![2018-12-07 at 13.18.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/f31103153fd160ae4723069f88c61e34.png)
+![2018-12-07 at 13.18.png](/blog/weexcore-multiprocess-evolution/f31103153fd160ae4723069f88c61e34.png)
 
 再说说多进程, Weex 的 jsEngine 从 V8 切到了 JavaScriptCore. 但由于以下几个问题, 所以将 JSC 引擎放到了子进程里运行.
 1. 在JSC引擎上线出现许多无定位的稳定性问题，威胁手淘等使用Weex的客户端的稳定性。
@@ -19,7 +19,7 @@
 
 先说说为什么多进程下, 为什么还是单线程的模型.
 
-![2018-12-07 at 11.29.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/872298694d6e7f1a311ade626da0f0f8.png)
+![2018-12-07 at 11.29.png](/blog/weexcore-multiprocess-evolution/872298694d6e7f1a311ade626da0f0f8.png)
 
 如上图所示, 一块共享内存分为16份, 父进程(WeexCore) 写偶数块, 读奇数块. 子进程(JSS) 写奇数块, 读偶数块. 
 
@@ -29,7 +29,7 @@
 
 所以, WeexCore 的线程模型演变成下面这个样子.
 
-![2018-12-07 at 12.23.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/cc6710bafd8edd87a577c72d89a764fb.png)
+![2018-12-07 at 12.23.png](/blog/weexcore-multiprocess-evolution/cc6710bafd8edd87a577c72d89a764fb.png)
 
 从架构上来说, 主要有以下几个变动
 * 1. WeexCore 演变成消息驱动的线程异步交互模型.  
@@ -43,7 +43,7 @@
 ### 2. 详解
 #### 2.1. 消息驱动的异步通信模型
 线程的异步通信模型可以避免线程间互不阻塞，提⾼高线程的并发性
-![2018-12-07 at 12.36.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/937def357b6528b0d78f0e948560e5dc.png)
+![2018-12-07 at 12.36.png](/blog/weexcore-multiprocess-evolution/937def357b6528b0d78f0e948560e5dc.png)
 
 异步通信可以通过简单的控制线程共享的 volatile 变量或者信号量 mutex 和条件异步调⽤用到其他线程 的函数块，然⽽简单粗暴的使⽤用这些⽅式时，线程的边界会变得不明显或者代码块都充斥着锁和信号量的控制，如果数据需要线程公用，还需要对数据块上锁，导致死锁或异步能⼒下降，对本身代码的维护和程序的稳定性都有影响。
 消息驱动的异步通信模型结是常用的线程循环模型，是一种非侵⼊式设计，消息结构耦合度底，线程中的循环实现灵活度高。尽管它也是基于上述的⽅式去进⾏线程切换，但相⽐起直接对⽅法⽤锁，或者直接利用 volatile，通过消息使代码块和数据边界明显，提⾼了程序的线程安全性，线程间互不阻塞，提⾼线程的并发性。它代表着⼀种设计哲学，但是这并不是代表它没有任何锁控制，只是可以把锁限制在⼀个极⼩的范围内。
@@ -53,7 +53,7 @@
 的消息循环机制，例例如 Android Handler。
 
 ##### 2.1.1 总体设计
-![2018-12-07 at 12.40.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/4545bcabcdac57acfe0be1692a8b9cc5.png)
+![2018-12-07 at 12.40.png](/blog/weexcore-multiprocess-evolution/4545bcabcdac57acfe0be1692a8b9cc5.png)
 
 上图是消息驱动框架的简要类关系图，整体的流程是创建或者依附到 Thread 环境，通过消息泵 MessagePump 完成线程切换，驱动消息循环体 MessageLoop 进⾏消息循环，在当前线程中执⾏来自于其他线程丢进池⼦中的消息。
 
@@ -64,13 +64,13 @@
 ##### 2.1.2 具体流程
 下⾯将从 Thread 创建过程中相关对象的创建流程图、消息循环初始化流程图和消息驱动流程图上分 析，通过具体流程可以了解内部对跨平台和对当前 Weex 的上层线程模型的适配机制。
 
-![2018-12-07 at 12.42.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/7d0c65a3a4b79ac3d990dfaa8f203be1.png)
+![2018-12-07 at 12.42.png](/blog/weexcore-multiprocess-evolution/7d0c65a3a4b79ac3d990dfaa8f203be1.png)
 
 上图是 Thread 创建过程中相关对象的创建流程图。当外界通过 new 创建 Thread 时，需要带上 MessageLoop::Type 的参数（关键：⽤于创建 MessagePump，启动时会根据类型判断是否要创建线 程环境）。ThreadImpl 是 Thread 的实现类，是真正⽤于创建 Thread 环境的对象，它是⼀个抽象类，它的⼦类后缀分别是 Android / iOS / Posix。这些⼦类分别代表了各个环境下的实现。Android 和 iOS 都是 Unix-like 系统，因此他们使⽤的都是 Posix 线程，但是在 pthread 的操作上会有不⼀致 的地⽅，例如 pthread_setname_np 在 Android 和 iOS 上传递的参数不⼀样。因此根据不同系统去 对应的对实现类做出调整。Thread 在初始化 Impl 时会根据宏定义确定初始化的 Impl ⼦类，从⽽做到平台适应。
 
 ThreadImpl 持有⼀个维护消息队列的 MessageLoop，再初始化时也会⼀并创建。MessageLoop 中 持有⼀个驱动器 MessagePump，MessagePump 是⼀个接⼝类，具体实现类由 MessageLoop::Type 决定。MessageLoop::Type 具有两种类型，DEFAULT 指驱动器由默认的 Posix Thread ⽅式进⾏，PLATFORM 指驱动器由兼容 Android 或 iOS 的线程环境和消息循环⽅式实现（具体循环请继续向后）。
 
-![2018-12-07 at 12.43.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/950b476fb53468ba2f309b73435a9e15.png)
+![2018-12-07 at 12.43.png](/blog/weexcore-multiprocess-evolution/950b476fb53468ba2f309b73435a9e15.png)
 
 上图是消息循环初始化流程图。当 Thread 创建完成后，需要通过 Thread::Start ⽅法完成内部消息循 环的构建流程。Thread::Start ⽅法会通过实现类 ThreadImpl::Run 完成，ThreadImplPosix 是 Android / iOS 的基类，基类中 Run ⽅法会对 MessageLoop::Type 进⾏判断：
 
@@ -85,7 +85,7 @@ MessageLoop 在这⾥的作⽤只是⽤于执⾏消息和存储消息，因此 M
 
 到此消息循环的初始化流程完成，DEFAULT 类型进⼊了线程阻塞等待唤醒，⽽ PLATFORM 类型进⼊ 了等待来⾃ Android / iOS 的调度。
 
-![2018-12-07 at 12.45.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/965358b8880bc1e1547654ca3f26b79a.png)
+![2018-12-07 at 12.45.png](/blog/weexcore-multiprocess-evolution/965358b8880bc1e1547654ca3f26b79a.png)
 
 上图是消息驱动流程图。当外界在其他线程通过指定线程的 MessageLoop 进⾏ PostTask 传进来了⼀ 个任务 closure，内部会对 DelayedTaskQueue 上锁，确保安全的添加操作，此时 closure 会变成 DelayedTask 扔进池⼦⾥，释放锁。通知消息泵有消息进来：
 
@@ -96,7 +96,7 @@ MessageLoop 在这⾥的作⽤只是⽤于执⾏消息和存储消息，因此 M
 MessageLoop::DoWork 中⾸先对 DelayedTaskQueue 上锁，通过对⽐ DelayedTask 时间和当前时 间获取需要执⾏的 closure 列表，如果还有任务，则通知消息泵定时驱动，接着释放锁，执⾏ closure 列表。结束后如果是 MessagePumpPosix，则需阻塞当前线程，等待下次唤醒。
 
 ##### 2.1.3 closure 设计
-![2018-12-07 at 12.47.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/1b94848aaa731b146228090093b5cc92.png)
+![2018-12-07 at 12.47.png](/blog/weexcore-multiprocess-evolution/1b94848aaa731b146228090093b5cc92.png)
 
 closure 是⼀个任务的载体，它实际是⼀个 std::function。它在被扔进任务池⼦⾥⾯时，它的⽣命周 期就跟随着线程，除⾮它离开了执⾏队列被执⾏，那么它的⽣命周期将在执⾏后被销毁，否则未被执 ⾏的任务将在执⾏完后⾃动析构。⽽这个可以拷⻉的 function 是通过 CopyableLambda 实现的， CopyableLambda 通过创建⼀个指向数据的共享指针，然后创建⼀个可复制的 lambda 来捕获该共享 指针，然后将该可复制的 lambda 包装成 std::function 请求的签名，赋予 std::function 函数拷⻉的 功能，可供 MessageLoop 持有调度。
 
@@ -117,7 +117,7 @@ weex::base::MakeCopyable([page_id = std::string(page_id), task = std::string(tas
 #### 2.2. WeexCore 分层设计
 IPC 可热插拔, 单双进程自由切换
 
-![2018-12-07 at 13.05.png](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/22195f7e61b2267f50dc78226d98aff3.png)
+![2018-12-07 at 13.05.png](/blog/weexcore-multiprocess-evolution/22195f7e61b2267f50dc78226d98aff3.png)
 
 如图所示.
 
