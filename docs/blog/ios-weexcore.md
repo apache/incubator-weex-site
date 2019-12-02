@@ -17,7 +17,7 @@ Before importing WeexCore, we get render commands from Objective-C style Javascr
 2.	In styles field of one component, values related to CSS layout and other self-defined styles are mixed together.
 At the same time,  iOS uses Yoga as its layout engine. And each WXComponent(base class of any component) manages a Yoga node. The structure sketch is as follows:
 
-![Screen Shot 2018-08-03 at 15.00.43.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801663181-91fc0fd3-8568-42f7-b026-83e56e5f2c7f.png)
+![Screen Shot 2018-08-03 at 15.00.43.png](ios-weexcore/1550801663181-91fc0fd3-8568-42f7-b026-83e56e5f2c7f.png)
 
 After importing WeexCore, we use shared new layout engine called WeexLayout which lies in WeexCore layer. Now Javascript engine outputs render commands which serves as input to RenderManager in WeexCore. RenderManager processes each command and create RenderObjects as required and fill in styles and attributes. Also each RenderObject extracts CSS layout properties from styles and configurates its WeexLayout node. Actually RenderObject inherites from WeexLayoutNode. RenderManager generates RenderObjects and then yields RenderActions. RenderActions are passed to platform layer as input of instance component manager(WXComponentManager), and the we create iOS platform views.
 
@@ -25,15 +25,15 @@ Besides, layout is now triggered under two circumstances. Firstly, any change to
 
 As we mentioned above, in this first stage, WeexCore has not shown its strength. In the future, it will play a far more important role as a common layer.
 
-![Screen Shot 2018-08-03 at 16.54.25.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801699138-b1bd32d9-8cea-4375-aec2-e23f81d7edd6.png)
+![Screen Shot 2018-08-03 at 16.54.25.png](ios-weexcore/1550801699138-b1bd32d9-8cea-4375-aec2-e23f81d7edd6.png)
 
 # 0x3 Staple change points
 
 ## 0x31 Render commands data link
 
-![Screen Shot 2018-08-03 at 16.57.39.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801726358-df1c5c8e-8f4a-4c79-9ddd-a9dd2e791132.png?x-oss-process=image/resize,w_1492)
+![Screen Shot 2018-08-03 at 16.57.39.png](ios-weexcore/1550801726358-df1c5c8e-8f4a-4c79-9ddd-a9dd2e791132.png)
 
-![Screen Shot 2018-08-03 at 16.57.48.png](https://cdn.nlark.com/yuque/0/2019/png/272593/1550801745140-2d132467-dc6d-4fd9-ac8a-8acdd6de1a24.png?x-oss-process=image/resize,w_1492)
+![Screen Shot 2018-08-03 at 16.57.48.png](ios-weexcore/1550801745140-2d132467-dc6d-4fd9-ac8a-8acdd6de1a24.png)
 
 In the first stage, we still use Objective-C interface of JavascriptCore and forward render commands to WeexCore using WXCoreBridge methods.
 
