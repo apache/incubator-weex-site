@@ -82,3 +82,25 @@ Developers could add `\uFEFF` namely [ZERO WIDTH NO-BREAK SPACE](http://jkorpela
 
 ## Example
 * [Basic usage for `<text>`](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0).
+
+
+## Rax Example
+
+`rax-text` is the component `<text>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Text from 'rax-text';
+
+function App() {
+  return (
+    <Text>Text</Text>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-text doc](https://rax.js.org/docs/components/text)
+

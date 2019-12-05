@@ -21,3 +21,28 @@
 ## Events
 
 * **common events**. Check out [common events](../events/common-events.html).
+
+## Rax Example
+
+`rax-view` is the component `<div>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import View from "rax-view";
+
+function App() {
+  return <View
+		style={{
+		  width: '200rpx',
+		  height: '200rpx',
+		  backgroundColor: '#222831',
+		}}
+	/>;
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-view doc](https://rax.js.org/docs/components/view)
+

@@ -59,7 +59,7 @@ common styles: check out [common styles for components](../styles/common-styles.
 Nested lists or scrollers within the same direction are not supported. In other words. nested list/scroller must have different directions.
 For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.
 
-## example
+## Example
 
 ```html
 <template>
@@ -148,3 +148,64 @@ For example, a vertical list nested in a vertical list or scroller is not allowe
 ```
 
 [try it](http://dotwe.org/vue/2f22f14fb711d88515e63c3f67bed46a)
+
+## Rax Example
+
+`rax-scrollview` is the component `<scroller>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal"
+import View from 'rax-view';
+import ScrollView from 'rax-scrollview';
+
+function Thumb() {
+  return (
+    <View style={styles.button}>
+      <View style={styles.box} />
+    </View>
+  );
+}
+
+let THUMBS = [];
+for (let i = 0; i < 20; i++) THUMBS.push(i);
+let createThumbRow = (val, i) => <Thumb key={i} />;
+
+function App () {
+  return (
+    <View style={{ ...styles.container, ...{ height: 500 } }}>
+      <ScrollView>
+        {THUMBS.map(createThumbRow)}
+      </ScrollView>
+    </View>
+  );
+}
+
+let styles = {
+  container: {
+    padding: 20,
+    borderStyle: 'solid',
+    borderColor: '#dddddd',
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 10,
+  },
+  button: {
+    margin: 7,
+    padding: 5,
+    alignItems: 'center',
+    backgroundColor: '#eaeaea',
+    borderRadius: 3,
+  },
+  box: {
+    width: 64,
+    height: 64,
+  }
+};
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-scrollview doc](https://rax.js.org/docs/components/scrollview)
+

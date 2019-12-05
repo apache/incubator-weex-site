@@ -120,6 +120,30 @@ Support **[common styles](../styles/common-styles.html)**.
 - `<web>` can not have any nested child component.
 - You can use [webview module](../modules/webview.html) to control `<web>` component, see the [example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939).
 
-## Examples
+## Example
 
 - [Browser example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939)
+
+## Rax Example
+
+`rax-embed` is the component `<web>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render, Component } from 'rax';
+import Driver from 'driver-universal';
+import Embed from 'rax-embed';
+
+function App() {
+  const urlParam = {
+      paramOne:123,
+     paramTwo:456
+  };
+  return <Embed urlParam={urlParam} src={'http://taobao.com'} 
+  useIframeInWeb={true} style={{ height: 750, width: 750 }} />
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-embed doc](https://rax.js.org/docs/components/embed)
+

@@ -79,3 +79,64 @@ To be rendered properly, the `<refresh>` Component must appear inside the specia
 ## Example
 
  - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
+
+## Rax Example
+
+`rax-refreshcontrol` is the component `<refresh>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, Component, render } from 'rax';
+import View from 'rax-view';
+import Text from 'rax-text';
+import Driver from 'driver-universal';
+import RecyclerView from 'rax-recyclerview';
+import RefreshControl from 'rax-refreshcontrol';
+
+class RefreshControlDemo extends Component {
+  state = {
+    isRefreshing: false,
+    loaded: 0,
+    refreshText: '↓ Pull To Refresh'
+  };
+
+  handleRefresh = (e) => {
+    this.setState({
+      isRefreshing: true,
+      refreshText: 'Refreshing',
+    });
+    setTimeout(() => {
+      // update Data
+      this.setState({
+        isRefreshing: false,
+        refreshText: '↓ Pull To Refresh',
+      });
+    }, 1000);
+  };
+
+  render() {
+    return (
+      <View>
+        <RecyclerView
+          refreshControl={null}>
+          <RefreshControl
+            refreshing={this.state.isRefreshing}
+            onRefresh={this.handleRefresh}
+          >
+            <Text>{this.state.refreshText}</Text>
+          </RefreshControl>
+          <RecyclerView.Cell>
+            <View>
+              <Text>this is list</Text>
+            </View>
+          </RecyclerView.Cell>
+        </RecyclerView>
+      </View>
+   );
+  }
+}
+
+render(<RefreshControlDemo/>, document.body, { driver: Driver });
+```
+
+[rax-refreshcontrol doc](https://rax.js.org/docs/components/refreshcontrol)
+

@@ -161,6 +161,35 @@ export default {
 
 Complete example goes [here](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0).
 
-## Examples
+## Example
 * [Base64 example](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
 * [Lazy load image example](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)
+
+## Rax Example
+
+`rax-image` is the component `<image>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Image from 'rax-image';
+
+const App = () => {
+ return (
+   <Image
+     source={{
+       uri: 'https://gw.alicdn.com/tfs/TB1bBD0zCzqK1RjSZFpXXakSXXa-68-67.png',
+     }}
+     style={{
+       height: '68rpx',
+       width: '67rpx'
+     }}
+  />
+ );
+};
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-image doc](https://rax.js.org/docs/components/image)
+

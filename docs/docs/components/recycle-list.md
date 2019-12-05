@@ -129,7 +129,7 @@ Different from the understanding in the front-end framework, the logic to implem
 * Component custom event
   Plan support. Features such as `vm.$on`, `vm.$once`, `vm.$emit`, `vm.$off` are not fully tuned, the interface is available, but the behavior may be slightly different (parameters are missing), do not use it for the time being.
 
-## Demo
+## Example
 ```html
 <recycle-list for="(item, i) in longList" switch="type">
   <cell-slot case="A">

@@ -31,6 +31,7 @@ It supports all kinds of weex components as its slides. The `indicator` componen
 * **scroll**. This event is fired when scrolling. The current `offsetXRatio` value is given in this event callback. And `offsetXRatio` means the current slide offset ratio which value range is [-1, 1]. Negative value means the slide is shifted to left and positive value means to right. For example, -0.2 means 20% of the current slide is slided beyonds left border of the slider.
 
 ## Example
+
 ```html
 <template>
   <div>
@@ -81,3 +82,48 @@ It supports all kinds of weex components as its slides. The `indicator` componen
 * [Demo of setting scroll event](http://dotwe.org/vue/00aff16c6c1c9e9c1209d2db70b94b24)
 * [Demo of auto-play with indicator](http://dotwe.org/vue/7c9c0f5cc6e4571a962b8f0cf627fab3)
 * [Demo Ocean](http://dotwe.org/vue/c851d5fe09e54709a6128dbc5bf74a6e)
+
+## Rax Example
+
+`rax-slider` is the component `<slider>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, Component, render, createRef } from 'rax';
+import View from 'rax-view';
+import Image from 'rax-image';
+import Slider from 'rax-slider';
+import Driver from 'driver-universal';
+
+const App  = () => {
+  const handleChange = (idx) {
+    console.log('change to ', idx);
+  }
+
+  return (
+    <View>
+      <Slider
+        className="slider"
+        width="750"
+        height="500"
+    autoPlay
+        onChange={handleChange}
+      >
+        <View style={styles.itemWrap}>
+          <Image style={styles.image} source={{height: 500, width: 375, uri: '//gw.alicdn.com/tfs/TB19NbqKFXXXXXLXVXXXXXXXXXX-750-500.png'}} />
+        </View>
+        <View style={styles.itemWrap}>
+          <Image style={styles.image} source={{height: 500, width: 375, uri: '//gw.alicdn.com/tfs/TB1tWYBKFXXXXatXpXXXXXXXXXX-750-500.png'}} />
+        </View>
+        <View style={styles.itemWrap}>
+          <Image style={styles.image} source={{height: 500, width: 375, uri: '//gw.alicdn.com/tfs/TB1SX_vKFXXXXbyXFXXXXXXXXXX-750-500.png'}} />
+        </View>
+      </Slider>
+    </View>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-slider doc](https://rax.js.org/docs/components/slider)
+

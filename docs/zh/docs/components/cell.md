@@ -34,6 +34,7 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 Cell 的例子请参考
 * [list](./list.html)
 * [waterfall](./waterfall.html)
+
 ## Rax 示例
 
 Rax 中 cell 是 `rax-recyclerview` 提供的子组件，使用方式如下
