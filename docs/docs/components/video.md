@@ -28,7 +28,7 @@ A `text` is the only valid type of child component.
 * **finish** Triggered when playback state is Finished.
 * **fail** Triggered when playback state is Failed.
 
-# Example
+# Vue Example
 
 ```html
 <template>
@@ -81,3 +81,26 @@ A `text` is the only valid type of child component.
 * [Demo](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
 * [Demo of autoplay](http://dotwe.org/vue/342d32830f51f72df6acab21fb1c21bd)
 * [Demo of controls](http://dotwe.org/vue/7bdf54dce22def3d3850f65d95f5eac9)
+
+## Rax Example
+
+`rax-video` is the component `<video>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, Component, render } from "rax";
+import Video from "rax-video";
+import Driver from "driver-universal";
+
+render(
+  <Video
+    style={{ width: '750rpx', height: '400rpx' }}
+    autoPlay
+    src="https://cloud.video.taobao.com/play/u/2780279213/p/1/e/6/t/1/d/ld/36255062.mp4"
+  />,
+  document.body,
+  { driver: Driver }
+);
+```
+
+[rax-video doc](https://rax.js.org/docs/components/video)
+

@@ -74,6 +74,6 @@
       * `a`标签设置了pseudo-ref。此时itemclick事件会被触发，并且携带pseudo-ref的值。**此时 `a` 标签的无效。**。[示例](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
     * 若多个嵌套节点上均包含 `itemclick` 事件，则只有最外层节点上的 `itemclick` 会被触发
 
-## 示例
+## Vue 示例
 
 [示例](http://dotwe.org/vue/8a817e1acb46c2910caf1b53b8016a48)

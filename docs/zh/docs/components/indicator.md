@@ -22,6 +22,6 @@
 
 无事件
 
-## 示例
+## Vue 示例
 
 请参考 [slider](./slider.html)

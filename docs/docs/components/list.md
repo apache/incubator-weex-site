@@ -76,3 +76,83 @@ For example, a vertical list nested in a vertical list or scroller is not allowe
 
 
 [load more demo](http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38)
+
+## Rax Example
+
+`rax-recyclerview` is the component `<list>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, Component, render } from 'rax';
+import View from 'rax-view';
+import Text from 'rax-text';
+import Driver from "driver-universal"
+import RecyclerView from 'rax-recyclerview';
+
+function Thumb() {
+  return (
+    <RecyclerView.Cell>
+      <View style={styles.button}>
+        <View style={styles.box} />
+      </View>
+    </RecyclerView.Cell>
+  );
+}
+let THUMBS = [];
+for (let i = 0; i < 20; i++) THUMBS.push(i);
+let createThumbRow = (val, i) => <Thumb key={i} />;
+
+function App() {
+  return (
+    <View style={styles.root}>
+      <View style={styles.container}>
+        <RecyclerView
+          style={{
+            height: 500
+          }}>
+          <RecyclerView.Header>
+            <Text>Sticky view is not header</Text>
+          </RecyclerView.Header>
+          <RecyclerView.Header>
+            <View style={styles.sticky}>
+              <Text>Sticky view must in header root</Text>
+            </View>
+          </RecyclerView.Header>
+          {THUMBS.map(createThumbRow)}
+        </RecyclerView>
+      </View>
+    </View>
+  );
+}
+
+let styles = {
+  root: {
+    width: '750rpx',
+  },
+  container: {
+    padding: '20rpx',
+    borderStyle: 'solid',
+    borderColor: '#dddddd',
+    borderWidth: '1rpx',
+    marginLeft: '20rpx',
+    height: '1000rpx',
+    marginRight: '20rpx',
+    marginBottom: '10rpx',
+  },
+  button: {
+    margin: '7rpx',
+    padding: '5rpx',
+    alignItems: 'center',
+    backgroundColor: '#eaeaea',
+    borderRadius: '3rpx',
+  },
+  box: {
+    width: '64rpx',
+    height: '64rpx',
+  }
+};
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-recyclerview doc](https://rax.js.org/docs/components/recyclerview)
+

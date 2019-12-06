@@ -80,5 +80,27 @@ Generally speaking, you would meet inconsistent word-break behavior if one of th
 Developers could add `\uFEFF` namely [ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) just after the character with inconsistent word-break behavior to force no-break strategy, ref [demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce) to see more detail。`\uFEFF` may not work on all Android ROMs, as some of them may just ignore it.
 :::
 
-## Example
+## Vue Example
 * [Basic usage for `<text>`](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0).
+
+
+## Rax Example
+
+`rax-text` is the component `<text>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Text from 'rax-text';
+
+function App() {
+  return (
+    <Text>Text</Text>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-text doc](https://rax.js.org/docs/components/text)
+

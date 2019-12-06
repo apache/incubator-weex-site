@@ -44,6 +44,6 @@
 </loading>
 ```
 
-## 示例
+## Vue 示例
 [基本用法](http://dotwe.org/vue/1c303ff427e3a92fc8ef5846c00b35e5)
 <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1QYo8n9zqK1RjSZFpXXakSXXa-1242-2208.png" />

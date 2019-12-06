@@ -50,7 +50,7 @@
   * @param isShow: boolean, 显示或隐藏键盘。
   * @param keyboardSize: 键盘的高度，以前端使用的样式单位返回。
 
-## 示例
+## Vue 示例
 
 ```html
 <template>
@@ -117,3 +117,36 @@
 * [示例](http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa)
 * [事件示例](http://dotwe.org/vue/2ba8ebc4e6970e1e86725c3e80296e40)
 * [绑定示例](http://dotwe.org/vue/d884b0c18891a05d653253c0f0a94bc1)
+
+## Rax 示例
+
+`rax-textinput` 是 `<textarea>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from "rax";
+import Driver from 'driver-universal';
+import TextInput from "rax-textinput";
+
+function App() {
+  return (
+    <View style={{margin: '20rpx'}}>
+      <TextInput
+        multiline={true}
+        numberOfLines={3}
+        style={{
+          height: '150rpx',
+          width: '600rpx',
+          borderWidth: '1rpx',
+          borderColor: '#dddddd',
+          borderStyle: 'solid'
+        }}
+      />
+    </View>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-textinput 文档](https://rax.js.org/docs/components/textinput)
+

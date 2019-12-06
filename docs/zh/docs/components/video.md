@@ -28,7 +28,7 @@ Video 组件用于在页面中嵌入视频内容。
 * **finish** 当 playback 的状态是 Finished 时触发。
 * **fail** 当 playback 状态是 Failed 时触发。
 
-# 示例
+# Vue 示例
 
 ```html
 <template>
@@ -81,3 +81,26 @@ Video 组件用于在页面中嵌入视频内容。
 * [示例](http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197)
 * [自动播放示例](http://dotwe.org/vue/342d32830f51f72df6acab21fb1c21bd)
 * [手动控制示例](http://dotwe.org/vue/7bdf54dce22def3d3850f65d95f5eac9)
+
+## Rax 示例
+
+`rax-video` 是 `<video>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, Component, render } from "rax";
+import Video from "rax-video";
+import Driver from "driver-universal";
+
+render(
+  <Video
+    style={{ width: '750rpx', height: '400rpx' }}
+    autoPlay
+    src="https://cloud.video.taobao.com/play/u/2780279213/p/1/e/6/t/1/d/ld/36255062.mp4"
+  />,
+  document.body,
+  { driver: Driver }
+);
+```
+
+[rax-video 文档](https://rax.js.org/docs/components/video)
+

@@ -81,3 +81,7 @@ Weex 从 [v0.10.0](https://github.com/alibaba/weex/releases/tag/v0.10.0)（发�
 ## Rax
 
 Rax 是一个兼容 React 接口的前端框架，请参考 [Rax 的官方网站](https://alibaba.github.io/rax/) 来获得更多信息。
+
+::: tip
+关于在 Weex 中使用 Rax 的技巧请参阅： [《在 Weex 中使用 Rax》](./use-rax-in-weex.html)。
+:::

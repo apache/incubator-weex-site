@@ -30,7 +30,7 @@ Slider 组件用于在一个页面中展示多个图片，在前端这种效果�
 * **change** 当轮播索引改变时，触发该事件。该事件给前端的参数中含有 `index`表示当前切换到的序号。
 * **scroll** 列表发生滚动时将会触发该事件。在参数中有 `offsetXRatio`，它表示当前图片偏移的比率，取值范围是 [-1, 1]。负值表示当前图片向左滑，正值表示向右划。比如 -0.2 表示当前图片向左滑，并且有 20% 的区域超出了容器边缘。
 
-## 示例
+## Vue 示例
 ```html
 <template>
   <div>
@@ -81,3 +81,48 @@ Slider 组件用于在一个页面中展示多个图片，在前端这种效果�
 * [滚动事件示例](http://dotwe.org/vue/00aff16c6c1c9e9c1209d2db70b94b24)
 * [自动播放和indicator示例](http://dotwe.org/vue/7c9c0f5cc6e4571a962b8f0cf627fab3)
 * [Ocean示例](http://dotwe.org/vue/c851d5fe09e54709a6128dbc5bf74a6e)
+
+## Rax 示例
+
+`rax-slider` 是 `<slider>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, Component, render, createRef } from 'rax';
+import View from 'rax-view';
+import Image from 'rax-image';
+import Slider from 'rax-slider';
+import Driver from 'driver-universal';
+
+const App  = () => {
+  const handleChange = (idx) {
+    console.log('change to ', idx);
+  }
+
+  return (
+    <View>
+      <Slider
+        className="slider"
+        width="750"
+        height="500"
+    autoPlay
+        onChange={handleChange}
+      >
+        <View style={styles.itemWrap}>
+          <Image style={styles.image} source={{height: 500, width: 375, uri: '//gw.alicdn.com/tfs/TB19NbqKFXXXXXLXVXXXXXXXXXX-750-500.png'}} />
+        </View>
+        <View style={styles.itemWrap}>
+          <Image style={styles.image} source={{height: 500, width: 375, uri: '//gw.alicdn.com/tfs/TB1tWYBKFXXXXatXpXXXXXXXXXX-750-500.png'}} />
+        </View>
+        <View style={styles.itemWrap}>
+          <Image style={styles.image} source={{height: 500, width: 375, uri: '//gw.alicdn.com/tfs/TB1SX_vKFXXXXbyXFXXXXXXXXXX-750-500.png'}} />
+        </View>
+      </Slider>
+    </View>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-slider 文档](https://rax.js.org/docs/components/slider)
+

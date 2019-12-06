@@ -30,7 +30,7 @@
 `click` 事件的回调函数和 `href` 跳转的执行顺序**未被定义**，**不要**使用 `click` 来进行 `href` 跳转前的逻辑处理。
 :::
 
-## 示例
+## Vue 示例
 
 ```Html
 <a href="http://emas-ha-remote-log-poc.oss-cn-beijing.aliyuncs.com/eweex/app/biz-docs-com-mod/upload/271ccdca-db41-423d-981c-c7c6751ba479/show_1.js">
@@ -39,3 +39,24 @@
 ```
 
 [示例](http://dotwe.org/vue/3b789771e48be92a70bd682f084b84b5)
+
+
+## Rax 示例
+
+`rax-link` 是 `<a>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Link from 'rax-link';
+import Text from 'rax-text';
+
+function App() {
+	return <Link href={"//www.google.com"} onPress={(e)=>{console.log(e)}}>
+	  <Text>点击跳转</Text>
+	</Link>
+}
+```
+
+[rax-link 文档](https://rax.js.org/docs/components/link)
+

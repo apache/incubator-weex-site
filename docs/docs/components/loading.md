@@ -65,6 +65,6 @@ The `<loading>` Component provide a pullup to loading function for some special 
  </loading>
  ```
 
-## Example
+## Vue Example
 
  - Complete example goes [here](http://dotwe.org/vue/70db1e2d322a50065369033cb9a5b58f)

@@ -82,6 +82,27 @@ word-break 行为是不可预测的且与 Android ROM 强相关。事实上，wo
 开发者可通过在意外换行处添加 `\uFEFF` 即 [ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) 以触发**强制不换行**，详细用法可参考[demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce)。请注意这个方法**无法**保证在所有 Android ROM 上有效，一些 ROM 会忽略 *ZERO WIDTH NO-BREAK SPACE* 指令。
 :::
 
-## 示例
+## Vue 示例
 * [`<text>`的基本用法](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0)
   
+
+## Rax 示例
+
+`rax-text` 是 `<text>` 组件的上层封装，抹平了 Web 和 Weex 的展现
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Text from 'rax-text';
+
+function App() {
+  return (
+    <Text>Text</Text>
+  );
+}
+
+render(<App />, document.body, { driver: Driver });
+```
+
+[rax-text 文档](https://rax.js.org/docs/components/text)
+

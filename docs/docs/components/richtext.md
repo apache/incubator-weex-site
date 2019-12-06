@@ -75,6 +75,6 @@ Only limited css styles listed below are supported by richtext.
       * The `a` tag has a `pseudo-ref` property whose value will be sent with the itemclick event. **Please be noted that the default jump behavior on `a` tag will be disabled at this moment.`[Demo](http://editor.weex.io/p/sunshl/Contribute/commit/b21e1133830b48767c6d00d712e415b2)
     * If `itemclick` is specified on nested nodes, only the event on the outer node will take effect.
 
-## Example
+## Vue Example
 
 [Demo](http://dotwe.org/vue/8a817e1acb46c2910caf1b53b8016a48)

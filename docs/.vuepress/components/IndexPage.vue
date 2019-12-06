@@ -30,7 +30,7 @@
           <h3>{{weex.charc3Title}}</h3>
           <div>{{weex.charc3Content}}</div>
         </div>
-        <img src="https://img.alicdn.com/tfs/TB1UrQ4qAvoK1RjSZFNXXcxMVXa-808-1180.png" width="50%" height="100%" />
+        <img src="https://gw.alicdn.com/tfs/TB1WFkDjkT2gK0jSZFkXXcIQFXa-808-1180.png" width="50%" height="100%" />
       </div>
 
       <div class="character-o">

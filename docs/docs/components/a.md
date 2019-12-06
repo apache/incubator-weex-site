@@ -30,7 +30,7 @@ It's forbidden to add text directly to `<a>`, use [`<text>`](./text.html) to wra
 The execution order of callback function of click and href is **undefined**. Do **not** use click event to do the preprocessing of `href`.
 :::
 
-## Examples
+## Vue Example
 
 ```Html
 <a href="http://emas-ha-remote-log-poc.oss-cn-beijing.aliyuncs.com/eweex/app/biz-docs-com-mod/upload/271ccdca-db41-423d-981c-c7c6751ba479/show_1.js">
@@ -39,3 +39,23 @@ The execution order of callback function of click and href is **undefined**. Do 
 ```
 
 [Demo](http://dotwe.org/vue/3b789771e48be92a70bd682f084b84b5)
+
+## Rax Example
+
+`rax-link` is the component `<a>` of rax, which can run in web and weex.
+
+```jsx
+import { createElement, render } from 'rax';
+import Driver from "driver-universal";
+import Link from 'rax-link';
+import Text from 'rax-text';
+
+function App() {
+	return <Link href={"//www.google.com"} onPress={(e)=>{console.log(e)}}>
+	  <Text>click me</Text>
+	</Link>
+}
+```
+
+[rax-link doc](https://rax.js.org/docs/components/link)
+
