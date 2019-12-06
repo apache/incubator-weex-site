@@ -28,7 +28,7 @@ This type of component supports all kinds of weex component as its child compone
 
 * **common events**. Check out [common events](../events/common-events.html).
 
-## Example
+## Vue Example
 
 Please refer to
 * [list](./list.html)

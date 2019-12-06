@@ -28,7 +28,7 @@ A `text` is the only valid type of child component.
 * **finish** Triggered when playback state is Finished.
 * **fail** Triggered when playback state is Failed.
 
-# Example
+# Vue Example
 
 ```html
 <template>

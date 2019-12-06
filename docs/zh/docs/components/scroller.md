@@ -104,7 +104,7 @@
 - `options {Object}`：可选项，属性为：
   - `offset {number}`：一个到其可见位置的偏移距离，默认是 0
 
-## 示例
+## Vue 示例
 
 - [scrollerstart 事件](http://dotwe.org/vue/6e3c7fb21976e80c2959f330ddd1b26a)
 - [设置 scroller 事件触发频率](http://dotwe.org/vue/d896b0896293ec55c209729fdfc7bff2)

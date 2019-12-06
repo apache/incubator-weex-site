@@ -22,6 +22,6 @@ No attributes.
 
 No events.
 
-## Example
+## Vue Example
 
 Please refer to [slider](./slider.html)

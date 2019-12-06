@@ -50,7 +50,7 @@
   * @param isShow: boolean, 显示或隐藏键盘。
   * @param keyboardSize: 键盘的高度，以前端使用的样式单位返回。
 
-## 示例
+## Vue 示例
 
 ```html
 <template>

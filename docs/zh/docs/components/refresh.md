@@ -48,7 +48,7 @@
 </refresh>
 ```
 
-## 示例
+## Vue 示例
 [基本用法](http://dotwe.org/vue/fccb7c6b9a9f4b7b1f3f7518344cf1bb)
 <IPhoneImg imgSrc="https://img.alicdn.com/tfs/TB1EMM7nYvpK1RjSZPiXXbmwXXa-1242-2208.png" />
 

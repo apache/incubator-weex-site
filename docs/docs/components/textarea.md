@@ -49,7 +49,7 @@ The difference between `active` and `focus` is that when the cursor is inside th
 	* @param isShow: boolean, showing or hiding the keyboard.
 	* @param keyboardSize: keyboard height in web pixel format.
 
-## Example
+## Vue Example
 
 ```html
 <template>

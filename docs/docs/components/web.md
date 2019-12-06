@@ -120,7 +120,7 @@ Support **[common styles](../styles/common-styles.html)**.
 - `<web>` can not have any nested child component.
 - You can use [webview module](../modules/webview.html) to control `<web>` component, see the [example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939).
 
-## Example
+## Vue Example
 
 - [Browser example](http://dotwe.org/vue/a3d902040b79ab38d1ffd753366fb939)
 

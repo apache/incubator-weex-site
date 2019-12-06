@@ -80,7 +80,7 @@ Generally speaking, you would meet inconsistent word-break behavior if one of th
 Developers could add `\uFEFF` namely [ZERO WIDTH NO-BREAK SPACE](http://jkorpela.fi/chars/spaces.html) just after the character with inconsistent word-break behavior to force no-break strategy, ref [demo](http://dotwe.org/vue/88a4b46f0dc1d1f6d82c506f490029ce) to see more detail。`\uFEFF` may not work on all Android ROMs, as some of them may just ignore it.
 :::
 
-## Example
+## Vue Example
 * [Basic usage for `<text>`](http://dotwe.org/vue/7d2bf6e112ea26984fd5930663f092e0).
 
 

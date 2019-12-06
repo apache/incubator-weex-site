@@ -139,7 +139,7 @@ input does not support the common-event `click`. Please listen to the `input`�
 * for `focus` and `blur` events:
   - `timestamp`: the time stamp of the event.
 
-## Example
+## Vue Example
 - [input with normal content and binding actions Example] (http://dotwe.org/vue/c2c9a853e5184d8ade57d1d93432f31f)
 - [ date & time Example ](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b)
 

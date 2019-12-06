@@ -107,7 +107,7 @@
 滚动到列表某个指定项是常见需求，`<list>` 拓展了该功能，可通过 `dom.scrollToElement()` 滚动到指定 `<cell>`。更多信息可参考 [dom module](/docs/modules/dom.html)。  
 相应的 demo 可参考 [&lt;scroller&gt; 示例](http://dotwe.org/vue/014c0dc53edf7320df7701ebf7c0b2be)中的实现。
 
-## 示例
+## Vue 示例
 [简单示例](http://dotwe.org/vue/c9ab413141713d5c7ea3e5083eb4dbd1)  
 [滑动加载](http://dotwe.org/vue/f188936d60c6ca45d342d34f0659a2be)  
 [头部示例](http://dotwe.org/vue/b66212f9779e20f456ba48ab91fd199f)  

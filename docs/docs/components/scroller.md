@@ -59,7 +59,7 @@ common styles: check out [common styles for components](../styles/common-styles.
 Nested lists or scrollers within the same direction are not supported. In other words. nested list/scroller must have different directions.
 For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.
 
-## Example
+## Vue Example
 
 ```html
 <template>

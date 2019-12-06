@@ -76,7 +76,7 @@ To be rendered properly, the `<refresh>` Component must appear inside the specia
 
 
 
-## Example
+## Vue Example
 
  - Complete example goes [here](http://dotwe.org/vue/b9fbd9b7a0b0aaa46e3ea46e09213539)
 

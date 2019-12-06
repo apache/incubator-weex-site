@@ -28,7 +28,7 @@ Video 组件用于在页面中嵌入视频内容。
 * **finish** 当 playback 的状态是 Finished 时触发。
 * **fail** 当 playback 状态是 Failed 时触发。
 
-# 示例
+# Vue 示例
 
 ```html
 <template>

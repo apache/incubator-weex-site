@@ -160,7 +160,7 @@ export default {
 
 参见[完整示例](http://dotwe.org/vue/94de9307517240dec066d2ea57fe54a0)。
 
-## 示例
+## Vue 示例
 
 * [Base64 示例](http://dotwe.org/vue/ba477790c85ea12bbf7ad3a5f0885b5c)
 * [Lazy load image 示例](http://dotwe.org/vue/b0b146e4e6fa4890f800e18cb950f803)

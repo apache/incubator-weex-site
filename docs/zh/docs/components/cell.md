@@ -29,7 +29,7 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 
 * **通用事件**. 参见[通用事件](../events/common-events.html)
 
-## 示例
+## Vue 示例
 
 Cell 的例子请参考
 * [list](./list.html)

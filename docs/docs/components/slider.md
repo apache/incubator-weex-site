@@ -30,7 +30,7 @@ It supports all kinds of weex components as its slides. The `indicator` componen
 * **change**. Triggerd when the slide's index is changed. The event object contains the attribute of `index`, which is the index number of the currently shown slide.
 * **scroll**. This event is fired when scrolling. The current `offsetXRatio` value is given in this event callback. And `offsetXRatio` means the current slide offset ratio which value range is [-1, 1]. Negative value means the slide is shifted to left and positive value means to right. For example, -0.2 means 20% of the current slide is slided beyonds left border of the slider.
 
-## Example
+## Vue Example
 
 ```html
 <template>
