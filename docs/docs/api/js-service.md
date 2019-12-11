@@ -11,7 +11,8 @@ version: 2.1
 
 <span class="weex-version">v0.9.5+</span>
 
-JSService and Weex instance are parallel in js runtime. Weex instance's lifecycle will invoke JSService's lifecycle. Currently provide create, refresh, destroy of lifecycle.
+JSService and Weex instance are parallel in js runtime. Weex instance's lifecycle will invoke JSService's lifecycle. Currently provide create, refresh, destroy of lifecycle.  
+JSService is the same as vendor.js in front-end engineer world, it is usually used to move duplicated js function in each page to a global environment.
 
 **!!!Important: Improper use of JSService may lead to increased memory usage or global pollution !**
 
