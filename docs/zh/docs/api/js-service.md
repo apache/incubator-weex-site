@@ -11,7 +11,8 @@ version: 2.1
 
 <span class="weex-version">v0.9.5+</span>
 
-JSService 和 Weex 实例在 JS Runtime 中并行运行。Weex 实例的生命周期可调用 JSService 生命周期。目前提供创建、刷新、销毁生命周期。
+JSService 和 Weex 实例在 JS Runtime 中并行运行。Weex 实例的生命周期可调用 JSService 生命周期。目前提供创建、刷新、销毁生命周期。  
+JSService 和前端世界里的 vendor.js 一样，它通常用于将每个页面中的重复js函数移至全局环境。
 
 **重要提醒: JSService 使用不当会导致内存增高或全局污染！**
 
