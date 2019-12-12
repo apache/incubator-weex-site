@@ -65,9 +65,9 @@ An event listener to be called when the WebSocket connection's readyState change
 ```javascript
 const ws = weex.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
-ws.onopen = function(event) {
+ws.onopen(function(event) {
 console.log('onopen', event);
-}
+});
 ```
 
 ## onmessage
@@ -82,9 +82,9 @@ An event listener to be called when a message is received from the server
 ```javascript
 const ws = weex.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
-ws.onmessage = function(event) {
+ws.onmessage(function(event) {
   console.log('onmessage', event);
-}
+});
 ```
 
 ## onclose
@@ -101,9 +101,9 @@ An event listener to be called when the WebSocket connection's readyState change
 ```javascript
 const ws = weex.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
-ws.onclose = function(event) {
+ws.onclose(function(event) {
   console.log('onclose', event);
-}
+});
 ```
 
 ## onerror
@@ -118,12 +118,12 @@ An event listener to be called when an error occurs.
 ```javascript
 const ws = weex.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
-ws.onerror = function(event) {
+ws.onerror(function(event) {
   console.log('onerror', event);
-}
+});
 ```
 
 **Demos**
 
-- [Demo](http://dotwe.org/vue/6b7d6dc14320e3f04e0f203cb8bcc703)
-- [Chat Demo](http://dotwe.org/vue/21d8b0a79c20e95139353d9cc8b634f5)
+- [Demo](http://dotwe.org/vue/fe7bb8051d59593974d08e1fb4a6d357)
+- [Chat Demo](http://dotwe.org/vue/354555978b45425df7fa4f7a9d0e315a)
