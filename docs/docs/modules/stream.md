@@ -13,7 +13,7 @@ Start a network request, use two callbacks to receive server's response data.
 * **@options**, the request options, key value style dictionary.
     * **`method`**, string, the HTTP method `GET` or `POST`.
     * **`url`**, string, the request url.
-    * **`headers`**, string, the HTTP request headers.
+    * **`headers`**, object, the HTTP request headers.
     * **`type`**, string, response type, 'json','text' or 'jsonp'(same as 'json' in native implementation)
     * **`body`**, string, the HTTP body.
 

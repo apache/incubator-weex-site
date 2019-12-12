@@ -13,7 +13,7 @@
 * **@options**, 请求的配置选项，支持以下配置
     * **`method`**, string, HTTP 请求方法，值为 `GET`/`POST`/`PUT`/`DELETE`/`PATCH`/`HEAD`
     * **`url`**, string, 请求的 URL | string
-    * **`headers`**, string, HTTP 请求头
+    * **`headers`**, object, HTTP 请求头
     * **`type`**, string, 响应类型：`json`，`text` 或是 `jsonp`(在 native 原生实现中其实与 `json` 相同)
     * **`body`**, string, HTTP 请求体
 
