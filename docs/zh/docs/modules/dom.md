@@ -32,7 +32,7 @@
 
 #### getComponentRect(ref, callback)
 
-* **@ref**，要滚动到的那个节点。
+* **@ref**，要获取外框的那个节点。
 * **@callback**，异步方法，通过回调返回信息。 
 
 回调方法中的数据样例：
