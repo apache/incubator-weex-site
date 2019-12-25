@@ -34,8 +34,8 @@ iOS Devtools for Apache Weex 能够方便调试 Weex 页面，但此功能离不
 在工程目录的 podfile 添加如下代码
 
 ```
-source https://github.com/CocoaPods/Specs.git，
-pod  'WXDevtool', '0.20.0', :configurations => ['Debug']，
+source https://github.com/CocoaPods/Specs.git
+pod  'WXDevtool', '0.24.0', :configurations => ['Debug']
 ```
 
 
