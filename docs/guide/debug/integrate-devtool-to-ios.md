@@ -56,7 +56,7 @@ You can see the demo here [Playground App](https://github.com/weexteam/weex-devt
 
 ```
 //1. From cocoapods
-#import <TBWXDevtool/WXDevtool.h>
+#import <WXDevtool/WXDevtool.h>
 
 //2. From source code
 #import "WXDevtool.h"

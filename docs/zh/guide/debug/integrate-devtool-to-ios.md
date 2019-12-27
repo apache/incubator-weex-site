@@ -66,7 +66,7 @@ pod  'WXDevtool', '0.24.0', :configurations => ['Debug']
 
 ```
 //方法1 pod依赖方式
-#import <TBWXDevtool/WXDevtool.h>
+#import <WXDevtool/WXDevtool.h>
 
 //方法2 源码依赖方式
 #import "WXDevtool.h"
