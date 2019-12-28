@@ -61,7 +61,7 @@ Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内�
 :::
 
 #### border-style
-`border-width`设定边框样式，如果四个方向的边框样式不同，可分别设置：
+`border-style`设定边框样式，如果四个方向的边框样式不同，可分别设置：
   * `border-style {string}`
   * `border-left-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
   * `border-top-style {string}`：可选值为 `solid` | `dashed` | `dotted`，默认值 `solid`
