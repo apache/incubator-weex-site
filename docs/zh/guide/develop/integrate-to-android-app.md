@@ -74,7 +74,7 @@ WXSDKEngine.initialize(applicationContext,config);
 
 ```
 
-- [demo初始化源码](https://github.com/apache/incubator-weex/blob/master/android/playground/app/src/main/java/com/alibaba/weex/WXApplication.java)
+- [demo初始化源码](https://github.com/apache/incubator-weex-playground/blob/master/android/playground/src/main/java/org/apache/weex/WXApplication.java)
 - [其它扩展配置看这里](/guide/extend/extend-android.html)
 
 

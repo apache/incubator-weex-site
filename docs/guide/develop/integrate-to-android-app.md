@@ -73,7 +73,7 @@ InitConfig config = new InitConfig.Builder()
 WXSDKEngine.initialize(applicationContext,config);
 ```
 
-- [demo init case](https://github.com/apache/incubator-weex/blob/master/android/playground/app/src/main/java/com/alibaba/weex/WXApplication.java)
+- [demo init case](https://github.com/apache/incubator-weex-playground/blob/master/android/playground/src/main/java/org/apache/weex/WXApplication.java)
 - [extend-android doc](/guide/extend/extend-android.html)
 
 
