@@ -16,14 +16,13 @@ a complete [demo](https://github.com/acton393/WeexSwiftSample.git)
 - implementation in `WXSwiftTestModule.h/m`
   - WXSwiftTestModule.h
     
-    ```
-        #import <Foundation/Foundation.h>
-        #import <WeexSDK/WeexSDK.h>
+    ```swift
+    #import <Foundation/Foundation.h>
+    #import <WeexSDK/WeexSDK.h>
     
-        @interface WXSwiftTestModule : NSObject <WXModuleProtocol>
+    @interface WXSwiftTestModule : NSObject <WXModuleProtocol>
     
-        @end
-    
+    @end
     ```
   - WXSwiftTestModule.m
     
@@ -34,41 +33,45 @@ a complete [demo](https://github.com/acton393/WeexSwiftSample.git)
     weex/ios/playground/DerivedData/WeexDemo/Build/Intermediates/WeexDemo.build/Debug-iphonesimulator/WeexDemo.build/DerivedSources/WeexDemo-Swift.h
     ```
     export method define in swift file.
-    ```
-        #import "WXSwiftTestModule.h"
-        #import "WeexDemo-Swift.h" // you need to import the header to make Objective-C code recognize the method defined in swift file.
+    ```swift
+    #import "WXSwiftTestModule.h"
+    #import "WeexDemo-Swift.h" // you need to import the header to make Objective-C code recognize the method defined in swift file.
     
-        @implementation WXSwiftTestModule
-        #pragma clang diagnostic push //forbid unknow selector warrning
-        #pragma clang diagnostic ignored "-Wundeclared-selector"
+    @implementation WXSwiftTestModule
+    #pragma clang diagnostic push //forbid unknow selector warrning
+    #pragma clang diagnostic ignored "-Wundeclared-selector"
     
-        WX_EXPORT_METHOD(@selector(printSome:callback:)) //method name in Swift, you can get the final method name in `WeexDemo-Swift.h` as the convert of Xcode.
+    WX_EXPORT_METHOD(@selector(printSome:callback:)) //method name in Swift, you can get the final method name in `WeexDemo-Swift.h` as the convert of Xcode.
 
-        #pragma clang diagnostic pop
+    #pragma clang diagnostic pop
     
-        @end
-    
+    @end
     ```
 - in Swift
   make an extension for Objective-C class `WXSwiftTestModule`, add a method, and then export it in Objective-C, then we can use it in javaScript.
 
   - WXSwiftTestModule.swift
     
-    ```
-        import Foundation
-        public extension WXSwiftTestModule {
-           public func printSome(someThing:String, callback:WXModuleCallback) {
-               print(someThing)
-               callback(someThing)
-           }
-        }
+    ```swift
+    import Foundation
+    public extension WXSwiftTestModule {
+      @objc(printSome:callback:)
+      public func printSome(someThing:String, callback:WXModuleCallback) {
+        print(someThing)
+        callback(someThing)
+      }
+    }
     ```
     
-  we need to expose `WXSwiftTestModule` `WXModuleCallback` in `WeexDemo-Bridging-Header` as our `Objective-C` need to access them
+  we need to expose `WXSwiftTestModule` `WXModuleCallback` in `WeexDemo-Bridging-Header` as our `Objective-C` need to access them.
+
+  Attention: Please add the `@objc` attribute to the method in the Swift file to avoid the error for the method cannot be found.
+
+
 
   - WeexDemo-Bridging-Header.h
     
-    ```
+    ```swift
     //
     //  Use this file to import your target's public headers that you would like to expose to Swift.
     //
@@ -81,26 +84,25 @@ a complete [demo](https://github.com/acton393/WeexSwiftSample.git)
   ### module usage
   - register module to WeexSDK
 
-    ```
+    ```Objective-C
     [WXSDKEngine registerModule:@"swifter" withClass:[WXSwiftTestModule class]];
     
     ```
   - front-end usage
 
-    ```
-      <template>
-          <text>Swift Module</text>
-      </template>
+    ```html
+    <template>
+      <text>Swift Module</text>
+    </template>
     
-      <script>
-        module.exports = {
-          ready: function() {
-            var swifter = weex.require('swifter');
-            swifter.printSome("https://www.taobao.com",function(param){
-              nativeLog(param);
-            });
-          }
-    
-        };
-      </script>
+    <script>
+      module.exports = {
+        ready: function() {
+          var swifter = weex.require('swifter');
+          swifter.printSome("https://www.taobao.com",function(param){
+            nativeLog(param);
+          });
+        }
+      };
+    </script>
     ```
