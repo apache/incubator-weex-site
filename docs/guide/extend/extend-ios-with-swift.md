@@ -54,17 +54,22 @@ a complete [demo](https://github.com/acton393/WeexSwiftSample.git)
 
   - WXSwiftTestModule.swift
     
-    ```
+    ```swift
         import Foundation
         public extension WXSwiftTestModule {
-           public func printSome(someThing:String, callback:WXModuleCallback) {
-               print(someThing)
-               callback(someThing)
-           }
+          @objc(printSome:callback:)
+          public func printSome(someThing:String, callback:WXModuleCallback) {
+            print(someThing)
+            callback(someThing)
+          }
         }
     ```
     
-  we need to expose `WXSwiftTestModule` `WXModuleCallback` in `WeexDemo-Bridging-Header` as our `Objective-C` need to access them
+  we need to expose `WXSwiftTestModule` `WXModuleCallback` in `WeexDemo-Bridging-Header` as our `Objective-C` need to access them.
+
+  Attention: Please add the `@objc` attribute to the method in the Swift file to avoid the error for the method cannot be found.
+
+
 
   - WeexDemo-Bridging-Header.h
     

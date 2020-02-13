@@ -51,17 +51,21 @@
   扩展 OC 的类 `WXSwiftTestModule`,增加了一个方法，这个方法就是我们要暴露出来，在 js 中可以调到的
   - WXSwiftTestModule.swift
     
-    ```
+    ```swift
         import Foundation
         public extension WXSwiftTestModule {
-           public func printSome(someThing:String, callback:WXModuleCallback) {
-               print(someThing)
-               callback(someThing)
-           }
+          @objc(printSome:callback:)
+          public func printSome(someThing:String, callback:WXModuleCallback) {
+            print(someThing)
+            callback(someThing)
+          }
         }
     ```
     
-    `WXSwiftTestModule` 和`WXModuleCallback` 因为是 OC 的，需要在 `WeexDemo-Bridging-Header` 中暴露
+    `WXSwiftTestModule` 和`WXModuleCallback` 因为是 OC 的，需要在 `WeexDemo-Bridging-Header` 中暴露。
+
+    注意：请在 Swift 文件中为方法添加 `@objc` 修饰符，避免找不到方法的报错。
+
   - WeexDemo-Bridging-Header.h中
     
     ```
