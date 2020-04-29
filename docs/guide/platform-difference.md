@@ -58,6 +58,6 @@ The mobile device native API can be called in Weex by using the registration and
 + [《navigator control》](../docs/modules/navigator.html)
 + [《storage》](../docs/modules/storage.html)
 
-In order to maintain the versatility of the framework, Weex's built-in native modules are limited, but Weex provides the ability to extend native modules. For specific extension methods, please refer to [《iOS extend》](./extend/extend-ios.html) 和[《Android extend》](./extend/extend-android.html)。
+In order to maintain the versatility of the framework, Weex's built-in native modules are limited, but Weex provides the ability to extend native modules. For specific extension methods, please refer to [《iOS extend》](./extend/extend-ios.html) and[《Android extend》](./extend/extend-android.html)。
 
 > Some interfaces also exist in the browser environment, but you should pay attention to browser compatibility when using them; for example, the clipboard function, for security reasons, most browsers restrict their use.
