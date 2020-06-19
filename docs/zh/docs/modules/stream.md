@@ -29,7 +29,7 @@
     * **`ok`**, boolean, 如果状态码在 200-299 之间就为 true
     * **`statusText`**, string, 状态描述文本
     * **`data`**, string, 返回的数据，如果请求类型是 `json` 和 `jsonp`，则它就是一个 `object` ，否则是一个 `string`。
-    * **`headers`**, object, rHTTP 响应头
+    * **`headers`**, object, HTTP 响应头
 
 * **@progressCallback**, function, a progress callback. This callback will be invoked before request finished.
     * **`readyState`**, number, 当前状态，`1`: 请求连接中；`2`: 返回响应头中；`3`: 正在加载返回数据
