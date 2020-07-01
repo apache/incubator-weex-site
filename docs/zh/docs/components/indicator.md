@@ -16,7 +16,7 @@
 
 * **item-color**, color. 指示点默认颜色（未选中态）。
 * **item-selected-color**, color. 指示点选中颜色。
-* **item-size**, number. 指示点半径。
+* **item-size**, number. 指示点直径。
 
 ## 事件
 
