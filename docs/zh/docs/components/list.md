@@ -89,7 +89,35 @@
 
 ## 事件
 * `loadmore` 事件  
-  如果列表滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。 如果未触发，请检查是否设置了loadmoreoffset的值，建议此值设置大于0
+  如果列表滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。 如果未触发，请检查是否设置了loadmoreoffset的值，建议此值设置大于0 ，并且可以通过重置loadmore方式达到目的
+  
+`如何重置`
+```javascipt
+<template>
+  <list ref="list">
+    <cell v-for="num in lists">
+      <text>{{num}}</text>
+    </cell>
+  </list>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        lists: ['A', 'B', 'C', 'D', 'E']
+      }
+    },
+    methods: {
+        // 重置 loadmore
+        resetLoadMore() {
+            this.$refs["list"].resetLoadmore();
+        }
+    }
+  }
+</script>
+```
+  
 * `scroll` 事件  
   列表发生滚动时将会触发该事件，事件的默认抽样率为 10px，即列表每滚动 10px 触发一次，可通过属性 offset-accuracy 设置抽样率。
 
