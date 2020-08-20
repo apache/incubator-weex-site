@@ -12,7 +12,7 @@ Weex 提供了通过事件触发动作的能力，例如在用户点击组件时
 
 Weex在`<div>`组件中增加了`eventPenetrationEnabled`属性，当值为`true`（默认为`false`）时，View的子View仍能正常响应事件，但View自身将不会响应事件。
 
-[示例](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
+[示例](http://dotwe.org/vue/5d8bc374a939e135374be18fa08608dd)
 
 ## View交互性
 

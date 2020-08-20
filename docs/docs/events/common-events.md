@@ -18,7 +18,7 @@ When a parent view has multiple peer views, iOS will select the highest level Vi
 
 Weex add attribute `eventPenetrationEnabled` to `<div>` component. When the value is `true`(default would be `false`), the view's children views still respond to the event normally, while the view itself will not respond to the event, but pass the event to the lower level View.
 
-[Event penetration](https://jsplayground.taobao.org/raxplayground/c230a32e-489c-4fda-ae90-40faa6aaafbc??from=)
+[Event penetration](http://dotwe.org/vue/5d8bc374a939e135374be18fa08608dd)
 
 ## View interactivity
 
