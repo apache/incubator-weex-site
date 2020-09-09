@@ -47,7 +47,7 @@ Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内�
 
 ### 内边距
 `padding {length}`：内边距，内容和边框之间的距离，默认值 0。与标准 CSS 类似，`padding` 支持简写，也可分解为以下四个：
-  * `padding {length}`: 上、下、左、右四边内边距，默认值 0
+  * `padding {length}`: 上、右、下、左四边内边距，默认值 0
   * `padding-left {length}`：左内边距，默认值 0
   * `padding-right {length}`：右内边距，默认值 0
   * `padding-top {length}`：上内边距，默认值 0
@@ -111,7 +111,7 @@ Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内�
 
 ### 外边距
 `margin {length}`：外边距，元素和元素之间的空白距离，默认值 0。与标准 CSS 类似，`margin` 支持简写，也可分解为四边：
-  * `margin {length}`: 上、下、左、右四边外边距，默认值 0
+  * `margin {length}`: 上、右、下、左四边外边距，默认值 0
   * `margin-left {length}`：左外边距，默认值 0
   * `margin-right {length}`：右外边距，默认值 0
   * `margin-top {length}`：上外边距，默认值 0
