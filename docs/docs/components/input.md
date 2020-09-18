@@ -143,7 +143,7 @@ input does not support the common-event `click`. Please listen to the `input`�
 - [input with normal content and binding actions Example] (http://dotwe.org/vue/c2c9a853e5184d8ade57d1d93432f31f)
 - [ date & time Example ](http://dotwe.org/vue/23ec083078356ef0e31618164e5a184b)
 
-- [return-key-type Example](http://dotwe.org/vue/703c94a1db921df110a11ce33b42c0d7)
+- [return-key-type Example](http://dotwe.org/vue/2ab797dc2ffe865f33a5727d0fdd2408)
 - [setTextFormatter Example](http://dotwe.org/vue/bea3cb0cad697829d8d343552a2b7b77)
 - [Other Examples](http://dotwe.org/vue/aec5342b15d3c01b3b427384a71b0874)
 
