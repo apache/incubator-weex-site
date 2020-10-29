@@ -24,8 +24,6 @@ No child should be added to a `input`.
 
 * `lines`: makes the input exactly this many lines tall.
 
-* `max-length`: constrain edits not to make the length of the text greater than the specified length.
-
 * `max` constrain the max date when `type` is `date`, format is `yyyy-MM-dd`
 
 * `min` constrain the min date when `type` is `date`, format is `yyyy-MM-dd`
