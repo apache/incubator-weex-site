@@ -16,7 +16,7 @@ No attributes.
 
 * **item-color**, color. The unselected color of an indicator dot.
 * **item-selected-color**, color. The selected color of an indicator dot.
-* **item-size**, number. Radius of indicator dot.
+* **item-size**, number. Diameter of indicator dot.
 
 ## Events
 
