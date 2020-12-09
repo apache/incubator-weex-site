@@ -28,7 +28,7 @@
 
 基于上述原因，从 Weex 0.28.0 开始，JavaScript 引擎将**不再**内置于 Weex 在 JCenter 上的发布产物中，用户可以自由选择它们喜欢的 JavaScript 引擎，只要这个引擎遵循了[指定接口](https://svn.webkit.org/repository/webkit/releases/WebKitGTK/webkit-2.27.1/Source/JavaScriptCore/API/)。
 
-这意味着用户需要在它们的 App 中内置 JavaScript 引擎，否则 Weex 将无法运行。对于不知道如何选择 JavaScript 用户的引擎，可以在 App 的 build.gradle 中引入下述脚本：
+这意味着用户需要在它们的 App 中内置 JavaScript 引擎，否则 Weex 将无法运行。对于不知道如何选择 JavaScript 引擎的用户，可以在 App 的 build.gradle 中引入下述脚本：
 
     apply from: 'https://raw.githubusercontent.com/apache/incubator-weex/release/0.28/android/sdk/buildSrc/download_jsc.gradle'
 
