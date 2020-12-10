@@ -23,7 +23,7 @@ animation.transition(ref1, {
 * [示例](http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410)
 
 ::: warning Android 兼容性
-你有可能会遇如下Crash **Unable to create layer for xxx** 如果你的含有 `animation` 的 `component` 的大小(*长或宽*)超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
+你有可能会遇到如下Crash **Unable to create layer for xxx** 如果你的含有 `animation` 的 `component` 的大小(*长或宽*)超过了最大值，因为这会使 OpenGL 内存区域发生 `OutOfMemory`。
 
 你的 `component` 的允许的最大值与机器有关，但一般来说，如果你的 `component` 的大小超过屏幕大小，就有可能触发Crash。
 :::
