@@ -318,5 +318,12 @@ export default [
     icon: 'http://aikuaixiao-sys.oss-cn-shanghai.aliyuncs.com/logo.png',
     iOS:'https://apps.apple.com/cn/app/id1454492001',
     android: 'https://sj.qq.com/myapp/detail.htm?apkName=com.aikuaixiao'
+  },
+  {
+    name_CN: '中南销售通',
+    name_EN: 'zoina',
+    icon: 'http://file.market.xiaomi.com/thumbnail/PNG/l114/AppStore/0287c5059d3a480f9cac26565d9d092e87742c7d2',
+    iOS:'https://app.mi.com/details?id=com.terminus.zoina.sale&ref=search',
+    android: 'https://app.mi.com/details?id=com.terminus.zoina.sale&ref=search'
   }
 ];
