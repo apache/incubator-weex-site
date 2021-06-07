@@ -14,49 +14,6 @@
 ###############################################################################
 
 # Retired as per INFRA-21960
-RedirectMatch Permanent ^(/.*)?$ https://incubator.apache.org/projects/weex.html
+RewriteEngine On
+RewrietRule .* https://incubator.apache.org/projects/weex.html [R=301]
 
-# set error pages
-ErrorDocument 404 https://weex.apache.org/404.html
-
-# turn off automatic directory indices
-#Options -Indexes
-
-# turn on redirection
-Options +FollowSymLinks
-RewriteEngine on
-
-#
-# NOTE:
-#      Meanings of some of the flags at the ends of rules:
-#
-#      L  - terminal rule; if it applies, no more rules are checked
-#      R  - redirect (followed by code)
-#      NE - no escaping special characters
-
-# 302 (temporary):
-#
-#     references/modules/         -> docs/modules/
-#     cn/references/modules/      -> zh/docs/api/modules/
-#     references/components/         -> docs/components/
-#     cn/references/components/      -> zh/docs/api/components/
-#
-
-RewriteRule "^.*cn/references/modules/(.*)$" "https://weex.apache.org/zh/docs/modules/$1" [R=301,L]
-RewriteRule "^.*references/modules/(.*)$" "https://weex.apache.org/docs/modules/$1" [R=301,L]
-RewriteRule "^.*cn/references/components/(.*)$" "https://weex.apache.org/zh/docs/components/$1" [R=301,L]
-RewriteRule "^.*references/components/(.*)$" "https://weex.apache.org/docs/components/$1" [R=301,L]
-
-# Redirect http to https
-# From Cordova PMC Member raphinesse 
-# https://s.apache.org/An8s
-
-# If we receive a forwarded http request from a proxy...
-RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
-
-# ...or just a plain old http request directly from the client
-RewriteCond %{HTTP:X-Forwarded-Proto} =""
-RewriteCond %{HTTPS} !=on
-
-# Redirect to https version
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
