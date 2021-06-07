@@ -15,5 +15,5 @@
 
 # Retired as per INFRA-21960
 RewriteEngine On
-RewrietRule .* https://incubator.apache.org/projects/weex.html [R=301]
+RewriteRule .* https://incubator.apache.org/projects/weex.html [R=301]
 
