@@ -13,6 +13,9 @@
 #               three-oh-TWO (302) means you get TWO chances.
 ###############################################################################
 
+# Retired as per INFRA-21960
+RedirectMatch Permanent ^(/.*)?$ https://incubator.apache.org/projects/weex.html
+
 # set error pages
 ErrorDocument 404 https://weex.apache.org/404.html
 
