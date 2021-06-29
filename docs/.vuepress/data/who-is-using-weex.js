@@ -325,5 +325,26 @@ export default [
     icon: 'http://file.market.xiaomi.com/thumbnail/PNG/l114/AppStore/0287c5059d3a480f9cac26565d9d092e87742c7d2',
     iOS:'https://app.mi.com/details?id=com.terminus.zoina.sale&ref=search',
     android: 'https://app.mi.com/details?id=com.terminus.zoina.sale&ref=search'
+  },
+  {
+    name_CN: '华律法律咨询',
+    name_EN: 'hualvuser',
+    icon: 'https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/8c/53/13/8c5313c6-beaa-a660-ec48-6e54b0d49107/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/492x0w.png',
+    iOS:'https://apps.apple.com/cn/app/id1533190036',
+    android: 'https://app.mi.com/details?id=com.hualv.user&ref=search'
+  },
+  {
+    name_CN: '华律律师端',
+    name_EN: 'hualvlawyer',
+    icon: 'https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/41/7f/0f/417f0fd5-e4bb-4229-4309-57db56a2f463/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/492x0w.png',
+    iOS:'https://apps.apple.com/cn/app/id1524893442',
+    android: 'https://app.mi.com/details?id=com.hualv.lawyer&ref=search'
+  },
+  {
+    name_CN: '律图律师端',
+    name_EN: 'lvtulawyer',
+    icon: 'https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/fa/10/2e/fa102e67-6772-c760-9585-6ba22d18758f/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png',
+    iOS:'https://apps.apple.com/cn/app/id1477937761',
+    android: 'https://app.mi.com/details?id=com.ls365.lvtu&ref=search'
   }
 ];
